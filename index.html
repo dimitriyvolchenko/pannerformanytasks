@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MR Mission Planner</title>
-<meta name="description" content="A personal to-do board for writing a set of forensic methodological recommendations: stages, tasks, deadlines and a progress drawing. No accounts, no tracking, no server - everything is kept in this browser.">
 <style>
   :root{
     --bg:#F7F5F0; --card:#FFFFFF; --line:#ECE8DF; --line2:#DFDACE;
@@ -18,7 +17,7 @@
     --sh-s:0 1px 2px rgba(58,63,74,.03), 0 12px 30px rgba(58,63,74,.05);
     --sh-c:0 1px 2px rgba(58,63,74,.03), 0 8px 22px rgba(58,63,74,.04);
     --sh-m:0 18px 44px rgba(58,63,74,.22);
-    --timeline-h:142px;
+    --timeline-h:124px;
   }
   *{box-sizing:border-box; margin:0; padding:0}
   html{scroll-behavior:smooth}
@@ -606,11 +605,17 @@
   .tl-inner{max-width:1360px; margin:0 auto; padding:10px 40px 10px var(--tlpad, 40px); position:relative; height:100%}
   .tl-caption{position:absolute; right:40px; top:10px; font-size:11px; color:var(--ink-faint); letter-spacing:.08em; font-weight:700}
   .tl-start{position:absolute; left:var(--tlpad, 40px); top:10px; font-size:11px; color:var(--ink-faint); letter-spacing:.08em; font-weight:700}
-  .tl-track{position:relative; height:12px; background:var(--track); border-radius:99px; margin-top:41px}
+  .tl-track{position:relative; height:12px; background:var(--track); border-radius:99px; margin-top:55px}
   .tl-fill{position:absolute; left:0; top:0; bottom:0; width:0%;
     background:linear-gradient(90deg,#D9E4F5,var(--blue)); border-radius:99px; transition:width .8s cubic-bezier(.25,.9,.35,1)}
   .tl-tick{position:absolute; top:-5px; width:2px; height:22px; background:var(--line2); z-index:1}
   .tl-tick span{position:absolute; top:24px; left:50%; transform:translateX(-50%); font-size:10px; color:var(--ink-faint); white-space:nowrap; letter-spacing:.03em}
+  /* the calendar line carries the dates now */
+  .tl-time .tl-tick{top:-6px; height:17px}
+  .tl-time .tl-tick span{top:16px}
+  .tl-plab{position:absolute; right:0; top:-17px; font-size:9px; letter-spacing:.06em; text-transform:uppercase;
+    font-weight:800; color:var(--ink-faint); white-space:nowrap}
+  body.pinkbar .tl-plab{color:var(--pinkink)}
   .tl-tick.major{background:var(--peach)}
   .tl-tick.major span{color:#C99B62; font-weight:700}
   .tl-tick.tdy{background:var(--green)}
@@ -715,27 +720,22 @@
   .backface{display:none; padding:6px 18px 14px}
   .proj.flipped .backface{display:block}
   .proj.flipped > .proj-head,.proj.flipped > .tasks{display:none}
-  .bk-head{display:flex; gap:12px; align-items:flex-start; padding:8px 0 12px; border-bottom:1px solid var(--line); margin-bottom:10px}
-  .bk-num{flex:0 0 auto; width:30px; height:30px; border-radius:11px; background:var(--blue); color:#fff;
-    font-size:12.5px; font-weight:800; display:flex; align-items:center; justify-content:center}
-  body.dark .bk-num{color:#141A23}
-  .bk-cell{flex:1 1 auto; min-width:0}
-  .bk-orig{display:block; font-size:11.5px; color:var(--ink-faint); line-height:1.35; margin-bottom:2px}
-  .bk-head .bk-orig{font-size:12.5px; font-weight:650; color:var(--ink-dim)}
-  .bk-txt{font-size:14px; color:var(--ink); line-height:1.4; outline:none; border-radius:8px;
-    padding:3px 7px; margin-left:-7px; min-height:22px; transition:background .25s ease, box-shadow .25s ease}
-  .bk-head .bk-txt{font-size:15.5px; font-weight:700}
-  .bk-txt:hover{background:var(--hover,#F8F6F1)}
-  .bk-txt:focus{background:var(--card); box-shadow:0 0 0 1.5px var(--blue2)}
-  .bk-txt:empty::before{content:attr(data-ph); color:var(--ink-faint); font-style:italic; font-size:12.5px}
-  .bk-rows{display:flex; flex-direction:column; gap:2px}
-  .bk-row{display:flex; gap:10px; align-items:flex-start; padding:5px 0}
-  .bk-row.sub{margin-left:30px}
-  .bk-dot{flex:0 0 auto; width:13px; height:13px; margin-top:4px; border-radius:50%;
-    border:2px solid var(--ringline,#CBD0DA); background:var(--card)}
-  .bk-dot.on{background:var(--blue2); border-color:var(--blue2)}
-  .bk-row.sub .bk-dot{width:11px; height:11px; margin-top:5px}
-  @media (max-width:820px){ .backface{padding:6px 12px 12px} .bk-row.sub{margin-left:16px} .proj-head{padding-right:40px} }
+  /* the back wears the same clothes as the front - same head, same rows, same circles */
+  .backface .proj-head{padding:10px 46px 12px 0; cursor:default; border-bottom:1px solid var(--line); margin-bottom:2px}
+  .backface .tasks{padding:4px 0 2px 0}
+  .backface .task{cursor:default}
+  .backface .task:hover{background:transparent}
+  .backface .bkchk{display:flex; align-items:center; margin-top:1px}
+  .backface .box.on{background:var(--blue2); border-color:var(--blue2)}
+  .backface .box.on svg{stroke-dashoffset:0}
+  .bkdue{font-size:11px; font-weight:700; color:var(--ink-faint); background:var(--sunk,#F4F1EA);
+    border-radius:99px; padding:4px 10px; white-space:nowrap}
+  .bk-ed{outline:none; border-radius:8px; padding:2px 7px; margin-left:-7px; min-height:20px;
+    transition:background .25s ease, box-shadow .25s ease}
+  .bk-ed:hover{background:var(--hover,#F8F6F1)}
+  .bk-ed:focus{background:var(--card); box-shadow:0 0 0 1.5px var(--blue2)}
+  .bk-ed:empty::before{content:attr(data-ph); color:var(--ink-faint); font-style:italic; font-size:12.5px}
+  @media (max-width:820px){ .backface{padding:6px 12px 12px} .proj-head{padding-right:40px} }
 
   /* ============ HIDE DONE / HIDE ALL ============ */
   .task.rowhide{display:none !important}
@@ -849,9 +849,9 @@
     .wrap{padding-left:22px}
     /* the same quiet timeline as on the phone - full labels do not fit here either */
     .tl-tick span{display:none}
-    .tl-tick.tdy span{display:block; font-size:9px; top:16px !important}
+    .tl-tick.tdy span{display:block; font-size:9px; top:-15px !important}
     #signLeft,.tl-sign.right{display:none}
-    .tl-track{margin-top:32px}
+    .tl-track{margin-top:38px}
   }
   /* ============ PHONE ============ */
   @media (max-width:820px){
@@ -910,7 +910,7 @@
     .tl-caption,.tl-start{font-size:9.5px}
     .tl-track{margin-top:30px}
     .tl-tick span{display:none}
-    .tl-tick.tdy span{display:block; font-size:9px; top:16px !important}
+    .tl-tick.tdy span{display:block; font-size:9px; top:-15px !important}
     #signLeft,.tl-sign.right{display:none}
     #star{width:20px; height:34px; top:-26px}
     .footrow{gap:6px}
@@ -919,6 +919,15 @@
     .hstree{flex:none; border-right:none; border-bottom:1px solid var(--line); max-height:170px; padding:0 0 8px}
     footer.note{font-size:12px}
   }
+  .syrow{display:flex; align-items:center; gap:10px; margin-bottom:9px}
+  .syrow label{flex:0 0 96px; font-size:11.5px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-faint)}
+  .syrow input{flex:1 1 auto; min-width:0; font:inherit; font-size:13px; color:var(--ink); background:var(--sunk,#F7F5F0);
+    border:1px solid var(--line); border-radius:10px; padding:8px 11px; outline:none}
+  .syrow input:focus{border-color:var(--blue2); background:var(--card)}
+  .syhint{margin-top:10px}
+  .sydot{width:9px; height:9px; border-radius:50%; background:var(--line2); flex:0 0 auto}
+  .sydot.on{background:var(--green)}
+  .sydot.bad{background:var(--redp)}
   .thsec{margin-bottom:18px}
   .thsec b{display:block; font-size:13px; font-weight:800; margin-bottom:4px}
   .thp{font-size:12.5px; color:var(--ink-dim); line-height:1.5; margin-bottom:9px}
@@ -972,7 +981,7 @@
   #darkPop.show{display:block}
   #darkPop .rlab2{font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-faint);
     font-weight:800; margin-bottom:9px}
-  #darkPop input[type=range]{width:100%; accent-color:var(--blue)}
+  #darkPop input[type=range]{width:100%; accent-color:var(--blue); height:28px; touch-action:none; cursor:pointer}
   #darkPop .dkrow{display:flex; align-items:center; justify-content:space-between; gap:8px; margin-top:6px}
   #darkPop .dkrow span{font-size:12px; font-weight:800; color:var(--ink); min-width:26px}
   #darkPop .mrow{appearance:none; border:none; background:none; cursor:pointer; font:inherit; font-size:12px;
@@ -1298,6 +1307,7 @@
       <button class="btn" id="btnExport">Save progress to file</button>
       <button class="btn" id="btnFolder" title="Choose the folder the progress files are written into">folder</button>
       <button class="btn" id="btnImport">Load from file</button>
+      <button class="btn" id="btnSync" title="Keep this plan the same on every device through your own GitHub">sync</button>
       <input type="file" id="fileImport" accept=".json,application/json,text/plain" class="hidden">
     </div>
     <div class="hero-tools">
@@ -1339,7 +1349,7 @@
   </div>
 
   <footer class="note">
-    <p><b>C_MR.</b> The second tab holds the contents of the Recommendations - one box per section, with the chapter it belongs to in its name and its own date up to 30 September. The steps inside each box are the tasks. Each line carries three circles instead of one - <b>i</b> when the text has been carried in from another book, <b>e</b> when it has been worked over, and the ordinary one for the final reading. Only the ordinary circle counts towards the blueprint; the tally of the other two sits under the counter in Mission control. Double-click the number of work days on any line to give that line its own deadline.<br><br><b>Projects.</b> The row of buttons at the top of Mission control holds your projects, and <b>+</b> starts another one. Every setting - the theme, the bold type, the size of this panel, the look of the notes, the captions, the colour of the strip, the folder Save writes into - belongs to the planner as a whole and applies to every project, the ones here now and the ones made later; only the plan itself lives inside its own project. A new project opens completely empty: press <b>+ add a stage</b> under the board, type its name, then add tasks inside it - or open <b>tree</b> and type the whole plan at once. Click a button to switch; each project keeps its own stages, notes, dates, drawing and look, and one press of Save writes them all into a single file. Double-click a project button to rename it (the title above the plan follows), and the small cross on the open one deletes it - press it twice, and the last remaining project is never deleted. Double-click any stage name on the board to rename it in place. The small arrows button in the top right corner of a card turns it over: the other side carries the same lines again, each with an empty line under it for the other language. Type the translation there, turn the card back, turn it over again - what you wrote stays, and new lines added on the front appear on the back with an empty line of their own.<br><br><b>How it works.</b> Tick tasks to assemble the blueprint - it grows in whole stages, from the ground up, and every new line flies in and settles into place. Row buttons: S adds a subtask, G switches English/Russian, the pencil edits, the number shows the WORK days left for that task - Monday to Friday, weekends are not counted (click it for details), the cross deletes (press ? to confirm). Drag anything by its grip handle (the dotted column): whole stages, single tasks and subtasks - between stages too. Reorder stages with the small arrows next to the number, double-click the number and type the place it should take, or drag a card by its number - the numbering and the calendar on the left follow. At the bottom of every stage: <b>priority</b> lifts that card towards you, <b>dim</b> fades everything else out so it stays in focus, <b>hide done</b> folds away every finished line, <b>hide all</b> folds away the whole list and leaves one line saying how much is still to do, and <b>in process</b> parks the stage - the card fades a little and a note floats above it where you type what the stage is waiting for and press Enter. Click that note to reword it, press its cross when the stage moves again (the words are kept for next time). The <b>P</b> beside a task or subtask keeps it in focus while the rest of the stage fades - press it on as many lines as you need, they all stay lit. <b>Select any text on the page and right-click it</b> for Word-style formatting: bold, italic, underline, strikethrough, four sizes, text colour, highlight and alignment. Without a selection the ordinary browser menu appears. Both calendars are divided into weeks (W1, W2...). Double-click the "from" badge to move the start date and the "due" badge to move the finish - both timelines recalculate. The round C button on the blueprint switches between seventeen drawings: five spacecraft, six of Leonardo da Vinci's machines, the Kremlin tower, the Tower of Pisa, a frog anatomy plate, a giant bird, a giant duck and a classic iPod. The blueprint is cut into 200 stages; adding or removing tasks and subtasks re-divides them automatically, and every counter - completed, stages built, both calendars - is recalculated at once. The Sticker button on the right adds yellow notes: type in them (double-click), draw on them with Apple Pencil on an iPad (right-click for colors, eraser and more), drag them anywhere, resize by the corner, and pull a line from the round handle to link two stickers. Progress is saved in this browser automatically; use Save/Load to move it elsewhere, <b>top sign</b>, <b>left sign</b> and <b>right sign</b> set the three captions (text, colour, size up to 200 px, automatic shrinking when the window narrows, and delete-them-all). <b>list</b> in the Mission control corner folds every stage into one compact list. The <b>&minus; 100% +</b> control beside the theme switch makes this whole panel smaller or bigger (double-click it to go back to normal). <b>Things</b> next to "as text" hands the open project to the Things app - stages become headings, tasks become to-dos with their deadlines, subtasks become checklist lines - and takes a list back from it if you paste one in. The thin grey line above the timeline, and the grey circle on the left calendar, show only one thing: how close the final date is. It carries its own scale - a hair for every day, a firmer line at every Monday and a soft band for every other week - and the words under it count the weeks and the working days that are left. <b>hide and seek</b> opens a tree of every part of the page - colour, size, position and hiding for each. <b>Priority for today</b> and <b>Priority for the week</b> in Mission control keep the handful of things that matter right now and the larger pieces the week is meant to close - both work the same way, the wording is shown in full, a double-click reopens it for changes, and every project keeps its own two lists, and <b>folder</b> next to Save pins a folder: from then on every press of Save drops a NEW progress file there with the time in its name, down to the second - so you can always go back to any moment. On an iPad the Apple Pencil writes straight onto the page and onto the notes (a finger never draws - it scrolls); <b>pencil</b> below switches the pen between drawing and erasing, <b>clear pencil</b> wipes the page handwriting. The pale circles on the right of every stage, task and subtask are sticker anchors: pull a line onto one from a note and it turns into a real checkbox that counts towards everything - unlink it and it goes quiet again. Click or right-click a connector to change its shape, thickness, style, arrows, colour, add a label or delete it; <b>no dots</b> hides them in one stage, <b>sticker circles</b> everywhere. <b>note style</b> cycles three sticky-note designs - paper, minimal and classic. <b>hide sticker button</b> tucks the round Sticker button away and <b>hide stickers</b> makes every note and its lines invisible - nothing is deleted, press the same button again to bring them back. The little <b>switch</b> beside "Mission control" turns the dark theme on and off, and <b>B</b> next to it makes every word on the page bold: in the dark every panel, button and checkbox keeps its own outline and a pale halo instead of a shadow, so nothing dissolves into the background. The round knob right beside that switch sets how deep the dark goes: press it and a small slider appears - drag it left for a soft, smoky dark and right for an almost black one, "back to normal" returns to the middle setting. The light theme is never touched, and the level you choose holds for every project. <b>pink</b> below paints the timeline in exactly the colour of the strip the free hosting adds underneath it - the two become one band, and the scale, its marks and its dates turn white so they stand out on it. Right-click <b>pink</b> - or hold it down on a phone - if you want to set the shade yourself: pick it straight off the strip with the colour picker, choose one of the eight vivid pinks, or paste a colour code. If the hosting adds its own stripe along the bottom of the page (the free tiiny.host bar does), the timeline lifts itself above the stripe so nothing is covered. And "clear the previous changes" wipes everything back to the original content (double confirmation plus a 4-digit code).</p>
+    <p><b>C_MR.</b> The second tab holds the contents of the Recommendations - one box per section, with the chapter it belongs to in its name and its own date up to 30 September. The steps inside each box are the tasks. Each line carries three circles instead of one - <b>i</b> when the text has been carried in from another book, <b>e</b> when it has been worked over, and the ordinary one for the final reading. Only the ordinary circle counts towards the blueprint; the tally of the other two sits under the counter in Mission control. Double-click the number of work days on any line to give that line its own deadline.<br><br><b>Projects.</b> The row of buttons at the top of Mission control holds your projects, and <b>+</b> starts another one. Every setting - the theme, the bold type, the size of this panel, the look of the notes, the captions, the colour of the strip, the folder Save writes into - belongs to the planner as a whole and applies to every project, the ones here now and the ones made later; only the plan itself lives inside its own project. A new project opens completely empty: press <b>+ add a stage</b> under the board, type its name, then add tasks inside it - or open <b>tree</b> and type the whole plan at once. Click a button to switch; each project keeps its own stages, notes, dates, drawing and look, and one press of Save writes them all into a single file. Double-click a project button to rename it (the title above the plan follows), and the small cross on the open one deletes it - press it twice, and the last remaining project is never deleted. Double-click any stage name on the board to rename it in place. The small arrows button in the top right corner of a card turns it over. The other side is the same card - the same number, the same heading, the same date and the same lines in the same order - and every line there can be typed over. Until you touch a line it simply repeats the front, so you translate straight on top of the words. What you write on the back stays on the back: the front is never changed, turning the card to and fro keeps both sides, and a line added on the front appears on the back as a copy of itself.<br><br><b>How it works.</b> Tick tasks to assemble the blueprint - it grows in whole stages, from the ground up, and every new line flies in and settles into place. Row buttons: S adds a subtask, G switches English/Russian, the pencil edits, the number shows the WORK days left for that task - Monday to Friday, weekends are not counted (click it for details), the cross deletes (press ? to confirm). Drag anything by its grip handle (the dotted column): whole stages, single tasks and subtasks - between stages too. Reorder stages with the small arrows next to the number, double-click the number and type the place it should take, or drag a card by its number - the numbering and the calendar on the left follow. At the bottom of every stage: <b>priority</b> lifts that card towards you, <b>dim</b> fades everything else out so it stays in focus, <b>hide done</b> folds away every finished line, <b>hide all</b> folds away the whole list and leaves one line saying how much is still to do, and <b>in process</b> parks the stage - the card fades a little and a note floats above it where you type what the stage is waiting for and press Enter. Click that note to reword it, press its cross when the stage moves again (the words are kept for next time). The <b>P</b> beside a task or subtask keeps it in focus while the rest of the stage fades - press it on as many lines as you need, they all stay lit. <b>Select any text on the page and right-click it</b> for Word-style formatting: bold, italic, underline, strikethrough, four sizes, text colour, highlight and alignment. Without a selection the ordinary browser menu appears. Both calendars are divided into weeks (W1, W2...). Double-click the "from" badge to move the start date and the "due" badge to move the finish - both timelines recalculate. The round C button on the blueprint switches between nineteen drawings: five spacecraft, six of Leonardo da Vinci's machines, the Kremlin tower, the Tower of Pisa, a frog dissection plate, a giant bird, a giant duck, a classic iPod, an AK-pattern rifle on a museum stand and a training grenade. The blueprint is cut into 200 stages; adding or removing tasks and subtasks re-divides them automatically, and every counter - completed, stages built, both calendars - is recalculated at once. The Sticker button on the right adds yellow notes: type in them (double-click), draw on them with Apple Pencil on an iPad (right-click for colors, eraser and more), drag them anywhere, resize by the corner, and pull a line from the round handle to link two stickers. Progress is saved in this browser automatically; use Save/Load to move it elsewhere, <b>top sign</b>, <b>left sign</b> and <b>right sign</b> set the three captions (text, colour, size up to 200 px, automatic shrinking when the window narrows, and delete-them-all). <b>list</b> in the Mission control corner folds every stage into one compact list. The <b>&minus; 100% +</b> control beside the theme switch makes this whole panel smaller or bigger (double-click it to go back to normal). <b>Things</b> next to "as text" hands the open project to the Things app - stages become headings, tasks become to-dos with their deadlines, subtasks become checklist lines - and takes a list back from it if you paste one in. The two lines at the bottom answer different questions and never mix them any more. The thin upper line is the calendar: it carries a hair for every day, a firmer line at every Monday, a soft band for every other week, the dates of the stages, the week numbers and today, and the words beside it count the weeks and the working days left. The thick bar under it is the work done - the star on it moves only when tasks are ticked, and the small caption on its right says how many of them are finished. The grey circle on the left calendar watches the clock in the same way as the upper line. <b>hide and seek</b> opens a tree of every part of the page - colour, size, position and hiding for each. <b>Priority for today</b> and <b>Priority for the week</b> in Mission control keep the handful of things that matter right now and the larger pieces the week is meant to close - both work the same way, the wording is shown in full, a double-click reopens it for changes, and every project keeps its own two lists, and <b>folder</b> next to Save pins a folder: from then on every press of Save drops a NEW progress file there with the time in its name, down to the second - so you can always go back to any moment (Chrome and Edge on a computer can hold a folder; Safari and Firefox cannot, and there every save goes to Downloads). <b>sync</b> beside it keeps the plan the same on every device through a repository of your own on GitHub: name the repository, the file and an access key once here and once on the phone, and the planner writes the progress there and reads the newer copy back when the page opens. Turn <b>auto</b> on and it does both by itself - a few seconds after every change, and once at every opening; leave it off and the two buttons do it by hand. The key is kept in that one browser, never inside a progress file and never in the repository, and <b>forget the key</b> clears it. If a device holds changes that were never sent, the planner says so instead of writing over them. On an iPad the Apple Pencil writes straight onto the page and onto the notes (a finger never draws - it scrolls); <b>pencil</b> below switches the pen between drawing and erasing, <b>clear pencil</b> wipes the page handwriting. The pale circles on the right of every stage, task and subtask are sticker anchors: pull a line onto one from a note and it turns into a real checkbox that counts towards everything - unlink it and it goes quiet again. Click or right-click a connector to change its shape, thickness, style, arrows, colour, add a label or delete it; <b>no dots</b> hides them in one stage, <b>sticker circles</b> everywhere. <b>note style</b> cycles three sticky-note designs - paper, minimal and classic. <b>hide sticker button</b> tucks the round Sticker button away and <b>hide stickers</b> makes every note and its lines invisible - nothing is deleted, press the same button again to bring them back. The little <b>switch</b> beside "Mission control" turns the dark theme on and off, and <b>B</b> next to it makes every word on the page bold: in the dark every panel, button and checkbox keeps its own outline and a pale halo instead of a shadow, so nothing dissolves into the background. The round knob right beside that switch sets how deep the dark goes: press it and a small slider appears - drag it left for a soft, smoky dark and right for an almost black one, "back to normal" returns to the middle setting. The light theme is never touched, and the level you choose holds for every project. <b>pink</b> below paints the timeline in exactly the colour of the strip the free hosting adds underneath it - the two become one band, and the scale, its marks and its dates turn white so they stand out on it. Right-click <b>pink</b> - or hold it down on a phone - if you want to set the shade yourself: pick it straight off the strip with the colour picker, choose one of the eight vivid pinks, or paste a colour code. If the hosting adds its own stripe along the bottom of the page (the free tiiny.host bar does), the timeline lifts itself above the stripe so nothing is covered. And "clear the previous changes" wipes everything back to the original content (double confirmation plus a 4-digit code).</p>
     <div class="footrow">
       <button class="btn" id="btnSignT">top sign</button>
       <button class="btn" id="btnSignL">left sign</button>
@@ -1463,7 +1473,8 @@
       <div class="tl-tmark" id="tlTimeMark"><i></i></div>
       <span class="tl-tlab" id="tlTimeLab"></span>
     </div>
-    <div class="tl-track" id="tlTrack">
+    <div class="tl-track" id="tlTrack" title="The work done - this bar answers to the ticks, not to the calendar">
+      <span class="tl-plab" id="tlPlab"></span>
       <div class="tl-fill" id="tlFill"></div>
       <div id="star" title="Progress marker">
         <svg viewBox="0 0 26 44" xmlns="http://www.w3.org/2000/svg">
@@ -1483,6 +1494,36 @@
   <div class="dkhint">Sets how deep the dark theme goes. The light theme is not touched.</div>
 </div>
 <div id="pinkMenu"><div class="rlab2">Strip colour</div><div class="pswatch" id="pinkSw"></div><button class="mrow" id="pinkPick">Pick the colour off the strip</button><button class="mrow" id="pinkAuto">Match the strip automatically</button><div class="phex"><input type="text" id="pinkHex" placeholder="#FF2D78" maxlength="7" spellcheck="false"><button id="pinkHexOk">set</button></div></div>
+<div class="overlay" id="syOverlay">
+  <div class="modal narrow">
+    <header><h2>Sync through your GitHub</h2><span class="spacer"></span><span class="sydot" id="syDot"></span></header>
+    <div class="body">
+      <p class="thp">The planner keeps one progress file in a repository of yours and reads it back on every device.
+        Fill this in once here, once on the phone - and both open the same plan.</p>
+      <div class="syrow"><label>Repository</label>
+        <input type="text" id="syRepo" placeholder="your-name/planner-data" spellcheck="false"></div>
+      <div class="syrow"><label>File</label>
+        <input type="text" id="syPath" placeholder="progress.json" spellcheck="false"></div>
+      <div class="syrow"><label>Branch</label>
+        <input type="text" id="syBranch" placeholder="main" spellcheck="false"></div>
+      <div class="syrow"><label>Access key</label>
+        <input type="password" id="syToken" placeholder="github_pat_..." spellcheck="false" autocomplete="off"></div>
+      <p class="thp syhint">The key stays in this browser only - it never travels inside the progress file and it is not written to the repository.
+        Make it in GitHub: <b>Settings &#8594; Developer settings &#8594; Personal access tokens &#8594; Fine-grained tokens</b>,
+        give it only this one repository and set <b>Contents: Read and write</b>. A separate private repository for the progress
+        keeps your notes out of sight.</p>
+      <div class="throw">
+        <button class="btn primary" id="syPush">Send this copy</button>
+        <button class="btn" id="syPull">Take the copy from GitHub</button>
+        <button class="btn" id="syAuto">auto: off</button>
+        <button class="btn" id="syForget" title="Clear the key from this browser">forget the key</button>
+      </div>
+      <div class="signstate" id="syState"></div>
+    </div>
+    <footer><button class="btn" id="syClose">Close</button></footer>
+  </div>
+</div>
+
 <div class="overlay" id="thOverlay">
   <div class="modal narrow">
     <header><h2>Things</h2><span class="spacer"></span></header>
@@ -1564,10 +1605,12 @@ var VEHMETA=[
  {label:"ORNITHOPTER DV-6", top:314, h1:"7.2 m",  mid:452, h2:"3.4 m",  wL:"SPAN 16.4 m"},
  {label:"KREMLIN TOWER",    top:196, h1:"71.0 m", mid:284, h2:"46.2 m", wL:"WALL 19.0 m"},
  {label:"TOWER OF PISA",    top:256, h1:"55.9 m", mid:292, h2:"48.6 m", wL:"DIA 15.5 m"},
- {label:"FROG ANATOMY",     top:372, h1:"LEN 3.2 m", mid:400, h2:"2.1 m", wL:"SPAN 4.4 m"},
+ {label:"FROG DISSECTION",  top:372, h1:"LEN 3.2 m", mid:400, h2:"2.1 m", wL:"SPAN 4.4 m"},
  {label:"GIANT BIRD",       top:384, h1:"H 12.4 m", mid:428, h2:"8.0 m", wL:"LEN 14.2 m"},
  {label:"GIANT DUCK",       top:396, h1:"H 11.6 m", mid:430, h2:"7.4 m", wL:"LEN 13.0 m"},
- {label:"IPOD CLASSIC",     top:298, h1:"104 mm",  mid:318, h2:"61.8 mm", wL:"W 61.8 mm"}
+ {label:"IPOD CLASSIC",     top:298, h1:"104 mm",  mid:318, h2:"61.8 mm", wL:"W 61.8 mm"},
+ {label:"AK PATTERN RIFLE", top:420, h1:"880 mm",  mid:466, h2:"415 mm",  wL:"LEN 880 mm"},
+ {label:"HAND GRENADE",     top:400, h1:"117 mm",  mid:432, h2:"81 mm",   wL:"DIA 55 mm"}
 ];
 
 /* ---------- shared scene stages ---------- */
@@ -3081,7 +3124,7 @@ function vPisa(){
   return V;
 }
 
-/* ---------- vehicle 13: FROG ANATOMY (schematic, top view) ---------- */
+/* ---------- vehicle 13: FROG DISSECTION (schematic, top view) ---------- */
 function vFrog(){
   var V=[];
   function pin(x,y,ang){
@@ -3477,6 +3520,225 @@ function vIpod(){
   return V;
 }
 
+/* ---------- vehicle 17: AK PATTERN RIFLE (museum display sheet, external profile) ---------- */
+function vRifle(){
+  var V=[];
+  V.push([ /* trestle beam */
+    '<rect x="118" y="516" width="164" height="8" rx="2" stroke-width="1"/>',
+    pt('M126 524 L118 556 M138 524 L146 556',1)+pt('M262 524 L254 556 M274 524 L282 556',1),
+    ln(124,542,142,542,.6)+ln(258,542,278,542,.6)+dt(122,520,.6)+dt(278,520,.6)
+  ]);
+  V.push([ /* cradle posts with V-notches */
+    '<rect x="124" y="492" width="10" height="24" stroke-width=".9"/>'+pt('M124 492 l5 -7 l5 7',.8),
+    '<rect x="262" y="468" width="10" height="48" stroke-width=".9"/>'+pt('M262 468 l5 -7 l5 7',.8),
+    pt('M126 500 h6 M264 480 h6 M264 500 h6',.4)+dt(129,510,.5)+dt(267,510,.5)
+  ]);
+  V.push([ /* butt plate + stock outline */
+    pt('M96 434 V482',1.2)+pt('M96 434 L154 430',1.2),
+    pt('M96 482 L120 488 L140 482 L154 472',1.2),
+    pt('M99 436 V480',.5)+pt('M96 440 h4 M96 476 h4',.6)
+  ]);
+  V.push([ /* stock grain + sling slot */
+    '<rect x="112" y="446" width="16" height="6" rx="3" stroke-width=".7"/>',
+    pt('M104 442 q14 4 28 1 M106 456 q16 5 30 1 M108 468 q14 4 26 0',.35),
+    pt('M136 436 q10 3 16 0',.35)+dt(101,438,.5)+dt(101,478,.5)
+  ]);
+  V.push([ /* receiver body */
+    ln(154,430,206,430,1.2)+ln(154,466,206,466,1.2),
+    ln(154,430,154,466,.9)+ln(206,430,206,466,.9),
+    pt('M154 472 L154 466 M158 468 h4',.6)
+  ]);
+  V.push([ /* receiver rivets + selector plate */
+    dt(160,436,.9)+dt(160,460,.9)+dt(198,436,.9)+dt(198,460,.9)+dt(179,462,.7),
+    '<rect x="186" y="434" width="16" height="9" rx="2" stroke-width=".55"/>'+ln(190,438.5,198,438.5,.4),
+    ln(158,446,202,446,.35,'4 3')
+  ]);
+  V.push([ /* dust cover */
+    '<rect x="156" y="422" width="48" height="8" rx="2" stroke-width="1"/>',
+    (function(){var s='';for(var x=162;x<=198;x+=7){s+=ln(x,423,x+3,429,.35);}return s;})(),
+    ln(156,426,204,426,.4)
+  ]);
+  V.push([ /* rear sight */
+    '<rect x="204" y="418" width="14" height="6" rx="1" stroke-width=".9"/>'+pt('M208 418 v-4 h4 v4',.7),
+    (function(){var s='';for(var x=206;x<=216;x+=2.4){s+=ln(x,414,x,417,.4);}return s;})(),
+    pt('M204 424 l-3 4 M218 424 l3 4',.5)+dt(211,421,.5)
+  ]);
+  V.push([ /* pistol grip */
+    pt('M162 466 L158 496 L172 500 L180 470',1.1),
+    pt('M161 494 L171 497',.6)+ln(160,474,178,477,.4),
+    pt('M163 478 l14 2 M162 484 l13 2 M161 490 l12 2',.35)
+  ]);
+  V.push([ /* trigger guard + catch */
+    pt('M180 466 V478 Q188 486 198 478 V466',1),
+    pt('M186 468 q2 8 6 9',.8)+dt(186,468,.6),
+    '<rect x="196" y="466" width="7" height="7" rx="1.5" stroke-width=".6"/>'+ln(198,469.5,201,469.5,.4)
+  ]);
+  V.push([ /* magazine - curved */
+    pt('M176 466 Q172 494 184 516',1.2),
+    pt('M200 466 Q198 492 208 512',1.2),
+    pt('M184 516 Q196 520 208 512',1)
+  ]);
+  V.push([ /* magazine ribs + lip */
+    pt('M178 480 Q188 483 198 481 M180 492 Q190 496 202 493 M183 504 Q193 508 205 504',.45),
+    ln(176,472,200,472,.6)+pt('M177 476 Q188 479 199 477',.35),
+    dt(180,510,.5)+dt(204,506,.5)
+  ]);
+  V.push([ /* lower handguard */
+    pt('M206 452 L246 450 L246 464 Q226 470 208 466 Z',1.1),
+    pt('M212 456 q3 6 0 8 M220 455 q3 6 0 8 M228 454 q3 6 0 8 M236 453 q3 6 0 8',.45),
+    ln(206,458,246,456,.35)
+  ]);
+  V.push([ /* gas tube + upper handguard */
+    '<rect x="206" y="432" width="44" height="12" rx="3" stroke-width="1.1"/>',
+    (function(){var s='';for(var x=212;x<=242;x+=7.5){s+='<rect x="'+x+'" y="435" width="4" height="6" rx="2" stroke-width=".45"/>';}return s;})(),
+    ln(206,444,250,444,.4)+dt(208,438,.5)
+  ]);
+  V.push([ /* barrel */
+    ln(246,447,300,447,1.2)+ln(246,455,300,455,1.2),
+    ln(246,451,300,451,.35,'6 4'),
+    pt('M246 445 v12 M252 445 v12',.5)
+  ]);
+  V.push([ /* gas block */
+    pt('M250 436 h14 v11 h-14 z',1),
+    pt('M254 436 v-5 h6 v5',.8)+ln(255,431,259,431,.6),
+    dt(257,441,.6)+pt('M250 443 h14',.35)
+  ]);
+  V.push([ /* front sight block + ears */
+    pt('M276 434 h12 v13 h-12 z',1),
+    pt('M279 434 v-8 M285 434 v-8',.9)+ln(282,428,282,434,.7)+dt(282,427,.6),
+    pt('M276 440 h12',.35)+dt(282,443,.5)
+  ]);
+  V.push([ /* muzzle device */
+    pt('M300 443 h14 v16 h-14 z',1.1),
+    (function(){var s='';for(var x=303;x<=311;x+=4){s+='<rect x="'+x+'" y="445" width="2.6" height="7" rx="1" stroke-width=".45"/>';}return s;})(),
+    ln(300,451,314,451,.35)+pt('M298 443 v16',.7)
+  ]);
+  V.push([ /* charging handle, selector, markings */
+    pt('M204 424 l10 -3 v4 l-10 3',.9)+dt(210,423,.5),
+    pt('M186 430 L192 420 h5',.9)+dt(192,420,.8)+tx(196,418,'S',3.8),
+    tx(178,458,'MP-2026',4,'middle',0,true,'.4')+ci(146,462,3,.6)+pt(starPath(146,462,1.8,.8),.5),
+    '<rect x="160" y="450" width="12" height="7" rx="1" stroke-width=".55"/>'+tx(166,455.6,'AK-1',3.6,'middle')
+  ]);
+  V.push([ /* callouts + inset */
+    pt('M212 420 L250 404 H280',.7)+tx(250,401,'REAR SIGHT',6),
+    pt('M282 426 L300 410 H322',.7)+tx(300,407,'FRONT SIGHT',6),
+    pt('M196 508 L232 522 H262',.7)+tx(232,519,'MAGAZINE',6),
+    pt('M120 486 L96 500 H72',.7)+tx(72,497,'STOCK',6,'end'),
+    pt('M228 468 L256 486 H286',.7)+tx(256,483,'HANDGUARD',6),
+    ci(45,344,16,.9)+pt('M45 328 V360 M29 344 H61',.5,'3 3')+pt('M36 350 h18 M40 350 v-6 h10 v6',.8)+pt('M45 344 v-5',.7)+(function(){var s='';for(var x=41;x<=49;x+=2){s+=ln(x,340,x,343,.35);}return s;})()+tx(45,372,'DETAIL S-1 SIGHT',5,'middle',0,true,'.5')+(function(){var s='';for(var y=380;y<=404;y+=8){s+=ln(26,y,26+(y%16===4?34:26),y,.5);}return s;})()
+  ]);
+  /* shift the whole arrangement clear of the service tower; the corner inset stays put */
+  function shift(s){ return '<g transform="translate(16,0)">'+s+'</g>'; }
+  return V.map(function(st,i){
+    if(i<V.length-1) return st.map(shift);
+    return st.map(function(s,j){ return j<st.length-1 ? shift(s) : s; });
+  });
+}
+
+/* ---------- vehicle 18: HAND GRENADE (external form, museum plate) ---------- */
+function vGrenade(){
+  var V=[];
+  V.push([ /* crate */
+    '<rect x="148" y="514" width="104" height="42" rx="2" stroke-width="1.1"/>',
+    ln(148,524,252,524,.7)+ln(148,546,252,546,.7),
+    dt(153,519,.6)+dt(247,519,.6)+dt(153,551,.6)+dt(247,551,.6)
+  ]);
+  V.push([ /* crate slats, handles, stencil */
+    (function(){var s='';for(var x=160;x<=240;x+=13){s+=ln(x,524,x,546,.4);}return s;})(),
+    pt('M148 530 Q138 534 148 540',.8)+pt('M252 530 Q262 534 252 540',.8),
+    '<rect x="172" y="528" width="56" height="13" rx="1" stroke-width=".45"/>'+tx(200,537,'LOT 45-01',5,'middle')
+  ]);
+  V.push([ /* body lower */
+    pt('M166 472 Q166 508 200 512 Q234 508 234 472',1.3),
+    pt('M172 490 Q200 505 228 490',.5)
+  ]);
+  V.push([ /* body upper */
+    pt('M166 472 Q166 438 200 434 Q234 438 234 472',1.3),
+    pt('M174 450 Q200 440 226 450',.5)
+  ]);
+  V.push([ /* vertical ribs */
+    pt('M180 440 Q176 472 181 506',.7)+pt('M191 436 Q189 472 192 511',.7),
+    pt('M209 436 Q211 472 208 511',.7)+pt('M220 440 Q224 472 219 506',.7),
+    pt('M200 434 V512',.7)
+  ]);
+  V.push([ /* horizontal rib bands */
+    pt('M169 456 Q200 463 231 456',.7),
+    pt('M166 472 Q200 480 234 472',.7),
+    pt('M169 488 Q200 496 231 488',.7)
+  ]);
+  V.push([ /* segmentation dots */
+    (function(){var s='';[[180,458],[191,460],[200,461],[209,460],[220,458]].forEach(function(p){s+=dt(p[0],p[1],.6);});return s;})(),
+    (function(){var s='';[[177,474],[189,477],[200,478],[211,477],[223,474]].forEach(function(p){s+=dt(p[0],p[1],.6);});return s;})(),
+    (function(){var s='';[[181,490],[192,493],[200,494],[208,493],[219,490]].forEach(function(p){s+=dt(p[0],p[1],.6);});return s;})()
+  ]);
+  V.push([ /* neck collar */
+    pt('M188 434 V420 H212 V434',1.1),
+    ln(188,428,212,428,.5)+ln(188,424,212,424,.5),
+    (function(){var s='';for(var x=190;x<=210;x+=3.4){s+=ln(x,420,x,423,.35);}return s;})()
+  ]);
+  V.push([ /* fuze housing */
+    '<rect x="186" y="404" width="28" height="16" rx="2" stroke-width="1.1"/>',
+    ln(186,410,214,410,.5)+dt(190,415,.5)+dt(210,415,.5),
+    pt('M192 404 v-4 h16 v4',.8)
+  ]);
+  V.push([ /* safety lever */
+    pt('M206 402 L224 408 L228 442 L222 472',1.2),
+    pt('M212 404 L220 408 L224 440 L219 468',.6),
+    ln(224,420,229,420,.4)+ln(225,434,230,434,.4)
+  ]);
+  V.push([ /* lever hinge */
+    ci(210,404,3.4,.8)+dt(210,404,1.1),
+    pt('M206 400 h9',.5)+dt(216,406,.5)
+  ]);
+  V.push([ /* pull ring */
+    ci(240,398,8,1.2)+ci(240,398,5.2,.6),
+    (function(){var s='';for(var i=0;i<8;i++){var a=i/8*2*Math.PI;s+=ln(240+Math.cos(a)*5.4,398+Math.sin(a)*5.4,240+Math.cos(a)*7.8,398+Math.sin(a)*7.8,.35);}return s;})()
+  ]);
+  V.push([ /* pin shank */
+    ln(214,408,233,401,1),
+    pt('M214 408 l-4 1.5 M214 411 l-4 1.5',.8),
+    dt(232,402,.6)+ln(220,406,220,409,.4)
+  ]);
+  V.push([ /* base plug + seam */
+    pt('M190 510 Q200 514 210 510',.9)+ln(192,506,208,506,.5),
+    dt(196,509,.5)+dt(204,509,.5),
+    pt('M166 470 Q200 476 234 470',.35,'4 3')
+  ]);
+  V.push([ /* stencil band */
+    '<rect x="180" y="464" width="40" height="10" rx="1" stroke-width=".5"/>',
+    tx(200,471.5,'MP-2026',4.6,'middle',0,true,'.4'),
+    ln(180,469,220,469,.25)
+  ]);
+  V.push([ /* second unit in the crate */
+    pt('M154 514 Q152 500 164 496 Q176 499 175 514',1),
+    pt('M156 506 Q164 502 172 506',.45)+pt('M164 496 v-6 h6 v6',.7),
+    pt('M170 492 L178 495 L180 508',.7)
+  ]);
+  V.push([ /* plan view - circle */
+    ci(300,342,19,1)+ci(300,342,15,.5),
+    (function(){var s='';for(var i=0;i<12;i++){var a=i/12*2*Math.PI;s+=ln(300+Math.cos(a)*15,342+Math.sin(a)*15,300+Math.cos(a)*19,342+Math.sin(a)*19,.4);}return s;})(),
+    ci(300,342,7,.8)
+  ]);
+  V.push([ /* plan view - lever + ring */
+    pt('M300 335 L316 338 L318 348',.9),
+    ci(324,352,5,.9)+ci(324,352,3,.45),
+    tx(300,368,'PLAN VIEW',5,'middle',0,true,'.8')+ln(284,371,316,371,.4)
+  ]);
+  V.push([ /* markings */
+    ci(176,452,3,.6)+pt(starPath(176,452,1.8,.8),.5),
+    '<rect x="212" y="448" width="13" height="7" rx="1" stroke-width=".55"/>'+tx(218.5,453.6,'GR-1',3.6,'middle'),
+    tx(200,528,'INERT - TRAINING',4.2,'middle',0,true,'.4')
+  ]);
+  V.push([ /* callouts + inset */
+    pt('M247 396 L268 384 H292',.7)+tx(268,381,'PULL RING',6),
+    pt('M228 424 L256 414 H284',.7)+tx(256,411,'SAFETY LEVER',6),
+    pt('M186 410 L156 400 H130',.7)+tx(130,397,'FUZE HOUSING',6,'end'),
+    pt('M172 486 L142 496 H116',.7)+tx(116,493,'RIBBED BODY',6,'end'),
+    ci(45,344,16,.9)+pt('M45 328 V360 M29 344 H61',.5,'3 3')+pt('M33 340 q4 -6 8 0 q4 6 8 0 q4 -6 8 0',.9)+pt('M33 348 q4 -6 8 0 q4 6 8 0 q4 -6 8 0',.5)+tx(45,372,'DETAIL R-1 RIB',5.2,'middle',0,true,'.6')+(function(){var s='';for(var y=380;y<=404;y+=8){s+=ln(26,y,26+(y%16===4?34:26),y,.5);}return s;})()
+  ]);
+  return V;
+}
+
 /* ---------- per-vehicle density pass (extra detail appended into stages) ---------- */
 var EXTRA={
   0:[ {i:6,p:[pt('M120 470 l12 -9 M134 476 l12 -9 M266 461 l12 9 M252 470 l12 9',.35)]},
@@ -3548,7 +3810,7 @@ function applyExtra(vi,V){
   });
 }
 
-var VEHFN=[vShuttle,vHeavy,vReusable,vSaucer1,vSaucer2,vCrab,vCrossbow,vScrew,vBoat,vGlider,vOrnithopter,vKremlin,vPisa,vFrog,vBird,vDuck,vIpod];
+var VEHFN=[vShuttle,vHeavy,vReusable,vSaucer1,vSaucer2,vCrab,vCrossbow,vScrew,vBoat,vGlider,vOrnithopter,vKremlin,vPisa,vFrog,vBird,vDuck,vIpod,vRifle,vGrenade];
 
 function buildStages(vi){
   var meta=VEHMETA[vi], S=sceneStages(meta), V=VEHFN[vi]();
@@ -3620,7 +3882,7 @@ function allocStages(counts,target){
   return alloc;
 }
 function mountBlueprint(){
-  var vi=Math.min(state.vehicle||0, VEHMETA.length-1);
+  var vi=state.vehicle||0;
   var stages=buildStages(vi);
   var prims=stages.map(function(parts){
     var arr=[];
@@ -3801,7 +4063,7 @@ function loadStateOf(id){
 loadStateOf(spaces.active);
 /* one-time migration: the watermark is switched off in this release */
 if(state.sigv!==7){ if(state.signing) state.signing.hidden=true; state.sigv=7; }
-function persist(){ writeSpace(spaces.active, state); writePrefs(); }
+function persist(){ writeSpace(spaces.active, state); writePrefs(); if(typeof ghTouched==="function") ghTouched(); }
 
 /* ================= HELPERS ================= */
 function pd(s){
@@ -4167,6 +4429,8 @@ function render(){
   var pct=c.total?c.done/c.total*100:0;
   document.getElementById("star").style.left=pct+"%";
   document.getElementById("tlFill").style.width=pct+"%";
+  var plab=document.getElementById("tlPlab");
+  if(plab) plab.textContent=c.done+" / "+c.total+" DONE";
 
   var dueById={};
   effProjects().forEach(function(p){
@@ -4289,7 +4553,22 @@ function focusHas(pid,tid){ var f=focusSet(pid); return !!(f&&f[tid]); }
 /* ================= THE OTHER SIDE OF A CARD =================
    Same lines, a second wording. What is typed there is kept per line, so the
    card can be turned over and back as often as you like. */
-function backText(id){ return (state.back && state.back[id]) || ""; }
+function backText(id, fallback){
+  var v=state.back && state.back[id];
+  /* until a line is touched on the back it simply repeats the front - that is why
+     the turned card looks exactly like the one you turned over */
+  if(v===undefined || v===null || v==="") return fallback===undefined?"":fallback;
+  return v;
+}
+function bkRow(id, text, sub){
+  var done=!!state.done[id];
+  return '<div class="task'+(sub?" sub":"")+(done?" tdone":"")+'">'+
+    '<span class="tcheck bkchk"><span class="box'+(done?" on":"")+'">'+
+    '<svg viewBox="0 0 16 16"><polyline points="2.5,8.5 6.5,12.5 13.5,3.5"/></svg></span></span>'+
+    '<div class="tlabel bk-ed" data-bk="'+id+'" contenteditable="true" spellcheck="false" '+
+      'data-ph="write this line in the other language">'+esc(backText(id,text))+'</div>'+
+  '</div>';
+}
 function renderBack(card){
   var pid=card.dataset.proj;
   var host2=card.querySelector("[data-back]");
@@ -4297,26 +4576,20 @@ function renderBack(card){
   var p=effProjects().filter(function(x){ return x.id===pid; })[0];
   if(!p) return;
   var showRu=state.plang[pid]&&p.ru;
-  var idx=0, all=effProjects();
-  all.forEach(function(x,i){ if(x.id===pid) idx=i+1; });   /* the list is rebuilt each call - match by id, not by object */
-  var h='<div class="bk-head">'+
-    '<span class="bk-num">'+idx+'</span>'+
-    '<div class="bk-cell">'+
-      '<span class="bk-orig">'+esc(showRu?p.ru:p.en)+'</span>'+
-      '<div class="bk-txt" data-bk="'+pid+'" contenteditable="true" spellcheck="false" data-ph="the same heading in the other language">'+esc(backText(pid))+'</div>'+
-    '</div></div><div class="bk-rows">';
+  var idx=0;
+  effProjects().forEach(function(x,i){ if(x.id===pid) idx=i+1; });   /* the list is rebuilt each call - match by id, not by object */
+  var dueEl=card.querySelector('[data-due="'+pid+'"]');
+  var dueTx=dueEl?dueEl.textContent:"";
+  var h='<div class="proj-head bkhead">'+
+    '<span class="proj-num">'+idx+'</span>'+
+    '<div class="proj-title bk-ed" data-bk="'+pid+'" contenteditable="true" spellcheck="false" '+
+      'data-ph="write this heading in the other language">'+esc(backText(pid, showRu?p.ru:p.en))+'</div>'+
+    (dueTx?'<div class="proj-meta"><span class="due bkdue">'+esc(dueTx)+'</span></div>':'')+
+  '</div><div class="tasks bktasks">';
   tasksOf(p).forEach(function(t){
     var tx=(state.lang[t.id]&&t.ru)?t.ru:t.en;
-    h+='<div class="bk-row"><span class="bk-dot'+(state.done[t.id]?" on":"")+'"></span><div class="bk-cell">'+
-       '<span class="bk-orig">'+esc(tx)+'</span>'+
-       '<div class="bk-txt" data-bk="'+t.id+'" contenteditable="true" spellcheck="false" data-ph="the same line in the other language">'+esc(backText(t.id))+'</div>'+
-       '</div></div>';
-    subsOf(t.id).forEach(function(sx){
-      h+='<div class="bk-row sub"><span class="bk-dot'+(state.done[sx.id]?" on":"")+'"></span><div class="bk-cell">'+
-         '<span class="bk-orig">'+esc(sx.en)+'</span>'+
-         '<div class="bk-txt" data-bk="'+sx.id+'" contenteditable="true" spellcheck="false" data-ph="the same line in the other language">'+esc(backText(sx.id))+'</div>'+
-         '</div></div>';
-    });
+    h+=bkRow(t.id, tx, false);
+    subsOf(t.id).forEach(function(sx){ h+=bkRow(sx.id, sx.en, true); });
   });
   h+='</div>';
   host2.innerHTML=h;
@@ -4557,6 +4830,30 @@ function deCollide(ruler){
     if(hit) sp.style.visibility="hidden"; else taken.push(r);
   });
 }
+/* the first pass runs while the page is still settling, so the boxes can come back
+   empty and nothing gets hidden - that is what turned the left calendar into a pile.
+   From now on the pass is repeated whenever the ruler changes size, and a few times
+   right after the page opens. */
+var _dcTimer=null;
+function reCollide(){
+  var r=document.getElementById("ruler");
+  if(r) deCollide(r);
+  if(typeof deCollideRow==="function") deCollideRow(document.getElementById("tlTime"));
+}
+function reCollideSoon(ms){
+  clearTimeout(_dcTimer);
+  _dcTimer=setTimeout(reCollide, ms||120);
+}
+window.addEventListener("resize", function(){ reCollideSoon(140); });
+window.addEventListener("orientationchange", function(){ reCollideSoon(360); });
+if(window.ResizeObserver){
+  try{
+    new ResizeObserver(function(){ reCollideSoon(90); }).observe(document.getElementById("ruler"));
+  }catch(e){}
+}
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ reCollideSoon(60); });
+window.addEventListener("load", function(){ reCollideSoon(120); });
+[350,900,1800].forEach(function(ms){ setTimeout(reCollide, ms); });
 /* the grey line gets its own scale: a hair for every day, a firmer line for
    every Monday, so it is plain how many weeks and days are left */
 function paintTimeScale(box, from, to){
@@ -4607,27 +4904,20 @@ function timeLeftText(){
 
 /* ================= TIMELINE TICKS ================= */
 function renderTicks(){
+  /* the dates belong to the calendar line; the bar underneath shows only the work done,
+     so the two never say different things in the same place */
   var track=document.getElementById("tlTrack");
+  var cal=document.getElementById("tlTime");
   track.querySelectorAll(".tl-tick,.wkband").forEach(function(n){ n.remove(); });
+  cal.querySelectorAll(".tl-tick,.wkband").forEach(function(n){ n.remove(); });
   var s=pd(STARTF()+"T00:00"), f=pd(FINISH()), span=f-s;
-  /* week division: boundary ticks + alternating bands on the track */
-  var wks=weekMarks(s,f);
-  var wfr=[0]; wks.forEach(function(w){ wfr.push((w.d-s)/span); }); wfr.push(1);
-  for(var bi=0;bi<wfr.length-1;bi++){
-    if(bi%2===1){
-      var bd=document.createElement("div");
-      bd.className="wkband";
-      bd.style.left=(wfr[bi]*100)+"%";
-      bd.style.width=((wfr[bi+1]-wfr[bi])*100)+"%";
-      track.insertBefore(bd, track.firstChild);
-    }
-  }
-  wks.forEach(function(w){
+  if(span<=0) return;
+  weekMarks(s,f).forEach(function(w){
     var x=(w.d-s)/span*100; if(x<=0||x>=100) return;
     var el=document.createElement("div");
     el.className="tl-tick wk"; el.style.left=x+"%";
     el.innerHTML="<span>W"+w.n+"</span>";
-    track.appendChild(el);
+    cal.appendChild(el);
   });
   var seen={}, items=[];
   effProjects().forEach(function(p){
@@ -4637,15 +4927,41 @@ function renderTicks(){
   var tstr=new Date().toISOString().slice(0,10);
   items.push({when:tstr+"T12:00",label:"today",cls:"tdy"});
   items.sort(function(a,b){ return pd(a.when)-pd(b.when); });
-  var prevX=-99, prevRow=0;
   items.forEach(function(it){
     var x=(pd(it.when)-s)/span*100; if(x<0||x>100) return;
-    var row=(x-prevX<4.8)?(1-prevRow):0;
     var el=document.createElement("div");
     el.className="tl-tick "+it.cls; el.style.left=x+"%";
-    el.innerHTML="<span"+(row?' style="top:38px"':"")+">"+it.label+"</span>";
-    track.appendChild(el);
-    prevX=x; prevRow=row;
+    el.innerHTML="<span>"+it.label+"</span>";
+    cal.appendChild(el);
+  });
+  deCollideRow(cal);
+}
+/* the same idea as on the left calendar, only sideways: a label that would sit on top
+   of a neighbour simply stays hidden, and the tick under it remains */
+function deCollideRow(box){
+  if(!box) return;
+  var spans=[].slice.call(box.querySelectorAll(".tl-tick span"));
+  spans.forEach(function(sp){ sp.style.visibility=""; });
+  spans.sort(function(a,b){
+    function w(x){ var c=x.parentElement.className;
+      return c.indexOf("tdy")>-1?0 : c.indexOf("wk")>-1?2 : 1; }
+    return w(a)-w(b);
+  });
+  var taken=[], lab=document.getElementById("tlTimeLab");
+  if(lab){
+    var lr=lab.getBoundingClientRect();
+    if(lr.width && getComputedStyle(lab).display!=="none") taken.push(lr);
+  }
+  spans.forEach(function(sp){
+    var r=sp.getBoundingClientRect();
+    if(!r.width) return;
+    var hit=false;
+    for(var i=0;i<taken.length;i++){
+      var t=taken[i];
+      if(Math.min(r.right,t.right)-Math.max(r.left,t.left) > -7 &&
+         Math.min(r.bottom,t.bottom)-Math.max(r.top,t.top) > 1){ hit=true; break; }
+    }
+    if(hit) sp.style.visibility="hidden"; else taken.push(r);
   });
 }
 
@@ -5450,8 +5766,10 @@ document.getElementById("thClose").addEventListener("click", function(){
   document.getElementById("thOverlay").classList.remove("show");
 });
 document.getElementById("thSend").addEventListener("click", function(){
-  document.getElementById("thCopy").click();
-  toast("Copied as TaskPaper - paste it straight into Things");
+  var url="things:///json?data="+encodeURIComponent(JSON.stringify(thingsPayload()));
+  if(url.length>60000){ toast("This project is too big for one hand-off - use Copy as TaskPaper"); return; }
+  try{ window.location.href=url; toast("Things should be opening - if nothing happens, it is not installed here"); }
+  catch(e){ toast("Could not reach Things on this device"); }
 });
 document.getElementById("thCopy").addEventListener("click", function(){
   var txt=taskPaperText();
@@ -5560,7 +5878,18 @@ function ensureDirPerm(){
   }).catch(function(){ return false; });
 }
 document.getElementById("btnFolder").addEventListener("click", function(){
-  toast("In this online copy every save goes to Downloads with a fresh time in its name");
+  if(window.showDirectoryPicker){
+    window.showDirectoryPicker({mode:"readwrite"}).then(function(h){
+      dirHandle=h; idbSet("dh",h);
+      state.saveDirName=h.name; persist(); paintFolderBtn();
+      toast('Every save now drops a new time-stamped file into "'+h.name+'"');
+    }).catch(function(e){
+      if(e && e.name==="AbortError") return;
+      toast("This browser will not share a folder - each save goes to Downloads with a fresh time in its name");
+    });
+  } else {
+    toast("This browser cannot pin a folder - each save goes to Downloads with a fresh time in its name");
+  }
 });
 
 /* ================= STAGE LIST VIEW ================= */
@@ -6729,7 +7058,7 @@ var DK_HI={"--bg":"#04060A","--card":"#0B0E14","--line":"#1C2330","--line2":"#2C
   "--todaybg":"#12100B","--todayline":"#2A2519","--todayhover":"#171410",
   "--weekbg":"#0A100C","--weekline":"#18241B","--weekhover":"#101711"};
 function darkness(){ var d=state.darkness; return (d===undefined||d===null)?50:Math.max(0,Math.min(100,+d)); }
-function applyDarkness(){
+function applyDarkness(fromSlider){
   var b=document.body, d=darkness();
   var knob=document.getElementById("btnDark");
   if(knob){
@@ -6738,7 +7067,9 @@ function applyDarkness(){
     if(f) f.style.width=(18+d*0.64)+"%";
   }
   var r=document.getElementById("darkRange"), v=document.getElementById("darkVal");
-  if(r) r.value=d;
+  /* never write the value back while a finger or the mouse is dragging the slider -
+     that is what made the thumb jump back under the hand */
+  if(r && !fromSlider) r.value=d;
   if(v) v.textContent=d;
   if(state.theme!=="dark"){ DK_TOK.forEach(function(k){ b.style.removeProperty(k); }); return; }
   DK_TOK.forEach(function(k){
@@ -6781,15 +7112,24 @@ document.getElementById("btnDark").addEventListener("click", function(e){
   }
   openDarkPop();
 });
+var _dkRaf=0;
 document.getElementById("darkRange").addEventListener("input", function(){
   state.darkness=+this.value;
-  applyDarkness();
-  persistSoon();
+  var v=document.getElementById("darkVal"); if(v) v.textContent=state.darkness;
+  /* one repaint per frame - repainting on every pixel of the drag made it stutter */
+  if(_dkRaf) return;
+  _dkRaf=requestAnimationFrame(function(){ _dkRaf=0; applyDarkness(true); });
+});
+document.getElementById("darkRange").addEventListener("change", function(){
+  state.darkness=+this.value;
+  applyDarkness(true);
+  persist();
 });
 document.getElementById("darkReset").addEventListener("click", function(){
   state.darkness=50; persist(); applyDarkness();
 });
 darkPop.addEventListener("click", function(e){ e.stopPropagation(); });
+darkPop.addEventListener("pointerdown", function(e){ e.stopPropagation(); });
 document.addEventListener("pointerdown", function(e){
   if(darkPop.classList.contains("show") && !e.target.closest("#darkPop") && !e.target.closest("#btnDark")) closeDarkPop();
 });
@@ -6845,7 +7185,7 @@ var PINKS=["#FF2D78","#FF3E8F","#F72585","#E91E8C","#FF4470","#D81B75","#FF5C9E"
 var pinkMenu=document.getElementById("pinkMenu");
 function paintPinks(){
   var pk=document.getElementById("pinkPick");
-  if(pk) pk.style.display="none";
+  if(pk) pk.style.display=window.EyeDropper?"":"none";
   var hx=document.getElementById("pinkHex");
   if(hx && !hx.value) hx.value=state.pinkColor||"";
   var cur=(state.pinkColor||"").toLowerCase();
@@ -6897,7 +7237,16 @@ pinkMenu.addEventListener("click", function(e){
     return;
   }
   if(e.target.id==="pinkPick"){
-    toast("Pick a shade below or paste a colour code");
+    if(!window.EyeDropper){ toast("This browser has no colour picker - use the swatches"); return; }
+    closePinkMenu();
+    try{
+      new window.EyeDropper().open().then(function(res){
+        if(!res||!res.sRGBHex) return;
+        state.pinkColor=res.sRGBHex; state.pinkBar=true;
+        persist(); applyPink();
+        toast("Timeline set to "+res.sRGBHex);
+      }).catch(function(){});
+    }catch(err){ toast("The colour picker did not open"); }
     return;
   }
   if(e.target.id==="pinkHexOk"){
@@ -7224,6 +7573,194 @@ function refreshAll(){
   buildAll(); render();
   try{ syncHeroHeight(); }catch(e){}
 }
+/* ================= SYNC THROUGH YOUR OWN GITHUB =================
+   One progress file lives in a repository of yours. Every device writes to it and
+   reads from it, so the plan is the same wherever it is opened. The access key is
+   kept in a store of its own - it never enters the state and never travels inside
+   a progress file. */
+var GHKEY=KEY+":gh";
+var ghMem=null;
+function ghConf(){
+  if(ghMem) return ghMem;
+  var o={repo:"",path:"progress.json",branch:"main",token:"",auto:false,stamp:"",at:0,dirty:false};
+  try{
+    var raw=localStorage.getItem(GHKEY);
+    if(raw){ var p2=JSON.parse(raw); Object.keys(p2||{}).forEach(function(k){ o[k]=p2[k]; }); }
+  }catch(e){}
+  ghMem=o; return o;
+}
+function ghSave(){
+  try{ localStorage.setItem(GHKEY, JSON.stringify(ghConf())); }catch(e){}
+}
+function ghReady(){ var c=ghConf(); return !!(c.repo && c.token && c.path); }
+function ghUrl(){
+  var c=ghConf();
+  return "https://api.github.com/repos/"+c.repo.replace(/^\/+|\/+$/g,"")+"/contents/"+c.path.replace(/^\/+/,"");
+}
+function ghHead(){
+  return { "Authorization":"Bearer "+ghConf().token,
+           "Accept":"application/vnd.github+json",
+           "X-GitHub-Api-Version":"2022-11-28" };
+}
+/* base64 both ways, in chunks - a long plan would blow the stack in one go */
+function b64enc(str){
+  var bytes=new TextEncoder().encode(str), out="", CH=0x8000;
+  for(var i=0;i<bytes.length;i+=CH) out+=String.fromCharCode.apply(null, bytes.subarray(i,i+CH));
+  return btoa(out);
+}
+function b64dec(b64){
+  var bin=atob(String(b64).replace(/\s+/g,"")), arr=new Uint8Array(bin.length);
+  for(var i=0;i<bin.length;i++) arr[i]=bin.charCodeAt(i);
+  return new TextDecoder().decode(arr);
+}
+function hhmm(d){
+  d=d||new Date();
+  return String(d.getHours()).padStart(2,"0")+":"+String(d.getMinutes()).padStart(2,"0");
+}
+function dmhm(t){
+  var d=new Date(t);
+  return MO[d.getMonth()]+" "+d.getDate()+", "+hhmm(d);
+}
+function syState(msg, bad){
+  var el=document.getElementById("syState");
+  if(el){ el.textContent=msg||""; el.style.color=bad?"var(--redp)":""; }
+  var d=document.getElementById("syDot");
+  if(d){ d.classList.toggle("on", !bad && ghReady()); d.classList.toggle("bad", !!bad); }
+}
+function ghFetchRemote(){
+  var c=ghConf();
+  return fetch(ghUrl()+"?ref="+encodeURIComponent(c.branch||"main")+"&t="+Date.now(), {headers:ghHead(), cache:"no-store"})
+    .then(function(r){
+      if(r.status===404) return null;
+      if(!r.ok) return r.text().then(function(t){ throw new Error(r.status+" "+t.slice(0,120)); });
+      return r.json();
+    });
+}
+function ghPush(quiet){
+  if(!ghReady()){ syState("Fill in the repository and the key first", true); return Promise.resolve(false); }
+  var c=ghConf(), text=progressText();
+  if(!quiet) syState("Sending...");
+  return ghFetchRemote().then(function(cur){
+    var body={ message:"planner progress "+new Date().toISOString().slice(0,16).replace("T"," "),
+               content:b64enc(text), branch:c.branch||"main" };
+    if(cur && cur.sha) body.sha=cur.sha;
+    return fetch(ghUrl(), {method:"PUT", headers:ghHead(), body:JSON.stringify(body)});
+  }).then(function(r){
+    if(!r.ok) return r.text().then(function(t){ throw new Error(r.status+" "+t.slice(0,140)); });
+    return r.json();
+  }).then(function(){
+    try{ c.stamp=JSON.parse(text).savedAt||""; }catch(e){}
+    c.at=Date.now(); c.dirty=false; ghSave();
+    syState("Sent at "+hhmm()+" - the other devices pick it up when they open");
+    if(!quiet) toast("Progress sent to GitHub");
+    return true;
+  }).catch(function(e){
+    syState(ghErr(e), true);
+    if(!quiet) toast("Could not send: "+ghErr(e));
+    return false;
+  });
+}
+function ghErr(e){
+  var m=(e&&e.message)||String(e);
+  if(m.indexOf("401")===0) return "the key is not accepted - check it and its rights";
+  if(m.indexOf("403")===0) return "GitHub refused - the key has no write rights for this repository";
+  if(m.indexOf("404")===0) return "no such repository or branch - check the name";
+  if(m.indexOf("409")===0) return "the file changed in GitHub at the same moment - take the copy first";
+  if(m.indexOf("Failed to fetch")>-1) return "no connection to GitHub";
+  return m;
+}
+function ghApply(text){
+  if(loadProgressText(text)){
+    var c=ghConf();
+    try{ c.stamp=JSON.parse(text).savedAt||""; }catch(e){}
+    c.at=Date.now(); c.dirty=false; ghSave();
+    return true;
+  }
+  return false;
+}
+function ghPull(quiet){
+  if(!ghReady()){ syState("Fill in the repository and the key first", true); return Promise.resolve(false); }
+  if(!quiet) syState("Reading...");
+  return ghFetchRemote().then(function(cur){
+    if(!cur){ syState("There is no progress file in that repository yet - press Send this copy", true); return false; }
+    var text=b64dec(cur.content||"");
+    var stamp=""; try{ stamp=JSON.parse(text).savedAt||""; }catch(e){}
+    var c=ghConf();
+    if(quiet){
+      /* opening the page: take the copy only if it is a newer one, and never
+         throw away work that was done here and not sent yet */
+      if(!stamp || stamp===c.stamp) return false;
+      if(c.dirty){
+        syState("The copy in GitHub is newer, but this device has unsent changes - choose Send or Take");
+        toast("GitHub holds a newer copy - open sync and choose which one wins");
+        return false;
+      }
+    }
+    if(ghApply(text)){
+      syState("Taken from GitHub - that copy was saved "+(stamp?stamp.slice(0,10)+" at "+stamp.slice(11,16):"just now"));
+      toast("Progress taken from GitHub");
+      return true;
+    }
+    syState("That file is not a progress file", true);
+    return false;
+  }).catch(function(e){
+    syState(ghErr(e), true);
+    if(!quiet) toast("Could not read: "+ghErr(e));
+    return false;
+  });
+}
+var ghTimer=null;
+function ghTouched(){
+  if(!ghReady()) return;
+  var c=ghConf();
+  /* the mark lives with the settings, so a change made and not sent survives
+     closing the page - the next opening will not quietly write over it */
+  if(!c.dirty){ c.dirty=true; ghSave(); }
+  if(!c.auto) return;
+  clearTimeout(ghTimer);
+  ghTimer=setTimeout(function(){ if(ghConf().dirty) ghPush(true); }, 6000);
+}
+function syPaint(){
+  var c=ghConf();
+  var f=function(id,v){ var el=document.getElementById(id); if(el) el.value=v||""; };
+  f("syRepo",c.repo); f("syPath",c.path||"progress.json"); f("syBranch",c.branch||"main"); f("syToken",c.token);
+  var a=document.getElementById("syAuto");
+  if(a){ a.textContent="auto: "+(c.auto?"on":"off"); a.classList.toggle("primary", !!c.auto); }
+  if(!document.getElementById("syState").textContent){
+    syState(c.at?("last sync "+dmhm(c.at)):"");
+  } else syState(document.getElementById("syState").textContent);
+}
+function syRead(){
+  var c=ghConf(), g=function(id){ var el=document.getElementById(id); return el?el.value.trim():""; };
+  c.repo=g("syRepo"); c.path=g("syPath")||"progress.json"; c.branch=g("syBranch")||"main"; c.token=g("syToken");
+  ghSave();
+}
+document.getElementById("btnSync").addEventListener("click", function(){
+  syPaint();
+  document.getElementById("syOverlay").classList.add("show");
+});
+document.getElementById("syClose").addEventListener("click", function(){
+  syRead();
+  document.getElementById("syOverlay").classList.remove("show");
+});
+["syRepo","syPath","syBranch","syToken"].forEach(function(id){
+  document.getElementById(id).addEventListener("change", syRead);
+});
+document.getElementById("syPush").addEventListener("click", function(){ syRead(); ghPush(false); });
+document.getElementById("syPull").addEventListener("click", function(){ syRead(); ghPull(false); });
+document.getElementById("syAuto").addEventListener("click", function(){
+  syRead();
+  var c=ghConf(); c.auto=!c.auto; ghSave(); syPaint();
+  syState(c.auto?"Every change is sent a few seconds later, and the newer copy is taken when the page opens"
+                :"Sending and taking now happen only by hand");
+});
+document.getElementById("syForget").addEventListener("click", function(){
+  var c=ghConf(); c.token=""; c.auto=false; ghSave(); syPaint();
+  syState("The key is cleared from this browser");
+});
+/* on opening: quietly take the newer copy */
+setTimeout(function(){ if(ghReady() && ghConf().auto) ghPull(true); }, 1200);
+
 function loadProgressText(txt){
   try{
     var o=JSON.parse(txt);
