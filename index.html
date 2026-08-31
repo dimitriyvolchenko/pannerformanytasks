@@ -358,7 +358,7 @@
   .today .th b{font-size:10.5px; letter-spacing:.045em; text-transform:uppercase; color:#B79A63; font-weight:800;
     flex:1 1 auto; min-width:0; line-height:1.25}
   .today .th .cnt{margin-left:auto; font-size:10.5px; color:var(--ink-faint); font-weight:700; flex:0 0 auto}
-  .today .tlist{display:flex; flex-direction:column; gap:2px; max-height:150px; overflow:auto}
+  .today .tlist{display:flex; flex-direction:column; gap:2px}
   .today .titem{display:flex; align-items:flex-start; gap:8px; padding:4px 2px; border-radius:8px}
   .today .titem .tdot{margin-top:2px}
   .today .titem button{margin-top:2px}
@@ -654,7 +654,7 @@
   .rmark i{position:absolute; left:50%; top:50%; width:3px; height:3px; margin:-1.5px 0 0 -1.5px;
     border-radius:50%; background:var(--bg)}
   body.dark .rmark{background:#6C7686}
-  @media (max-width:1000px){ .tl-time{margin-top:15px; height:4px} .tl-tlab{display:none} }
+  @media (max-width:1000px){ #tlTime{margin-top:38px; height:4px} .tl-tlab{display:none} }
 
   #star{position:absolute; top:-32px; left:0%; width:26px; height:44px; z-index:10;
     transform:translateX(-50%); transition:left .9s cubic-bezier(.25,.9,.35,1);
@@ -849,9 +849,9 @@
     .wrap{padding-left:22px}
     /* the same quiet timeline as on the phone - full labels do not fit here either */
     .tl-tick span{display:none}
-    .tl-tick.tdy span{display:block; font-size:9px; top:-15px !important}
+    .tl-tick.tdy span{display:block; font-size:9px; top:-16px !important}
     #signLeft,.tl-sign.right{display:none}
-    .tl-track{margin-top:38px}
+    .tl-track{margin-top:28px}
   }
   /* ============ PHONE ============ */
   @media (max-width:820px){
@@ -908,9 +908,10 @@
     .tl-inner{padding:8px 14px}
     .tl-start{left:14px}
     .tl-caption,.tl-start{font-size:9.5px}
-    .tl-track{margin-top:30px}
+    #tlTime{margin-top:38px}
+    .tl-track{margin-top:28px}
     .tl-tick span{display:none}
-    .tl-tick.tdy span{display:block; font-size:9px; top:-15px !important}
+    .tl-tick.tdy span{display:block; font-size:9px; top:-16px !important}
     #signLeft,.tl-sign.right{display:none}
     #star{width:20px; height:34px; top:-26px}
     .footrow{gap:6px}
@@ -919,6 +920,32 @@
     .hstree{flex:none; border-right:none; border-bottom:1px solid var(--line); max-height:170px; padding:0 0 8px}
     footer.note{font-size:12px}
   }
+  /* the day page */
+  .daytab{margin-left:auto; cursor:pointer; font:inherit}
+  .daytab .tbdot{background:var(--peach)}
+  .daytab b{font-size:11px; font-weight:800; color:var(--peach); margin-left:2px}
+  .daytab:hover{border-color:var(--peach)}
+  @media (max-width:820px){ .daytab{margin-left:0} }
+  .dsum{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px}
+  .dcell{flex:1 1 120px; background:var(--sunk,#F7F5F0); border:1px solid var(--line); border-radius:12px; padding:10px 12px}
+  .dcell span{display:block; font-size:10.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-faint)}
+  .dcell b{display:block; font-size:20px; font-weight:800; color:var(--ink); margin-top:3px; font-variant-numeric:tabular-nums}
+  .dcell i{font-style:normal; font-size:11.5px; color:var(--ink-dim)}
+  .dsec{margin-bottom:16px}
+  .dsec h3{font-size:11.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:8px}
+  .dlist{display:flex; flex-direction:column; gap:4px}
+  .drow{display:flex; gap:9px; align-items:flex-start; font-size:13.5px; line-height:1.45; padding:5px 8px; border-radius:9px; background:var(--sunk,#F7F5F0)}
+  .drow .dtime{flex:0 0 auto; font-size:11px; font-weight:700; color:var(--ink-faint); font-variant-numeric:tabular-nums; margin-top:2px}
+  .drow .dwhere{color:var(--ink-faint); font-size:11.5px}
+  .dnone{font-size:13.5px; color:var(--ink-faint); font-style:italic}
+  .dverdict{border-radius:12px; padding:12px 14px; font-size:14px; line-height:1.55; border:1px solid var(--line)}
+  .dverdict.good{background:var(--green-soft); border-color:var(--green)}
+  .dverdict.warn{background:var(--peach-soft); border-color:var(--peach)}
+  .dverdict.bad{background:var(--red-soft); border-color:var(--redp)}
+  .dadvice{margin-top:10px; display:flex; flex-direction:column; gap:7px}
+  .dadvice div{font-size:13.5px; line-height:1.5; color:var(--ink); padding-left:15px; position:relative}
+  .dadvice div::before{content:""; position:absolute; left:0; top:8px; width:6px; height:6px; border-radius:50%; background:var(--blue2)}
+  .dlate{color:var(--redp); font-weight:700}
   .syrow{display:flex; align-items:center; gap:10px; margin-bottom:9px}
   .syrow label{flex:0 0 96px; font-size:11.5px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-faint)}
   .syrow input{flex:1 1 auto; min-width:0; font:inherit; font-size:13px; color:var(--ink); background:var(--sunk,#F7F5F0);
@@ -999,7 +1026,11 @@
   .zoomer b{font-size:10px; font-weight:800; color:var(--ink-faint); letter-spacing:.02em; min-width:30px; text-align:center}
   .zoomer:hover{border-color:var(--blue)}
   body.dark .zoomer{box-shadow:inset 0 1px 3px rgba(0,0,0,.55)}
-  @media (max-width:820px){ .zoomer{display:none} }
+  @media (max-width:820px){
+    .zoomer{height:26px; padding:0 2px}
+    .zoomer b{min-width:26px; font-size:9.5px}
+    .zoomer button{padding:0 5px}
+  }
 
   /* bold switch - same size and manner as the theme switch beside it */
   .bsw{appearance:none; cursor:pointer; flex:0 0 auto; width:28px; height:28px; padding:0;
@@ -1349,7 +1380,7 @@
   </div>
 
   <footer class="note">
-    <p><b>C_MR.</b> The second tab holds the contents of the Recommendations - one box per section, with the chapter it belongs to in its name and its own date up to 30 September. The steps inside each box are the tasks. Each line carries three circles instead of one - <b>i</b> when the text has been carried in from another book, <b>e</b> when it has been worked over, and the ordinary one for the final reading. Only the ordinary circle counts towards the blueprint; the tally of the other two sits under the counter in Mission control. Double-click the number of work days on any line to give that line its own deadline.<br><br><b>Projects.</b> The row of buttons at the top of Mission control holds your projects, and <b>+</b> starts another one. Every setting - the theme, the bold type, the size of this panel, the look of the notes, the captions, the colour of the strip, the folder Save writes into - belongs to the planner as a whole and applies to every project, the ones here now and the ones made later; only the plan itself lives inside its own project. A new project opens completely empty: press <b>+ add a stage</b> under the board, type its name, then add tasks inside it - or open <b>tree</b> and type the whole plan at once. Click a button to switch; each project keeps its own stages, notes, dates, drawing and look, and one press of Save writes them all into a single file. Double-click a project button to rename it (the title above the plan follows), and the small cross on the open one deletes it - press it twice, and the last remaining project is never deleted. Double-click any stage name on the board to rename it in place. The small arrows button in the top right corner of a card turns it over. The other side is the same card - the same number, the same heading, the same date and the same lines in the same order - and every line there can be typed over. Until you touch a line it simply repeats the front, so you translate straight on top of the words. What you write on the back stays on the back: the front is never changed, turning the card to and fro keeps both sides, and a line added on the front appears on the back as a copy of itself.<br><br><b>How it works.</b> Tick tasks to assemble the blueprint - it grows in whole stages, from the ground up, and every new line flies in and settles into place. Row buttons: S adds a subtask, G switches English/Russian, the pencil edits, the number shows the WORK days left for that task - Monday to Friday, weekends are not counted (click it for details), the cross deletes (press ? to confirm). Drag anything by its grip handle (the dotted column): whole stages, single tasks and subtasks - between stages too. Reorder stages with the small arrows next to the number, double-click the number and type the place it should take, or drag a card by its number - the numbering and the calendar on the left follow. At the bottom of every stage: <b>priority</b> lifts that card towards you, <b>dim</b> fades everything else out so it stays in focus, <b>hide done</b> folds away every finished line, <b>hide all</b> folds away the whole list and leaves one line saying how much is still to do, and <b>in process</b> parks the stage - the card fades a little and a note floats above it where you type what the stage is waiting for and press Enter. Click that note to reword it, press its cross when the stage moves again (the words are kept for next time). The <b>P</b> beside a task or subtask keeps it in focus while the rest of the stage fades - press it on as many lines as you need, they all stay lit. <b>Select any text on the page and right-click it</b> for Word-style formatting: bold, italic, underline, strikethrough, four sizes, text colour, highlight and alignment. Without a selection the ordinary browser menu appears. Both calendars are divided into weeks (W1, W2...). Double-click the "from" badge to move the start date and the "due" badge to move the finish - both timelines recalculate. The round C button on the blueprint switches between nineteen drawings: five spacecraft, six of Leonardo da Vinci's machines, the Kremlin tower, the Tower of Pisa, a frog dissection plate, a giant bird, a giant duck, a classic iPod, an AK-pattern rifle on a museum stand and a training grenade. The blueprint is cut into 200 stages; adding or removing tasks and subtasks re-divides them automatically, and every counter - completed, stages built, both calendars - is recalculated at once. The Sticker button on the right adds yellow notes: type in them (double-click), draw on them with Apple Pencil on an iPad (right-click for colors, eraser and more), drag them anywhere, resize by the corner, and pull a line from the round handle to link two stickers. Progress is saved in this browser automatically; use Save/Load to move it elsewhere, <b>top sign</b>, <b>left sign</b> and <b>right sign</b> set the three captions (text, colour, size up to 200 px, automatic shrinking when the window narrows, and delete-them-all). <b>list</b> in the Mission control corner folds every stage into one compact list. The <b>&minus; 100% +</b> control beside the theme switch makes this whole panel smaller or bigger (double-click it to go back to normal). <b>Things</b> next to "as text" hands the open project to the Things app - stages become headings, tasks become to-dos with their deadlines, subtasks become checklist lines - and takes a list back from it if you paste one in. The two lines at the bottom answer different questions and never mix them any more. The thin upper line is the calendar: it carries a hair for every day, a firmer line at every Monday, a soft band for every other week, the dates of the stages, the week numbers and today, and the words beside it count the weeks and the working days left. The thick bar under it is the work done - the star on it moves only when tasks are ticked, and the small caption on its right says how many of them are finished. The grey circle on the left calendar watches the clock in the same way as the upper line. <b>hide and seek</b> opens a tree of every part of the page - colour, size, position and hiding for each. <b>Priority for today</b> and <b>Priority for the week</b> in Mission control keep the handful of things that matter right now and the larger pieces the week is meant to close - both work the same way, the wording is shown in full, a double-click reopens it for changes, and every project keeps its own two lists, and <b>folder</b> next to Save pins a folder: from then on every press of Save drops a NEW progress file there with the time in its name, down to the second - so you can always go back to any moment (Chrome and Edge on a computer can hold a folder; Safari and Firefox cannot, and there every save goes to Downloads). <b>sync</b> beside it keeps the plan the same on every device through a repository of your own on GitHub: name the repository, the file and an access key once here and once on the phone, and the planner writes the progress there and reads the newer copy back when the page opens. Turn <b>auto</b> on and it does both by itself - a few seconds after every change, and once at every opening; leave it off and the two buttons do it by hand. The key is kept in that one browser, never inside a progress file and never in the repository, and <b>forget the key</b> clears it. If a device holds changes that were never sent, the planner says so instead of writing over them. On an iPad the Apple Pencil writes straight onto the page and onto the notes (a finger never draws - it scrolls); <b>pencil</b> below switches the pen between drawing and erasing, <b>clear pencil</b> wipes the page handwriting. The pale circles on the right of every stage, task and subtask are sticker anchors: pull a line onto one from a note and it turns into a real checkbox that counts towards everything - unlink it and it goes quiet again. Click or right-click a connector to change its shape, thickness, style, arrows, colour, add a label or delete it; <b>no dots</b> hides them in one stage, <b>sticker circles</b> everywhere. <b>note style</b> cycles three sticky-note designs - paper, minimal and classic. <b>hide sticker button</b> tucks the round Sticker button away and <b>hide stickers</b> makes every note and its lines invisible - nothing is deleted, press the same button again to bring them back. The little <b>switch</b> beside "Mission control" turns the dark theme on and off, and <b>B</b> next to it makes every word on the page bold: in the dark every panel, button and checkbox keeps its own outline and a pale halo instead of a shadow, so nothing dissolves into the background. The round knob right beside that switch sets how deep the dark goes: press it and a small slider appears - drag it left for a soft, smoky dark and right for an almost black one, "back to normal" returns to the middle setting. The light theme is never touched, and the level you choose holds for every project. <b>pink</b> below paints the timeline in exactly the colour of the strip the free hosting adds underneath it - the two become one band, and the scale, its marks and its dates turn white so they stand out on it. Right-click <b>pink</b> - or hold it down on a phone - if you want to set the shade yourself: pick it straight off the strip with the colour picker, choose one of the eight vivid pinks, or paste a colour code. If the hosting adds its own stripe along the bottom of the page (the free tiiny.host bar does), the timeline lifts itself above the stripe so nothing is covered. And "clear the previous changes" wipes everything back to the original content (double confirmation plus a 4-digit code).</p>
+    <p><b>C_MR.</b> The second tab holds the contents of the Recommendations - one box per section, with the chapter it belongs to in its name and its own date up to 30 September. The steps inside each box are the tasks. Each line carries three circles instead of one - <b>i</b> when the text has been carried in from another book, <b>e</b> when it has been worked over, and the ordinary one for the final reading. Only the ordinary circle counts towards the blueprint; the tally of the other two sits under the counter in Mission control. Double-click the number of work days on any line to give that line its own deadline.<br><br><b>Projects.</b> The row of buttons at the top of Mission control holds your projects, and <b>+</b> starts another one. Every setting - the theme, the bold type, the size of this panel, the look of the notes, the captions, the colour of the strip, the folder Save writes into - belongs to the planner as a whole and applies to every project, the ones here now and the ones made later; only the plan itself lives inside its own project. A new project opens completely empty: press <b>+ add a stage</b> under the board, type its name, then add tasks inside it - or open <b>tree</b> and type the whole plan at once. Click a button to switch; each project keeps its own stages, notes, dates, drawing and look, and one press of Save writes them all into a single file. Double-click a project button to rename it (the title above the plan follows), and the small cross on the open one deletes it - press it twice, and the last remaining project is never deleted. Double-click any stage name on the board to rename it in place. The small arrows button in the top right corner of a card turns it over. The other side is the same card - the same number, the same heading, the same date and the same lines in the same order - and every line there can be typed over. Until you touch a line it simply repeats the front, so you translate straight on top of the words. What you write on the back stays on the back: the front is never changed, turning the card to and fro keeps both sides, and a line added on the front appears on the back as a copy of itself.<br><br><b>How it works.</b> Tick tasks to assemble the blueprint - it grows in whole stages, from the ground up, and every new line flies in and settles into place. Row buttons: S adds a subtask, G switches English/Russian, the pencil edits, the number shows the WORK days left for that task - Monday to Friday, weekends are not counted (click it for details), the cross deletes (press ? to confirm). Drag anything by its grip handle (the dotted column): whole stages, single tasks and subtasks - between stages too. Reorder stages with the small arrows next to the number, double-click the number and type the place it should take, or drag a card by its number - the numbering and the calendar on the left follow. At the bottom of every stage: <b>priority</b> lifts that card towards you, <b>dim</b> fades everything else out so it stays in focus, <b>hide done</b> folds away every finished line, <b>hide all</b> folds away the whole list and leaves one line saying how much is still to do, and <b>in process</b> parks the stage - the card fades a little and a note floats above it where you type what the stage is waiting for and press Enter. Click that note to reword it, press its cross when the stage moves again (the words are kept for next time). The <b>P</b> beside a task or subtask keeps it in focus while the rest of the stage fades - press it on as many lines as you need, they all stay lit. <b>Select any text on the page and right-click it</b> for Word-style formatting: bold, italic, underline, strikethrough, four sizes, text colour, highlight and alignment. Without a selection the ordinary browser menu appears. Both calendars are divided into weeks (W1, W2...). Double-click the "from" badge to move the start date and the "due" badge to move the finish - both timelines recalculate. The round C button on the blueprint switches between nineteen drawings: five spacecraft, six of Leonardo da Vinci's machines, the Kremlin tower, the Tower of Pisa, a frog dissection plate, a giant bird, a giant duck, a classic iPod, an AK-pattern rifle on a museum stand and a training grenade. The blueprint is cut into 200 stages; adding or removing tasks and subtasks re-divides them automatically, and every counter - completed, stages built, both calendars - is recalculated at once. The Sticker button on the right adds yellow notes: type in them (double-click), draw on them with Apple Pencil on an iPad (right-click for colors, eraser and more), drag them anywhere, resize by the corner, and pull a line from the round handle to link two stickers. Progress is saved in this browser automatically; use Save/Load to move it elsewhere, <b>top sign</b>, <b>left sign</b> and <b>right sign</b> set the three captions (text, colour, size up to 200 px, automatic shrinking when the window narrows, and delete-them-all). <b>list</b> in the Mission control corner folds every stage into one compact list. The <b>&minus; 100% +</b> control beside the theme switch makes this whole panel smaller or bigger (double-click it to go back to normal). <b>Things</b> next to "as text" hands the open project to the Things app - stages become headings, tasks become to-dos with their deadlines, subtasks become checklist lines - and takes a list back from it if you paste one in. The two lines at the bottom answer different questions and never mix them any more. The thin upper line is the calendar: it carries a hair for every day, a firmer line at every Monday, a soft band for every other week, the dates of the stages, the week numbers and today, and the words beside it count the weeks and the working days left. The thick bar under it is the work done - the star on it moves only when tasks are ticked, and the small caption on its right says how many of them are finished. The grey circle on the left calendar watches the clock in the same way as the upper line. <b>hide and seek</b> opens a tree of every part of the page - colour, size, position and hiding for each. <b>Priority for today</b> and <b>Priority for the week</b> in Mission control keep the handful of things that matter right now and the larger pieces the week is meant to close - both work the same way, every line stays in sight however many you add, the wording is shown in full, a double-click reopens it for changes, and every project keeps its own two lists. The <b>Day</b> button at the far right of the project row opens the day page: everything ticked today, in every project, with the time it happened; four figures - closed today, the tally of this project, the working days left and how many lines a day the rest of the plan asks for; and under them a plain reading of whether it still fits the date. It compares the pace of the last week with the pace the date needs, says where the present pace lands and how many working days of slack or delay that means, names the stages that are past their dates and the ones due within a week, and tells you how much to add a day to catch up. The last seven days and the other projects are listed underneath, and <b>folder</b> next to Save pins a folder: from then on every press of Save drops a NEW progress file there with the time in its name, down to the second - so you can always go back to any moment (Chrome and Edge on a computer can hold a folder; Safari and Firefox cannot, and there every save goes to Downloads). <b>sync</b> beside it keeps the plan the same on every device through a repository of your own on GitHub: name the repository, the file and an access key once here and once on the phone, and the planner writes the progress there and reads the newer copy back when the page opens. Turn <b>auto</b> on and it does both by itself - a few seconds after every change, and once at every opening; leave it off and the two buttons do it by hand. The key is kept in that one browser, never inside a progress file and never in the repository, and <b>forget the key</b> clears it. If a device holds changes that were never sent, the planner says so instead of writing over them. On an iPad the Apple Pencil writes straight onto the page and onto the notes (a finger never draws - it scrolls); <b>pencil</b> below switches the pen between drawing and erasing, <b>clear pencil</b> wipes the page handwriting. The pale circles on the right of every stage, task and subtask are sticker anchors: pull a line onto one from a note and it turns into a real checkbox that counts towards everything - unlink it and it goes quiet again. Click or right-click a connector to change its shape, thickness, style, arrows, colour, add a label or delete it; <b>no dots</b> hides them in one stage, <b>sticker circles</b> everywhere. <b>note style</b> cycles three sticky-note designs - paper, minimal and classic. <b>hide sticker button</b> tucks the round Sticker button away and <b>hide stickers</b> makes every note and its lines invisible - nothing is deleted, press the same button again to bring them back. The little <b>switch</b> beside "Mission control" turns the dark theme on and off, and <b>B</b> next to it makes every word on the page bold: in the dark every panel, button and checkbox keeps its own outline and a pale halo instead of a shadow, so nothing dissolves into the background. The round knob right beside that switch sets how deep the dark goes: press it and a small slider appears - drag it left for a soft, smoky dark and right for an almost black one, "back to normal" returns to the middle setting. The light theme is never touched, and the level you choose holds for every project. <b>pink</b> below paints the timeline in exactly the colour of the strip the free hosting adds underneath it - the two become one band, and the scale, its marks and its dates turn white so they stand out on it. Right-click <b>pink</b> - or hold it down on a phone - if you want to set the shade yourself: pick it straight off the strip with the colour picker, choose one of the eight vivid pinks, or paste a colour code. If the hosting adds its own stripe along the bottom of the page (the free tiiny.host bar does), the timeline lifts itself above the stripe so nothing is covered. And "clear the previous changes" wipes everything back to the original content (double confirmation plus a 4-digit code).</p>
     <div class="footrow">
       <button class="btn" id="btnSignT">top sign</button>
       <button class="btn" id="btnSignL">left sign</button>
@@ -1494,6 +1525,14 @@
   <div class="dkhint">Sets how deep the dark theme goes. The light theme is not touched.</div>
 </div>
 <div id="pinkMenu"><div class="rlab2">Strip colour</div><div class="pswatch" id="pinkSw"></div><button class="mrow" id="pinkPick">Pick the colour off the strip</button><button class="mrow" id="pinkAuto">Match the strip automatically</button><div class="phex"><input type="text" id="pinkHex" placeholder="#FF2D78" maxlength="7" spellcheck="false"><button id="pinkHexOk">set</button></div></div>
+<div class="overlay" id="dayOverlay">
+  <div class="modal">
+    <header><h2>Day</h2><span class="spacer"></span><span class="signstate" id="dayDate"></span></header>
+    <div class="body" id="dayBody"></div>
+    <footer><button class="btn" id="dayClose">Close</button></footer>
+  </div>
+</div>
+
 <div class="overlay" id="syOverlay">
   <div class="modal narrow">
     <header><h2>Sync through your GitHub</h2><span class="spacer"></span><span class="sydot" id="syDot"></span></header>
@@ -3979,7 +4018,7 @@ var BASE=[
 /* ================= STATE ================= */
 var KEY="mr_rocket_planner_v2";
 function freshState(){
-  return {done:{},collapsed:{},custom:{},edits:{},lang:{},plang:{},subs:{},tremoved:{},pedits:{},premoved:{},pcustom:[],dues:{},finish:"",start:"",header:null,order:[],vehicle:0,signing:null,sigv:7,stickers:[],slinks:[],
+  return { doneAt:{},done:{},collapsed:{},custom:{},edits:{},lang:{},plang:{},subs:{},tremoved:{},pedits:{},premoved:{},pcustom:[],dues:{},finish:"",start:"",header:null,order:[],vehicle:0,signing:null,sigv:7,stickers:[],slinks:[],
     prio:{},dimBy:"",rich:{},signs:null,
     hideLnk:{},hideLnkAll:false,stickerClassic:false,stickerSkin:"control",torder:{},tmoved:{},styles:{},listView:false,
     today:[],week:[],saveName:"",saveDirName:"",ptask:{},stickBtn:null,stickBtnHidden:false,stickersHidden:false,bink:[],
@@ -4391,9 +4430,16 @@ function rebuildTasks(pid){
 }
 
 /* ================= RENDER STATE ================= */
+/* every tick leaves the day it happened on, so the day page has something to show */
+function setDone(id, on){
+  state.doneAt=state.doneAt||{};
+  if(on){ state.done[id]=true; state.doneAt[id]=new Date().toISOString(); }
+  else { delete state.done[id]; delete state.doneAt[id]; }
+}
 function counts(){ var a=allCheckable(),d=0; a.forEach(function(t){ if(state.done[t.id]) d++; }); return {done:d,total:a.length}; }
 function render(){
   var c=counts();
+  if(typeof paintDayCount==="function") paintDayCount();
   document.getElementById("doneLabel").textContent=c.done+" / "+c.total;
   document.getElementById("bigFill").style.width=(c.total?c.done/c.total*100:0)+"%";
 
@@ -4765,8 +4811,7 @@ function renderRuler(){
     var el=document.createElement("div");
     el.className="rtick "+cls;
     el.style.top="calc(26px + (100% - 90px) * "+f.toFixed(4)+")";
-    var shift=(f-lastF<0.045)?' style="left:42px"':"";
-    el.innerHTML="<span"+shift+">"+label+"</span>";
+    el.innerHTML="<span>"+label+"</span>";
     ruler.appendChild(el);
     lastF=f;
   }
@@ -4824,8 +4869,9 @@ function deCollide(ruler){
     var hit=false;
     for(var i=0;i<taken.length;i++){
       var t=taken[i];
-      if(Math.min(r.bottom,t.bottom)-Math.max(r.top,t.top)>1 &&
-         Math.min(r.right,t.right)-Math.max(r.left,t.left)>1){ hit=true; break; }
+      /* the ruler is one narrow column, so nearness in height alone is a clash -
+         a label needs six clear pixels above and below or it does not show */
+      if(Math.min(r.bottom,t.bottom)-Math.max(r.top,t.top) > -6){ hit=true; break; }
     }
     if(hit) sp.style.visibility="hidden"; else taken.push(r);
   });
@@ -4970,15 +5016,15 @@ host.addEventListener("change", function(ev){
   var id=ev.target.getAttribute("data-cb");
   var pid=ev.target.getAttribute("data-pcb");
   if(id){
-    if(ev.target.checked) state.done[id]=true; else delete state.done[id];
+    setDone(id, ev.target.checked);
     ev.target.closest(".task").classList.toggle("tdone", ev.target.checked);
     persist(); render();
   } else if(pid){
     var p=effProjects().filter(function(x){return x.id===pid;})[0];
     var on=ev.target.checked;
     tasksOf(p).forEach(function(t){
-      if(on) state.done[t.id]=true; else delete state.done[t.id];
-      subsOf(t.id).forEach(function(sn){ if(on) state.done[sn.id]=true; else delete state.done[sn.id]; });
+      setDone(t.id, on);
+      subsOf(t.id).forEach(function(sn){ setDone(sn.id, on); });
     });
     persist(); rebuildTasks(pid); render();
     toast(on?"Stage completed":"Stage unchecked");
@@ -5005,7 +5051,7 @@ host.addEventListener("click", function(ev){
   if((b=ev.target.closest("[data-lnk]"))){
     var lid=b.getAttribute("data-lnk");
     if(!linkedRows()[lid]){ toast("Drag a line from a sticker onto this circle first"); ev.stopPropagation(); return; }
-    if(state.done["lnk:"+lid]) delete state.done["lnk:"+lid]; else state.done["lnk:"+lid]=true;
+    setDone("lnk:"+lid, !state.done["lnk:"+lid]);
     persist(); render();
     ev.stopPropagation(); return;
   }
@@ -6938,7 +6984,10 @@ function paintTabs(){
       (spaces.list.length>1?'<button class="tbdel" data-spdel="'+sp.id+'" title="Delete this project">&#10005;</button>':'')+'</span>';
   }).join("")+
   '<button class="tbadd" id="tabAdd" title="Start another project - it opens empty and you fill it in yourself">+</button>'+
-  (spaces.list.length<2?'<span class="tabhint">one project so far - press + for another</span>':'');
+  (spaces.list.length<2?'<span class="tabhint">one project so far - press + for another</span>':'')+
+  '<button class="tab daytab" id="tabDay" title="What was closed today, and whether the plan still fits the date">'+
+    '<i class="tbdot"></i>Day<b id="dayCnt"></b></button>';
+  paintDayCount();
 }
 function switchSpace(id){
   if(id===spaces.active) return;
@@ -7009,6 +7058,7 @@ document.getElementById("tabs").addEventListener("click", function(ev){
     tabDelArmed=""; deleteSpace(did); return;
   }
   if(ev.target.id==="tabAdd"){ newSpace(); return; }
+  if(ev.target.closest("#tabDay")){ openDay(); return; }
   var t=ev.target.closest("[data-sp]");
   if(t){
     if(ev.target.getAttribute("contenteditable")==="true") return;
@@ -7570,9 +7620,236 @@ function refreshAll(){
   applyPageRich();
   mountBlueprint(); applySigns(); buildStickers(); emitStyles(); applyListView();
   renderToday(); paintFolderBtn(); applySkin(); applyStickerVis(); applyTheme(); applyDarkness(); applyBold(); applyHeroZoom(); applyPink(); binkRedraw();
+  _othFresh=false;
   buildAll(); render();
   try{ syncHeroHeight(); }catch(e){}
 }
+/* ================= THE DAY PAGE =================
+   What was closed today, and whether what is left still fits the date.
+   Everything here is counted from the plan itself - nothing is typed in by hand. */
+function ymd(d){
+  return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+}
+function isWorkday(d){ var w=d.getDay(); return w!==0 && w!==6; }
+/* run a piece of code against another project's saved plan, then put ours back */
+function withSpace(id, fn){
+  if(id===spaces.active) return fn();
+  var keep=state, st=readSpace(id);
+  if(!st) return null;
+  state=st;
+  try{ return fn(); }
+  finally{ state=keep; }
+}
+function labelOf(id){
+  var out=null;
+  effProjects().forEach(function(p){
+    if(p.id===id) out={text:(state.plang[p.id]&&p.ru)?p.ru:p.en, stage:null};
+    tasksOf(p).forEach(function(t){
+      if(t.id===id) out={text:(state.lang[t.id]&&t.ru)?t.ru:t.en, stage:p};
+      if("lnk:"+t.id===id) out={text:"sticker on "+((state.lang[t.id]&&t.ru)?t.ru:t.en), stage:p};
+      subsOf(t.id).forEach(function(sx){
+        if(sx.id===id) out={text:sx.en, stage:p};
+        if("lnk:"+sx.id===id) out={text:"sticker on "+sx.en, stage:p};
+      });
+    });
+    if("lnk:"+p.id===id) out={text:"sticker on "+p.en, stage:p};
+  });
+  return out;
+}
+/* one project, measured */
+function projectFacts(){
+  var c=counts(), left=c.total-c.done;
+  var wd=workDaysLeft(FINISH());
+  var at=state.doneAt||{};
+  var today=ymd(new Date()), byDay={}, todayList=[];
+  Object.keys(at).forEach(function(id){
+    if(!state.done[id]) return;
+    var k=ymd(new Date(at[id]));
+    byDay[k]=(byDay[k]||0)+1;
+    if(k===today) todayList.push({id:id, at:at[id]});
+  });
+  var d7=0, wd7=0, cur=new Date();
+  for(var i=0;i<7;i++){
+    var d=new Date(cur.getFullYear(),cur.getMonth(),cur.getDate()-i);
+    d7+=byDay[ymd(d)]||0;
+    if(isWorkday(d)) wd7++;
+  }
+  var pace=wd7?d7/wd7:0;
+  var need=left/Math.max(wd,1);
+  /* where the present pace lands */
+  var landing=null, slack=null;
+  if(left>0 && pace>0){
+    var needDays=Math.ceil(left/pace);
+    slack=wd-needDays;
+    var walk=new Date(), stepped=0;
+    while(stepped<needDays){ walk.setDate(walk.getDate()+1); if(isWorkday(walk)) stepped++; }
+    landing=walk;
+  }
+  /* stages that are past their date, and the ones due within a week */
+  var late=[], soon=[], nowD=new Date(); nowD.setHours(0,0,0,0);
+  effProjects().forEach(function(p,i){
+    var ids=[];
+    tasksOf(p).forEach(function(t){ ids.push(t.id); subsOf(t.id).forEach(function(x){ ids.push(x.id); }); });
+    var rest=ids.filter(function(id){ return !state.done[id]; }).length;
+    if(!rest) return;
+    var due=pd(p.due); if(!due) return;
+    var days=Math.round((due-nowD)/DAY);
+    var name=(state.plang[p.id]&&p.ru)?p.ru:p.en;
+    if(days<0) late.push({n:i+1, name:name, rest:rest, days:-days});
+    else if(days<=7) soon.push({n:i+1, name:name, rest:rest, days:days});
+  });
+  late.sort(function(a,b){ return b.days-a.days; });
+  soon.sort(function(a,b){ return a.days-b.days; });
+  return { done:c.done, total:c.total, left:left, wd:wd, need:need, pace:pace,
+           d7:d7, wd7:wd7, todayList:todayList, byDay:byDay, landing:landing, slack:slack,
+           late:late, soon:soon, finish:FINISH() };
+}
+function n1(x){ return (Math.round(x*10)/10).toString().replace(/\.0$/,""); }
+function dayVerdict(f){
+  if(!f.total) return {cls:"warn", text:"This board is empty - there is nothing to measure yet."};
+  if(!f.left) return {cls:"good", text:"Everything on this board is closed. "+f.total+" of "+f.total+" - the date no longer matters."};
+  if(f.wd<=0) return {cls:"bad", text:"The finish date has passed and "+f.left+" line"+(f.left===1?"":"s")+
+    " are still open. Move the date on the «due» badge, or decide what will not be done."};
+  var head="You have "+f.left+" line"+(f.left===1?"":"s")+" left and "+f.wd+" working day"+(f.wd===1?"":"s")+
+           " until "+fmtEn(f.finish)+" - that is <b>"+n1(f.need)+" line"+(f.need===1?"":"s")+" a working day</b>. ";
+  if(f.d7===0) return {cls:"warn", text:head+"Nothing has been ticked in the last seven days, so there is no pace to compare it with yet."};
+  var paceTxt="Over the last week you closed "+f.d7+" line"+(f.d7===1?"":"s")+" - "+n1(f.pace)+" a working day. ";
+  if(f.slack===null) return {cls:"warn", text:head+paceTxt};
+  if(f.slack>=1) return {cls:"good", text:head+paceTxt+"At that pace the board closes around "+
+    fmtEn(ymd(f.landing))+" - about <b>"+f.slack+" working day"+(f.slack===1?"":"s")+" of slack</b>."};
+  if(f.slack<=-1) return {cls:"bad", text:head+paceTxt+"At that pace the board closes around "+
+    fmtEn(ymd(f.landing))+" - <b>"+(-f.slack)+" working day"+(f.slack===-1?"":"s")+" past the date</b>."};
+  return {cls:"warn", text:head+paceTxt+"That is level with the plan: any day lost now has to be made up later."};
+}
+function dayAdvice(f){
+  var out=[];
+  if(!f.total) return out;
+  var todayIsWork=isWorkday(new Date());
+  if(f.left && f.slack!==null && f.slack<0){
+    var extra=(f.left/Math.max(f.wd,1))-f.pace;
+    out.push("To land on "+fmtEn(f.finish)+" you need <b>"+n1(Math.max(extra,0.1))+" more a day</b> than the present pace - "+
+      n1(f.need)+" line"+(f.need===1?"":"s")+" every working day for the "+f.wd+" that are left.");
+  }
+  f.late.slice(0,3).forEach(function(l){
+    out.push("<span class=\"dlate\">Late:</span> stage "+l.n+" «"+esc(l.name)+"» - "+l.rest+
+      " line"+(l.rest===1?"":"s")+" open, "+l.days+" day"+(l.days===1?"":"s")+" past its date.");
+  });
+  if(f.late.length>3) out.push("...and "+(f.late.length-3)+" more stage"+(f.late.length-3===1?"":"s")+" past their dates.");
+  f.soon.slice(0,2).forEach(function(sx){
+    out.push("Due in "+(sx.days===0?"today":sx.days+" day"+(sx.days===1?"":"s"))+": stage "+sx.n+" «"+esc(sx.name)+"», "+sx.rest+" line"+(sx.rest===1?"":"s")+" open.");
+  });
+  if(f.left && !f.todayList.length && todayIsWork)
+    out.push("Nothing closed today yet - one working day carries "+n1(f.need)+" line"+(f.need===1?"":"s")+" of what is left.");
+  if(f.left && f.need>4)
+    out.push("The remaining pace is steep. Either move the finish date, or take the heaviest stages apart into smaller lines.");
+  if(f.left && f.left<=3)
+    out.push("Almost there - "+f.left+" line"+(f.left===1?"":"s")+" and the board is closed.");
+  if(!f.left) out.push("Nothing is left on this board. Open another project, or move the finish date and add the next piece of work.");
+  return out;
+}
+var _othN=0, _othDay="", _othFresh=false;
+function todayIn(st){
+  var today=ymd(new Date()), at=st.doneAt||{}, n=0;
+  Object.keys(at).forEach(function(id){ if(st.done[id] && ymd(new Date(at[id]))===today) n++; });
+  return n;
+}
+function refreshOtherToday(){
+  var n=0;
+  spaces.list.forEach(function(sp){
+    if(sp.id===spaces.active) return;
+    var st=readSpace(sp.id);
+    if(st) n+=todayIn(st);
+  });
+  _othN=n; _othDay=ymd(new Date()); _othFresh=true;
+}
+function paintDayCount(){
+  var el=document.getElementById("dayCnt");
+  if(!el) return;
+  /* the other projects are read from store only when something really changed -
+     doing it on every repaint would parse the whole plan again and again */
+  if(!_othFresh || _othDay!==ymd(new Date())) refreshOtherToday();
+  var n=_othN+todayIn(state);
+  el.textContent=n?(" "+n):"";
+}
+function buildDay(){
+  var body=document.getElementById("dayBody");
+  var now=new Date();
+  document.getElementById("dayDate").textContent=fmtEn(ymd(now))+", "+
+    ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][now.getDay()];
+  var todayKey=ymd(now), rows=[], html="";
+  spaces.list.forEach(function(sp){
+    withSpace(sp.id, function(){
+      var at=state.doneAt||{};
+      Object.keys(at).forEach(function(id){
+        if(!state.done[id]) return;
+        if(ymd(new Date(at[id]))!==todayKey) return;
+        var lb=labelOf(id);
+        rows.push({ at:at[id], text:lb?lb.text:id, stage:(lb&&lb.stage)?((state.plang[lb.stage.id]&&lb.stage.ru)?lb.stage.ru:lb.stage.en):"",
+                    space:sp.name||"Project" });
+      });
+    });
+  });
+  rows.sort(function(a,b){ return a.at<b.at?-1:1; });
+  var f=projectFacts();
+  var v=dayVerdict(f), adv=dayAdvice(f);
+
+  html+='<div class="dsum">'+
+    '<div class="dcell"><span>Closed today</span><b>'+rows.length+'</b><i>'+(rows.length?"across all projects":"nothing yet")+'</i></div>'+
+    '<div class="dcell"><span>This project</span><b>'+f.done+' / '+f.total+'</b><i>'+f.left+' still open</i></div>'+
+    '<div class="dcell"><span>Working days left</span><b>'+Math.max(f.wd,0)+'</b><i>until '+fmtEn(f.finish)+'</i></div>'+
+    '<div class="dcell"><span>Needed a day</span><b>'+n1(f.need)+'</b><i>at present '+n1(f.pace)+'</i></div>'+
+  '</div>';
+
+  html+='<div class="dsec"><h3>Closed today</h3>';
+  if(!rows.length) html+='<div class="dnone">Nothing has been ticked today. The list fills itself as you tick lines on the board.</div>';
+  else{
+    html+='<div class="dlist">'+rows.map(function(r){
+      var t=new Date(r.at);
+      return '<div class="drow"><span class="dtime">'+String(t.getHours()).padStart(2,"0")+":"+String(t.getMinutes()).padStart(2,"0")+'</span>'+
+        '<span>'+esc(r.text)+(r.stage?'<br><span class="dwhere">'+esc(r.space)+' · '+esc(r.stage)+'</span>':'')+'</span></div>';
+    }).join("")+'</div>';
+  }
+  html+='</div>';
+
+  html+='<div class="dsec"><h3>Does it still fit the date</h3>'+
+    '<div class="dverdict '+v.cls+'">'+v.text+'</div>';
+  if(adv.length) html+='<div class="dadvice">'+adv.map(function(a){ return "<div>"+a+"</div>"; }).join("")+'</div>';
+  html+='</div>';
+
+  /* the last seven days, plainly */
+  var week=[];
+  for(var i=6;i>=0;i--){
+    var d=new Date(now.getFullYear(),now.getMonth(),now.getDate()-i);
+    week.push({ d:d, n:f.byDay[ymd(d)]||0 });
+  }
+  html+='<div class="dsec"><h3>The last seven days on this project</h3><div class="dlist">'+
+    week.map(function(w){
+      return '<div class="drow"><span class="dtime">'+["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][w.d.getDay()]+' '+w.d.getDate()+'</span>'+
+        '<span>'+(w.n?(w.n+" line"+(w.n===1?"":"s")+" closed"):(isWorkday(w.d)?"nothing":"weekend"))+'</span></div>';
+    }).join("")+'</div></div>';
+
+  /* the other projects in one line each */
+  if(spaces.list.length>1){
+    var others=spaces.list.filter(function(sp){ return sp.id!==spaces.active; }).map(function(sp){
+      return withSpace(sp.id, function(){
+        var g=projectFacts();
+        return '<div class="drow"><span class="dtime">'+esc(sp.name||"Project")+'</span><span>'+
+          g.done+' / '+g.total+' done · '+g.left+' open · '+Math.max(g.wd,0)+' working days · '+
+          n1(g.need)+' a day needed</span></div>';
+      }) || "";
+    }).join("");
+    html+='<div class="dsec"><h3>The other projects</h3><div class="dlist">'+others+'</div></div>';
+  }
+  body.innerHTML=html;
+}
+function openDay(){
+  buildDay();
+  document.getElementById("dayOverlay").classList.add("show");
+}
+document.getElementById("dayClose").addEventListener("click", function(){
+  document.getElementById("dayOverlay").classList.remove("show");
+});
+
 /* ================= SYNC THROUGH YOUR OWN GITHUB =================
    One progress file lives in a repository of yours. Every device writes to it and
    reads from it, so the plan is the same wherever it is opened. The access key is
