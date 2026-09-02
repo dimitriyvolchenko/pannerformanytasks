@@ -473,7 +473,8 @@
     background:var(--card); border:1px solid var(--line); border-radius:20px;
     margin-bottom:14px; box-shadow:0 1px 2px rgba(58,63,74,.03), 0 8px 22px rgba(58,63,74,.04);
     overflow:visible; opacity:0; transform:translateY(22px);
-    transition:opacity .8s cubic-bezier(.25,.9,.35,1), transform .8s cubic-bezier(.25,.9,.35,1), box-shadow .35s ease;
+    transition:opacity .8s cubic-bezier(.25,.9,.35,1), transform .8s cubic-bezier(.25,.9,.35,1), box-shadow .35s ease,
+      margin .35s cubic-bezier(.25,.9,.35,1);
   }
   .proj.inview{opacity:1; transform:none}
   .proj:hover{box-shadow:0 2px 4px rgba(58,63,74,.04), 0 14px 34px rgba(58,63,74,.07)}
@@ -493,6 +494,25 @@
   .tlabel mark,.proj-title mark{border-radius:3px; padding:0 2px}
   .proj.pdone .proj-title{color:var(--ink-dim); text-decoration:line-through; text-decoration-color:#C9CDD6}
   .proj-meta{display:flex; align-items:center; gap:9px; flex:0 0 auto; position:relative}
+  .duecol{display:flex; flex-direction:column; align-items:flex-end; gap:4px}
+  .span{font-size:10.5px; font-weight:700; letter-spacing:.02em; color:var(--ink-faint);
+    background:var(--sunk,#F7F5F0); border:1px dashed var(--line2); border-radius:99px; padding:2px 9px;
+    cursor:pointer; white-space:nowrap; transition:color .25s ease, border-color .25s ease, background .25s ease}
+  .span:hover{color:var(--blue-ink); border-color:var(--blue2)}
+  .span.set{border-style:solid; color:var(--ink-dim); background:var(--card)}
+  .span.now{border-color:var(--green); color:#5E9C79; background:var(--green-soft)}
+  body.dark .span.now{color:#8FD2AE}
+  .spanpop{position:absolute; right:0; top:calc(100% + 8px); z-index:60; display:flex; flex-direction:column; gap:8px;
+    background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px;
+    box-shadow:var(--sh-m,0 18px 44px rgba(58,63,74,.22)); width:236px}
+  .spanpop .r{display:flex; align-items:center; gap:8px}
+  .spanpop .r label{flex:0 0 42px; font-size:10.5px; font-weight:800; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--ink-faint)}
+  .spanpop input{flex:1 1 auto; min-width:0; font:inherit; font-size:13px; color:var(--ink);
+    border:1.5px solid var(--blue2); border-radius:9px; padding:6px 8px; outline:none; background:var(--card)}
+  .spanpop .row{display:flex; gap:6px; justify-content:space-between; align-items:center}
+  .spanpop .note{font-size:11px; color:var(--ink-faint); line-height:1.4}
+  @media (max-width:820px){ .duecol{align-items:flex-start} .spanpop{width:min(224px, calc(100vw - 34px))} }
   .mini{width:66px; height:7px; background:var(--track); border-radius:99px; overflow:hidden}
   .mini i{display:block; height:100%; width:0%; background:var(--green); border-radius:99px; transition:width .5s ease}
   .chev{color:var(--ink-faint); transition:transform .35s ease; font-size:11px}
@@ -718,13 +738,17 @@
   .proj.inview.prio.yielded:hover{opacity:1; box-shadow:0 3px 7px rgba(58,63,74,.05), 0 18px 40px rgba(58,63,74,.15), 0 0 0 2px rgba(166,191,230,.16)}
   /* the moment one stage gives way the two ranks pull apart: the one that keeps
      full priority comes further forward, the ones that gave way step back */
+  body.yieldon .proj.prio:not(.yielded){
+    /* room of its own, so the lift and the glow never land on the card above */
+    margin-top:24px; margin-bottom:24px; z-index:3;
+  }
   body.yieldon .proj.inview.prio:not(.yielded){
-    transform:translateY(-11px) scale(1.024);
+    transform:translateY(-9px) scale(1.016);
     border-color:#BFD2EE;
-    box-shadow:0 6px 12px rgba(58,63,74,.07), 0 44px 92px rgba(58,63,74,.30), 0 0 0 4px rgba(166,191,230,.30);
+    box-shadow:0 6px 12px rgba(58,63,74,.07), 0 40px 84px rgba(58,63,74,.28), 0 0 0 3px rgba(166,191,230,.28);
   }
   body.yieldon .proj.inview.prio:not(.yielded):hover{
-    box-shadow:0 7px 14px rgba(58,63,74,.08), 0 50px 104px rgba(58,63,74,.34), 0 0 0 4px rgba(166,191,230,.36);
+    box-shadow:0 7px 14px rgba(58,63,74,.08), 0 46px 96px rgba(58,63,74,.32), 0 0 0 3px rgba(166,191,230,.34);
   }
   body.yieldon .proj.inview.prio.yielded{
     transform:translateY(-1px) scale(1.001);
@@ -1423,7 +1447,7 @@
   </div>
 
   <footer class="note">
-    <p><b>C_MR.</b> The second tab holds the contents of the Recommendations - one box per section, with the chapter it belongs to in its name and its own date up to 30 September. The steps inside each box are the tasks. Each line carries three circles instead of one - <b>i</b> when the text has been carried in from another book, <b>e</b> when it has been worked over, and the ordinary one for the final reading. Only the ordinary circle counts towards the blueprint; the tally of the other two sits under the counter in Mission control. Double-click the number of work days on any line to give that line its own deadline.<br><br><b>Projects.</b> The row of buttons at the top of Mission control holds your projects, and <b>+</b> starts another one. Every setting - the theme, the bold type, the size of this panel, the look of the notes, the captions, the colour of the strip, the folder Save writes into - belongs to the planner as a whole and applies to every project, the ones here now and the ones made later; only the plan itself lives inside its own project. A new project opens completely empty: press <b>+ add a stage</b> under the board, type its name, then add tasks inside it - or open <b>tree</b> and type the whole plan at once. Click a button to switch; each project keeps its own stages, notes, dates, drawing and look, and one press of Save writes them all into a single file. Double-click a project button to rename it (the title above the plan follows), and the small cross on the open one deletes it - press it twice, and the last remaining project is never deleted. Double-click any stage name on the board to rename it in place. The small arrows button in the top right corner of a card turns it over. The other side is the same card - the same number, the same heading, the same date and the same lines in the same order - and every line there can be typed over. Until you touch a line it simply repeats the front, so you translate straight on top of the words. What you write on the back stays on the back: the front is never changed, turning the card to and fro keeps both sides, and a line added on the front appears on the back as a copy of itself.<br><br><b>How it works.</b> Tick tasks to assemble the blueprint - it grows in whole stages, from the ground up, and every new line flies in and settles into place. Row buttons: S adds a subtask, G switches English/Russian, the pencil edits, the number shows the WORK days left for that task - Monday to Friday, weekends are not counted (click it for details), the cross deletes (press ? to confirm). Drag anything by its grip handle (the dotted column): whole stages, single tasks and subtasks - between stages too. Reorder stages with the small arrows next to the number, double-click the number and type the place it should take, or drag a card by its number - the numbering and the calendar on the left follow. At the bottom of every stage: <b>priority</b> lifts that card towards you, and <b>yield</b> in the right corner appears on a lifted card and gives way. The moment one stage gives way the two ranks pull apart: the stage that keeps full priority comes further forward - higher, larger, with a deeper shadow - while the ones that gave way step back, lie almost flat and go pale, though they stay marked and brighten again under the pointer. Press yield off, or switch priority off, and everything returns to one level. <b>dim</b> fades everything else out so it stays in focus, <b>hide done</b> folds away every finished line, <b>hide all</b> folds away the whole list and leaves one line saying how much is still to do, and <b>in process</b> parks the stage - the card fades a little and a note floats above it where you type what the stage is waiting for and press Enter. Click that note to reword it, press its cross when the stage moves again (the words are kept for next time). The <b>P</b> beside a task or subtask keeps it in focus while the rest of the stage fades - press it on as many lines as you need, they all stay lit. <b>Select any text on the page and right-click it</b> for Word-style formatting: bold, italic, underline, strikethrough, four sizes, text colour, highlight and alignment. Without a selection the ordinary browser menu appears. Both calendars are divided into weeks (W1, W2...). Double-click the "from" badge to move the start date and the "due" badge to move the finish - both timelines recalculate. The round C button on the blueprint switches between nineteen drawings: five spacecraft, six of Leonardo da Vinci's machines, the Kremlin tower, the Tower of Pisa, a frog dissection plate, a giant bird, a giant duck, a classic iPod, an AK-pattern rifle on a museum stand and a training grenade. The blueprint is cut into 200 stages; adding or removing tasks and subtasks re-divides them automatically, and every counter - completed, stages built, both calendars - is recalculated at once. The Sticker button on the right adds yellow notes: type in them (double-click), draw on them with Apple Pencil on an iPad (right-click for colors, eraser and more), drag them anywhere, resize by the corner, and pull a line from the round handle to link two stickers. Progress is saved in this browser automatically; use Save/Load to move it elsewhere, <b>top sign</b>, <b>left sign</b> and <b>right sign</b> set the three captions (text, colour, size up to 200 px, automatic shrinking when the window narrows, and delete-them-all). <b>list</b> in the Mission control corner folds every stage into one compact list. The <b>&minus; 100% +</b> control beside the theme switch makes this whole panel smaller or bigger - from 20 to 160 per cent, in steps of five above 70 and of ten below it, so a couple of presses turn Mission control into a thin strip and leave the board the rest of the screen (double-click it to go back to normal). The four blocks of the panel - the title, the two priority lists and the counter - are not tied to any screen size: they pack themselves into as many columns as the width allows, four on a wide screen, two on a tablet held upright, one on a phone, and they re-pack as soon as the window changes or the panel is made smaller, so no empty space is left beside them. <b>Things</b> next to "as text" hands the open project to the Things app - stages become headings, tasks become to-dos with their deadlines, subtasks become checklist lines - and takes a list back from it if you paste one in. The two lines at the bottom answer different questions and never mix them any more. The thin upper line is the calendar: it carries a hair for every day, a firmer line at every Monday, a soft band for every other week, the dates of the stages, the week numbers and today, and the words beside it count the weeks and the working days left. The thick bar under it is the work done - the star on it moves only when tasks are ticked, and the small caption on its right says how many of them are finished. The grey circle on the left calendar watches the clock in the same way as the upper line. <b>hide and seek</b> opens a tree of every part of the page - colour, size, position and hiding for each. <b>Priority for today</b> and <b>Priority for the week</b> in Mission control keep the handful of things that matter right now and the larger pieces the week is meant to close - both work the same way, every line stays in sight however many you add, the wording is shown in full, a double-click reopens it for changes, and every project keeps its own two lists. The <b>Day</b> button at the far right of the project row opens the day page: everything ticked today, in every project, with the time it happened; four figures - closed today, the tally of this project, the working days left and how many lines a day the rest of the plan asks for; and under them a plain reading of whether it still fits the date. It compares the pace of the last week with the pace the date needs, says where the present pace lands and how many working days of slack or delay that means, names the stages that are past their dates and the ones due within a week, and tells you how much to add a day to catch up. The last seven days and the other projects are listed underneath, and <b>folder</b> next to Save pins a folder: from then on every press of Save drops a NEW progress file there with the time in its name, down to the second - so you can always go back to any moment (Chrome and Edge on a computer can hold a folder; Safari and Firefox cannot, and there every save goes to Downloads). <b>sync</b> beside it keeps the plan the same on every device through a repository of your own on GitHub: name the repository, the file and an access key once here and once on the phone, and the planner writes the progress there and reads the newer copy back when the page opens. Turn <b>auto</b> on and it does both by itself - a few seconds after every change, and once at every opening; leave it off and the two buttons do it by hand. Name each device in the <b>This device</b> field, and press <b>make this device the main one</b> on whichever you are working from: the main device sends by itself, the others only take, and their unsent changes show as a dot on the <b>sync</b> button until you press Send. Press the same button on another device and the lead moves there - the copy in GitHub carries the name of the device that wrote it and of the one that leads, so every device knows where the work is happening. The key is kept in that one browser, never inside a progress file and never in the repository, and <b>forget the key</b> clears it. If a device holds changes that were never sent, the planner says so instead of writing over them. On an iPad the Apple Pencil writes straight onto the page and onto the notes (a finger never draws - it scrolls); <b>pencil</b> below switches the pen between drawing and erasing, <b>clear pencil</b> wipes the page handwriting. The pale circles on the right of every stage, task and subtask are sticker anchors: pull a line onto one from a note and it turns into a real checkbox that counts towards everything - unlink it and it goes quiet again. Click or right-click a connector to change its shape, thickness, style, arrows, colour, add a label or delete it; <b>no dots</b> hides them in one stage, <b>sticker circles</b> everywhere. <b>note style</b> cycles three sticky-note designs - paper, minimal and classic. <b>hide sticker button</b> tucks the round Sticker button away and <b>hide stickers</b> makes every note and its lines invisible - nothing is deleted, press the same button again to bring them back. The little <b>switch</b> beside "Mission control" turns the dark theme on and off, and <b>B</b> next to it makes every word on the page bold: in the dark every panel, button and checkbox keeps its own outline and a pale halo instead of a shadow, so nothing dissolves into the background. The round knob right beside that switch sets how deep the dark goes: press it and a small slider appears - drag it left for a soft, smoky dark and right for an almost black one, "back to normal" returns to the middle setting. The light theme is never touched, and the level you choose holds for every project. <b>pink</b> below paints the timeline in exactly the colour of the strip the free hosting adds underneath it - the two become one band, and the scale, its marks and its dates turn white so they stand out on it. Right-click <b>pink</b> - or hold it down on a phone - if you want to set the shade yourself: pick it straight off the strip with the colour picker, choose one of the eight vivid pinks, or paste a colour code. If the hosting adds its own stripe along the bottom of the page (the free tiiny.host bar does), the timeline lifts itself above the stripe so nothing is covered. And "clear the previous changes" wipes everything back to the original content (double confirmation plus a 4-digit code).</p>
+    <p><b>C_MR.</b> The second tab holds the contents of the Recommendations - one box per section, with the chapter it belongs to in its name and its own date up to 30 September. The steps inside each box are the tasks. Each line carries three circles instead of one - <b>i</b> when the text has been carried in from another book, <b>e</b> when it has been worked over, and the ordinary one for the final reading. Only the ordinary circle counts towards the blueprint; the tally of the other two sits under the counter in Mission control. Double-click the number of work days on any line to give that line its own deadline.<br><br><b>Projects.</b> The row of buttons at the top of Mission control holds your projects, and <b>+</b> starts another one. Every setting - the theme, the bold type, the size of this panel, the look of the notes, the captions, the colour of the strip, the folder Save writes into - belongs to the planner as a whole and applies to every project, the ones here now and the ones made later; only the plan itself lives inside its own project. A new project opens completely empty: press <b>+ add a stage</b> under the board, type its name, then add tasks inside it - or open <b>tree</b> and type the whole plan at once. Click a button to switch; each project keeps its own stages, notes, dates, drawing and look, and one press of Save writes them all into a single file. Double-click a project button to rename it (the title above the plan follows), and the small cross on the open one deletes it - press it twice, and the last remaining project is never deleted. Double-click any stage name on the board to rename it in place. The small arrows button in the top right corner of a card turns it over. The other side is the same card - the same number, the same heading, the same date and the same lines in the same order - and every line there can be typed over. Until you touch a line it simply repeats the front, so you translate straight on top of the words. What you write on the back stays on the back: the front is never changed, turning the card to and fro keeps both sides, and a line added on the front appears on the back as a copy of itself.<br><br><b>How it works.</b> Tick tasks to assemble the blueprint - it grows in whole stages, from the ground up, and every new line flies in and settles into place. Row buttons: S adds a subtask, G switches English/Russian, the pencil edits, the number shows the WORK days left for that task - Monday to Friday, weekends are not counted (click it for details), the cross deletes (press ? to confirm). Drag anything by its grip handle (the dotted column): whole stages, single tasks and subtasks - between stages too. Reorder stages with the small arrows next to the number, double-click the number and type the place it should take, or drag a card by its number - the numbering and the calendar on the left follow. At the bottom of every stage: <b>priority</b> lifts that card towards you, and <b>yield</b> in the right corner appears on a lifted card and gives way. The moment one stage gives way the two ranks pull apart: the stage that keeps full priority comes further forward - higher, larger, with a deeper shadow - while the ones that gave way step back, lie almost flat and go pale, though they stay marked and brighten again under the pointer. The card in front also takes a little more room above and below itself, so its glow never lands on the card above it. Press yield off, or switch priority off, and everything returns to one level. <b>dim</b> fades everything else out so it stays in focus, <b>hide done</b> folds away every finished line, <b>hide all</b> folds away the whole list and leaves one line saying how much is still to do, and <b>in process</b> parks the stage - the card fades a little and a note floats above it where you type what the stage is waiting for and press Enter. Click that note to reword it, press its cross when the stage moves again (the words are kept for next time). The <b>P</b> beside a task or subtask keeps it in focus while the rest of the stage fades - press it on as many lines as you need, they all stay lit. <b>Select any text on the page and right-click it</b> for Word-style formatting: bold, italic, underline, strikethrough, four sizes, text colour, highlight and alignment. Without a selection the ordinary browser menu appears. Both calendars are divided into weeks (W1, W2...). Double-click the "from" badge to move the start date and the "due" badge to move the finish - both timelines recalculate. Under the date on every stage sits <b>+ time period</b>: press it and name the first and the last day you actually sit with that stage. The badge then shows those two days and how many working days they hold, and it turns green while today falls inside them, so at a glance you see which stages are running right now. The deadline says when a stage must be finished; the period says when it is being worked on - they are separate, and either can be cleared without touching the other. The round C button on the blueprint switches between nineteen drawings: five spacecraft, six of Leonardo da Vinci's machines, the Kremlin tower, the Tower of Pisa, a frog dissection plate, a giant bird, a giant duck, a classic iPod, an AK-pattern rifle on a museum stand and a training grenade. The blueprint is cut into 200 stages; adding or removing tasks and subtasks re-divides them automatically, and every counter - completed, stages built, both calendars - is recalculated at once. The Sticker button on the right adds yellow notes: type in them (double-click), draw on them with Apple Pencil on an iPad (right-click for colors, eraser and more), drag them anywhere, resize by the corner, and pull a line from the round handle to link two stickers. Progress is saved in this browser automatically; use Save/Load to move it elsewhere, <b>top sign</b>, <b>left sign</b> and <b>right sign</b> set the three captions (text, colour, size up to 200 px, automatic shrinking when the window narrows, and delete-them-all). <b>list</b> in the Mission control corner folds every stage into one compact list. The <b>&minus; 100% +</b> control beside the theme switch makes this whole panel smaller or bigger - from 20 to 160 per cent, in steps of five above 70 and of ten below it, so a couple of presses turn Mission control into a thin strip and leave the board the rest of the screen (double-click it to go back to normal). The four blocks of the panel - the title, the two priority lists and the counter - are not tied to any screen size: they pack themselves into as many columns as the width allows, four on a wide screen, two on a tablet held upright, one on a phone, and they re-pack as soon as the window changes or the panel is made smaller, so no empty space is left beside them. <b>Things</b> next to "as text" hands the open project to the Things app - stages become headings, tasks become to-dos with their deadlines, subtasks become checklist lines - and takes a list back from it if you paste one in. The two lines at the bottom answer different questions and never mix them any more. The thin upper line is the calendar: it carries a hair for every day, a firmer line at every Monday, a soft band for every other week, the dates of the stages, the week numbers and today, and the words beside it count the weeks and the working days left. The thick bar under it is the work done - the star on it moves only when tasks are ticked, and the small caption on its right says how many of them are finished. The grey circle on the left calendar watches the clock in the same way as the upper line. <b>hide and seek</b> opens a tree of every part of the page - colour, size, position and hiding for each. <b>Priority for today</b> and <b>Priority for the week</b> in Mission control keep the handful of things that matter right now and the larger pieces the week is meant to close - both work the same way, every line stays in sight however many you add, the wording is shown in full, a double-click reopens it for changes, and every project keeps its own two lists. The <b>Day</b> button at the far right of the project row opens the day page: everything ticked today, in every project, with the time it happened; four figures - closed today, the tally of this project, the working days left and how many lines a day the rest of the plan asks for; and under them a plain reading of whether it still fits the date. It compares the pace of the last week with the pace the date needs, says where the present pace lands and how many working days of slack or delay that means, names the stages that are past their dates and the ones due within a week, and tells you how much to add a day to catch up. The last seven days and the other projects are listed underneath, and <b>folder</b> next to Save pins a folder: from then on every press of Save drops a NEW progress file there with the time in its name, down to the second - so you can always go back to any moment (Chrome and Edge on a computer can hold a folder; Safari and Firefox cannot, and there every save goes to Downloads). <b>sync</b> beside it keeps the plan the same on every device through a repository of your own on GitHub: name the repository, the file and an access key once here and once on the phone, and the planner writes the progress there and reads the newer copy back when the page opens. Turn <b>auto</b> on and it does both by itself - a few seconds after every change, and once at every opening; leave it off and the two buttons do it by hand. Name each device in the <b>This device</b> field, and press <b>make this device the main one</b> on whichever you are working from: the main device sends by itself, the others only take, and their unsent changes show as a dot on the <b>sync</b> button until you press Send. Press the same button on another device and the lead moves there - the copy in GitHub carries the name of the device that wrote it and of the one that leads, so every device knows where the work is happening. The key is kept in that one browser, never inside a progress file and never in the repository, and <b>forget the key</b> clears it. If a device holds changes that were never sent, the planner says so instead of writing over them. On an iPad the Apple Pencil writes straight onto the page and onto the notes (a finger never draws - it scrolls); <b>pencil</b> below switches the pen between drawing and erasing, <b>clear pencil</b> wipes the page handwriting. The pale circles on the right of every stage, task and subtask are sticker anchors: pull a line onto one from a note and it turns into a real checkbox that counts towards everything - unlink it and it goes quiet again. Click or right-click a connector to change its shape, thickness, style, arrows, colour, add a label or delete it; <b>no dots</b> hides them in one stage, <b>sticker circles</b> everywhere. <b>note style</b> cycles three sticky-note designs - paper, minimal and classic. <b>hide sticker button</b> tucks the round Sticker button away and <b>hide stickers</b> makes every note and its lines invisible - nothing is deleted, press the same button again to bring them back. The little <b>switch</b> beside "Mission control" turns the dark theme on and off, and <b>B</b> next to it makes every word on the page bold: in the dark every panel, button and checkbox keeps its own outline and a pale halo instead of a shadow, so nothing dissolves into the background. The round knob right beside that switch sets how deep the dark goes: press it and a small slider appears - drag it left for a soft, smoky dark and right for an almost black one, "back to normal" returns to the middle setting. The light theme is never touched, and the level you choose holds for every project. <b>pink</b> below paints the timeline in exactly the colour of the strip the free hosting adds underneath it - the two become one band, and the scale, its marks and its dates turn white so they stand out on it. Right-click <b>pink</b> - or hold it down on a phone - if you want to set the shade yourself: pick it straight off the strip with the colour picker, choose one of the eight vivid pinks, or paste a colour code. If the hosting adds its own stripe along the bottom of the page (the free tiiny.host bar does), the timeline lifts itself above the stripe so nothing is covered. And "clear the previous changes" wipes everything back to the original content (double confirmation plus a 4-digit code).</p>
     <div class="footrow">
       <button class="btn" id="btnSignT">top sign</button>
       <button class="btn" id="btnSignL">left sign</button>
@@ -4065,7 +4089,7 @@ var BASE=[
 /* ================= STATE ================= */
 var KEY="mr_rocket_planner_v2";
 function freshState(){
-  return { prioLow:{}, doneAt:{},done:{},collapsed:{},custom:{},edits:{},lang:{},plang:{},subs:{},tremoved:{},pedits:{},premoved:{},pcustom:[],dues:{},finish:"",start:"",header:null,order:[],vehicle:0,signing:null,sigv:7,stickers:[],slinks:[],
+  return { spans:{}, prioLow:{}, doneAt:{},done:{},collapsed:{},custom:{},edits:{},lang:{},plang:{},subs:{},tremoved:{},pedits:{},premoved:{},pcustom:[],dues:{},finish:"",start:"",header:null,order:[],vehicle:0,signing:null,sigv:7,stickers:[],slinks:[],
     prio:{},dimBy:"",rich:{},signs:null,
     hideLnk:{},hideLnkAll:false,stickerClassic:false,stickerSkin:"control",torder:{},tmoved:{},styles:{},listView:false,
     today:[],week:[],saveName:"",saveDirName:"",ptask:{},stickBtn:null,stickBtnHidden:false,stickersHidden:false,bink:[],
@@ -4416,7 +4440,11 @@ function renderProject(p, idx){
       '<div class="proj-title" data-pt="'+p.id+'">'+labelBody(p.id,showRu?p.ru:p.en,!!showRu)+'</div>'+
       '<div class="proj-meta">'+
         (p.ru?'<button class="iconbtn g'+(showRu?" ru":"")+'" data-pg="'+p.id+'" title="Translate">G</button>':'')+
-        '<span class="due" data-due="'+p.id+'" title="Double-click to change the deadline"></span>'+
+        '<span class="duecol">'+
+          '<span class="due" data-due="'+p.id+'" title="Double-click to change the deadline"></span>'+
+          '<span class="span'+(spanOn(p.id)?" set":"")+(spanNow(p.id)?" now":"")+'" data-span="'+p.id+'" '+
+            'title="The days you work on this stage - click to set them">'+spanLabel(p.id)+'</span>'+
+        '</span>'+
         '<span class="mini"><i data-pbar="'+p.id+'"></i></span>'+
         lnkDot(p.id)+
         '<span class="chev">&#9660;</span>'+
@@ -5183,6 +5211,10 @@ host.addEventListener("click", function(ev){
     toast(state.prio[ppid]?"Stage marked as priority":"Priority removed");
     ev.stopPropagation(); return;
   }
+  if((b=ev.target.closest("[data-span]"))){
+    openSpanPop(b, b.getAttribute("data-span"));
+    ev.stopPropagation(); return;
+  }
   if((b=ev.target.closest("[data-yield]"))){
     var ypid=b.getAttribute("data-yield");
     state.prioLow=state.prioLow||{};
@@ -5263,7 +5295,7 @@ host.addEventListener("click", function(ev){
   }
   if((b=ev.target.closest("[data-addok]"))){ commitAdd(b.getAttribute("data-addok")); ev.stopPropagation(); return; }
   var head=ev.target.closest("[data-head]");
-  if(head && !ev.target.closest(".pcheck") && !ev.target.closest(".iconbtn") && !ev.target.closest(".due") && !ev.target.closest(".proj-num") && !ev.target.closest(".movecol") && !ev.target.closest(".lnkdot") && !ev.target.closest(".duepop") && !ev.target.closest("input")){
+  if(head && !ev.target.closest(".pcheck") && !ev.target.closest(".iconbtn") && !ev.target.closest(".due") && !ev.target.closest(".span") && !ev.target.closest(".proj-num") && !ev.target.closest(".movecol") && !ev.target.closest(".lnkdot") && !ev.target.closest(".duepop") && !ev.target.closest(".spanpop") && !ev.target.closest("input")){
     var pid2=head.getAttribute("data-head");
     var el=document.querySelector('[data-proj="'+pid2+'"]');
     el.classList.toggle("collapsed");
@@ -5512,6 +5544,88 @@ host.addEventListener("dragend", function(){
 });
 
 /* ================= DUE DATE EDITING ================= */
+/* ================= THE DAYS A STAGE IS WORKED ON =================
+   A period of its own under the deadline: not when it must be finished,
+   but the days you actually sit with it. */
+function spanOf(pid){ var sp=state.spans&&state.spans[pid]; return (sp&&sp.from&&sp.to)?sp:null; }
+function spanOn(pid){ return !!spanOf(pid); }
+function spanNow(pid){
+  var sp=spanOf(pid); if(!sp) return false;
+  var t=ymd(new Date());
+  return sp.from<=t && t<=sp.to;
+}
+function spanDays(sp){
+  var a=pd(sp.from+"T00:00"), b=pd(sp.to+"T00:00"), n=0, w=0;
+  var c=new Date(a);
+  while(c<=b){ n++; var d=c.getDay(); if(d!==0&&d!==6) w++; c.setDate(c.getDate()+1); }
+  return {all:n, work:w};
+}
+function spanLabel(pid){
+  var sp=spanOf(pid);
+  if(!sp) return "+ time period";
+  var d=spanDays(sp);
+  return fmtEn(sp.from)+" &ndash; "+fmtEn(sp.to)+" &#183; "+d.work+"d";
+}
+function repaintSpan(pid){
+  var el=document.querySelector('[data-span="'+pid+'"]');
+  if(!el) return;
+  el.innerHTML=spanLabel(pid);
+  el.classList.toggle("set", spanOn(pid));
+  el.classList.toggle("now", spanNow(pid));
+}
+function openSpanPop(anchor, pid){
+  document.querySelectorAll(".spanpop,.duepop").forEach(function(n){ n.remove(); });
+  var sp=state.spans&&state.spans[pid]||{};
+  var pop=document.createElement("div");
+  pop.className="spanpop";
+  pop.innerHTML=
+    '<div class="r"><label>from</label><input type="date" value="'+(sp.from||"")+'"></div>'+
+    '<div class="r"><label>to</label><input type="date" value="'+(sp.to||"")+'"></div>'+
+    '<div class="note"></div>'+
+    '<div class="row"><button class="btn primary">Set</button><button class="btn">Clear</button><button class="btn">Cancel</button></div>';
+  anchor.parentElement.style.position="relative";
+  anchor.parentElement.appendChild(pop);
+  var ins=pop.querySelectorAll("input"), btns=pop.querySelectorAll("button"), note=pop.querySelector(".note");
+  function count(){
+    if(!ins[0].value || !ins[1].value){ note.textContent="Two dates make a period."; return; }
+    if(ins[1].value<ins[0].value){ note.textContent="The last day cannot come before the first."; return; }
+    var d=spanDays({from:ins[0].value, to:ins[1].value});
+    note.textContent=d.all+" day"+(d.all===1?"":"s")+", "+d.work+" working.";
+  }
+  count();
+  ins[0].addEventListener("change", count);
+  ins[1].addEventListener("change", count);
+  ["click","dblclick","mousedown","pointerdown"].forEach(function(t){
+    pop.addEventListener(t, function(e){ e.stopPropagation(); });
+  });
+  btns[0].addEventListener("click", function(){
+    if(!ins[0].value || !ins[1].value){ toast("Set both days - the first and the last"); return; }
+    if(ins[1].value<ins[0].value){ toast("The last day cannot come before the first"); return; }
+    state.spans=state.spans||{};
+    state.spans[pid]={from:ins[0].value, to:ins[1].value};
+    persist(); repaintSpan(pid); pop.remove();
+    toast("Stage worked on "+fmtEn(ins[0].value)+" - "+fmtEn(ins[1].value));
+  });
+  btns[1].addEventListener("click", function(){
+    if(state.spans) delete state.spans[pid];
+    persist(); repaintSpan(pid); pop.remove();
+    toast("Period cleared");
+  });
+  btns[2].addEventListener("click", function(){ pop.remove(); });
+  /* on a narrow screen the badge sits near the edge - pull the panel back into view */
+  var r=pop.getBoundingClientRect(), shift=0;
+  if(r.right>window.innerWidth-10) shift=(window.innerWidth-10)-r.right;
+  if(r.left+shift<10) shift=10-r.left;
+  if(shift) pop.style.transform="translateX("+Math.round(shift)+"px)";
+  setTimeout(function(){
+    function away(e){
+      if(!pop.parentElement){ document.removeEventListener("pointerdown",away,true); return; }
+      if(pop.contains(e.target)) return;
+      pop.remove(); document.removeEventListener("pointerdown",away,true);
+    }
+    document.addEventListener("pointerdown",away,true);
+  },0);
+}
 function openDuePop(anchor, currentVal, onSet){
   document.querySelectorAll(".duepop").forEach(function(n){n.remove();});
   var pop=document.createElement("div");
@@ -7458,7 +7572,7 @@ function binkRedraw(){
 }
 function bgInkAllowed(t){
   if(!t || !t.closest) return true;
-  return !t.closest('.sticker,button,input,textarea,select,label,a,.overlay,.modal,#richMenu,#ctxMenu,#lineMenu,.duepop,'+
+  return !t.closest('.sticker,button,input,textarea,select,label,a,.overlay,.modal,#richMenu,#ctxMenu,#lineMenu,.duepop,.spanpop,.span,'+
     '.proj-head,.slrow,.tl-track,#star,.iconbtn,.due,.grip,.movecol,.lnkdot,.addtask,.addrow,.hero-tools,.mini-btn,.pill,'+
     '#btnSticker,[contenteditable="true"],#todayBox,#weekBox,.timeline .tl-inner');
 }
