@@ -591,38 +591,60 @@
   #launchBox.today .th b{color:#7C86BE}
   body.dark #launchBox{--lnbg:#161A26; --lnline:#2B3346; --lnhover:#1D2231; --lndot:#414D67}
   body.dark #launchBox.today .th b{color:#A9B6EA}
-  .lnlist{display:flex; flex-direction:column; gap:3px}
-  .lnrow{display:flex; align-items:flex-start; gap:9px; padding:5px 3px; border-radius:9px}
+  .lnlist{display:flex; flex-direction:column; gap:5px}
+  .lnrow{display:flex; align-items:flex-start; gap:11px; padding:7px 8px; border-radius:12px;
+    border:1.5px solid transparent}
   .lnrow:hover{background:var(--lnhover,#EFF2FB)}
-  .lnrk{appearance:none; cursor:pointer; flex:0 0 auto; width:30px; height:30px; padding:0; border-radius:50%;
+  /* a stage still waiting stands out; one that has gone up steps back */
+  .lnrow.wait{background:var(--card); border-color:var(--lnline,#E1E6F5)}
+  .lnrow.wait.late{border-color:#EBB9B2; background:var(--red-soft)}
+  .lnrow.wait.today{border-color:#E8CFA9; background:var(--peach-soft)}
+  .lnrow.done{background:var(--sunk,#F5F4F1); opacity:.72}
+  .lnrow.done:hover{opacity:.95}
+  .lnrk{appearance:none; cursor:pointer; flex:0 0 auto; width:38px; height:38px; padding:0; border-radius:50%;
     border:2px solid var(--rkline,#C3CEEA); background:var(--rkbg,#EAEFFB);
-    display:flex; align-items:center; justify-content:center; font-size:15px; line-height:1;
-    transition:transform .3s cubic-bezier(.25,.9,.35,1), border-color .3s ease, background .3s ease, filter .4s ease}
-  .lnrk:hover{transform:translateY(-2px) scale(1.06)}
+    display:flex; align-items:center; justify-content:center;
+    transition:transform .3s cubic-bezier(.25,.9,.35,1), border-color .3s ease, background .3s ease,
+      filter .4s ease, opacity .4s ease, box-shadow .3s ease}
+  .lnrk svg{width:25px; height:25px; display:block}
+  .lnrk:hover{transform:translateY(-2px) scale(1.07)}
   .lnrk:active{transform:scale(.94)}
-  .lnrk.late{--rkline:#EBB9B2; --rkbg:#FBEDEB}
-  .lnrk.today{--rkline:#E8CFA9; --rkbg:#FBF2E6}
-  .lnrk.done{--rkline:var(--line2); --rkbg:var(--sunk,#F1F0EC); filter:grayscale(1); opacity:.55}
-  .lnrk.done:hover{opacity:.85}
+  .lnrk.late{--rkline:#E39C92; --rkbg:#FCE9E6; box-shadow:0 0 0 4px rgba(226,87,76,.10)}
+  .lnrk.today{--rkline:#E0B575; --rkbg:#FDF3E4; box-shadow:0 0 0 4px rgba(245,166,35,.12)}
+  .lnrk.done{--rkline:var(--line2); --rkbg:var(--sunk,#F1F0EC); box-shadow:none;
+    filter:grayscale(1) contrast(.85); opacity:.5}
+  .lnrk.done:hover{opacity:.8}
   body.dark .lnrk{--rkline:#3C4661; --rkbg:#1B2130}
-  .lntx{flex:1 1 auto; min-width:0; font-size:12.5px; line-height:1.35; color:var(--ink);
-    overflow-wrap:anywhere; padding-top:3px}
-  .lnrow.done .lntx{color:var(--ink-faint)}
-  .lntx i{display:block; font-style:normal; font-size:10.5px; color:var(--ink-faint); margin-top:1px}
-  .lnflag{flex:0 0 auto; align-self:center; font-size:9.5px; font-weight:800; letter-spacing:.1em;
-    text-transform:uppercase; color:var(--ink-faint); border:1.5px solid var(--line2);
-    border-radius:7px; padding:3px 7px; white-space:nowrap; background:var(--card)}
-  .lnrow.done .lnflag{color:#7FAE92; border-color:var(--green); background:var(--green-soft)}
-  .lnnone{font-size:12px; color:var(--ink-faint); padding:2px}
-  /* the same rows inside the window */
-  .lnsec{margin-bottom:16px}
+  .lnmid{flex:1 1 auto; min-width:0; display:flex; flex-direction:column; gap:3px; padding-top:2px}
+  .lntx{font-size:12.5px; line-height:1.35; color:var(--ink); font-weight:650; overflow-wrap:anywhere}
+  .lnrow.done .lntx{color:var(--ink-dim); font-weight:600}
+  .lnwhen{font-size:10.5px; color:var(--ink-faint); line-height:1.35; overflow-wrap:anywhere}
+  .lnrow.late .lnwhen{color:#C08B84}
+  .lnrow.today .lnwhen{color:#C99B62}
+  .lnbadges{display:flex; gap:6px; flex-wrap:wrap; margin-top:2px}
+  .lnflag{font-size:9.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase;
+    color:#5E9C79; border:1.5px solid var(--green); border-radius:7px; padding:3px 8px;
+    background:var(--green-soft); white-space:nowrap}
+  .lntag{font-size:9.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--blue-ink); background:var(--blue-soft); border:1.5px solid transparent;
+    border-radius:7px; padding:3px 8px; white-space:nowrap}
+  .lnnone{font-size:12.5px; color:var(--ink-faint); padding:6px 2px; line-height:1.5}
+  /* the window */
+  .lnsec{margin-bottom:18px}
   .lnsec h3{font-size:11.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
-    color:var(--ink-faint); margin-bottom:8px; display:flex; gap:8px; align-items:baseline}
-  .lnsec h3 i{font-style:normal; font-weight:700; font-size:10.5px}
-  #lnBody .lnrow{background:var(--sunk,#F7F5F0); margin-bottom:5px; padding:8px 10px}
-  .lntag{flex:0 0 auto; align-self:center; font-size:9.5px; font-weight:800; letter-spacing:.06em;
-    text-transform:uppercase; color:var(--blue-ink); background:var(--blue-soft);
-    border-radius:7px; padding:3px 7px; white-space:nowrap}
+    color:var(--ink-faint); margin:0 0 9px; display:flex; gap:8px; align-items:baseline}
+  .lnsec h3 i{font-style:normal; font-weight:700; font-size:10.5px; color:var(--ink-faint)}
+  #lnBody{padding-bottom:4px}
+  #lnBody .lnrow{margin-bottom:6px; padding:10px 12px}
+  #lnBody .lntx{font-size:13.5px}
+  #lnBody .lnwhen{font-size:11.5px}
+  .lnfoot{font-size:12px; color:var(--ink-faint); line-height:1.55; margin-top:2px;
+    border-top:1px solid var(--line); padding-top:12px}
+  @media (max-width:820px){
+    #lnBody .lnrow{padding:9px 10px; gap:9px}
+    .lnrk{width:36px; height:36px}
+    .lnrk svg{width:21px; height:21px}
+  }
   #btnLaunch b{font-size:10.5px; font-weight:800; color:#7C86BE; margin-left:5px}
   /* with a fifth block in the row the counter often wraps to a line of its own -
      there it takes the whole width instead of sitting in a corner with a gap */
@@ -6301,11 +6323,45 @@ function launchRows(){
   });
   return out;
 }
+/* A drawn rocket, not a letter from a font: on some machines the emoji comes out
+   flat and grey, and the whole point is that a stage still waiting is bright and one
+   already launched is not. Grey is then a real grayscale of real colour. */
+var RK_SVG='<svg viewBox="0 0 32 32" aria-hidden="true">'+
+  '<path d="M16 24.6c-2.3 0-3.8 2.2-3.8 4.4 0 .7.8 1 1.3.6.8-.6 1.4-1 2.5-1s1.7.4 2.5 1c.5.4 1.3.1 1.3-.6 0-2.2-1.5-4.4-3.8-4.4z" fill="#F5A623"/>'+
+  '<path d="M16 26.4c-1.1 0-1.9 1.1-1.9 2.2 0 .4.4.5.6.3.4-.3.7-.5 1.3-.5s.9.2 1.3.5c.2.2.6.1.6-.3 0-1.1-.8-2.2-1.9-2.2z" fill="#FFD27A"/>'+
+  '<path d="M11.6 17.3c-2 1.5-3.1 3.6-3.2 6.1 0 .6.6.9 1.1.6l3.4-1.8z" fill="#E2574C"/>'+
+  '<path d="M20.4 17.3c2 1.5 3.1 3.6 3.2 6.1 0 .6-.6.9-1.1.6l-3.4-1.8z" fill="#E2574C"/>'+
+  '<path d="M16 2.4c3.6 2.9 5.7 7.4 5.7 12.4 0 3.6-1 7-2.6 9.7h-6.2c-1.6-2.7-2.6-6.1-2.6-9.7 0-5 2.1-9.5 5.7-12.4z" fill="#FAFBFD" stroke="#A7B2C4" stroke-width="1.2"/>'+
+  '<path d="M16 2.4c1.8 1.4 3.2 3.3 4.2 5.4h-8.4c1-2.1 2.4-4 4.2-5.4z" fill="#E2574C"/>'+
+  '<circle cx="16" cy="13" r="3.1" fill="#79ADEA" stroke="#4172B4" stroke-width="1.1"/>'+
+  '<path d="M13.4 24.5h5.2" stroke="#B9C2D2" stroke-width="1.1" stroke-linecap="round"/>'+
+  '</svg>';
 function rocketBtn(r, spaceId){
   var cls=r.done?"done":(r.late?"late":(r.today?"today":""));
   return '<button class="lnrk '+cls+'" data-lnrk="'+r.pid+'" data-lnsp="'+(spaceId||"")+'" '+
     'title="'+(r.done?"Started - press to put it back on the pad":"Press to say this stage has started")+'">'+
-    "🚀"+'</button>';
+    RK_SVG+'</button>';
+}
+/* one row, on the pad and in the window - the name, when it starts, and the badges
+   on a line of their own, so nothing is ever squeezed against the edge */
+function launchRow(r, spaceId, tag){
+  var cls=r.done?"done":("wait"+(r.late?" late":(r.today?" today":"")));
+  var when=(r.start
+      ? ((r.late?"should have started ":(r.today?"starts today, ":"starts "))+fmtEn(r.start))
+      : "no start date")+
+    (r.due?(" &#183; due "+fmtEn(String(r.due).slice(0,10))):"")+
+    (r.done&&r.at?(" &#183; launched "+fmtEn(r.at.slice(0,10))):"");
+  var badges="";
+  if(tag) badges+='<span class="lntag">'+esc(tag)+'</span>';
+  if(r.done) badges+='<span class="lnflag">launched</span>';
+  return '<div class="lnrow '+cls+'" data-ln="'+r.pid+'">'+
+    rocketBtn(r, spaceId)+
+    '<span class="lnmid">'+
+      '<span class="lntx">'+esc(r.name)+'</span>'+
+      '<span class="lnwhen">'+when+'</span>'+
+      (badges?('<span class="lnbadges">'+badges+'</span>'):"")+
+    '</span>'+
+  '</div>';
 }
 function renderLaunch(){
   var box=document.getElementById("launchBox");
@@ -6324,15 +6380,8 @@ function renderLaunch(){
   var cnt=document.getElementById("lnCnt");
   if(cnt) cnt.textContent=rows.filter(function(r){return r.done;}).length+" / "+rows.length;
   if(!list) return;
-  list.innerHTML=rows.length ? rows.map(function(r){
-    return '<div class="lnrow'+(r.done?" done":"")+'" data-ln="'+r.pid+'">'+
-      rocketBtn(r,"")+
-      '<span class="lntx">'+esc(r.name)+
-        '<i>'+(r.late?"should have started ":"starts ")+fmtEn(r.start)+
-        (r.due?(" &#183; due "+fmtEn(String(r.due).slice(0,10))):"")+'</i></span>'+
-      (r.done?'<span class="lnflag">launched</span>':'')+
-    '</div>';
-  }).join("") : '<div class="lnnone">Nothing waiting. Give a stage a start date and it stands here on its day.</div>';
+  list.innerHTML=rows.length ? rows.map(function(r){ return launchRow(r,"",""); }).join("")
+    : '<div class="lnnone">Nothing waiting. Give a stage a start date and it stands here on its day.</div>';
 }
 /* ---- the window: every launched stage, and everything still waiting ---- */
 function launchAll(){
@@ -6361,22 +6410,13 @@ function buildLaunchWindow(){
   function sec(title, arr, note){
     if(!arr.length) return '<div class="lnsec"><h3>'+title+'</h3><div class="lnnone">'+note+'</div></div>';
     return '<div class="lnsec"><h3>'+title+' <i>'+arr.length+'</i></h3>'+arr.map(function(r){
-      return '<div class="lnrow'+(r.done?" done":"")+'">'+
-        rocketBtn(r, r.sp)+
-        '<span class="lntx">'+esc(r.name)+'<i>'+
-          (r.start?((r.late?"should have started ":"starts ")+fmtEn(r.start)):"no start date")+
-          (r.due?(" &#183; due "+fmtEn(String(r.due).slice(0,10))):"")+
-          (r.done&&r.at?(" &#183; launched "+fmtEn(r.at.slice(0,10))):"")+
-        '</i></span>'+
-        (r.sp!==spaces.active?'<span class="lntag">'+esc(r.spName)+'</span>':'')+
-        (r.done?'<span class="lnflag">launched</span>':'')+
-      '</div>';
+      return launchRow(r, r.sp, (r.sp!==spaces.active)?r.spName:"");
     }).join("")+'</div>';
   }
   body.innerHTML=
     sec("Launched", done, "Nothing has been launched yet.")+
     sec("Waiting for their day", wait, "Nothing is waiting - give a stage a start date on its card.")+
-    '<div class="lnnone">The start date lives on the stage card itself, beside the deadline. '+
+    '<div class="lnfoot">The start date lives on the stage card itself, beside the deadline. '+
     '<b>display</b> below puts this pad beside the two priority lists in Mission control.</div>';
   var b=document.getElementById("lnShow");
   if(b){
