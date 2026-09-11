@@ -135,6 +135,15 @@
     background:linear-gradient(180deg, rgba(255,255,255,.5), rgba(255,255,255,0));
     box-shadow:inset 0 -1px 0 rgba(58,63,74,.08)}
   .stgrip:active{cursor:grabbing}
+  /* the name of a note - double-tap it to call the note something of its own */
+  .stname{position:absolute; left:31px; top:11px; right:34px; z-index:3;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; cursor:text;
+    font-size:10px; font-weight:800; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--blue); outline:none; border-radius:6px; padding:1px 3px; margin:-1px -3px}
+  .stname:hover{background:rgba(143,174,220,.14)}
+  .sticker.naming .stname{background:var(--card); color:var(--ink); cursor:text;
+    box-shadow:0 0 0 1.5px var(--blue2); text-overflow:clip; overflow:visible; white-space:pre}
+  body.stickers-classic .stname{display:none}
   .stgrip i{position:absolute; left:50%; top:6px; transform:translateX(-50%);
     width:30px; height:3px; border-radius:2px; background:rgba(58,63,74,.14)}
   .sticker .stx{position:absolute; left:11px; right:11px; top:20px; bottom:11px; overflow:hidden;
@@ -158,7 +167,7 @@
     box-shadow:inset 0 -1px 0 var(--line)}
   body.st-control .stgrip i{left:17px; top:13px; transform:none; width:8px; height:8px;
     border-radius:50%; background:var(--pc,#8FAEDC)}
-  body.st-control .stgrip::after{content:"NOTE"; position:absolute; left:31px; top:11px;
+  body.st-control .stname{left:31px; top:11px;
     font-size:10px; font-weight:800; letter-spacing:.2em; color:var(--blue); text-transform:uppercase;
     font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
   body.st-control .sticker .stx{top:44px; left:18px; right:18px; bottom:15px; color:var(--ink); line-height:1.46;
@@ -179,7 +188,7 @@
     box-shadow:inset 0 -1px 0 rgba(58,63,74,.07)}
   body.st-ive .stgrip i{left:16px; top:14px; transform:none; width:9px; height:9px;
     border-radius:50%; background:var(--pc,#C9CDD4)}
-  body.st-ive .stgrip::after{content:"Note"; position:absolute; left:32px; top:10px;
+  body.st-ive .stname{left:32px; top:10px;
     font-size:11.5px; font-weight:600; letter-spacing:.01em; color:rgba(58,63,74,.40);
     font-family:-apple-system,"SF Pro Text","Segoe UI",Roboto,sans-serif}
   body.st-ive .sticker .stx{top:44px; left:17px; right:17px; bottom:15px; color:#3A3F4A; line-height:1.44;
@@ -443,7 +452,15 @@
     color:#B79A63; border-radius:9px; padding:0 10px; font-size:14px; font-weight:700}
   .today .tadd button:hover{border-color:var(--peach)}
   .today .empty{font-size:12px; color:var(--ink-faint); padding:2px}
-  .btns{display:flex; gap:8px; flex-wrap:wrap; align-items:center}
+  /* Every button of the panel lives in one strip under the row of project names,
+     and the boxes of Mission control start below it. Nothing is hidden in a corner
+     any more: the tools are together, the work is together. */
+  .toolstrip{display:flex; flex-wrap:wrap; align-items:center; gap:8px; width:100%;
+    padding:10px 0 12px; margin:6px 0 4px; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line)}
+  /* the two groups pour their buttons straight into the strip, so they fill the
+     line instead of each taking a line of its own */
+  .btns{display:contents}
   .btn{
     appearance:none; font-size:13px; font-weight:650; cursor:pointer;
     border-radius:12px; padding:9px 14px; border:1.5px solid var(--line2);
@@ -456,7 +473,8 @@
   .pill{font-size:11.5px; color:var(--ink-dim); border:1px solid var(--line); background:var(--card); border-radius:99px; padding:6px 12px; display:inline-flex; align-items:center; gap:6px}
   .dot{width:7px; height:7px; border-radius:50%; background:var(--green)}
   .dot.warn{background:var(--peach)}
-  .hero-tools{position:absolute; right:16px; bottom:12px; display:flex; gap:8px}
+  .hero-tools{display:flex; gap:8px; flex:0 0 auto; margin-left:auto}
+  .toolstrip > .hidden{display:none}
   .mini-btn{
     appearance:none; cursor:pointer; font-size:11.5px; font-weight:700; letter-spacing:.04em;
     border:1.5px solid var(--line2); background:var(--card); color:var(--ink-dim);
@@ -480,7 +498,8 @@
   /* save / send-to button under the due badge in the title column */
   /* on a desktop and on a tablet the two stand one under the other - the title
      column is narrow, and a row of two squeezed both labels out of shape */
-  .savecol{display:flex; flex-direction:column; align-items:stretch; gap:7px; margin-top:6px; width:100%}
+  .savecol{display:flex; flex-direction:column; align-items:stretch; gap:7px; margin-top:6px;
+    width:100%; max-width:min(50%, 190px)}
   .sendbtn{appearance:none; cursor:pointer; font:inherit; font-size:14px; font-weight:750; letter-spacing:.02em;
     border:1.5px solid var(--line2); background:var(--card); color:var(--ink);
     border-radius:13px; padding:11px 8px; display:inline-flex; align-items:center; justify-content:center; gap:8px;
@@ -521,12 +540,12 @@
   /* on a phone and an upright tablet both are made for a thumb; only on a phone
      do they go back side by side, where the screen has no height to spare */
   @media (max-width:820px){
-    .savecol{gap:10px; margin-top:10px}
-    .sendbtn{font-size:16.5px; font-weight:800; padding:15px 12px;
-      min-height:56px; border-radius:15px; gap:10px; border-width:2px}
-    .sendbtn svg{width:21px; height:21px; stroke-width:2.1}
+    .savecol{gap:9px; margin-top:10px; max-width:min(56%, 230px)}
+    .sendbtn{font-size:14.5px; font-weight:800; padding:11px 12px;
+      min-height:46px; border-radius:14px; gap:9px; border-width:1.5px}
+    .sendbtn svg{width:18px; height:18px; stroke-width:2}
   }
-  @media (max-width:700px){ .savecol{flex-direction:row} }
+  @media (max-width:700px){ .savecol{flex-direction:row; max-width:280px} }
 
   /* ============ LAYOUT ============ */
   .main{display:flex; gap:24px; margin-top:22px; align-items:flex-start}
@@ -1059,7 +1078,7 @@
   body.spotlight .proj:not(.spot),
   body.spotlight.spothero header.top .brand,
   body.spotlight.spothero .hero-right .total:not(.spot),
-  body.spotlight.spothero header.top .btns,
+  body.spotlight.spothero header.top .toolstrip,
   body.spotlight.spothero header.top .hero-tools,
   body.spotlight.spothero .today:not(.spot),
   body.spotlight.spothero #launchBox:not(.spot){
@@ -1365,7 +1384,7 @@
      On an upright tablet the row of four never had the width for four, so the
      blocks take the screen in the order they are used: the launch pad across the
      top, the title with the counter beside it, then the day list, the buttons,
-     and the parallels underneath (the last one is carried there by placePar). */
+     and the parallels underneath. */
   @media (min-width:821px) and (max-width:1200px){
     .hero-right{display:contents}
     #launchBox{order:1; flex:1 1 100% !important; max-width:none !important}
@@ -1373,10 +1392,6 @@
     #totalBox{order:3; flex:0 1 330px; align-self:start}
     #todayBox{order:4; flex:1 1 100% !important; max-width:none !important}
     #parBox{order:5; flex:1 1 100%}
-    header.top .btns{margin-top:12px}
-    /* carried out of the counter column, it stands on its own under the buttons */
-    header.top > #parBox{margin-top:10px}
-    header.top > #parBox .parlist{max-height:none}
     .lnlist{max-height:min(38vh,300px)}
   }
 
@@ -1392,9 +1407,8 @@
     #todayBox,#launchBox{max-width:none; width:100%; margin:0}
     .hero-right{width:100%}
     .total{margin-left:0; width:100%; min-width:0}
-    .btns{gap:6px}
+    .toolstrip{gap:6px; padding:8px 0 10px}
     .btn{padding:8px 11px; font-size:12.5px}
-    .hero-tools{position:static; margin-top:2px; justify-content:flex-end}
     .main{flex-direction:column; gap:14px; margin-top:14px; align-items:stretch}
     .projects,.stagelist{width:100%; min-width:0}
     .bp-side{position:relative; top:auto !important; width:100%; height:auto; max-height:none; min-height:0; flex:1 1 auto}
@@ -1788,7 +1802,7 @@
   body.dark.st-ive .sticker{background:var(--pcd,#222836) !important; border-color:rgba(255,255,255,.10);
     box-shadow:inset 0 1px 0 rgba(255,255,255,.06), 0 0 0 1px rgba(150,180,230,.10), 0 20px 40px -18px rgba(0,0,0,.9)}
   body.dark.st-ive .sticker .stx{color:var(--ink)}
-  body.dark.st-ive .stgrip::after{color:rgba(236,241,248,.45)}
+  body.dark.st-ive .stname{color:rgba(236,241,248,.45)}
   body.dark.st-ive .sticker::before{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0) 40%)}
   body.dark.st-ive .sticker svg.ink path{stroke:#E7EDF7}
   body.dark .sticker .lnk{background:var(--card); border-color:rgba(157,192,250,.6)}
@@ -1862,8 +1876,10 @@
   body.dark.pinkbar .timeline{border-top-color:rgba(255,240,220,.22)}
 
 
-  .sykeyrow{display:flex; gap:7px; margin-top:7px}
+  .syrow.keyrow{flex-wrap:wrap}
+  .sykeyrow{display:flex; gap:7px; margin-top:8px; flex:1 0 100%; padding-left:106px}
   .sykeyrow .btn{font-size:12px; padding:7px 11px}
+  @media (max-width:560px){ .sykeyrow{padding-left:0} }
   /* ---------- the picture on the home screen ---------- */
   .icogrid{display:grid; grid-template-columns:repeat(auto-fill,minmax(128px,1fr)); gap:12px}
   .icoopt{appearance:none; cursor:pointer; font:inherit; text-align:center; background:var(--card);
@@ -1883,14 +1899,17 @@
      One button dresses the whole page in the look of the study
      noodle house: warm paper, ink outlines drawn with a thick pen,
      shadows that do not blur but sit a few pixels below, a red
-     signboard across the top and a hanja pressed into every stage
-     tile. Nothing moves and nothing changes what it does - only
-     the clothes are different.
+     signboard across the top, and a hanja pressed into every tile.
+     Nothing moves and nothing changes what it does - only the
+     clothes are different. Two rules hold the whole thing together:
+     no panel is ever given overflow:hidden (that would cut the date
+     pickers and the menus off at the edge), and no surface is left
+     半-transparent (the glass let the tiles behind show through).
      ============================================================ */
   body.korean{
     --edge:#241A16; --kred:#D9342B; --kred2:#B3261E; --kyel:#F5C518; --kyel3:#FFE27A;
-    --ksky:#8CC0D0; --kskyd:#4E8496; --kgreen:#2F8F4E;
-    --bg:#F7ECD6; --card:#FBF5E9; --line:#E0CDAA; --line2:#241A16;
+    --ksky:#8CC0D0; --kskyd:#4E8496; --kgreen:#2F8F4E; --kpaper2:#F8E7C4;
+    --bg:#F7ECD6; --card:#FBF5E9; --line:#E0CDAA; --line2:#CDB78E;
     --ink:#241A16; --ink-dim:#4D3D35; --ink-faint:#8A7466;
     --blue:#8CC0D0; --blue2:#4E8496; --blue-soft:#F8E7C4; --blue-ink:#B3261E;
     --green:#2F8F4E; --green-soft:#E6F1E6;
@@ -1900,15 +1919,15 @@
     --barline:#E0CDAA; --ringline:#241A16; --dotline:#241A16; --hover:#F5E7CB; --sunk:#F2E3C2;
     --todaybg:#FFF8E6; --todayline:#E0CDAA; --todayhover:#F8E7C4; --todaydot:#C6BCAE;
     --parbg:#FDEBEE; --parline:#E2AFB6; --parink:#B3261E; --parhover:#FAE0E4;
-    --glass:rgba(251,245,233,.94); --glass2:rgba(251,245,233,.95); --glass3:rgba(248,231,196,.96);
-    --sh-s:0 4px 0 rgba(36,26,22,.20), 0 14px 26px rgba(120,80,20,.14);
-    --sh-c:0 3px 0 rgba(36,26,22,.16), 0 10px 22px rgba(120,80,20,.12);
-    --sh-m:0 6px 0 rgba(36,26,22,.20), 0 22px 44px rgba(120,80,20,.24);
+    --glass:#FBF5E9; --glass2:#FBF5E9; --glass3:#F8E7C4;
+    --sh-s:0 4px 0 rgba(36,26,22,.18), 0 14px 26px rgba(120,80,20,.12);
+    --sh-c:0 3px 0 rgba(36,26,22,.14), 0 10px 22px rgba(120,80,20,.10);
+    --sh-m:0 6px 0 rgba(36,26,22,.20), 0 22px 44px rgba(120,80,20,.22);
     --bpink:#241A16; --bpgrid:#D9342B; --bpgrid-o:.16;
   }
   body.korean.dark{
-    --edge:#0D0806;
-    --bg:#1B1412; --card:#2A1F1B; --line:#4A3A32; --line2:#0D0806;
+    --edge:#0D0806; --kpaper2:#33261F;
+    --bg:#1B1412; --card:#2A1F1B; --line:#4A3A32; --line2:#5C4A3F;
     --ink:#FFF1D6; --ink-dim:#E2CDB0; --ink-faint:#B09A86;
     --blue:#4E8496; --blue2:#8CC0D0; --blue-soft:#33261F; --blue-ink:#FFE27A;
     --green:#4FA76A; --green-soft:#1E2C1E;
@@ -1916,110 +1935,170 @@
     --barline:#4A3A32; --ringline:#FFE27A; --dotline:#7A6555; --hover:#332721; --sunk:#241A16;
     --todaybg:#2B211A; --todayline:#4A3A32; --todayhover:#352820; --todaydot:#6B5847;
     --parbg:#2E2024; --parline:#5E3B40; --parink:#F7A8A0; --parhover:#382529;
-    --glass:rgba(42,31,27,.94); --glass2:rgba(27,20,18,.95); --glass3:rgba(51,38,31,.96);
-    --sh-s:0 4px 0 rgba(0,0,0,.42), 0 14px 26px rgba(0,0,0,.42);
-    --sh-c:0 3px 0 rgba(0,0,0,.38), 0 10px 22px rgba(0,0,0,.38);
-    --sh-m:0 6px 0 rgba(0,0,0,.42), 0 22px 44px rgba(0,0,0,.55);
+    --glass:#2A1F1B; --glass2:#1B1412; --glass3:#33261F;
+    --sh-s:0 4px 0 rgba(0,0,0,.42), 0 14px 26px rgba(0,0,0,.40);
+    --sh-c:0 3px 0 rgba(0,0,0,.36), 0 10px 22px rgba(0,0,0,.34);
+    --sh-m:0 6px 0 rgba(0,0,0,.42), 0 22px 44px rgba(0,0,0,.52);
   }
+  /* no frosted glass anywhere: paper does not let what is behind it show through */
+  body.korean header.top,body.korean .timeline,body.korean .modal,
+  body.korean #megaBar,body.korean .duepop,body.korean #plMenu,body.korean #richMenu,
+  body.korean #ctxMenu,body.korean #lineMenu{backdrop-filter:none; -webkit-backdrop-filter:none}
+
   /* the letters of a signboard: heavy, spaced, upright */
   body.korean .brand .kicker,body.korean .today .th b,body.korean .total .nums,
-  body.korean .parbox .th b,body.korean .lnhd,body.korean .tl-start,body.korean .tl-caption{
-    font-weight:800; letter-spacing:.14em}
+  body.korean .parbox .th b,body.korean .tl-start,body.korean .tl-caption{
+    font-weight:800; letter-spacing:.13em}
   body.korean .brand .kicker{color:var(--kred)}
   body.korean .today .th b,body.korean .parbox .th b{color:var(--kred2)}
-  body.korean.dark .brand .kicker,body.korean.dark .today .th b,body.korean.dark .parbox .th b{color:var(--kyel3)}
-  body.korean .brand h1{letter-spacing:.005em}
+  body.korean.dark .brand .kicker,body.korean.dark .today .th b,
+  body.korean.dark .parbox .th b{color:var(--kyel3)}
 
-  /* the signboard over Mission control */
-  body.korean header.top{border:3px solid var(--edge); border-radius:26px;
-    background:var(--card); box-shadow:0 6px 0 var(--edge); overflow:hidden}
-  body.korean header.top::after{content:""; position:absolute; left:0; right:0; top:0; height:11px;
-    background:repeating-linear-gradient(90deg,var(--kred) 0 12px,var(--kyel) 12px 24px); z-index:6; pointer-events:none}
-  body.korean header.top{padding-top:26px}
+  /* ---- the signboard over Mission control ---- */
+  body.korean header.top{border:3px solid var(--edge); border-radius:26px; background:var(--card);
+    box-shadow:0 6px 0 var(--edge); padding:30px 22px 22px; overflow:visible}
+  body.korean header.top::after{content:""; position:absolute; left:-3px; right:-3px; top:-3px; height:13px;
+    border-radius:26px 26px 0 0; z-index:6; pointer-events:none;
+    background:repeating-linear-gradient(90deg,var(--kred) 0 12px,var(--kyel) 12px 24px)}
   body.korean .bpframe{display:none}
+  body.korean .toolstrip{border-top:2px dashed var(--line); border-bottom:2px dashed var(--line)}
 
-  /* the stage tiles, cut like the dishes on the menu board */
+  /* ---- the stage tiles, cut like the dishes on the menu board ---- */
   body.korean .proj{border:3px solid var(--ksky); border-radius:22px; background:var(--card);
-    box-shadow:0 4px 0 var(--kskyd); position:relative; overflow:hidden}
-  body.korean .proj:hover{box-shadow:0 6px 0 var(--kskyd); transform:translateY(-1px)}
+    box-shadow:0 4px 0 var(--kskyd); position:relative; overflow:visible}
+  body.korean .proj:hover{box-shadow:0 6px 0 var(--kskyd)}
   body.korean .proj.pdone{border-color:#C6BCAE; box-shadow:0 4px 0 #9A8E82; background:var(--blue-soft)}
   body.korean.dark .proj.pdone{border-color:#5C5049; box-shadow:0 4px 0 #3B322D}
-  /* a hanja pressed into the paper - each tile gets its own */
-  body.korean .proj::before{position:absolute; right:6px; top:34px; font-size:88px; line-height:.86;
-    color:var(--ink); opacity:.09; pointer-events:none; z-index:0; font-weight:700;
-    font-family:"Apple SD Gothic Neo","Noto Serif CJK KR","Noto Sans CJK KR",serif}
-  body.korean .proj:nth-of-type(8n+1)::before{content:"倫"}
-  body.korean .proj:nth-of-type(8n+2)::before{content:"德"}
-  body.korean .proj:nth-of-type(8n+3)::before{content:"法"}
-  body.korean .proj:nth-of-type(8n+4)::before{content:"善"}
-  body.korean .proj:nth-of-type(8n+5)::before{content:"義"}
-  body.korean .proj:nth-of-type(8n+6)::before{content:"眞"}
-  body.korean .proj:nth-of-type(8n+7)::before{content:"美"}
-  body.korean .proj:nth-of-type(8n)::before{content:"命"}
   body.korean .proj > *{position:relative; z-index:1}
+  body.korean .proj::before{position:absolute; right:16px; top:46px; font-size:78px; line-height:.84;
+    color:var(--ink); opacity:.085; pointer-events:none; z-index:0; font-weight:700;
+    font-family:"Apple SD Gothic Neo","Noto Serif CJK KR","Noto Sans CJK KR","Yu Mincho",serif}
   body.korean .proj-num{background:var(--kred); color:#FBF5E9; border:2px solid var(--edge);
     border-radius:10px; font-weight:800}
-  body.korean .proj-title{font-weight:800; letter-spacing:.005em}
+  body.korean .proj-title{font-weight:800}
 
-  /* every button is a little enamel sign that presses down */
+  /* ---- and every task is a little dish of its own ---- */
+  body.korean .task{background:var(--card); border:2.5px solid var(--ksky); border-radius:16px;
+    box-shadow:0 3px 0 var(--kskyd); margin:9px 0; padding:10px 11px 10px 12px;
+    position:relative; overflow:visible}
+  body.korean .task:hover{background:var(--card); box-shadow:0 4px 0 var(--kskyd)}
+  body.korean .task.sub{margin-left:30px; border-style:dashed}
+  body.korean .task.tdone{border-color:#C6BCAE; box-shadow:0 3px 0 #9A8E82; background:var(--blue-soft)}
+  body.korean.dark .task.tdone{border-color:#5C5049; box-shadow:0 3px 0 #3B322D}
+  body.korean .task > *{position:relative; z-index:1}
+  body.korean .task .tcheck{order:-1}
+  body.korean .task::before{content:""; order:0; flex:0 0 32px; width:32px; height:32px; align-self:flex-start;
+    border-radius:50%; border:2px solid var(--edge); background-color:var(--kpaper2);
+    background-repeat:no-repeat; background-position:center; background-size:21px 21px;
+    position:relative; z-index:1}
+  body.korean .task.tdone::before{filter:grayscale(1); opacity:.5}
+  body.korean .task::after{position:absolute; right:12px; top:50%; transform:translateY(-50%);
+    font-size:34px; line-height:.9;
+    color:var(--ink); opacity:.075; pointer-events:none; z-index:0; font-weight:700;
+    font-family:"Apple SD Gothic Neo","Noto Serif CJK KR","Noto Sans CJK KR","Yu Mincho",serif}
+  body.korean .tasks{padding:2px 13px 13px 15px}
+  body.korean .proj:nth-of-type(8n+1)::before{content:"麵"}
+  body.korean .proj:nth-of-type(8n+2)::before{content:"湯"}
+  body.korean .proj:nth-of-type(8n+3)::before{content:"味"}
+  body.korean .proj:nth-of-type(8n+4)::before{content:"菜"}
+  body.korean .proj:nth-of-type(8n+5)::before{content:"茶"}
+  body.korean .proj:nth-of-type(8n+6)::before{content:"器"}
+  body.korean .proj:nth-of-type(8n+7)::before{content:"火"}
+  body.korean .proj:nth-of-type(8n)::before{content:"米"}
+  body.korean .task:nth-of-type(8n+1)::after{content:"麵"}
+  body.korean .task:nth-of-type(8n+1)::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%235E3B28%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M5%2014h22a11%2011%200%200%201-11%2011A11%2011%200%200%201%205%2014z%22%20fill%3D%22%23FBF5E9%22%2F%3E%3Cpath%20d%3D%22M3.5%2014h25%22%2F%3E%3Cpath%20d%3D%22M11%2011c0-3%203-3%203-5.5M17%2011c0-3%203-3%203-5.5%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23E0A94A%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M9%2017q3-2%206%200t6%200%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")}
+  body.korean .task:nth-of-type(8n+2)::after{content:"湯"}
+  body.korean .task:nth-of-type(8n+2)::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cg%20stroke%3D%22%235E3B28%22%20stroke-width%3D%222.2%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M8%2010h16l-2.4%2015.5H10.4z%22%20fill%3D%22%23FBF5E9%22%2F%3E%3Cellipse%20cx%3D%2216%22%20cy%3D%2210%22%20rx%3D%228%22%20ry%3D%222.6%22%20fill%3D%22%23F6D98E%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M9.4%2016h13.2%22%20stroke%3D%22%23DE4B41%22%20stroke-width%3D%223.4%22%2F%3E%3Cg%20stroke%3D%22%235E3B28%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M12%208L9%202M15%208L13%202%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")}
+  body.korean .task:nth-of-type(8n+3)::after{content:"味"}
+  body.korean .task:nth-of-type(8n+3)::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cg%20stroke%3D%22%235E3B28%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M7%2027L23%206M12%2028L26%209%22%2F%3E%3C%2Fg%3E%3Cg%20stroke%3D%22%23E0A94A%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M6%2012q5%203%204%209M11%209q6%203%205%2010%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")}
+  body.korean .task:nth-of-type(8n+4)::after{content:"菜"}
+  body.korean .task:nth-of-type(8n+4)::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%235E3B28%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M6%2012h16v7a8%208%200%200%201-16%200z%22%20fill%3D%22%23FBF5E9%22%2F%3E%3Cpath%20d%3D%22M22%2014h3a3%203%200%200%201%200%206h-3%22%2F%3E%3Cpath%20d%3D%22M4%2027h20%22%2F%3E%3Cpath%20d%3D%22M11%208q1-2%200-4M16%208q1-2%200-4%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")}
+  body.korean .task:nth-of-type(8n+5)::after{content:"茶"}
+  body.korean .task:nth-of-type(8n+5)::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cg%20stroke%3D%22%235E3B28%22%20stroke-width%3D%222.2%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M10%2014a4%204%200%200%201%201-7%205%205%200%200%201%209-1%204.5%204.5%200%200%201%203%208z%22%20fill%3D%22%237BA867%22%2F%3E%3Cpath%20d%3D%22M12%2014h9l-2%2012h-5z%22%20fill%3D%22%23CFE0B5%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")}
+  body.korean .task:nth-of-type(8n+6)::after{content:"器"}
+  body.korean .task:nth-of-type(8n+6)::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cg%20stroke%3D%22%235E3B28%22%20stroke-width%3D%222.2%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M11%2012l9-1-6%2016z%22%20fill%3D%22%23E8924A%22%2F%3E%3Cpath%20d%3D%22M19%2011l4-5M20%2011l5%201M19%2010l-1-5%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")}
+  body.korean .task:nth-of-type(8n+7)::after{content:"火"}
+  body.korean .task:nth-of-type(8n+7)::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cg%20stroke%3D%22%235E3B28%22%20stroke-width%3D%222.2%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M9%2015a7%207%200%200%201%2014%200v4a7%207%200%200%201-14%200z%22%20fill%3D%22%238CC0D0%22%2F%3E%3Cpath%20d%3D%22M13%209V6M19%209V6M11%208h10%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")}
+  body.korean .task:nth-of-type(8n)::after{content:"米"}
+  body.korean .task:nth-of-type(8n)::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cg%20stroke%3D%22%235E3B28%22%20stroke-width%3D%222.2%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M5%2016h22a11%2011%200%200%201-22%200z%22%20fill%3D%22%23FBF5E9%22%2F%3E%3Cpath%20d%3D%22M9%2015a7%205%200%200%201%2014%200z%22%20fill%3D%22%23F6D98E%22%2F%3E%3C%2Fg%3E%3Cg%20stroke%3D%22%237BA867%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M13%2011l2-2M18%2011l2-2%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")}
+
+  /* ---- every button is a little enamel sign that presses down ---- */
   body.korean .btn,body.korean .mini-btn,body.korean .pbtn,body.korean .sendbtn,
   body.korean .swbtn,body.korean .plmove,body.korean .tabbtn,body.korean #megaOut,
-  body.korean #tlHi,body.korean .paradd button{
-    border:2px solid var(--edge) !important; box-shadow:0 3px 0 var(--edge);
-    font-weight:800; letter-spacing:.05em; transition:transform .1s ease, box-shadow .1s ease}
+  body.korean #tlHi,body.korean .paradd button,body.korean .icoopt{
+    border:2px solid var(--edge); box-shadow:0 3px 0 var(--edge);
+    font-weight:800; transition:transform .1s ease, box-shadow .1s ease}
   body.korean .btn:active,body.korean .mini-btn:active,body.korean .pbtn:active,
   body.korean .sendbtn:active,body.korean .swbtn:active,body.korean .plmove:active,
   body.korean .tabbtn:active,body.korean #megaOut:active,body.korean #tlHi:active,
-  body.korean .paradd button:active{transform:translateY(3px); box-shadow:0 0 0 var(--edge)}
-  body.korean .btn{text-transform:uppercase; font-size:11.5px; border-radius:13px; background:var(--card)}
-  body.korean .btn:hover{background:var(--kyel); color:var(--edge)}
+  body.korean .paradd button:active,body.korean .icoopt:active{
+    transform:translateY(3px); box-shadow:0 0 0 var(--edge)}
+  body.korean .btn{border-radius:13px; background:var(--card); color:var(--ink); letter-spacing:.02em}
+  body.korean .btn:hover{background:var(--kyel); color:var(--edge); border-color:var(--edge); transform:none}
+  body.korean .btn.armed2{background:var(--kred); color:#FBF5E9}
+  body.korean .mini-btn{border-radius:11px; background:var(--card); color:var(--ink)}
   body.korean .sendbtn{background:var(--kred); color:#FBF5E9; border-radius:14px}
-  body.korean .sendbtn:hover{background:var(--kred2); color:#FBF5E9}
+  body.korean .sendbtn:hover{background:var(--kred2); color:#FBF5E9; border-color:var(--edge); transform:none}
   body.korean .sendbtn.done{background:var(--kgreen); color:#fff}
   body.korean .pbtn.on,body.korean .spotbtn.on{background:var(--kyel); color:var(--edge)}
 
-  /* the boxes of Mission control keep the same paper and the same ink */
-  body.korean .total,body.korean .today,body.korean .parbox,body.korean .stagelist,
-  body.korean .modal,body.korean .bp-side,body.korean .sticker{
-    border:2.5px solid var(--edge) !important; border-radius:20px}
-  body.korean .total,body.korean .today,body.korean .parbox{box-shadow:0 4px 0 rgba(36,26,22,.16)}
-  body.korean.dark .total,body.korean.dark .today,body.korean.dark .parbox{box-shadow:0 4px 0 rgba(0,0,0,.45)}
-  body.korean .modal{box-shadow:0 8px 0 rgba(36,26,22,.18), 0 26px 54px rgba(120,80,20,.28)}
-  body.korean .bigbar,body.korean .mini,body.korean .tl-track{border:2px solid var(--edge); height:auto; min-height:10px}
+  /* ---- the boxes of Mission control keep the same paper and the same ink ---- */
+  body.korean .total,body.korean .today,body.korean .parbox{
+    border:2.5px solid var(--edge) !important; border-radius:20px;
+    box-shadow:0 4px 0 rgba(36,26,22,.16)}
+  body.korean.dark .total,body.korean.dark .today,body.korean.dark .parbox{
+    box-shadow:0 4px 0 rgba(0,0,0,.45)}
+  body.korean .stagelist,body.korean .bp-side{border:2.5px solid var(--edge); border-radius:20px}
+  body.korean .modal{border:3px solid var(--edge); border-radius:22px;
+    box-shadow:0 8px 0 rgba(36,26,22,.16), 0 26px 54px rgba(120,80,20,.24)}
+  body.korean .modal header{border-bottom:2px solid var(--line)}
+  body.korean .bigbar,body.korean .tl-track{border:2px solid var(--edge)}
   body.korean .bigbar i,body.korean .tl-fill{background:var(--kred)}
   body.korean .mini i{background:var(--kgreen)}
-
-  /* the bottom board */
-  body.korean .timeline{border-top:4px solid var(--kyel); background:var(--glass2);
-    box-shadow:0 -3px 0 rgba(36,26,22,.10)}
-  body.korean #signLeft,body.korean .tl-sign.right,body.korean #signTop{letter-spacing:.14em; font-weight:800}
-
-  /* the row of project tabs reads like the chips over the menu */
-  body.korean .tabbtn{border-radius:12px; text-transform:uppercase; font-size:11.5px; background:var(--card)}
-  body.korean .tabbtn.on{background:var(--ink); color:var(--bg)}
-  body.korean.dark .tabbtn.on{background:var(--kyel); color:#241A16}
-
-  /* the launch pad rows */
-  body.korean .lnrow{border:2px solid var(--edge); border-radius:13px; background:var(--card)}
-  body.korean .lnrow.ln-done{background:var(--blue-soft)}
-  body.korean .lnflag{border:2px solid var(--edge); border-radius:8px; font-weight:800; letter-spacing:.08em}
-  body.korean .lnrk{border:2px solid var(--edge)}
-  body.korean .prow .pcell{border:2px solid var(--parline)}
-
-  /* round things keep a firm outline */
-  body.korean .pcheck .ring,body.korean .tcheck .box,body.korean .today .titem .tdot{border-width:2.5px}
-  body.korean .pcheck input:checked + .ring,body.korean .tcheck input:checked + .box{background:var(--kgreen); border-color:var(--edge)}
-  body.korean .today .titem.done .tdot{background:var(--kgreen); border-color:var(--edge)}
-
   body.korean #launchBox{--lnbg:#EAF4F7; --lnline:#8CC0D0; --lnhover:#DDEDF2; --lndot:#4E8496}
   body.korean #launchBox.today .th b{color:var(--kskyd)}
   body.korean.dark #launchBox{--lnbg:#1C2A2E; --lnline:#3A5560; --lnhover:#243539; --lndot:#4E8496}
   body.korean.dark #launchBox.today .th b{color:#8CC0D0}
-  /* the mega screen wears the same clothes */
+
+  /* ---- the bottom board ---- */
+  body.korean .timeline{border-top:4px solid var(--kyel); background:var(--card);
+    box-shadow:0 -3px 0 rgba(36,26,22,.08)}
+  body.korean #signLeft,body.korean .tl-sign.right,body.korean #signTop{letter-spacing:.13em; font-weight:800}
+
+  /* ---- the project names read like the chips over the menu ---- */
+  body.korean .tabbtn{border-radius:12px; background:var(--card)}
+  body.korean .tabbtn.on{background:var(--ink); color:var(--bg)}
+  body.korean.dark .tabbtn.on{background:var(--kyel); color:#241A16}
+
+  /* ---- the launch pad rows ---- */
+  body.korean .lnrow{border:2px solid var(--edge); border-radius:13px; background:var(--card)}
+  body.korean .lnrow.ln-done{background:var(--blue-soft)}
+  body.korean .lnflag{border:2px solid var(--edge); border-radius:8px; font-weight:800}
+  body.korean .lnrk{border:2px solid var(--edge)}
+  body.korean .prow .pcell{border:2px solid var(--parline)}
+
+  /* ---- round things keep a firm outline ---- */
+  body.korean .pcheck .ring,body.korean .tcheck .box,body.korean .today .titem .tdot{border-width:2.5px}
+  body.korean .pcheck input:checked + .ring,body.korean .tcheck input:checked + .box{
+    background:var(--kgreen); border-color:var(--edge)}
+  body.korean .today .titem.done .tdot{background:var(--kgreen); border-color:var(--edge)}
+
+  /* ---- the notes ---- */
+  body.korean .stname{color:var(--kred2)}
+  body.korean.dark .stname{color:var(--kyel3)}
+
+  /* ---- the mega screen wears the same clothes ---- */
   body.korean #megaOv{background:var(--bg)}
   body.korean #megaBar{border-bottom:3px solid var(--edge); background:var(--kred)}
   body.korean #megaBar b{color:var(--kyel3)}
   body.korean #megaOut{background:var(--card); color:var(--ink)}
+
+  /* on a narrow screen the dish keeps its picture but gives back the room */
+  @media (max-width:700px){
+    body.korean .task::before{flex-basis:26px; width:26px; height:26px; background-size:17px 17px}
+    body.korean .task::after{font-size:24px; right:8px}
+    body.korean .proj::before{font-size:56px; right:10px; top:40px}
+  }
 
   @media (prefers-reduced-motion:reduce){ *{transition:none !important; animation:none !important} }
 </style>
@@ -2074,6 +2153,32 @@
   <header class="top" id="hero">
     <i class="bpframe" aria-hidden="true"></i>
     <div class="tabs" id="tabs"></div>
+    <div class="toolstrip">    <div class="btns">
+      <button class="btn" id="btnExport">Save progress to file</button>
+      <button class="btn" id="btnFolder" title="Choose the folder the progress files are written into">folder</button>
+      <button class="btn" id="btnImport">Load from file</button>
+      <button class="btn" id="btnSync" title="Keep this plan the same on every device through your own GitHub">sync</button>
+      <button class="btn" id="btnTrash" title="What was deleted - and how to bring it back">trash<b id="trashCnt"></b></button>
+      <button class="btn" id="btnLog" title="Every priority that has been ticked off - day by day">log<b id="logCnt"></b></button>
+      <button class="btn" id="btnLaunch" title="Every stage that has been launched, and the ones waiting for their day">launch<b id="lnBadge"></b></button>
+      <button class="btn" id="btnUnfix" title="Let Mission control off its pin, so it scrolls away with the page">unfix</button>
+      <button class="btn" id="btnMega" title="Keep only what is lit - the page folds away and the lit boxes come back together across the whole screen">mega focus</button>
+      <button class="btn" id="btnKorean" title="Dress the whole page in the noodle-house style - every button keeps working exactly as it does now">Korean</button>
+      <button class="btn" id="btnLogo" title="Choose the picture this plan wears on a home screen">logo</button>
+      <button class="btn" id="btnJson" title="Copy the progress out, or paste it back in">as text</button>
+      <button class="btn" id="btnThings" title="Send this project to Things, or bring a list back from it">Things</button>
+      <button class="btn" id="btnReset">Reset</button>
+      <span class="pill"><span class="dot" id="stDot"></span><span id="stText">autosave</span></span>
+      <input type="file" id="fileImport" accept=".json,application/json,text/plain" class="hidden">
+    </div>
+    <div class="hero-tools">
+      <button class="mini-btn" id="btnHeadEdit" title="Edit the texts of this block">
+        <svg viewBox="0 0 24 24"><path d="M4 20 l4.5 -1 L20 7.5 a2.1 2.1 0 0 0 -3 -3 L5.5 16 z"/><path d="M14.5 6 l3.5 3.5"/></svg> edit</button>
+      <button class="mini-btn" id="btnList" title="Show every stage as one compact list">
+        <svg viewBox="0 0 24 24"><path d="M4 6 h16 M4 12 h16 M4 18 h16"/></svg> list</button>
+      <button class="mini-btn" id="btnTree" title="Edit the project tree">
+        <svg viewBox="0 0 24 24"><path d="M5 5 h6 M5 12 h6 M5 19 h6 M14 5 h5 M14 12 h5 M14 19 h5"/><circle cx="5" cy="5" r="1.4"/><circle cx="5" cy="12" r="1.4"/><circle cx="5" cy="19" r="1.4"/></svg> tree</button>
+    </div></div>
     <div class="hero-row">
     <div class="brand">
       <div class="kicker-row"><span class="kicker" id="hKicker">Mission control</span><span class="ctrlrow"><button class="thsw" id="btnTheme" title="Switch between the light and the dark theme" aria-label="Switch theme"><span class="knob"><svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.6"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></svg><svg class="moon" viewBox="0 0 24 24"><path d="M20 14.4A8.4 8.4 0 0 1 9.6 4a8.4 8.4 0 1 0 10.4 10.4z"/></svg></span></button><button class="dknob" id="btnDark" title="How dark the dark theme is - press and drag the slider"><i></i></button><button class="bsw" id="btnBold" title="Make every word on the page bold">B</button></span><span class="zoomer" id="heroZoom" title="Make this panel smaller or bigger - double-click to reset"><button data-hz="-1" title="Smaller">&#8722;</button><b id="hzVal">100%</b><button data-hz="1" title="Bigger">+</button></span></div>
@@ -2133,32 +2238,6 @@
         </div>
       </div>
     </div>
-    </div>
-    <div class="btns">
-      <button class="btn" id="btnExport">Save progress to file</button>
-      <button class="btn" id="btnFolder" title="Choose the folder the progress files are written into">folder</button>
-      <button class="btn" id="btnImport">Load from file</button>
-      <button class="btn" id="btnSync" title="Keep this plan the same on every device through your own GitHub">sync</button>
-      <button class="btn" id="btnTrash" title="What was deleted - and how to bring it back">trash<b id="trashCnt"></b></button>
-      <button class="btn" id="btnLog" title="Every priority that has been ticked off - day by day">log<b id="logCnt"></b></button>
-      <button class="btn" id="btnLaunch" title="Every stage that has been launched, and the ones waiting for their day">launch<b id="lnBadge"></b></button>
-      <button class="btn" id="btnUnfix" title="Let Mission control off its pin, so it scrolls away with the page">unfix</button>
-      <button class="btn" id="btnMega" title="Keep only what is lit - the page folds away and the lit boxes come back together across the whole screen">mega focus</button>
-      <button class="btn" id="btnKorean" title="Dress the whole page in the noodle-house style - every button keeps working exactly as it does now">Korean</button>
-      <button class="btn" id="btnLogo" title="Choose the picture this plan wears on a home screen">logo</button>
-      <button class="btn" id="btnJson" title="Copy the progress out, or paste it back in">as text</button>
-      <button class="btn" id="btnThings" title="Send this project to Things, or bring a list back from it">Things</button>
-      <button class="btn" id="btnReset">Reset</button>
-      <span class="pill"><span class="dot" id="stDot"></span><span id="stText">autosave</span></span>
-      <input type="file" id="fileImport" accept=".json,application/json,text/plain" class="hidden">
-    </div>
-    <div class="hero-tools">
-      <button class="mini-btn" id="btnHeadEdit" title="Edit the texts of this block">
-        <svg viewBox="0 0 24 24"><path d="M4 20 l4.5 -1 L20 7.5 a2.1 2.1 0 0 0 -3 -3 L5.5 16 z"/><path d="M14.5 6 l3.5 3.5"/></svg> edit</button>
-      <button class="mini-btn" id="btnList" title="Show every stage as one compact list">
-        <svg viewBox="0 0 24 24"><path d="M4 6 h16 M4 12 h16 M4 18 h16"/></svg> list</button>
-      <button class="mini-btn" id="btnTree" title="Edit the project tree">
-        <svg viewBox="0 0 24 24"><path d="M5 5 h6 M5 12 h6 M5 19 h6 M14 5 h5 M14 12 h5 M14 19 h5"/><circle cx="5" cy="5" r="1.4"/><circle cx="5" cy="12" r="1.4"/><circle cx="5" cy="19" r="1.4"/></svg> tree</button>
     </div>
   </header>
 
@@ -2390,7 +2469,7 @@
         <input type="text" id="syPath" placeholder="progress.json" spellcheck="false"></div>
       <div class="syrow"><label>Branch</label>
         <input type="text" id="syBranch" placeholder="main" spellcheck="false"></div>
-      <div class="syrow"><label>Access key</label>
+      <div class="syrow keyrow"><label>Access key</label>
         <input type="password" id="syToken" placeholder="github_pat_..." spellcheck="false" autocomplete="off">
         <div class="sykeyrow">
           <button class="btn" id="syPaste" title="Take the key from the clipboard and put it in the field">paste the key</button>
@@ -7390,25 +7469,8 @@ function fitHeroWide(){
   if(h.style.marginRight!==mr) h.style.marginRight=mr;
 }
 var heroWideTm=null;
-/* ---- the parallels box changes seat with the width ----
-   On a wide screen it belongs under the counter; on a tablet the counter column
-   is gone, so the box stands on its own line under the row of buttons. It is the
-   same element either way - only its seat moves, never its contents. */
-function placePar(){
-  var box=document.getElementById("parBox");
-  if(!box || megaOn || megaBusy) return;
-  var btns=document.querySelector("header.top .btns");
-  var right=document.querySelector("header.top .hero-right");
-  if(!btns || !right) return;
-  var w=document.documentElement.clientWidth||window.innerWidth||0;
-  if(w>=821 && w<=1200){
-    if(box.previousElementSibling!==btns) btns.parentNode.insertBefore(box, btns.nextSibling);
-  }else{
-    if(box.parentNode!==right) right.appendChild(box);
-  }
-}
 function fitHeroWideSoon(ms){ clearTimeout(heroWideTm); heroWideTm=setTimeout(function(){ fitHeroWide(); syncHeroHeight(); }, ms||60); }
-window.addEventListener("resize", function(){ applySigns(); placePar(); fitHeroWide(); syncHeroHeight(); });
+window.addEventListener("resize", function(){ applySigns(); fitHeroWide(); syncHeroHeight(); });
 if(window.ResizeObserver){ try{ new ResizeObserver(syncHeroHeight).observe(document.getElementById("hero")); }catch(e){} }
 
 /* ================= PRIORITY FOR TODAY ================= */
@@ -7874,14 +7936,38 @@ function megaStage(){
   });
   return els.length;
 }
+/* Putting the pieces back, last one first.
+   Each piece remembers the neighbour it stood in front of. When two neighbours
+   were both taken over - two stages side by side - the first one to come home
+   looked for a neighbour that was still on the empty screen, found nothing, and
+   was dropped at the end of the board. Walking the list backwards puts the
+   neighbour back first, so every piece finds its own place again. And when
+   even that is not enough, the board is laid out once more from the plan. */
 function megaRestore(){
-  megaSaved.forEach(function(r){
+  for(var i=megaSaved.length-1;i>=0;i--){
+    var r=megaSaved[i];
     r.el.classList.remove("megaitem");
     if(r.style) r.el.setAttribute("style", r.style); else r.el.removeAttribute("style");
     if(r.next && r.next.parentNode===r.parent) r.parent.insertBefore(r.el, r.next);
     else r.parent.appendChild(r.el);
-  });
+  }
   megaSaved=[];
+  reflowProjects();
+}
+/* the stage cards stand in the order the plan says, whatever happened to them */
+function reflowProjects(){
+  var hostEl=document.getElementById("projects");
+  if(!hostEl) return;
+  var want=effProjects().map(function(p){ return p.id; });
+  var have={};
+  hostEl.querySelectorAll(":scope > .proj").forEach(function(e){ have[e.dataset.proj]=e; });
+  var prev=null;
+  want.forEach(function(id){
+    var e=have[id]; if(!e) return;
+    if(prev){ if(prev.nextElementSibling!==e) prev.parentNode.insertBefore(e, prev.nextElementSibling); }
+    else if(e.parentNode.firstElementChild!==e) e.parentNode.insertBefore(e, e.parentNode.firstElementChild);
+    prev=e;
+  });
 }
 function megaFold(cls){
   var tlLit=!!(state.spot&&state.spot.timeline);
@@ -8620,6 +8706,48 @@ function enterEdit(el){
     var sel=window.getSelection(); sel.removeAllRanges(); sel.addRange(rng);
   }catch(e){}
 }
+/* ---- the name of a note ----
+   Every note used to be called NOTE, in the stylesheet, for all of them at once.
+   Now the word belongs to the note itself: a double tap opens it, Enter or a tap
+   away closes it, and an empty name falls back to the word it had. */
+function stkName(st){
+  var n=(st && typeof st.name==="string") ? st.name.trim() : "";
+  return n || "NOTE";
+}
+function startNameEdit(el){
+  var st=stkById(el.dataset.sid); if(!st) return;
+  var nm=el.querySelector(".stname"); if(!nm || nm.getAttribute("contenteditable")==="true") return;
+  el.classList.add("naming");
+  nm.setAttribute("contenteditable","true");
+  nm.setAttribute("spellcheck","false");
+  nm.focus();
+  try{
+    var r=document.createRange(); r.selectNodeContents(nm);
+    var sl=window.getSelection(); sl.removeAllRanges(); sl.addRange(r);
+  }catch(e){}
+  var done=false;
+  function close(save){
+    if(done) return; done=true;
+    nm.removeAttribute("contenteditable");
+    el.classList.remove("naming");
+    var stc=stkById(el.dataset.sid);
+    if(save && stc){
+      stc.name=(nm.textContent||"").replace(/\s+/g," ").trim().slice(0,40);
+      persist();
+    }
+    nm.textContent=stkName(stkById(el.dataset.sid)||st);
+    nm.removeEventListener("keydown", key);
+    nm.removeEventListener("blur", blur);
+  }
+  function key(e){
+    e.stopPropagation();
+    if(e.key==="Enter"){ e.preventDefault(); close(true); }
+    else if(e.key==="Escape"){ e.preventDefault(); close(false); }
+  }
+  function blur(){ close(true); }
+  nm.addEventListener("keydown", key);
+  nm.addEventListener("blur", blur);
+}
 function exitEdit(el){
   var st=stkById(el.dataset.sid), stx=el.querySelector(".stx");
   el.classList.remove("editing");
@@ -8629,15 +8757,29 @@ function exitEdit(el){
 function stickerEl(st){
   var el=document.createElement("div");
   el.className="sticker"; el.dataset.sid=st.id;
-  el.innerHTML='<div class="stgrip" title="Drag the note by this strip"><i></i></div><div class="stx"></div>'+
+  el.innerHTML='<div class="stgrip" title="Drag the note by this strip"><i></i></div>'+
+    '<div class="stname" title="Double-tap the name to call this note something of its own"></div>'+
+    '<div class="stx"></div>'+
     '<svg class="ink" viewBox="0 0 1000 1000" preserveAspectRatio="none">'+inkPaths(st)+'</svg>'+
     '<div class="rsz" title="Resize"></div><div class="lnk" title="Drag a line to another sticker"></div>';
   if(st.rh) el.querySelector(".stx").innerHTML=st.rh; else el.querySelector(".stx").innerText=st.t||"";
+  el.querySelector(".stname").textContent=stkName(st);
   board.appendChild(el);
   applyBox(st,el);
 
   el.addEventListener("pointerdown", function(e){
     var stc=stkById(el.dataset.sid); if(!stc) return;
+    /* while the name is being typed the note must not run off under the finger */
+    if(el.classList.contains("naming") && e.target.closest(".stname")) return;
+    /* two taps on the name open it for renaming. The count is taken here, on the
+       press itself: as soon as a drag begins the note captures the pointer, and
+       every later event - the double-click among them - is reported against the
+       note instead of the word that was actually touched. */
+    if(e.target.closest(".stname")){
+      var nt=Date.now();
+      if(nt-(el._nameTap||0)<600){ el._nameTap=0; e.preventDefault(); startNameEdit(el); return; }
+      el._nameTap=nt;
+    }
     if(e.target.closest(".rsz")){ startResize(e,el,stc); return; }
     if(e.target.closest(".lnk")){ startLink(e,el,stc); return; }
     if(e.pointerType==="pen"){ startInk(e,el,stc); return; }
@@ -8650,6 +8792,8 @@ function stickerEl(st){
   });
   el.addEventListener("dblclick", function(e){
     if(e.target.closest(".rsz,.lnk")) return;
+    if(el.classList.contains("naming")) return;
+    if(e.target.closest(".stname")){ startNameEdit(el); return; }
     enterEdit(el);
   });
   el.querySelector(".stx").addEventListener("blur", function(){ exitEdit(el); });
@@ -10911,7 +11055,6 @@ syncHeroHeight();
 plRoll();
 renderToday();
 renderPairs();
-placePar();
 
 /* ================= THE PICTURE ON THE HOME SCREEN =================
    Four to choose from. The choice only rewrites the three <link> tags in the
