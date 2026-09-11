@@ -790,11 +790,20 @@
   /* the lit bottom bar is not part of the page that folds away - it stays where
      it is, in full colour, over the empty screen, with its own switch beside it */
   body.mgfold.mgtl .timeline,body.mgfold.mgtl #tlHi,
-  body.mgback.mgtl .timeline,body.mgback.mgtl #tlHi{animation:none !important}
+  body.mgback.mgtl .timeline,body.mgback.mgtl #tlHi,
+  body.mgfold.mgstk #board,body.mgback.mgstk #board{animation:none !important; opacity:1 !important;
+    transform:none !important; filter:none !important}
   body.megaon.mgtl .timeline,
   body.spotlight.megaon.mgtl .timeline.spot,
   body.spotlight.megaon.mgtl .timeline.spot.spotlow{z-index:206}
   body.megaon.mgtl #tlHi{z-index:207}
+  /* a note that was left in the light keeps being a note: it goes on floating
+     where it was pinned, over the empty screen, and can still be moved, typed in
+     and renamed. Only the notes that were not lit step out of the way. */
+  body.megaon.mgstk #board{z-index:208; pointer-events:none}
+  body.megaon.mgstk .sticker:not(.spot){display:none !important}
+  body.megaon.mgstk #linkLayer,body.megaon.mgstk #binkLayer{display:none}
+  body.megaon.mgstk .sticker.spot{pointer-events:auto}
   body.megaon.mgtl #megaOv .mgin{padding-bottom:calc(var(--timeline-h) + var(--extgap,0px) + 30px)}
   @media (prefers-reduced-motion: reduce){
     #megaOv .megaitem{animation:none}
@@ -1876,6 +1885,17 @@
   body.dark.pinkbar .timeline{border-top-color:rgba(255,240,220,.22)}
 
 
+  .sycheck{display:none; margin-top:12px; border:1px solid var(--line); border-radius:14px;
+    padding:11px 13px; background:var(--sunk,#F7F5F0); font-size:13px; line-height:1.5}
+  .sycheck.on{display:block}
+  .sycheck .ln{display:flex; gap:8px; align-items:flex-start; padding:3px 0}
+  .sycheck .ln i{flex:0 0 16px; font-style:normal; font-weight:800; text-align:center}
+  .sycheck .ln.ok i{color:#6FA886}
+  .sycheck .ln.bad i{color:#B9776F}
+  .sycheck .ln.wait i{color:var(--ink-faint)}
+  .sycheck .ln b{font-weight:750}
+  .sycheck .fix{margin-top:9px; padding-top:9px; border-top:1px solid var(--line);
+    color:var(--ink-dim); font-size:12.5px}
   .syrow.keyrow{flex-wrap:wrap}
   .sykeyrow{display:flex; gap:7px; margin-top:8px; flex:1 0 100%; padding-left:106px}
   .sykeyrow .btn{font-size:12px; padding:7px 11px}
@@ -1906,24 +1926,28 @@
      pickers and the menus off at the edge), and no surface is left
      半-transparent (the glass let the tiles behind show through).
      ============================================================ */
+  /* Daylight in the noodle house is pale: bleached paper, a breath of cream in
+     the ground, and the colour kept for the small things - the sky-blue rim of a
+     tile, a pink note, the red and yellow ribbon. The deep yellows are gone from
+     the surfaces; they were what made the room look dim. */
   body.korean{
     --edge:#241A16; --kred:#D9342B; --kred2:#B3261E; --kyel:#F5C518; --kyel3:#FFE27A;
-    --ksky:#8CC0D0; --kskyd:#4E8496; --kgreen:#2F8F4E; --kpaper2:#F8E7C4;
-    --bg:#F7ECD6; --card:#FBF5E9; --line:#E0CDAA; --line2:#CDB78E;
-    --ink:#241A16; --ink-dim:#4D3D35; --ink-faint:#8A7466;
-    --blue:#8CC0D0; --blue2:#4E8496; --blue-soft:#F8E7C4; --blue-ink:#B3261E;
-    --green:#2F8F4E; --green-soft:#E6F1E6;
-    --redp:#D9342B; --red-soft:#FBE5E1;
-    --peach:#F5C518; --peach-soft:#FFF3CE;
-    --track:#EFE0BE; --track2:#FBF5E9;
-    --barline:#E0CDAA; --ringline:#241A16; --dotline:#241A16; --hover:#F5E7CB; --sunk:#F2E3C2;
-    --todaybg:#FFF8E6; --todayline:#E0CDAA; --todayhover:#F8E7C4; --todaydot:#C6BCAE;
-    --parbg:#FDEBEE; --parline:#E2AFB6; --parink:#B3261E; --parhover:#FAE0E4;
-    --glass:#FBF5E9; --glass2:#FBF5E9; --glass3:#F8E7C4;
-    --sh-s:0 4px 0 rgba(36,26,22,.18), 0 14px 26px rgba(120,80,20,.12);
-    --sh-c:0 3px 0 rgba(36,26,22,.14), 0 10px 22px rgba(120,80,20,.10);
-    --sh-m:0 6px 0 rgba(36,26,22,.20), 0 22px 44px rgba(120,80,20,.22);
-    --bpink:#241A16; --bpgrid:#D9342B; --bpgrid-o:.16;
+    --ksky:#8CC0D0; --kskyd:#4E8496; --kgreen:#2F8F4E; --kpaper2:#FFF4E3;
+    --bg:#FBF4E9; --card:#FFFDF9; --line:#EEE2CD; --line2:#DCCCB2;
+    --ink:#2A201B; --ink-dim:#5A4A40; --ink-faint:#9C8C7C;
+    --blue:#8CC0D0; --blue2:#6BA8BC; --blue-soft:#EDF6F9; --blue-ink:#C04034;
+    --green:#4FA36B; --green-soft:#EEF7EF;
+    --redp:#E0685C; --red-soft:#FDEFEC;
+    --peach:#F0C463; --peach-soft:#FFF8EA;
+    --track:#F1E8DA; --track2:#FFFDF9;
+    --barline:#EEE2CD; --ringline:#2A201B; --dotline:#B9A78E; --hover:#FBF3E6; --sunk:#FAF3E7;
+    --todaybg:#FFFCF3; --todayline:#F0E5D2; --todayhover:#FBF4E6; --todaydot:#D8CBB6;
+    --parbg:#FDF1F3; --parline:#EFCBD1; --parink:#C4555E; --parhover:#FBE8EC;
+    --glass:#FFFDF9; --glass2:#FFFDF9; --glass3:#FBF4E9;
+    --sh-s:0 4px 0 rgba(42,32,27,.10), 0 14px 26px rgba(150,115,60,.09);
+    --sh-c:0 3px 0 rgba(42,32,27,.08), 0 10px 22px rgba(150,115,60,.07);
+    --sh-m:0 6px 0 rgba(42,32,27,.12), 0 22px 44px rgba(150,115,60,.18);
+    --bpink:#2A201B; --bpgrid:#E0685C; --bpgrid-o:.13;
   }
   body.korean.dark{
     --edge:#0D0806; --kpaper2:#33261F;
@@ -1961,13 +1985,13 @@
     border-radius:26px 26px 0 0; z-index:6; pointer-events:none;
     background:repeating-linear-gradient(90deg,var(--kred) 0 12px,var(--kyel) 12px 24px)}
   body.korean .bpframe{display:none}
-  body.korean .toolstrip{border-top:2px dashed var(--line); border-bottom:2px dashed var(--line)}
+  body.korean .toolstrip{border-top:2px dashed var(--line2); border-bottom:2px dashed var(--line2)}
 
   /* ---- the stage tiles, cut like the dishes on the menu board ---- */
   body.korean .proj{border:3px solid var(--ksky); border-radius:22px; background:var(--card);
     box-shadow:0 4px 0 var(--kskyd); position:relative; overflow:visible}
   body.korean .proj:hover{box-shadow:0 6px 0 var(--kskyd)}
-  body.korean .proj.pdone{border-color:#C6BCAE; box-shadow:0 4px 0 #9A8E82; background:var(--blue-soft)}
+  body.korean .proj.pdone{border-color:#D5CCC0; box-shadow:0 4px 0 #B3A99C; background:#FBF7F1}
   body.korean.dark .proj.pdone{border-color:#5C5049; box-shadow:0 4px 0 #3B322D}
   body.korean .proj > *{position:relative; z-index:1}
   body.korean .proj::before{position:absolute; right:16px; top:46px; font-size:78px; line-height:.84;
@@ -1983,7 +2007,7 @@
     position:relative; overflow:visible}
   body.korean .task:hover{background:var(--card); box-shadow:0 4px 0 var(--kskyd)}
   body.korean .task.sub{margin-left:30px; border-style:dashed}
-  body.korean .task.tdone{border-color:#C6BCAE; box-shadow:0 3px 0 #9A8E82; background:var(--blue-soft)}
+  body.korean .task.tdone{border-color:#D5CCC0; box-shadow:0 3px 0 #B3A99C; background:#FBF7F1}
   body.korean.dark .task.tdone{border-color:#5C5049; box-shadow:0 3px 0 #3B322D}
   body.korean .task > *{position:relative; z-index:1}
   body.korean .task .tcheck{order:-1}
@@ -2034,35 +2058,35 @@
   body.korean .paradd button:active,body.korean .icoopt:active{
     transform:translateY(3px); box-shadow:0 0 0 var(--edge)}
   body.korean .btn{border-radius:13px; background:var(--card); color:var(--ink); letter-spacing:.02em}
-  body.korean .btn:hover{background:var(--kyel); color:var(--edge); border-color:var(--edge); transform:none}
+  body.korean .btn:hover{background:#FFF0B8; color:var(--edge); border-color:var(--edge); transform:none}
   body.korean .btn.armed2{background:var(--kred); color:#FBF5E9}
   body.korean .mini-btn{border-radius:11px; background:var(--card); color:var(--ink)}
   body.korean .sendbtn{background:var(--kred); color:#FBF5E9; border-radius:14px}
   body.korean .sendbtn:hover{background:var(--kred2); color:#FBF5E9; border-color:var(--edge); transform:none}
   body.korean .sendbtn.done{background:var(--kgreen); color:#fff}
-  body.korean .pbtn.on,body.korean .spotbtn.on{background:var(--kyel); color:var(--edge)}
+  body.korean .pbtn.on,body.korean .spotbtn.on{background:#FFE894; color:var(--edge)}
 
   /* ---- the boxes of Mission control keep the same paper and the same ink ---- */
   body.korean .total,body.korean .today,body.korean .parbox{
     border:2.5px solid var(--edge) !important; border-radius:20px;
-    box-shadow:0 4px 0 rgba(36,26,22,.16)}
+    box-shadow:0 4px 0 rgba(42,32,27,.11)}
   body.korean.dark .total,body.korean.dark .today,body.korean.dark .parbox{
     box-shadow:0 4px 0 rgba(0,0,0,.45)}
   body.korean .stagelist,body.korean .bp-side{border:2.5px solid var(--edge); border-radius:20px}
   body.korean .modal{border:3px solid var(--edge); border-radius:22px;
-    box-shadow:0 8px 0 rgba(36,26,22,.16), 0 26px 54px rgba(120,80,20,.24)}
+    box-shadow:0 8px 0 rgba(42,32,27,.12), 0 26px 54px rgba(150,115,60,.20)}
   body.korean .modal header{border-bottom:2px solid var(--line)}
   body.korean .bigbar,body.korean .tl-track{border:2px solid var(--edge)}
   body.korean .bigbar i,body.korean .tl-fill{background:var(--kred)}
   body.korean .mini i{background:var(--kgreen)}
-  body.korean #launchBox{--lnbg:#EAF4F7; --lnline:#8CC0D0; --lnhover:#DDEDF2; --lndot:#4E8496}
+  body.korean #launchBox{--lnbg:#F2FAFC; --lnline:#C4E0E8; --lnhover:#E8F5F8; --lndot:#8CC0D0}
   body.korean #launchBox.today .th b{color:var(--kskyd)}
   body.korean.dark #launchBox{--lnbg:#1C2A2E; --lnline:#3A5560; --lnhover:#243539; --lndot:#4E8496}
   body.korean.dark #launchBox.today .th b{color:#8CC0D0}
 
   /* ---- the bottom board ---- */
   body.korean .timeline{border-top:4px solid var(--kyel); background:var(--card);
-    box-shadow:0 -3px 0 rgba(36,26,22,.08)}
+    box-shadow:0 -3px 0 rgba(42,32,27,.06)}
   body.korean #signLeft,body.korean .tl-sign.right,body.korean #signTop{letter-spacing:.13em; font-weight:800}
 
   /* ---- the project names read like the chips over the menu ---- */
@@ -2072,7 +2096,7 @@
 
   /* ---- the launch pad rows ---- */
   body.korean .lnrow{border:2px solid var(--edge); border-radius:13px; background:var(--card)}
-  body.korean .lnrow.ln-done{background:var(--blue-soft)}
+  body.korean .lnrow.ln-done{background:#FBF7F1}
   body.korean .lnflag{border:2px solid var(--edge); border-radius:8px; font-weight:800}
   body.korean .lnrk{border:2px solid var(--edge)}
   body.korean .prow .pcell{border:2px solid var(--parline)}
@@ -2490,9 +2514,11 @@
         <button class="btn" id="syPull">Take the copy from GitHub</button>
         <button class="btn" id="syAuto">auto: off</button>
         <button class="btn" id="syLead">make this device the main one</button>
+        <button class="btn" id="syCheck" title="Try every step and say in plain words where it stops">check</button>
         <button class="btn" id="syForget" title="Clear the key from this browser">forget the key</button>
       </div>
       <div class="signstate" id="syState"></div>
+      <div class="sycheck" id="syReport"></div>
     </div>
     <footer><button class="btn" id="syClose">Close</button></footer>
   </div>
@@ -7895,8 +7921,10 @@ function megaPieces(){
   var out=[];
   /* the pair first, then the stages, then the boxes of Mission control - the order
      they are named in is the order they fly in */
+  /* the notes are not on this list on purpose: a note that is lit stays a note,
+     floating where it was pinned, instead of being flattened into a box */
   ["#parBox.spot", ".proj.spot", "#todayBox.spot", "#totalBox.spot", "#launchBox.spot",
-   ".today.spot", ".total.spot", ".sticker.spot"].forEach(function(sel){
+   ".today.spot", ".total.spot"].forEach(function(sel){
     document.querySelectorAll(sel).forEach(function(e){
       if(out.indexOf(e)<0) out.push(e);
     });
@@ -7971,9 +7999,12 @@ function reflowProjects(){
 }
 function megaFold(cls){
   var tlLit=!!(state.spot&&state.spot.timeline);
+  var stkLit=!!document.querySelector(".sticker.spot");
   document.body.classList.toggle("mgtl", tlLit);
+  document.body.classList.toggle("mgstk", stkLit);
   var list=[].slice.call(document.querySelectorAll(".wrap > *"));
-  var sels=[".ruler","#btnSticker","#signTop","#board"];
+  var sels=[".ruler","#btnSticker","#signTop"];
+  if(!stkLit) sels.push("#board");
   if(!tlLit) sels.push(".timeline","#tlHi");
   sels.forEach(function(sel){
     var e=document.querySelector(sel); if(e) list.push(e);
@@ -7988,7 +8019,7 @@ function megaIn(){
     toast("Put the light on the boxes you want first - mega focus keeps only those");
     return;
   }
-  if(!megaPieces().length){
+  if(!megaPieces().length && !document.querySelector(".sticker.spot") && !(state.spot&&state.spot.timeline)){
     toast("The light is on something that cannot be taken over - light a stage or a box in Mission control");
     return;
   }
@@ -8017,7 +8048,7 @@ function megaOff(){
     megaFold("mgback");
     setTimeout(function(){
       ov.classList.remove("up","gone");
-      document.body.classList.remove("mgback","mgtl");
+      document.body.classList.remove("mgback","mgtl","mgstk");
       document.querySelectorAll("[style*='--fd']").forEach(function(e){ e.style.removeProperty("--fd"); });
       try{ applySpot(); renderToday(); renderPairs(); renderLaunch(); render(); }catch(e){}
       try{ fitHeroWide(); syncHeroHeight(); }catch(e){}
@@ -10652,9 +10683,25 @@ function syPaint(){
     syState(c.at?("last sync "+dmhm(c.at)):"");
   } else syState(document.getElementById("syState").textContent);
 }
+/* What is typed in is tidied before it is kept. Half of the failed syncs were a
+   whole address pasted into the repository field, a stray space at the end of a
+   key, or a leading slash on the file name. */
+function ghTidyRepo(v){
+  v=String(v||"").trim();
+  v=v.replace(/^https?:\/\/(www\.)?github\.com\//i,"");
+  v=v.replace(/^git@github\.com:/i,"");
+  v=v.replace(/\.git$/i,"");
+  v=v.replace(/^\/+|\/+$/g,"");
+  var seg=v.split("/").filter(function(x){ return x.length; });
+  if(seg.length>2) seg=seg.slice(0,2);
+  return seg.join("/");
+}
 function syRead(){
   var c=ghConf(), g=function(id){ var el=document.getElementById(id); return el?el.value.trim():""; };
-  c.repo=g("syRepo"); c.path=g("syPath")||"progress.json"; c.branch=g("syBranch")||"main"; c.token=g("syToken");
+  c.repo=ghTidyRepo(g("syRepo"));
+  c.path=(g("syPath")||"progress.json").replace(/^\/+/,"").replace(/\s+/g,"");
+  c.branch=(g("syBranch")||"main").replace(/\s+/g,"");
+  c.token=g("syToken").replace(/\s+/g,"");
   c.device=g("syDevice")||c.device||guessDevice();
   ghSave();
 }
@@ -10729,6 +10776,107 @@ document.getElementById("syShow").addEventListener("click", function(){
   inp.type=hid?"text":"password";
   b.textContent=hid?"hide":"show";
 });
+
+/* ================= WHERE THE SYNC STOPS =================
+   Four questions, asked one after another, each with a plain answer: is the form
+   filled in, does GitHub know this key, does the key reach this repository with
+   the right to write, and is the branch the one the repository really uses. The
+   key never leaves the browser - every question goes straight to GitHub. */
+function syRepLine(state, text){
+  var mark = state==="ok" ? "✓" : (state==="bad" ? "✕" : "·");
+  return '<div class="ln '+state+'"><i>'+mark+'</i><span>'+text+'</span></div>';
+}
+function syReport(html, fix){
+  var el=document.getElementById("syReport");
+  if(!el) return;
+  el.innerHTML=html+(fix?('<div class="fix">'+fix+'</div>'):"");
+  el.classList.add("on");
+}
+function ghCheck(){
+  syRead(); syPaint();
+  var c=ghConf(), out="";
+  document.getElementById("syReport").classList.remove("on");
+  syState("Checking...");
+
+  if(!c.repo || c.repo.indexOf("/")<0){
+    syReport(syRepLine("bad","The repository is not written as <b>name/repository</b> - for example <b>ann/planner-data</b>"),
+      "Open the repository page on GitHub: the two words after github.com are exactly what goes in this field.");
+    syState("The repository field is not filled in properly", true); return Promise.resolve(false);
+  }
+  out+=syRepLine("ok","The repository is written as <b>"+esc(c.repo)+"</b>");
+  if(!c.token){
+    syReport(out+syRepLine("bad","There is no access key in this browser"),
+      "Make one in GitHub: <b>Settings &#8594; Developer settings &#8594; Personal access tokens &#8594; Fine-grained tokens</b>, give it this one repository and set <b>Contents: Read and write</b>. Then copy it and press <b>paste the key</b>.");
+    syState("There is no key on this device", true); return Promise.resolve(false);
+  }
+  out+=syRepLine("ok","There is a key on this device ("+c.token.length+" characters)");
+
+  var H=ghHead();
+  return fetch("https://api.github.com/user", {headers:H, cache:"no-store"}).then(function(r){
+    if(r.status===401){
+      syReport(out+syRepLine("bad","GitHub does not accept this key"),
+        "The key is wrong, or it has run out, or it was withdrawn. Make a new one and press <b>paste the key</b>. A key is shown once - if it was not copied then, it cannot be read again.");
+      syState("The key is not accepted", true); return false;
+    }
+    if(!r.ok) throw new Error(r.status+" on the key");
+    return r.json().then(function(u){
+      out+=syRepLine("ok","GitHub accepts the key - it belongs to <b>"+esc(u.login||"your account")+"</b>");
+      return fetch("https://api.github.com/repos/"+encodeURI(c.repo), {headers:H, cache:"no-store"}).then(function(rr){
+        if(rr.status===404){
+          syReport(out+syRepLine("bad","This key does not reach the repository <b>"+esc(c.repo)+"</b>"),
+            "Two things do this. Either the name is spelt differently on GitHub, or the key was made for other repositories. Open the key in GitHub, under <b>Repository access</b> choose <b>Only select repositories</b> and tick this one, then <b>Update</b>.");
+          syState("The key does not reach this repository", true); return false;
+        }
+        if(!rr.ok) throw new Error(rr.status+" on the repository");
+        return rr.json().then(function(repo){
+          var canWrite=repo.permissions && repo.permissions.push;
+          out+=syRepLine("ok","The repository is found"+(repo["private"]?" (private)":" (public)"));
+          if(!canWrite){
+            syReport(out+syRepLine("bad","The key may read this repository but not write to it"),
+              "Open the key in GitHub, under <b>Permissions &#8594; Repository permissions</b> set <b>Contents</b> to <b>Read and write</b>, then <b>Update</b>. A key made for reading only can take the copy but never send one.");
+            syState("The key has no right to write", true); return false;
+          }
+          out+=syRepLine("ok","The key may write to it");
+          var want=c.branch||"main", real=repo.default_branch||"main";
+          if(want!==real){
+            out+=syRepLine("bad","The branch is written as <b>"+esc(want)+"</b>, but the repository uses <b>"+esc(real)+"</b>");
+            c.branch=real; ghSave(); syPaint();
+            out+=syRepLine("ok","Put right: the branch now says <b>"+esc(real)+"</b>");
+          }else{
+            out+=syRepLine("ok","The branch <b>"+esc(real)+"</b> is the one the repository uses");
+          }
+          return ghFetchRemote().then(function(cur){
+            if(!cur){
+              syReport(out+syRepLine("ok","There is no <b>"+esc(c.path)+"</b> in the repository yet - the first <b>Send this copy</b> makes it"),
+                "Everything is in order. Press <b>Send this copy</b> here, then on the other device press <b>Take the copy from GitHub</b>.");
+              syState("Everything is in order - nothing has been sent yet");
+            }else{
+              var when="";
+              try{ var o=JSON.parse(b64dec(cur.content)); when=o.savedAt? (" - last written "+dmhm(o.savedAt)) : ""; }catch(e){}
+              syReport(out+syRepLine("ok","The file <b>"+esc(c.path)+"</b> is there"+when),
+                "Everything is in order. <b>Send this copy</b> puts this device's plan in; <b>Take the copy from GitHub</b> brings the other one back.");
+              syState("Everything is in order");
+            }
+            return true;
+          });
+        });
+      });
+    });
+  })["catch"](function(e){
+    var m=(e&&e.message)||String(e);
+    if(m.indexOf("Failed to fetch")>-1 || m.indexOf("NetworkError")>-1){
+      syReport(out+syRepLine("bad","This device cannot reach GitHub at all"),
+        "Nothing is wrong with the key. The network is blocking api.github.com - a work network, a VPN or a content filter usually. Try the same page on a mobile connection.");
+      syState("No way through to GitHub", true);
+    }else{
+      syReport(out+syRepLine("bad","GitHub answered: "+esc(m)), "");
+      syState(ghErr(e), true);
+    }
+    return false;
+  });
+}
+document.getElementById("syCheck").addEventListener("click", ghCheck);
+
 /* on opening: quietly take the newer copy */
 setTimeout(function(){ paintSyncDot(); if(ghReady() && ghConf().auto) ghPull(true).then(function(){ syPaint(); }); }, 1200);
 
