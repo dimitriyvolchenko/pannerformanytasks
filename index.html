@@ -346,7 +346,6 @@
   .brand [contenteditable="true"]{outline:2px dashed var(--blue2); outline-offset:3px; border-radius:6px; background:var(--blue-soft)}
   .spacer{flex:1 1 auto}
   .hero-right{display:flex; flex-direction:column; gap:8px; align-items:stretch}
-  .btns2{display:flex; gap:6px; flex-wrap:wrap; justify-content:flex-end; align-items:center}
   .total{display:flex; flex-direction:column; gap:8px;
     background:var(--blue-soft); border-radius:18px; padding:12px 16px; min-width:0}
   .total .row1{display:flex; align-items:center; gap:12px}
@@ -361,6 +360,46 @@
   }
   .daysleft b{color:var(--ink); font-weight:750}
   .weeksleft{font-size:12.5px}
+
+  /* ---------- Parallels: the two things that run side by side ----------
+     One line holds both halves: what is being done, and what it is tied to.
+     Two of them are usually on the go at once, so both stay in sight. */
+  .parbox{gap:7px; background:var(--parbg,#F6F1FA)}
+  body.dark .parbox{background:var(--parbg,#2A2434)}
+  .parbox .th{display:flex; align-items:baseline; gap:6px}
+  .parbox .th b{font-size:10.5px; letter-spacing:.045em; text-transform:uppercase; color:var(--parink,#8B79A8);
+    font-weight:800; flex:1 1 auto; min-width:0}
+  .parbox .th .cnt{margin-left:auto; font-size:10.5px; color:var(--ink-faint); font-weight:700}
+  .parlist{display:flex; flex-direction:column; gap:5px}
+  .parlist .empty{font-size:11.5px; color:var(--ink-faint); padding:3px 1px}
+  .prow{display:grid; grid-template-columns:1fr 16px 1fr; align-items:stretch; gap:4px;
+    position:relative; border-radius:11px; padding:1px}
+  .prow:hover{background:var(--parhover,#EFE7F6)}
+  body.dark .prow:hover{background:#332B40}
+  .prow .pcell{background:var(--card); border:1px solid var(--parline,#E5DCEF); border-radius:10px;
+    padding:5px 7px; font-size:12px; line-height:1.32; min-width:0; overflow-wrap:anywhere; cursor:text;
+    display:flex; align-items:center}
+  .prow .pcell.b{border-style:dashed}
+  .prow .pcell.void{color:var(--ink-faint); font-style:italic}
+  .prow .pcell input{width:100%; font:inherit; font-size:12px; border:none; outline:none;
+    background:none; color:var(--ink); padding:0}
+  .prow .tie{display:flex; align-items:center; justify-content:center; font-size:12px;
+    color:var(--parink,#8B79A8); user-select:none}
+  .prow.done .pcell{color:var(--ink-faint); text-decoration:line-through; text-decoration-color:#CFC3DF}
+  .prow .pdel{position:absolute; top:-6px; right:-4px; appearance:none; border:none; background:var(--card);
+    color:#CFC3DF; font-size:10px; line-height:1; border-radius:50%; width:16px; height:16px; cursor:pointer;
+    opacity:0; transition:opacity .2s ease, color .2s ease; box-shadow:0 1px 3px rgba(58,63,74,.18)}
+  .prow:hover .pdel{opacity:1}
+  .prow .pdel:hover{color:#B9776F}
+  .paradd{display:grid; grid-template-columns:1fr 16px 1fr auto; align-items:center; gap:4px}
+  .paradd input{min-width:0; font:inherit; font-size:12px; border:1.5px solid var(--parline,#E5DCEF);
+    border-radius:9px; padding:5px 7px; outline:none; background:var(--card); color:var(--ink)}
+  .paradd input:focus{border-color:var(--parink,#8B79A8)}
+  .paradd .parlk{display:flex; align-items:center; justify-content:center; color:var(--parink,#8B79A8); font-size:12px}
+  .paradd button{appearance:none; cursor:pointer; border:1.5px solid var(--parline,#E5DCEF); background:var(--card);
+    color:var(--parink,#8B79A8); font-size:14px; font-weight:800; line-height:1; border-radius:9px;
+    width:26px; height:26px; transition:all .25s ease}
+  .paradd button:hover{background:var(--parink,#8B79A8); color:#fff; border-color:var(--parink,#8B79A8)}
   .total.spot .tfoot,.today.spot .tfoot{margin-top:10px}
   #todayBox,#launchBox{align-self:stretch}
   #todayBox,#launchBox{align-self:stretch; margin:0;
@@ -439,8 +478,9 @@
   .due.big{font-size:12px; padding:5px 12px}
 
   /* save / send-to button under the due badge in the title column */
-  /* save and take stand side by side, so the title column does not grow taller */
-  .savecol{display:flex; flex-direction:row; align-items:stretch; gap:8px; margin-top:6px; width:100%}
+  /* on a desktop and on a tablet the two stand one under the other - the title
+     column is narrow, and a row of two squeezed both labels out of shape */
+  .savecol{display:flex; flex-direction:column; align-items:stretch; gap:7px; margin-top:6px; width:100%}
   .sendbtn{appearance:none; cursor:pointer; font:inherit; font-size:14px; font-weight:750; letter-spacing:.02em;
     border:1.5px solid var(--line2); background:var(--card); color:var(--ink);
     border-radius:13px; padding:11px 8px; display:inline-flex; align-items:center; justify-content:center; gap:8px;
@@ -478,13 +518,15 @@
     font:inherit; font-size:12.5px; color:var(--ink-dim); padding:6px; border-radius:8px; cursor:pointer}
   #plMenu .wide:hover{background:var(--blue-soft); color:var(--blue-ink)}
   body.dark .sendbtn{box-shadow:inset 0 1px 0 rgba(255,255,255,.05), 0 1px 2px rgba(0,0,0,.5)}
-  /* on a phone and an upright tablet the two stand side by side and are made for a thumb */
+  /* on a phone and an upright tablet both are made for a thumb; only on a phone
+     do they go back side by side, where the screen has no height to spare */
   @media (max-width:820px){
     .savecol{gap:10px; margin-top:10px}
     .sendbtn{font-size:16.5px; font-weight:800; padding:15px 12px;
       min-height:56px; border-radius:15px; gap:10px; border-width:2px}
     .sendbtn svg{width:21px; height:21px; stroke-width:2.1}
   }
+  @media (max-width:700px){ .savecol{flex-direction:row} }
 
   /* ============ LAYOUT ============ */
   .main{display:flex; gap:24px; margin-top:22px; align-items:flex-start}
@@ -651,6 +693,16 @@
   #megaOv.lit{opacity:1}
   #megaOv .mgin{max-width:1240px; margin:0 auto; padding:74px 22px 56px;
     display:flex; flex-direction:column; gap:22px}
+  /* the seats on the empty screen: the pair of parallel jobs over everything,
+     the stages across the top, then the day on the left and the counter with the
+     launch pad under it on the right */
+  #megaOv .mgtop,#megaOv .mgprojs,#megaOv .mgrest{display:flex; flex-direction:column; gap:22px}
+  #megaOv .mgcols{display:flex; gap:22px; align-items:flex-start}
+  #megaOv .mgl,#megaOv .mgr{display:flex; flex-direction:column; gap:22px; min-width:0; flex:1 1 0}
+  #megaOv .mgtop:empty,#megaOv .mgprojs:empty,#megaOv .mgrest:empty,
+  #megaOv .mgcols:empty,#megaOv .mgl:empty,#megaOv .mgr:empty{display:none}
+  #megaOv .mgcols:has(.mgl:empty) .mgr,#megaOv .mgcols:has(.mgr:empty) .mgl{flex:1 1 100%}
+  @media (max-width:900px){ #megaOv .mgcols{flex-direction:column} }
   #megaBar{position:fixed; top:0; left:0; right:0; z-index:3; display:flex; align-items:center;
     gap:12px; padding:12px 18px; background:var(--glass2,rgba(255,255,255,.92));
     border-bottom:1px solid var(--line); backdrop-filter:blur(8px)}
@@ -716,18 +768,19 @@
     to{opacity:1; transform:none; filter:blur(0)}
   }
   body.megaon{overflow:hidden}
-  /* the line that sweeps across while the pieces come together */
-  #megaScan{position:fixed; left:0; right:0; top:0; height:3px; z-index:210; pointer-events:none;
-    background:linear-gradient(90deg, transparent, #E5B94E, #FBE7A4, #E5B94E, transparent);
-    box-shadow:0 0 22px 6px rgba(229,185,78,.45); display:none}
-  #megaScan.run{display:block; animation:mgScan .95s cubic-bezier(.4,0,.3,1) 1}
-  @keyframes mgScan{ from{transform:translateY(-8px); opacity:0} 14%{opacity:1}
-    85%{opacity:.9} to{transform:translateY(100vh); opacity:0} }
+  /* the lit bottom bar is not part of the page that folds away - it stays where
+     it is, in full colour, over the empty screen, with its own switch beside it */
+  body.mgfold.mgtl .timeline,body.mgfold.mgtl #tlHi,
+  body.mgback.mgtl .timeline,body.mgback.mgtl #tlHi{animation:none !important}
+  body.megaon.mgtl .timeline,
+  body.spotlight.megaon.mgtl .timeline.spot,
+  body.spotlight.megaon.mgtl .timeline.spot.spotlow{z-index:206}
+  body.megaon.mgtl #tlHi{z-index:207}
+  body.megaon.mgtl #megaOv .mgin{padding-bottom:calc(var(--timeline-h) + var(--extgap,0px) + 30px)}
   @media (prefers-reduced-motion: reduce){
     #megaOv .megaitem{animation:none}
     #megaOv.gone .megaitem{animation:none}
     body.mgfold .wrap > *,body.mgback .wrap > *{animation:none}
-    #megaScan.run{display:none}
   }
   @media (max-width:820px){ #megaOv .mgin{padding:66px 12px 40px; gap:16px} }
   #launchBox{align-self:stretch}
@@ -1005,7 +1058,6 @@
   body.spotlight footer.note,
   body.spotlight .proj:not(.spot),
   body.spotlight.spothero header.top .brand,
-  body.spotlight.spothero .hero-right .btns2,
   body.spotlight.spothero .hero-right .total:not(.spot),
   body.spotlight.spothero header.top .btns,
   body.spotlight.spothero header.top .hero-tools,
@@ -1230,7 +1282,11 @@
     white-space:nowrap; max-width:230px; overflow:hidden; text-overflow:ellipsis; user-select:none}
   .tl-sign.right{right:46px; text-align:right}
   /* left sign: free-floating box hugging the timeline, no frame, auto-fitting */
-  #signLeft{position:absolute; left:16px; top:50%; transform:translateY(-50%); z-index:2;
+  /* the sign is centred by the box it stands in, not by a transform: moving it in
+     hide-and-seek writes its own transform, and that used to wipe the centring out
+     and drop the word straight onto the bars */
+  #signLeft{position:absolute; left:16px; top:0; bottom:0; z-index:2;
+    display:flex; align-items:center;
     font-weight:800; letter-spacing:.1em; text-transform:uppercase; white-space:nowrap;
     line-height:1; user-select:none; pointer-events:none; max-width:min(34vw, 520px); overflow:hidden;
     text-shadow:0 1px 0 rgba(255,255,255,.95), 0 -1px 1px rgba(58,63,74,.20)}
@@ -1305,6 +1361,25 @@
     #signLeft,.tl-sign.right{display:none}
     .tl-track{margin-top:28px}
   }
+  /* ============ TABLET ============
+     On an upright tablet the row of four never had the width for four, so the
+     blocks take the screen in the order they are used: the launch pad across the
+     top, the title with the counter beside it, then the day list, the buttons,
+     and the parallels underneath (the last one is carried there by placePar). */
+  @media (min-width:821px) and (max-width:1200px){
+    .hero-right{display:contents}
+    #launchBox{order:1; flex:1 1 100% !important; max-width:none !important}
+    .brand{order:2; flex:1 1 250px !important; max-width:none}
+    #totalBox{order:3; flex:0 1 330px; align-self:start}
+    #todayBox{order:4; flex:1 1 100% !important; max-width:none !important}
+    #parBox{order:5; flex:1 1 100%}
+    header.top .btns{margin-top:12px}
+    /* carried out of the counter column, it stands on its own under the buttons */
+    header.top > #parBox{margin-top:10px}
+    header.top > #parBox .parlist{max-height:none}
+    .lnlist{max-height:min(38vh,300px)}
+  }
+
   /* ============ PHONE ============ */
   @media (max-width:820px){
     :root{--timeline-h:114px}
@@ -1316,7 +1391,6 @@
     .brand h1{font-size:19px}
     #todayBox,#launchBox{max-width:none; width:100%; margin:0}
     .hero-right{width:100%}
-    .btns2{justify-content:flex-start}
     .total{margin-left:0; width:100%; min-width:0}
     .btns{gap:6px}
     .btn{padding:8px 11px; font-size:12.5px}
@@ -1787,6 +1861,166 @@
   body.pinkbar #toast{bottom:calc(var(--timeline-h) + 16px + var(--extgap,0px))}
   body.dark.pinkbar .timeline{border-top-color:rgba(255,240,220,.22)}
 
+
+  .sykeyrow{display:flex; gap:7px; margin-top:7px}
+  .sykeyrow .btn{font-size:12px; padding:7px 11px}
+  /* ---------- the picture on the home screen ---------- */
+  .icogrid{display:grid; grid-template-columns:repeat(auto-fill,minmax(128px,1fr)); gap:12px}
+  .icoopt{appearance:none; cursor:pointer; font:inherit; text-align:center; background:var(--card);
+    border:1.5px solid var(--line2); border-radius:16px; padding:12px 10px 11px; color:var(--ink);
+    display:flex; flex-direction:column; align-items:center; gap:7px;
+    transition:border-color .25s ease, transform .25s ease, box-shadow .25s ease}
+  .icoopt:hover{border-color:var(--blue); transform:translateY(-2px)}
+  .icoopt img{width:74px; height:74px; border-radius:18px; display:block}
+  .icoopt b{font-size:12.5px; font-weight:750}
+  .icoopt small{font-size:11px; color:var(--ink-faint)}
+  .icoopt.on{border-color:var(--blue); box-shadow:0 0 0 3px var(--blue-soft)}
+  body.korean .icoopt{border:2px solid var(--edge); box-shadow:0 3px 0 var(--edge)}
+  body.korean .icoopt.on{background:var(--peach-soft)}
+
+  /* ============================================================
+     THE NOODLE-HOUSE SKIN
+     One button dresses the whole page in the look of the study
+     noodle house: warm paper, ink outlines drawn with a thick pen,
+     shadows that do not blur but sit a few pixels below, a red
+     signboard across the top and a hanja pressed into every stage
+     tile. Nothing moves and nothing changes what it does - only
+     the clothes are different.
+     ============================================================ */
+  body.korean{
+    --edge:#241A16; --kred:#D9342B; --kred2:#B3261E; --kyel:#F5C518; --kyel3:#FFE27A;
+    --ksky:#8CC0D0; --kskyd:#4E8496; --kgreen:#2F8F4E;
+    --bg:#F7ECD6; --card:#FBF5E9; --line:#E0CDAA; --line2:#241A16;
+    --ink:#241A16; --ink-dim:#4D3D35; --ink-faint:#8A7466;
+    --blue:#8CC0D0; --blue2:#4E8496; --blue-soft:#F8E7C4; --blue-ink:#B3261E;
+    --green:#2F8F4E; --green-soft:#E6F1E6;
+    --redp:#D9342B; --red-soft:#FBE5E1;
+    --peach:#F5C518; --peach-soft:#FFF3CE;
+    --track:#EFE0BE; --track2:#FBF5E9;
+    --barline:#E0CDAA; --ringline:#241A16; --dotline:#241A16; --hover:#F5E7CB; --sunk:#F2E3C2;
+    --todaybg:#FFF8E6; --todayline:#E0CDAA; --todayhover:#F8E7C4; --todaydot:#C6BCAE;
+    --parbg:#FDEBEE; --parline:#E2AFB6; --parink:#B3261E; --parhover:#FAE0E4;
+    --glass:rgba(251,245,233,.94); --glass2:rgba(251,245,233,.95); --glass3:rgba(248,231,196,.96);
+    --sh-s:0 4px 0 rgba(36,26,22,.20), 0 14px 26px rgba(120,80,20,.14);
+    --sh-c:0 3px 0 rgba(36,26,22,.16), 0 10px 22px rgba(120,80,20,.12);
+    --sh-m:0 6px 0 rgba(36,26,22,.20), 0 22px 44px rgba(120,80,20,.24);
+    --bpink:#241A16; --bpgrid:#D9342B; --bpgrid-o:.16;
+  }
+  body.korean.dark{
+    --edge:#0D0806;
+    --bg:#1B1412; --card:#2A1F1B; --line:#4A3A32; --line2:#0D0806;
+    --ink:#FFF1D6; --ink-dim:#E2CDB0; --ink-faint:#B09A86;
+    --blue:#4E8496; --blue2:#8CC0D0; --blue-soft:#33261F; --blue-ink:#FFE27A;
+    --green:#4FA76A; --green-soft:#1E2C1E;
+    --track:#191110; --track2:#241A16;
+    --barline:#4A3A32; --ringline:#FFE27A; --dotline:#7A6555; --hover:#332721; --sunk:#241A16;
+    --todaybg:#2B211A; --todayline:#4A3A32; --todayhover:#352820; --todaydot:#6B5847;
+    --parbg:#2E2024; --parline:#5E3B40; --parink:#F7A8A0; --parhover:#382529;
+    --glass:rgba(42,31,27,.94); --glass2:rgba(27,20,18,.95); --glass3:rgba(51,38,31,.96);
+    --sh-s:0 4px 0 rgba(0,0,0,.42), 0 14px 26px rgba(0,0,0,.42);
+    --sh-c:0 3px 0 rgba(0,0,0,.38), 0 10px 22px rgba(0,0,0,.38);
+    --sh-m:0 6px 0 rgba(0,0,0,.42), 0 22px 44px rgba(0,0,0,.55);
+  }
+  /* the letters of a signboard: heavy, spaced, upright */
+  body.korean .brand .kicker,body.korean .today .th b,body.korean .total .nums,
+  body.korean .parbox .th b,body.korean .lnhd,body.korean .tl-start,body.korean .tl-caption{
+    font-weight:800; letter-spacing:.14em}
+  body.korean .brand .kicker{color:var(--kred)}
+  body.korean .today .th b,body.korean .parbox .th b{color:var(--kred2)}
+  body.korean.dark .brand .kicker,body.korean.dark .today .th b,body.korean.dark .parbox .th b{color:var(--kyel3)}
+  body.korean .brand h1{letter-spacing:.005em}
+
+  /* the signboard over Mission control */
+  body.korean header.top{border:3px solid var(--edge); border-radius:26px;
+    background:var(--card); box-shadow:0 6px 0 var(--edge); overflow:hidden}
+  body.korean header.top::after{content:""; position:absolute; left:0; right:0; top:0; height:11px;
+    background:repeating-linear-gradient(90deg,var(--kred) 0 12px,var(--kyel) 12px 24px); z-index:6; pointer-events:none}
+  body.korean header.top{padding-top:26px}
+  body.korean .bpframe{display:none}
+
+  /* the stage tiles, cut like the dishes on the menu board */
+  body.korean .proj{border:3px solid var(--ksky); border-radius:22px; background:var(--card);
+    box-shadow:0 4px 0 var(--kskyd); position:relative; overflow:hidden}
+  body.korean .proj:hover{box-shadow:0 6px 0 var(--kskyd); transform:translateY(-1px)}
+  body.korean .proj.pdone{border-color:#C6BCAE; box-shadow:0 4px 0 #9A8E82; background:var(--blue-soft)}
+  body.korean.dark .proj.pdone{border-color:#5C5049; box-shadow:0 4px 0 #3B322D}
+  /* a hanja pressed into the paper - each tile gets its own */
+  body.korean .proj::before{position:absolute; right:6px; top:34px; font-size:88px; line-height:.86;
+    color:var(--ink); opacity:.09; pointer-events:none; z-index:0; font-weight:700;
+    font-family:"Apple SD Gothic Neo","Noto Serif CJK KR","Noto Sans CJK KR",serif}
+  body.korean .proj:nth-of-type(8n+1)::before{content:"倫"}
+  body.korean .proj:nth-of-type(8n+2)::before{content:"德"}
+  body.korean .proj:nth-of-type(8n+3)::before{content:"法"}
+  body.korean .proj:nth-of-type(8n+4)::before{content:"善"}
+  body.korean .proj:nth-of-type(8n+5)::before{content:"義"}
+  body.korean .proj:nth-of-type(8n+6)::before{content:"眞"}
+  body.korean .proj:nth-of-type(8n+7)::before{content:"美"}
+  body.korean .proj:nth-of-type(8n)::before{content:"命"}
+  body.korean .proj > *{position:relative; z-index:1}
+  body.korean .proj-num{background:var(--kred); color:#FBF5E9; border:2px solid var(--edge);
+    border-radius:10px; font-weight:800}
+  body.korean .proj-title{font-weight:800; letter-spacing:.005em}
+
+  /* every button is a little enamel sign that presses down */
+  body.korean .btn,body.korean .mini-btn,body.korean .pbtn,body.korean .sendbtn,
+  body.korean .swbtn,body.korean .plmove,body.korean .tabbtn,body.korean #megaOut,
+  body.korean #tlHi,body.korean .paradd button{
+    border:2px solid var(--edge) !important; box-shadow:0 3px 0 var(--edge);
+    font-weight:800; letter-spacing:.05em; transition:transform .1s ease, box-shadow .1s ease}
+  body.korean .btn:active,body.korean .mini-btn:active,body.korean .pbtn:active,
+  body.korean .sendbtn:active,body.korean .swbtn:active,body.korean .plmove:active,
+  body.korean .tabbtn:active,body.korean #megaOut:active,body.korean #tlHi:active,
+  body.korean .paradd button:active{transform:translateY(3px); box-shadow:0 0 0 var(--edge)}
+  body.korean .btn{text-transform:uppercase; font-size:11.5px; border-radius:13px; background:var(--card)}
+  body.korean .btn:hover{background:var(--kyel); color:var(--edge)}
+  body.korean .sendbtn{background:var(--kred); color:#FBF5E9; border-radius:14px}
+  body.korean .sendbtn:hover{background:var(--kred2); color:#FBF5E9}
+  body.korean .sendbtn.done{background:var(--kgreen); color:#fff}
+  body.korean .pbtn.on,body.korean .spotbtn.on{background:var(--kyel); color:var(--edge)}
+
+  /* the boxes of Mission control keep the same paper and the same ink */
+  body.korean .total,body.korean .today,body.korean .parbox,body.korean .stagelist,
+  body.korean .modal,body.korean .bp-side,body.korean .sticker{
+    border:2.5px solid var(--edge) !important; border-radius:20px}
+  body.korean .total,body.korean .today,body.korean .parbox{box-shadow:0 4px 0 rgba(36,26,22,.16)}
+  body.korean.dark .total,body.korean.dark .today,body.korean.dark .parbox{box-shadow:0 4px 0 rgba(0,0,0,.45)}
+  body.korean .modal{box-shadow:0 8px 0 rgba(36,26,22,.18), 0 26px 54px rgba(120,80,20,.28)}
+  body.korean .bigbar,body.korean .mini,body.korean .tl-track{border:2px solid var(--edge); height:auto; min-height:10px}
+  body.korean .bigbar i,body.korean .tl-fill{background:var(--kred)}
+  body.korean .mini i{background:var(--kgreen)}
+
+  /* the bottom board */
+  body.korean .timeline{border-top:4px solid var(--kyel); background:var(--glass2);
+    box-shadow:0 -3px 0 rgba(36,26,22,.10)}
+  body.korean #signLeft,body.korean .tl-sign.right,body.korean #signTop{letter-spacing:.14em; font-weight:800}
+
+  /* the row of project tabs reads like the chips over the menu */
+  body.korean .tabbtn{border-radius:12px; text-transform:uppercase; font-size:11.5px; background:var(--card)}
+  body.korean .tabbtn.on{background:var(--ink); color:var(--bg)}
+  body.korean.dark .tabbtn.on{background:var(--kyel); color:#241A16}
+
+  /* the launch pad rows */
+  body.korean .lnrow{border:2px solid var(--edge); border-radius:13px; background:var(--card)}
+  body.korean .lnrow.ln-done{background:var(--blue-soft)}
+  body.korean .lnflag{border:2px solid var(--edge); border-radius:8px; font-weight:800; letter-spacing:.08em}
+  body.korean .lnrk{border:2px solid var(--edge)}
+  body.korean .prow .pcell{border:2px solid var(--parline)}
+
+  /* round things keep a firm outline */
+  body.korean .pcheck .ring,body.korean .tcheck .box,body.korean .today .titem .tdot{border-width:2.5px}
+  body.korean .pcheck input:checked + .ring,body.korean .tcheck input:checked + .box{background:var(--kgreen); border-color:var(--edge)}
+  body.korean .today .titem.done .tdot{background:var(--kgreen); border-color:var(--edge)}
+
+  body.korean #launchBox{--lnbg:#EAF4F7; --lnline:#8CC0D0; --lnhover:#DDEDF2; --lndot:#4E8496}
+  body.korean #launchBox.today .th b{color:var(--kskyd)}
+  body.korean.dark #launchBox{--lnbg:#1C2A2E; --lnline:#3A5560; --lnhover:#243539; --lndot:#4E8496}
+  body.korean.dark #launchBox.today .th b{color:#8CC0D0}
+  /* the mega screen wears the same clothes */
+  body.korean #megaOv{background:var(--bg)}
+  body.korean #megaBar{border-bottom:3px solid var(--edge); background:var(--kred)}
+  body.korean #megaBar b{color:var(--kyel3)}
+  body.korean #megaOut{background:var(--card); color:var(--ink)}
+
   @media (prefers-reduced-motion:reduce){ *{transition:none !important; animation:none !important} }
 </style>
 </head>
@@ -1884,11 +2118,19 @@
           <button class="pbtn lowbtn" data-spotlow="done" title="Give way inside the light - this box turns grey and a little dimmer"><i class="pdot"></i>yield</button>
         </div>
       </div>
-      <div class="btns2">
-        <button class="btn" id="btnJson" title="Copy the progress out, or paste it back in">as text</button>
-        <button class="btn" id="btnThings" title="Send this project to Things, or bring a list back from it">Things</button>
-        <button class="btn" id="btnReset">Reset</button>
-        <span class="pill"><span class="dot" id="stDot"></span><span id="stText">autosave</span></span>
+      <div class="total parbox" id="parBox">
+        <div class="th"><b>Parallels</b><span class="cnt" id="parCnt">0</span></div>
+        <div class="parlist" id="parList"></div>
+        <div class="paradd">
+          <input type="text" id="parA" placeholder="the one you are on..." maxlength="200">
+          <span class="parlk" aria-hidden="true">&#8651;</span>
+          <input type="text" id="parB" placeholder="...and the one it runs with" maxlength="200">
+          <button id="parAdd" title="Put this pair in front of you">+</button>
+        </div>
+        <div class="tfoot">
+          <button class="pbtn spotbtn" data-spot="par" title="Put the light on this box - the whole page behind it goes dark"><i class="pdot"></i>highlight</button>
+          <button class="pbtn lowbtn" data-spotlow="par" title="Give way inside the light - this box turns grey and a little dimmer"><i class="pdot"></i>yield</button>
+        </div>
       </div>
     </div>
     </div>
@@ -1902,6 +2144,12 @@
       <button class="btn" id="btnLaunch" title="Every stage that has been launched, and the ones waiting for their day">launch<b id="lnBadge"></b></button>
       <button class="btn" id="btnUnfix" title="Let Mission control off its pin, so it scrolls away with the page">unfix</button>
       <button class="btn" id="btnMega" title="Keep only what is lit - the page folds away and the lit boxes come back together across the whole screen">mega focus</button>
+      <button class="btn" id="btnKorean" title="Dress the whole page in the noodle-house style - every button keeps working exactly as it does now">Korean</button>
+      <button class="btn" id="btnLogo" title="Choose the picture this plan wears on a home screen">logo</button>
+      <button class="btn" id="btnJson" title="Copy the progress out, or paste it back in">as text</button>
+      <button class="btn" id="btnThings" title="Send this project to Things, or bring a list back from it">Things</button>
+      <button class="btn" id="btnReset">Reset</button>
+      <span class="pill"><span class="dot" id="stDot"></span><span id="stText">autosave</span></span>
       <input type="file" id="fileImport" accept=".json,application/json,text/plain" class="hidden">
     </div>
     <div class="hero-tools">
@@ -2089,8 +2337,7 @@
   <div class="dkhint">Sets how deep the dark theme goes. The light theme is not touched.</div>
 </div>
 <div id="pinkMenu"><div class="rlab2">Strip colour</div><div class="pswatch" id="pinkSw"></div><button class="mrow" id="pinkPick">Pick the colour off the strip</button><button class="mrow" id="pinkAuto">Match the strip automatically</button><div class="phex"><input type="text" id="pinkHex" placeholder="#FF2D78" maxlength="7" spellcheck="false"><button id="pinkHexOk">set</button></div></div>
-<div id="megaScan"></div>
-<div id="megaOv"><div id="megaBar"><b>Mega focus</b><button id="megaOut">back to the page</button></div><div class="mgin" id="megaIn"></div></div>
+<div id="megaOv"><div id="megaBar"><b>Mega focus</b><button id="megaOut">back to the page</button></div><div class="mgin" id="megaIn"><div class="mgtop" id="mgTop"></div><div class="mgprojs" id="mgProjs"></div><div class="mgcols" id="mgCols"><div class="mgl" id="mgL"></div><div class="mgr" id="mgR"></div></div><div class="mgrest" id="mgRest"></div></div></div>
 <div class="overlay" id="lnOverlay">
   <div class="modal narrow">
     <header><h2>Launched</h2><span class="spacer"></span><span class="signstate" id="lnHead"></span></header>
@@ -2103,6 +2350,16 @@
     <header><h2>Log of what is done</h2><span class="spacer"></span><span class="signstate" id="lgCnt"></span></header>
     <div class="body" id="lgBody"></div>
     <footer><button class="btn" id="lgSweep" title="Take every ticked line out of the two lists - they stay here in the log">clear the finished lines</button><button class="btn" id="lgEmpty" title="Forget the whole log">empty the log</button><span class="spacer"></span><button class="btn" id="lgClose">Close</button></footer>
+  </div>
+</div>
+<div class="overlay" id="icoOverlay">
+  <div class="modal narrow">
+    <header><h2>The picture on the home screen</h2><span class="spacer"></span><span class="signstate" id="icoState"></span></header>
+    <div class="body">
+      <p class="lnfoot" style="border:none;padding:0;margin:0 0 12px">Pick the one this plan should wear. A phone keeps the picture it copied when the plan was first put on the home screen, so after a change take the old square off and add the page again - then the new one comes with it.</p>
+      <div class="icogrid" id="icoGrid"></div>
+    </div>
+    <footer><span class="spacer"></span><button class="btn" id="icoClose">Close</button></footer>
   </div>
 </div>
 <div class="overlay" id="trOverlay">
@@ -2134,11 +2391,18 @@
       <div class="syrow"><label>Branch</label>
         <input type="text" id="syBranch" placeholder="main" spellcheck="false"></div>
       <div class="syrow"><label>Access key</label>
-        <input type="password" id="syToken" placeholder="github_pat_..." spellcheck="false" autocomplete="off"></div>
+        <input type="password" id="syToken" placeholder="github_pat_..." spellcheck="false" autocomplete="off">
+        <div class="sykeyrow">
+          <button class="btn" id="syPaste" title="Take the key from the clipboard and put it in the field">paste the key</button>
+          <button class="btn" id="syShow" title="Show what is in the field">show</button>
+        </div></div>
       <div class="syrow"><label>This device</label>
         <input type="text" id="syDevice" placeholder="iPhone" spellcheck="false"></div>
       <div class="sylead" id="syLeadBox"></div>
-      <p class="thp syhint">The key stays in this browser only - it never travels inside the progress file and it is not written to the repository.
+      <p class="thp syhint">A page put on the home screen keeps its own store, separate from the browser it was added from - that is why
+        it asks for the key once more there. Copy the key, open the plan from the home screen, and press <b>paste the key</b>: it is
+        asked for that one time and stays.<br>
+        The key stays in this browser only - it never travels inside the progress file and it is not written to the repository.
         Make it in GitHub: <b>Settings &#8594; Developer settings &#8594; Personal access tokens &#8594; Fine-grained tokens</b>,
         give it only this one repository and set <b>Contents: Read and write</b>. A separate private repository for the progress
         keeps your notes out of sight.</p>
@@ -4616,6 +4880,7 @@ function freshState(){
     today:[],week:[],todayNext:[],weekNext:[],todayView:"now",weekView:"now",
     plLog:[],plDay:"",plWeek:"",spotSave:null,starts:{},launched:{},launchBox:true,
     saveName:"",saveDirName:"",ptask:{},stickBtn:null,stickBtnHidden:false,stickersHidden:false,bink:[],
+    pairs:[],korean:false,logo:"wok",
     theme:"light",pinkBar:false,pinkColor:"",heroZoom:1,heroFree:false,darkness:50,boldAll:false,inproc:{},ie:false,iedone:{},hideDone:{},hideAllT:{},flipped:{},back:{}};
 }
 var state=freshState();
@@ -4670,7 +4935,7 @@ function persistSpaces(){ if(storageOk){ try{ localStorage.setItem(SKEY, JSON.st
 var PKEY=KEY+":prefs";
 var PREF_KEYS=["theme","boldAll","pinkBar","pinkColor","stickerSkin","stickerClassic",
   "stickBtn","stickBtnHidden","stickersHidden","hideLnkAll","styles","signs","sigv",
-  "saveDirName","saveName","heroZoom","heroFree","launchBox","darkness"];
+  "saveDirName","saveName","heroZoom","heroFree","launchBox","darkness","korean","logo"];
 function readPrefs(){
   if(!storageOk) return memPrefs;
   try{ var r=localStorage.getItem(PKEY); return r?JSON.parse(r):null; }catch(e){ return null; }
@@ -4778,12 +5043,16 @@ function effProjects(){
   });
   if(state.order&&state.order.length){
     var oi={}; state.order.forEach(function(id,i){ oi[id]=i; });
-    out.forEach(function(p,i){ p._bi=i; });
-    out.sort(function(a,b){
-      var ia=(oi[a.id]!==undefined)?oi[a.id]:900+a._bi;
-      var ib=(oi[b.id]!==undefined)?oi[b.id]:900+b._bi;
-      return ia-ib;
+    /* A stage the saved order has never heard of - one that came into the plan
+       after the order was written down - used to be thrown to the very end. It
+       now keeps the seat it holds in the plan itself: it follows whichever stage
+       stands in front of it. */
+    var prev=-1, gap=0;
+    out.forEach(function(p){
+      if(oi[p.id]!==undefined){ prev=oi[p.id]; gap=0; p._r=prev; }
+      else { gap++; p._r=prev+gap/1000; }
     });
+    out.sort(function(a,b){ return a._r-b._r; });
   }
   return out;
 }
@@ -5404,7 +5673,7 @@ function applySpot(){
     el.classList.toggle("spot", !!state.spot[k]);
     el.classList.toggle("spotlow", !!(state.spot[k] && state.spotLow[k]));
   });
-  [["today","todayBox"],["week","weekBox"],["done","totalBox"],["launch","launchBox"]].forEach(function(pair){
+  [["today","todayBox"],["week","weekBox"],["done","totalBox"],["launch","launchBox"],["par","parBox"]].forEach(function(pair){
     var el=document.getElementById(pair[1]);
     if(!el) return;
     el.classList.toggle("spot", !!state.spot[pair[0]]);
@@ -5546,20 +5815,30 @@ function shortNums(nums){
   }
   return out.join(",");
 }
+/* The calendar answers to dates and to nothing else. Ticking a task off changes
+   no date, so the scale is left exactly as it stands: it is torn down and drawn
+   again only when the dates, the open stage or the height of the column really
+   change. Rebuilding it on every tick was what made it jump for no reason. */
+var _rulSig="";
 function renderRuler(){
   var ruler=document.getElementById("ruler");
-  ruler.querySelectorAll(".rtick,.rband").forEach(function(n){ n.remove(); });
   var eff=effProjects();
   var exp=eff.filter(function(p){ return !state.collapsed[p.id]; });
   var solo=exp.length===1?exp[0]:null;
   var from=pd(STARTF()+"T00:00"), to=solo?pd(solo.due):pd(FINISH());
   if(to<=from) to=new Date(from.getTime()+DAY);
+  var sig=[STARTF(), FINISH(), solo?solo.id+"|"+solo.due:"-",
+           eff.map(function(p){ return p.id+":"+p.due; }).join(","),
+           Math.round(ruler.getBoundingClientRect().height)].join("~");
+  var same=(sig===_rulSig);
+  _rulSig=sig;
+  if(!same) ruler.querySelectorAll(".rtick,.rband").forEach(function(n){ n.remove(); });
   document.getElementById("rulTop").textContent=fmtEn(STARTF()).toUpperCase();
   document.getElementById("rulBot").textContent=(solo?("STAGE "+(eff.indexOf(solo)+1)+" &#183; "):"ALL &#183; ").replace(/&#183;/g,"·")+fmtEn(solo?solo.due:FINISH()).toUpperCase();
   var span=to-from;
   var lastF=-9;
   /* week division: ticks at every Monday + alternating soft bands */
-  var wks=weekMarks(from,to);
+  var wks=same?[]:weekMarks(from,to);
   var wfr=[0]; wks.forEach(function(w){ wfr.push((w.d-from)/span); }); wfr.push(1);
   for(var bi=0;bi<wfr.length-1;bi++){
     if(bi%2===1){
@@ -5579,6 +5858,7 @@ function renderRuler(){
     ruler.appendChild(el);
   });
   function place(when, cls, label){
+    if(same) return;
     var f=(pd(when)-from)/span; if(f<0||f>1.001) return;
     f=Math.min(1,f);
     var el=document.createElement("div");
@@ -5617,12 +5897,12 @@ function renderRuler(){
     tlb.textContent=timeLeftText(); tbox.setAttribute("title", timeLeftText());
     paintTimeScale(tbox, from, to);
   }
+  if(!same) deCollide(ruler);
   var rm=document.getElementById("rulMark");
   if(rm){
     rm.style.top="calc(26px + (100% - 90px) * "+tf.toFixed(4)+")";
     rm.setAttribute("title", timeLeftText());
   }
-  deCollide(ruler);
 }
 /* labels that would sit on top of each other are simply not shown -
    the tick itself stays, so nothing is lost from the scale */
@@ -5656,6 +5936,9 @@ function deCollide(ruler){
 var _dcTimer=null;
 function reCollide(){
   var r=document.getElementById("ruler");
+  /* a change of size is a real reason to draw the scale again */
+  _rulSig=""; _tsSig="";
+  try{ renderRuler(); }catch(e){}
   if(r) deCollide(r);
   if(typeof deCollideRow==="function") deCollideRow(document.getElementById("tlTime"));
 }
@@ -5675,8 +5958,12 @@ window.addEventListener("load", function(){ reCollideSoon(120); });
 [350,900,1800].forEach(function(ms){ setTimeout(reCollide, ms); });
 /* the grey line gets its own scale: a hair for every day, a firmer line for
    every Monday, so it is plain how many weeks and days are left */
+var _tsSig="";
 function paintTimeScale(box, from, to){
   if(!box) return;
+  var sig=[+from, +to, Math.round(box.getBoundingClientRect().width)].join("~");
+  if(sig===_tsSig) return;
+  _tsSig=sig;
   box.querySelectorAll(".tt-day,.tt-week,.tt-band").forEach(function(n){ n.remove(); });
   var span=to-from;
   if(span<=0) return;
@@ -6968,10 +7255,17 @@ function applySigns(){
     st.style.maxWidth=free+"px";
     if(g.t.t&&!g.t.hidden) fitSign(st,g.t);
   }
+  /* the bars start where the sign really ends - measured, not guessed from its
+     width alone, so a sign that was dragged aside or made larger still cannot
+     come down on top of the scale */
   var ls=document.getElementById("signLeft"), tl=document.querySelector(".tl-inner");
   if(ls&&tl){
-    var w=(g.l.t&&!g.l.hidden)?Math.ceil(ls.getBoundingClientRect().width)+34:40;
-    tl.style.setProperty("--tlpad", Math.max(40,w)+"px");
+    var need=40;
+    if(g.l.t && !g.l.hidden){
+      var sr=ls.getBoundingClientRect(), ir=tl.getBoundingClientRect();
+      if(sr.width>0) need=Math.ceil(sr.right-ir.left)+18;
+    }
+    tl.style.setProperty("--tlpad", Math.max(40,need)+"px");
   }
 }
 var signsSide="l";
@@ -7096,8 +7390,25 @@ function fitHeroWide(){
   if(h.style.marginRight!==mr) h.style.marginRight=mr;
 }
 var heroWideTm=null;
+/* ---- the parallels box changes seat with the width ----
+   On a wide screen it belongs under the counter; on a tablet the counter column
+   is gone, so the box stands on its own line under the row of buttons. It is the
+   same element either way - only its seat moves, never its contents. */
+function placePar(){
+  var box=document.getElementById("parBox");
+  if(!box || megaOn || megaBusy) return;
+  var btns=document.querySelector("header.top .btns");
+  var right=document.querySelector("header.top .hero-right");
+  if(!btns || !right) return;
+  var w=document.documentElement.clientWidth||window.innerWidth||0;
+  if(w>=821 && w<=1200){
+    if(box.previousElementSibling!==btns) btns.parentNode.insertBefore(box, btns.nextSibling);
+  }else{
+    if(box.parentNode!==right) right.appendChild(box);
+  }
+}
 function fitHeroWideSoon(ms){ clearTimeout(heroWideTm); heroWideTm=setTimeout(function(){ fitHeroWide(); syncHeroHeight(); }, ms||60); }
-window.addEventListener("resize", function(){ applySigns(); fitHeroWide(); syncHeroHeight(); });
+window.addEventListener("resize", function(){ applySigns(); placePar(); fitHeroWide(); syncHeroHeight(); });
 if(window.ResizeObserver){ try{ new ResizeObserver(syncHeroHeight).observe(document.getElementById("hero")); }catch(e){} }
 
 /* ================= PRIORITY FOR TODAY ================= */
@@ -7201,6 +7512,88 @@ function renderList(cfg){
   }
 }
 function renderToday(){ renderList(PLISTS.today); renderList(PLISTS.week); paintLogCount(); }
+
+/* ================= PARALLELS =================
+   Two things are usually on the go at once. This box holds them as one line:
+   on the left the one being worked on, on the right the one it runs with, so
+   both stay in front of the eye instead of one of them slipping out of mind. */
+function parArr(){ if(!state.pairs) state.pairs=[]; return state.pairs; }
+var parSeq=0;
+function parId(){ parSeq++; return "pr"+Date.now().toString(36)+parSeq; }
+function parFind(id){ var a=parArr(); for(var i=0;i<a.length;i++){ if(a[i].id===id) return a[i]; } return null; }
+function renderPairs(){
+  var box=document.getElementById("parList");
+  if(!box) return;
+  var a=parArr();
+  box.innerHTML=a.length ? a.map(function(x){
+    var A=x.a||"", B=x.b||"";
+    return '<div class="prow'+(x.done?" done":"")+'" data-pr="'+x.id+'">'+
+      '<span class="pcell a'+(A?"":" void")+'" data-prtext="'+x.id+'|a" title="Click to change this half">'+esc(A||"one side...")+'</span>'+
+      '<span class="tie" data-prdone="'+x.id+'" title="Both of them are finished - click to strike the pair out">&#8651;</span>'+
+      '<span class="pcell b'+(B?"":" void")+'" data-prtext="'+x.id+'|b" title="Click to change this half">'+esc(B||"the other side...")+'</span>'+
+      '<button class="pdel" data-prdel="'+x.id+'" title="Take this pair away">&#10005;</button></div>';
+  }).join("") : '<div class="empty">Nothing running in parallel yet.</div>';
+  var c=document.getElementById("parCnt");
+  if(c) c.textContent=String(a.length);
+}
+function parAddNow(){
+  var ia=document.getElementById("parA"), ib=document.getElementById("parB");
+  if(!ia||!ib) return;
+  var A=(ia.value||"").trim(), B=(ib.value||"").trim();
+  if(!A && !B){ ia.focus(); return; }
+  parArr().push({id:parId(), a:A, b:B, done:false});
+  ia.value=""; ib.value="";
+  persist(); renderPairs(); ia.focus();
+}
+function parEdit(id, side){
+  var it=parFind(id); if(!it) return;
+  var cell=document.querySelector('[data-prtext="'+id+'|'+side+'"]');
+  if(!cell || cell.querySelector("input")) return;
+  var cur=it[side]||"";
+  cell.classList.remove("void");
+  cell.innerHTML='<input type="text" maxlength="200">';
+  var inp=cell.querySelector("input");
+  inp.value=cur; inp.focus(); inp.select();
+  var closed=false;
+  function close(save){
+    if(closed) return;
+    closed=true;
+    if(save) it[side]=(inp.value||"").trim();
+    persist(); renderPairs();
+  }
+  inp.addEventListener("keydown", function(e){
+    if(e.key==="Enter"){ e.preventDefault(); close(true); }
+    else if(e.key==="Escape"){ e.preventDefault(); close(false); }
+  });
+  inp.addEventListener("blur", function(){ close(true); });
+}
+(function(){
+  var add=document.getElementById("parAdd");
+  if(add) add.addEventListener("click", parAddNow);
+  ["parA","parB"].forEach(function(k){
+    var el=document.getElementById(k);
+    if(el) el.addEventListener("keydown", function(e){ if(e.key==="Enter"){ e.preventDefault(); parAddNow(); } });
+  });
+  var list=document.getElementById("parList");
+  if(list) list.addEventListener("click", function(ev){
+    var b;
+    if((b=ev.target.closest("[data-prdel]"))){
+      var it=parFind(b.getAttribute("data-prdel"));
+      var a=parArr(), i=a.indexOf(it);
+      if(i>=0) a.splice(i,1);
+      persist(); renderPairs(); return;
+    }
+    if((b=ev.target.closest("[data-prdone]"))){
+      var x=parFind(b.getAttribute("data-prdone"));
+      if(x){ x.done=!x.done; persist(); renderPairs(); }
+      return;
+    }
+    if((b=ev.target.closest("[data-prtext]"))){
+      var pr=b.getAttribute("data-prtext").split("|");
+      parEdit(pr[0], pr[1]);
+    }
+  });
+})();
 /* ---- the turn ----
    The box swings away edge-on, changes its face while nobody can read it, and swings
    back with a band of light running across the paper; the lines settle in one after
@@ -7438,25 +7831,44 @@ Object.keys(PLISTS).forEach(function(k){
 var megaOn=false, megaSaved=[], megaBusy=false;
 function megaPieces(){
   var out=[];
-  document.querySelectorAll(".proj.spot, .today.spot, .total.spot, .sticker.spot").forEach(function(e){
-    out.push(e);
+  /* the pair first, then the stages, then the boxes of Mission control - the order
+     they are named in is the order they fly in */
+  ["#parBox.spot", ".proj.spot", "#todayBox.spot", "#totalBox.spot", "#launchBox.spot",
+   ".today.spot", ".total.spot", ".sticker.spot"].forEach(function(sel){
+    document.querySelectorAll(sel).forEach(function(e){
+      if(out.indexOf(e)<0) out.push(e);
+    });
   });
   return out;
 }
+/* Where a piece lands, and which way it flies in from.
+   The pair of parallel jobs goes over everything; the stages take the top of the
+   screen; the day list keeps the left, the counter and the launch pad the right. */
+function megaSeat(el){
+  if(el.id==="parBox")    return {host:"mgTop",   fx:0,   fy:-34};
+  if(el.classList.contains("proj")) return {host:"mgProjs", fx:0, fy:-26};
+  if(el.id==="todayBox")  return {host:"mgL",     fx:-52, fy:10};
+  if(el.id==="totalBox")  return {host:"mgR",     fx:52,  fy:-14};
+  if(el.id==="launchBox") return {host:"mgR",     fx:52,  fy:18};
+  if(el.classList.contains("today")) return {host:"mgL", fx:-52, fy:16};
+  return {host:"mgRest", fx:0, fy:26};
+}
 function megaStage(){
   var els=megaPieces();
-  var host=document.getElementById("megaIn");
+  ["mgTop","mgProjs","mgL","mgR","mgRest"].forEach(function(k){
+    var h=document.getElementById(k); if(h) h.innerHTML="";
+  });
   megaSaved=[];
   els.forEach(function(el,i){
     megaSaved.push({el:el, parent:el.parentNode, next:el.nextSibling,
                     style:el.getAttribute("style")||""});
-    /* each piece comes in from its own corner */
-    var fx=(i%2? 48 : -48), fy=((i%3)-1)*24;
-    el.style.setProperty("--fx", fx+"vw");
-    el.style.setProperty("--fy", fy+"vh");
-    el.style.setProperty("--ry", (i%2? -24 : 24)+"deg");
-    el.style.setProperty("--rz", (i%2? 8 : -8)+"deg");
-    el.style.setProperty("--d", (90+i*130)+"ms");
+    var seat=megaSeat(el);
+    var host=document.getElementById(seat.host)||document.getElementById("megaIn");
+    el.style.setProperty("--fx", seat.fx+"vw");
+    el.style.setProperty("--fy", seat.fy+"vh");
+    el.style.setProperty("--ry", (seat.fx<0? 24 : (seat.fx>0? -24 : 0))+"deg");
+    el.style.setProperty("--rz", (seat.fx<0? -8 : (seat.fx>0? 8 : 0))+"deg");
+    el.style.setProperty("--d", (90+i*110)+"ms");
     el.classList.add("megaitem");
     host.appendChild(el);
   });
@@ -7472,19 +7884,17 @@ function megaRestore(){
   megaSaved=[];
 }
 function megaFold(cls){
+  var tlLit=!!(state.spot&&state.spot.timeline);
+  document.body.classList.toggle("mgtl", tlLit);
   var list=[].slice.call(document.querySelectorAll(".wrap > *"));
-  [".ruler",".timeline","#btnSticker","#signTop","#tlHi","#board"].forEach(function(sel){
+  var sels=[".ruler","#btnSticker","#signTop","#board"];
+  if(!tlLit) sels.push(".timeline","#tlHi");
+  sels.forEach(function(sel){
     var e=document.querySelector(sel); if(e) list.push(e);
   });
   list.forEach(function(e,i){ e.style.setProperty("--fd", (i*26)+"ms"); });
   document.body.classList.add(cls);
   return list;
-}
-function megaScan(){
-  var sc=document.getElementById("megaScan");
-  if(!sc) return;
-  sc.classList.remove("run"); void sc.offsetWidth; sc.classList.add("run");
-  setTimeout(function(){ sc.classList.remove("run"); }, 1000);
 }
 function megaIn(){
   if(megaOn||megaBusy) return;
@@ -7502,7 +7912,6 @@ function megaIn(){
   ov.classList.add("up");
   void ov.offsetWidth;
   ov.classList.add("lit");
-  megaScan();
   setTimeout(function(){
     megaStage();
     document.body.classList.add("megaon");
@@ -7520,12 +7929,11 @@ function megaOff(){
     ov.classList.remove("lit");
     document.body.classList.remove("megaon","mgfold");
     megaFold("mgback");
-    megaScan();
     setTimeout(function(){
       ov.classList.remove("up","gone");
-      document.body.classList.remove("mgback");
+      document.body.classList.remove("mgback","mgtl");
       document.querySelectorAll("[style*='--fd']").forEach(function(e){ e.style.removeProperty("--fd"); });
-      try{ applySpot(); renderToday(); renderLaunch(); render(); }catch(e){}
+      try{ applySpot(); renderToday(); renderPairs(); renderLaunch(); render(); }catch(e){}
       try{ fitHeroWide(); syncHeroHeight(); }catch(e){}
       megaOn=false; megaBusy=false;
     }, 560);
@@ -7910,7 +8318,9 @@ function drawHsCtl(){
   h+='<div class="rrow" style="margin-top:14px"><button class="rb wide" data-hsx="all">reset this element</button></div>';
   document.getElementById("hsCtl").innerHTML=h;
 }
-function hsApply(){ persist(); emitStyles(); drawHsTree(); }
+function hsApply(){ persist(); emitStyles(); drawHsTree();
+  /* a sign that was moved or resized changes where the bars may start */
+  try{ applySigns(); }catch(e){} }
 document.getElementById("btnHideSeek").addEventListener("click", function(){
   drawHsTree(); drawHsCtl();
   document.getElementById("hsOverlay").classList.add("show");
@@ -7993,7 +8403,7 @@ function facApply(){
   mountBlueprint();
   buildStickers();
   emitStyles(); applyListView();
-  state.stickerSkin="control"; applySkin(); applyStickerVis(); applyTheme(); applyDarkness(); applyBold(); applyHeroZoom(); applyHeroFree(); applyPink(); renderToday(); paintFolderBtn(); binkRedraw();
+  state.stickerSkin="control"; applySkin(); applyStickerVis(); applyTheme(); applyKorean(); applyDarkness(); applyBold(); applyHeroZoom(); applyHeroFree(); applyPink(); renderToday(); renderPairs(); paintFolderBtn(); binkRedraw();
   document.getElementById("btnLnkAll").classList.remove("armed2");
   buildAll(); render();
   facOverlay.classList.remove("show");
@@ -8641,9 +9051,22 @@ function applyTheme(){
   if(b) b.setAttribute("aria-pressed", state.theme==="dark" ? "true" : "false");
   try{ var m=document.querySelector('meta[name="theme-color"]');
     if(!m){ m=document.createElement("meta"); m.name="theme-color"; document.head.appendChild(m); }
-    m.content=(state.theme==="dark")?"#0F131A":"#F7F5F0";
+    m.content=state.korean ? ((state.theme==="dark")?"#1B1412":"#D9342B")
+                           : ((state.theme==="dark")?"#0F131A":"#F7F5F0");
   }catch(e){}
   try{ drawLinks(); }catch(e2){}
+}
+/* ---- the noodle-house skin ----
+   One class on the body, and every rule written for it takes over. Nothing is
+   rebuilt, nothing is moved: the page keeps every button, every list and every
+   tick exactly where they were. */
+function applyKorean(){
+  document.body.classList.toggle("korean", !!state.korean);
+  var b=document.getElementById("btnKorean");
+  if(b){ b.textContent=state.korean?"Korean: on":"Korean"; b.classList.toggle("armed2", !!state.korean); }
+  try{ applyTheme(); }catch(e){}
+  try{ applyDarkness(); }catch(e){}
+  try{ binkRedraw(); }catch(e){}
 }
 function applyPink(){
   document.body.classList.toggle("pinkbar", !!state.pinkBar);
@@ -9028,6 +9451,10 @@ var DK_HI={"--bg":"#04060A","--card":"#0B0E14","--line":"#1C2330","--line2":"#2C
   "--todaybg":"#12100B","--todayline":"#2A2519","--todayhover":"#171410",
   "--weekbg":"#0A100C","--weekline":"#18241B","--weekhover":"#101711"};
 function darkness(){ var d=state.darkness; return (d===undefined||d===null)?50:Math.max(0,Math.min(100,+d)); }
+var KOR_DK={"--bg":"#1B1412","--card":"#2A1F1B","--line":"#4A3A32","--line2":"#0D0806",
+  "--hover":"#332721","--sunk":"#241A16","--track":"#191110","--track2":"#241A16",
+  "--blue-soft":"#33261F","--todaybg":"#2B211A","--todayline":"#4A3A32","--todayhover":"#352820",
+  "--weekbg":"#2B211A","--weekline":"#4A3A32","--weekhover":"#352820"};
 function applyDarkness(fromSlider){
   var b=document.body, d=darkness();
   var knob=document.getElementById("btnDark");
@@ -9054,6 +9481,9 @@ function applyDarkness(fromSlider){
     if(d===50) col=DK_MID[k];
     else if(d<50) col=mixHex(DK_LO[k], DK_MID[k], d/50);
     else col=mixHex(DK_MID[k], DK_HI[k], (d-50)/50);
+    /* in the noodle-house skin the night is warm, not blue - the slider still
+       says how dark, the skin says which way the colour leans */
+    if(state.korean && KOR_DK[k]) col=mixHex(col, KOR_DK[k], .82);
     b.style.setProperty(k, col);
   });
   /* the glass surfaces follow the card colour so nothing looks pasted on */
@@ -9154,6 +9584,13 @@ document.getElementById("btnUnfix").addEventListener("click", function(){
   toast(state.heroFree
     ? "Mission control is off its pin - it scrolls away with the page"
     : "Mission control is pinned to the top again");
+});
+document.getElementById("btnKorean").addEventListener("click", function(){
+  state.korean=!state.korean;
+  persist(); applyKorean();
+  toast(state.korean
+    ? "The noodle-house look is on - every button still does exactly what it did"
+    : "Back to the ordinary look");
 });
 document.getElementById("heroZoom").addEventListener("dblclick", function(ev){
   ev.preventDefault();
@@ -9594,10 +10031,10 @@ function refreshAll(){
   document.getElementById("hTitle").textContent=(state.header&&state.header.title)||DEFAULT_HEADER.title;
   if(elOpt("hSub")) elOpt("hSub").textContent=(state.header&&state.header.sub)||"";
   applyPageRich();
-  mountBlueprint(); applySigns(); buildStickers(); emitStyles(); applyListView();
+  mountBlueprint(); buildStickers(); emitStyles(); applySigns(); applyListView();
   try{ plRoll(); }catch(e){}
   try{ renderLaunch(); }catch(e){}
-  renderToday(); paintFolderBtn(); applySkin(); applyStickerVis(); applyTheme(); applyDarkness(); applyBold(); applyHeroZoom(); applyHeroFree(); applyPink(); binkRedraw();
+  renderToday(); renderPairs(); paintFolderBtn(); applySkin(); applyStickerVis(); applyTheme(); applyKorean(); applyDarkness(); applyBold(); applyHeroZoom(); applyHeroFree(); applyPink(); binkRedraw();
   try{ placeStickBtn(); }catch(e){}
   try{ applySigns(); fitHeroWide(); syncHeroHeight(); }catch(e){}
   _othFresh=false;
@@ -10118,6 +10555,36 @@ document.getElementById("syForget").addEventListener("click", function(){
   var c=ghConf(); c.token=""; c.auto=false; c.lead=false; ghSave(); syPaint();
   syState("The key is cleared from this browser");
 });
+/* ---- the key, put in with one press ----
+   The key itself is never kept inside this page: nothing about it is written into
+   the file, and it is never sent anywhere but to GitHub. The button only lifts
+   what is on the clipboard into the field, which is what a phone needs when the
+   plan is opened from the home screen for the first time. */
+document.getElementById("syPaste").addEventListener("click", function(){
+  var inp=document.getElementById("syToken");
+  function put(t){
+    t=String(t||"").trim();
+    if(!t){ syState("The clipboard is empty - copy the key first, then press this"); return; }
+    inp.value=t;
+    var c=ghConf(); c.token=t; ghSave(); syPaint(); paintSyncDot();
+    syState("The key is in, and it stays on this device");
+  }
+  if(navigator.clipboard && navigator.clipboard.readText){
+    navigator.clipboard.readText().then(put)["catch"](function(){
+      inp.focus();
+      syState("This browser will not hand the clipboard over - tap the field and paste it by hand");
+    });
+  }else{
+    inp.focus();
+    syState("Tap the field and paste the key into it");
+  }
+});
+document.getElementById("syShow").addEventListener("click", function(){
+  var inp=document.getElementById("syToken"), b=this;
+  var hid=inp.type==="password";
+  inp.type=hid?"text":"password";
+  b.textContent=hid?"hide":"show";
+});
 /* on opening: quietly take the newer copy */
 setTimeout(function(){ paintSyncDot(); if(ghReady() && ghConf().auto) ghPull(true).then(function(){ syPaint(); }); }, 1200);
 
@@ -10436,13 +10903,64 @@ try{
 }catch(e){}
 
 mountBlueprint();
-applySigns();
 buildStickers();
 emitStyles();
+applySigns();
 applyListView();
 syncHeroHeight();
 plRoll();
 renderToday();
+renderPairs();
+placePar();
+
+/* ================= THE PICTURE ON THE HOME SCREEN =================
+   Four to choose from. The choice only rewrites the three <link> tags in the
+   head: a phone copies that picture at the moment the page is put on the home
+   screen and never looks again, so an old square keeps the old picture until
+   it is taken off and added anew. */
+var LOGOS=[
+  {id:"wok",  name:"Wok box",    ko:"Vegetable noodles"},
+  {id:"duck", name:"Duck in a cup", ko:"The cute one"},
+  {id:"cup",  name:"Cup noodles", ko:"Chopsticks and broth"},
+  {id:"seal", name:"Red seal",    ko:"Ethics, pressed in ink"}
+];
+var LOGO_SRC={"duck": "data:image/png;base64,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", "cup": "data:image/png;base64,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", "seal": "data:image/png;base64,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", "wok": "data:image/png;base64,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"};
+function logoId(){ var k=state.logo||"wok"; return LOGO_SRC[k]?k:"wok"; }
+function applyLogo(){
+  var src=LOGO_SRC[logoId()];
+  if(!src) return;
+  ['link[rel="apple-touch-icon"]','link[rel="icon"][sizes="192x192"]','link[rel="icon"][sizes="32x32"]']
+    .forEach(function(sel){ var l=document.querySelector(sel); if(l) l.href=src; });
+  var b=document.getElementById("btnLogo");
+  if(b) b.title="The picture this plan wears on a home screen - now: "+
+    (LOGOS.filter(function(x){return x.id===logoId();})[0]||{name:""}).name;
+}
+function drawLogoGrid(){
+  var g=document.getElementById("icoGrid");
+  if(!g) return;
+  g.innerHTML=LOGOS.map(function(o){
+    return '<button class="icoopt'+(o.id===logoId()?" on":"")+'" data-logo="'+o.id+'">'+
+      '<img src="'+LOGO_SRC[o.id]+'" alt=""><b>'+esc(o.name)+'</b><small>'+esc(o.ko)+'</small></button>';
+  }).join("");
+  var st=document.getElementById("icoState");
+  if(st) st.textContent=(LOGOS.filter(function(x){return x.id===logoId();})[0]||{name:""}).name;
+}
+(function(){
+  var ov=document.getElementById("icoOverlay");
+  var btn=document.getElementById("btnLogo");
+  if(btn) btn.addEventListener("click", function(){ drawLogoGrid(); ov.classList.add("show"); });
+  var cl=document.getElementById("icoClose");
+  if(cl) cl.addEventListener("click", function(){ ov.classList.remove("show"); });
+  if(ov) ov.addEventListener("click", function(e){ if(e.target===ov) ov.classList.remove("show"); });
+  var g=document.getElementById("icoGrid");
+  if(g) g.addEventListener("click", function(e){
+    var b=e.target.closest("[data-logo]"); if(!b) return;
+    state.logo=b.getAttribute("data-logo");
+    persist(); applyLogo(); drawLogoGrid();
+    toast("The picture is changed. A square already on a home screen keeps the old one - take it off and add the page again");
+  });
+  applyLogo();
+})();
 renderLaunch();
 paintFolderBtn();
 binkRedraw();
@@ -10450,6 +10968,7 @@ idbGet("dh", function(h){ if(h){ dirHandle=h; } });
 applySkin();
 applyStickerVis();
 applyTheme();
+applyKorean();
 applyDarkness();
 applyBold();
 applyHeroZoom();
