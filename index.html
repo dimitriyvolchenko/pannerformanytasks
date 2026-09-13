@@ -10576,14 +10576,20 @@ function ghPush(quiet){
     return true;
   }).catch(function(e){
     syState(ghErr(e), true);
-    if(!quiet) toast("Could not send: "+ghErr(e));
+    if(!quiet){ toast("Could not send - see what the check says"); syAfterFail(); }
     return false;
   });
+}
+/* a failed send or take opens the report, so the reason is read right there */
+function syAfterFail(){
+  var o=document.getElementById("syOverlay");
+  if(!o || !o.classList.contains("show")) return;
+  try{ ghCheck(); }catch(e){}
 }
 function ghErr(e){
   var m=(e&&e.message)||String(e);
   if(m.indexOf("401")===0) return "the key is not accepted - check it and its rights";
-  if(m.indexOf("403")===0) return "GitHub refused - the key has no write rights for this repository";
+  if(m.indexOf("403")===0) return "GitHub refused - the key may not write here. In the key on GitHub: Repository access = Only select repositories (tick this one), Contents = Read and write, then Update";
   if(m.indexOf("404")===0) return "no such repository or branch - check the name";
   if(m.indexOf("409")===0) return "the file changed in GitHub at the same moment - take the copy first";
   if(m.indexOf("Failed to fetch")>-1) return "no connection to GitHub";
@@ -10631,7 +10637,7 @@ function ghPull(quiet){
     return false;
   }).catch(function(e){
     syState(ghErr(e), true);
-    if(!quiet) toast("Could not read: "+ghErr(e));
+    if(!quiet){ toast("Could not read - see what the check says"); syAfterFail(); }
     return false;
   });
 }
@@ -10833,7 +10839,7 @@ function ghCheck(){
           out+=syRepLine("ok","The repository is found"+(repo["private"]?" (private)":" (public)"));
           if(!canWrite){
             syReport(out+syRepLine("bad","The key may read this repository but not write to it"),
-              "Open the key in GitHub, under <b>Permissions &#8594; Repository permissions</b> set <b>Contents</b> to <b>Read and write</b>, then <b>Update</b>. A key made for reading only can take the copy but never send one.");
+              "This is what a key made with <b>Public repositories (read-only)</b> does - the choice GitHub offers first. Open the key in GitHub: under <b>Repository access</b> choose <b>Only select repositories</b> and tick this one; under <b>Permissions &#8594; Repository permissions</b> set <b>Contents</b> to <b>Read and write</b>; press <b>Update</b>. The key itself does not change - nothing needs pasting again.");
             syState("The key has no right to write", true); return false;
           }
           out+=syRepLine("ok","The key may write to it");
