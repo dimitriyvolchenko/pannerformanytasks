@@ -1,22 +1,16 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-13T15:06:41.877Z",
+  "savedAt": "2026-09-13T15:08:48.304Z",
   "trash": [],
   "spot": {
-    "launch": true,
-    "today": true,
     "ct19": true,
-    "ct24": true,
-    "ct11": true,
-    "ct09": true,
-    "st:s1789126170577_0": true,
-    "timeline": true
+    "par": true,
+    "done": true,
+    "launch": true,
+    "today": true
   },
-  "spotLow": {
-    "ct11": true,
-    "ct09": true
-  },
+  "spotLow": {},
   "spans": {
     "ct08": {
       "from": "2026-09-02",
@@ -969,14 +963,14 @@
   "stickers": [
     {
       "id": "s1789126170577_0",
-      "x": 181.66666666666669,
-      "y": 574.5555737813314,
+      "x": 173.07720923608582,
+      "y": 279.20211635264326,
       "w": 216.666748046875,
       "h": 238.88888549804688,
       "c": 0,
       "t": "during next time off:\n- upload the planner to the mob.version and check it on the tablet\n- upload education material to mob.version as well",
       "ink": [],
-      "fx": 0.67442,
+      "fx": 0.65444,
       "rh": "<div>during next time off:</div>- upload the planner to the mob.version and check it on the tablet<div>- upload education material to mob.version as well</div>",
       "name": "time off"
     }
@@ -1145,14 +1139,14 @@
   "plWeek": "2026-09-07",
   "spotSave": {
     "spot": {
+      "launch": true,
+      "today": true,
       "ct19": true,
       "ct24": true,
       "ct11": true,
       "ct09": true,
-      "today": true,
-      "launch": true,
-      "done": true,
-      "st:s1789126170577_0": true
+      "st:s1789126170577_0": true,
+      "timeline": true
     },
     "low": {
       "ct11": true,
@@ -1197,7 +1191,7 @@
   "pairs": [],
   "korean": false,
   "logo": "wok",
-  "theme": "light",
+  "theme": "dark",
   "pinkBar": false,
   "pinkColor": "",
   "heroZoom": 1,
@@ -1333,19 +1327,13 @@
       "cmr": {
         "trash": [],
         "spot": {
-          "launch": true,
-          "today": true,
           "ct19": true,
-          "ct24": true,
-          "ct11": true,
-          "ct09": true,
-          "st:s1789126170577_0": true,
-          "timeline": true
+          "par": true,
+          "done": true,
+          "launch": true,
+          "today": true
         },
-        "spotLow": {
-          "ct11": true,
-          "ct09": true
-        },
+        "spotLow": {},
         "spans": {
           "ct08": {
             "from": "2026-09-02",
@@ -2298,14 +2286,14 @@
         "stickers": [
           {
             "id": "s1789126170577_0",
-            "x": 181.66666666666669,
-            "y": 574.5555737813314,
+            "x": 173.07720923608582,
+            "y": 279.20211635264326,
             "w": 216.666748046875,
             "h": 238.88888549804688,
             "c": 0,
             "t": "during next time off:\n- upload the planner to the mob.version and check it on the tablet\n- upload education material to mob.version as well",
             "ink": [],
-            "fx": 0.67442,
+            "fx": 0.65444,
             "rh": "<div>during next time off:</div>- upload the planner to the mob.version and check it on the tablet<div>- upload education material to mob.version as well</div>",
             "name": "time off"
           }
@@ -2474,14 +2462,14 @@
         "plWeek": "2026-09-07",
         "spotSave": {
           "spot": {
+            "launch": true,
+            "today": true,
             "ct19": true,
             "ct24": true,
             "ct11": true,
             "ct09": true,
-            "today": true,
-            "launch": true,
-            "done": true,
-            "st:s1789126170577_0": true
+            "st:s1789126170577_0": true,
+            "timeline": true
           },
           "low": {
             "ct11": true,
@@ -2526,7 +2514,7 @@
         "pairs": [],
         "korean": false,
         "logo": "wok",
-        "theme": "light",
+        "theme": "dark",
         "pinkBar": false,
         "pinkColor": "",
         "heroZoom": 1,
