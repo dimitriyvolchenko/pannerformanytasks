@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-14T07:50:17.350Z",
+  "savedAt": "2026-09-14T07:50:44.601Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -14,7 +14,9 @@
     "ct11": true,
     "ct09": true
   },
-  "spotLow": {},
+  "spotLow": {
+    "ct11": true
+  },
   "spans": {
     "ct08": {
       "from": "2026-09-02",
@@ -1345,7 +1347,9 @@
           "ct11": true,
           "ct09": true
         },
-        "spotLow": {},
+        "spotLow": {
+          "ct11": true
+        },
         "spans": {
           "ct08": {
             "from": "2026-09-02",
