@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-14T13:45:52.815Z",
+  "savedAt": "2026-09-14T13:46:13.935Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1089,10 +1089,17 @@
       "t": "⚡ Read and sort out: the Sent article corrections",
       "done": false,
       "fs": 1
+    },
+    {
+      "id": "tdmu1aq3va3",
+      "t": "⚡ Incorporate the Table into Part 2.3",
+      "done": false,
+      "fs": 3,
+      "b": true
     }
   ],
   "weekNext": [],
-  "todayView": "next",
+  "todayView": "now",
   "weekView": "now",
   "plLog": [
     {
@@ -2477,10 +2484,17 @@
             "t": "⚡ Read and sort out: the Sent article corrections",
             "done": false,
             "fs": 1
+          },
+          {
+            "id": "tdmu1aq3va3",
+            "t": "⚡ Incorporate the Table into Part 2.3",
+            "done": false,
+            "fs": 3,
+            "b": true
           }
         ],
         "weekNext": [],
-        "todayView": "next",
+        "todayView": "now",
         "weekView": "now",
         "plLog": [
           {
