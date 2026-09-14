@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-14T16:35:34.031Z",
+  "savedAt": "2026-09-14T18:16:37.825Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -977,14 +977,14 @@
   "stickers": [
     {
       "id": "s1789126170577_0",
-      "x": 1398.2000732421875,
-      "y": 588.2910140577214,
+      "x": 196.66666666666669,
+      "y": 844.2910140577214,
       "w": 216.666748046875,
       "h": 238.88888549804688,
       "c": 0,
       "t": "during next time off:\n",
       "ink": [],
-      "fx": 0.87947,
+      "fx": 0.7093,
       "rh": "<div>during next time off:</div><br>",
       "name": "time off"
     }
@@ -1255,21 +1255,25 @@
       "c_p1787668712681_2_1787730177904": true
     }
   },
-  "stickBtn": {
-    "x": 1560,
-    "y": 775
-  },
+  "stickBtn": null,
   "stickBtnHidden": false,
   "stickersHidden": false,
   "bink": [],
-  "pairs": [],
+  "pairs": [
+    {
+      "id": "prmu1kdyvj1",
+      "a": "MRM_34",
+      "b": "set up the Project on checking the article",
+      "done": false
+    }
+  ],
   "korean": false,
   "logo": "wok",
   "theme": "dark",
   "pinkBar": false,
   "pinkColor": "",
   "heroZoom": 1,
-  "heroFree": true,
+  "heroFree": false,
   "darkness": 50,
   "boldAll": false,
   "inproc": {},
@@ -2376,14 +2380,14 @@
         "stickers": [
           {
             "id": "s1789126170577_0",
-            "x": 1398.2000732421875,
-            "y": 588.2910140577214,
+            "x": 196.66666666666669,
+            "y": 844.2910140577214,
             "w": 216.666748046875,
             "h": 238.88888549804688,
             "c": 0,
             "t": "during next time off:\n",
             "ink": [],
-            "fx": 0.87947,
+            "fx": 0.7093,
             "rh": "<div>during next time off:</div><br>",
             "name": "time off"
           }
@@ -2654,21 +2658,25 @@
             "c_p1787668712681_2_1787730177904": true
           }
         },
-        "stickBtn": {
-          "x": 1560,
-          "y": 775
-        },
+        "stickBtn": null,
         "stickBtnHidden": false,
         "stickersHidden": false,
         "bink": [],
-        "pairs": [],
+        "pairs": [
+          {
+            "id": "prmu1kdyvj1",
+            "a": "MRM_34",
+            "b": "set up the Project on checking the article",
+            "done": false
+          }
+        ],
         "korean": false,
         "logo": "wok",
         "theme": "dark",
         "pinkBar": false,
         "pinkColor": "",
         "heroZoom": 1,
-        "heroFree": true,
+        "heroFree": false,
         "darkness": 50,
         "boldAll": false,
         "inproc": {},
@@ -3369,6 +3377,6 @@
       }
     }
   },
-  "device": "Computer",
+  "device": "iPhone",
   "lead": "Computer"
 }
