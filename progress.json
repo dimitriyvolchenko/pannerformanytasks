@@ -1,23 +1,20 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-14T07:49:41.915Z",
+  "savedAt": "2026-09-14T07:50:01.702Z",
   "trash": [],
   "spot": {
+    "ct19": true,
+    "par": true,
+    "done": true,
     "launch": true,
     "today": true,
-    "ct19": true,
+    "timeline": true,
     "ct24": true,
     "ct11": true,
-    "ct09": true,
-    "st:s1789126170577_0": true,
-    "timeline": true,
-    "done": true,
-    "par": true
+    "ct09": true
   },
-  "spotLow": {
-    "ct11": true
-  },
+  "spotLow": {},
   "spans": {
     "ct08": {
       "from": "2026-09-02",
@@ -970,14 +967,14 @@
   "stickers": [
     {
       "id": "s1789126170577_0",
-      "x": 1461.22216796875,
-      "y": 254.22224044799805,
+      "x": 180,
+      "y": 266.2021163526433,
       "w": 216.666748046875,
       "h": 238.88888549804688,
       "c": 0,
       "t": "during next time off:\n- upload the planner to the mob.version and check it on the tablet\n- upload education material to mob.version as well",
       "ink": [],
-      "fx": 0.74141,
+      "fx": 0.66977,
       "rh": "<div>during next time off:</div>- upload the planner to the mob.version and check it on the tablet<div>- upload education material to mob.version as well</div>",
       "name": "time off"
     }
@@ -1031,7 +1028,7 @@
     },
     {
       "id": "tdmtwkurjw2",
-      "t": "⚡ Complete: 3.14 : Run",
+      "t": "⚡ Review: 3.14 : Run",
       "done": false,
       "fs": 3,
       "b": true,
@@ -1039,20 +1036,13 @@
     },
     {
       "id": "tdmtwkv7x93",
-      "t": "Complete: Reg. Content / and Send",
+      "t": "Complete: Reg. Content",
       "done": false
     },
     {
       "id": "tdmtwkven04",
       "t": "Respond to Kh. : email",
       "done": false
-    },
-    {
-      "id": "tdmu0xpws41",
-      "t": "⚡ Complete : Table of values 2.3",
-      "done": false,
-      "fs": 3,
-      "b": true
     }
   ],
   "week": [
@@ -1154,14 +1144,14 @@
   "plWeek": "2026-09-14",
   "spotSave": {
     "spot": {
+      "launch": true,
+      "today": true,
       "ct19": true,
       "ct24": true,
       "ct11": true,
       "ct09": true,
-      "today": true,
-      "launch": true,
-      "done": true,
-      "st:s1789126170577_0": true
+      "st:s1789126170577_0": true,
+      "timeline": true
     },
     "low": {
       "ct11": true,
@@ -1206,14 +1196,7 @@
   "stickBtnHidden": false,
   "stickersHidden": false,
   "bink": [],
-  "pairs": [
-    {
-      "id": "prmu0xrk611",
-      "a": "MRM_33",
-      "b": "3.14 Read out",
-      "done": false
-    }
-  ],
+  "pairs": [],
   "korean": false,
   "logo": "wok",
   "theme": "light",
@@ -1340,655 +1323,29 @@
     "active": "cmr",
     "list": [
       {
-        "id": "main",
-        "name": "MR"
-      },
-      {
         "id": "cmr",
         "name": "C_MR"
+      },
+      {
+        "id": "main",
+        "name": "MR"
       }
     ],
     "states": {
-      "main": {
-        "trash": [],
-        "spot": {},
-        "spotLow": {},
-        "spans": {},
-        "prioLow": {},
-        "doneAt": {
-          "t6_1": "2026-09-01T07:43:06.317Z",
-          "t6_2": "2026-09-01T07:43:06.318Z",
-          "t9_1": "2026-09-01T07:43:10.603Z",
-          "t9_2": "2026-09-01T07:43:10.603Z",
-          "t10_1": "2026-09-01T07:43:13.103Z",
-          "t10_2": "2026-09-01T07:43:13.103Z",
-          "t11_1": "2026-09-01T07:43:16.842Z",
-          "t11_2": "2026-09-01T07:43:16.842Z",
-          "t15_1": "2026-09-11T13:30:31.396Z",
-          "t15_2": "2026-09-11T13:30:31.396Z",
-          "t15_3": "2026-09-11T13:30:31.396Z",
-          "t14_1": "2026-09-11T13:30:35.323Z",
-          "t14_2": "2026-09-11T13:30:35.323Z",
-          "t14_3": "2026-09-11T13:30:35.323Z",
-          "t14_4": "2026-09-11T13:30:35.323Z",
-          "t14_5": "2026-09-11T13:30:35.323Z",
-          "c_p2_1787753662897": "2026-09-11T13:30:43.280Z",
-          "t2_1": "2026-09-11T13:30:43.280Z",
-          "c_p2_1787215239361": "2026-09-11T13:30:43.280Z"
-        },
-        "done": {
-          "t1_1": true,
-          "t1_3": true,
-          "t1_2": true,
-          "t1_4": true,
-          "t1_5": true,
-          "t1_6": true,
-          "t1_7": true,
-          "c_p1_1787219771813": true,
-          "c_p1_1787222542439": true,
-          "c_p1_1787225283765": true,
-          "c_p1_1787222853801": true,
-          "c_p1_1787226673099": true,
-          "t2_1": true,
-          "lnk:t3_1": true,
-          "lnk:c_p3_1787488745595": true,
-          "t4_2": true,
-          "t4_1": true,
-          "c_p1787573746251_16_1787573861120": true,
-          "t8_1": true,
-          "t8_2": true,
-          "c_p8_1787651520810": true,
-          "c_p3_1787230202525": true,
-          "c_p3_1787488745595": true,
-          "c_p3_1787492704444": true,
-          "c_p3_1787312822808": true,
-          "c_p3_1787539744651": true,
-          "c_p3_1787556438595": true,
-          "c_p3_1787559422881": true,
-          "t3_1": true,
-          "t3_2": true,
-          "t3_3": true,
-          "t3_4": true,
-          "t3_5": true,
-          "t3_6": true,
-          "c_p3_1787581755493": true,
-          "c_p1787573746251_16_1787651463122": true,
-          "c_p1787657555424_17_1787658017903": true,
-          "c_p1787657555424_17_1787658028853": true,
-          "c_p1787573746251_16_1787672204575": true,
-          "t6_1": true,
-          "t6_2": true,
-          "t9_1": true,
-          "t9_2": true,
-          "t10_1": true,
-          "t10_2": true,
-          "t11_1": true,
-          "t11_2": true,
-          "t15_1": true,
-          "t15_2": true,
-          "t15_3": true,
-          "t14_1": true,
-          "t14_2": true,
-          "t14_3": true,
-          "t14_4": true,
-          "t14_5": true,
-          "c_p2_1787753662897": true,
-          "c_p2_1787215239361": true
-        },
-        "collapsed": {
-          "p2": true,
-          "pc_1787222583843_0": false,
-          "p1": true,
-          "p3": true,
-          "p4": true,
-          "p5": true,
-          "p6": true,
-          "p7": true,
-          "p8": true,
-          "p1787573746251_16": true,
-          "p9": true,
-          "p10": true,
-          "p11": true,
-          "p12": true,
-          "p13": true,
-          "p14": true,
-          "p15": true,
-          "p1787657555424_17": true,
-          "p1787729770593_18": true
-        },
-        "custom": {
-          "p2": [
-            {
-              "id": "c_p2_1787215239361",
-              "en": "Schedule communication with F."
-            },
-            {
-              "id": "c_p2_1787215322185",
-              "en": "new"
-            },
-            {
-              "id": "c_p2_1787753662897",
-              "en": "Schedule : Sending the Content to F and to Kh"
-            }
-          ],
-          "p1": [
-            {
-              "id": "c_p1_1787219771813",
-              "en": "Check with the EM if it's possible to run the Planner today if it's enough taken"
-            },
-            {
-              "id": "c_p1_1787222153980",
-              "en": "another"
-            },
-            {
-              "id": "c_p1_1787222159838",
-              "en": "another"
-            },
-            {
-              "id": "c_p1_1787222542439",
-              "en": "add all the material to EM"
-            },
-            {
-              "id": "c_p1_1787222853801",
-              "en": "add Schw. materials and other materials from the Library"
-            },
-            {
-              "id": "c_p1_1787225283765",
-              "en": "edit the planner one more time"
-            },
-            {
-              "id": "c_p1_1787226673099",
-              "en": "add the Schw. articles to EM"
-            }
-          ],
-          "pc_1787222583843_0": [
-            {
-              "id": "c_pc_1787222583843_0_1787222599543",
-              "en": "one episode"
-            },
-            {
-              "id": "c_pc_1787222583843_0_1787222609726",
-              "en": "one episode"
-            },
-            {
-              "id": "c_pc_1787222583843_0_1787222614632",
-              "en": "one episode"
-            },
-            {
-              "id": "c_pc_1787222583843_0_1787222617107",
-              "en": "one episode"
-            },
-            {
-              "id": "c_pc_1787222583843_0_1787222619169",
-              "en": "one episode"
-            },
-            {
-              "id": "c_pc_1787222583843_0_1787222621244",
-              "en": "one episode"
-            },
-            {
-              "id": "c_pc_1787222583843_0_1787222623494",
-              "en": "one episode"
-            },
-            {
-              "id": "c_pc_1787222583843_0_1787222625732",
-              "en": "one episode"
-            },
-            {
-              "id": "c_pc_1787222583843_0_1787222628194",
-              "en": "one episode"
-            },
-            {
-              "id": "c_pc_1787222583843_0_1787222630369",
-              "en": "one episode"
-            },
-            {
-              "id": "c_pc_1787222583843_0_1787222632569",
-              "en": "one episode"
-            },
-            {
-              "id": "c_pc_1787222583843_0_1787222634544",
-              "en": "one episode"
-            },
-            {
-              "id": "c_pc_1787222583843_0_1787222636444",
-              "en": "one episode"
-            },
-            {
-              "id": "c_pc_1787222583843_0_1787222638357",
-              "en": "one episode"
-            },
-            {
-              "id": "c_pc_1787222583843_0_1787222640731",
-              "en": "one episode"
-            },
-            {
-              "id": "c_pc_1787222583843_0_1787222642882",
-              "en": "one episode"
-            },
-            {
-              "id": "c_pc_1787222583843_0_1787222645206",
-              "en": "one episode"
-            },
-            {
-              "id": "c_pc_1787222583843_0_1787222647719",
-              "en": "one episode"
-            },
-            {
-              "id": "c_pc_1787222583843_0_1787222649607",
-              "en": "one episode"
-            },
-            {
-              "id": "c_pc_1787222583843_0_1787222652344",
-              "en": "one episode"
-            }
-          ],
-          "p3": [
-            {
-              "id": "c_p3_1787230202525",
-              "en": "add a new project stage to make a file to copy all the material there"
-            },
-            {
-              "id": "c_p3_1787312822808",
-              "en": "I've checked the New Manual and found out that most of the chapters are already present there"
-            },
-            {
-              "id": "c_p3_1787488745595",
-              "en": "first describe the task to Em and prepare a list of chapters with it"
-            },
-            {
-              "id": "c_p3_1787492704444",
-              "en": "I'm waiting for the feedback from EM and then I decide what to do next: I guess I'll copy and paste the relevant material ccordingly"
-            },
-            {
-              "id": "c_p3_1787539744651",
-              "en": "I’ve received the feedback from em - follow the instructions there"
-            },
-            {
-              "id": "c_p3_1787556438595",
-              "en": "Arrange all the staff on the comp, make some beverage and open all the relevant files"
-            },
-            {
-              "id": "c_p3_1787559422881",
-              "en": "Run the new Content with all the addendums and in parallel start making other instances about further tasks"
-            },
-            {
-              "id": "c_p3_1787581755493",
-              "en": "Make a final check and make sure that they all are included"
-            }
-          ],
-          "p1787573746251_16": [
-            {
-              "id": "c_p1787573746251_16_1787573861120",
-              "en": "Start running with em the initial material on soldiers and noncombotants"
-            },
-            {
-              "id": "c_p1787573746251_16_1787651463122",
-              "en": "Make the second edition of the MR_2 : Milit."
-            },
-            {
-              "id": "c_p1787573746251_16_1787672204575",
-              "en": "Start editing iterations of MR_2 : Milit"
-            },
-            {
-              "id": "c_p1787573746251_16_1787758379297",
-              "en": "Continue Editing until the Final Framework for MR_2 : Milit. is formed"
-            }
-          ],
-          "p8": [
-            {
-              "id": "c_p8_1787651520810",
-              "en": "Compare the previous one and the current one"
-            }
-          ],
-          "p1787657555424_17": [
-            {
-              "id": "c_p1787657555424_17_1787658017903",
-              "en": "Edit the 10th edition of the material"
-            },
-            {
-              "id": "c_p1787657555424_17_1787658028853",
-              "en": "Upload it to the Project"
-            }
-          ]
-        },
-        "edits": {
-          "c_p2_1787215239361": {
-            "en": "Schedule communication with F."
-          },
-          "t1_5": {
-            "en": "Copy the chapters and all materials of G."
-          },
-          "c_p1_1787225283765": {
-            "en": "edit the planner one more time"
-          },
-          "t3_2": {
-            "en": "3.3 Public acts of blatant disrespect for society - copy"
-          },
-          "c_p3_1787230202525": {
-            "en": "add a new project stage to make a file to copy all the material there"
-          },
-          "t3_3": {
-            "en": "3.4 Denigration of honor, dignity and business reputation - copy"
-          },
-          "t3_1": {
-            "en": "3.2 Encroachments on traditional values - copy from the handbook"
-          },
-          "c_p3_1787312822808": {
-            "en": "I've checked the New Manual and found out that most of the chapters are already present there"
-          },
-          "c_p3_1787559422881": {
-            "en": "Run the new Content with all the addendums and in parallel start making other instances about further tasks"
-          },
-          "t4_1": {
-            "en": "Insert the list every page of Khaziev's handbook where the typical questions appear (pages only, not the questions)"
-          },
-          "c_p1787573746251_16_1787651463122": {
-            "en": "Make the second edition of the MR_2 : Milit."
-          },
-          "c_p2_1787753662897": {
-            "en": "Schedule : Sending the Content to F and to Kh"
-          }
-        },
-        "lang": {
-          "t1_3": false,
-          "t1_4": false,
-          "t3_1": false,
-          "t3_2": false,
-          "t3_3": false,
-          "t3_4": false,
-          "t3_5": false,
-          "t3_6": false,
-          "t7_2": true,
-          "t7_1": true,
-          "t8_1": false,
-          "t8_2": false,
-          "t9_1": true,
-          "t9_2": true,
-          "t4_1": false,
-          "t4_2": false
-        },
-        "plang": {
-          "p3": false,
-          "p8": false,
-          "p6": false,
-          "p5": true,
-          "p7": true,
-          "p9": false,
-          "p10": false,
-          "p11": false,
-          "p12": true,
-          "p13": true,
-          "p14": true,
-          "p15": true
-        },
-        "subs": {},
-        "tremoved": {
-          "c_p2_1787215322185": true,
-          "c_p1_1787222159838": true,
-          "c_p1_1787222153980": true
-        },
-        "pedits": {
-          "p2": {
-            "en": "Communication with the authors"
-          },
-          "p3": {
-            "en": "Copy and paste: chapters taken whole from Kh. Manual"
-          },
-          "p1787573746251_16": {
-            "en": "MR_2 : Milit. (Soldiers)"
-          },
-          "p1787657555424_17": {
-            "en": "Editing"
-          }
-        },
-        "premoved": {
-          "pc_1787222583843_0": true,
-          "p1787729770593_18": true
-        },
-        "pcustom": [
-          {
-            "id": "pc_1787222583843_0",
-            "en": "Additional stages",
-            "due": "2026-09-30"
-          },
-          {
-            "id": "p1787573746251_16",
-            "en": "MR_2 : Milit. (Soldiers)",
-            "due": "2026-09-30"
-          },
-          {
-            "id": "p1787657555424_17",
-            "en": "Editing",
-            "due": "2026-09-30"
-          },
-          {
-            "id": "p1787729770593_18",
-            "en": "New stage",
-            "due": "2026-09-30"
-          }
-        ],
-        "dues": {
-          "p3": "2026-08-24T23:59",
-          "p4": "2026-08-24T23:59",
-          "p2": "2026-08-27T23:59",
-          "p1787573746251_16": "2026-08-30T23:59"
-        },
-        "finish": "",
-        "start": "2026-08-21",
-        "header": {
-          "kicker": "Mission control",
-          "title": "MR Mission Planner",
-          "sub": "Fifteen stages to assemble the Methodological Recommendations on forensic ethics examination. Every completed task builds the blueprint stage by stage - lines fly in and assemble, and the marker climbs the week-by-week timeline."
-        },
-        "order": [
-          "p1787573746251_16",
-          "p2",
-          "p12",
-          "p13",
-          "p7",
-          "p5",
-          "p14",
-          "p15",
-          "p1787657555424_17",
-          "p4",
-          "p1",
-          "p8",
-          "p3",
-          "p6",
-          "p9",
-          "p10",
-          "p11"
-        ],
-        "vehicle": 0,
-        "signing": null,
-        "sigv": 7,
-        "stickers": [],
-        "slinks": [],
-        "prio": {
-          "p1787573746251_16": true,
-          "p2": true
-        },
-        "dimBy": "p1787573746251_16",
-        "rich": {
-          "t1_3": "Copy Khaziev's Handbook",
-          "p1": "Gather all materials into a single project (folders and the app)",
-          "page:hKicker": "Mission control",
-          "page:hTitle": "MR Mission Planner",
-          "page:hSub": "Fifteen stages to assemble the Methodological Recommendations on forensic ethics examination. Every completed task builds the blueprint stage by stage - lines fly in and assemble, and the marker climbs the week-by-week timeline."
-        },
-        "signs": {
-          "t": {
-            "t": "forensic",
-            "c": "#D6D2C6",
-            "s": 64,
-            "auto": true,
-            "dim": 60
-          },
-          "l": {
-            "t": "forensic",
-            "c": "#B4B8C0",
-            "s": 83,
-            "auto": true,
-            "dim": 100,
-            "hidden": false
-          },
-          "r": {
-            "t": "forensic",
-            "c": "#A9ADB6",
-            "s": 12,
-            "auto": false,
-            "dim": 100
-          }
-        },
-        "hideLnk": {},
-        "hideLnkAll": true,
-        "stickerClassic": false,
-        "stickerSkin": "control",
-        "torder": {
-          "p1": [
-            "t1_1",
-            "t1_3",
-            "t1_2",
-            "t1_4",
-            "t1_5",
-            "t1_6",
-            "t1_7",
-            "c_p1_1787219771813",
-            "c_p1_1787222542439",
-            "c_p1_1787225283765",
-            "c_p1_1787222853801",
-            "c_p1_1787226673099"
-          ],
-          "p3": [
-            "c_p3_1787230202525",
-            "c_p3_1787488745595",
-            "c_p3_1787492704444",
-            "c_p3_1787312822808",
-            "c_p3_1787539744651",
-            "c_p3_1787556438595",
-            "c_p3_1787559422881",
-            "t3_1",
-            "t3_2",
-            "t3_3",
-            "t3_4",
-            "t3_5",
-            "t3_6"
-          ],
-          "p1787573746251_16": [
-            "c_p1787573746251_16_1787758379297",
-            "c_p1787573746251_16_1787672204575",
-            "c_p1787573746251_16_1787651463122",
-            "c_p1787573746251_16_1787573861120"
-          ],
-          "p8": [
-            "c_p8_1787651520810",
-            "t8_1",
-            "t8_2"
-          ],
-          "p2": [
-            "c_p2_1787753662897",
-            "t2_1",
-            "c_p2_1787215239361"
-          ]
-        },
-        "tmoved": {
-          "c_p1_1787225283765": "p1",
-          "c_p1_1787222542439": "p1",
-          "t1_2": "p1",
-          "c_p3_1787230202525": "p3",
-          "c_p3_1787488745595": "p3",
-          "c_p3_1787492704444": "p3",
-          "c_p3_1787539744651": "p3",
-          "c_p3_1787312822808": "p3",
-          "c_p3_1787556438595": "p3",
-          "c_p3_1787559422881": "p3",
-          "c_p1787573746251_16_1787651463122": "p1787573746251_16",
-          "c_p8_1787651520810": "p8",
-          "c_p1787573746251_16_1787573861120": "p1787573746251_16",
-          "c_p2_1787215239361": "p2",
-          "c_p2_1787753662897": "p2",
-          "c_p1787573746251_16_1787758379297": "p1787573746251_16"
-        },
-        "styles": {},
-        "listView": false,
-        "today": [
-          {
-            "id": "tdmt9x81zs5",
-            "t": "Send the Material to F. and Kh.",
-            "done": false
-          }
-        ],
-        "week": [
-          {
-            "id": "wkmt9sf4ka2",
-            "t": "Complete all the Material which was supposed to be copied",
-            "done": false
-          }
-        ],
-        "todayNext": [],
-        "weekNext": [],
-        "todayView": "now",
-        "weekView": "now",
-        "plLog": [],
-        "plDay": "2026-09-11",
-        "plWeek": "2026-09-07",
-        "spotSave": null,
-        "starts": {},
-        "launched": {},
-        "launchBox": true,
-        "saveName": "",
-        "saveDirName": "",
-        "ptask": {
-          "p2": {
-            "c_p2_1787753662897": true
-          },
-          "p1787573746251_16": {
-            "c_p1787573746251_16_1787758379297": true
-          }
-        },
-        "stickBtn": {
-          "x": 2038,
-          "y": 593
-        },
-        "stickBtnHidden": false,
-        "stickersHidden": false,
-        "bink": [],
-        "pairs": [],
-        "korean": false,
-        "logo": "wok",
-        "theme": "light",
-        "pinkBar": false,
-        "pinkColor": "",
-        "heroZoom": 0.95,
-        "heroFree": true,
-        "darkness": 45,
-        "boldAll": false,
-        "inproc": {},
-        "ie": false,
-        "iedone": {},
-        "hideDone": {},
-        "hideAllT": {},
-        "flipped": {},
-        "back": {}
-      },
       "cmr": {
         "trash": [],
         "spot": {
+          "ct19": true,
+          "par": true,
+          "done": true,
           "launch": true,
           "today": true,
-          "ct19": true,
+          "timeline": true,
           "ct24": true,
           "ct11": true,
-          "ct09": true,
-          "st:s1789126170577_0": true,
-          "timeline": true,
-          "done": true,
-          "par": true
+          "ct09": true
         },
-        "spotLow": {
-          "ct11": true
-        },
+        "spotLow": {},
         "spans": {
           "ct08": {
             "from": "2026-09-02",
@@ -2941,14 +2298,14 @@
         "stickers": [
           {
             "id": "s1789126170577_0",
-            "x": 1461.22216796875,
-            "y": 254.22224044799805,
+            "x": 180,
+            "y": 266.2021163526433,
             "w": 216.666748046875,
             "h": 238.88888549804688,
             "c": 0,
             "t": "during next time off:\n- upload the planner to the mob.version and check it on the tablet\n- upload education material to mob.version as well",
             "ink": [],
-            "fx": 0.74141,
+            "fx": 0.66977,
             "rh": "<div>during next time off:</div>- upload the planner to the mob.version and check it on the tablet<div>- upload education material to mob.version as well</div>",
             "name": "time off"
           }
@@ -3002,7 +2359,7 @@
           },
           {
             "id": "tdmtwkurjw2",
-            "t": "⚡ Complete: 3.14 : Run",
+            "t": "⚡ Review: 3.14 : Run",
             "done": false,
             "fs": 3,
             "b": true,
@@ -3010,20 +2367,13 @@
           },
           {
             "id": "tdmtwkv7x93",
-            "t": "Complete: Reg. Content / and Send",
+            "t": "Complete: Reg. Content",
             "done": false
           },
           {
             "id": "tdmtwkven04",
             "t": "Respond to Kh. : email",
             "done": false
-          },
-          {
-            "id": "tdmu0xpws41",
-            "t": "⚡ Complete : Table of values 2.3",
-            "done": false,
-            "fs": 3,
-            "b": true
           }
         ],
         "week": [
@@ -3125,14 +2475,14 @@
         "plWeek": "2026-09-14",
         "spotSave": {
           "spot": {
+            "launch": true,
+            "today": true,
             "ct19": true,
             "ct24": true,
             "ct11": true,
             "ct09": true,
-            "today": true,
-            "launch": true,
-            "done": true,
-            "st:s1789126170577_0": true
+            "st:s1789126170577_0": true,
+            "timeline": true
           },
           "low": {
             "ct11": true,
@@ -3177,14 +2527,7 @@
         "stickBtnHidden": false,
         "stickersHidden": false,
         "bink": [],
-        "pairs": [
-          {
-            "id": "prmu0xrk611",
-            "a": "MRM_33",
-            "b": "3.14 Read out",
-            "done": false
-          }
-        ],
+        "pairs": [],
         "korean": false,
         "logo": "wok",
         "theme": "light",
@@ -3303,6 +2646,586 @@
           "e:ct24_s3": true,
           "i:ct24_s3": true
         },
+        "hideDone": {},
+        "hideAllT": {},
+        "flipped": {},
+        "back": {}
+      },
+      "main": {
+        "prioLow": {},
+        "doneAt": {
+          "t6_1": "2026-09-01T07:43:06.317Z",
+          "t6_2": "2026-09-01T07:43:06.318Z",
+          "t9_1": "2026-09-01T07:43:10.603Z",
+          "t9_2": "2026-09-01T07:43:10.603Z",
+          "t10_1": "2026-09-01T07:43:13.103Z",
+          "t10_2": "2026-09-01T07:43:13.103Z",
+          "t11_1": "2026-09-01T07:43:16.842Z",
+          "t11_2": "2026-09-01T07:43:16.842Z"
+        },
+        "done": {
+          "t1_1": true,
+          "t1_3": true,
+          "t1_2": true,
+          "t1_4": true,
+          "t1_5": true,
+          "t1_6": true,
+          "t1_7": true,
+          "c_p1_1787219771813": true,
+          "c_p1_1787222542439": true,
+          "c_p1_1787225283765": true,
+          "c_p1_1787222853801": true,
+          "c_p1_1787226673099": true,
+          "t2_1": true,
+          "lnk:t3_1": true,
+          "lnk:c_p3_1787488745595": true,
+          "t4_2": true,
+          "t4_1": true,
+          "c_p1787573746251_16_1787573861120": true,
+          "t8_1": true,
+          "t8_2": true,
+          "c_p8_1787651520810": true,
+          "c_p3_1787230202525": true,
+          "c_p3_1787488745595": true,
+          "c_p3_1787492704444": true,
+          "c_p3_1787312822808": true,
+          "c_p3_1787539744651": true,
+          "c_p3_1787556438595": true,
+          "c_p3_1787559422881": true,
+          "t3_1": true,
+          "t3_2": true,
+          "t3_3": true,
+          "t3_4": true,
+          "t3_5": true,
+          "t3_6": true,
+          "c_p3_1787581755493": true,
+          "c_p1787573746251_16_1787651463122": true,
+          "c_p1787657555424_17_1787658017903": true,
+          "c_p1787657555424_17_1787658028853": true,
+          "c_p1787573746251_16_1787672204575": true,
+          "t6_1": true,
+          "t6_2": true,
+          "t9_1": true,
+          "t9_2": true,
+          "t10_1": true,
+          "t10_2": true,
+          "t11_1": true,
+          "t11_2": true
+        },
+        "collapsed": {
+          "p2": true,
+          "pc_1787222583843_0": false,
+          "p1": true,
+          "p3": true,
+          "p4": true,
+          "p5": true,
+          "p6": true,
+          "p7": true,
+          "p8": true,
+          "p1787573746251_16": true,
+          "p9": true,
+          "p10": true,
+          "p11": true,
+          "p12": true,
+          "p13": true,
+          "p14": true,
+          "p15": true,
+          "p1787657555424_17": true,
+          "p1787729770593_18": true
+        },
+        "custom": {
+          "p2": [
+            {
+              "id": "c_p2_1787215239361",
+              "en": "Schedule communication with F."
+            },
+            {
+              "id": "c_p2_1787215322185",
+              "en": "new"
+            },
+            {
+              "id": "c_p2_1787753662897",
+              "en": "Schedule : Sending the Content to F and to Kh"
+            }
+          ],
+          "p1": [
+            {
+              "id": "c_p1_1787219771813",
+              "en": "Check with the EM if it's possible to run the Planner today if it's enough taken"
+            },
+            {
+              "id": "c_p1_1787222153980",
+              "en": "another"
+            },
+            {
+              "id": "c_p1_1787222159838",
+              "en": "another"
+            },
+            {
+              "id": "c_p1_1787222542439",
+              "en": "add all the material to EM"
+            },
+            {
+              "id": "c_p1_1787222853801",
+              "en": "add Schw. materials and other materials from the Library"
+            },
+            {
+              "id": "c_p1_1787225283765",
+              "en": "edit the planner one more time"
+            },
+            {
+              "id": "c_p1_1787226673099",
+              "en": "add the Schw. articles to EM"
+            }
+          ],
+          "pc_1787222583843_0": [
+            {
+              "id": "c_pc_1787222583843_0_1787222599543",
+              "en": "one episode"
+            },
+            {
+              "id": "c_pc_1787222583843_0_1787222609726",
+              "en": "one episode"
+            },
+            {
+              "id": "c_pc_1787222583843_0_1787222614632",
+              "en": "one episode"
+            },
+            {
+              "id": "c_pc_1787222583843_0_1787222617107",
+              "en": "one episode"
+            },
+            {
+              "id": "c_pc_1787222583843_0_1787222619169",
+              "en": "one episode"
+            },
+            {
+              "id": "c_pc_1787222583843_0_1787222621244",
+              "en": "one episode"
+            },
+            {
+              "id": "c_pc_1787222583843_0_1787222623494",
+              "en": "one episode"
+            },
+            {
+              "id": "c_pc_1787222583843_0_1787222625732",
+              "en": "one episode"
+            },
+            {
+              "id": "c_pc_1787222583843_0_1787222628194",
+              "en": "one episode"
+            },
+            {
+              "id": "c_pc_1787222583843_0_1787222630369",
+              "en": "one episode"
+            },
+            {
+              "id": "c_pc_1787222583843_0_1787222632569",
+              "en": "one episode"
+            },
+            {
+              "id": "c_pc_1787222583843_0_1787222634544",
+              "en": "one episode"
+            },
+            {
+              "id": "c_pc_1787222583843_0_1787222636444",
+              "en": "one episode"
+            },
+            {
+              "id": "c_pc_1787222583843_0_1787222638357",
+              "en": "one episode"
+            },
+            {
+              "id": "c_pc_1787222583843_0_1787222640731",
+              "en": "one episode"
+            },
+            {
+              "id": "c_pc_1787222583843_0_1787222642882",
+              "en": "one episode"
+            },
+            {
+              "id": "c_pc_1787222583843_0_1787222645206",
+              "en": "one episode"
+            },
+            {
+              "id": "c_pc_1787222583843_0_1787222647719",
+              "en": "one episode"
+            },
+            {
+              "id": "c_pc_1787222583843_0_1787222649607",
+              "en": "one episode"
+            },
+            {
+              "id": "c_pc_1787222583843_0_1787222652344",
+              "en": "one episode"
+            }
+          ],
+          "p3": [
+            {
+              "id": "c_p3_1787230202525",
+              "en": "add a new project stage to make a file to copy all the material there"
+            },
+            {
+              "id": "c_p3_1787312822808",
+              "en": "I've checked the New Manual and found out that most of the chapters are already present there"
+            },
+            {
+              "id": "c_p3_1787488745595",
+              "en": "first describe the task to Em and prepare a list of chapters with it"
+            },
+            {
+              "id": "c_p3_1787492704444",
+              "en": "I'm waiting for the feedback from EM and then I decide what to do next: I guess I'll copy and paste the relevant material ccordingly"
+            },
+            {
+              "id": "c_p3_1787539744651",
+              "en": "I’ve received the feedback from em - follow the instructions there"
+            },
+            {
+              "id": "c_p3_1787556438595",
+              "en": "Arrange all the staff on the comp, make some beverage and open all the relevant files"
+            },
+            {
+              "id": "c_p3_1787559422881",
+              "en": "Run the new Content with all the addendums and in parallel start making other instances about further tasks"
+            },
+            {
+              "id": "c_p3_1787581755493",
+              "en": "Make a final check and make sure that they all are included"
+            }
+          ],
+          "p1787573746251_16": [
+            {
+              "id": "c_p1787573746251_16_1787573861120",
+              "en": "Start running with em the initial material on soldiers and noncombotants"
+            },
+            {
+              "id": "c_p1787573746251_16_1787651463122",
+              "en": "Make the second edition of the MR_2 : Milit."
+            },
+            {
+              "id": "c_p1787573746251_16_1787672204575",
+              "en": "Start editing iterations of MR_2 : Milit"
+            },
+            {
+              "id": "c_p1787573746251_16_1787758379297",
+              "en": "Continue Editing until the Final Framework for MR_2 : Milit. is formed"
+            }
+          ],
+          "p8": [
+            {
+              "id": "c_p8_1787651520810",
+              "en": "Compare the previous one and the current one"
+            }
+          ],
+          "p1787657555424_17": [
+            {
+              "id": "c_p1787657555424_17_1787658017903",
+              "en": "Edit the 10th edition of the material"
+            },
+            {
+              "id": "c_p1787657555424_17_1787658028853",
+              "en": "Upload it to the Project"
+            }
+          ]
+        },
+        "edits": {
+          "c_p2_1787215239361": {
+            "en": "Schedule communication with F."
+          },
+          "t1_5": {
+            "en": "Copy the chapters and all materials of G."
+          },
+          "c_p1_1787225283765": {
+            "en": "edit the planner one more time"
+          },
+          "t3_2": {
+            "en": "3.3 Public acts of blatant disrespect for society - copy"
+          },
+          "c_p3_1787230202525": {
+            "en": "add a new project stage to make a file to copy all the material there"
+          },
+          "t3_3": {
+            "en": "3.4 Denigration of honor, dignity and business reputation - copy"
+          },
+          "t3_1": {
+            "en": "3.2 Encroachments on traditional values - copy from the handbook"
+          },
+          "c_p3_1787312822808": {
+            "en": "I've checked the New Manual and found out that most of the chapters are already present there"
+          },
+          "c_p3_1787559422881": {
+            "en": "Run the new Content with all the addendums and in parallel start making other instances about further tasks"
+          },
+          "t4_1": {
+            "en": "Insert the list every page of Khaziev's handbook where the typical questions appear (pages only, not the questions)"
+          },
+          "c_p1787573746251_16_1787651463122": {
+            "en": "Make the second edition of the MR_2 : Milit."
+          },
+          "c_p2_1787753662897": {
+            "en": "Schedule : Sending the Content to F and to Kh"
+          }
+        },
+        "lang": {
+          "t1_3": false,
+          "t1_4": false,
+          "t3_1": false,
+          "t3_2": false,
+          "t3_3": false,
+          "t3_4": false,
+          "t3_5": false,
+          "t3_6": false,
+          "t7_2": true,
+          "t7_1": true,
+          "t8_1": false,
+          "t8_2": false,
+          "t9_1": true,
+          "t9_2": true,
+          "t4_1": false,
+          "t4_2": false
+        },
+        "plang": {
+          "p3": false,
+          "p8": false,
+          "p6": false,
+          "p5": true,
+          "p7": true,
+          "p9": false,
+          "p10": false,
+          "p11": false,
+          "p12": true,
+          "p13": true,
+          "p14": true,
+          "p15": true
+        },
+        "subs": {},
+        "tremoved": {
+          "c_p2_1787215322185": true,
+          "c_p1_1787222159838": true,
+          "c_p1_1787222153980": true
+        },
+        "pedits": {
+          "p2": {
+            "en": "Communication with the authors"
+          },
+          "p3": {
+            "en": "Copy and paste: chapters taken whole from Kh. Manual"
+          },
+          "p1787573746251_16": {
+            "en": "MR_2 : Milit. (Soldiers)"
+          },
+          "p1787657555424_17": {
+            "en": "Editing"
+          }
+        },
+        "premoved": {
+          "pc_1787222583843_0": true,
+          "p1787729770593_18": true
+        },
+        "pcustom": [
+          {
+            "id": "pc_1787222583843_0",
+            "en": "Additional stages",
+            "due": "2026-09-30"
+          },
+          {
+            "id": "p1787573746251_16",
+            "en": "MR_2 : Milit. (Soldiers)",
+            "due": "2026-09-30"
+          },
+          {
+            "id": "p1787657555424_17",
+            "en": "Editing",
+            "due": "2026-09-30"
+          },
+          {
+            "id": "p1787729770593_18",
+            "en": "New stage",
+            "due": "2026-09-30"
+          }
+        ],
+        "dues": {
+          "p3": "2026-08-24T23:59",
+          "p4": "2026-08-24T23:59",
+          "p2": "2026-08-27T23:59",
+          "p1787573746251_16": "2026-08-30T23:59"
+        },
+        "finish": "",
+        "start": "2026-08-21",
+        "header": {
+          "kicker": "Mission control",
+          "title": "MR Mission Planner",
+          "sub": "Fifteen stages to assemble the Methodological Recommendations on forensic ethics examination. Every completed task builds the blueprint stage by stage - lines fly in and assemble, and the marker climbs the week-by-week timeline."
+        },
+        "order": [
+          "p1787573746251_16",
+          "p2",
+          "p12",
+          "p13",
+          "p7",
+          "p5",
+          "p14",
+          "p15",
+          "p1787657555424_17",
+          "p4",
+          "p1",
+          "p8",
+          "p3",
+          "p6",
+          "p9",
+          "p10",
+          "p11"
+        ],
+        "vehicle": 0,
+        "signing": null,
+        "sigv": 7,
+        "stickers": [],
+        "slinks": [],
+        "prio": {
+          "p1787573746251_16": true,
+          "p2": true
+        },
+        "dimBy": "p1787573746251_16",
+        "rich": {
+          "t1_3": "Copy Khaziev's Handbook",
+          "p1": "Gather all materials into a single project (folders and the app)",
+          "page:hKicker": "Mission control",
+          "page:hTitle": "MR Mission Planner",
+          "page:hSub": "Fifteen stages to assemble the Methodological Recommendations on forensic ethics examination. Every completed task builds the blueprint stage by stage - lines fly in and assemble, and the marker climbs the week-by-week timeline."
+        },
+        "signs": {
+          "t": {
+            "t": "forensic",
+            "c": "#D6D2C6",
+            "s": 64,
+            "auto": true,
+            "dim": 60
+          },
+          "l": {
+            "t": "forensic",
+            "c": "#B4B8C0",
+            "s": 83,
+            "auto": true,
+            "dim": 100,
+            "hidden": false
+          },
+          "r": {
+            "t": "forensic",
+            "c": "#A9ADB6",
+            "s": 12,
+            "auto": false,
+            "dim": 100
+          }
+        },
+        "hideLnk": {},
+        "hideLnkAll": true,
+        "stickerClassic": false,
+        "stickerSkin": "control",
+        "torder": {
+          "p1": [
+            "t1_1",
+            "t1_3",
+            "t1_2",
+            "t1_4",
+            "t1_5",
+            "t1_6",
+            "t1_7",
+            "c_p1_1787219771813",
+            "c_p1_1787222542439",
+            "c_p1_1787225283765",
+            "c_p1_1787222853801",
+            "c_p1_1787226673099"
+          ],
+          "p3": [
+            "c_p3_1787230202525",
+            "c_p3_1787488745595",
+            "c_p3_1787492704444",
+            "c_p3_1787312822808",
+            "c_p3_1787539744651",
+            "c_p3_1787556438595",
+            "c_p3_1787559422881",
+            "t3_1",
+            "t3_2",
+            "t3_3",
+            "t3_4",
+            "t3_5",
+            "t3_6"
+          ],
+          "p1787573746251_16": [
+            "c_p1787573746251_16_1787758379297",
+            "c_p1787573746251_16_1787672204575",
+            "c_p1787573746251_16_1787651463122",
+            "c_p1787573746251_16_1787573861120"
+          ],
+          "p8": [
+            "c_p8_1787651520810",
+            "t8_1",
+            "t8_2"
+          ],
+          "p2": [
+            "c_p2_1787753662897",
+            "t2_1",
+            "c_p2_1787215239361"
+          ]
+        },
+        "tmoved": {
+          "c_p1_1787225283765": "p1",
+          "c_p1_1787222542439": "p1",
+          "t1_2": "p1",
+          "c_p3_1787230202525": "p3",
+          "c_p3_1787488745595": "p3",
+          "c_p3_1787492704444": "p3",
+          "c_p3_1787539744651": "p3",
+          "c_p3_1787312822808": "p3",
+          "c_p3_1787556438595": "p3",
+          "c_p3_1787559422881": "p3",
+          "c_p1787573746251_16_1787651463122": "p1787573746251_16",
+          "c_p8_1787651520810": "p8",
+          "c_p1787573746251_16_1787573861120": "p1787573746251_16",
+          "c_p2_1787215239361": "p2",
+          "c_p2_1787753662897": "p2",
+          "c_p1787573746251_16_1787758379297": "p1787573746251_16"
+        },
+        "styles": {},
+        "listView": false,
+        "today": [
+          {
+            "id": "tdmt9x81zs5",
+            "t": "Send the Material to F. and Kh.",
+            "done": false
+          }
+        ],
+        "week": [
+          {
+            "id": "wkmt9sf4ka2",
+            "t": "Complete all the Material which was supposed to be copied",
+            "done": false
+          }
+        ],
+        "saveName": "",
+        "saveDirName": "",
+        "ptask": {
+          "p2": {
+            "c_p2_1787753662897": true
+          },
+          "p1787573746251_16": {
+            "c_p1787573746251_16_1787758379297": true
+          }
+        },
+        "stickBtn": null,
+        "stickBtnHidden": true,
+        "stickersHidden": true,
+        "bink": [],
+        "theme": "light",
+        "pinkBar": false,
+        "pinkColor": "",
+        "heroZoom": 0.8,
+        "darkness": 97,
+        "boldAll": false,
+        "inproc": {},
+        "ie": false,
+        "iedone": {},
         "hideDone": {},
         "hideAllT": {},
         "flipped": {},
