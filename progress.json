@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-14T12:56:07.348Z",
+  "savedAt": "2026-09-14T12:56:24.425Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -943,7 +943,6 @@
   },
   "order": [
     "ct19",
-    "ct24",
     "ct09",
     "ct11",
     "ct21",
@@ -968,7 +967,8 @@
     "ct17",
     "ct07",
     "ct08",
-    "ct10"
+    "ct10",
+    "ct24"
   ],
   "vehicle": 11,
   "signing": null,
@@ -2321,7 +2321,6 @@
         },
         "order": [
           "ct19",
-          "ct24",
           "ct09",
           "ct11",
           "ct21",
@@ -2346,7 +2345,8 @@
           "ct17",
           "ct07",
           "ct08",
-          "ct10"
+          "ct10",
+          "ct24"
         ],
         "vehicle": 11,
         "signing": null,
