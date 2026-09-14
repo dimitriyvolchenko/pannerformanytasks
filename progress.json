@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-14T12:57:13.724Z",
+  "savedAt": "2026-09-14T12:57:33.140Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1235,14 +1235,7 @@
   "stickBtnHidden": false,
   "stickersHidden": false,
   "bink": [],
-  "pairs": [
-    {
-      "id": "prmu0y36zg3",
-      "a": "MRM_33",
-      "b": "part 3.14",
-      "done": false
-    }
-  ],
+  "pairs": [],
   "korean": false,
   "logo": "wok",
   "theme": "light",
@@ -2614,14 +2607,7 @@
         "stickBtnHidden": false,
         "stickersHidden": false,
         "bink": [],
-        "pairs": [
-          {
-            "id": "prmu0y36zg3",
-            "a": "MRM_33",
-            "b": "part 3.14",
-            "done": false
-          }
-        ],
+        "pairs": [],
         "korean": false,
         "logo": "wok",
         "theme": "light",
