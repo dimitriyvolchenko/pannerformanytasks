@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-14T07:51:06.398Z",
+  "savedAt": "2026-09-14T07:51:32.414Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1047,6 +1047,13 @@
       "t": "Respond to Kh. : email",
       "done": false,
       "fs": 1
+    },
+    {
+      "id": "tdmu0y24fl2",
+      "t": "⚡ Complete: 2.3 Table of values",
+      "done": false,
+      "fs": 3,
+      "b": true
     }
   ],
   "week": [
@@ -2382,6 +2389,13 @@
             "t": "Respond to Kh. : email",
             "done": false,
             "fs": 1
+          },
+          {
+            "id": "tdmu0y24fl2",
+            "t": "⚡ Complete: 2.3 Table of values",
+            "done": false,
+            "fs": 3,
+            "b": true
           }
         ],
         "week": [
