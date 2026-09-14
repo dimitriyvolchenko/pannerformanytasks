@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-14T07:52:19.083Z",
+  "savedAt": "2026-09-14T07:52:31.101Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -12,7 +12,8 @@
     "timeline": true,
     "ct24": true,
     "ct11": true,
-    "ct09": true
+    "ct09": true,
+    "st:s1789126170577_0": true
   },
   "spotLow": {
     "ct11": true
@@ -969,15 +970,15 @@
   "stickers": [
     {
       "id": "s1789126170577_0",
-      "x": 180,
-      "y": 266.2021163526433,
+      "x": 1424,
+      "y": 292.86877284678394,
       "w": 216.666748046875,
       "h": 238.88888549804688,
       "c": 0,
-      "t": "during next time off:\n- upload the planner to the mob.version and check it on the tablet\n- upload education material to mob.version as well",
+      "t": "during next time off:\n",
       "ink": [],
-      "fx": 0.66977,
-      "rh": "<div>during next time off:</div>- upload the planner to the mob.version and check it on the tablet<div>- upload education material to mob.version as well</div>",
+      "fx": 0.72361,
+      "rh": "<div>during next time off:</div><br>",
       "name": "time off"
     }
   ],
@@ -1361,7 +1362,8 @@
           "timeline": true,
           "ct24": true,
           "ct11": true,
-          "ct09": true
+          "ct09": true,
+          "st:s1789126170577_0": true
         },
         "spotLow": {
           "ct11": true
@@ -2318,15 +2320,15 @@
         "stickers": [
           {
             "id": "s1789126170577_0",
-            "x": 180,
-            "y": 266.2021163526433,
+            "x": 1424,
+            "y": 292.86877284678394,
             "w": 216.666748046875,
             "h": 238.88888549804688,
             "c": 0,
-            "t": "during next time off:\n- upload the planner to the mob.version and check it on the tablet\n- upload education material to mob.version as well",
+            "t": "during next time off:\n",
             "ink": [],
-            "fx": 0.66977,
-            "rh": "<div>during next time off:</div>- upload the planner to the mob.version and check it on the tablet<div>- upload education material to mob.version as well</div>",
+            "fx": 0.72361,
+            "rh": "<div>during next time off:</div><br>",
             "name": "time off"
           }
         ],
