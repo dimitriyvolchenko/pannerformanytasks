@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-14T13:44:02.538Z",
+  "savedAt": "2026-09-14T13:44:51.308Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1083,10 +1083,16 @@
       "done": false,
       "fs": 3,
       "b": true
+    },
+    {
+      "id": "tdmu1aofm62",
+      "t": "⚡ Read and sort out: the Sent article corrections",
+      "done": false,
+      "fs": 1
     }
   ],
   "weekNext": [],
-  "todayView": "next",
+  "todayView": "now",
   "weekView": "now",
   "plLog": [
     {
@@ -2458,10 +2464,16 @@
             "done": false,
             "fs": 3,
             "b": true
+          },
+          {
+            "id": "tdmu1aofm62",
+            "t": "⚡ Read and sort out: the Sent article corrections",
+            "done": false,
+            "fs": 1
           }
         ],
         "weekNext": [],
-        "todayView": "next",
+        "todayView": "now",
         "weekView": "now",
         "plLog": [
           {
