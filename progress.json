@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-14T16:15:12.862Z",
+  "savedAt": "2026-09-14T16:17:45.543Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1030,54 +1030,6 @@
   "listView": false,
   "today": [
     {
-      "id": "tdmtwkuj601",
-      "t": "⚡ Review: MRM_Editing : Run",
-      "done": true,
-      "fs": 3,
-      "b": true
-    },
-    {
-      "id": "tdmtwkurjw2",
-      "t": "⚡ Complete: 3.14 : Run",
-      "done": true,
-      "fs": 3,
-      "b": true,
-      "c": "#A9ADB6"
-    },
-    {
-      "id": "tdmtwkv7x93",
-      "t": "Complete: Reg. Content",
-      "done": true,
-      "fs": 1
-    },
-    {
-      "id": "tdmtwkven04",
-      "t": "Respond to Kh. : email",
-      "done": true,
-      "fs": 1
-    },
-    {
-      "id": "tdmu0y24fl2",
-      "t": "⚡ Complete: 2.3 Table of values",
-      "done": true,
-      "fs": 3,
-      "b": true
-    }
-  ],
-  "week": [
-    {
-      "id": "wkmt9sesvf1",
-      "t": "Complete all the Material which was supposed to be copied",
-      "done": false
-    },
-    {
-      "id": "wkmts5q9bx1",
-      "t": "Complete MRM",
-      "done": false
-    }
-  ],
-  "todayNext": [
-    {
       "id": "tdmu191r6o1",
       "t": "⚡ Review: MRM_34 : Editing : Run",
       "done": false,
@@ -1103,8 +1055,26 @@
       "done": false,
       "fs": 2,
       "b": true
+    },
+    {
+      "id": "tdmu1g2ecy2",
+      "t": "answer to Kh.Sh.N.",
+      "done": true
     }
   ],
+  "week": [
+    {
+      "id": "wkmt9sesvf1",
+      "t": "Complete all the Material which was supposed to be copied",
+      "done": false
+    },
+    {
+      "id": "wkmts5q9bx1",
+      "t": "Complete MRM",
+      "done": false
+    }
+  ],
+  "todayNext": [],
   "weekNext": [],
   "todayView": "now",
   "weekView": "now",
@@ -1220,6 +1190,20 @@
       "k": "today",
       "ahead": false,
       "at": "2026-09-14T16:13:51.109Z"
+    },
+    {
+      "id": "tdmu1g2ecy2",
+      "t": "answer to Kh.Sh.N.",
+      "k": "today",
+      "ahead": true,
+      "at": "2026-09-14T16:17:27.329Z"
+    },
+    {
+      "id": "tdmu1g2ecy2",
+      "t": "answer to Kh.Sh.N.",
+      "k": "today",
+      "ahead": false,
+      "at": "2026-09-14T16:17:39.605Z"
     }
   ],
   "plDay": "2026-09-14",
@@ -2446,54 +2430,6 @@
         "listView": false,
         "today": [
           {
-            "id": "tdmtwkuj601",
-            "t": "⚡ Review: MRM_Editing : Run",
-            "done": true,
-            "fs": 3,
-            "b": true
-          },
-          {
-            "id": "tdmtwkurjw2",
-            "t": "⚡ Complete: 3.14 : Run",
-            "done": true,
-            "fs": 3,
-            "b": true,
-            "c": "#A9ADB6"
-          },
-          {
-            "id": "tdmtwkv7x93",
-            "t": "Complete: Reg. Content",
-            "done": true,
-            "fs": 1
-          },
-          {
-            "id": "tdmtwkven04",
-            "t": "Respond to Kh. : email",
-            "done": true,
-            "fs": 1
-          },
-          {
-            "id": "tdmu0y24fl2",
-            "t": "⚡ Complete: 2.3 Table of values",
-            "done": true,
-            "fs": 3,
-            "b": true
-          }
-        ],
-        "week": [
-          {
-            "id": "wkmt9sesvf1",
-            "t": "Complete all the Material which was supposed to be copied",
-            "done": false
-          },
-          {
-            "id": "wkmts5q9bx1",
-            "t": "Complete MRM",
-            "done": false
-          }
-        ],
-        "todayNext": [
-          {
             "id": "tdmu191r6o1",
             "t": "⚡ Review: MRM_34 : Editing : Run",
             "done": false,
@@ -2519,8 +2455,26 @@
             "done": false,
             "fs": 2,
             "b": true
+          },
+          {
+            "id": "tdmu1g2ecy2",
+            "t": "answer to Kh.Sh.N.",
+            "done": true
           }
         ],
+        "week": [
+          {
+            "id": "wkmt9sesvf1",
+            "t": "Complete all the Material which was supposed to be copied",
+            "done": false
+          },
+          {
+            "id": "wkmts5q9bx1",
+            "t": "Complete MRM",
+            "done": false
+          }
+        ],
+        "todayNext": [],
         "weekNext": [],
         "todayView": "now",
         "weekView": "now",
@@ -2636,6 +2590,20 @@
             "k": "today",
             "ahead": false,
             "at": "2026-09-14T16:13:51.109Z"
+          },
+          {
+            "id": "tdmu1g2ecy2",
+            "t": "answer to Kh.Sh.N.",
+            "k": "today",
+            "ahead": true,
+            "at": "2026-09-14T16:17:27.329Z"
+          },
+          {
+            "id": "tdmu1g2ecy2",
+            "t": "answer to Kh.Sh.N.",
+            "k": "today",
+            "ahead": false,
+            "at": "2026-09-14T16:17:39.605Z"
           }
         ],
         "plDay": "2026-09-14",
