@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-14T07:50:44.601Z",
+  "savedAt": "2026-09-14T07:51:06.398Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1030,7 +1030,7 @@
     },
     {
       "id": "tdmtwkurjw2",
-      "t": "⚡ Review: 3.14 : Run",
+      "t": "⚡ Complete: 3.14 : Run",
       "done": false,
       "fs": 3,
       "b": true,
@@ -1039,12 +1039,14 @@
     {
       "id": "tdmtwkv7x93",
       "t": "Complete: Reg. Content",
-      "done": false
+      "done": false,
+      "fs": 1
     },
     {
       "id": "tdmtwkven04",
       "t": "Respond to Kh. : email",
-      "done": false
+      "done": false,
+      "fs": 1
     }
   ],
   "week": [
@@ -2363,7 +2365,7 @@
           },
           {
             "id": "tdmtwkurjw2",
-            "t": "⚡ Review: 3.14 : Run",
+            "t": "⚡ Complete: 3.14 : Run",
             "done": false,
             "fs": 3,
             "b": true,
@@ -2372,12 +2374,14 @@
           {
             "id": "tdmtwkv7x93",
             "t": "Complete: Reg. Content",
-            "done": false
+            "done": false,
+            "fs": 1
           },
           {
             "id": "tdmtwkven04",
             "t": "Respond to Kh. : email",
-            "done": false
+            "done": false,
+            "fs": 1
           }
         ],
         "week": [
