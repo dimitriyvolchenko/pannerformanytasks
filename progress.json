@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-14T16:14:45.816Z",
+  "savedAt": "2026-09-14T16:15:12.862Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1106,7 +1106,7 @@
     }
   ],
   "weekNext": [],
-  "todayView": "next",
+  "todayView": "now",
   "weekView": "now",
   "plLog": [
     {
@@ -2522,7 +2522,7 @@
           }
         ],
         "weekNext": [],
-        "todayView": "next",
+        "todayView": "now",
         "weekView": "now",
         "plLog": [
           {
