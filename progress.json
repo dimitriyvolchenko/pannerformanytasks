@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-15T15:09:04.403Z",
+  "savedAt": "2026-09-15T17:53:58.979Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -977,14 +977,14 @@
   "stickers": [
     {
       "id": "s1789126170577_0",
-      "x": 1365,
-      "y": 537.7354974968492,
-      "w": 374.444580078125,
-      "h": 333.3333435058594,
+      "x": 1198,
+      "y": 272.1354913933336,
+      "w": 397.64453125,
+      "h": 403.7333068847656,
       "c": 0,
       "t": "during next time off:\n- read the p.t.a.the.s.\n\n\nduring the next one:\n- do some sports { while doing : upload the Scen. file while: make some tea  and pr.} ",
       "ink": [],
-      "fx": 0.73301,
+      "fx": 0.81542,
       "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><span style=\"font-size: x-large;\">- read the p.t.a.the.s.</span><div><span style=\"font-size: x-large;\"><br></span></div><div><span style=\"font-size: x-large;\">during the next one:</span></div><div><span style=\"font-size: x-large;\">- do some sports { while doing : upload the Scen. file while: make some tea  and pr.} </span></div>",
       "name": "time off"
     }
@@ -1007,10 +1007,9 @@
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 83,
+      "s": 22,
       "auto": true,
-      "dim": 100,
-      "hidden": false
+      "dim": 100
     },
     "r": {
       "t": "forensic",
@@ -1021,7 +1020,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": true,
+  "hideLnkAll": false,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1257,8 +1256,8 @@
     }
   },
   "stickBtn": {
-    "x": 2038,
-    "y": 593
+    "x": 1560,
+    "y": 775
   },
   "stickBtnHidden": false,
   "stickersHidden": false,
@@ -1273,12 +1272,12 @@
   ],
   "korean": false,
   "logo": "wok",
-  "theme": "light",
+  "theme": "dark",
   "pinkBar": false,
   "pinkColor": "",
-  "heroZoom": 0.95,
+  "heroZoom": 1,
   "heroFree": true,
-  "darkness": 45,
+  "darkness": 50,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -2384,14 +2383,14 @@
         "stickers": [
           {
             "id": "s1789126170577_0",
-            "x": 1365,
-            "y": 537.7354974968492,
-            "w": 374.444580078125,
-            "h": 333.3333435058594,
+            "x": 1198,
+            "y": 272.1354913933336,
+            "w": 397.64453125,
+            "h": 403.7333068847656,
             "c": 0,
             "t": "during next time off:\n- read the p.t.a.the.s.\n\n\nduring the next one:\n- do some sports { while doing : upload the Scen. file while: make some tea  and pr.} ",
             "ink": [],
-            "fx": 0.73301,
+            "fx": 0.81542,
             "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><span style=\"font-size: x-large;\">- read the p.t.a.the.s.</span><div><span style=\"font-size: x-large;\"><br></span></div><div><span style=\"font-size: x-large;\">during the next one:</span></div><div><span style=\"font-size: x-large;\">- do some sports { while doing : upload the Scen. file while: make some tea  and pr.} </span></div>",
             "name": "time off"
           }
@@ -2414,10 +2413,9 @@
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 83,
+            "s": 22,
             "auto": true,
-            "dim": 100,
-            "hidden": false
+            "dim": 100
           },
           "r": {
             "t": "forensic",
@@ -2428,7 +2426,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": true,
+        "hideLnkAll": false,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -2664,8 +2662,8 @@
           }
         },
         "stickBtn": {
-          "x": 2038,
-          "y": 593
+          "x": 1560,
+          "y": 775
         },
         "stickBtnHidden": false,
         "stickersHidden": false,
@@ -2680,12 +2678,12 @@
         ],
         "korean": false,
         "logo": "wok",
-        "theme": "light",
+        "theme": "dark",
         "pinkBar": false,
         "pinkColor": "",
-        "heroZoom": 0.95,
+        "heroZoom": 1,
         "heroFree": true,
-        "darkness": 45,
+        "darkness": 50,
         "boldAll": false,
         "inproc": {},
         "ie": true,
