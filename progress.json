@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-15T08:40:04.403Z",
+  "savedAt": "2026-09-15T08:43:25.615Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -977,15 +977,15 @@
   "stickers": [
     {
       "id": "s1789126170577_0",
-      "x": 1479,
+      "x": 1476,
       "y": 427.7354669792711,
       "w": 216.666748046875,
       "h": 238.88888549804688,
       "c": 0,
-      "t": "during next time off:\n- read the p.t.a.the.s.\n",
+      "t": "during next time off:\n- read the p.t.a.the.s.\n- make some more coffee with isolate powder",
       "ink": [],
       "fx": 0.74959,
-      "rh": "<div>during next time off:</div>- read the p.t.a.the.s.<div><br></div>",
+      "rh": "<div>during next time off:</div>- read the p.t.a.the.s.<div>- make some more coffee with isolate powder</div>",
       "name": "time off"
     }
   ],
@@ -2384,15 +2384,15 @@
         "stickers": [
           {
             "id": "s1789126170577_0",
-            "x": 1479,
+            "x": 1476,
             "y": 427.7354669792711,
             "w": 216.666748046875,
             "h": 238.88888549804688,
             "c": 0,
-            "t": "during next time off:\n- read the p.t.a.the.s.\n",
+            "t": "during next time off:\n- read the p.t.a.the.s.\n- make some more coffee with isolate powder",
             "ink": [],
             "fx": 0.74959,
-            "rh": "<div>during next time off:</div>- read the p.t.a.the.s.<div><br></div>",
+            "rh": "<div>during next time off:</div>- read the p.t.a.the.s.<div>- make some more coffee with isolate powder</div>",
             "name": "time off"
           }
         ],
