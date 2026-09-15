@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-15T08:43:25.615Z",
+  "savedAt": "2026-09-15T08:44:09.905Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -982,10 +982,10 @@
       "w": 216.666748046875,
       "h": 238.88888549804688,
       "c": 0,
-      "t": "during next time off:\n- read the p.t.a.the.s.\n- make some more coffee with isolate powder",
+      "t": "during next time off:\n- read the p.t.a.the.s.\n- make some more coffee with isolate powder : while making coffee read.pr.2.min.",
       "ink": [],
       "fx": 0.74959,
-      "rh": "<div>during next time off:</div>- read the p.t.a.the.s.<div>- make some more coffee with isolate powder</div>",
+      "rh": "<div>during next time off:</div>- read the p.t.a.the.s.<div>- make some more coffee with isolate powder : while making coffee read.pr.2.min.</div>",
       "name": "time off"
     }
   ],
@@ -2389,10 +2389,10 @@
             "w": 216.666748046875,
             "h": 238.88888549804688,
             "c": 0,
-            "t": "during next time off:\n- read the p.t.a.the.s.\n- make some more coffee with isolate powder",
+            "t": "during next time off:\n- read the p.t.a.the.s.\n- make some more coffee with isolate powder : while making coffee read.pr.2.min.",
             "ink": [],
             "fx": 0.74959,
-            "rh": "<div>during next time off:</div>- read the p.t.a.the.s.<div>- make some more coffee with isolate powder</div>",
+            "rh": "<div>during next time off:</div>- read the p.t.a.the.s.<div>- make some more coffee with isolate powder : while making coffee read.pr.2.min.</div>",
             "name": "time off"
           }
         ],
