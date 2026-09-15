@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-15T07:18:43.855Z",
+  "savedAt": "2026-09-15T07:19:16.928Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -977,15 +977,15 @@
   "stickers": [
     {
       "id": "s1789126170577_0",
-      "x": 180.33333333333331,
-      "y": 209.95768072438827,
+      "x": 1479,
+      "y": 427.7354669792711,
       "w": 216.666748046875,
       "h": 238.88888549804688,
       "c": 0,
-      "t": "during next time off:\n",
+      "t": "during next time off:\n- read the p.t.a.the.s.\n",
       "ink": [],
-      "fx": 0.67132,
-      "rh": "<div>during next time off:</div><br>",
+      "fx": 0.74959,
+      "rh": "<div>during next time off:</div>- read the p.t.a.the.s.<div><br></div>",
       "name": "time off"
     }
   ],
@@ -1007,9 +1007,10 @@
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 22,
+      "s": 83,
       "auto": true,
-      "dim": 100
+      "dim": 100,
+      "hidden": false
     },
     "r": {
       "t": "forensic",
@@ -1020,7 +1021,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": false,
+  "hideLnkAll": true,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1255,7 +1256,10 @@
       "c_p1787668712681_2_1787730177904": true
     }
   },
-  "stickBtn": null,
+  "stickBtn": {
+    "x": 2038,
+    "y": 593
+  },
   "stickBtnHidden": false,
   "stickersHidden": false,
   "bink": [],
@@ -1269,12 +1273,12 @@
   ],
   "korean": false,
   "logo": "wok",
-  "theme": "dark",
+  "theme": "light",
   "pinkBar": false,
   "pinkColor": "",
-  "heroZoom": 1,
-  "heroFree": false,
-  "darkness": 50,
+  "heroZoom": 0.95,
+  "heroFree": true,
+  "darkness": 45,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -2380,15 +2384,15 @@
         "stickers": [
           {
             "id": "s1789126170577_0",
-            "x": 180.33333333333331,
-            "y": 209.95768072438827,
+            "x": 1479,
+            "y": 427.7354669792711,
             "w": 216.666748046875,
             "h": 238.88888549804688,
             "c": 0,
-            "t": "during next time off:\n",
+            "t": "during next time off:\n- read the p.t.a.the.s.\n",
             "ink": [],
-            "fx": 0.67132,
-            "rh": "<div>during next time off:</div><br>",
+            "fx": 0.74959,
+            "rh": "<div>during next time off:</div>- read the p.t.a.the.s.<div><br></div>",
             "name": "time off"
           }
         ],
@@ -2410,9 +2414,10 @@
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 22,
+            "s": 83,
             "auto": true,
-            "dim": 100
+            "dim": 100,
+            "hidden": false
           },
           "r": {
             "t": "forensic",
@@ -2423,7 +2428,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": false,
+        "hideLnkAll": true,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -2658,7 +2663,10 @@
             "c_p1787668712681_2_1787730177904": true
           }
         },
-        "stickBtn": null,
+        "stickBtn": {
+          "x": 2038,
+          "y": 593
+        },
         "stickBtnHidden": false,
         "stickersHidden": false,
         "bink": [],
@@ -2672,12 +2680,12 @@
         ],
         "korean": false,
         "logo": "wok",
-        "theme": "dark",
+        "theme": "light",
         "pinkBar": false,
         "pinkColor": "",
-        "heroZoom": 1,
-        "heroFree": false,
-        "darkness": 50,
+        "heroZoom": 0.95,
+        "heroFree": true,
+        "darkness": 45,
         "boldAll": false,
         "inproc": {},
         "ie": true,
@@ -3377,6 +3385,6 @@
       }
     }
   },
-  "device": "iPhone",
+  "device": "Computer",
   "lead": "Computer"
 }
