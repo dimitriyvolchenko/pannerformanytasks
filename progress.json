@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-15T12:27:15.366Z",
+  "savedAt": "2026-09-15T12:27:53.783Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -977,15 +977,15 @@
   "stickers": [
     {
       "id": "s1789126170577_0",
-      "x": 1479,
-      "y": 427.7354669792711,
-      "w": 216.666748046875,
-      "h": 238.88888549804688,
+      "x": 1365,
+      "y": 537.7354974968492,
+      "w": 374.444580078125,
+      "h": 333.3333435058594,
       "c": 0,
       "t": "during next time off:\n- read the p.t.a.the.s.\n\n\nduring the next one:\n- do some sports { while doing : upload the Scen. file while: make some tea  and pr.} ",
       "ink": [],
-      "fx": 0.74959,
-      "rh": "<div>during next time off:</div>- read the p.t.a.the.s.<div><br></div><div>during the next one:</div><div><span style=\"font-size: 14.8px;\">- do some sports { while doing : upload the Scen. file while: make some tea  and pr.} </span></div>",
+      "fx": 0.73301,
+      "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><span style=\"font-size: x-large;\">- read the p.t.a.the.s.</span><div><span style=\"font-size: x-large;\"><br></span></div><div><span style=\"font-size: x-large;\">during the next one:</span></div><div><span style=\"font-size: x-large;\">- do some sports { while doing : upload the Scen. file while: make some tea  and pr.} </span></div>",
       "name": "time off"
     }
   ],
@@ -2384,15 +2384,15 @@
         "stickers": [
           {
             "id": "s1789126170577_0",
-            "x": 1479,
-            "y": 427.7354669792711,
-            "w": 216.666748046875,
-            "h": 238.88888549804688,
+            "x": 1365,
+            "y": 537.7354974968492,
+            "w": 374.444580078125,
+            "h": 333.3333435058594,
             "c": 0,
             "t": "during next time off:\n- read the p.t.a.the.s.\n\n\nduring the next one:\n- do some sports { while doing : upload the Scen. file while: make some tea  and pr.} ",
             "ink": [],
-            "fx": 0.74959,
-            "rh": "<div>during next time off:</div>- read the p.t.a.the.s.<div><br></div><div>during the next one:</div><div><span style=\"font-size: 14.8px;\">- do some sports { while doing : upload the Scen. file while: make some tea  and pr.} </span></div>",
+            "fx": 0.73301,
+            "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><span style=\"font-size: x-large;\">- read the p.t.a.the.s.</span><div><span style=\"font-size: x-large;\"><br></span></div><div><span style=\"font-size: x-large;\">during the next one:</span></div><div><span style=\"font-size: x-large;\">- do some sports { while doing : upload the Scen. file while: make some tea  and pr.} </span></div>",
             "name": "time off"
           }
         ],
