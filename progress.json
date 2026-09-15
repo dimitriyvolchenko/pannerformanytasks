@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-15T08:44:18.107Z",
+  "savedAt": "2026-09-15T08:46:00.289Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1051,7 +1051,7 @@
     },
     {
       "id": "tdmu1g0nmt1",
-      "t": "Complete or Mke the final draft of Part 2.3",
+      "t": "Complete or Make the final draft of Part 2.3",
       "done": false,
       "fs": 2,
       "b": true
@@ -2458,7 +2458,7 @@
           },
           {
             "id": "tdmu1g0nmt1",
-            "t": "Complete or Mke the final draft of Part 2.3",
+            "t": "Complete or Make the final draft of Part 2.3",
             "done": false,
             "fs": 2,
             "b": true
