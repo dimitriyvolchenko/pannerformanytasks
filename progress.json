@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-14T18:17:37.766Z",
+  "savedAt": "2026-09-15T06:59:48.404Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -10,11 +10,11 @@
     "launch": true,
     "today": true,
     "timeline": true,
+    "ct24": true,
     "ct11": true,
     "ct09": true,
     "st:s1789126170577_0": true,
-    "ct21": true,
-    "week": true
+    "ct21": true
   },
   "spotLow": {
     "ct21": true
@@ -977,14 +977,14 @@
   "stickers": [
     {
       "id": "s1789126170577_0",
-      "x": 180.33333333333331,
-      "y": 209.95768072438827,
+      "x": 1492.8887939453125,
+      "y": 445.0910018506902,
       "w": 216.666748046875,
       "h": 238.88888549804688,
       "c": 0,
       "t": "during next time off:\n",
       "ink": [],
-      "fx": 0.67132,
+      "fx": 0.75636,
       "rh": "<div>during next time off:</div><br>",
       "name": "time off"
     }
@@ -1007,9 +1007,10 @@
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 22,
+      "s": 83,
       "auto": true,
-      "dim": 100
+      "dim": 100,
+      "hidden": false
     },
     "r": {
       "t": "forensic",
@@ -1020,7 +1021,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": false,
+  "hideLnkAll": true,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1028,6 +1029,40 @@
   "styles": {},
   "listView": false,
   "today": [
+    {
+      "id": "tdmtwkuj601",
+      "t": "⚡ Review: MRM_Editing : Run",
+      "done": true,
+      "fs": 3,
+      "b": true
+    },
+    {
+      "id": "tdmtwkurjw2",
+      "t": "⚡ Complete: 3.14 : Run",
+      "done": true,
+      "fs": 3,
+      "b": true,
+      "c": "#A9ADB6"
+    },
+    {
+      "id": "tdmtwkv7x93",
+      "t": "Complete: Reg. Content",
+      "done": false,
+      "fs": 1
+    },
+    {
+      "id": "tdmtwkven04",
+      "t": "Respond to Kh. : email",
+      "done": true,
+      "fs": 1
+    },
+    {
+      "id": "tdmu0y24fl2",
+      "t": "⚡ Complete: 2.3 Table of values",
+      "done": true,
+      "fs": 3,
+      "b": true
+    },
     {
       "id": "tdmu191r6o1",
       "t": "⚡ Review: MRM_34 : Editing : Run",
@@ -1047,18 +1082,6 @@
       "done": false,
       "fs": 3,
       "b": true
-    },
-    {
-      "id": "tdmu1g0nmt1",
-      "t": "Complete or Mke the final draft of Part 2.3",
-      "done": false,
-      "fs": 2,
-      "b": true
-    },
-    {
-      "id": "tdmu1g2ecy2",
-      "t": "answer to Kh.Sh.N.",
-      "done": true
     }
   ],
   "week": [
@@ -1182,30 +1205,9 @@
       "k": "today",
       "ahead": false,
       "at": "2026-09-14T13:51:11.296Z"
-    },
-    {
-      "id": "tdmtwkv7x93",
-      "t": "Complete: Reg. Content",
-      "k": "today",
-      "ahead": false,
-      "at": "2026-09-14T16:13:51.109Z"
-    },
-    {
-      "id": "tdmu1g2ecy2",
-      "t": "answer to Kh.Sh.N.",
-      "k": "today",
-      "ahead": true,
-      "at": "2026-09-14T16:17:27.329Z"
-    },
-    {
-      "id": "tdmu1g2ecy2",
-      "t": "answer to Kh.Sh.N.",
-      "k": "today",
-      "ahead": false,
-      "at": "2026-09-14T16:17:39.605Z"
     }
   ],
-  "plDay": "2026-09-14",
+  "plDay": "2026-09-15",
   "plWeek": "2026-09-14",
   "spotSave": {
     "spot": {
@@ -1255,26 +1257,22 @@
       "c_p1787668712681_2_1787730177904": true
     }
   },
-  "stickBtn": null,
+  "stickBtn": {
+    "x": 2038,
+    "y": 593
+  },
   "stickBtnHidden": false,
   "stickersHidden": false,
   "bink": [],
-  "pairs": [
-    {
-      "id": "prmu1kdyvj1",
-      "a": "MRM_34",
-      "b": "set up the Project on checking the article",
-      "done": false
-    }
-  ],
+  "pairs": [],
   "korean": false,
   "logo": "wok",
-  "theme": "dark",
+  "theme": "light",
   "pinkBar": false,
   "pinkColor": "",
-  "heroZoom": 1,
-  "heroFree": false,
-  "darkness": 50,
+  "heroZoom": 0.95,
+  "heroFree": true,
+  "darkness": 45,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -1413,11 +1411,11 @@
           "launch": true,
           "today": true,
           "timeline": true,
+          "ct24": true,
           "ct11": true,
           "ct09": true,
           "st:s1789126170577_0": true,
-          "ct21": true,
-          "week": true
+          "ct21": true
         },
         "spotLow": {
           "ct21": true
@@ -2380,14 +2378,14 @@
         "stickers": [
           {
             "id": "s1789126170577_0",
-            "x": 180.33333333333331,
-            "y": 209.95768072438827,
+            "x": 1492.8887939453125,
+            "y": 445.0910018506902,
             "w": 216.666748046875,
             "h": 238.88888549804688,
             "c": 0,
             "t": "during next time off:\n",
             "ink": [],
-            "fx": 0.67132,
+            "fx": 0.75636,
             "rh": "<div>during next time off:</div><br>",
             "name": "time off"
           }
@@ -2410,9 +2408,10 @@
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 22,
+            "s": 83,
             "auto": true,
-            "dim": 100
+            "dim": 100,
+            "hidden": false
           },
           "r": {
             "t": "forensic",
@@ -2423,7 +2422,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": false,
+        "hideLnkAll": true,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -2431,6 +2430,40 @@
         "styles": {},
         "listView": false,
         "today": [
+          {
+            "id": "tdmtwkuj601",
+            "t": "⚡ Review: MRM_Editing : Run",
+            "done": true,
+            "fs": 3,
+            "b": true
+          },
+          {
+            "id": "tdmtwkurjw2",
+            "t": "⚡ Complete: 3.14 : Run",
+            "done": true,
+            "fs": 3,
+            "b": true,
+            "c": "#A9ADB6"
+          },
+          {
+            "id": "tdmtwkv7x93",
+            "t": "Complete: Reg. Content",
+            "done": false,
+            "fs": 1
+          },
+          {
+            "id": "tdmtwkven04",
+            "t": "Respond to Kh. : email",
+            "done": true,
+            "fs": 1
+          },
+          {
+            "id": "tdmu0y24fl2",
+            "t": "⚡ Complete: 2.3 Table of values",
+            "done": true,
+            "fs": 3,
+            "b": true
+          },
           {
             "id": "tdmu191r6o1",
             "t": "⚡ Review: MRM_34 : Editing : Run",
@@ -2450,18 +2483,6 @@
             "done": false,
             "fs": 3,
             "b": true
-          },
-          {
-            "id": "tdmu1g0nmt1",
-            "t": "Complete or Mke the final draft of Part 2.3",
-            "done": false,
-            "fs": 2,
-            "b": true
-          },
-          {
-            "id": "tdmu1g2ecy2",
-            "t": "answer to Kh.Sh.N.",
-            "done": true
           }
         ],
         "week": [
@@ -2585,30 +2606,9 @@
             "k": "today",
             "ahead": false,
             "at": "2026-09-14T13:51:11.296Z"
-          },
-          {
-            "id": "tdmtwkv7x93",
-            "t": "Complete: Reg. Content",
-            "k": "today",
-            "ahead": false,
-            "at": "2026-09-14T16:13:51.109Z"
-          },
-          {
-            "id": "tdmu1g2ecy2",
-            "t": "answer to Kh.Sh.N.",
-            "k": "today",
-            "ahead": true,
-            "at": "2026-09-14T16:17:27.329Z"
-          },
-          {
-            "id": "tdmu1g2ecy2",
-            "t": "answer to Kh.Sh.N.",
-            "k": "today",
-            "ahead": false,
-            "at": "2026-09-14T16:17:39.605Z"
           }
         ],
-        "plDay": "2026-09-14",
+        "plDay": "2026-09-15",
         "plWeek": "2026-09-14",
         "spotSave": {
           "spot": {
@@ -2658,26 +2658,22 @@
             "c_p1787668712681_2_1787730177904": true
           }
         },
-        "stickBtn": null,
+        "stickBtn": {
+          "x": 2038,
+          "y": 593
+        },
         "stickBtnHidden": false,
         "stickersHidden": false,
         "bink": [],
-        "pairs": [
-          {
-            "id": "prmu1kdyvj1",
-            "a": "MRM_34",
-            "b": "set up the Project on checking the article",
-            "done": false
-          }
-        ],
+        "pairs": [],
         "korean": false,
         "logo": "wok",
-        "theme": "dark",
+        "theme": "light",
         "pinkBar": false,
         "pinkColor": "",
-        "heroZoom": 1,
-        "heroFree": false,
-        "darkness": 50,
+        "heroZoom": 0.95,
+        "heroFree": true,
+        "darkness": 45,
         "boldAll": false,
         "inproc": {},
         "ie": true,
@@ -3377,6 +3373,6 @@
       }
     }
   },
-  "device": "iPhone",
+  "device": "Computer",
   "lead": "Computer"
 }
