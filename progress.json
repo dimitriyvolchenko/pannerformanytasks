@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-15T12:25:55.705Z",
+  "savedAt": "2026-09-15T12:26:41.954Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -982,10 +982,10 @@
       "w": 216.666748046875,
       "h": 238.88888549804688,
       "c": 0,
-      "t": "during next time off:\n- read the p.t.a.the.s.\n\n\nduring the next one:\n- do some sports : while doing : upload the Sc. file\nwhile: make some tea",
+      "t": "during next time off:\n- read the p.t.a.the.s.\n\n\nduring the next one:\n- do some sports { while doing : upload the Sc. file\nwhile: make some tea } next - do some ",
       "ink": [],
       "fx": 0.74959,
-      "rh": "<div>during next time off:</div>- read the p.t.a.the.s.<div><br></div><div>during the next one:</div><div>- do some sports : while doing : upload the Sc. file</div><div>while: make some tea</div>",
+      "rh": "<div>during next time off:</div>- read the p.t.a.the.s.<div><br></div><div>during the next one:</div><div>- do some sports { while doing : upload the Sc. file</div><div>while: make some tea } next - do some </div>",
       "name": "time off"
     }
   ],
@@ -2389,10 +2389,10 @@
             "w": 216.666748046875,
             "h": 238.88888549804688,
             "c": 0,
-            "t": "during next time off:\n- read the p.t.a.the.s.\n\n\nduring the next one:\n- do some sports : while doing : upload the Sc. file\nwhile: make some tea",
+            "t": "during next time off:\n- read the p.t.a.the.s.\n\n\nduring the next one:\n- do some sports { while doing : upload the Sc. file\nwhile: make some tea } next - do some ",
             "ink": [],
             "fx": 0.74959,
-            "rh": "<div>during next time off:</div>- read the p.t.a.the.s.<div><br></div><div>during the next one:</div><div>- do some sports : while doing : upload the Sc. file</div><div>while: make some tea</div>",
+            "rh": "<div>during next time off:</div>- read the p.t.a.the.s.<div><br></div><div>during the next one:</div><div>- do some sports { while doing : upload the Sc. file</div><div>while: make some tea } next - do some </div>",
             "name": "time off"
           }
         ],
