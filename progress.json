@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-16T18:13:16.483Z",
+  "savedAt": "2026-09-16T18:18:04.410Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1065,7 +1065,7 @@
     {
       "id": "tdmu31j5pd1",
       "t": "🥷🏻⚡️Review: MRM_36 : Editing : Run",
-      "done": false,
+      "done": true,
       "fs": 3,
       "b": true
     },
@@ -1090,7 +1090,7 @@
   ],
   "todayNext": [],
   "weekNext": [],
-  "todayView": "now",
+  "todayView": "next",
   "weekView": "now",
   "plLog": [
     {
@@ -1225,6 +1225,13 @@
       "k": "today",
       "ahead": false,
       "at": "2026-09-15T19:03:12.790Z"
+    },
+    {
+      "id": "tdmu31j5pd1",
+      "t": "🥷🏻⚡️Review: MRM_36 : Editing : Run",
+      "k": "today",
+      "ahead": false,
+      "at": "2026-09-16T18:17:56.607Z"
     }
   ],
   "plDay": "2026-09-16",
@@ -2499,7 +2506,7 @@
           {
             "id": "tdmu31j5pd1",
             "t": "🥷🏻⚡️Review: MRM_36 : Editing : Run",
-            "done": false,
+            "done": true,
             "fs": 3,
             "b": true
           },
@@ -2524,7 +2531,7 @@
         ],
         "todayNext": [],
         "weekNext": [],
-        "todayView": "now",
+        "todayView": "next",
         "weekView": "now",
         "plLog": [
           {
@@ -2659,6 +2666,13 @@
             "k": "today",
             "ahead": false,
             "at": "2026-09-15T19:03:12.790Z"
+          },
+          {
+            "id": "tdmu31j5pd1",
+            "t": "🥷🏻⚡️Review: MRM_36 : Editing : Run",
+            "k": "today",
+            "ahead": false,
+            "at": "2026-09-16T18:17:56.607Z"
           }
         ],
         "plDay": "2026-09-16",
