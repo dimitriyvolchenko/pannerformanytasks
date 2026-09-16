@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-16T06:58:00.133Z",
+  "savedAt": "2026-09-16T06:58:21.951Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1284,14 +1284,7 @@
   "stickBtnHidden": false,
   "stickersHidden": false,
   "bink": [],
-  "pairs": [
-    {
-      "id": "prmu1kdyvj1",
-      "a": "MRM_34",
-      "b": "set up the Project on checking the article",
-      "done": false
-    }
-  ],
+  "pairs": [],
   "korean": false,
   "logo": "wok",
   "theme": "light",
@@ -2712,14 +2705,7 @@
         "stickBtnHidden": false,
         "stickersHidden": false,
         "bink": [],
-        "pairs": [
-          {
-            "id": "prmu1kdyvj1",
-            "a": "MRM_34",
-            "b": "set up the Project on checking the article",
-            "done": false
-          }
-        ],
+        "pairs": [],
         "korean": false,
         "logo": "wok",
         "theme": "light",
