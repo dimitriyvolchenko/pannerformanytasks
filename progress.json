@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-16T17:56:13.437Z",
+  "savedAt": "2026-09-16T17:56:41.349Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -977,14 +977,14 @@
   "stickers": [
     {
       "id": "s1789126170577_0",
-      "x": 557,
-      "y": 83.74659572276062,
+      "x": 1294.3333740234375,
+      "y": 78.19103847178405,
       "w": 397.64453125,
       "h": 403.7333068847656,
       "c": 0,
       "t": "during next time off:\n- do some sports and re.pr. \n- write some conf. in think. note and listen to think. on y.",
       "ink": [],
-      "fx": 0.75582,
+      "fx": 0.70532,
       "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><font size=\"5\">- do some sports and re.pr. </font><div><font size=\"5\">- write some conf. in think. note and listen to think. on y.</font></div>",
       "name": "time off"
     }
@@ -1007,9 +1007,10 @@
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 22,
+      "s": 83,
       "auto": true,
-      "dim": 100
+      "dim": 100,
+      "hidden": false
     },
     "r": {
       "t": "forensic",
@@ -1020,7 +1021,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": false,
+  "hideLnkAll": true,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1276,8 +1277,11 @@
       "c_p1787668712681_2_1787730177904": true
     }
   },
-  "stickBtn": null,
-  "stickBtnHidden": true,
+  "stickBtn": {
+    "x": 1986,
+    "y": 787
+  },
+  "stickBtnHidden": false,
   "stickersHidden": false,
   "bink": [],
   "pairs": [
@@ -1295,13 +1299,13 @@
     }
   ],
   "korean": false,
-  "logo": "wok-speech",
-  "theme": "dark",
+  "logo": "wok",
+  "theme": "light",
   "pinkBar": false,
   "pinkColor": "",
-  "heroZoom": 0.5,
+  "heroZoom": 0.95,
   "heroFree": true,
-  "darkness": 50,
+  "darkness": 45,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -2407,14 +2411,14 @@
         "stickers": [
           {
             "id": "s1789126170577_0",
-            "x": 557,
-            "y": 83.74659572276062,
+            "x": 1294.3333740234375,
+            "y": 78.19103847178405,
             "w": 397.64453125,
             "h": 403.7333068847656,
             "c": 0,
             "t": "during next time off:\n- do some sports and re.pr. \n- write some conf. in think. note and listen to think. on y.",
             "ink": [],
-            "fx": 0.75582,
+            "fx": 0.70532,
             "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><font size=\"5\">- do some sports and re.pr. </font><div><font size=\"5\">- write some conf. in think. note and listen to think. on y.</font></div>",
             "name": "time off"
           }
@@ -2437,9 +2441,10 @@
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 22,
+            "s": 83,
             "auto": true,
-            "dim": 100
+            "dim": 100,
+            "hidden": false
           },
           "r": {
             "t": "forensic",
@@ -2450,7 +2455,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": false,
+        "hideLnkAll": true,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -2706,8 +2711,11 @@
             "c_p1787668712681_2_1787730177904": true
           }
         },
-        "stickBtn": null,
-        "stickBtnHidden": true,
+        "stickBtn": {
+          "x": 1986,
+          "y": 787
+        },
+        "stickBtnHidden": false,
         "stickersHidden": false,
         "bink": [],
         "pairs": [
@@ -2725,13 +2733,13 @@
           }
         ],
         "korean": false,
-        "logo": "wok-speech",
-        "theme": "dark",
+        "logo": "wok",
+        "theme": "light",
         "pinkBar": false,
         "pinkColor": "",
-        "heroZoom": 0.5,
+        "heroZoom": 0.95,
         "heroFree": true,
-        "darkness": 50,
+        "darkness": 45,
         "boldAll": false,
         "inproc": {},
         "ie": true,
@@ -3431,6 +3439,6 @@
       }
     }
   },
-  "device": "iPad",
+  "device": "Computer",
   "lead": "Computer"
 }
