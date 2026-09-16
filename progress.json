@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-16T18:18:04.410Z",
+  "savedAt": "2026-09-16T18:18:20.785Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1088,9 +1088,17 @@
       "done": false
     }
   ],
-  "todayNext": [],
+  "todayNext": [
+    {
+      "id": "tdmu4fbrem1",
+      "t": "⚡ Review MRM_37",
+      "done": false,
+      "fs": 3,
+      "b": true
+    }
+  ],
   "weekNext": [],
-  "todayView": "next",
+  "todayView": "now",
   "weekView": "now",
   "plLog": [
     {
@@ -2529,9 +2537,17 @@
             "done": false
           }
         ],
-        "todayNext": [],
+        "todayNext": [
+          {
+            "id": "tdmu4fbrem1",
+            "t": "⚡ Review MRM_37",
+            "done": false,
+            "fs": 3,
+            "b": true
+          }
+        ],
         "weekNext": [],
-        "todayView": "next",
+        "todayView": "now",
         "weekView": "now",
         "plLog": [
           {
