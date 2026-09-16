@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-16T18:18:55.110Z",
+  "savedAt": "2026-09-16T18:19:05.237Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1296,12 +1296,6 @@
   "stickersHidden": false,
   "bink": [],
   "pairs": [
-    {
-      "id": "prmu3r1oix1",
-      "a": "🥷🏻⚡️Review: MRM_36 : Editing : Run",
-      "b": "⭐ prepare didactics",
-      "done": false
-    },
     {
       "id": "prmu4ejfwh1",
       "a": "prepare didactic",
@@ -2741,12 +2735,6 @@
         "stickersHidden": false,
         "bink": [],
         "pairs": [
-          {
-            "id": "prmu3r1oix1",
-            "a": "🥷🏻⚡️Review: MRM_36 : Editing : Run",
-            "b": "⭐ prepare didactics",
-            "done": false
-          },
           {
             "id": "prmu4ejfwh1",
             "a": "prepare didactic",
