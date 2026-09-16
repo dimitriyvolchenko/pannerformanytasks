@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-16T05:35:06.641Z",
+  "savedAt": "2026-09-16T05:36:29.857Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1067,6 +1067,11 @@
       "done": false,
       "fs": 3,
       "b": true
+    },
+    {
+      "id": "tdmu3o47od1",
+      "t": "prepare didactics",
+      "done": false
     }
   ],
   "week": [
@@ -2485,6 +2490,11 @@
             "done": false,
             "fs": 3,
             "b": true
+          },
+          {
+            "id": "tdmu3o47od1",
+            "t": "prepare didactics",
+            "done": false
           }
         ],
         "week": [
