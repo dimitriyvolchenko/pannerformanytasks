@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-16T05:36:29.857Z",
+  "savedAt": "2026-09-16T06:43:25.744Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -977,14 +977,14 @@
   "stickers": [
     {
       "id": "s1789126170577_0",
-      "x": 24.35546875,
-      "y": 88.96882472666684,
+      "x": 1457.7777099609375,
+      "y": 417.8577254835028,
       "w": 397.64453125,
       "h": 403.7333068847656,
       "c": 0,
       "t": "during next time off:\n- read the p.t.a.the.s.\n\n\nduring the next one:\n- do some sports { while doing : upload the Scen. file while: make some tea  and pr.} ",
       "ink": [],
-      "fx": 0.51902,
+      "fx": 0.78252,
       "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><span style=\"font-size: x-large;\">- read the p.t.a.the.s.</span><div><span style=\"font-size: x-large;\"><br></span></div><div><span style=\"font-size: x-large;\">during the next one:</span></div><div><span style=\"font-size: x-large;\">- do some sports { while doing : upload the Scen. file while: make some tea  and pr.} </span></div>",
       "name": "time off"
     }
@@ -1007,9 +1007,10 @@
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 22,
+      "s": 83,
       "auto": true,
-      "dim": 100
+      "dim": 100,
+      "hidden": false
     },
     "r": {
       "t": "forensic",
@@ -1020,7 +1021,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": false,
+  "hideLnkAll": true,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1275,7 +1276,10 @@
       "c_p1787668712681_2_1787730177904": true
     }
   },
-  "stickBtn": null,
+  "stickBtn": {
+    "x": 2038,
+    "y": 593
+  },
   "stickBtnHidden": false,
   "stickersHidden": false,
   "bink": [],
@@ -1292,9 +1296,9 @@
   "theme": "light",
   "pinkBar": false,
   "pinkColor": "",
-  "heroZoom": 1,
-  "heroFree": false,
-  "darkness": 50,
+  "heroZoom": 0.95,
+  "heroFree": true,
+  "darkness": 45,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -2400,14 +2404,14 @@
         "stickers": [
           {
             "id": "s1789126170577_0",
-            "x": 24.35546875,
-            "y": 88.96882472666684,
+            "x": 1457.7777099609375,
+            "y": 417.8577254835028,
             "w": 397.64453125,
             "h": 403.7333068847656,
             "c": 0,
             "t": "during next time off:\n- read the p.t.a.the.s.\n\n\nduring the next one:\n- do some sports { while doing : upload the Scen. file while: make some tea  and pr.} ",
             "ink": [],
-            "fx": 0.51902,
+            "fx": 0.78252,
             "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><span style=\"font-size: x-large;\">- read the p.t.a.the.s.</span><div><span style=\"font-size: x-large;\"><br></span></div><div><span style=\"font-size: x-large;\">during the next one:</span></div><div><span style=\"font-size: x-large;\">- do some sports { while doing : upload the Scen. file while: make some tea  and pr.} </span></div>",
             "name": "time off"
           }
@@ -2430,9 +2434,10 @@
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 22,
+            "s": 83,
             "auto": true,
-            "dim": 100
+            "dim": 100,
+            "hidden": false
           },
           "r": {
             "t": "forensic",
@@ -2443,7 +2448,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": false,
+        "hideLnkAll": true,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -2698,7 +2703,10 @@
             "c_p1787668712681_2_1787730177904": true
           }
         },
-        "stickBtn": null,
+        "stickBtn": {
+          "x": 2038,
+          "y": 593
+        },
         "stickBtnHidden": false,
         "stickersHidden": false,
         "bink": [],
@@ -2715,9 +2723,9 @@
         "theme": "light",
         "pinkBar": false,
         "pinkColor": "",
-        "heroZoom": 1,
-        "heroFree": false,
-        "darkness": 50,
+        "heroZoom": 0.95,
+        "heroFree": true,
+        "darkness": 45,
         "boldAll": false,
         "inproc": {},
         "ie": true,
@@ -3417,6 +3425,6 @@
       }
     }
   },
-  "device": "iPhone",
+  "device": "Computer",
   "lead": "Computer"
 }
