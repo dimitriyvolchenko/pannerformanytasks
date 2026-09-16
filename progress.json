@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-16T11:41:56.231Z",
+  "savedAt": "2026-09-16T11:42:49.744Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -982,10 +982,10 @@
       "w": 397.64453125,
       "h": 403.7333068847656,
       "c": 0,
-      "t": "during next time off:\n- do some sports and re.pr. \n- write some conf. in think. note",
+      "t": "during next time off:\n- do some sports and re.pr. \n- write some conf. in think. note and listen to ",
       "ink": [],
       "fx": 0.71807,
-      "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><font size=\"5\">- do some sports and re.pr. </font><div><font size=\"5\">- write some conf. in think. note</font></div>",
+      "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><font size=\"5\">- do some sports and re.pr. </font><div><font size=\"5\">- write some conf. in think. note and listen to </font></div>",
       "name": "time off"
     }
   ],
@@ -2410,10 +2410,10 @@
             "w": 397.64453125,
             "h": 403.7333068847656,
             "c": 0,
-            "t": "during next time off:\n- do some sports and re.pr. \n- write some conf. in think. note",
+            "t": "during next time off:\n- do some sports and re.pr. \n- write some conf. in think. note and listen to ",
             "ink": [],
             "fx": 0.71807,
-            "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><font size=\"5\">- do some sports and re.pr. </font><div><font size=\"5\">- write some conf. in think. note</font></div>",
+            "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><font size=\"5\">- do some sports and re.pr. </font><div><font size=\"5\">- write some conf. in think. note and listen to </font></div>",
             "name": "time off"
           }
         ],
