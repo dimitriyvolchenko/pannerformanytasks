@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-16T06:57:46.861Z",
+  "savedAt": "2026-09-16T06:58:00.133Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -977,14 +977,14 @@
   "stickers": [
     {
       "id": "s1789126170577_0",
-      "x": 1457.7777099609375,
-      "y": 417.8577254835028,
+      "x": 1321.3333740234375,
+      "y": 196.74659572276062,
       "w": 397.64453125,
       "h": 403.7333068847656,
       "c": 0,
       "t": "during next time off:\n- read the p.t.a.the.s.\n\n\nduring the next one:\n- do some sports { while doing : upload the Scen. file while: make some tea  and pr.} ",
       "ink": [],
-      "fx": 0.78252,
+      "fx": 0.71807,
       "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><span style=\"font-size: x-large;\">- read the p.t.a.the.s.</span><div><span style=\"font-size: x-large;\"><br></span></div><div><span style=\"font-size: x-large;\">during the next one:</span></div><div><span style=\"font-size: x-large;\">- do some sports { while doing : upload the Scen. file while: make some tea  and pr.} </span></div>",
       "name": "time off"
     }
@@ -2405,14 +2405,14 @@
         "stickers": [
           {
             "id": "s1789126170577_0",
-            "x": 1457.7777099609375,
-            "y": 417.8577254835028,
+            "x": 1321.3333740234375,
+            "y": 196.74659572276062,
             "w": 397.64453125,
             "h": 403.7333068847656,
             "c": 0,
             "t": "during next time off:\n- read the p.t.a.the.s.\n\n\nduring the next one:\n- do some sports { while doing : upload the Scen. file while: make some tea  and pr.} ",
             "ink": [],
-            "fx": 0.78252,
+            "fx": 0.71807,
             "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><span style=\"font-size: x-large;\">- read the p.t.a.the.s.</span><div><span style=\"font-size: x-large;\"><br></span></div><div><span style=\"font-size: x-large;\">during the next one:</span></div><div><span style=\"font-size: x-large;\">- do some sports { while doing : upload the Scen. file while: make some tea  and pr.} </span></div>",
             "name": "time off"
           }
