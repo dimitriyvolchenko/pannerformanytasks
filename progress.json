@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-17T08:25:27.044Z",
+  "savedAt": "2026-09-17T08:25:33.112Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -979,14 +979,14 @@
   "stickers": [
     {
       "id": "s1789126170577_0",
-      "x": 1324.666748046875,
-      "y": 414.85774074229187,
+      "x": 1341.6666259765625,
+      "y": 542.6355117383856,
       "w": 402.089111328125,
       "h": 152.6222381591797,
       "c": 0,
       "t": "t.off:read.t.pr.t.al.the.s.&mk.cf.\nnt.:upl.t.app.vi.ed.&lis.t.pr.i.nota.",
       "ink": [],
-      "fx": 0.72069,
+      "fx": 0.72873,
       "rh": "<div><span style=\"font-size: x-large;\">t.off:read.t.pr.t.al.the.s.&amp;mk.cf.</span></div><div><font size=\"5\">nt.:upl.t.app.vi.ed.&amp;lis.t.pr.i.nota.</font></div>",
       "name": "time off"
     }
@@ -2414,14 +2414,14 @@
         "stickers": [
           {
             "id": "s1789126170577_0",
-            "x": 1324.666748046875,
-            "y": 414.85774074229187,
+            "x": 1341.6666259765625,
+            "y": 542.6355117383856,
             "w": 402.089111328125,
             "h": 152.6222381591797,
             "c": 0,
             "t": "t.off:read.t.pr.t.al.the.s.&mk.cf.\nnt.:upl.t.app.vi.ed.&lis.t.pr.i.nota.",
             "ink": [],
-            "fx": 0.72069,
+            "fx": 0.72873,
             "rh": "<div><span style=\"font-size: x-large;\">t.off:read.t.pr.t.al.the.s.&amp;mk.cf.</span></div><div><font size=\"5\">nt.:upl.t.app.vi.ed.&amp;lis.t.pr.i.nota.</font></div>",
             "name": "time off"
           }
