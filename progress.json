@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-16T18:59:18.744Z",
+  "savedAt": "2026-09-17T05:47:12.780Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1060,21 +1060,7 @@
       "t": "⭐ prepare didactics",
       "done": false,
       "fs": 2
-    }
-  ],
-  "week": [
-    {
-      "id": "wkmt9sesvf1",
-      "t": "Complete all the Material which was supposed to be copied",
-      "done": false
     },
-    {
-      "id": "wkmts5q9bx1",
-      "t": "Complete MRM",
-      "done": false
-    }
-  ],
-  "todayNext": [
     {
       "id": "tdmu4fbrem1",
       "t": "⚡ Review MRM_37",
@@ -1093,6 +1079,19 @@
       "done": false
     }
   ],
+  "week": [
+    {
+      "id": "wkmt9sesvf1",
+      "t": "Complete all the Material which was supposed to be copied",
+      "done": false
+    },
+    {
+      "id": "wkmts5q9bx1",
+      "t": "Complete MRM",
+      "done": false
+    }
+  ],
+  "todayNext": [],
   "weekNext": [],
   "todayView": "now",
   "weekView": "now",
@@ -1238,7 +1237,7 @@
       "at": "2026-09-16T18:17:56.607Z"
     }
   ],
-  "plDay": "2026-09-16",
+  "plDay": "2026-09-17",
   "plWeek": "2026-09-14",
   "spotSave": {
     "spot": {
@@ -2499,21 +2498,7 @@
             "t": "⭐ prepare didactics",
             "done": false,
             "fs": 2
-          }
-        ],
-        "week": [
-          {
-            "id": "wkmt9sesvf1",
-            "t": "Complete all the Material which was supposed to be copied",
-            "done": false
           },
-          {
-            "id": "wkmts5q9bx1",
-            "t": "Complete MRM",
-            "done": false
-          }
-        ],
-        "todayNext": [
           {
             "id": "tdmu4fbrem1",
             "t": "⚡ Review MRM_37",
@@ -2532,6 +2517,19 @@
             "done": false
           }
         ],
+        "week": [
+          {
+            "id": "wkmt9sesvf1",
+            "t": "Complete all the Material which was supposed to be copied",
+            "done": false
+          },
+          {
+            "id": "wkmts5q9bx1",
+            "t": "Complete MRM",
+            "done": false
+          }
+        ],
+        "todayNext": [],
         "weekNext": [],
         "todayView": "now",
         "weekView": "now",
@@ -2677,7 +2675,7 @@
             "at": "2026-09-16T18:17:56.607Z"
           }
         ],
-        "plDay": "2026-09-16",
+        "plDay": "2026-09-17",
         "plWeek": "2026-09-14",
         "spotSave": {
           "spot": {
