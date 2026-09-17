@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-17T14:53:59.981Z",
+  "savedAt": "2026-09-17T14:54:03.655Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -984,10 +984,10 @@
       "w": 402.089111328125,
       "h": 152.6222381591797,
       "c": 0,
-      "t": "t.off:upl.t.app.vi.ed.&lis.t.pr.i.nota.",
+      "t": "",
       "ink": [],
       "fx": 0.69639,
-      "rh": "<div>t.off:upl.t.app.vi.ed.&amp;lis.t.pr.i.nota.</div>",
+      "rh": "<br>",
       "name": "time off"
     }
   ],
@@ -2413,10 +2413,10 @@
             "w": 402.089111328125,
             "h": 152.6222381591797,
             "c": 0,
-            "t": "t.off:upl.t.app.vi.ed.&lis.t.pr.i.nota.",
+            "t": "",
             "ink": [],
             "fx": 0.69639,
-            "rh": "<div>t.off:upl.t.app.vi.ed.&amp;lis.t.pr.i.nota.</div>",
+            "rh": "<br>",
             "name": "time off"
           }
         ],
