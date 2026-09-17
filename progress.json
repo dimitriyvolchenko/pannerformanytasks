@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-17T19:17:57.292Z",
+  "savedAt": "2026-09-17T20:15:40.663Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1031,13 +1031,6 @@
   "listView": false,
   "today": [
     {
-      "id": "tdmu4fbrem1",
-      "t": "⚡ Review MRM_37",
-      "done": true,
-      "fs": 3,
-      "b": true
-    },
-    {
       "id": "tdmu4fc4yg2",
       "t": "⚡ ⚡ Incorporate the Table into Part 2.3",
       "done": false,
@@ -1052,9 +1045,11 @@
       "b": true
     },
     {
-      "id": "tdmu596qxi1",
-      "t": "⭐ prepare didactics",
-      "done": true
+      "id": "tdmu5yxbl41",
+      "t": "⚡ ⚡ Review : MRM_38",
+      "done": false,
+      "fs": 3,
+      "b": true
     }
   ],
   "week": [
@@ -1300,8 +1295,8 @@
   "pairs": [
     {
       "id": "prmu59k78m1",
-      "a": "⚡ Review MRM_37 / MRM_38",
-      "b": "total planning",
+      "a": "⚡ Review MRM_38 with Whale",
+      "b": "total planning and working",
       "done": false
     }
   ],
@@ -2472,13 +2467,6 @@
         "listView": false,
         "today": [
           {
-            "id": "tdmu4fbrem1",
-            "t": "⚡ Review MRM_37",
-            "done": true,
-            "fs": 3,
-            "b": true
-          },
-          {
             "id": "tdmu4fc4yg2",
             "t": "⚡ ⚡ Incorporate the Table into Part 2.3",
             "done": false,
@@ -2493,9 +2481,11 @@
             "b": true
           },
           {
-            "id": "tdmu596qxi1",
-            "t": "⭐ prepare didactics",
-            "done": true
+            "id": "tdmu5yxbl41",
+            "t": "⚡ ⚡ Review : MRM_38",
+            "done": false,
+            "fs": 3,
+            "b": true
           }
         ],
         "week": [
@@ -2741,8 +2731,8 @@
         "pairs": [
           {
             "id": "prmu59k78m1",
-            "a": "⚡ Review MRM_37 / MRM_38",
-            "b": "total planning",
+            "a": "⚡ Review MRM_38 with Whale",
+            "b": "total planning and working",
             "done": false
           }
         ],
