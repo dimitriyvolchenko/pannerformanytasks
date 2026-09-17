@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-17T08:07:45.331Z",
+  "savedAt": "2026-09-17T08:08:02.818Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -982,10 +982,10 @@
       "w": 420.9779052734375,
       "h": 278.1777801513672,
       "c": 0,
-      "t": "during next time off:\n- read.t.pr.t.al.the.s.&.cln.&mk.cf.\n\n\nnt.:",
+      "t": "during next time off:\nread.t.pr.t.al.the.s.&.cln.&mk.cf.\n\n\nnt.:",
       "ink": [],
       "fx": 0.7409,
-      "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><font size=\"5\">- read.t.pr.t.al.the.s.&amp;.cln.&amp;mk.cf.</font><div><font size=\"5\"><br></font></div><div><font size=\"5\">nt.:</font></div>",
+      "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><font size=\"5\">read.t.pr.t.al.the.s.&amp;.cln.&amp;mk.cf.</font><div><font size=\"5\"><br></font></div><div><font size=\"5\">nt.:</font></div>",
       "name": "time off"
     }
   ],
@@ -2420,10 +2420,10 @@
             "w": 420.9779052734375,
             "h": 278.1777801513672,
             "c": 0,
-            "t": "during next time off:\n- read.t.pr.t.al.the.s.&.cln.&mk.cf.\n\n\nnt.:",
+            "t": "during next time off:\nread.t.pr.t.al.the.s.&.cln.&mk.cf.\n\n\nnt.:",
             "ink": [],
             "fx": 0.7409,
-            "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><font size=\"5\">- read.t.pr.t.al.the.s.&amp;.cln.&amp;mk.cf.</font><div><font size=\"5\"><br></font></div><div><font size=\"5\">nt.:</font></div>",
+            "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><font size=\"5\">read.t.pr.t.al.the.s.&amp;.cln.&amp;mk.cf.</font><div><font size=\"5\"><br></font></div><div><font size=\"5\">nt.:</font></div>",
             "name": "time off"
           }
         ],
