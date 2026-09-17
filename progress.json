@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-17T08:05:42.950Z",
+  "savedAt": "2026-09-17T08:06:16.106Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -982,10 +982,10 @@
       "w": 397.64453125,
       "h": 403.7333068847656,
       "c": 0,
-      "t": "during next time off:\n- do some sports and re.pr. \n- write some conf. in think. note and listen to think. on y.",
+      "t": "during next time off:\n- read.t pr.t.al.the.s.&.cln.&",
       "ink": [],
       "fx": 0.70532,
-      "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><font size=\"5\">- do some sports and re.pr. </font><div><font size=\"5\">- write some conf. in think. note and listen to think. on y.</font></div>",
+      "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><font size=\"5\">- read.t pr.t.al.the.s.&amp;.cln.&amp;</font>",
       "name": "time off"
     }
   ],
@@ -2420,10 +2420,10 @@
             "w": 397.64453125,
             "h": 403.7333068847656,
             "c": 0,
-            "t": "during next time off:\n- do some sports and re.pr. \n- write some conf. in think. note and listen to think. on y.",
+            "t": "during next time off:\n- read.t pr.t.al.the.s.&.cln.&",
             "ink": [],
             "fx": 0.70532,
-            "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><font size=\"5\">- do some sports and re.pr. </font><div><font size=\"5\">- write some conf. in think. note and listen to think. on y.</font></div>",
+            "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><font size=\"5\">- read.t pr.t.al.the.s.&amp;.cln.&amp;</font>",
             "name": "time off"
           }
         ],
