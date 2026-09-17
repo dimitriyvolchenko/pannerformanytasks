@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-17T19:17:18.142Z",
+  "savedAt": "2026-09-17T19:17:46.295Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -979,14 +979,14 @@
   "stickers": [
     {
       "id": "s1789126170577_0",
-      "x": 1273,
-      "y": 541.5243667188544,
+      "x": 8.333333333333329,
+      "y": 361.1910333855211,
       "w": 402.089111328125,
       "h": 152.6222381591797,
       "c": 0,
       "t": "",
       "ink": [],
-      "fx": 0.69639,
+      "fx": 0.48693,
       "rh": "<br>",
       "name": "time off"
     }
@@ -1033,26 +1033,28 @@
     {
       "id": "tdmu4fbrem1",
       "t": "⚡ Review MRM_37",
-      "done": false,
+      "done": true,
       "fs": 3,
       "b": true
     },
     {
       "id": "tdmu4fc4yg2",
-      "t": "⚡ Incorporate the Table into Part 2.3",
+      "t": "⚡ ⚡ Incorporate the Table into Part 2.3",
       "done": false,
-      "fs": 2
+      "fs": 3,
+      "b": true
     },
     {
       "id": "tdmu4fcikr3",
-      "t": "⚡ Complete or Make the final draft of Part 2.3",
+      "t": "⚡ ⚡ Complete or Make the final draft of Part 2.3",
       "done": false,
-      "fs": 2
+      "fs": 3,
+      "b": true
     },
     {
       "id": "tdmu596qxi1",
       "t": "⭐ prepare didactics",
-      "done": false
+      "done": true
     }
   ],
   "week": [
@@ -1225,6 +1227,20 @@
       "k": "today",
       "ahead": false,
       "at": "2026-09-17T08:12:27.812Z"
+    },
+    {
+      "id": "tdmu4fbrem1",
+      "t": "⚡ Review MRM_37",
+      "k": "today",
+      "ahead": false,
+      "at": "2026-09-17T19:17:26.301Z"
+    },
+    {
+      "id": "tdmu596qxi1",
+      "t": "⭐ prepare didactics",
+      "k": "today",
+      "ahead": false,
+      "at": "2026-09-17T19:17:27.952Z"
     }
   ],
   "plDay": "2026-09-17",
@@ -1291,7 +1307,7 @@
   ],
   "korean": false,
   "logo": "wok",
-  "theme": "light",
+  "theme": "dark",
   "pinkBar": false,
   "pinkColor": "",
   "heroZoom": 1,
@@ -2404,14 +2420,14 @@
         "stickers": [
           {
             "id": "s1789126170577_0",
-            "x": 1273,
-            "y": 541.5243667188544,
+            "x": 8.333333333333329,
+            "y": 361.1910333855211,
             "w": 402.089111328125,
             "h": 152.6222381591797,
             "c": 0,
             "t": "",
             "ink": [],
-            "fx": 0.69639,
+            "fx": 0.48693,
             "rh": "<br>",
             "name": "time off"
           }
@@ -2458,26 +2474,28 @@
           {
             "id": "tdmu4fbrem1",
             "t": "⚡ Review MRM_37",
-            "done": false,
+            "done": true,
             "fs": 3,
             "b": true
           },
           {
             "id": "tdmu4fc4yg2",
-            "t": "⚡ Incorporate the Table into Part 2.3",
+            "t": "⚡ ⚡ Incorporate the Table into Part 2.3",
             "done": false,
-            "fs": 2
+            "fs": 3,
+            "b": true
           },
           {
             "id": "tdmu4fcikr3",
-            "t": "⚡ Complete or Make the final draft of Part 2.3",
+            "t": "⚡ ⚡ Complete or Make the final draft of Part 2.3",
             "done": false,
-            "fs": 2
+            "fs": 3,
+            "b": true
           },
           {
             "id": "tdmu596qxi1",
             "t": "⭐ prepare didactics",
-            "done": false
+            "done": true
           }
         ],
         "week": [
@@ -2650,6 +2668,20 @@
             "k": "today",
             "ahead": false,
             "at": "2026-09-17T08:12:27.812Z"
+          },
+          {
+            "id": "tdmu4fbrem1",
+            "t": "⚡ Review MRM_37",
+            "k": "today",
+            "ahead": false,
+            "at": "2026-09-17T19:17:26.301Z"
+          },
+          {
+            "id": "tdmu596qxi1",
+            "t": "⭐ prepare didactics",
+            "k": "today",
+            "ahead": false,
+            "at": "2026-09-17T19:17:27.952Z"
           }
         ],
         "plDay": "2026-09-17",
@@ -2716,7 +2748,7 @@
         ],
         "korean": false,
         "logo": "wok",
-        "theme": "light",
+        "theme": "dark",
         "pinkBar": false,
         "pinkColor": "",
         "heroZoom": 1,
