@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-17T08:12:39.470Z",
+  "savedAt": "2026-09-17T08:13:56.895Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1032,31 +1032,6 @@
   "listView": false,
   "today": [
     {
-      "id": "tdmu191r6o1",
-      "t": "⚡ Review: MRM_34 : Editing : Run",
-      "done": true,
-      "fs": 3,
-      "b": true
-    },
-    {
-      "id": "tdmu1aofm62",
-      "t": "Evening: Read and sort out: the Sent article corrections",
-      "done": true,
-      "fs": 3,
-      "b": true
-    },
-    {
-      "id": "tdmu1g2ecy2",
-      "t": "answer to Kh.Sh.N.",
-      "done": true
-    },
-    {
-      "id": "tdmu3o47od1",
-      "t": "⭐ prepare didactics",
-      "done": true,
-      "fs": 2
-    },
-    {
       "id": "tdmu4fbrem1",
       "t": "⚡ Review MRM_37",
       "done": false,
@@ -1066,12 +1041,14 @@
     {
       "id": "tdmu4fc4yg2",
       "t": "⚡ Incorporate the Table into Part 2.3",
-      "done": false
+      "done": false,
+      "fs": 2
     },
     {
       "id": "tdmu4fcikr3",
-      "t": "Complete or Make the final draft of Part 2.3",
-      "done": false
+      "t": "⚡ Complete or Make the final draft of Part 2.3",
+      "done": false,
+      "fs": 2
     }
   ],
   "week": [
@@ -2479,31 +2456,6 @@
         "listView": false,
         "today": [
           {
-            "id": "tdmu191r6o1",
-            "t": "⚡ Review: MRM_34 : Editing : Run",
-            "done": true,
-            "fs": 3,
-            "b": true
-          },
-          {
-            "id": "tdmu1aofm62",
-            "t": "Evening: Read and sort out: the Sent article corrections",
-            "done": true,
-            "fs": 3,
-            "b": true
-          },
-          {
-            "id": "tdmu1g2ecy2",
-            "t": "answer to Kh.Sh.N.",
-            "done": true
-          },
-          {
-            "id": "tdmu3o47od1",
-            "t": "⭐ prepare didactics",
-            "done": true,
-            "fs": 2
-          },
-          {
             "id": "tdmu4fbrem1",
             "t": "⚡ Review MRM_37",
             "done": false,
@@ -2513,12 +2465,14 @@
           {
             "id": "tdmu4fc4yg2",
             "t": "⚡ Incorporate the Table into Part 2.3",
-            "done": false
+            "done": false,
+            "fs": 2
           },
           {
             "id": "tdmu4fcikr3",
-            "t": "Complete or Make the final draft of Part 2.3",
-            "done": false
+            "t": "⚡ Complete or Make the final draft of Part 2.3",
+            "done": false,
+            "fs": 2
           }
         ],
         "week": [
