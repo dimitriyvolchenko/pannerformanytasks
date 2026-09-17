@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-17T08:06:40.635Z",
+  "savedAt": "2026-09-17T08:07:19.570Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -977,15 +977,15 @@
   "stickers": [
     {
       "id": "s1789126170577_0",
-      "x": 1358.4444580078125,
+      "x": 1358,
       "y": 409.30216823252624,
-      "w": 372.0889892578125,
-      "h": 149.2888641357422,
+      "w": 434.311279296875,
+      "h": 170.40000915527344,
       "c": 0,
-      "t": "during next time off:\n- read.t.pr.t.al.the.s.&.cln.&",
+      "t": "during next time off:\n- read.t.pr.t.al.the.s.&.cln.&mk.cf.",
       "ink": [],
-      "fx": 0.72956,
-      "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><font size=\"5\">- read.t.pr.t.al.the.s.&amp;.cln.&amp;</font>",
+      "fx": 0.74405,
+      "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><font size=\"5\">- read.t.pr.t.al.the.s.&amp;.cln.&amp;mk.cf.</font>",
       "name": "time off"
     }
   ],
@@ -2415,15 +2415,15 @@
         "stickers": [
           {
             "id": "s1789126170577_0",
-            "x": 1358.4444580078125,
+            "x": 1358,
             "y": 409.30216823252624,
-            "w": 372.0889892578125,
-            "h": 149.2888641357422,
+            "w": 434.311279296875,
+            "h": 170.40000915527344,
             "c": 0,
-            "t": "during next time off:\n- read.t.pr.t.al.the.s.&.cln.&",
+            "t": "during next time off:\n- read.t.pr.t.al.the.s.&.cln.&mk.cf.",
             "ink": [],
-            "fx": 0.72956,
-            "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><font size=\"5\">- read.t.pr.t.al.the.s.&amp;.cln.&amp;</font>",
+            "fx": 0.74405,
+            "rh": "<div><span style=\"font-size: x-large;\">during next time off:</span></div><font size=\"5\">- read.t.pr.t.al.the.s.&amp;.cln.&amp;mk.cf.</font>",
             "name": "time off"
           }
         ],
