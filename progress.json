@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-17T08:08:24.930Z",
+  "savedAt": "2026-09-17T08:08:47.890Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1297,7 +1297,7 @@
   "pairs": [
     {
       "id": "prmu4ejfwh1",
-      "a": "prepare didacticcvjn",
+      "a": "total planning",
       "b": "check the article",
       "done": false
     }
@@ -2735,7 +2735,7 @@
         "pairs": [
           {
             "id": "prmu4ejfwh1",
-            "a": "prepare didacticcvjn",
+            "a": "total planning",
             "b": "check the article",
             "done": false
           }
