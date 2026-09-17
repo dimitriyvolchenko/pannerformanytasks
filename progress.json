@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-17T08:13:56.895Z",
+  "savedAt": "2026-09-17T08:14:08.336Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1049,6 +1049,11 @@
       "t": "⚡ Complete or Make the final draft of Part 2.3",
       "done": false,
       "fs": 2
+    },
+    {
+      "id": "tdmu596qxi1",
+      "t": "⭐ prepare didactics",
+      "done": false
     }
   ],
   "week": [
@@ -2473,6 +2478,11 @@
             "t": "⚡ Complete or Make the final draft of Part 2.3",
             "done": false,
             "fs": 2
+          },
+          {
+            "id": "tdmu596qxi1",
+            "t": "⭐ prepare didactics",
+            "done": false
           }
         ],
         "week": [
