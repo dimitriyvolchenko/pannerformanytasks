@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-18T09:56:13.721Z",
+  "savedAt": "2026-09-18T09:56:23.780Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -980,13 +980,13 @@
       "id": "s1789126170577_0",
       "x": 1324,
       "y": 634.079918883568,
-      "w": 648.7557373046875,
-      "h": 398.17784118652344,
+      "w": 349.866943359375,
+      "h": 140.4000701904297,
       "c": 0,
       "t": "- upl.new.ver.of.pl.app&r.the.pr.t.a.t.snts. \n-n.: lis.t.everd.snts. ",
       "ink": [],
-      "fx": 0.77864,
-      "rh": "- upl.new.ver.of.pl.app&amp;r.the.pr.t.a.t.snts. <div>-n.: lis.t.everd.snts. </div>",
+      "fx": 0.70805,
+      "rh": "<span style=\"font-size: medium;\">- upl.new.ver.of.pl.app&amp;r.the.pr.t.a.t.snts. </span><div><span style=\"font-size: medium;\">-n.: lis.t.everd.snts. </span></div>",
       "name": "time off"
     }
   ],
@@ -2425,13 +2425,13 @@
             "id": "s1789126170577_0",
             "x": 1324,
             "y": 634.079918883568,
-            "w": 648.7557373046875,
-            "h": 398.17784118652344,
+            "w": 349.866943359375,
+            "h": 140.4000701904297,
             "c": 0,
             "t": "- upl.new.ver.of.pl.app&r.the.pr.t.a.t.snts. \n-n.: lis.t.everd.snts. ",
             "ink": [],
-            "fx": 0.77864,
-            "rh": "- upl.new.ver.of.pl.app&amp;r.the.pr.t.a.t.snts. <div>-n.: lis.t.everd.snts. </div>",
+            "fx": 0.70805,
+            "rh": "<span style=\"font-size: medium;\">- upl.new.ver.of.pl.app&amp;r.the.pr.t.a.t.snts. </span><div><span style=\"font-size: medium;\">-n.: lis.t.everd.snts. </span></div>",
             "name": "time off"
           }
         ],
