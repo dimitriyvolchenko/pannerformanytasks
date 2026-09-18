@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-18T06:56:59.178Z",
+  "savedAt": "2026-09-18T06:57:03.817Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -18,7 +18,8 @@
   },
   "spotLow": {
     "ct21": true,
-    "ct09": true
+    "ct09": true,
+    "ct11": true
   },
   "spans": {
     "ct08": {
@@ -43,7 +44,7 @@
     },
     "ct11": {
       "from": "2026-09-10",
-      "to": "2026-09-19"
+      "to": "2026-09-15"
     },
     "ct21": {
       "from": "2026-09-14",
@@ -186,7 +187,7 @@
     "ct06": true,
     "ct07": true,
     "ct08": true,
-    "ct09": false,
+    "ct09": true,
     "ct10": true,
     "ct11": true,
     "ct12": true,
@@ -837,7 +838,7 @@
     "ct16": "2026-09-01T23:59",
     "ct17": "2026-09-02T23:59",
     "ct18": "2026-09-25T23:59",
-    "ct19": "2026-09-19T23:59",
+    "ct19": "2026-09-17T23:59",
     "ct20": "2026-09-23T23:59",
     "ct21": "2026-09-20T23:59",
     "ct22": "2026-09-24T23:59",
@@ -945,8 +946,8 @@
   },
   "order": [
     "ct19",
-    "ct11",
     "ct09",
+    "ct11",
     "ct21",
     "ct25",
     "ct20",
@@ -978,14 +979,14 @@
   "stickers": [
     {
       "id": "s1789126170577_0",
-      "x": 10,
-      "y": 133.52436671885448,
+      "x": 1273,
+      "y": 541.5243667188544,
       "w": 402.089111328125,
       "h": 152.6222381591797,
       "c": 0,
       "t": "",
       "ink": [],
-      "fx": 0.49003,
+      "fx": 0.69639,
       "rh": "<br>",
       "name": "time off"
     }
@@ -1008,9 +1009,10 @@
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 22,
+      "s": 83,
       "auto": true,
-      "dim": 100
+      "dim": 100,
+      "hidden": false
     },
     "r": {
       "t": "forensic",
@@ -1021,7 +1023,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": false,
+  "hideLnkAll": true,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1030,31 +1032,28 @@
   "listView": false,
   "today": [
     {
-      "id": "tdmu4fc4yg2",
-      "t": "⚡ ⚡ Incorporate the Table into Part 2.3",
+      "id": "tdmu4fbrem1",
+      "t": "⚡ Review MRM_37",
       "done": false,
       "fs": 3,
       "b": true
+    },
+    {
+      "id": "tdmu4fc4yg2",
+      "t": "⚡ Incorporate the Table into Part 2.3",
+      "done": false,
+      "fs": 2
     },
     {
       "id": "tdmu4fcikr3",
-      "t": "⚡ ⚡ Complete or Make the final draft of Part 2.3",
-      "done": false,
-      "fs": 3,
-      "b": true
-    },
-    {
-      "id": "tdmu5yxbl41",
-      "t": "⚡ ⚡ Review : MRM_38",
-      "done": false,
-      "fs": 3,
-      "b": true
-    },
-    {
-      "id": "tdmu6kh2991",
-      "t": "⚡️Launch : Part 3.1 : axiology analysis",
+      "t": "⚡ Complete or Make the final draft of Part 2.3",
       "done": false,
       "fs": 2
+    },
+    {
+      "id": "tdmu596qxi1",
+      "t": "⭐ prepare didactics",
+      "done": false
     }
   ],
   "week": [
@@ -1227,20 +1226,6 @@
       "k": "today",
       "ahead": false,
       "at": "2026-09-17T08:12:27.812Z"
-    },
-    {
-      "id": "tdmu4fbrem1",
-      "t": "⚡ Review MRM_37",
-      "k": "today",
-      "ahead": false,
-      "at": "2026-09-17T19:17:26.301Z"
-    },
-    {
-      "id": "tdmu596qxi1",
-      "t": "⭐ prepare didactics",
-      "k": "today",
-      "ahead": false,
-      "at": "2026-09-17T19:17:27.952Z"
     }
   ],
   "plDay": "2026-09-18",
@@ -1264,7 +1249,7 @@
   "starts": {
     "ct19": "2026-09-11",
     "ct24": "2026-09-08",
-    "ct11": "2026-09-18",
+    "ct11": "2026-09-14",
     "ct09": "2026-09-14",
     "ct21": "2026-09-14",
     "ct25": "2026-09-14",
@@ -1293,26 +1278,29 @@
       "c_p1787668712681_2_1787730177904": true
     }
   },
-  "stickBtn": null,
+  "stickBtn": {
+    "x": 1986,
+    "y": 787
+  },
   "stickBtnHidden": false,
   "stickersHidden": false,
   "bink": [],
   "pairs": [
     {
       "id": "prmu59k78m1",
-      "a": "⚡ Review MRM_38 with Whale",
-      "b": "total planning and working",
+      "a": "⚡ Review MRM_37 / MRM_38",
+      "b": "total planning",
       "done": false
     }
   ],
   "korean": false,
   "logo": "wok",
-  "theme": "dark",
+  "theme": "light",
   "pinkBar": false,
   "pinkColor": "",
-  "heroZoom": 1,
-  "heroFree": false,
-  "darkness": 50,
+  "heroZoom": 0.95,
+  "heroFree": true,
+  "darkness": 45,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -1459,7 +1447,8 @@
         },
         "spotLow": {
           "ct21": true,
-          "ct09": true
+          "ct09": true,
+          "ct11": true
         },
         "spans": {
           "ct08": {
@@ -1484,7 +1473,7 @@
           },
           "ct11": {
             "from": "2026-09-10",
-            "to": "2026-09-19"
+            "to": "2026-09-15"
           },
           "ct21": {
             "from": "2026-09-14",
@@ -1627,7 +1616,7 @@
           "ct06": true,
           "ct07": true,
           "ct08": true,
-          "ct09": false,
+          "ct09": true,
           "ct10": true,
           "ct11": true,
           "ct12": true,
@@ -2278,7 +2267,7 @@
           "ct16": "2026-09-01T23:59",
           "ct17": "2026-09-02T23:59",
           "ct18": "2026-09-25T23:59",
-          "ct19": "2026-09-19T23:59",
+          "ct19": "2026-09-17T23:59",
           "ct20": "2026-09-23T23:59",
           "ct21": "2026-09-20T23:59",
           "ct22": "2026-09-24T23:59",
@@ -2386,8 +2375,8 @@
         },
         "order": [
           "ct19",
-          "ct11",
           "ct09",
+          "ct11",
           "ct21",
           "ct25",
           "ct20",
@@ -2419,14 +2408,14 @@
         "stickers": [
           {
             "id": "s1789126170577_0",
-            "x": 10,
-            "y": 133.52436671885448,
+            "x": 1273,
+            "y": 541.5243667188544,
             "w": 402.089111328125,
             "h": 152.6222381591797,
             "c": 0,
             "t": "",
             "ink": [],
-            "fx": 0.49003,
+            "fx": 0.69639,
             "rh": "<br>",
             "name": "time off"
           }
@@ -2449,9 +2438,10 @@
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 22,
+            "s": 83,
             "auto": true,
-            "dim": 100
+            "dim": 100,
+            "hidden": false
           },
           "r": {
             "t": "forensic",
@@ -2462,7 +2452,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": false,
+        "hideLnkAll": true,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -2471,31 +2461,28 @@
         "listView": false,
         "today": [
           {
-            "id": "tdmu4fc4yg2",
-            "t": "⚡ ⚡ Incorporate the Table into Part 2.3",
+            "id": "tdmu4fbrem1",
+            "t": "⚡ Review MRM_37",
             "done": false,
             "fs": 3,
             "b": true
+          },
+          {
+            "id": "tdmu4fc4yg2",
+            "t": "⚡ Incorporate the Table into Part 2.3",
+            "done": false,
+            "fs": 2
           },
           {
             "id": "tdmu4fcikr3",
-            "t": "⚡ ⚡ Complete or Make the final draft of Part 2.3",
-            "done": false,
-            "fs": 3,
-            "b": true
-          },
-          {
-            "id": "tdmu5yxbl41",
-            "t": "⚡ ⚡ Review : MRM_38",
-            "done": false,
-            "fs": 3,
-            "b": true
-          },
-          {
-            "id": "tdmu6kh2991",
-            "t": "⚡️Launch : Part 3.1 : axiology analysis",
+            "t": "⚡ Complete or Make the final draft of Part 2.3",
             "done": false,
             "fs": 2
+          },
+          {
+            "id": "tdmu596qxi1",
+            "t": "⭐ prepare didactics",
+            "done": false
           }
         ],
         "week": [
@@ -2668,20 +2655,6 @@
             "k": "today",
             "ahead": false,
             "at": "2026-09-17T08:12:27.812Z"
-          },
-          {
-            "id": "tdmu4fbrem1",
-            "t": "⚡ Review MRM_37",
-            "k": "today",
-            "ahead": false,
-            "at": "2026-09-17T19:17:26.301Z"
-          },
-          {
-            "id": "tdmu596qxi1",
-            "t": "⭐ prepare didactics",
-            "k": "today",
-            "ahead": false,
-            "at": "2026-09-17T19:17:27.952Z"
           }
         ],
         "plDay": "2026-09-18",
@@ -2705,7 +2678,7 @@
         "starts": {
           "ct19": "2026-09-11",
           "ct24": "2026-09-08",
-          "ct11": "2026-09-18",
+          "ct11": "2026-09-14",
           "ct09": "2026-09-14",
           "ct21": "2026-09-14",
           "ct25": "2026-09-14",
@@ -2734,26 +2707,29 @@
             "c_p1787668712681_2_1787730177904": true
           }
         },
-        "stickBtn": null,
+        "stickBtn": {
+          "x": 1986,
+          "y": 787
+        },
         "stickBtnHidden": false,
         "stickersHidden": false,
         "bink": [],
         "pairs": [
           {
             "id": "prmu59k78m1",
-            "a": "⚡ Review MRM_38 with Whale",
-            "b": "total planning and working",
+            "a": "⚡ Review MRM_37 / MRM_38",
+            "b": "total planning",
             "done": false
           }
         ],
         "korean": false,
         "logo": "wok",
-        "theme": "dark",
+        "theme": "light",
         "pinkBar": false,
         "pinkColor": "",
-        "heroZoom": 1,
-        "heroFree": false,
-        "darkness": 50,
+        "heroZoom": 0.95,
+        "heroFree": true,
+        "darkness": 45,
         "boldAll": false,
         "inproc": {},
         "ie": true,
@@ -3453,6 +3429,6 @@
       }
     }
   },
-  "device": "iPhone",
+  "device": "Computer",
   "lead": "Computer"
 }
