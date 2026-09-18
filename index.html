@@ -2259,26 +2259,17 @@ body.boldall .topmeta h1{font-weight:900}
 #tasksBox .th b{color:#6E9F82}
 body.dark #tasksBox{--tkbg:#141E19; --tkline:#26382E; --tkhover:#1A2620; --tkdot:#3C5647}
 body.dark #tasksBox .th b{color:#8FCBA6}
-#tasksBox .tlist{max-height:min(42vh,320px); overflow:auto; scrollbar-width:thin; gap:1px}
+#tasksBox .tlist{max-height:min(42vh,320px); overflow:auto; scrollbar-width:thin}
 #tasksBox .tlist::-webkit-scrollbar{width:7px}
 #tasksBox .tlist::-webkit-scrollbar-thumb{background:var(--line2); border-radius:99px}
-.tkrow{display:flex; align-items:flex-start; gap:8px; padding:4px 3px; border-radius:9px}
-.tkrow:hover{background:var(--tkhover,#ECF6F0)}
-.tkrow .tdot{flex:0 0 auto; margin-top:2px; width:15px; height:15px; border-radius:50%;
-  border:2px solid var(--tkdot,#BFD9C8); background:var(--card); cursor:pointer;
-  display:flex; align-items:center; justify-content:center; transition:all .3s ease}
-.tkrow .tdot svg{width:8px; height:8px; stroke:#fff; stroke-width:3.4; fill:none;
-  stroke-linecap:round; stroke-linejoin:round; opacity:0; transition:opacity .25s ease}
-.tkrow.done .tdot{background:var(--green); border-color:var(--green)}
-.tkrow.done .tdot svg{opacity:1}
-.tkmid{flex:1 1 auto; min-width:0; display:flex; flex-direction:column; gap:1px}
-.tktx{font-size:12.5px; line-height:1.35; color:var(--ink); overflow-wrap:anywhere; cursor:pointer}
-.tkrow.done .tktx{color:var(--ink-faint); text-decoration:line-through; text-decoration-color:#C9D6CD}
-.tkwhen{font-size:10.5px; line-height:1.35; color:var(--ink-faint); display:flex; gap:6px; flex-wrap:wrap}
-.tkwhen .tkproj{font-weight:800; letter-spacing:.04em; text-transform:uppercase; color:#8AAE97}
-.tkwhen .late{color:#C08B84; font-weight:700}
-.tkwhen .now{color:#C99B62; font-weight:700}
-.tkmore{font-size:11px; color:var(--ink-faint); padding:4px 3px}
+#tasksBox .titem.done .tdot{background:var(--green); border-color:var(--green)}
+#tasksBox .titem.done span{text-decoration-color:#BFD9C8}
+#tasksBox .tadd input:focus{border-color:var(--green)}
+#tasksBox .tadd button{color:#6E9F82}
+#tasksBox .tadd button:hover{border-color:var(--green)}
+#tasksBox .swbtn:hover{border-color:var(--green); color:#6E9F82}
+#tasksBox.ahead .swbtn{background:var(--tkhover,#ECF6F0); border-color:var(--green); color:#6E9F82}
+#tasksBox .plmove:hover{border-color:var(--green); color:#6E9F82}
 
 /* ---- Parallels: each half can be ticked, and the finished ones stack up ---- */
 .prow .phalf{display:flex; align-items:center; gap:8px; min-width:0}
@@ -2382,8 +2373,10 @@ body.megaon{overflow:hidden; overscroll-behavior:none}
     </div></div>
     <div class="hero-row">
     <div class="today tasksbox" id="tasksBox">
-      <div class="th"><b id="tasksTitle">Tasks &#183; every project</b><button class="swbtn" id="tasksSw" title="Turn the box over: what is due next, or everything there is">switch</button><span class="cnt" id="tasksCnt">0</span></div>
+      <div class="th"><b id="tasksTitle">Tasks</b><button class="swbtn" id="tasksSw" title="Turn the list over to the tasks kept for later, and back">switch</button><span class="cnt" id="tasksCnt">0 / 0</span></div>
       <div class="tlist" id="tasksList"></div>
+      <div class="tadd"><input type="text" id="tasksInp" placeholder="one more task..." maxlength="300"><button id="tasksAdd">+</button></div>
+      <button class="plmove hidden" id="tasksMove" title="Carry every task kept for later into this list at once">move into tasks</button>
       <div class="tfoot">
         <button class="pbtn spotbtn" data-spot="tasks" title="Put the light on this box - the whole page behind it goes dark"><i class="pdot"></i>highlight</button>
         <button class="pbtn lowbtn" data-spotlow="tasks" title="Give way inside the light - this box turns grey and a little dimmer"><i class="pdot"></i>yield</button>
@@ -5164,7 +5157,7 @@ function freshState(){
     today:[],week:[],todayNext:[],weekNext:[],todayView:"now",weekView:"now",
     plLog:[],plDay:"",plWeek:"",spotSave:null,starts:{},launched:{},launchBox:true,
     saveName:"",saveDirName:"",ptask:{},stickBtn:null,stickBtnHidden:false,stickersHidden:false,bink:[],
-    pairs:[],pairsNext:[],parView:"now",parFace:"list",tasksView:"due",instrOpen:false,korean:false,logo:"wok",
+    pairs:[],pairsNext:[],parView:"now",parFace:"list",tasks:[],tasksNext:[],tasksView:"now",instrOpen:false,korean:false,logo:"wok",
     theme:"light",pinkBar:false,pinkColor:"",heroZoom:1,heroFree:false,darkness:50,boldAll:false,inproc:{},ie:false,iedone:{},hideDone:{},hideAllT:{},flipped:{},back:{}};
 }
 var state=freshState();
@@ -5220,7 +5213,7 @@ var PKEY=KEY+":prefs";
 var PREF_KEYS=["theme","boldAll","pinkBar","pinkColor","stickerSkin","stickerClassic",
   "stickBtn","stickBtnHidden","stickersHidden","hideLnkAll","styles","signs","sigv",
   "saveDirName","saveName","heroZoom","heroFree","launchBox","darkness","korean","logo",
-  "tasksView","instrOpen"];
+  "instrOpen"];
 function readPrefs(){
   if(!storageOk) return memPrefs;
   try{ var r=localStorage.getItem(PKEY); return r?JSON.parse(r):null; }catch(e){ return null; }
@@ -5729,7 +5722,7 @@ function render(){
   document.querySelectorAll(".proj").forEach(applyFlip);
   if(state.listView) renderStageList();
   if(typeof drawLinks==="function") drawLinks();
-  if(typeof renderTasksAll==="function") renderTasksAll();
+  if(typeof paintInstr==="function") paintInstr();
   renderRuler(); renderTicks();
 }
 
@@ -7693,6 +7686,14 @@ var PLISTS={
          emptyN:"Nothing yet - add what matters tomorrow.",
          ph:"one thing for today...",  phN:"one thing for tomorrow...",
          mvLab:"move to today", word:"day"},
+  tasks:{key:"tasks", nkey:"tasksNext", vkey:"tasksView", box:"tasksBox", ttl:"tasksTitle",
+         sw:"tasksSw",  mv:"tasksMove",
+         list:"tasksList", cnt:"tasksCnt", inp:"tasksInp", add:"tasksAdd", pre:"tk",
+         title:"Tasks",               titleN:"Tasks kept for later",
+         empty:"Nothing yet - write down the tasks you want in front of you.",
+         emptyN:"Nothing kept for later yet.",
+         ph:"one more task...",       phN:"...a task for later",
+         mvLab:"move into tasks", word:"list"},
   week: {key:"week",  nkey:"weekNext",  vkey:"weekView",  box:"weekBox",  ttl:"weekTitle",
          sw:"weekSw",  mv:"weekMove",
          list:"weekList",  cnt:"weekCnt",  inp:"weekInp",  add:"weekAdd",  pre:"wk",
@@ -7707,14 +7708,19 @@ function plArr(k){ if(!state[k]) state[k]=[]; return state[k]; }
 /* two lines added inside the same millisecond used to share an id, and then
    ticking one ticked both - the counter keeps every line separate */
 function plId(pre){ plSeq++; return pre+Date.now().toString(36)+plSeq; }
-function plOf(id){ return (String(id).indexOf("wk")===0) ? PLISTS.week : PLISTS.today; }
+function plOf(id){
+  var p=String(id).slice(0,2);
+  if(p==="wk") return PLISTS.week;
+  if(p==="tk") return PLISTS.tasks;
+  return PLISTS.today;
+}
 /* is this box turned over to the next day / the next week? */
 function plAhead(cfg){ return state[cfg.vkey]==="next"; }
 function plKey(cfg){ return plAhead(cfg) ? cfg.nkey : cfg.key; }
 /* a line can be in any of the four lists - find the one it really sits in */
 function plWhere(id){
   var out=null;
-  ["today","week"].forEach(function(k){
+  Object.keys(PLISTS).forEach(function(k){
     var cfg=PLISTS[k];
     [cfg.key, cfg.nkey].forEach(function(kk){
       plArr(kk).forEach(function(x){ if(x.id===id) out={cfg:cfg, key:kk, it:x}; });
@@ -7772,15 +7778,16 @@ function renderList(cfg){
   if(inp) inp.placeholder=ahead?cfg.phN:cfg.ph;
   var sw=document.getElementById(cfg.sw);
   if(sw) sw.title=ahead
-    ? "Back to the "+(cfg.word==="day"?"day that is running":"week that is running")
-    : "Turn the list over to "+(cfg.word==="day"?"tomorrow":"next week");
+    ? (cfg.word==="list" ? "Back to the tasks in front of you"
+       : "Back to the "+(cfg.word==="day"?"day that is running":"week that is running"))
+    : "Turn the list over to "+(cfg.word==="day"?"tomorrow":(cfg.word==="list"?"the tasks kept for later":"next week"));
   var mv=document.getElementById(cfg.mv);
   if(mv){
     mv.classList.toggle("hidden", !ahead);
     mv.textContent=cfg.mvLab+(a.length?(" ("+a.length+")"):"");
   }
 }
-function renderToday(){ renderList(PLISTS.today); renderList(PLISTS.week); paintLogCount(); }
+function renderToday(){ renderList(PLISTS.today); renderList(PLISTS.tasks); renderList(PLISTS.week); paintLogCount(); }
 
 /* ================= PARALLELS =================
    Two things are usually on the go at once. This box holds them as one line:
@@ -8415,7 +8422,7 @@ document.getElementById("lgClose").addEventListener("click", function(){
 });
 document.getElementById("lgSweep").addEventListener("click", function(){
   var n=0;
-  ["today","week"].forEach(function(k){
+  Object.keys(PLISTS).forEach(function(k){
     var cfg=PLISTS[k];
     [cfg.key, cfg.nkey].forEach(function(kk){
       var a=plArr(kk), keep=a.filter(function(x){ return !x.done; });
@@ -11742,150 +11749,6 @@ window.addEventListener("resize", function(){ placeStickers(); placeStickBtn(); 
    two keys that ride up onto the bar of mega focus, and the words at the foot
    of the page that now wait behind a button. */
 
-/* ---- the tasks of a project that is not the open one ----
-   tasksOf() reads the project that is open; this one is given the saved state
-   to read, so the box can look into every tab at once without switching. */
-function tasksOfSt(st, p){
-  var list=[], rem=st.tremoved||{}, ed=st.edits||{}, cus=st.custom||{}, mv=st.tmoved||{};
-  function own(tid, home){ return mv[tid]||home; }
-  function add(t){
-    if(rem[t.id]) return;
-    var e=ed[t.id]||{};
-    list.push({id:t.id, en:e.en||t.en||t.text||""});
-  }
-  var base=BASE.filter(function(x){ return x.id===p.id; })[0];
-  (base?base.tasks:[]).forEach(function(t){ if(own(t.id,p.id)===p.id) add(t); });
-  (cus[p.id]||[]).forEach(function(t){ if(own(t.id,p.id)===p.id) add(t); });
-  BASE.forEach(function(b){
-    if(b.id===p.id) return;
-    b.tasks.forEach(function(t){ if(mv[t.id]===p.id) add(t); });
-  });
-  Object.keys(cus).forEach(function(k){
-    if(k===p.id) return;
-    (cus[k]||[]).forEach(function(t){ if(mv[t.id]===p.id) add(t); });
-  });
-  var ord=(st.torder||{})[p.id];
-  if(ord && ord.length){
-    var oi={}; ord.forEach(function(id,i){ oi[id]=i; });
-    list.forEach(function(t,i){ t._i=i; });
-    list.sort(function(a,b){
-      var ia=(oi[a.id]!==undefined)?oi[a.id]:900+a._i;
-      var ib=(oi[b.id]!==undefined)?oi[b.id]:900+b._i;
-      return ia-ib;
-    });
-  }
-  return list;
-}
-/* every task of every tab, with the tab and the stage it belongs to */
-function tkRows(){
-  var out=[];
-  (spaces.list||[]).forEach(function(sp){
-    var st=(sp.id===spaces.active) ? state : readSpace(sp.id);
-    if(!st) return;
-    effProjectsOf(st).forEach(function(p){
-      tasksOfSt(st, p).forEach(function(t){
-        out.push({sid:sp.id, sname:sp.name||"project", pid:p.id, pname:p.en||"",
-                  tid:t.id, text:t.en||"", due:((st.dues||{})[t.id])||p.due||"",
-                  done:!!((st.done||{})[t.id])});
-      });
-    });
-  });
-  return out;
-}
-function tkDueWord(due, done){
-  if(done) return {cls:"", txt:"done"};
-  if(!due) return {cls:"", txt:""};
-  var ms=pd(due)-new Date();
-  if(ms<0) return {cls:"late", txt:"overdue · "+fmtEn(due)};
-  if(pd(due)-todayMid()<DAY) return {cls:"now", txt:"today"};
-  return {cls:"", txt:"due "+fmtEn(due)};
-}
-function renderTasksAll(){
-  var box=document.getElementById("tasksList");
-  if(typeof paintInstr==="function") paintInstr();
-  if(!box) return;
-  var all=tkRows();
-  var byDate=(state.tasksView!=="all");
-  var rows=byDate ? all.filter(function(r){ return !r.done; }) : all.slice();
-  if(byDate) rows.sort(function(a,b){
-    var da=a.due?pd(a.due).getTime():8e15, db=b.due?pd(b.due).getTime():8e15;
-    return da-db;
-  });
-  var cap=byDate?60:220, shown=rows.slice(0,cap);
-  var ttl=document.getElementById("tasksTitle");
-  if(ttl) ttl.textContent = byDate ? "Tasks · what is due next" : "Tasks · every project";
-  var sw=document.getElementById("tasksSw");
-  if(sw) sw.classList.toggle("on", !byDate);
-  var cnt=document.getElementById("tasksCnt");
-  if(cnt) cnt.textContent = byDate ? (rows.length+" left")
-                                   : (all.filter(function(r){return r.done;}).length+" / "+all.length);
-  if(!shown.length){
-    box.innerHTML='<div class="empty">'+(byDate?"Every task in every project is done.":"No tasks in any project yet.")+'</div>';
-    return;
-  }
-  var lastP="";
-  box.innerHTML=shown.map(function(r){
-    var d=tkDueWord(r.due, r.done);
-    var head=r.sname+" · "+r.pname;
-    var cap2=(head===lastP && byDate) ? "" : head;
-    lastP=head;
-    return '<div class="tkrow'+(r.done?" done":"")+'" data-tk="'+esc(r.sid)+'|'+esc(r.tid)+'">'+
-      '<span class="tdot" data-tkdot="1" title="Tick this task off"><svg viewBox="0 0 16 16">'+
-      '<polyline points="2.5,8.5 6.5,12.5 13.5,3.5"/></svg></span>'+
-      '<span class="tkmid"><span class="tktx">'+esc(r.text)+'</span>'+
-      '<span class="tkwhen">'+(cap2?'<span class="tkproj">'+esc(cap2)+'</span>':'')+
-      (d.txt?'<span class="'+d.cls+'">'+esc(d.txt)+'</span>':'')+'</span></span></div>';
-  }).join("") + (rows.length>cap ? '<div class="tkmore">and '+(rows.length-cap)+' more</div>' : "");
-}
-/* ticking a task off where it really lives - in the open tab, or in a saved one */
-function tkToggle(sid, tid){
-  if(sid===spaces.active){
-    if(state.done[tid]){ delete state.done[tid]; delete state.doneAt[tid]; }
-    else { state.done[tid]=true; state.doneAt[tid]=new Date().toISOString(); }
-    persist(); buildAll(); render();
-    return;
-  }
-  var st=readSpace(sid);
-  if(!st){ toast("That project could not be opened"); return; }
-  st.done=st.done||{}; st.doneAt=st.doneAt||{};
-  if(st.done[tid]){ delete st.done[tid]; delete st.doneAt[tid]; }
-  else { st.done[tid]=true; st.doneAt[tid]=new Date().toISOString(); }
-  writeSpace(sid, st);
-  renderTasksAll();
-}
-/* and going to it: the tab opens first if the task lives somewhere else */
-function tkJump(sid, tid){
-  function find(){
-    var el=document.querySelector('[data-task="'+tid+'"]');
-    if(!el) return;
-    try{ el.scrollIntoView({block:"center", behavior:"smooth"}); }catch(e){ el.scrollIntoView(); }
-    var old=el.style.boxShadow;
-    el.style.transition="box-shadow .3s ease";
-    el.style.boxShadow="0 0 0 3px rgba(229,185,78,.55)";
-    setTimeout(function(){ el.style.boxShadow=old||""; }, 1500);
-  }
-  if(sid!==spaces.active){
-    switchSpace(sid);
-    setTimeout(find, 260);
-  } else find();
-}
-(function(){
-  var box=document.getElementById("tasksList");
-  if(box) box.addEventListener("click", function(ev){
-    var row=ev.target.closest("[data-tk]");
-    if(!row) return;
-    var k=row.getAttribute("data-tk").split("|");
-    if(ev.target.closest("[data-tkdot]")) tkToggle(k[0], k[1]);
-    else tkJump(k[0], k[1]);
-  });
-  var sw=document.getElementById("tasksSw");
-  if(sw) sw.addEventListener("click", function(ev){
-    ev.stopPropagation();
-    state.tasksView=(state.tasksView==="all")?"due":"all";
-    persist(); renderTasksAll();
-  });
-})();
-
 /* ---- the two keys ride up onto the bar of mega focus ----
    The real buttons are carried there and carried back, the same way the boxes
    are, so the word under them still says what the last send did. */
@@ -11922,7 +11785,6 @@ function paintInstr(){
     }
   });
   paintInstr();
-  renderTasksAll();
 })();
 
 })();
