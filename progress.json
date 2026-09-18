@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-18T07:07:03.817Z",
+  "savedAt": "2026-09-18T07:07:55.490Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1053,7 +1053,7 @@
     },
     {
       "id": "tdmu6kh2991",
-      "t": "⚡️Launch : Part 3.1 : axiology analysis",
+      "t": "⚡️ Launch : Part 3.1 : axiology analysis",
       "done": false,
       "fs": 2
     }
@@ -2498,7 +2498,7 @@
           },
           {
             "id": "tdmu6kh2991",
-            "t": "⚡️Launch : Part 3.1 : axiology analysis",
+            "t": "⚡️ Launch : Part 3.1 : axiology analysis",
             "done": false,
             "fs": 2
           }
