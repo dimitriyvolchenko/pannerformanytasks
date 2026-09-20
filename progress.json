@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-20T18:33:20.094Z",
+  "savedAt": "2026-09-20T18:34:06.765Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1046,7 +1046,7 @@
     },
     {
       "id": "tdmu5yxbl41",
-      "t": "⚡ ⚡ Review : MRM_39",
+      "t": "⚡ ⚡ Complete : MRM_39",
       "done": false,
       "fs": 3,
       "b": true
@@ -1056,6 +1056,13 @@
       "t": "⚡️ Launch : Part 3.1 : axiology analysis",
       "done": false,
       "fs": 2
+    },
+    {
+      "id": "tdmua5nhbj1",
+      "t": "⚡ Launch: checking MRM_39 sources",
+      "done": false,
+      "fs": 3,
+      "b": true
     }
   ],
   "week": [
@@ -2498,7 +2505,7 @@
           },
           {
             "id": "tdmu5yxbl41",
-            "t": "⚡ ⚡ Review : MRM_39",
+            "t": "⚡ ⚡ Complete : MRM_39",
             "done": false,
             "fs": 3,
             "b": true
@@ -2508,6 +2515,13 @@
             "t": "⚡️ Launch : Part 3.1 : axiology analysis",
             "done": false,
             "fs": 2
+          },
+          {
+            "id": "tdmua5nhbj1",
+            "t": "⚡ Launch: checking MRM_39 sources",
+            "done": false,
+            "fs": 3,
+            "b": true
           }
         ],
         "week": [
