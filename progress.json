@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-21T13:52:33.754Z",
+  "savedAt": "2026-09-21T13:53:06.851Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -15,11 +15,13 @@
     "st:s1789126170577_0": true,
     "ct21": true,
     "week": true,
-    "tasks": true
+    "tasks": true,
+    "ct25": true
   },
   "spotLow": {
     "ct21": true,
-    "ct09": true
+    "ct09": true,
+    "ct25": true
   },
   "spans": {
     "ct08": {
@@ -1482,11 +1484,13 @@
           "st:s1789126170577_0": true,
           "ct21": true,
           "week": true,
-          "tasks": true
+          "tasks": true,
+          "ct25": true
         },
         "spotLow": {
           "ct21": true,
-          "ct09": true
+          "ct09": true,
+          "ct25": true
         },
         "spans": {
           "ct08": {
