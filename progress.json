@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-21T09:54:05.719Z",
+  "savedAt": "2026-09-21T09:54:44.360Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -984,10 +984,10 @@
       "w": 383.5386830411216,
       "h": 168.72305404308224,
       "c": 0,
-      "t": "upload study",
+      "t": "",
       "ink": [],
       "fx": 0.71616,
-      "rh": "upload study",
+      "rh": "<br>",
       "name": "time off"
     }
   ],
@@ -2448,10 +2448,10 @@
             "w": 383.5386830411216,
             "h": 168.72305404308224,
             "c": 0,
-            "t": "upload study",
+            "t": "",
             "ink": [],
             "fx": 0.71616,
-            "rh": "upload study",
+            "rh": "<br>",
             "name": "time off"
           }
         ],
