@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-21T06:42:41.867Z",
+  "savedAt": "2026-09-21T06:43:12.277Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1000,11 +1000,12 @@
   "rich": {},
   "signs": {
     "t": {
-      "t": "forensic",
+      "t": "overall",
       "c": "#D6D2C6",
-      "s": 64,
+      "s": 90,
       "auto": true,
-      "dim": 60
+      "dim": 60,
+      "hidden": false
     },
     "l": {
       "t": "forensic",
@@ -2463,11 +2464,12 @@
         "rich": {},
         "signs": {
           "t": {
-            "t": "forensic",
+            "t": "overall",
             "c": "#D6D2C6",
-            "s": 64,
+            "s": 90,
             "auto": true,
-            "dim": 60
+            "dim": 60,
+            "hidden": false
           },
           "l": {
             "t": "forensic",
