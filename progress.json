@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-21T12:59:57.043Z",
+  "savedAt": "2026-09-21T13:00:18.437Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1310,7 +1310,17 @@
   "stickBtnHidden": true,
   "stickersHidden": false,
   "bink": [],
-  "pairs": [],
+  "pairs": [
+    {
+      "id": "prmub95v292",
+      "a": "Review MRM_40",
+      "b": "Incorporate the Table into Part 2.3",
+      "done": false,
+      "ad": false,
+      "bd": false,
+      "at": ""
+    }
+  ],
   "pairsNext": [],
   "parView": "now",
   "parFace": "list",
@@ -2764,7 +2774,17 @@
         "stickBtnHidden": true,
         "stickersHidden": false,
         "bink": [],
-        "pairs": [],
+        "pairs": [
+          {
+            "id": "prmub95v292",
+            "a": "Review MRM_40",
+            "b": "Incorporate the Table into Part 2.3",
+            "done": false,
+            "ad": false,
+            "bd": false,
+            "at": ""
+          }
+        ],
         "pairsNext": [],
         "parView": "now",
         "parFace": "list",
