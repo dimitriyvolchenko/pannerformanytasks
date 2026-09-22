@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-22T06:03:30.521Z",
+  "savedAt": "2026-09-22T06:43:54.330Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -15,11 +15,13 @@
     "st:s1789126170577_0": true,
     "ct21": true,
     "week": true,
-    "tasks": true
+    "tasks": true,
+    "ct25": true
   },
   "spotLow": {
     "ct21": true,
-    "ct09": true
+    "ct09": true,
+    "ct25": true
   },
   "spans": {
     "ct08": {
@@ -979,15 +981,15 @@
   "stickers": [
     {
       "id": "s1789126170577_0",
-      "x": 24,
-      "y": 247.33023255813947,
+      "x": 1324,
+      "y": 533.9969195698582,
       "w": 383.5386830411216,
       "h": 168.72305404308224,
       "c": 0,
-      "t": "- r.pr.t.a.t.snts.&cln.dvs.\n- pr.&b.mlk.",
+      "t": "",
       "ink": [],
-      "fx": 0.50179,
-      "rh": "- r.pr.t.a.t.snts.&amp;cln.dvs.<div>- pr.&amp;b.mlk.</div>",
+      "fx": 0.71616,
+      "rh": "<br>",
       "name": "time off"
     }
   ],
@@ -1000,18 +1002,20 @@
   "rich": {},
   "signs": {
     "t": {
-      "t": "forensic",
+      "t": "overall",
       "c": "#D6D2C6",
-      "s": 64,
+      "s": 90,
       "auto": true,
-      "dim": 60
+      "dim": 60,
+      "hidden": false
     },
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 22,
+      "s": 83,
       "auto": true,
-      "dim": 100
+      "dim": 100,
+      "hidden": false
     },
     "r": {
       "t": "forensic",
@@ -1022,7 +1026,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": false,
+  "hideLnkAll": true,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1031,51 +1035,38 @@
   "listView": false,
   "today": [
     {
-      "id": "tdmubenha31",
-      "t": "Launch: MRM_40 checking the sources",
-      "done": false,
-      "fs": 2,
-      "b": true
-    },
-    {
-      "id": "tdmubeohvl2",
-      "t": "Review partially: Part 2.3",
-      "done": false,
-      "fs": 1,
-      "b": true
-    },
-    {
-      "id": "tdmubeol4e3",
-      "t": "Review partially: Part 3.2",
-      "done": false,
-      "fs": 1,
-      "b": true
-    },
-    {
-      "id": "tdmubeopir4",
-      "t": "Review partially: Part 4.1",
-      "done": false,
-      "fs": 1,
-      "b": true
-    },
-    {
-      "id": "tdmubepann5",
-      "t": "⚡ Complete: MRM_40",
+      "id": "tdmu4fc4yg2",
+      "t": "⚡ ⚡ Incorporate the Table into Part 2.3",
       "done": false,
       "fs": 3,
       "b": true
     },
     {
-      "id": "tdmubeppex6",
-      "t": "⚡ Include: MRM_40 into MRG_64",
+      "id": "tdmu4fcikr3",
+      "t": "⚡ ⚡ Complete or Make the final draft of Part 2.3",
       "done": false,
       "fs": 3,
       "b": true
     },
     {
-      "id": "tdmuc9nw441",
-      "t": "schedule further steps with part 2.3, part 3.2, part 4.1",
-      "done": false
+      "id": "tdmu5yxbl41",
+      "t": "⚡ ⚡ Complete : MRM_39",
+      "done": false,
+      "fs": 3,
+      "b": true
+    },
+    {
+      "id": "tdmu6kh2991",
+      "t": "⚡️ Launch : Part 3.1 : axiology analysis",
+      "done": false,
+      "fs": 2
+    },
+    {
+      "id": "tdmua5nhbj1",
+      "t": "⚡ Launch and organize: checking MRM_39 sources",
+      "done": false,
+      "fs": 3,
+      "b": true
     }
   ],
   "week": [
@@ -1262,41 +1253,6 @@
       "k": "today",
       "ahead": false,
       "at": "2026-09-17T19:17:27.952Z"
-    },
-    {
-      "id": "tdmu4fc4yg2",
-      "t": "⚡ ⚡ Incorporate the Table into Part 2.3",
-      "k": "today",
-      "ahead": false,
-      "at": "2026-09-21T15:31:06.086Z"
-    },
-    {
-      "id": "tdmu5yxbl41",
-      "t": "⚡ ⚡ Complete : MRM_39",
-      "k": "today",
-      "ahead": false,
-      "at": "2026-09-21T15:31:11.120Z"
-    },
-    {
-      "id": "tdmu6kh2991",
-      "t": "⚡️ Launch : Part 3.1 : axiology analysis",
-      "k": "today",
-      "ahead": false,
-      "at": "2026-09-21T15:31:14.518Z"
-    },
-    {
-      "id": "tdmu4fcikr3",
-      "t": "⚡ ⚡ Complete or Make the final draft of Part 2.3",
-      "k": "today",
-      "ahead": false,
-      "at": "2026-09-21T15:34:41.767Z"
-    },
-    {
-      "id": "tdmua5nhbj1",
-      "t": "⚡ Launch: checking MRM_39 sources",
-      "k": "today",
-      "ahead": false,
-      "at": "2026-09-21T15:34:43.763Z"
     }
   ],
   "plDay": "2026-09-22",
@@ -1335,11 +1291,9 @@
     "ct24": "2026-09-11T07:25:12.535Z",
     "ct19": "2026-09-11T07:25:28.573Z",
     "ct09": "2026-09-14T12:58:27.630Z",
-    "ct21": "2026-09-21T15:31:22.496Z",
-    "ct25": "2026-09-21T15:31:24.835Z",
-    "ct18": "2026-09-21T15:31:28.812Z",
-    "ct26": "2026-09-21T15:31:40.907Z",
-    "ct11": "2026-09-21T15:31:42.860Z"
+    "ct26": "2026-09-21T13:44:11.799Z",
+    "ct18": "2026-09-21T13:44:19.855Z",
+    "ct25": "2026-09-21T13:44:28.021Z"
   },
   "launchBox": true,
   "saveName": "",
@@ -1354,19 +1308,22 @@
       "c_p1787668712681_2_1787730177904": true
     }
   },
-  "stickBtn": null,
-  "stickBtnHidden": false,
+  "stickBtn": {
+    "x": 1986,
+    "y": 787
+  },
+  "stickBtnHidden": true,
   "stickersHidden": false,
   "bink": [],
   "pairs": [
     {
-      "id": "prmu59k78m1",
-      "a": "Complete: MRM_40",
-      "b": "Check MRG_64",
+      "id": "prmub95v292",
+      "a": "Review MRM_40",
+      "b": "Incorporate the Table into Part 2.3",
       "done": false,
+      "ad": false,
       "bd": false,
-      "at": "",
-      "ad": false
+      "at": ""
     }
   ],
   "pairsNext": [],
@@ -1378,12 +1335,12 @@
   "instrOpen": false,
   "korean": false,
   "logo": "wok",
-  "theme": "dark",
+  "theme": "light",
   "pinkBar": false,
   "pinkColor": "",
-  "heroZoom": 1,
-  "heroFree": false,
-  "darkness": 50,
+  "heroZoom": 0.95,
+  "heroFree": true,
+  "darkness": 45,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -1527,11 +1484,13 @@
           "st:s1789126170577_0": true,
           "ct21": true,
           "week": true,
-          "tasks": true
+          "tasks": true,
+          "ct25": true
         },
         "spotLow": {
           "ct21": true,
-          "ct09": true
+          "ct09": true,
+          "ct25": true
         },
         "spans": {
           "ct08": {
@@ -2491,15 +2450,15 @@
         "stickers": [
           {
             "id": "s1789126170577_0",
-            "x": 24,
-            "y": 247.33023255813947,
+            "x": 1324,
+            "y": 533.9969195698582,
             "w": 383.5386830411216,
             "h": 168.72305404308224,
             "c": 0,
-            "t": "- r.pr.t.a.t.snts.&cln.dvs.\n- pr.&b.mlk.",
+            "t": "",
             "ink": [],
-            "fx": 0.50179,
-            "rh": "- r.pr.t.a.t.snts.&amp;cln.dvs.<div>- pr.&amp;b.mlk.</div>",
+            "fx": 0.71616,
+            "rh": "<br>",
             "name": "time off"
           }
         ],
@@ -2512,18 +2471,20 @@
         "rich": {},
         "signs": {
           "t": {
-            "t": "forensic",
+            "t": "overall",
             "c": "#D6D2C6",
-            "s": 64,
+            "s": 90,
             "auto": true,
-            "dim": 60
+            "dim": 60,
+            "hidden": false
           },
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 22,
+            "s": 83,
             "auto": true,
-            "dim": 100
+            "dim": 100,
+            "hidden": false
           },
           "r": {
             "t": "forensic",
@@ -2534,7 +2495,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": false,
+        "hideLnkAll": true,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -2543,51 +2504,38 @@
         "listView": false,
         "today": [
           {
-            "id": "tdmubenha31",
-            "t": "Launch: MRM_40 checking the sources",
-            "done": false,
-            "fs": 2,
-            "b": true
-          },
-          {
-            "id": "tdmubeohvl2",
-            "t": "Review partially: Part 2.3",
-            "done": false,
-            "fs": 1,
-            "b": true
-          },
-          {
-            "id": "tdmubeol4e3",
-            "t": "Review partially: Part 3.2",
-            "done": false,
-            "fs": 1,
-            "b": true
-          },
-          {
-            "id": "tdmubeopir4",
-            "t": "Review partially: Part 4.1",
-            "done": false,
-            "fs": 1,
-            "b": true
-          },
-          {
-            "id": "tdmubepann5",
-            "t": "⚡ Complete: MRM_40",
+            "id": "tdmu4fc4yg2",
+            "t": "⚡ ⚡ Incorporate the Table into Part 2.3",
             "done": false,
             "fs": 3,
             "b": true
           },
           {
-            "id": "tdmubeppex6",
-            "t": "⚡ Include: MRM_40 into MRG_64",
+            "id": "tdmu4fcikr3",
+            "t": "⚡ ⚡ Complete or Make the final draft of Part 2.3",
             "done": false,
             "fs": 3,
             "b": true
           },
           {
-            "id": "tdmuc9nw441",
-            "t": "schedule further steps with part 2.3, part 3.2, part 4.1",
-            "done": false
+            "id": "tdmu5yxbl41",
+            "t": "⚡ ⚡ Complete : MRM_39",
+            "done": false,
+            "fs": 3,
+            "b": true
+          },
+          {
+            "id": "tdmu6kh2991",
+            "t": "⚡️ Launch : Part 3.1 : axiology analysis",
+            "done": false,
+            "fs": 2
+          },
+          {
+            "id": "tdmua5nhbj1",
+            "t": "⚡ Launch and organize: checking MRM_39 sources",
+            "done": false,
+            "fs": 3,
+            "b": true
           }
         ],
         "week": [
@@ -2774,41 +2722,6 @@
             "k": "today",
             "ahead": false,
             "at": "2026-09-17T19:17:27.952Z"
-          },
-          {
-            "id": "tdmu4fc4yg2",
-            "t": "⚡ ⚡ Incorporate the Table into Part 2.3",
-            "k": "today",
-            "ahead": false,
-            "at": "2026-09-21T15:31:06.086Z"
-          },
-          {
-            "id": "tdmu5yxbl41",
-            "t": "⚡ ⚡ Complete : MRM_39",
-            "k": "today",
-            "ahead": false,
-            "at": "2026-09-21T15:31:11.120Z"
-          },
-          {
-            "id": "tdmu6kh2991",
-            "t": "⚡️ Launch : Part 3.1 : axiology analysis",
-            "k": "today",
-            "ahead": false,
-            "at": "2026-09-21T15:31:14.518Z"
-          },
-          {
-            "id": "tdmu4fcikr3",
-            "t": "⚡ ⚡ Complete or Make the final draft of Part 2.3",
-            "k": "today",
-            "ahead": false,
-            "at": "2026-09-21T15:34:41.767Z"
-          },
-          {
-            "id": "tdmua5nhbj1",
-            "t": "⚡ Launch: checking MRM_39 sources",
-            "k": "today",
-            "ahead": false,
-            "at": "2026-09-21T15:34:43.763Z"
           }
         ],
         "plDay": "2026-09-22",
@@ -2847,11 +2760,9 @@
           "ct24": "2026-09-11T07:25:12.535Z",
           "ct19": "2026-09-11T07:25:28.573Z",
           "ct09": "2026-09-14T12:58:27.630Z",
-          "ct21": "2026-09-21T15:31:22.496Z",
-          "ct25": "2026-09-21T15:31:24.835Z",
-          "ct18": "2026-09-21T15:31:28.812Z",
-          "ct26": "2026-09-21T15:31:40.907Z",
-          "ct11": "2026-09-21T15:31:42.860Z"
+          "ct26": "2026-09-21T13:44:11.799Z",
+          "ct18": "2026-09-21T13:44:19.855Z",
+          "ct25": "2026-09-21T13:44:28.021Z"
         },
         "launchBox": true,
         "saveName": "",
@@ -2866,19 +2777,22 @@
             "c_p1787668712681_2_1787730177904": true
           }
         },
-        "stickBtn": null,
-        "stickBtnHidden": false,
+        "stickBtn": {
+          "x": 1986,
+          "y": 787
+        },
+        "stickBtnHidden": true,
         "stickersHidden": false,
         "bink": [],
         "pairs": [
           {
-            "id": "prmu59k78m1",
-            "a": "Complete: MRM_40",
-            "b": "Check MRG_64",
+            "id": "prmub95v292",
+            "a": "Review MRM_40",
+            "b": "Incorporate the Table into Part 2.3",
             "done": false,
+            "ad": false,
             "bd": false,
-            "at": "",
-            "ad": false
+            "at": ""
           }
         ],
         "pairsNext": [],
@@ -2890,12 +2804,12 @@
         "instrOpen": false,
         "korean": false,
         "logo": "wok",
-        "theme": "dark",
+        "theme": "light",
         "pinkBar": false,
         "pinkColor": "",
-        "heroZoom": 1,
-        "heroFree": false,
-        "darkness": 50,
+        "heroZoom": 0.95,
+        "heroFree": true,
+        "darkness": 45,
         "boldAll": false,
         "inproc": {},
         "ie": true,
@@ -3595,6 +3509,6 @@
       }
     }
   },
-  "device": "iPhone",
+  "device": "Computer",
   "lead": "Computer"
 }
