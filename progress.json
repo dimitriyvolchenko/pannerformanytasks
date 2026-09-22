@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-22T17:22:35.204Z",
+  "savedAt": "2026-09-22T17:22:42.155Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1435,17 +1435,7 @@
   "stickBtnHidden": true,
   "stickersHidden": false,
   "bink": [],
-  "pairs": [
-    {
-      "id": "prmu59k78m1",
-      "a": "Complete: MRM_40",
-      "b": "Check MRG_64",
-      "done": true,
-      "bd": true,
-      "at": "2026-09-22T17:22:32.118Z",
-      "ad": true
-    }
-  ],
+  "pairs": [],
   "pairsNext": [],
   "parView": "now",
   "parFace": "list",
@@ -3026,17 +3016,7 @@
         "stickBtnHidden": true,
         "stickersHidden": false,
         "bink": [],
-        "pairs": [
-          {
-            "id": "prmu59k78m1",
-            "a": "Complete: MRM_40",
-            "b": "Check MRG_64",
-            "done": true,
-            "bd": true,
-            "at": "2026-09-22T17:22:32.118Z",
-            "ad": true
-          }
-        ],
+        "pairs": [],
         "pairsNext": [],
         "parView": "now",
         "parFace": "list",
