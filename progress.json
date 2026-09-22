@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-22T17:22:29.481Z",
+  "savedAt": "2026-09-22T17:22:35.204Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1440,9 +1440,9 @@
       "id": "prmu59k78m1",
       "a": "Complete: MRM_40",
       "b": "Check MRG_64",
-      "done": false,
-      "bd": false,
-      "at": "",
+      "done": true,
+      "bd": true,
+      "at": "2026-09-22T17:22:32.118Z",
       "ad": true
     }
   ],
@@ -3031,9 +3031,9 @@
             "id": "prmu59k78m1",
             "a": "Complete: MRM_40",
             "b": "Check MRG_64",
-            "done": false,
-            "bd": false,
-            "at": "",
+            "done": true,
+            "bd": true,
+            "at": "2026-09-22T17:22:32.118Z",
             "ad": true
           }
         ],
