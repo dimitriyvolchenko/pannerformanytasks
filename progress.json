@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-22T15:19:43.724Z",
+  "savedAt": "2026-09-22T15:20:05.042Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -989,15 +989,15 @@
   "stickers": [
     {
       "id": "s1789126170577_0",
-      "x": 267.6666259765625,
+      "x": 268,
       "y": 344.4413318013035,
       "w": 383.5386830411216,
       "h": 168.72305404308224,
       "c": 0,
-      "t": "- r.pr.t.a.t.snts.&cln.dvs.\n- pr.&b.mlk.",
+      "t": "",
       "ink": [],
       "fx": 0.21702,
-      "rh": "- r.pr.t.a.t.snts.&amp;cln.dvs.<div>- pr.&amp;b.mlk.</div>",
+      "rh": "<br>",
       "name": "time off"
     }
   ],
@@ -1045,7 +1045,7 @@
     {
       "id": "tdmubenha31",
       "t": "Launch: MRM_40 checking the sources",
-      "done": false,
+      "done": true,
       "fs": 2,
       "b": true
     },
@@ -1073,7 +1073,7 @@
     {
       "id": "tdmubepann5",
       "t": "⚡ Complete: MRM_40",
-      "done": false,
+      "done": true,
       "fs": 3,
       "b": true
     },
@@ -1309,6 +1309,20 @@
       "k": "today",
       "ahead": false,
       "at": "2026-09-21T15:34:43.763Z"
+    },
+    {
+      "id": "tdmubepann5",
+      "t": "⚡ Complete: MRM_40",
+      "k": "today",
+      "ahead": false,
+      "at": "2026-09-22T15:19:50.829Z"
+    },
+    {
+      "id": "tdmubenha31",
+      "t": "Launch: MRM_40 checking the sources",
+      "k": "today",
+      "ahead": false,
+      "at": "2026-09-22T15:19:52.840Z"
     }
   ],
   "plDay": "2026-09-22",
@@ -2521,15 +2535,15 @@
         "stickers": [
           {
             "id": "s1789126170577_0",
-            "x": 267.6666259765625,
+            "x": 268,
             "y": 344.4413318013035,
             "w": 383.5386830411216,
             "h": 168.72305404308224,
             "c": 0,
-            "t": "- r.pr.t.a.t.snts.&cln.dvs.\n- pr.&b.mlk.",
+            "t": "",
             "ink": [],
             "fx": 0.21702,
-            "rh": "- r.pr.t.a.t.snts.&amp;cln.dvs.<div>- pr.&amp;b.mlk.</div>",
+            "rh": "<br>",
             "name": "time off"
           }
         ],
@@ -2577,7 +2591,7 @@
           {
             "id": "tdmubenha31",
             "t": "Launch: MRM_40 checking the sources",
-            "done": false,
+            "done": true,
             "fs": 2,
             "b": true
           },
@@ -2605,7 +2619,7 @@
           {
             "id": "tdmubepann5",
             "t": "⚡ Complete: MRM_40",
-            "done": false,
+            "done": true,
             "fs": 3,
             "b": true
           },
@@ -2841,6 +2855,20 @@
             "k": "today",
             "ahead": false,
             "at": "2026-09-21T15:34:43.763Z"
+          },
+          {
+            "id": "tdmubepann5",
+            "t": "⚡ Complete: MRM_40",
+            "k": "today",
+            "ahead": false,
+            "at": "2026-09-22T15:19:50.829Z"
+          },
+          {
+            "id": "tdmubenha31",
+            "t": "Launch: MRM_40 checking the sources",
+            "k": "today",
+            "ahead": false,
+            "at": "2026-09-22T15:19:52.840Z"
           }
         ],
         "plDay": "2026-09-22",
