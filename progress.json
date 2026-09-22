@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-22T05:59:21.115Z",
+  "savedAt": "2026-09-22T06:02:07.356Z",
   "trash": [],
   "spot": {
     "ct19": true,
@@ -1033,31 +1033,48 @@
     {
       "id": "tdmubenha31",
       "t": "Launch: MRM_40 checking the sources",
-      "done": false
+      "done": false,
+      "fs": 2,
+      "b": true
     },
     {
       "id": "tdmubeohvl2",
       "t": "Review partially: Part 2.3",
-      "done": false
+      "done": false,
+      "fs": 1,
+      "b": true
     },
     {
       "id": "tdmubeol4e3",
       "t": "Review partially: Part 3.2",
-      "done": false
+      "done": false,
+      "fs": 1,
+      "b": true
     },
     {
       "id": "tdmubeopir4",
       "t": "Review partially: Part 4.1",
-      "done": false
+      "done": false,
+      "fs": 1,
+      "b": true
     },
     {
       "id": "tdmubepann5",
-      "t": "Complete: MRM_40",
-      "done": false
+      "t": "⚡ Complete: MRM_40",
+      "done": false,
+      "fs": 3,
+      "b": true
     },
     {
       "id": "tdmubeppex6",
-      "t": "Include: MRM_40 into MRG_64",
+      "t": "⚡ Include: MRM_40 into MRG_64",
+      "done": false,
+      "fs": 3,
+      "b": true
+    },
+    {
+      "id": "tdmuc9nw441",
+      "t": "schedule further steps with part 2.3, part 3.2, part 4.1",
       "done": false
     }
   ],
@@ -1345,7 +1362,7 @@
     {
       "id": "prmu59k78m1",
       "a": "Complete: MRM_40",
-      "b": "total planning and working",
+      "b": "Check MRG_64",
       "done": false,
       "bd": false,
       "at": "",
@@ -2528,31 +2545,48 @@
           {
             "id": "tdmubenha31",
             "t": "Launch: MRM_40 checking the sources",
-            "done": false
+            "done": false,
+            "fs": 2,
+            "b": true
           },
           {
             "id": "tdmubeohvl2",
             "t": "Review partially: Part 2.3",
-            "done": false
+            "done": false,
+            "fs": 1,
+            "b": true
           },
           {
             "id": "tdmubeol4e3",
             "t": "Review partially: Part 3.2",
-            "done": false
+            "done": false,
+            "fs": 1,
+            "b": true
           },
           {
             "id": "tdmubeopir4",
             "t": "Review partially: Part 4.1",
-            "done": false
+            "done": false,
+            "fs": 1,
+            "b": true
           },
           {
             "id": "tdmubepann5",
-            "t": "Complete: MRM_40",
-            "done": false
+            "t": "⚡ Complete: MRM_40",
+            "done": false,
+            "fs": 3,
+            "b": true
           },
           {
             "id": "tdmubeppex6",
-            "t": "Include: MRM_40 into MRG_64",
+            "t": "⚡ Include: MRM_40 into MRG_64",
+            "done": false,
+            "fs": 3,
+            "b": true
+          },
+          {
+            "id": "tdmuc9nw441",
+            "t": "schedule further steps with part 2.3, part 3.2, part 4.1",
             "done": false
           }
         ],
@@ -2840,7 +2874,7 @@
           {
             "id": "prmu59k78m1",
             "a": "Complete: MRM_40",
-            "b": "total planning and working",
+            "b": "Check MRG_64",
             "done": false,
             "bd": false,
             "at": "",
