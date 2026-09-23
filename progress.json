@@ -1,10 +1,29 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-23T10:17:40.285Z",
+  "savedAt": "2026-09-23T10:18:14.045Z",
   "trash": [],
-  "spot": {},
-  "spotLow": {},
+  "spot": {
+    "par": true,
+    "done": true,
+    "launch": true,
+    "timeline": true,
+    "ct11": true,
+    "ct09": true,
+    "st:s1789126170577_0": true,
+    "ct21": true,
+    "week": true,
+    "tasks": true,
+    "pc_1790090308944_0": true,
+    "ct25": true,
+    "ct20": true,
+    "today": true
+  },
+  "spotLow": {
+    "ct20": true,
+    "ct09": true,
+    "ct25": true
+  },
   "spans": {
     "ct08": {
       "from": "2026-09-02",
@@ -1599,8 +1618,27 @@
     "states": {
       "cmr": {
         "trash": [],
-        "spot": {},
-        "spotLow": {},
+        "spot": {
+          "par": true,
+          "done": true,
+          "launch": true,
+          "timeline": true,
+          "ct11": true,
+          "ct09": true,
+          "st:s1789126170577_0": true,
+          "ct21": true,
+          "week": true,
+          "tasks": true,
+          "pc_1790090308944_0": true,
+          "ct25": true,
+          "ct20": true,
+          "today": true
+        },
+        "spotLow": {
+          "ct20": true,
+          "ct09": true,
+          "ct25": true
+        },
         "spans": {
           "ct08": {
             "from": "2026-09-02",
