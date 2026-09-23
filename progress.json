@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-23T10:18:14.045Z",
+  "savedAt": "2026-09-23T10:18:48.065Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1441,7 +1441,7 @@
       "a": "⚡ Check briefly : MRG_65 especially MRM_included",
       "b": "⚡ Complete : Axiology method",
       "done": false,
-      "ad": false,
+      "ad": true,
       "bd": false,
       "at": ""
     }
@@ -3056,7 +3056,7 @@
             "a": "⚡ Check briefly : MRG_65 especially MRM_included",
             "b": "⚡ Complete : Axiology method",
             "done": false,
-            "ad": false,
+            "ad": true,
             "bd": false,
             "at": ""
           }
