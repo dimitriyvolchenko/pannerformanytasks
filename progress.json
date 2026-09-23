@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-23T06:21:28.816Z",
+  "savedAt": "2026-09-23T06:23:01.244Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1449,6 +1449,11 @@
       "t": "prepare a complete pack of the sc. (remake it in word format) : launch it on the tablet",
       "done": false,
       "fs": 1
+    },
+    {
+      "id": "tkmudpuzvq7",
+      "t": "prepare the document for Victoria Vladimirovna (details in the Description - Todoist)",
+      "done": false
     }
   ],
   "tasksNext": [],
@@ -3041,6 +3046,11 @@
             "t": "prepare a complete pack of the sc. (remake it in word format) : launch it on the tablet",
             "done": false,
             "fs": 1
+          },
+          {
+            "id": "tkmudpuzvq7",
+            "t": "prepare the document for Victoria Vladimirovna (details in the Description - Todoist)",
+            "done": false
           }
         ],
         "tasksNext": [],
