@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-23T16:28:00.488Z",
+  "savedAt": "2026-09-23T16:28:12.928Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1368,6 +1368,20 @@
       "k": "tasks",
       "ahead": false,
       "at": "2026-09-23T16:14:47.423Z"
+    },
+    {
+      "id": "tkmudpn57d6",
+      "t": "prepare a complete pack of the sc. (remake it in word format) : launch it on the tablet",
+      "k": "tasks",
+      "ahead": false,
+      "at": "2026-09-23T16:28:00.659Z"
+    },
+    {
+      "id": "tkmudpkccp4",
+      "t": "diagnostics for Thursday",
+      "k": "tasks",
+      "ahead": false,
+      "at": "2026-09-23T16:28:06.927Z"
     }
   ],
   "plDay": "2026-09-23",
@@ -1460,7 +1474,7 @@
     {
       "id": "tkmudpkccp4",
       "t": "diagnostics for Thursday",
-      "done": false,
+      "done": true,
       "fs": 1
     },
     {
@@ -1472,7 +1486,7 @@
     {
       "id": "tkmudpn57d6",
       "t": "prepare a complete pack of the sc. (remake it in word format) : launch it on the tablet",
-      "done": false,
+      "done": true,
       "fs": 1
     },
     {
@@ -2990,6 +3004,20 @@
             "k": "tasks",
             "ahead": false,
             "at": "2026-09-23T16:14:47.423Z"
+          },
+          {
+            "id": "tkmudpn57d6",
+            "t": "prepare a complete pack of the sc. (remake it in word format) : launch it on the tablet",
+            "k": "tasks",
+            "ahead": false,
+            "at": "2026-09-23T16:28:00.659Z"
+          },
+          {
+            "id": "tkmudpkccp4",
+            "t": "diagnostics for Thursday",
+            "k": "tasks",
+            "ahead": false,
+            "at": "2026-09-23T16:28:06.927Z"
           }
         ],
         "plDay": "2026-09-23",
@@ -3082,7 +3110,7 @@
           {
             "id": "tkmudpkccp4",
             "t": "diagnostics for Thursday",
-            "done": false,
+            "done": true,
             "fs": 1
           },
           {
@@ -3094,7 +3122,7 @@
           {
             "id": "tkmudpn57d6",
             "t": "prepare a complete pack of the sc. (remake it in word format) : launch it on the tablet",
-            "done": false,
+            "done": true,
             "fs": 1
           },
           {
