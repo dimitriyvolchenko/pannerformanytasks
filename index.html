@@ -748,11 +748,11 @@
   #megaOv .mgrest{display:flex; flex-wrap:wrap; gap:22px; align-items:flex-start}
   #megaOv .mgrest > *{flex:1 1 340px; min-width:0}
   #megaOv .mgcols{display:flex; gap:22px; align-items:flex-start}
-  #megaOv .mgl,#megaOv .mgr{display:flex; flex-direction:column; gap:22px; min-width:0; flex:1 1 0}
+  #megaOv .mgl,#megaOv .mgr,#megaOv .mgt{display:flex; flex-direction:column; gap:22px; min-width:0; flex:1 1 0}
   #megaOv .mgtop:empty,#megaOv .mgprojs:empty,#megaOv .mgrest:empty,
-  #megaOv .mgcols:empty,#megaOv .mgl:empty,#megaOv .mgr:empty{display:none}
-  #megaOv .mgcols:has(.mgl:empty) .mgr,#megaOv .mgcols:has(.mgr:empty) .mgl{flex:1 1 100%}
-  @media (max-width:900px){ #megaOv .mgcols{flex-direction:column} }
+  #megaOv .mgl:empty,#megaOv .mgr:empty,#megaOv .mgt:empty{display:none}
+  #megaOv .mgcols:not(:has(.megaitem)){display:none}
+  @media (max-width:760px){ #megaOv .mgcols{flex-direction:column; align-items:stretch} #megaOv .mgl,#megaOv .mgr,#megaOv .mgt{flex:0 0 auto; width:100%} }
   #megaBar{position:fixed; top:0; left:0; right:0; z-index:3; display:flex; align-items:center;
     gap:12px; padding:12px 18px; background:var(--glass2,rgba(255,255,255,.92));
     border-bottom:1px solid var(--line); backdrop-filter:blur(8px)}
@@ -2612,7 +2612,7 @@ body.megaon{overflow:hidden; overscroll-behavior:none}
   <div class="dkhint">Sets how deep the dark theme goes. The light theme is not touched.</div>
 </div>
 <div id="pinkMenu"><div class="rlab2">Strip colour</div><div class="pswatch" id="pinkSw"></div><button class="mrow" id="pinkPick">Pick the colour off the strip</button><button class="mrow" id="pinkAuto">Match the strip automatically</button><div class="phex"><input type="text" id="pinkHex" placeholder="#FF2D78" maxlength="7" spellcheck="false"><button id="pinkHexOk">set</button></div></div>
-<div id="megaOv"><div id="megaBar"><b>Mega focus</b><button id="megaOut">back to the page</button></div><div class="mgin" id="megaIn"><div class="mgtop" id="mgTop"></div><div class="mgprojs" id="mgProjs"></div><div class="mgcols" id="mgCols"><div class="mgl" id="mgL"></div><div class="mgr" id="mgR"></div></div><div class="mgrest" id="mgRest"></div></div></div>
+<div id="megaOv"><div id="megaBar"><b>Mega focus</b><button id="megaOut">back to the page</button></div><div class="mgin" id="megaIn"><div class="mgtop" id="mgTop"></div><div class="mgcols" id="mgCols"><div class="mgl" id="mgL"></div><div class="mgr" id="mgR"></div><div class="mgt" id="mgT"></div></div><div class="mgprojs" id="mgProjs"></div><div class="mgrest" id="mgRest"></div></div></div>
 <div class="overlay" id="lnOverlay">
   <div class="modal narrow">
     <header><h2>Launched</h2><span class="spacer"></span><span class="signstate" id="lnHead"></span></header>
@@ -8233,7 +8233,7 @@ function megaPieces(){
      they are named in is the order they fly in */
   /* the notes are not on this list on purpose: a note that is lit stays a note,
      floating where it was pinned, instead of being flattened into a box */
-  [".proj.spot", "#parBox.spot", "#todayBox.spot", "#tasksBox.spot", "#totalBox.spot", "#launchBox.spot",
+  ["#totalBox.spot", "#parBox.spot", "#todayBox.spot", "#tasksBox.spot", ".proj.spot", "#launchBox.spot",
    ".today.spot", ".total.spot"].forEach(function(sel){
     document.querySelectorAll(sel).forEach(function(e){
       if(out.indexOf(e)<0) out.push(e);
@@ -8246,18 +8246,20 @@ function megaPieces(){
    on stand side by side: the pair on the left, the day on the right. The counter
    and the launch pad share the row below them. */
 function megaSeat(el){
-  if(el.classList.contains("proj")) return {host:"mgProjs", fx:0, fy:-26};
-  if(el.id==="parBox")    return {host:"mgL",    fx:-52, fy:-10};
-  if(el.id==="todayBox")  return {host:"mgR",    fx:52,  fy:-10};
-  if(el.id==="tasksBox")  return {host:"mgRest", fx:0,   fy:24};
-  if(el.id==="totalBox")  return {host:"mgRest", fx:-40, fy:22};
-  if(el.id==="launchBox") return {host:"mgRest", fx:40,  fy:26};
-  if(el.classList.contains("today")) return {host:"mgR", fx:52, fy:16};
+  /* Completed stands highest of all; under it the three lists side by side -
+     Parallels, Priority for today, Tasks; then the stages; the launch pad last */
+  if(el.id==="totalBox")  return {host:"mgTop",   fx:0,   fy:-30};
+  if(el.id==="parBox")    return {host:"mgL",     fx:-52, fy:-10};
+  if(el.id==="todayBox")  return {host:"mgR",     fx:0,   fy:-28};
+  if(el.id==="tasksBox")  return {host:"mgT",     fx:52,  fy:-10};
+  if(el.classList.contains("proj")) return {host:"mgProjs", fx:0, fy:26};
+  if(el.id==="launchBox") return {host:"mgRest",  fx:0,   fy:34};
+  if(el.classList.contains("today")) return {host:"mgRest", fx:40, fy:26};
   return {host:"mgRest", fx:0, fy:26};
 }
 function megaStage(){
   var els=megaPieces();
-  ["mgTop","mgProjs","mgL","mgR","mgRest"].forEach(function(k){
+  ["mgTop","mgProjs","mgL","mgR","mgT","mgRest"].forEach(function(k){
     var h=document.getElementById(k); if(h) h.innerHTML="";
   });
   megaSaved=[];
