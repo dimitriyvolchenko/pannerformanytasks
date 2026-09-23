@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-23T06:23:01.244Z",
+  "savedAt": "2026-09-23T07:18:24.976Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1007,14 +1007,14 @@
   "stickers": [
     {
       "id": "s1789126170577_0",
-      "x": 21,
-      "y": 268.4413318013035,
+      "x": 697.6666259765625,
+      "y": 459.5524768208347,
       "w": 383.5386830411216,
       "h": 168.72305404308224,
       "c": 0,
       "t": "-pr.t.all.t.snts&pr.cfe.\n-pr&sp&mem&med.\n",
       "ink": [],
-      "fx": 0.49404,
+      "fx": 0.42014,
       "rh": "-pr.t.all.t.snts&amp;pr.cfe.<div>-pr&amp;sp&amp;mem&amp;med.</div><div><br></div>",
       "name": "time off"
     }
@@ -1027,18 +1027,20 @@
   "rich": {},
   "signs": {
     "t": {
-      "t": "forensic",
+      "t": "overall",
       "c": "#D6D2C6",
-      "s": 64,
+      "s": 90,
       "auto": true,
-      "dim": 60
+      "dim": 60,
+      "hidden": false
     },
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 22,
+      "s": 83,
       "auto": true,
-      "dim": 100
+      "dim": 100,
+      "hidden": false
     },
     "r": {
       "t": "forensic",
@@ -1049,7 +1051,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": false,
+  "hideLnkAll": true,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1076,6 +1078,13 @@
       "t": "⚡ Review : animal cruelty",
       "done": false,
       "fs": 2,
+      "b": true
+    },
+    {
+      "id": "tdmudru74w1",
+      "t": "⚡ Review : until the Table : the Objective system of the Traditional values",
+      "done": false,
+      "fs": 1,
       "b": true
     }
   ],
@@ -1411,10 +1420,10 @@
     }
   },
   "stickBtn": {
-    "x": -94,
-    "y": 529
+    "x": 1986,
+    "y": 787
   },
-  "stickBtnHidden": false,
+  "stickBtnHidden": true,
   "stickersHidden": false,
   "bink": [],
   "pairs": [
@@ -1461,12 +1470,12 @@
   "instrOpen": false,
   "korean": false,
   "logo": "wok",
-  "theme": "dark",
+  "theme": "light",
   "pinkBar": false,
   "pinkColor": "",
-  "heroZoom": 1,
-  "heroFree": false,
-  "darkness": 50,
+  "heroZoom": 0.95,
+  "heroFree": true,
+  "darkness": 45,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -2604,14 +2613,14 @@
         "stickers": [
           {
             "id": "s1789126170577_0",
-            "x": 21,
-            "y": 268.4413318013035,
+            "x": 697.6666259765625,
+            "y": 459.5524768208347,
             "w": 383.5386830411216,
             "h": 168.72305404308224,
             "c": 0,
             "t": "-pr.t.all.t.snts&pr.cfe.\n-pr&sp&mem&med.\n",
             "ink": [],
-            "fx": 0.49404,
+            "fx": 0.42014,
             "rh": "-pr.t.all.t.snts&amp;pr.cfe.<div>-pr&amp;sp&amp;mem&amp;med.</div><div><br></div>",
             "name": "time off"
           }
@@ -2624,18 +2633,20 @@
         "rich": {},
         "signs": {
           "t": {
-            "t": "forensic",
+            "t": "overall",
             "c": "#D6D2C6",
-            "s": 64,
+            "s": 90,
             "auto": true,
-            "dim": 60
+            "dim": 60,
+            "hidden": false
           },
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 22,
+            "s": 83,
             "auto": true,
-            "dim": 100
+            "dim": 100,
+            "hidden": false
           },
           "r": {
             "t": "forensic",
@@ -2646,7 +2657,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": false,
+        "hideLnkAll": true,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -2673,6 +2684,13 @@
             "t": "⚡ Review : animal cruelty",
             "done": false,
             "fs": 2,
+            "b": true
+          },
+          {
+            "id": "tdmudru74w1",
+            "t": "⚡ Review : until the Table : the Objective system of the Traditional values",
+            "done": false,
+            "fs": 1,
             "b": true
           }
         ],
@@ -3008,10 +3026,10 @@
           }
         },
         "stickBtn": {
-          "x": -94,
-          "y": 529
+          "x": 1986,
+          "y": 787
         },
-        "stickBtnHidden": false,
+        "stickBtnHidden": true,
         "stickersHidden": false,
         "bink": [],
         "pairs": [
@@ -3058,12 +3076,12 @@
         "instrOpen": false,
         "korean": false,
         "logo": "wok",
-        "theme": "dark",
+        "theme": "light",
         "pinkBar": false,
         "pinkColor": "",
-        "heroZoom": 1,
-        "heroFree": false,
-        "darkness": 50,
+        "heroZoom": 0.95,
+        "heroFree": true,
+        "darkness": 45,
         "boldAll": false,
         "inproc": {},
         "ie": true,
@@ -3765,6 +3783,6 @@
       }
     }
   },
-  "device": "iPhone",
+  "device": "Computer",
   "lead": "iPhone"
 }
