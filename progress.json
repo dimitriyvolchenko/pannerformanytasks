@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-23T07:44:51.255Z",
+  "savedAt": "2026-09-23T07:45:06.146Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1479,7 +1479,7 @@
   "theme": "light",
   "pinkBar": false,
   "pinkColor": "",
-  "heroZoom": 0.95,
+  "heroZoom": 1,
   "heroFree": true,
   "darkness": 45,
   "boldAll": false,
@@ -3091,7 +3091,7 @@
         "theme": "light",
         "pinkBar": false,
         "pinkColor": "",
-        "heroZoom": 0.95,
+        "heroZoom": 1,
         "heroFree": true,
         "darkness": 45,
         "boldAll": false,
