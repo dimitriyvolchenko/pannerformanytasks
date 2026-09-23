@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-23T13:45:15.375Z",
+  "savedAt": "2026-09-23T13:49:20.489Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1007,15 +1007,15 @@
   "stickers": [
     {
       "id": "s1789126170577_0",
-      "x": 894.77783203125,
+      "x": 887,
       "y": 101.77467530716285,
       "w": 383.5386830411216,
       "h": 168.72305404308224,
       "c": 0,
-      "t": "-pr.t.all.t.snts&pr.cfe.\n-pr&sp&mem&med.\n",
+      "t": "\n\n",
       "ink": [],
       "fx": 0.5094,
-      "rh": "-pr.t.all.t.snts&amp;pr.cfe.<div>-pr&amp;sp&amp;mem&amp;med.</div><div><br></div>",
+      "rh": "<br><div><br></div>",
       "name": "time off"
     }
   ],
@@ -2622,15 +2622,15 @@
         "stickers": [
           {
             "id": "s1789126170577_0",
-            "x": 894.77783203125,
+            "x": 887,
             "y": 101.77467530716285,
             "w": 383.5386830411216,
             "h": 168.72305404308224,
             "c": 0,
-            "t": "-pr.t.all.t.snts&pr.cfe.\n-pr&sp&mem&med.\n",
+            "t": "\n\n",
             "ink": [],
             "fx": 0.5094,
-            "rh": "-pr.t.all.t.snts&amp;pr.cfe.<div>-pr&amp;sp&amp;mem&amp;med.</div><div><br></div>",
+            "rh": "<br><div><br></div>",
             "name": "time off"
           }
         ],
