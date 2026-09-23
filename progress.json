@@ -1,29 +1,10 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-23T10:16:39.356Z",
+  "savedAt": "2026-09-23T10:17:13.307Z",
   "trash": [],
-  "spot": {
-    "par": true,
-    "done": true,
-    "launch": true,
-    "timeline": true,
-    "ct11": true,
-    "ct09": true,
-    "st:s1789126170577_0": true,
-    "ct21": true,
-    "week": true,
-    "tasks": true,
-    "pc_1790090308944_0": true,
-    "ct25": true,
-    "ct20": true,
-    "today": true
-  },
-  "spotLow": {
-    "ct20": true,
-    "ct09": true,
-    "ct25": true
-  },
+  "spot": {},
+  "spotLow": {},
   "spans": {
     "ct08": {
       "from": "2026-09-02",
@@ -1367,22 +1348,25 @@
   "plWeek": "2026-09-21",
   "spotSave": {
     "spot": {
-      "ct19": true,
       "par": true,
       "done": true,
       "launch": true,
-      "today": true,
       "timeline": true,
       "ct11": true,
       "ct09": true,
       "st:s1789126170577_0": true,
       "ct21": true,
       "week": true,
-      "tasks": true
+      "tasks": true,
+      "pc_1790090308944_0": true,
+      "ct25": true,
+      "ct20": true,
+      "today": true
     },
     "low": {
-      "ct21": true,
-      "ct09": true
+      "ct20": true,
+      "ct09": true,
+      "ct25": true
     }
   },
   "starts": {
@@ -1615,27 +1599,8 @@
     "states": {
       "cmr": {
         "trash": [],
-        "spot": {
-          "par": true,
-          "done": true,
-          "launch": true,
-          "timeline": true,
-          "ct11": true,
-          "ct09": true,
-          "st:s1789126170577_0": true,
-          "ct21": true,
-          "week": true,
-          "tasks": true,
-          "pc_1790090308944_0": true,
-          "ct25": true,
-          "ct20": true,
-          "today": true
-        },
-        "spotLow": {
-          "ct20": true,
-          "ct09": true,
-          "ct25": true
-        },
+        "spot": {},
+        "spotLow": {},
         "spans": {
           "ct08": {
             "from": "2026-09-02",
@@ -2979,22 +2944,25 @@
         "plWeek": "2026-09-21",
         "spotSave": {
           "spot": {
-            "ct19": true,
             "par": true,
             "done": true,
             "launch": true,
-            "today": true,
             "timeline": true,
             "ct11": true,
             "ct09": true,
             "st:s1789126170577_0": true,
             "ct21": true,
             "week": true,
-            "tasks": true
+            "tasks": true,
+            "pc_1790090308944_0": true,
+            "ct25": true,
+            "ct20": true,
+            "today": true
           },
           "low": {
-            "ct21": true,
-            "ct09": true
+            "ct20": true,
+            "ct09": true,
+            "ct25": true
           }
         },
         "starts": {
