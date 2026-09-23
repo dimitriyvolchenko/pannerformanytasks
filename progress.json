@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-23T16:28:12.928Z",
+  "savedAt": "2026-09-23T16:28:47.456Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1062,7 +1062,7 @@
     {
       "id": "tdmudpdzwu1",
       "t": "⚡ Check briefly : MRG_65 especially MRM_included",
-      "done": false,
+      "done": true,
       "fs": 2,
       "b": true
     },
@@ -1382,6 +1382,13 @@
       "k": "tasks",
       "ahead": false,
       "at": "2026-09-23T16:28:06.927Z"
+    },
+    {
+      "id": "tdmudpdzwu1",
+      "t": "⚡ Check briefly : MRG_65 especially MRM_included",
+      "k": "today",
+      "ahead": false,
+      "at": "2026-09-23T16:28:13.468Z"
     }
   ],
   "plDay": "2026-09-23",
@@ -1492,6 +1499,16 @@
     {
       "id": "tkmudpuzvq7",
       "t": "prepare the document for Victoria Vladimirovna (details in the Description - Todoist)",
+      "done": false
+    },
+    {
+      "id": "tkmuebhubw1",
+      "t": "diagnostics for Friday",
+      "done": false
+    },
+    {
+      "id": "tkmuebhze62",
+      "t": "launch v.editing today",
       "done": false
     }
   ],
@@ -2698,7 +2715,7 @@
           {
             "id": "tdmudpdzwu1",
             "t": "⚡ Check briefly : MRG_65 especially MRM_included",
-            "done": false,
+            "done": true,
             "fs": 2,
             "b": true
           },
@@ -3018,6 +3035,13 @@
             "k": "tasks",
             "ahead": false,
             "at": "2026-09-23T16:28:06.927Z"
+          },
+          {
+            "id": "tdmudpdzwu1",
+            "t": "⚡ Check briefly : MRG_65 especially MRM_included",
+            "k": "today",
+            "ahead": false,
+            "at": "2026-09-23T16:28:13.468Z"
           }
         ],
         "plDay": "2026-09-23",
@@ -3128,6 +3152,16 @@
           {
             "id": "tkmudpuzvq7",
             "t": "prepare the document for Victoria Vladimirovna (details in the Description - Todoist)",
+            "done": false
+          },
+          {
+            "id": "tkmuebhubw1",
+            "t": "diagnostics for Friday",
+            "done": false
+          },
+          {
+            "id": "tkmuebhze62",
+            "t": "launch v.editing today",
             "done": false
           }
         ],
