@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-23T07:18:24.976Z",
+  "savedAt": "2026-09-23T07:44:36.470Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -221,7 +221,7 @@
     "ct25": true,
     "ct26": true,
     "ct27": true,
-    "pc_1790090308944_0": true
+    "pc_1790090308944_0": false
   },
   "custom": {
     "ct01": [
@@ -1086,6 +1086,11 @@
       "done": false,
       "fs": 1,
       "b": true
+    },
+    {
+      "id": "tdmudsrx6f1",
+      "t": "launch and schedule partial checking of links for MRM",
+      "done": false
     }
   ],
   "week": [
@@ -1404,7 +1409,8 @@
     "ct18": "2026-09-21T15:31:28.812Z",
     "ct26": "2026-09-21T15:31:40.907Z",
     "ct11": "2026-09-21T15:31:42.860Z",
-    "ct20": "2026-09-23T06:08:22.995Z"
+    "ct20": "2026-09-23T06:08:22.995Z",
+    "pc_1790090308944_0": "2026-09-23T07:18:36.430Z"
   },
   "launchBox": true,
   "saveName": "",
@@ -1827,7 +1833,7 @@
           "ct25": true,
           "ct26": true,
           "ct27": true,
-          "pc_1790090308944_0": true
+          "pc_1790090308944_0": false
         },
         "custom": {
           "ct01": [
@@ -2692,6 +2698,11 @@
             "done": false,
             "fs": 1,
             "b": true
+          },
+          {
+            "id": "tdmudsrx6f1",
+            "t": "launch and schedule partial checking of links for MRM",
+            "done": false
           }
         ],
         "week": [
@@ -3010,7 +3021,8 @@
           "ct18": "2026-09-21T15:31:28.812Z",
           "ct26": "2026-09-21T15:31:40.907Z",
           "ct11": "2026-09-21T15:31:42.860Z",
-          "ct20": "2026-09-23T06:08:22.995Z"
+          "ct20": "2026-09-23T06:08:22.995Z",
+          "pc_1790090308944_0": "2026-09-23T07:18:36.430Z"
         },
         "launchBox": true,
         "saveName": "",
