@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-24T08:03:13.603Z",
+  "savedAt": "2026-09-24T08:03:31.774Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1061,9 +1061,9 @@
   "today": [
     {
       "id": "tdmudpff832",
-      "t": "⚡ Complete : Axiology method",
+      "t": "⚡ ⚡ ⚡ Complete : Axiology method",
       "done": false,
-      "fs": 2,
+      "fs": 3,
       "b": true
     },
     {
@@ -2719,9 +2719,9 @@
         "today": [
           {
             "id": "tdmudpff832",
-            "t": "⚡ Complete : Axiology method",
+            "t": "⚡ ⚡ ⚡ Complete : Axiology method",
             "done": false,
-            "fs": 2,
+            "fs": 3,
             "b": true
           },
           {
