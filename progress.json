@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-24T20:02:07.493Z",
+  "savedAt": "2026-09-24T20:02:28.956Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1067,7 +1067,7 @@
     {
       "id": "tdmudpff832",
       "t": "⚡ Complete : Axiology method",
-      "done": false,
+      "done": true,
       "fs": 2,
       "b": true
     },
@@ -1394,6 +1394,13 @@
       "k": "today",
       "ahead": false,
       "at": "2026-09-23T16:28:13.468Z"
+    },
+    {
+      "id": "tdmudpff832",
+      "t": "⚡ Complete : Axiology method",
+      "k": "today",
+      "ahead": false,
+      "at": "2026-09-24T20:02:17.385Z"
     }
   ],
   "plDay": "2026-09-24",
@@ -2725,7 +2732,7 @@
           {
             "id": "tdmudpff832",
             "t": "⚡ Complete : Axiology method",
-            "done": false,
+            "done": true,
             "fs": 2,
             "b": true
           },
@@ -3052,6 +3059,13 @@
             "k": "today",
             "ahead": false,
             "at": "2026-09-23T16:28:13.468Z"
+          },
+          {
+            "id": "tdmudpff832",
+            "t": "⚡ Complete : Axiology method",
+            "k": "today",
+            "ahead": false,
+            "at": "2026-09-24T20:02:17.385Z"
           }
         ],
         "plDay": "2026-09-24",
