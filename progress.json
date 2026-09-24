@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-24T07:22:37.461Z",
+  "savedAt": "2026-09-24T07:24:45.152Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1098,6 +1098,11 @@
       "done": false,
       "fs": 3,
       "b": true
+    },
+    {
+      "id": "tdmuf7i6cj1",
+      "t": "email to Kh,Sh.N",
+      "done": false
     }
   ],
   "week": [
@@ -2758,6 +2763,11 @@
             "done": false,
             "fs": 3,
             "b": true
+          },
+          {
+            "id": "tdmuf7i6cj1",
+            "t": "email to Kh,Sh.N",
+            "done": false
           }
         ],
         "week": [
