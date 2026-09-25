@@ -1442,7 +1442,7 @@
     :root{--timeline-h:114px}
     body{-webkit-text-size-adjust:100%}
     .wrap{padding:12px 12px 20px; max-width:100%}
-    header.top{position:static; border-radius:18px; padding:14px 14px 20px}
+    header.top{position:relative; top:auto; border-radius:18px; padding:14px 14px 20px}
     .bpframe{display:none}
     .hero-row{gap:10px 12px}
     .brand h1{font-size:19px}
@@ -2169,6 +2169,7 @@
 </style>
 
 
+<div id="kBg" aria-hidden="true"><span>學</span><span>麵</span><span>書</span><span>道</span><span>心</span><span>時</span><span>茶</span><span>夢</span></div>
 <div class="bg-layer" id="bgLayer">
   <!-- left: timer, calendar, checkmark - monochrome -->
   <div class="fico s1" data-k="0.05" style="left:6.6%; top:8%"><div class="tile" style="--tilt:-9deg">
@@ -2331,6 +2332,242 @@ body.megaon{overflow:hidden; overscroll-behavior:none}
 #btnInstr.on{background:var(--blue-soft); border-color:#CBDAF0; color:var(--blue-ink)}
 </style>
 
+<style id="v59">
+/* ============================================================
+   v59 - five boxes laid out on a grid, Time off, and a
+   Parallels head that keeps its buttons inside the box
+   ============================================================ */
+
+/* ---- Mission control is a grid now: every box has a named seat ----
+   On a computer the three lists stand in a row with the counter at the
+   right, and the launch pad runs under the lists beside Parallels.
+   On a tablet they go in pairs; on a phone one under another. */
+.hero-row{display:grid; gap:16px 18px; align-items:stretch;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) minmax(250px,300px);
+  grid-template-areas:"tasks today off total" "launch launch launch par"}
+.hero-row .prio-col,.hero-row .hero-right{display:contents}
+#tasksBox{grid-area:tasks} #todayBox{grid-area:today} #timeoffBox{grid-area:off}
+#launchBox{grid-area:launch} #totalBox{grid-area:total} #parBox{grid-area:par}
+.hero-row #tasksBox,.hero-row #todayBox,.hero-row #timeoffBox,.hero-row #launchBox,
+.hero-row #totalBox,.hero-row #parBox{min-width:0; max-width:none; width:auto; margin:0;
+  align-self:stretch}
+@media (max-width:1400px){
+  .hero-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    grid-template-areas:"launch launch" "tasks today" "off total" "par par"}
+}
+@media (max-width:820px){
+  .hero-row{grid-template-columns:minmax(0,1fr); gap:12px;
+    grid-template-areas:"tasks" "today" "off" "launch" "total" "par"}
+}
+
+/* ---- Time off: its own box, the same making as the day list ---- */
+#timeoffBox{--todaybg:var(--offbg,#FDF4EF); --todayline:var(--offline,#F1DED4);
+  --todayhover:var(--offhover,#FBEBE3); --todaydot:var(--offdot,#E5C1B0);
+  display:flex; flex-direction:column; gap:7px; background:var(--todaybg);
+  border:1px solid var(--todayline); border-radius:18px; padding:11px 13px}
+#timeoffBox .th b{color:#C4846B}
+body.dark #timeoffBox{--offbg:#221A17; --offline:#3E2E27; --offhover:#2A201C; --offdot:#6A4E42}
+body.dark #timeoffBox .th b{color:#E8B39D}
+#timeoffBox .tlist{max-height:min(42vh,320px); overflow:auto; scrollbar-width:thin}
+#timeoffBox .titem.done .tdot{background:#E3A58C; border-color:#E3A58C}
+#timeoffBox .tadd input:focus{border-color:#E3A58C}
+#timeoffBox .tadd button{color:#C4846B}
+#timeoffBox .tadd button:hover,#timeoffBox .swbtn:hover,#timeoffBox .plmove:hover{border-color:#E3A58C; color:#C4846B}
+#timeoffBox.ahead .swbtn{background:var(--offhover); border-color:#E3A58C; color:#C4846B}
+
+/* ---- Parallels: the head wraps instead of running out of the box ----
+   The name and the count keep the first line; the three buttons take the
+   second one whenever the box is narrow, and join the name when it is wide. */
+.parbox .th{flex-wrap:wrap; row-gap:7px}
+.parbox .th b{order:0; flex:1 1 calc(100% - 56px); min-width:0}
+.parbox .th .cnt{order:1; margin-left:auto}
+.parbox .th .swbtn{order:2; margin-left:0}
+.parbox .th .swbtn:first-of-type{margin-left:0}
+@container (min-width:430px){
+  .parbox .th b{flex:0 0 auto}
+  .parbox .th .swbtn{order:1}
+  .parbox .th .cnt{order:2}
+}
+.parbox{min-width:0; overflow-wrap:anywhere}
+
+/* ---- mega focus: Completed and Time off share the top line ---- */
+#megaOv .mgtop{display:flex; flex-direction:row; gap:22px; align-items:stretch}
+#megaOv .mgtopl{flex:3 1 0; min-width:0; display:flex; flex-direction:column}
+#megaOv .mgtopr{flex:2 1 0; min-width:0; display:flex; flex-direction:column}
+#megaOv .mgtopl > .megaitem,#megaOv .mgtopr > .megaitem{flex:1 1 auto !important}
+#megaOv .mgtopl:empty,#megaOv .mgtopr:empty{display:none}
+#megaOv .mgtop:not(:has(.megaitem)){display:none}
+@media (max-width:760px){ #megaOv .mgtop{flex-direction:column} }
+</style>
+
+<style id="v59k">
+/* ============================================================
+   THE NOODLE HOUSE, v59: pale paper everywhere, the colour kept
+   for Mission control.
+   Made after the study-noodle-house app: a bleached cream ground
+   with large hanja pressed faintly into it, cream tiles with a
+   thick sky-blue rim and a darker blue step under them, heavy
+   dark lettering. The yellow card with the red squares along its
+   foot is Mission control alone, and the counter inside it wears
+   the red band of an order slip.
+   ============================================================ */
+body.korean:not(.dark){
+  --bg:#F5EDDD; --card:#FCF7EC; --line:#E8DCC5; --line2:#D5C6AB;
+  --ink:#231A16; --ink-dim:#6E645B; --ink-faint:#9E9387;
+  --ksky:#93BCCB; --kskyd:#6C9CAF; --kyel:#F6C51B; --kred:#D9342B; --kred2:#C22C24; --edge:#231A16;
+  --kgreen:#2F8F4E; --kpaper2:#FFF6E6;
+  --todaybg:#FFF9EF; --todayline:#EADFC9; --todayhover:#FBF1DF; --todaydot:#CFC1A6;
+  --parbg:#FFF9EF; --parline:#EADFC9; --parhover:#FBF1DF; --parink:#C22C24;
+  --blue-soft:#E6F1F5; --hover:#F8F0E2; --sunk:#F6EEDF; --glass:#FCF7EC; --glass2:#FCF7EC; --glass3:#FCF7EC;
+}
+body.korean{--kfont:"Avenir Next","Avenir","Nunito","Arial Rounded MT Bold","Arial Black",-apple-system,"Segoe UI",sans-serif}
+body.korean .bg-layer{display:none}
+
+/* the characters in the paper */
+#kBg{display:none}
+body.korean #kBg{display:block; position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden}
+#kBg span{position:absolute; line-height:.9; font-weight:900; color:rgba(120,92,52,.075);
+  font-family:"Hiragino Mincho ProN","Noto Serif CJK KR","Noto Serif CJK JP","Apple SD Gothic Neo","Yu Mincho","Songti SC",serif;
+  font-size:clamp(170px,30vmin,380px); user-select:none}
+#kBg span:nth-child(1){left:-3vw;  top:4vh;  transform:rotate(-8deg)}
+#kBg span:nth-child(2){left:38vw;  top:-6vh; transform:rotate(6deg)}
+#kBg span:nth-child(3){right:-4vw; top:10vh; transform:rotate(-4deg)}
+#kBg span:nth-child(4){left:14vw;  top:38vh; transform:rotate(9deg)}
+#kBg span:nth-child(5){right:12vw; top:44vh; transform:rotate(-10deg)}
+#kBg span:nth-child(6){left:-5vw;  top:70vh; transform:rotate(5deg)}
+#kBg span:nth-child(7){left:42vw;  top:74vh; transform:rotate(-6deg)}
+#kBg span:nth-child(8){right:-2vw; top:78vh; transform:rotate(8deg)}
+body.korean.dark #kBg span{color:rgba(255,236,200,.045)}
+
+/* ---- Mission control: the one yellow card, with the red squares at its foot ---- */
+body.korean header.top{background:var(--kyel) !important; border:3.5px solid var(--edge); border-radius:30px;
+  box-shadow:0 7px 0 var(--edge); padding:24px 22px 44px}
+body.korean header.top::after{content:""; position:absolute; top:auto; left:22px; right:22px; bottom:13px; height:14px;
+  border-radius:2px; z-index:1; pointer-events:none;
+  background:repeating-linear-gradient(90deg,var(--kred) 0 16px,transparent 16px 30px)}
+body.korean .toolstrip{border-top:2px dashed rgba(35,26,22,.32); border-bottom:2px dashed rgba(35,26,22,.32)}
+body.korean .topmeta .kicker{color:var(--kred2); font-family:var(--kfont); font-weight:900; letter-spacing:.2em}
+body.korean .topmeta h1{color:var(--kred); font-family:var(--kfont); font-weight:900; letter-spacing:0;
+  text-shadow:1.5px 1.5px 0 var(--edge)}
+body.korean .topmeta .due.big{background:var(--card); color:var(--ink); border:2px solid var(--edge); box-shadow:0 2px 0 var(--edge)}
+body.korean .pill{background:var(--card); border:2px solid var(--edge)}
+body.korean .tab,body.korean .tbadd{background:var(--card); border:2px solid var(--edge); color:var(--ink); box-shadow:0 3px 0 var(--edge)}
+body.korean .tab.on{background:var(--edge); color:var(--kyel)}
+body.korean .tab.on .tbdot{background:var(--kyel)}
+body.korean .tab.on .tbdel,body.korean .tab.on .tbmv{color:var(--kyel)}
+body.korean .lampsw{background:var(--card)}
+body.korean .thsw,body.korean .dknob,body.korean .bsw,body.korean .zoomer{border:2px solid var(--edge); background:var(--card)}
+
+/* the boxes inside it: cream slips with a firm pen line and a step under them */
+body.korean .hero-row .today,body.korean .hero-row .total{background:var(--card) !important;
+  border:3px solid var(--edge) !important; border-radius:22px; box-shadow:0 5px 0 var(--edge) !important}
+body.korean #launchBox{--lnbg:var(--card); --lnline:#EADFC9; --lnhover:#FBF1DF; --lndot:#CFC1A6}
+body.korean #tasksBox{--tkbg:var(--card); --tkline:#EADFC9; --tkhover:#FBF1DF; --tkdot:#CFC1A6}
+body.korean #timeoffBox{--offbg:var(--card); --offline:#EADFC9; --offhover:#FBF1DF; --offdot:#CFC1A6}
+body.korean .hero-row .th b,body.korean #launchBox.today .th b,body.korean #tasksBox .th b,
+body.korean #timeoffBox .th b,body.korean .parbox .th b{color:var(--kred2) !important; font-family:var(--kfont);
+  font-weight:900; letter-spacing:.12em}
+body.korean .hero-row .titem.done .tdot,body.korean #tasksBox .titem.done .tdot,
+body.korean #timeoffBox .titem.done .tdot{background:var(--kgreen) !important; border-color:var(--edge) !important}
+body.korean .hero-row .tadd input{border:2px solid var(--line2); background:var(--kfield,#FFFDF8)}
+body.korean .hero-row .tadd button{border:2px solid var(--edge); color:var(--ink) !important; box-shadow:0 2px 0 var(--edge)}
+/* the counter is the order slip: a red band across its head */
+body.korean #totalBox{background:linear-gradient(var(--kred) 0 46px, var(--card) 46px) !important; padding-top:14px}
+body.korean #totalBox .row1{align-items:flex-end}
+body.korean #totalBox .nums{color:#FFF3DC; font-family:var(--kfont); font-weight:900; letter-spacing:.16em}
+body.korean #totalBox .nums b{color:var(--ink); margin-top:18px; font-size:28px; letter-spacing:-.02em; font-family:var(--kfont)}
+body.korean #totalBox .bigbar{border:2px solid var(--edge); height:12px; background:var(--kbar,#F3E9D3)}
+body.korean #totalBox .bigbar i{background:var(--kgreen)}
+body.korean #totalBox .daysleft{background:var(--kfield,#FFFDF8); border:2px solid var(--line)}
+body.korean .parbox .prow .pcell{background:var(--kfield,#FFFDF8); border:2px solid var(--line2)}
+body.korean .prow .pdotc.on{background:var(--kgreen); border-color:var(--edge)}
+
+/* ---- the stages: cream tiles with the thick sky-blue rim ---- */
+body.korean .proj{background:var(--card); border:5px solid var(--ksky); border-radius:30px;
+  box-shadow:0 7px 0 var(--kskyd)}
+body.korean .proj:hover{box-shadow:0 9px 0 var(--kskyd)}
+body.korean .proj::before{font-size:132px; top:24px; right:20px; opacity:1; color:rgba(120,92,52,.11); line-height:.86}
+body.korean .proj-title{font-family:var(--kfont); font-weight:900; color:var(--ink)}
+body.korean .proj-num{background:var(--kskyd); color:#fff; border:2.5px solid var(--edge); border-radius:12px}
+body.korean .task{background:var(--ktask,#FFFCF5); border:3px solid var(--ksky); border-radius:18px; box-shadow:0 4px 0 var(--kskyd)}
+body.korean .task:hover{background:var(--ktask,#FFFCF5); box-shadow:0 5px 0 var(--kskyd)}
+body.korean .task.sub{border-style:dashed}
+/* the small round buttons of a tile are blue rings, as on the menu */
+body.korean .proj .iconbtn,body.korean .proj .pbtn,body.korean .proj .movebtn,
+body.korean .proj .tomove,body.korean .proj .flipbtn,body.korean .proj .addtask{
+  background:var(--card); color:var(--kskyd); border:2.5px solid var(--kskyd); box-shadow:0 2px 0 var(--kskyd); font-weight:800}
+body.korean .proj .iconbtn:hover,body.korean .proj .pbtn:hover,body.korean .proj .tomove:hover,body.korean .proj .flipbtn:hover{
+  background:var(--blue-soft); color:#4D7F93}
+body.korean .proj .pbtn.on,body.korean .proj .pbtn.spotbtn.on{background:var(--blue-soft); color:#3F6F82; border-color:#4D7F93}
+body.korean .proj .pbtn.on .pdot{background:#4D7F93}
+body.korean .proj .iconbtn.dnum.late{color:#C22C24; border-color:#E0968F; background:#FCEDEA; box-shadow:0 2px 0 #E0968F}
+body.korean .pcheck .ring,body.korean .tcheck .box{border:3px solid var(--kskyd)}
+body.korean .pcheck input:checked + .ring,body.korean .tcheck input:checked + .box{background:var(--kgreen); border-color:var(--edge)}
+body.korean .addproj{border:2.5px dashed var(--kskyd); color:var(--kskyd); background:var(--card)}
+/* the corner buttons and the in-process note float over the tile: the skin's
+   "every child is relative" rule used to pull them into the flow, and on a
+   phone the two corner buttons ended up outside the tile on the left */
+body.korean .proj > .tomove,body.korean .proj > .flipbtn{position:absolute; z-index:4}
+body.korean .proj > .inprocbox{position:absolute; z-index:6}
+body.korean .bp-side,body.korean .stagelist{background:var(--card); border:5px solid var(--ksky); border-radius:30px;
+  box-shadow:0 7px 0 var(--kskyd)}
+body.korean .cbtn{border:2.5px solid var(--kskyd); color:var(--kskyd)}
+body.korean #btnSticker{background:var(--card); border:3px solid var(--ksky); box-shadow:0 4px 0 var(--kskyd)}
+
+/* ---- the bottom board stays pale too ---- */
+body.korean .timeline{background:var(--card) !important; border-top:4px solid var(--ksky); box-shadow:0 -3px 0 rgba(108,156,175,.18)}
+body.korean .tl-fill{background:var(--kgreen)}
+body.korean .tl-track{border:2px solid var(--edge)}
+body.korean #tlHi{border:2px solid var(--kskyd); color:var(--kskyd); box-shadow:0 2px 0 var(--kskyd)}
+body.korean footer.note .btn{background:var(--card)}
+
+/* ---- mega focus: the empty screen is the same pale paper ---- */
+body.korean #megaOv{background:var(--bg)}
+body.korean #megaBar{background:var(--kyel); border-bottom:3px solid var(--edge)}
+body.korean #megaBar > b{color:var(--kred2); font-family:var(--kfont); font-weight:900}
+/* the words on save and take are not the title of the bar - they keep their own look */
+#megaBar .sendbtn b{font-size:13px; letter-spacing:.02em; text-transform:none; margin-right:0;
+  color:inherit !important; font-weight:750; font-family:inherit}
+
+/* ---- the same house at night ---- */
+body.korean.dark{--ksky:#4E8496; --kskyd:#35606F; --kfield:#1F1714; --kbar:#191110; --ktask:#2E231E}
+body.korean.dark .hero-row .th b,body.korean.dark #launchBox.today .th b,body.korean.dark #tasksBox .th b,
+body.korean.dark #timeoffBox .th b,body.korean.dark .parbox .th b{color:var(--kyel3,#FFE27A) !important}
+body.korean.dark #totalBox .nums b{color:var(--ink)}
+body.korean.dark header.top{background:#3A2F17 !important; border-color:#0D0806; box-shadow:0 7px 0 #0D0806}
+body.korean.dark header.top::after{background:repeating-linear-gradient(90deg,#B3261E 0 16px,transparent 16px 30px)}
+body.korean.dark .topmeta h1{color:#FF6A5C; text-shadow:1.5px 1.5px 0 #0D0806}
+body.korean.dark .tab.on{background:var(--kyel); color:#241A16}
+body.korean.dark #megaBar{background:#3A2F17}
+body.korean.dark #totalBox{background:linear-gradient(#8E231C 0 46px, var(--card) 46px) !important}
+body.korean.dark .hero-row .today,body.korean.dark .hero-row .total{box-shadow:0 5px 0 #0D0806 !important}
+
+body.dark .plaunch{background:var(--card); color:var(--ink-dim); border-color:var(--line2)}
+@media (max-width:820px){
+  body.korean header.top{padding:18px 14px 40px; border-radius:24px}
+  body.korean .proj{border-width:4px; border-radius:24px}
+  body.korean .proj::before{font-size:88px; top:30px; right:12px}
+}
+</style>
+
+<style id="v60">
+/* v60 - no + buttons in Mission control: a line goes in with Enter.
+   The buttons stay in the page, out of sight, so nothing that listens to
+   them has to change; the field simply takes the whole width. */
+.tadd > button,#parAdd{display:none !important}
+.tadd{display:flex}
+.tadd input{flex:1 1 auto; width:100%}
+.paradd{grid-template-columns:1fr !important}
+/* on a phone the two corner buttons of a stage need their own room: the
+   phone rule for the head reset its right padding, and the due badge slid
+   under the move and turn buttons */
+@media (max-width:820px){ .proj-head{padding-right:78px !important} }
+@container (min-width:340px){ .paradd{grid-template-columns:1fr auto 1fr !important} }
+</style>
+
+
+
+
 <div class="wrap">
   <header class="top" id="hero">
     <i class="bpframe" aria-hidden="true"></i>
@@ -2375,7 +2612,7 @@ body.megaon{overflow:hidden; overscroll-behavior:none}
     <div class="today tasksbox" id="tasksBox">
       <div class="th"><b id="tasksTitle">Tasks</b><button class="swbtn" id="tasksSw" title="Turn the list over to the tasks kept for later, and back">switch</button><span class="cnt" id="tasksCnt">0 / 0</span></div>
       <div class="tlist" id="tasksList"></div>
-      <div class="tadd"><input type="text" id="tasksInp" placeholder="one more task..." maxlength="300"><button id="tasksAdd">+</button></div>
+      <div class="tadd"><input type="text" id="tasksInp" enterkeyhint="enter" autocomplete="off" placeholder="one more task..." maxlength="300"><button id="tasksAdd">+</button></div>
       <button class="plmove hidden" id="tasksMove" title="Carry every task kept for later into this list at once">move into tasks</button>
       <div class="tfoot">
         <button class="pbtn spotbtn" data-spot="tasks" title="Put the light on this box - the whole page behind it goes dark"><i class="pdot"></i>highlight</button>
@@ -2386,11 +2623,21 @@ body.megaon{overflow:hidden; overscroll-behavior:none}
       <div class="today" id="todayBox">
         <div class="th"><b id="todayTitle">Priority for today</b><button class="swbtn" id="todaySw" title="Turn the list over to tomorrow and back">switch</button><span class="cnt" id="todayCnt">0 / 0</span></div>
         <div class="tlist" id="todayList"></div>
-        <div class="tadd"><input type="text" id="todayInp" placeholder="one thing for today..." maxlength="300"><button id="todayAdd">+</button></div>
+        <div class="tadd"><input type="text" id="todayInp" enterkeyhint="enter" autocomplete="off" placeholder="one thing for today..." maxlength="300"><button id="todayAdd">+</button></div>
         <button class="plmove hidden" id="todayMove" title="Carry every line of tomorrow into today at once">move to today</button>
         <div class="tfoot">
           <button class="pbtn spotbtn" data-spot="today" title="Put the light on this list - the whole page behind it goes dark"><i class="pdot"></i>highlight</button>
           <button class="pbtn lowbtn" data-spotlow="today" title="Give way inside the light - this list turns grey and a little dimmer"><i class="pdot"></i>yield</button>
+        </div>
+      </div>
+      <div class="today" id="timeoffBox">
+        <div class="th"><b id="timeoffTitle">Time off</b><button class="swbtn" id="timeoffSw" title="Turn the list over to the breaks kept for later, and back">switch</button><span class="cnt" id="timeoffCnt">0 / 0</span></div>
+        <div class="tlist" id="timeoffList"></div>
+        <div class="tadd"><input type="text" id="timeoffInp" enterkeyhint="enter" autocomplete="off" placeholder="something for a break..." maxlength="300"><button id="timeoffAdd">+</button></div>
+        <button class="plmove hidden" id="timeoffMove" title="Carry every break kept for later into this list at once">move into time off</button>
+        <div class="tfoot">
+          <button class="pbtn spotbtn" data-spot="off" title="Put the light on this list - the whole page behind it goes dark"><i class="pdot"></i>highlight</button>
+          <button class="pbtn lowbtn" data-spotlow="off" title="Give way inside the light - this list turns grey and a little dimmer"><i class="pdot"></i>yield</button>
         </div>
       </div>
       <div class="today" id="launchBox">
@@ -2420,9 +2667,9 @@ body.megaon{overflow:hidden; overscroll-behavior:none}
         <div class="th"><b id="parTitle">Parallels</b><button class="swbtn" id="parNew" title="Open the two fields and put down a new pair">parallel</button><button class="swbtn" id="parSw" title="Turn the box over to the pairs meant for later, and back">switch</button><button class="swbtn" id="parStack" title="Every pair that has been finished, day by day">stack</button><span class="cnt" id="parCnt">0</span></div>
         <div class="parlist" id="parList"></div>
         <div class="paradd hidden" id="parAddRow">
-          <input type="text" id="parA" placeholder="the one you are on..." maxlength="200">
+          <input type="text" id="parA" enterkeyhint="enter" autocomplete="off" placeholder="the one you are on..." maxlength="200">
           <span class="parlk" aria-hidden="true">&#8651;</span>
-          <input type="text" id="parB" placeholder="...and the one it runs with" maxlength="200">
+          <input type="text" id="parB" enterkeyhint="enter" autocomplete="off" placeholder="...and the one it runs with" maxlength="200">
           <button id="parAdd" title="Put this pair in front of you">+</button>
         </div>
         <div class="tfoot">
@@ -2612,7 +2859,7 @@ body.megaon{overflow:hidden; overscroll-behavior:none}
   <div class="dkhint">Sets how deep the dark theme goes. The light theme is not touched.</div>
 </div>
 <div id="pinkMenu"><div class="rlab2">Strip colour</div><div class="pswatch" id="pinkSw"></div><button class="mrow" id="pinkPick">Pick the colour off the strip</button><button class="mrow" id="pinkAuto">Match the strip automatically</button><div class="phex"><input type="text" id="pinkHex" placeholder="#FF2D78" maxlength="7" spellcheck="false"><button id="pinkHexOk">set</button></div></div>
-<div id="megaOv"><div id="megaBar"><b>Mega focus</b><button id="megaOut">back to the page</button></div><div class="mgin" id="megaIn"><div class="mgtop" id="mgTop"></div><div class="mgcols" id="mgCols"><div class="mgl" id="mgL"></div><div class="mgr" id="mgR"></div><div class="mgt" id="mgT"></div></div><div class="mgprojs" id="mgProjs"></div><div class="mgrest" id="mgRest"></div></div></div>
+<div id="megaOv"><div id="megaBar"><b>Mega focus</b><button id="megaOut">back to the page</button></div><div class="mgin" id="megaIn"><div class="mgtop" id="mgTop"><div class="mgtopl" id="mgTopL"></div><div class="mgtopr" id="mgTopR"></div></div><div class="mgcols" id="mgCols"><div class="mgl" id="mgL"></div><div class="mgr" id="mgR"></div><div class="mgt" id="mgT"></div></div><div class="mgprojs" id="mgProjs"></div><div class="mgrest" id="mgRest"></div></div></div>
 <div class="overlay" id="lnOverlay">
   <div class="modal narrow">
     <header><h2>Launched</h2><span class="spacer"></span><span class="signstate" id="lnHead"></span></header>
@@ -5157,7 +5404,7 @@ function freshState(){
     today:[],week:[],todayNext:[],weekNext:[],todayView:"now",weekView:"now",
     plLog:[],plDay:"",plWeek:"",spotSave:null,starts:{},launched:{},launchBox:true,
     saveName:"",saveDirName:"",ptask:{},stickBtn:null,stickBtnHidden:false,stickersHidden:false,bink:[],
-    pairs:[],pairsNext:[],parView:"now",parFace:"list",tasks:[],tasksNext:[],tasksView:"now",instrOpen:false,korean:false,logo:"wok",
+    pairs:[],pairsNext:[],parView:"now",parFace:"list",tasks:[],tasksNext:[],tasksView:"now",timeoff:[],timeoffNext:[],timeoffView:"now",instrOpen:false,korean:false,logo:"wok",
     theme:"light",pinkBar:false,pinkColor:"",heroZoom:1,heroFree:false,darkness:50,boldAll:false,inproc:{},ie:false,iedone:{},hideDone:{},hideAllT:{},flipped:{},back:{}};
 }
 var state=freshState();
@@ -5939,7 +6186,8 @@ function spotKeys(){
 function applySpot(){
   state.spot=state.spot||{}; state.spotLow=state.spotLow||{};
   var keys=spotKeys(), on=keys.length>0;
-  var hero=!!(state.spot.today || state.spot.week || state.spot.done || state.spot.launch);
+  var hero=!!(state.spot.today || state.spot.week || state.spot.done || state.spot.launch ||
+             state.spot.par || state.spot.tasks || state.spot.off);
   document.body.classList.toggle("spotlight", on);
   document.body.classList.toggle("spothero", on && hero);
   document.querySelectorAll(".proj").forEach(function(el){
@@ -5952,7 +6200,7 @@ function applySpot(){
     el.classList.toggle("spot", !!state.spot[k]);
     el.classList.toggle("spotlow", !!(state.spot[k] && state.spotLow[k]));
   });
-  [["today","todayBox"],["week","weekBox"],["done","totalBox"],["launch","launchBox"],["par","parBox"],["tasks","tasksBox"]].forEach(function(pair){
+  [["today","todayBox"],["week","weekBox"],["done","totalBox"],["launch","launchBox"],["par","parBox"],["tasks","tasksBox"],["off","timeoffBox"]].forEach(function(pair){
     var el=document.getElementById(pair[1]);
     if(!el) return;
     el.classList.toggle("spot", !!state.spot[pair[0]]);
@@ -7694,6 +7942,14 @@ var PLISTS={
          emptyN:"Nothing kept for later yet.",
          ph:"one more task...",       phN:"...a task for later",
          mvLab:"move into tasks", word:"list"},
+  timeoff:{key:"timeoff", nkey:"timeoffNext", vkey:"timeoffView", box:"timeoffBox", ttl:"timeoffTitle",
+         sw:"timeoffSw", mv:"timeoffMove",
+         list:"timeoffList", cnt:"timeoffCnt", inp:"timeoffInp", add:"timeoffAdd", pre:"to",
+         title:"Time off",            titleN:"Time off kept for later",
+         empty:"Nothing yet - write down what you will do on a break.",
+         emptyN:"No breaks kept for later yet.",
+         ph:"something for a break...", phN:"...a break for later",
+         mvLab:"move into time off", word:"off"},
   week: {key:"week",  nkey:"weekNext",  vkey:"weekView",  box:"weekBox",  ttl:"weekTitle",
          sw:"weekSw",  mv:"weekMove",
          list:"weekList",  cnt:"weekCnt",  inp:"weekInp",  add:"weekAdd",  pre:"wk",
@@ -7712,6 +7968,7 @@ function plOf(id){
   var p=String(id).slice(0,2);
   if(p==="wk") return PLISTS.week;
   if(p==="tk") return PLISTS.tasks;
+  if(p==="to") return PLISTS.timeoff;
   return PLISTS.today;
 }
 /* is this box turned over to the next day / the next week? */
@@ -7779,15 +8036,16 @@ function renderList(cfg){
   var sw=document.getElementById(cfg.sw);
   if(sw) sw.title=ahead
     ? (cfg.word==="list" ? "Back to the tasks in front of you"
+       : cfg.word==="off" ? "Back to the breaks in front of you"
        : "Back to the "+(cfg.word==="day"?"day that is running":"week that is running"))
-    : "Turn the list over to "+(cfg.word==="day"?"tomorrow":(cfg.word==="list"?"the tasks kept for later":"next week"));
+    : "Turn the list over to "+(cfg.word==="day"?"tomorrow":(cfg.word==="list"?"the tasks kept for later":(cfg.word==="off"?"the breaks kept for later":"next week")));
   var mv=document.getElementById(cfg.mv);
   if(mv){
     mv.classList.toggle("hidden", !ahead);
     mv.textContent=cfg.mvLab+(a.length?(" ("+a.length+")"):"");
   }
 }
-function renderToday(){ renderList(PLISTS.today); renderList(PLISTS.tasks); renderList(PLISTS.week); paintLogCount(); }
+function renderToday(){ renderList(PLISTS.today); renderList(PLISTS.tasks); renderList(PLISTS.timeoff); renderList(PLISTS.week); paintLogCount(); }
 
 /* ================= PARALLELS =================
    Two things are usually on the go at once. This box holds them as one line:
@@ -8233,7 +8491,7 @@ function megaPieces(){
      they are named in is the order they fly in */
   /* the notes are not on this list on purpose: a note that is lit stays a note,
      floating where it was pinned, instead of being flattened into a box */
-  ["#totalBox.spot", "#parBox.spot", "#todayBox.spot", "#tasksBox.spot", ".proj.spot", "#launchBox.spot",
+  ["#totalBox.spot", "#timeoffBox.spot", "#parBox.spot", "#todayBox.spot", "#tasksBox.spot", ".proj.spot", "#launchBox.spot",
    ".today.spot", ".total.spot"].forEach(function(sel){
     document.querySelectorAll(sel).forEach(function(e){
       if(out.indexOf(e)<0) out.push(e);
@@ -8248,7 +8506,8 @@ function megaPieces(){
 function megaSeat(el){
   /* Completed stands highest of all; under it the three lists side by side -
      Parallels, Priority for today, Tasks; then the stages; the launch pad last */
-  if(el.id==="totalBox")  return {host:"mgTop",   fx:0,   fy:-30};
+  if(el.id==="totalBox")  return {host:"mgTopL",  fx:-40, fy:-30};
+  if(el.id==="timeoffBox")return {host:"mgTopR",  fx:40,  fy:-30};
   if(el.id==="parBox")    return {host:"mgL",     fx:-52, fy:-10};
   if(el.id==="todayBox")  return {host:"mgR",     fx:0,   fy:-28};
   if(el.id==="tasksBox")  return {host:"mgT",     fx:52,  fy:-10};
@@ -8259,7 +8518,7 @@ function megaSeat(el){
 }
 function megaStage(){
   var els=megaPieces();
-  ["mgTop","mgProjs","mgL","mgR","mgT","mgRest"].forEach(function(k){
+  ["mgTopL","mgTopR","mgProjs","mgL","mgR","mgT","mgRest"].forEach(function(k){
     var h=document.getElementById(k); if(h) h.innerHTML="";
   });
   megaSaved=[];
