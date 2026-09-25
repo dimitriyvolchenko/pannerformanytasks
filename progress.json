@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-25T17:23:48.436Z",
+  "savedAt": "2026-09-25T17:24:26.113Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -21,8 +21,7 @@
   },
   "spotLow": {
     "ct20": true,
-    "ct09": true,
-    "ct25": true
+    "ct09": true
   },
   "spans": {
     "ct08": {
@@ -985,10 +984,10 @@
   },
   "order": [
     "pc_1790090308944_0",
+    "ct25",
     "ct21",
     "ct09",
     "ct20",
-    "ct25",
     "ct22",
     "ct23",
     "ct18",
@@ -1724,8 +1723,7 @@
         },
         "spotLow": {
           "ct20": true,
-          "ct09": true,
-          "ct25": true
+          "ct09": true
         },
         "spans": {
           "ct08": {
@@ -2688,10 +2686,10 @@
         },
         "order": [
           "pc_1790090308944_0",
+          "ct25",
           "ct21",
           "ct09",
           "ct20",
-          "ct25",
           "ct22",
           "ct23",
           "ct18",
