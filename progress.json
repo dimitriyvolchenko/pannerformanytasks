@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-25T17:19:13.707Z",
+  "savedAt": "2026-09-25T17:22:26.825Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1075,7 +1075,7 @@
     {
       "id": "tdmugvn3f31",
       "t": "⚡ ⚡ Complete : intagrated Axiology",
-      "done": false,
+      "done": true,
       "fs": 3,
       "b": true
     }
@@ -1383,6 +1383,20 @@
       "k": "today",
       "ahead": false,
       "at": "2026-09-24T20:02:17.385Z"
+    },
+    {
+      "id": "tdmugvn3f31",
+      "t": "⚡ ⚡ Complete : intagrated Axiology",
+      "k": "today",
+      "ahead": false,
+      "at": "2026-09-25T17:22:15.916Z"
+    },
+    {
+      "id": "tkmudpuzvq7",
+      "t": "prepare the document for Victoria Vladimirovna (details in the Description - Todoist)",
+      "k": "tasks",
+      "ahead": false,
+      "at": "2026-09-25T17:22:20.824Z"
     }
   ],
   "plDay": "2026-09-25",
@@ -1463,7 +1477,7 @@
       "a": "⚡ ⚡ Complete : intagrated Axiology",
       "b": "⚡ ⚡ ⚡ Plan the Parts day by day so that make sure to be on time",
       "done": false,
-      "ad": false,
+      "ad": true,
       "bd": false,
       "at": ""
     }
@@ -1475,7 +1489,7 @@
     {
       "id": "tkmudpuzvq7",
       "t": "prepare the document for Victoria Vladimirovna (details in the Description - Todoist)",
-      "done": false,
+      "done": true,
       "fs": 2,
       "b": true
     },
@@ -2732,7 +2746,7 @@
           {
             "id": "tdmugvn3f31",
             "t": "⚡ ⚡ Complete : intagrated Axiology",
-            "done": false,
+            "done": true,
             "fs": 3,
             "b": true
           }
@@ -3040,6 +3054,20 @@
             "k": "today",
             "ahead": false,
             "at": "2026-09-24T20:02:17.385Z"
+          },
+          {
+            "id": "tdmugvn3f31",
+            "t": "⚡ ⚡ Complete : intagrated Axiology",
+            "k": "today",
+            "ahead": false,
+            "at": "2026-09-25T17:22:15.916Z"
+          },
+          {
+            "id": "tkmudpuzvq7",
+            "t": "prepare the document for Victoria Vladimirovna (details in the Description - Todoist)",
+            "k": "tasks",
+            "ahead": false,
+            "at": "2026-09-25T17:22:20.824Z"
           }
         ],
         "plDay": "2026-09-25",
@@ -3120,7 +3148,7 @@
             "a": "⚡ ⚡ Complete : intagrated Axiology",
             "b": "⚡ ⚡ ⚡ Plan the Parts day by day so that make sure to be on time",
             "done": false,
-            "ad": false,
+            "ad": true,
             "bd": false,
             "at": ""
           }
@@ -3132,7 +3160,7 @@
           {
             "id": "tkmudpuzvq7",
             "t": "prepare the document for Victoria Vladimirovna (details in the Description - Todoist)",
-            "done": false,
+            "done": true,
             "fs": 2,
             "b": true
           },
