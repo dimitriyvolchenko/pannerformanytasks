@@ -2565,6 +2565,18 @@ body.dark .plaunch{background:var(--card); color:var(--ink-dim); border-color:va
 @container (min-width:340px){ .paradd{grid-template-columns:1fr auto 1fr !important} }
 </style>
 
+<style id="v62">
+/* v62 - mega focus on a tablet: Completed | Parallels | Time off in one row,
+   Parallels in the middle, all three the same width; Priority for today and
+   Tasks share the row under them. On a computer the top row stays Completed
+   (wider) and Time off. */
+#megaOv .mgtopm{min-width:0; display:flex; flex-direction:column; flex:2 1 0}
+#megaOv .mgtopm > .megaitem{flex:1 1 auto !important}
+#megaOv .mgtopm:empty{display:none}
+#megaOv.mgtab .mgtopl,#megaOv.mgtab .mgtopm,#megaOv.mgtab .mgtopr{flex:1 1 0}
+</style>
+
+
 
 
 
@@ -2859,7 +2871,7 @@ body.dark .plaunch{background:var(--card); color:var(--ink-dim); border-color:va
   <div class="dkhint">Sets how deep the dark theme goes. The light theme is not touched.</div>
 </div>
 <div id="pinkMenu"><div class="rlab2">Strip colour</div><div class="pswatch" id="pinkSw"></div><button class="mrow" id="pinkPick">Pick the colour off the strip</button><button class="mrow" id="pinkAuto">Match the strip automatically</button><div class="phex"><input type="text" id="pinkHex" placeholder="#FF2D78" maxlength="7" spellcheck="false"><button id="pinkHexOk">set</button></div></div>
-<div id="megaOv"><div id="megaBar"><b>Mega focus</b><button id="megaOut">back to the page</button></div><div class="mgin" id="megaIn"><div class="mgtop" id="mgTop"><div class="mgtopl" id="mgTopL"></div><div class="mgtopr" id="mgTopR"></div></div><div class="mgcols" id="mgCols"><div class="mgl" id="mgL"></div><div class="mgr" id="mgR"></div><div class="mgt" id="mgT"></div></div><div class="mgprojs" id="mgProjs"></div><div class="mgrest" id="mgRest"></div></div></div>
+<div id="megaOv"><div id="megaBar"><b>Mega focus</b><button id="megaOut">back to the page</button></div><div class="mgin" id="megaIn"><div class="mgtop" id="mgTop"><div class="mgtopl" id="mgTopL"></div><div class="mgtopm" id="mgTopM"></div><div class="mgtopr" id="mgTopR"></div></div><div class="mgcols" id="mgCols"><div class="mgl" id="mgL"></div><div class="mgr" id="mgR"></div><div class="mgt" id="mgT"></div></div><div class="mgprojs" id="mgProjs"></div><div class="mgrest" id="mgRest"></div></div></div>
 <div class="overlay" id="lnOverlay">
   <div class="modal narrow">
     <header><h2>Launched</h2><span class="spacer"></span><span class="signstate" id="lnHead"></span></header>
@@ -8503,13 +8515,16 @@ function megaPieces(){
    The stages take the top of the screen. Under them the two things being worked
    on stand side by side: the pair on the left, the day on the right. The counter
    and the launch pad share the row below them. */
+/* a tablet - an iPad upright or on its side - gets a layout of its own:
+   Completed, Parallels and Time off in one row with Parallels in the middle,
+   Priority for today and Tasks side by side under them */
+function megaTablet(){ var w=window.innerWidth||0; return w>760 && w<=1400; }
 function megaSeat(el){
-  /* Completed stands highest of all; under it the three lists side by side -
-     Parallels, Priority for today, Tasks; then the stages; the launch pad last */
+  var tab=megaTablet();
   if(el.id==="totalBox")  return {host:"mgTopL",  fx:-40, fy:-30};
   if(el.id==="timeoffBox")return {host:"mgTopR",  fx:40,  fy:-30};
-  if(el.id==="parBox")    return {host:"mgL",     fx:-52, fy:-10};
-  if(el.id==="todayBox")  return {host:"mgR",     fx:0,   fy:-28};
+  if(el.id==="parBox")    return tab ? {host:"mgTopM", fx:0, fy:-34} : {host:"mgL", fx:-52, fy:-10};
+  if(el.id==="todayBox")  return tab ? {host:"mgR", fx:-40, fy:-18} : {host:"mgR", fx:0, fy:-28};
   if(el.id==="tasksBox")  return {host:"mgT",     fx:52,  fy:-10};
   if(el.classList.contains("proj")) return {host:"mgProjs", fx:0, fy:26};
   if(el.id==="launchBox") return {host:"mgRest",  fx:0,   fy:34};
@@ -8518,10 +8533,12 @@ function megaSeat(el){
 }
 function megaStage(){
   var els=megaPieces();
-  ["mgTopL","mgTopR","mgProjs","mgL","mgR","mgT","mgRest"].forEach(function(k){
+  ["mgTopL","mgTopM","mgTopR","mgProjs","mgL","mgR","mgT","mgRest"].forEach(function(k){
     var h=document.getElementById(k); if(h) h.innerHTML="";
   });
   megaSaved=[];
+  var ov=document.getElementById("megaOv");
+  if(ov) ov.classList.toggle("mgtab", megaTablet());
   els.forEach(function(el,i){
     megaSaved.push({el:el, parent:el.parentNode, next:el.nextSibling,
                     style:el.getAttribute("style")||""});
