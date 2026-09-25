@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-25T10:17:13.707Z",
+  "savedAt": "2026-09-25T10:20:36.693Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1527,6 +1527,9 @@
   ],
   "tasksNext": [],
   "tasksView": "due",
+  "timeoff": [],
+  "timeoffNext": [],
+  "timeoffView": "now",
   "instrOpen": false,
   "korean": false,
   "logo": "wok",
@@ -3193,6 +3196,9 @@
         ],
         "tasksNext": [],
         "tasksView": "due",
+        "timeoff": [],
+        "timeoffNext": [],
+        "timeoffView": "now",
         "instrOpen": false,
         "korean": false,
         "logo": "wok",
