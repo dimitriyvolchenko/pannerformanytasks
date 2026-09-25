@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-25T17:22:26.825Z",
+  "savedAt": "2026-09-25T17:22:40.850Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1397,6 +1397,27 @@
       "k": "tasks",
       "ahead": false,
       "at": "2026-09-25T17:22:20.824Z"
+    },
+    {
+      "id": "tomugvof6j2",
+      "t": "r.all.t.pr.t.a.t.stns.",
+      "k": "timeoff",
+      "ahead": false,
+      "at": "2026-09-25T17:22:28.809Z"
+    },
+    {
+      "id": "tomugvrbcw4",
+      "t": "h.s.te.w.hny.",
+      "k": "timeoff",
+      "ahead": false,
+      "at": "2026-09-25T17:22:33.250Z"
+    },
+    {
+      "id": "tomugvrldb5",
+      "t": "wk.out",
+      "k": "timeoff",
+      "ahead": false,
+      "at": "2026-09-25T17:22:34.848Z"
     }
   ],
   "plDay": "2026-09-25",
@@ -1512,7 +1533,7 @@
     {
       "id": "tomugvof6j2",
       "t": "r.all.t.pr.t.a.t.stns.",
-      "done": false
+      "done": true
     },
     {
       "id": "tomugvqy7a3",
@@ -1522,12 +1543,12 @@
     {
       "id": "tomugvrbcw4",
       "t": "h.s.te.w.hny.",
-      "done": false
+      "done": true
     },
     {
       "id": "tomugvrldb5",
       "t": "wk.out",
-      "done": false
+      "done": true
     }
   ],
   "timeoffNext": [],
@@ -3068,6 +3089,27 @@
             "k": "tasks",
             "ahead": false,
             "at": "2026-09-25T17:22:20.824Z"
+          },
+          {
+            "id": "tomugvof6j2",
+            "t": "r.all.t.pr.t.a.t.stns.",
+            "k": "timeoff",
+            "ahead": false,
+            "at": "2026-09-25T17:22:28.809Z"
+          },
+          {
+            "id": "tomugvrbcw4",
+            "t": "h.s.te.w.hny.",
+            "k": "timeoff",
+            "ahead": false,
+            "at": "2026-09-25T17:22:33.250Z"
+          },
+          {
+            "id": "tomugvrldb5",
+            "t": "wk.out",
+            "k": "timeoff",
+            "ahead": false,
+            "at": "2026-09-25T17:22:34.848Z"
           }
         ],
         "plDay": "2026-09-25",
@@ -3183,7 +3225,7 @@
           {
             "id": "tomugvof6j2",
             "t": "r.all.t.pr.t.a.t.stns.",
-            "done": false
+            "done": true
           },
           {
             "id": "tomugvqy7a3",
@@ -3193,12 +3235,12 @@
           {
             "id": "tomugvrbcw4",
             "t": "h.s.te.w.hny.",
-            "done": false
+            "done": true
           },
           {
             "id": "tomugvrldb5",
             "t": "wk.out",
-            "done": false
+            "done": true
           }
         ],
         "timeoffNext": [],
