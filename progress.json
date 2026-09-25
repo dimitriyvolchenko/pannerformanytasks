@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-25T11:28:36.975Z",
+  "savedAt": "2026-09-25T11:28:45.550Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1461,7 +1461,7 @@
     {
       "id": "prmugvnnr11",
       "a": "⚡ ⚡ Complete : intagrated Axiology",
-      "b": "",
+      "b": "⚡ ⚡ ⚡ Plan the Parts day by day so that make sure to be on time",
       "done": false,
       "ad": false,
       "bd": false,
@@ -3097,7 +3097,7 @@
           {
             "id": "prmugvnnr11",
             "a": "⚡ ⚡ Complete : intagrated Axiology",
-            "b": "",
+            "b": "⚡ ⚡ ⚡ Plan the Parts day by day so that make sure to be on time",
             "done": false,
             "ad": false,
             "bd": false,
