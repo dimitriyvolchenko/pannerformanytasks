@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-25T11:21:21.862Z",
+  "savedAt": "2026-09-25T11:23:36.574Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1047,20 +1047,6 @@
   "listView": false,
   "today": [
     {
-      "id": "tdmudpdzwu1",
-      "t": "⚡ Check briefly : MRG_65 especially MRM_included",
-      "done": true,
-      "fs": 2,
-      "b": true
-    },
-    {
-      "id": "tdmudpff832",
-      "t": "⚡ Complete : Axiology method",
-      "done": true,
-      "fs": 2,
-      "b": true
-    },
-    {
       "id": "tdmudpiezg3",
       "t": "⚡ Review : animal cruelty",
       "done": false,
@@ -1464,39 +1450,11 @@
   "stickBtnHidden": true,
   "stickersHidden": true,
   "bink": [],
-  "pairs": [
-    {
-      "id": "prmudpeu4l1",
-      "a": "⚡ Check briefly : MRG_65 especially MRM_included",
-      "b": "⚡ Complete : Axiology method",
-      "done": true,
-      "ad": true,
-      "bd": true,
-      "at": "2026-09-24T20:02:01.030Z"
-    }
-  ],
+  "pairs": [],
   "pairsNext": [],
   "parView": "now",
   "parFace": "list",
   "tasks": [
-    {
-      "id": "tkmudpkccp4",
-      "t": "diagnostics for Thursday",
-      "done": true,
-      "fs": 1
-    },
-    {
-      "id": "tkmudpmr0w5",
-      "t": "launch v.editing today",
-      "done": true,
-      "fs": 1
-    },
-    {
-      "id": "tkmudpn57d6",
-      "t": "prepare a complete pack of the sc. (remake it in word format) : launch it on the tablet",
-      "done": true,
-      "fs": 1
-    },
     {
       "id": "tkmudpuzvq7",
       "t": "prepare the document for Victoria Vladimirovna (details in the Description - Todoist)",
@@ -2704,20 +2662,6 @@
         "listView": false,
         "today": [
           {
-            "id": "tdmudpdzwu1",
-            "t": "⚡ Check briefly : MRG_65 especially MRM_included",
-            "done": true,
-            "fs": 2,
-            "b": true
-          },
-          {
-            "id": "tdmudpff832",
-            "t": "⚡ Complete : Axiology method",
-            "done": true,
-            "fs": 2,
-            "b": true
-          },
-          {
             "id": "tdmudpiezg3",
             "t": "⚡ Review : animal cruelty",
             "done": false,
@@ -3121,39 +3065,11 @@
         "stickBtnHidden": true,
         "stickersHidden": true,
         "bink": [],
-        "pairs": [
-          {
-            "id": "prmudpeu4l1",
-            "a": "⚡ Check briefly : MRG_65 especially MRM_included",
-            "b": "⚡ Complete : Axiology method",
-            "done": true,
-            "ad": true,
-            "bd": true,
-            "at": "2026-09-24T20:02:01.030Z"
-          }
-        ],
+        "pairs": [],
         "pairsNext": [],
         "parView": "now",
         "parFace": "list",
         "tasks": [
-          {
-            "id": "tkmudpkccp4",
-            "t": "diagnostics for Thursday",
-            "done": true,
-            "fs": 1
-          },
-          {
-            "id": "tkmudpmr0w5",
-            "t": "launch v.editing today",
-            "done": true,
-            "fs": 1
-          },
-          {
-            "id": "tkmudpn57d6",
-            "t": "prepare a complete pack of the sc. (remake it in word format) : launch it on the tablet",
-            "done": true,
-            "fs": 1
-          },
           {
             "id": "tkmudpuzvq7",
             "t": "prepare the document for Victoria Vladimirovna (details in the Description - Todoist)",
