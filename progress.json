@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-25T17:25:28.252Z",
+  "savedAt": "2026-09-25T17:25:37.954Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1546,28 +1546,7 @@
   ],
   "tasksNext": [],
   "tasksView": "due",
-  "timeoff": [
-    {
-      "id": "tomugvof6j2",
-      "t": "r.all.t.pr.t.a.t.stns.",
-      "done": true
-    },
-    {
-      "id": "tomugvqy7a3",
-      "t": "lstn.t.evd.snts.",
-      "done": false
-    },
-    {
-      "id": "tomugvrbcw4",
-      "t": "h.s.te.w.hny.",
-      "done": true
-    },
-    {
-      "id": "tomugvrldb5",
-      "t": "wk.out",
-      "done": true
-    }
-  ],
+  "timeoff": [],
   "timeoffNext": [],
   "timeoffView": "now",
   "instrOpen": false,
@@ -3255,28 +3234,7 @@
         ],
         "tasksNext": [],
         "tasksView": "due",
-        "timeoff": [
-          {
-            "id": "tomugvof6j2",
-            "t": "r.all.t.pr.t.a.t.stns.",
-            "done": true
-          },
-          {
-            "id": "tomugvqy7a3",
-            "t": "lstn.t.evd.snts.",
-            "done": false
-          },
-          {
-            "id": "tomugvrbcw4",
-            "t": "h.s.te.w.hny.",
-            "done": true
-          },
-          {
-            "id": "tomugvrldb5",
-            "t": "wk.out",
-            "done": true
-          }
-        ],
+        "timeoff": [],
         "timeoffNext": [],
         "timeoffView": "now",
         "instrOpen": false,
