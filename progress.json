@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-25T11:23:36.574Z",
+  "savedAt": "2026-09-25T11:27:45.403Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1458,17 +1458,21 @@
     {
       "id": "tkmudpuzvq7",
       "t": "prepare the document for Victoria Vladimirovna (details in the Description - Todoist)",
-      "done": false
+      "done": false,
+      "fs": 2,
+      "b": true
     },
     {
       "id": "tkmuebhubw1",
       "t": "diagnostics for Friday",
-      "done": false
+      "done": false,
+      "fs": 1
     },
     {
       "id": "tkmuebhze62",
       "t": "launch v.editing today",
-      "done": false
+      "done": false,
+      "fs": 1
     }
   ],
   "tasksNext": [],
@@ -3073,17 +3077,21 @@
           {
             "id": "tkmudpuzvq7",
             "t": "prepare the document for Victoria Vladimirovna (details in the Description - Todoist)",
-            "done": false
+            "done": false,
+            "fs": 2,
+            "b": true
           },
           {
             "id": "tkmuebhubw1",
             "t": "diagnostics for Friday",
-            "done": false
+            "done": false,
+            "fs": 1
           },
           {
             "id": "tkmuebhze62",
             "t": "launch v.editing today",
-            "done": false
+            "done": false,
+            "fs": 1
           }
         ],
         "tasksNext": [],
