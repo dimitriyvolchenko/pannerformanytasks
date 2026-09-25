@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-25T11:29:12.525Z",
+  "savedAt": "2026-09-25T11:31:10.487Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1498,6 +1498,11 @@
     {
       "id": "tomugvof6j2",
       "t": "r.all.t.pr.t.a.t.stns.",
+      "done": false
+    },
+    {
+      "id": "tomugvqy7a3",
+      "t": "lstn.t.evd.snts.",
       "done": false
     }
   ],
@@ -3140,6 +3145,11 @@
           {
             "id": "tomugvof6j2",
             "t": "r.all.t.pr.t.a.t.stns.",
+            "done": false
+          },
+          {
+            "id": "tomugvqy7a3",
+            "t": "lstn.t.evd.snts.",
             "done": false
           }
         ],
