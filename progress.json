@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-25T10:25:36.804Z",
+  "savedAt": "2026-09-25T10:26:25.392Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -222,7 +222,7 @@
     "ct25": true,
     "ct26": true,
     "ct27": true,
-    "pc_1790090308944_0": false
+    "pc_1790090308944_0": true
   },
   "custom": {
     "ct01": [
@@ -973,8 +973,8 @@
     "sub": ""
   },
   "order": [
-    "ct11",
     "pc_1790090308944_0",
+    "ct11",
     "ct21",
     "ct09",
     "ct20",
@@ -1005,7 +1005,21 @@
   "vehicle": 11,
   "signing": null,
   "sigv": 7,
-  "stickers": [],
+  "stickers": [
+    {
+      "id": "s1789126170577_0",
+      "x": 38,
+      "y": 454.6635836933934,
+      "w": 383.5386830411216,
+      "h": 168.72305404308224,
+      "c": 0,
+      "t": "\n",
+      "ink": [],
+      "fx": 0.53542,
+      "rh": "<br><div><br></div>",
+      "name": "time off"
+    }
+  ],
   "slinks": [],
   "prio": {
     "p1787668712681_2": true
@@ -1014,20 +1028,18 @@
   "rich": {},
   "signs": {
     "t": {
-      "t": "overall",
+      "t": "forensic",
       "c": "#D6D2C6",
-      "s": 90,
+      "s": 64,
       "auto": true,
-      "dim": 60,
-      "hidden": false
+      "dim": 60
     },
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 83,
+      "s": 22,
       "auto": true,
-      "dim": 100,
-      "hidden": false
+      "dim": 100
     },
     "r": {
       "t": "forensic",
@@ -1038,7 +1050,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": true,
+  "hideLnkAll": false,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1047,10 +1059,17 @@
   "listView": false,
   "today": [
     {
-      "id": "tdmudpff832",
-      "t": "⚡ ⚡ ⚡ Complete : Axiology method",
+      "id": "tdmudpdzwu1",
+      "t": "⚡ Check briefly : MRG_65 especially MRM_included",
       "done": true,
-      "fs": 3,
+      "fs": 2,
+      "b": true
+    },
+    {
+      "id": "tdmudpff832",
+      "t": "⚡ Complete : Axiology method",
+      "done": true,
+      "fs": 2,
       "b": true
     },
     {
@@ -1078,12 +1097,6 @@
       "done": false,
       "fs": 3,
       "b": true
-    },
-    {
-      "id": "tdmuf7i6cj1",
-      "t": "email to Kh.Sh.N",
-      "done": false,
-      "fs": 2
     }
   ],
   "week": [
@@ -1385,10 +1398,10 @@
     },
     {
       "id": "tdmudpff832",
-      "t": "⚡ ⚡ ⚡ Complete : Axiology method",
+      "t": "⚡ Complete : Axiology method",
       "k": "today",
       "ahead": false,
-      "at": "2026-09-24T18:14:34.933Z"
+      "at": "2026-09-24T20:02:17.385Z"
     }
   ],
   "plDay": "2026-09-25",
@@ -1457,21 +1470,21 @@
     }
   },
   "stickBtn": {
-    "x": 1986,
-    "y": 787
+    "x": -94,
+    "y": 529
   },
   "stickBtnHidden": true,
-  "stickersHidden": false,
+  "stickersHidden": true,
   "bink": [],
   "pairs": [
     {
       "id": "prmudpeu4l1",
       "a": "⚡ Check briefly : MRG_65 especially MRM_included",
       "b": "⚡ Complete : Axiology method",
-      "done": false,
+      "done": true,
       "ad": true,
-      "bd": false,
-      "at": ""
+      "bd": true,
+      "at": "2026-09-24T20:02:01.030Z"
     }
   ],
   "pairsNext": [],
@@ -1524,8 +1537,8 @@
   "pinkBar": false,
   "pinkColor": "",
   "heroZoom": 1,
-  "heroFree": true,
-  "darkness": 45,
+  "heroFree": false,
+  "darkness": 50,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -1878,7 +1891,7 @@
           "ct25": true,
           "ct26": true,
           "ct27": true,
-          "pc_1790090308944_0": false
+          "pc_1790090308944_0": true
         },
         "custom": {
           "ct01": [
@@ -2629,8 +2642,8 @@
           "sub": ""
         },
         "order": [
-          "ct11",
           "pc_1790090308944_0",
+          "ct11",
           "ct21",
           "ct09",
           "ct20",
@@ -2661,7 +2674,21 @@
         "vehicle": 11,
         "signing": null,
         "sigv": 7,
-        "stickers": [],
+        "stickers": [
+          {
+            "id": "s1789126170577_0",
+            "x": 38,
+            "y": 454.6635836933934,
+            "w": 383.5386830411216,
+            "h": 168.72305404308224,
+            "c": 0,
+            "t": "\n",
+            "ink": [],
+            "fx": 0.53542,
+            "rh": "<br><div><br></div>",
+            "name": "time off"
+          }
+        ],
         "slinks": [],
         "prio": {
           "p1787668712681_2": true
@@ -2670,20 +2697,18 @@
         "rich": {},
         "signs": {
           "t": {
-            "t": "overall",
+            "t": "forensic",
             "c": "#D6D2C6",
-            "s": 90,
+            "s": 64,
             "auto": true,
-            "dim": 60,
-            "hidden": false
+            "dim": 60
           },
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 83,
+            "s": 22,
             "auto": true,
-            "dim": 100,
-            "hidden": false
+            "dim": 100
           },
           "r": {
             "t": "forensic",
@@ -2694,7 +2719,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": true,
+        "hideLnkAll": false,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -2703,10 +2728,17 @@
         "listView": false,
         "today": [
           {
-            "id": "tdmudpff832",
-            "t": "⚡ ⚡ ⚡ Complete : Axiology method",
+            "id": "tdmudpdzwu1",
+            "t": "⚡ Check briefly : MRG_65 especially MRM_included",
             "done": true,
-            "fs": 3,
+            "fs": 2,
+            "b": true
+          },
+          {
+            "id": "tdmudpff832",
+            "t": "⚡ Complete : Axiology method",
+            "done": true,
+            "fs": 2,
             "b": true
           },
           {
@@ -2734,12 +2766,6 @@
             "done": false,
             "fs": 3,
             "b": true
-          },
-          {
-            "id": "tdmuf7i6cj1",
-            "t": "email to Kh.Sh.N",
-            "done": false,
-            "fs": 2
           }
         ],
         "week": [
@@ -3041,10 +3067,10 @@
           },
           {
             "id": "tdmudpff832",
-            "t": "⚡ ⚡ ⚡ Complete : Axiology method",
+            "t": "⚡ Complete : Axiology method",
             "k": "today",
             "ahead": false,
-            "at": "2026-09-24T18:14:34.933Z"
+            "at": "2026-09-24T20:02:17.385Z"
           }
         ],
         "plDay": "2026-09-25",
@@ -3113,21 +3139,21 @@
           }
         },
         "stickBtn": {
-          "x": 1986,
-          "y": 787
+          "x": -94,
+          "y": 529
         },
         "stickBtnHidden": true,
-        "stickersHidden": false,
+        "stickersHidden": true,
         "bink": [],
         "pairs": [
           {
             "id": "prmudpeu4l1",
             "a": "⚡ Check briefly : MRG_65 especially MRM_included",
             "b": "⚡ Complete : Axiology method",
-            "done": false,
+            "done": true,
             "ad": true,
-            "bd": false,
-            "at": ""
+            "bd": true,
+            "at": "2026-09-24T20:02:01.030Z"
           }
         ],
         "pairsNext": [],
@@ -3180,8 +3206,8 @@
         "pinkBar": false,
         "pinkColor": "",
         "heroZoom": 1,
-        "heroFree": true,
-        "darkness": 45,
+        "heroFree": false,
+        "darkness": 50,
         "boldAll": false,
         "inproc": {},
         "ie": true,
@@ -3883,6 +3909,6 @@
       }
     }
   },
-  "device": "Computer",
+  "device": "iPhone",
   "lead": "Computer"
 }
