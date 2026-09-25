@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-25T11:28:45.550Z",
+  "savedAt": "2026-09-25T11:29:12.525Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1494,7 +1494,13 @@
   ],
   "tasksNext": [],
   "tasksView": "due",
-  "timeoff": [],
+  "timeoff": [
+    {
+      "id": "tomugvof6j2",
+      "t": "r.all.t.pr.t.a.t.stns.",
+      "done": false
+    }
+  ],
   "timeoffNext": [],
   "timeoffView": "now",
   "instrOpen": false,
@@ -3130,7 +3136,13 @@
         ],
         "tasksNext": [],
         "tasksView": "due",
-        "timeoff": [],
+        "timeoff": [
+          {
+            "id": "tomugvof6j2",
+            "t": "r.all.t.pr.t.a.t.stns.",
+            "done": false
+          }
+        ],
         "timeoffNext": [],
         "timeoffView": "now",
         "instrOpen": false,
