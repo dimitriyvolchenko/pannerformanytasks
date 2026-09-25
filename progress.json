@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-25T17:26:07.450Z",
+  "savedAt": "2026-09-25T17:26:21.124Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1435,6 +1435,13 @@
       "k": "timeoff",
       "ahead": false,
       "at": "2026-09-25T17:22:34.848Z"
+    },
+    {
+      "id": "tkmuebhubw1",
+      "t": "diagnostics for Friday",
+      "k": "tasks",
+      "ahead": false,
+      "at": "2026-09-25T17:26:19.488Z"
     }
   ],
   "plDay": "2026-09-25",
@@ -1534,7 +1541,7 @@
     {
       "id": "tkmuebhubw1",
       "t": "diagnostics for Friday",
-      "done": false,
+      "done": true,
       "fs": 1
     },
     {
@@ -3123,6 +3130,13 @@
             "k": "timeoff",
             "ahead": false,
             "at": "2026-09-25T17:22:34.848Z"
+          },
+          {
+            "id": "tkmuebhubw1",
+            "t": "diagnostics for Friday",
+            "k": "tasks",
+            "ahead": false,
+            "at": "2026-09-25T17:26:19.488Z"
           }
         ],
         "plDay": "2026-09-25",
@@ -3222,7 +3236,7 @@
           {
             "id": "tkmuebhubw1",
             "t": "diagnostics for Friday",
-            "done": false,
+            "done": true,
             "fs": 1
           },
           {
