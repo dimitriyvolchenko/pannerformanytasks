@@ -2576,6 +2576,51 @@ body.dark .plaunch{background:var(--card); color:var(--ink-dim); border-color:va
 #megaOv.mgtab .mgtopl,#megaOv.mgtab .mgtopm,#megaOv.mgtab .mgtopr{flex:1 1 0}
 </style>
 
+<style id="v63">
+/* ============================================================
+   v63 - on a computer all six boxes of Mission control stand in
+   one line: Tasks, Priority for today, Parallels, Time off,
+   Completed, Launch pad. The last two are a little wider than the
+   lists; everything inside is drawn a step more compact so it
+   reads well at this width.
+   The launch pad never sets the height of the row: it takes the
+   height the lists give it and scrolls inside (contain:size keeps
+   its own contents out of the measuring), so every box in the row
+   is exactly as tall as the others.
+   ============================================================ */
+@media (min-width:1401px){
+  .hero-row{gap:14px;
+    grid-template-columns:repeat(4,minmax(0,1fr)) minmax(0,1.12fr) minmax(0,1.12fr);
+    grid-template-areas:"tasks today par off total launch"}
+  .hero-row #launchBox{contain:size; min-height:190px; display:flex; flex-direction:column}
+  .hero-row #launchBox .lnlist{flex:1 1 0; min-height:0; max-height:none; overflow:auto}
+  .hero-row #launchBox .tfoot{margin-top:auto; padding-top:6px}
+
+  /* a step more compact inside */
+  .hero-row .today,.hero-row .total{padding:10px 11px; gap:6px}
+  .hero-row .th b{font-size:10px}
+  .hero-row .swbtn{padding:2px 6px; font-size:9px}
+  .hero-row .today .titem span,.hero-row .lntx{font-size:12px}
+  .hero-row .tadd input{font-size:12px; padding:5px 8px}
+  .hero-row .tfoot .pbtn{padding:4px 8px; font-size:10px}
+  .hero-row .lnrk{width:24px; height:24px}
+  .hero-row .lnrk svg{width:15px; height:15px}
+  /* the counter: the bar gives way instead of pushing out of the box */
+  .hero-row #totalBox .row1{flex-wrap:wrap; gap:6px 10px}
+  .hero-row #totalBox .bigbar{flex:1 1 60px; width:auto; min-width:50px}
+  .hero-row #totalBox .nums b{font-size:17px}
+  .hero-row #totalBox .daysleft{font-size:12px; padding:6px 9px}
+  /* the pairs stand one under the other at this width, a little smaller */
+  .hero-row .prow .pcell{font-size:13px; padding:8px 10px}
+  .hero-row .parlist{gap:10px}
+  .hero-row .parbox .th{column-gap:5px}
+  .hero-row .parbox .th .swbtn{letter-spacing:.03em; padding:2px 5px}
+  body.korean .hero-row #totalBox .nums b{font-size:24px; margin-top:16px}
+  body.korean .hero-row #totalBox{background:linear-gradient(var(--kred) 0 42px, var(--card) 42px) !important}
+}
+</style>
+
+
 
 
 
