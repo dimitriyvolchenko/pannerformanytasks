@@ -2590,8 +2590,11 @@ body.dark .plaunch{background:var(--card); color:var(--ink-dim); border-color:va
    ============================================================ */
 @media (min-width:1401px){
   .hero-row{gap:14px;
-    grid-template-columns:repeat(4,minmax(0,1fr)) minmax(0,1.12fr) minmax(0,1.12fr);
-    grid-template-areas:"tasks today par off total launch"}
+    /* Parallels and Time off share one column, one over the other; Tasks and
+       Priority for today take the room that gives back */
+    grid-template-columns:minmax(0,1.4fr) minmax(0,1.4fr) minmax(0,1fr) minmax(0,1.08fr) minmax(0,1.08fr);
+    grid-template-rows:auto auto;
+    grid-template-areas:"tasks today par total launch" "tasks today off total launch"}
   .hero-row #launchBox{contain:size; min-height:190px; display:flex; flex-direction:column}
   .hero-row #launchBox .lnlist{flex:1 1 0; min-height:0; max-height:none; overflow:auto}
   .hero-row #launchBox .tfoot{margin-top:auto; padding-top:6px}
