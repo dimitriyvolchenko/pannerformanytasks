@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-25T10:26:41.223Z",
+  "savedAt": "2026-09-25T10:26:52.125Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1462,7 +1462,7 @@
     "y": 787
   },
   "stickBtnHidden": true,
-  "stickersHidden": false,
+  "stickersHidden": true,
   "bink": [],
   "pairs": [
     {
@@ -3119,7 +3119,7 @@
           "y": 787
         },
         "stickBtnHidden": true,
-        "stickersHidden": false,
+        "stickersHidden": true,
         "bink": [],
         "pairs": [
           {
