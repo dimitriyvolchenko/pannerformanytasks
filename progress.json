@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-25T10:20:36.693Z",
+  "savedAt": "2026-09-25T10:20:53.572Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -17,7 +17,8 @@
     "pc_1790090308944_0": true,
     "ct25": true,
     "ct20": true,
-    "today": true
+    "today": true,
+    "off": true
   },
   "spotLow": {
     "ct20": true,
@@ -1686,7 +1687,8 @@
           "pc_1790090308944_0": true,
           "ct25": true,
           "ct20": true,
-          "today": true
+          "today": true,
+          "off": true
         },
         "spotLow": {
           "ct20": true,
