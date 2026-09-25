@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-25T11:27:45.403Z",
+  "savedAt": "2026-09-25T11:28:22.553Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1050,7 +1050,7 @@
       "id": "tdmudpiezg3",
       "t": "⚡ Review : animal cruelty",
       "done": false,
-      "fs": 2,
+      "fs": 1,
       "b": true
     },
     {
@@ -1068,6 +1068,13 @@
     {
       "id": "tdmueei0eo3",
       "t": "⚡ ⚡ ⚡ Plan the Parts day by day so that make sure to be on time",
+      "done": false,
+      "fs": 1,
+      "b": true
+    },
+    {
+      "id": "tdmugvn3f31",
+      "t": "⚡ ⚡ Complete : intagrated Axiology",
       "done": false,
       "fs": 3,
       "b": true
@@ -2669,7 +2676,7 @@
             "id": "tdmudpiezg3",
             "t": "⚡ Review : animal cruelty",
             "done": false,
-            "fs": 2,
+            "fs": 1,
             "b": true
           },
           {
@@ -2687,6 +2694,13 @@
           {
             "id": "tdmueei0eo3",
             "t": "⚡ ⚡ ⚡ Plan the Parts day by day so that make sure to be on time",
+            "done": false,
+            "fs": 1,
+            "b": true
+          },
+          {
+            "id": "tdmugvn3f31",
+            "t": "⚡ ⚡ Complete : intagrated Axiology",
             "done": false,
             "fs": 3,
             "b": true
