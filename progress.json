@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-25T17:25:37.954Z",
+  "savedAt": "2026-09-25T17:25:58.708Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1061,14 +1061,14 @@
       "t": "⚡ Review : animal cruelty",
       "done": false,
       "fs": 1,
-      "b": true
+      "b": false
     },
     {
       "id": "tdmudru74w1",
       "t": "⚡ Review : until the Table : the Objective system of the Traditional values",
       "done": false,
       "fs": 1,
-      "b": true
+      "b": false
     },
     {
       "id": "tdmudsrx6f1",
@@ -1080,7 +1080,7 @@
       "t": "⚡ ⚡ ⚡ Plan the Parts day by day so that make sure to be on time",
       "done": false,
       "fs": 1,
-      "b": true
+      "b": false
     },
     {
       "id": "tdmugvn3f31",
@@ -2749,14 +2749,14 @@
             "t": "⚡ Review : animal cruelty",
             "done": false,
             "fs": 1,
-            "b": true
+            "b": false
           },
           {
             "id": "tdmudru74w1",
             "t": "⚡ Review : until the Table : the Objective system of the Traditional values",
             "done": false,
             "fs": 1,
-            "b": true
+            "b": false
           },
           {
             "id": "tdmudsrx6f1",
@@ -2768,7 +2768,7 @@
             "t": "⚡ ⚡ ⚡ Plan the Parts day by day so that make sure to be on time",
             "done": false,
             "fs": 1,
-            "b": true
+            "b": false
           },
           {
             "id": "tdmugvn3f31",
