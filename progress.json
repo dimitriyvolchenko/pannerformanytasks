@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-25T17:33:46.677Z",
+  "savedAt": "2026-09-27T20:23:34.984Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1024,20 +1024,18 @@
   "rich": {},
   "signs": {
     "t": {
-      "t": "overall",
+      "t": "forensic",
       "c": "#D6D2C6",
-      "s": 90,
+      "s": 64,
       "auto": true,
-      "dim": 60,
-      "hidden": false
+      "dim": 60
     },
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 83,
+      "s": 22,
       "auto": true,
-      "dim": 100,
-      "hidden": false
+      "dim": 100
     },
     "r": {
       "t": "forensic",
@@ -1048,7 +1046,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": true,
+  "hideLnkAll": false,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1444,7 +1442,7 @@
       "at": "2026-09-25T17:26:19.488Z"
     }
   ],
-  "plDay": "2026-09-25",
+  "plDay": "2026-09-27",
   "plWeek": "2026-09-21",
   "spotSave": {
     "spot": {
@@ -1510,8 +1508,8 @@
     }
   },
   "stickBtn": {
-    "x": 1986,
-    "y": 787
+    "x": -94,
+    "y": 529
   },
   "stickBtnHidden": true,
   "stickersHidden": true,
@@ -1521,10 +1519,10 @@
       "id": "prmugvnnr11",
       "a": "⚡ ⚡ Complete : intagrated Axiology",
       "b": "⚡ ⚡ email to Khaziev",
-      "done": false,
+      "done": true,
       "ad": true,
-      "bd": false,
-      "at": ""
+      "bd": true,
+      "at": "2026-09-27T20:23:32.136Z"
     }
   ],
   "pairsNext": [],
@@ -1559,12 +1557,12 @@
   "instrOpen": false,
   "korean": false,
   "logo": "wok",
-  "theme": "light",
+  "theme": "dark",
   "pinkBar": false,
   "pinkColor": "",
   "heroZoom": 1,
-  "heroFree": true,
-  "darkness": 45,
+  "heroFree": false,
+  "darkness": 50,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -2719,20 +2717,18 @@
         "rich": {},
         "signs": {
           "t": {
-            "t": "overall",
+            "t": "forensic",
             "c": "#D6D2C6",
-            "s": 90,
+            "s": 64,
             "auto": true,
-            "dim": 60,
-            "hidden": false
+            "dim": 60
           },
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 83,
+            "s": 22,
             "auto": true,
-            "dim": 100,
-            "hidden": false
+            "dim": 100
           },
           "r": {
             "t": "forensic",
@@ -2743,7 +2739,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": true,
+        "hideLnkAll": false,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -3139,7 +3135,7 @@
             "at": "2026-09-25T17:26:19.488Z"
           }
         ],
-        "plDay": "2026-09-25",
+        "plDay": "2026-09-27",
         "plWeek": "2026-09-21",
         "spotSave": {
           "spot": {
@@ -3205,8 +3201,8 @@
           }
         },
         "stickBtn": {
-          "x": 1986,
-          "y": 787
+          "x": -94,
+          "y": 529
         },
         "stickBtnHidden": true,
         "stickersHidden": true,
@@ -3216,10 +3212,10 @@
             "id": "prmugvnnr11",
             "a": "⚡ ⚡ Complete : intagrated Axiology",
             "b": "⚡ ⚡ email to Khaziev",
-            "done": false,
+            "done": true,
             "ad": true,
-            "bd": false,
-            "at": ""
+            "bd": true,
+            "at": "2026-09-27T20:23:32.136Z"
           }
         ],
         "pairsNext": [],
@@ -3254,12 +3250,12 @@
         "instrOpen": false,
         "korean": false,
         "logo": "wok",
-        "theme": "light",
+        "theme": "dark",
         "pinkBar": false,
         "pinkColor": "",
         "heroZoom": 1,
-        "heroFree": true,
-        "darkness": 45,
+        "heroFree": false,
+        "darkness": 50,
         "boldAll": false,
         "inproc": {},
         "ie": true,
@@ -3961,6 +3957,6 @@
       }
     }
   },
-  "device": "Computer",
+  "device": "iPhone",
   "lead": "Computer"
 }
