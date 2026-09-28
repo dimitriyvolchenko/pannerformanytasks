@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-28T13:33:14.273Z",
+  "savedAt": "2026-09-28T13:34:27.632Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1046,16 +1046,17 @@
   "listView": false,
   "today": [
     {
-      "id": "tdmueei0eo3",
-      "t": "⚡ ⚡ ⚡ Plan the Parts day by day so that make sure to be on time",
+      "id": "tdmulaghl37",
+      "t": "⚡ Method: complete : integrated Axyology",
       "done": false,
-      "fs": 0,
-      "b": false
+      "fs": 1,
+      "b": true
     },
     {
-      "id": "tdmukybspf2",
-      "t": "Review : integrated axiology",
-      "done": false
+      "id": "tdmulags9s8",
+      "t": "⚡ Method : complete : plan the parts day by day so that make sure to be on time",
+      "done": false,
+      "fs": 2
     }
   ],
   "week": [
@@ -1519,6 +1520,11 @@
     {
       "id": "tkmulafcpx5",
       "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
+      "done": false
+    },
+    {
+      "id": "tkmulag94l6",
+      "t": "Method : complete : plan the parts day by day so that make sure to be on time",
       "done": false
     }
   ],
@@ -2718,16 +2724,17 @@
         "listView": false,
         "today": [
           {
-            "id": "tdmueei0eo3",
-            "t": "⚡ ⚡ ⚡ Plan the Parts day by day so that make sure to be on time",
+            "id": "tdmulaghl37",
+            "t": "⚡ Method: complete : integrated Axyology",
             "done": false,
-            "fs": 0,
-            "b": false
+            "fs": 1,
+            "b": true
           },
           {
-            "id": "tdmukybspf2",
-            "t": "Review : integrated axiology",
-            "done": false
+            "id": "tdmulags9s8",
+            "t": "⚡ Method : complete : plan the parts day by day so that make sure to be on time",
+            "done": false,
+            "fs": 2
           }
         ],
         "week": [
@@ -3191,6 +3198,11 @@
           {
             "id": "tkmulafcpx5",
             "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
+            "done": false
+          },
+          {
+            "id": "tkmulag94l6",
+            "t": "Method : complete : plan the parts day by day so that make sure to be on time",
             "done": false
           }
         ],
