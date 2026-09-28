@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-28T07:53:51.552Z",
+  "savedAt": "2026-09-28T07:54:17.029Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1081,20 +1081,6 @@
       "done": false,
       "fs": 1,
       "b": false
-    },
-    {
-      "id": "tdmugvn3f31",
-      "t": "⚡ ⚡ Complete : intagrated Axiology",
-      "done": true,
-      "fs": 3,
-      "b": true
-    },
-    {
-      "id": "tdmuh8egnf1",
-      "t": "⚡ ⚡ email to Khaziev",
-      "done": true,
-      "fs": 3,
-      "b": true
     }
   ],
   "week": [
@@ -1540,7 +1526,7 @@
   "tasks": [
     {
       "id": "tkmuebhze62",
-      "t": "launch v.editing today con. em",
+      "t": "launch v.editing today with em and by mslf.",
       "done": false,
       "fs": 1
     }
@@ -2776,20 +2762,6 @@
             "done": false,
             "fs": 1,
             "b": false
-          },
-          {
-            "id": "tdmugvn3f31",
-            "t": "⚡ ⚡ Complete : intagrated Axiology",
-            "done": true,
-            "fs": 3,
-            "b": true
-          },
-          {
-            "id": "tdmuh8egnf1",
-            "t": "⚡ ⚡ email to Khaziev",
-            "done": true,
-            "fs": 3,
-            "b": true
           }
         ],
         "week": [
@@ -3235,7 +3207,7 @@
         "tasks": [
           {
             "id": "tkmuebhze62",
-            "t": "launch v.editing today con. em",
+            "t": "launch v.editing today with em and by mslf.",
             "done": false,
             "fs": 1
           }
