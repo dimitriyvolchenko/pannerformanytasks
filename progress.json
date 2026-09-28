@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-28T13:31:38.961Z",
+  "savedAt": "2026-09-28T13:31:53.724Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1521,7 +1521,7 @@
     },
     {
       "id": "tkmul6w36p1",
-      "t": "Complete : integrated Axyology",
+      "t": "Method: complete : integrated Axyology",
       "done": false
     }
   ],
@@ -3196,7 +3196,7 @@
           },
           {
             "id": "tkmul6w36p1",
-            "t": "Complete : integrated Axyology",
+            "t": "Method: complete : integrated Axyology",
             "done": false
           }
         ],
