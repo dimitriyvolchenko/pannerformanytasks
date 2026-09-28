@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-28T15:23:12.461Z",
+  "savedAt": "2026-09-28T15:23:40.835Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1013,10 +1013,10 @@
       "w": 304.4444580078125,
       "h": 245.55557250976562,
       "c": 0,
-      "t": "",
+      "t": "- send the article to MV\n- make a project for Omel.\n- ",
       "ink": [],
       "fx": 0.7455,
-      "rh": ""
+      "rh": "- send the article to MV<div>- make a project for Omel.</div><div>- </div>"
     }
   ],
   "slinks": [],
@@ -3500,10 +3500,10 @@
             "w": 304.4444580078125,
             "h": 245.55557250976562,
             "c": 0,
-            "t": "",
+            "t": "- send the article to MV\n- make a project for Omel.\n- ",
             "ink": [],
             "fx": 0.7455,
-            "rh": ""
+            "rh": "- send the article to MV<div>- make a project for Omel.</div><div>- </div>"
           }
         ],
         "slinks": [],
