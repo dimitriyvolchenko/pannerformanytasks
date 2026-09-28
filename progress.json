@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-28T13:32:51.194Z",
+  "savedAt": "2026-09-28T13:33:14.273Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1056,11 +1056,6 @@
       "id": "tdmukybspf2",
       "t": "Review : integrated axiology",
       "done": false
-    },
-    {
-      "id": "tdmukyc6f53",
-      "t": "work out a rule : how to check and edit the links in MR",
-      "done": false
     }
   ],
   "week": [
@@ -1519,6 +1514,11 @@
     {
       "id": "tkmulaevpr4",
       "t": "Method : launch and schedule partial checking of links for MRM",
+      "done": false
+    },
+    {
+      "id": "tkmulafcpx5",
+      "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
       "done": false
     }
   ],
@@ -2728,11 +2728,6 @@
             "id": "tdmukybspf2",
             "t": "Review : integrated axiology",
             "done": false
-          },
-          {
-            "id": "tdmukyc6f53",
-            "t": "work out a rule : how to check and edit the links in MR",
-            "done": false
           }
         ],
         "week": [
@@ -3191,6 +3186,11 @@
           {
             "id": "tkmulaevpr4",
             "t": "Method : launch and schedule partial checking of links for MRM",
+            "done": false
+          },
+          {
+            "id": "tkmulafcpx5",
+            "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
             "done": false
           }
         ],
