@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-28T13:32:11.745Z",
+  "savedAt": "2026-09-28T13:32:26.970Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1046,13 +1046,6 @@
   "listView": false,
   "today": [
     {
-      "id": "tdmudru74w1",
-      "t": "⚡ Review : until the Table : the Objective system of the Traditional values",
-      "done": false,
-      "fs": 0,
-      "b": false
-    },
-    {
       "id": "tdmudsrx6f1",
       "t": "launch and schedule partial checking of links for MRM",
       "done": false
@@ -1091,6 +1084,11 @@
     {
       "id": "tdmulae1w52",
       "t": "⚡ Review : animal cruelty",
+      "done": false
+    },
+    {
+      "id": "tdmulaedtb3",
+      "t": "⚡ Review : until the Table : the Objective system of the Traditional values",
       "done": false
     }
   ],
@@ -2720,13 +2718,6 @@
         "listView": false,
         "today": [
           {
-            "id": "tdmudru74w1",
-            "t": "⚡ Review : until the Table : the Objective system of the Traditional values",
-            "done": false,
-            "fs": 0,
-            "b": false
-          },
-          {
             "id": "tdmudsrx6f1",
             "t": "launch and schedule partial checking of links for MRM",
             "done": false
@@ -2765,6 +2756,11 @@
           {
             "id": "tdmulae1w52",
             "t": "⚡ Review : animal cruelty",
+            "done": false
+          },
+          {
+            "id": "tdmulaedtb3",
+            "t": "⚡ Review : until the Table : the Objective system of the Traditional values",
             "done": false
           }
         ],
