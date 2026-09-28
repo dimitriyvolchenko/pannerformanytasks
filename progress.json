@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-28T13:32:26.970Z",
+  "savedAt": "2026-09-28T13:32:51.194Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1046,11 +1046,6 @@
   "listView": false,
   "today": [
     {
-      "id": "tdmudsrx6f1",
-      "t": "launch and schedule partial checking of links for MRM",
-      "done": false
-    },
-    {
       "id": "tdmueei0eo3",
       "t": "⚡ ⚡ ⚡ Plan the Parts day by day so that make sure to be on time",
       "done": false,
@@ -1519,6 +1514,11 @@
     {
       "id": "tkmul6w36p1",
       "t": "Method: complete : integrated Axyology",
+      "done": false
+    },
+    {
+      "id": "tkmulaevpr4",
+      "t": "Method : launch and schedule partial checking of links for MRM",
       "done": false
     }
   ],
@@ -2718,11 +2718,6 @@
         "listView": false,
         "today": [
           {
-            "id": "tdmudsrx6f1",
-            "t": "launch and schedule partial checking of links for MRM",
-            "done": false
-          },
-          {
             "id": "tdmueei0eo3",
             "t": "⚡ ⚡ ⚡ Plan the Parts day by day so that make sure to be on time",
             "done": false,
@@ -3191,6 +3186,11 @@
           {
             "id": "tkmul6w36p1",
             "t": "Method: complete : integrated Axyology",
+            "done": false
+          },
+          {
+            "id": "tkmulaevpr4",
+            "t": "Method : launch and schedule partial checking of links for MRM",
             "done": false
           }
         ],
