@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-28T06:28:00.335Z",
+  "savedAt": "2026-09-28T06:28:09.212Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -229,7 +229,7 @@
     "ct22": true,
     "ct23": true,
     "ct24": true,
-    "ct25": true,
+    "ct25": false,
     "ct26": true,
     "ct27": true,
     "pc_1790090308944_0": true
@@ -1924,7 +1924,7 @@
           "ct22": true,
           "ct23": true,
           "ct24": true,
-          "ct25": true,
+          "ct25": false,
           "ct26": true,
           "ct27": true,
           "pc_1790090308944_0": true
