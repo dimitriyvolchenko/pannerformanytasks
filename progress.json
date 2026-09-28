@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-28T13:34:56.501Z",
+  "savedAt": "2026-09-28T13:35:08.451Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1510,7 +1510,7 @@
     {
       "id": "prmulaho5f1",
       "a": "⚡ Method: complete : integrated Axyology",
-      "b": "",
+      "b": "⚡ Method : complete : plan the parts day by day so that make sure to be on time",
       "done": false,
       "ad": false,
       "bd": false,
@@ -3208,7 +3208,7 @@
           {
             "id": "prmulaho5f1",
             "a": "⚡ Method: complete : integrated Axyology",
-            "b": "",
+            "b": "⚡ Method : complete : plan the parts day by day so that make sure to be on time",
             "done": false,
             "ad": false,
             "bd": false,
