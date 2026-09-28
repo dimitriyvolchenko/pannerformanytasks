@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-28T07:52:57.118Z",
+  "savedAt": "2026-09-28T07:53:20.960Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1559,7 +1559,7 @@
     }
   ],
   "tasksNext": [],
-  "tasksView": "due",
+  "tasksView": "next",
   "timeoff": [],
   "timeoffNext": [],
   "timeoffView": "now",
@@ -3261,7 +3261,7 @@
           }
         ],
         "tasksNext": [],
-        "tasksView": "due",
+        "tasksView": "next",
         "timeoff": [],
         "timeoffNext": [],
         "timeoffView": "now",
