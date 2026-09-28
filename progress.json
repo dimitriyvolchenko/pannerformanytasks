@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-28T06:17:17.061Z",
+  "savedAt": "2026-09-28T06:18:32.642Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1024,18 +1024,20 @@
   "rich": {},
   "signs": {
     "t": {
-      "t": "forensic",
+      "t": "overall",
       "c": "#D6D2C6",
-      "s": 64,
+      "s": 90,
       "auto": true,
-      "dim": 60
+      "dim": 60,
+      "hidden": false
     },
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 22,
+      "s": 83,
       "auto": true,
-      "dim": 100
+      "dim": 100,
+      "hidden": false
     },
     "r": {
       "t": "forensic",
@@ -1046,7 +1048,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": false,
+  "hideLnkAll": true,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1507,7 +1509,10 @@
       "c_p1787668712681_2_1787730177904": true
     }
   },
-  "stickBtn": null,
+  "stickBtn": {
+    "x": 1986,
+    "y": 787
+  },
   "stickBtnHidden": true,
   "stickersHidden": true,
   "bink": [],
@@ -1553,13 +1558,13 @@
   "timeoffView": "now",
   "instrOpen": false,
   "korean": false,
-  "logo": "wok-speech",
-  "theme": "dark",
+  "logo": "wok",
+  "theme": "light",
   "pinkBar": false,
   "pinkColor": "",
-  "heroZoom": 0.5,
+  "heroZoom": 1,
   "heroFree": true,
-  "darkness": 50,
+  "darkness": 45,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -2714,18 +2719,20 @@
         "rich": {},
         "signs": {
           "t": {
-            "t": "forensic",
+            "t": "overall",
             "c": "#D6D2C6",
-            "s": 64,
+            "s": 90,
             "auto": true,
-            "dim": 60
+            "dim": 60,
+            "hidden": false
           },
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 22,
+            "s": 83,
             "auto": true,
-            "dim": 100
+            "dim": 100,
+            "hidden": false
           },
           "r": {
             "t": "forensic",
@@ -2736,7 +2743,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": false,
+        "hideLnkAll": true,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -3197,7 +3204,10 @@
             "c_p1787668712681_2_1787730177904": true
           }
         },
-        "stickBtn": null,
+        "stickBtn": {
+          "x": 1986,
+          "y": 787
+        },
         "stickBtnHidden": true,
         "stickersHidden": true,
         "bink": [],
@@ -3243,13 +3253,13 @@
         "timeoffView": "now",
         "instrOpen": false,
         "korean": false,
-        "logo": "wok-speech",
-        "theme": "dark",
+        "logo": "wok",
+        "theme": "light",
         "pinkBar": false,
         "pinkColor": "",
-        "heroZoom": 0.5,
+        "heroZoom": 1,
         "heroFree": true,
-        "darkness": 50,
+        "darkness": 45,
         "boldAll": false,
         "inproc": {},
         "ie": true,
@@ -3951,6 +3961,6 @@
       }
     }
   },
-  "device": "iPad",
+  "device": "Computer",
   "lead": "Computer"
 }
