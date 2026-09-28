@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-28T07:53:38.305Z",
+  "savedAt": "2026-09-28T07:53:51.552Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1540,7 +1540,7 @@
   "tasks": [
     {
       "id": "tkmuebhze62",
-      "t": "launch v.editing today",
+      "t": "launch v.editing today con. em",
       "done": false,
       "fs": 1
     }
@@ -3235,7 +3235,7 @@
         "tasks": [
           {
             "id": "tkmuebhze62",
-            "t": "launch v.editing today",
+            "t": "launch v.editing today con. em",
             "done": false,
             "fs": 1
           }
