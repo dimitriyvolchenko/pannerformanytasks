@@ -1,28 +1,10 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-28T07:49:49.127Z",
+  "savedAt": "2026-09-28T07:52:28.421Z",
   "trash": [],
-  "spot": {
-    "par": true,
-    "done": true,
-    "launch": true,
-    "timeline": true,
-    "ct09": true,
-    "st:s1789126170577_0": true,
-    "ct21": true,
-    "week": true,
-    "tasks": true,
-    "pc_1790090308944_0": true,
-    "ct25": true,
-    "ct20": true,
-    "today": true,
-    "off": true
-  },
-  "spotLow": {
-    "ct20": true,
-    "ct09": true
-  },
+  "spot": {},
+  "spotLow": {},
   "spans": {
     "ct08": {
       "from": "2026-09-02",
@@ -1459,7 +1441,6 @@
       "done": true,
       "launch": true,
       "timeline": true,
-      "ct11": true,
       "ct09": true,
       "st:s1789126170577_0": true,
       "ct21": true,
@@ -1468,12 +1449,12 @@
       "pc_1790090308944_0": true,
       "ct25": true,
       "ct20": true,
-      "today": true
+      "today": true,
+      "off": true
     },
     "low": {
       "ct20": true,
-      "ct09": true,
-      "ct25": true
+      "ct09": true
     }
   },
   "starts": {
@@ -1706,26 +1687,8 @@
     "states": {
       "cmr": {
         "trash": [],
-        "spot": {
-          "par": true,
-          "done": true,
-          "launch": true,
-          "timeline": true,
-          "ct09": true,
-          "st:s1789126170577_0": true,
-          "ct21": true,
-          "week": true,
-          "tasks": true,
-          "pc_1790090308944_0": true,
-          "ct25": true,
-          "ct20": true,
-          "today": true,
-          "off": true
-        },
-        "spotLow": {
-          "ct20": true,
-          "ct09": true
-        },
+        "spot": {},
+        "spotLow": {},
         "spans": {
           "ct08": {
             "from": "2026-09-02",
@@ -3162,7 +3125,6 @@
             "done": true,
             "launch": true,
             "timeline": true,
-            "ct11": true,
             "ct09": true,
             "st:s1789126170577_0": true,
             "ct21": true,
@@ -3171,12 +3133,12 @@
             "pc_1790090308944_0": true,
             "ct25": true,
             "ct20": true,
-            "today": true
+            "today": true,
+            "off": true
           },
           "low": {
             "ct20": true,
-            "ct09": true,
-            "ct25": true
+            "ct09": true
           }
         },
         "starts": {
