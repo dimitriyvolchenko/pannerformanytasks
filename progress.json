@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-28T07:55:01.159Z",
+  "savedAt": "2026-09-28T07:55:05.087Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1519,17 +1519,7 @@
   "stickBtnHidden": true,
   "stickersHidden": true,
   "bink": [],
-  "pairs": [
-    {
-      "id": "prmugvnnr11",
-      "a": "⚡ ⚡ Complete : intagrated Axiology",
-      "b": "⚡ ⚡ email to Khaziev",
-      "done": true,
-      "ad": true,
-      "bd": true,
-      "at": "2026-09-27T20:23:32.136Z"
-    }
-  ],
+  "pairs": [],
   "pairsNext": [],
   "parView": "now",
   "parFace": "list",
@@ -3210,17 +3200,7 @@
         "stickBtnHidden": true,
         "stickersHidden": true,
         "bink": [],
-        "pairs": [
-          {
-            "id": "prmugvnnr11",
-            "a": "⚡ ⚡ Complete : intagrated Axiology",
-            "b": "⚡ ⚡ email to Khaziev",
-            "done": true,
-            "ad": true,
-            "bd": true,
-            "at": "2026-09-27T20:23:32.136Z"
-          }
-        ],
+        "pairs": [],
         "pairsNext": [],
         "parView": "now",
         "parFace": "list",
