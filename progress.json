@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-28T13:37:36.888Z",
+  "savedAt": "2026-09-28T13:38:19.441Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1090,6 +1090,11 @@
     {
       "id": "tdmulaedtb3",
       "t": "⚡ Review : until the Table : the Objective system of the Traditional values",
+      "done": false
+    },
+    {
+      "id": "tdmulalz7d13",
+      "t": "Launch : disabled cruelty and elderly (see if it fits into one method)",
       "done": false
     }
   ],
@@ -2799,6 +2804,11 @@
           {
             "id": "tdmulaedtb3",
             "t": "⚡ Review : until the Table : the Objective system of the Traditional values",
+            "done": false
+          },
+          {
+            "id": "tdmulalz7d13",
+            "t": "Launch : disabled cruelty and elderly (see if it fits into one method)",
             "done": false
           }
         ],
