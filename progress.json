@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-28T07:54:27.077Z",
+  "savedAt": "2026-09-28T07:54:44.850Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1085,6 +1085,11 @@
     {
       "id": "tdmukybspf2",
       "t": "Review : integrated axiology",
+      "done": false
+    },
+    {
+      "id": "tdmukyc6f53",
+      "t": "work out a rule : how to check and edit the links in the work",
       "done": false
     }
   ],
@@ -2771,6 +2776,11 @@
           {
             "id": "tdmukybspf2",
             "t": "Review : integrated axiology",
+            "done": false
+          },
+          {
+            "id": "tdmukyc6f53",
+            "t": "work out a rule : how to check and edit the links in the work",
             "done": false
           }
         ],
