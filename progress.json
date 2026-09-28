@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-28T15:19:32.041Z",
+  "savedAt": "2026-09-28T15:23:12.461Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -18,7 +18,8 @@
     "ct20": true,
     "today": true,
     "off": true,
-    "ct11": true
+    "ct11": true,
+    "st:s1790608955325_0": true
   },
   "spotLow": {
     "ct20": true,
@@ -1004,7 +1005,20 @@
   "vehicle": 11,
   "signing": null,
   "sigv": 7,
-  "stickers": [],
+  "stickers": [
+    {
+      "id": "s1790608955325_0",
+      "x": 1426,
+      "y": 376.9998321533203,
+      "w": 304.4444580078125,
+      "h": 245.55557250976562,
+      "c": 0,
+      "t": "",
+      "ink": [],
+      "fx": 0.7455,
+      "rh": ""
+    }
+  ],
   "slinks": [],
   "prio": {
     "p1787668712681_2": true
@@ -1039,7 +1053,7 @@
   "hideLnk": {},
   "hideLnkAll": true,
   "stickerClassic": false,
-  "stickerSkin": "ive",
+  "stickerSkin": "control",
   "torder": {},
   "tmoved": {},
   "styles": {},
@@ -1509,8 +1523,8 @@
     "x": 1986,
     "y": 787
   },
-  "stickBtnHidden": true,
-  "stickersHidden": true,
+  "stickBtnHidden": false,
+  "stickersHidden": false,
   "bink": [],
   "pairs": [
     {
@@ -2491,7 +2505,8 @@
           "ct20": true,
           "today": true,
           "off": true,
-          "ct11": true
+          "ct11": true,
+          "st:s1790608955325_0": true
         },
         "spotLow": {
           "ct20": true,
@@ -3477,7 +3492,20 @@
         "vehicle": 11,
         "signing": null,
         "sigv": 7,
-        "stickers": [],
+        "stickers": [
+          {
+            "id": "s1790608955325_0",
+            "x": 1426,
+            "y": 376.9998321533203,
+            "w": 304.4444580078125,
+            "h": 245.55557250976562,
+            "c": 0,
+            "t": "",
+            "ink": [],
+            "fx": 0.7455,
+            "rh": ""
+          }
+        ],
         "slinks": [],
         "prio": {
           "p1787668712681_2": true
@@ -3512,7 +3540,7 @@
         "hideLnk": {},
         "hideLnkAll": true,
         "stickerClassic": false,
-        "stickerSkin": "ive",
+        "stickerSkin": "control",
         "torder": {},
         "tmoved": {},
         "styles": {},
@@ -3982,8 +4010,8 @@
           "x": 1986,
           "y": 787
         },
-        "stickBtnHidden": true,
-        "stickersHidden": true,
+        "stickBtnHidden": false,
+        "stickersHidden": false,
         "bink": [],
         "pairs": [
           {
