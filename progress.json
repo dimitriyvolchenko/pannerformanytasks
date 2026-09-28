@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-28T13:38:19.441Z",
+  "savedAt": "2026-09-28T13:38:26.628Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1056,7 +1056,8 @@
       "id": "tdmulags9s8",
       "t": "⚡ Method : complete : plan the parts day by day so that make sure to be on time",
       "done": false,
-      "fs": 2
+      "fs": 1,
+      "b": true
     },
     {
       "id": "tdmulah7pd9",
@@ -2770,7 +2771,8 @@
             "id": "tdmulags9s8",
             "t": "⚡ Method : complete : plan the parts day by day so that make sure to be on time",
             "done": false,
-            "fs": 2
+            "fs": 1,
+            "b": true
           },
           {
             "id": "tdmulah7pd9",
