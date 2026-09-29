@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-29T08:39:58.825Z",
+  "savedAt": "2026-09-29T08:41:01.738Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1568,7 +1568,9 @@
     {
       "id": "tkmul6w36p1",
       "t": "Method: complete : integrated Axyology",
-      "done": false
+      "done": false,
+      "fs": 1,
+      "b": true
     },
     {
       "id": "tkmulaevpr4",
@@ -1583,7 +1585,16 @@
     {
       "id": "tkmulag94l6",
       "t": "Method : complete : plan the parts day by day so that make sure to be on time",
-      "done": false
+      "done": false,
+      "fs": 1,
+      "b": true
+    },
+    {
+      "id": "tkmumffetm3",
+      "t": "☕ Complete : the first draft of the omel's article",
+      "done": false,
+      "b": true,
+      "fs": 1
     }
   ],
   "tasksNext": [
@@ -4068,7 +4079,9 @@
           {
             "id": "tkmul6w36p1",
             "t": "Method: complete : integrated Axyology",
-            "done": false
+            "done": false,
+            "fs": 1,
+            "b": true
           },
           {
             "id": "tkmulaevpr4",
@@ -4083,7 +4096,16 @@
           {
             "id": "tkmulag94l6",
             "t": "Method : complete : plan the parts day by day so that make sure to be on time",
-            "done": false
+            "done": false,
+            "fs": 1,
+            "b": true
+          },
+          {
+            "id": "tkmumffetm3",
+            "t": "☕ Complete : the first draft of the omel's article",
+            "done": false,
+            "b": true,
+            "fs": 1
           }
         ],
         "tasksNext": [
