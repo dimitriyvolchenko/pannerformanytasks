@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-29T07:37:09.725Z",
+  "savedAt": "2026-09-29T07:40:52.392Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1097,6 +1097,13 @@
       "id": "tdmulalz7d13",
       "t": "Launch : disabled cruelty and elderly (see if it fits into one method)",
       "done": false
+    },
+    {
+      "id": "tdmumd9vs71",
+      "t": "☕ Complete : the first draft of the omel's article",
+      "done": false,
+      "fs": 2,
+      "b": true
     }
   ],
   "week": [
@@ -3585,6 +3592,13 @@
             "id": "tdmulalz7d13",
             "t": "Launch : disabled cruelty and elderly (see if it fits into one method)",
             "done": false
+          },
+          {
+            "id": "tdmumd9vs71",
+            "t": "☕ Complete : the first draft of the omel's article",
+            "done": false,
+            "fs": 2,
+            "b": true
           }
         ],
         "week": [
