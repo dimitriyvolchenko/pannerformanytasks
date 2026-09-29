@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-28T17:55:49.127Z",
+  "savedAt": "2026-09-29T06:30:59.941Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1082,21 +1082,7 @@
       "id": "tdmulaheor10",
       "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
       "done": false
-    }
-  ],
-  "week": [
-    {
-      "id": "wkmt9sesvf1",
-      "t": "Complete all the Material which was supposed to be copied",
-      "done": false
     },
-    {
-      "id": "wkmts5q9bx1",
-      "t": "Complete MRM",
-      "done": false
-    }
-  ],
-  "todayNext": [
     {
       "id": "tdmulae1w52",
       "t": "⚡ Review : animal cruelty",
@@ -1113,6 +1099,19 @@
       "done": false
     }
   ],
+  "week": [
+    {
+      "id": "wkmt9sesvf1",
+      "t": "Complete all the Material which was supposed to be copied",
+      "done": false
+    },
+    {
+      "id": "wkmts5q9bx1",
+      "t": "Complete MRM",
+      "done": false
+    }
+  ],
+  "todayNext": [],
   "weekNext": [],
   "todayView": "now",
   "weekView": "now",
@@ -1454,7 +1453,7 @@
       "at": "2026-09-28T06:28:36.917Z"
     }
   ],
-  "plDay": "2026-09-28",
+  "plDay": "2026-09-29",
   "plWeek": "2026-09-28",
   "spotSave": {
     "spot": {
@@ -3571,21 +3570,7 @@
             "id": "tdmulaheor10",
             "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
             "done": false
-          }
-        ],
-        "week": [
-          {
-            "id": "wkmt9sesvf1",
-            "t": "Complete all the Material which was supposed to be copied",
-            "done": false
           },
-          {
-            "id": "wkmts5q9bx1",
-            "t": "Complete MRM",
-            "done": false
-          }
-        ],
-        "todayNext": [
           {
             "id": "tdmulae1w52",
             "t": "⚡ Review : animal cruelty",
@@ -3602,6 +3587,19 @@
             "done": false
           }
         ],
+        "week": [
+          {
+            "id": "wkmt9sesvf1",
+            "t": "Complete all the Material which was supposed to be copied",
+            "done": false
+          },
+          {
+            "id": "wkmts5q9bx1",
+            "t": "Complete MRM",
+            "done": false
+          }
+        ],
+        "todayNext": [],
         "weekNext": [],
         "todayView": "now",
         "weekView": "now",
@@ -3943,7 +3941,7 @@
             "at": "2026-09-28T06:28:36.917Z"
           }
         ],
-        "plDay": "2026-09-28",
+        "plDay": "2026-09-29",
         "plWeek": "2026-09-28",
         "spotSave": {
           "spot": {
