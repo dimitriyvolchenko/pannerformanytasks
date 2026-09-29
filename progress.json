@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-29T13:08:04.786Z",
+  "savedAt": "2026-09-29T13:08:59.478Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1582,6 +1582,11 @@
       "done": false,
       "b": true,
       "fs": 1
+    },
+    {
+      "id": "tkmump08fc4",
+      "t": "from the article of belarus take the articles of immoral behaviour and include it as a seprate devision of study",
+      "done": false
     }
   ],
   "tasksNext": [
@@ -4080,6 +4085,11 @@
             "done": false,
             "b": true,
             "fs": 1
+          },
+          {
+            "id": "tkmump08fc4",
+            "t": "from the article of belarus take the articles of immoral behaviour and include it as a seprate devision of study",
+            "done": false
           }
         ],
         "tasksNext": [
