@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-29T13:09:23.216Z",
+  "savedAt": "2026-09-29T13:09:31.519Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1544,7 +1544,7 @@
   "pairsNext": [
     {
       "id": "prmumfaoip1",
-      "a": "",
+      "a": "reading the belarus article making notes",
       "b": "schedule working on further steps",
       "done": false,
       "ad": false,
@@ -4056,7 +4056,7 @@
         "pairsNext": [
           {
             "id": "prmumfaoip1",
-            "a": "",
+            "a": "reading the belarus article making notes",
             "b": "schedule working on further steps",
             "done": false,
             "ad": false,
