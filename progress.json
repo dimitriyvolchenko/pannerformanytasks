@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-29T07:42:41.100Z",
+  "savedAt": "2026-09-29T07:42:44.196Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1584,7 +1584,13 @@
     }
   ],
   "tasksView": "now",
-  "timeoff": [],
+  "timeoff": [
+    {
+      "id": "tomumdcohk2",
+      "t": "in the notes",
+      "done": false
+    }
+  ],
   "timeoffNext": [],
   "timeoffView": "now",
   "instrOpen": false,
@@ -4068,7 +4074,13 @@
           }
         ],
         "tasksView": "now",
-        "timeoff": [],
+        "timeoff": [
+          {
+            "id": "tomumdcohk2",
+            "t": "in the notes",
+            "done": false
+          }
+        ],
         "timeoffNext": [],
         "timeoffView": "now",
         "instrOpen": false,
