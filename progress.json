@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-29T08:37:14.643Z",
+  "savedAt": "2026-09-29T08:38:59.172Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1549,7 +1549,7 @@
     {
       "id": "prmumfaoip1",
       "a": "read Axiology",
-      "b": "",
+      "b": "schedule working on further steps",
       "done": false,
       "ad": false,
       "bd": false,
@@ -4049,7 +4049,7 @@
           {
             "id": "prmumfaoip1",
             "a": "read Axiology",
-            "b": "",
+            "b": "schedule working on further steps",
             "done": false,
             "ad": false,
             "bd": false,
