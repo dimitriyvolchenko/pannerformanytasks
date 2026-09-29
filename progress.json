@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-29T07:41:23.699Z",
+  "savedAt": "2026-09-29T07:41:49.632Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1537,7 +1537,7 @@
   "pairs": [
     {
       "id": "prmulaho5f1",
-      "a": "first reading of the",
+      "a": "first reading of the article and planning of further steps with it",
       "b": "",
       "done": false,
       "ad": false,
@@ -4032,7 +4032,7 @@
         "pairs": [
           {
             "id": "prmulaho5f1",
-            "a": "first reading of the",
+            "a": "first reading of the article and planning of further steps with it",
             "b": "",
             "done": false,
             "ad": false,
