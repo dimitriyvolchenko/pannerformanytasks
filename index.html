@@ -2623,6 +2623,78 @@ body.dark .plaunch{background:var(--card); color:var(--ink-dim); border-color:va
 }
 </style>
 
+<style id="v64">
+/* v64 - Completed now has a second, quiet working area inside the same blue card.
+   The progress counter remains the upper half; below Highlight / Yield a fine
+   blue rule opens a native planner list for the next steps being planned. */
+#totalBox .done-steps-sep{
+  flex:0 0 auto; height:1px; margin:3px 0 2px;
+  background:linear-gradient(90deg,rgba(143,174,220,0),var(--barline,#D6E2F2) 12%,var(--blue2) 50%,var(--barline,#D6E2F2) 88%,rgba(143,174,220,0));
+  opacity:.95;
+}
+#stepsBox{display:flex; flex-direction:column; gap:6px; min-width:0}
+#stepsBox .th{display:flex; align-items:baseline; gap:7px; min-width:0}
+#stepsBox .th b{
+  flex:1 1 auto; min-width:0; color:var(--blue-ink); font-size:10.5px; font-weight:800;
+  letter-spacing:.055em; line-height:1.25; text-transform:uppercase;
+}
+#stepsBox .th .cnt{flex:0 0 auto; margin-left:auto; color:var(--ink-faint); font-size:10px; font-weight:700}
+#stepsBox .tlist{display:flex; flex-direction:column; gap:2px; min-height:0; max-height:min(24vh,180px); overflow:auto; scrollbar-width:thin}
+#stepsBox .titem{display:flex; align-items:flex-start; gap:7px; padding:4px 2px; border-radius:8px}
+#stepsBox .titem:hover{background:rgba(255,255,255,.48)}
+#stepsBox .titem .tdot{
+  flex:0 0 auto; width:15px; height:15px; margin-top:2px; border-radius:50%;
+  border:2px solid var(--blue2); background:var(--card); cursor:pointer;
+  display:flex; align-items:center; justify-content:center; transition:all .25s ease;
+}
+#stepsBox .titem.done .tdot{background:var(--blue); border-color:var(--blue)}
+#stepsBox .titem .tdot svg{
+  width:8px; height:8px; stroke:#fff; stroke-width:3.4; fill:none;
+  stroke-linecap:round; stroke-linejoin:round; opacity:0; transition:opacity .2s ease;
+}
+#stepsBox .titem.done .tdot svg{opacity:1}
+#stepsBox .titem > span[data-tdtext]{
+  flex:1 1 auto; min-width:0; color:var(--ink); font-size:12px; line-height:1.35;
+  white-space:normal; overflow-wrap:anywhere; cursor:text;
+}
+#stepsBox .titem.done > span[data-tdtext]{color:var(--ink-faint); text-decoration:line-through; text-decoration-color:var(--blue2)}
+#stepsBox .titem > span[data-tdtext] input{
+  width:100%; font:inherit; font-size:12px; color:var(--ink); background:var(--card);
+  border:1.5px solid var(--blue2); border-radius:8px; padding:2px 7px; outline:none;
+}
+#stepsBox .titem button{
+  appearance:none; border:none; background:none; color:var(--ink-faint); cursor:pointer;
+  font-size:11px; margin-top:2px; padding:2px 3px; border-radius:5px; opacity:0;
+  transition:opacity .2s ease,color .2s ease;
+}
+#stepsBox .titem:hover button{opacity:1}
+#stepsBox .titem button:hover{color:#B9776F}
+#stepsBox .empty{color:var(--ink-faint); font-size:11.5px; line-height:1.35; padding:2px}
+#stepsBox .tadd{display:flex; gap:6px}
+#stepsBox .tadd input{
+  flex:1 1 auto; width:100%; min-width:0; font:inherit; font-size:12px; color:var(--ink);
+  background:rgba(255,255,255,.78); border:1.5px solid var(--barline,#D6E2F2);
+  border-radius:9px; padding:6px 9px; outline:none; transition:border-color .25s ease,background .25s ease,box-shadow .25s ease;
+}
+#stepsBox .tadd input::placeholder{color:var(--ink-faint)}
+#stepsBox .tadd input:focus{background:var(--card); border-color:var(--blue); box-shadow:0 0 0 3px rgba(143,174,220,.12)}
+#stepsBox .tadd button{display:none !important}
+
+/* On a desktop the Completed card already spans two grid rows. Let the new list
+   consume that previously unused vertical room instead of making the whole
+   Mission control panel taller. */
+@media (min-width:1401px){
+  #totalBox{min-height:0}
+  #stepsBox{flex:1 1 auto; min-height:0}
+  #stepsBox .tlist{flex:1 1 auto; min-height:0; max-height:none}
+}
+
+/* The additional section remains legible in the alternate restaurant skin. */
+body.korean #stepsBox .th b{color:var(--kred2) !important; font-family:var(--kfont); font-weight:900; letter-spacing:.1em}
+body.korean #stepsBox .titem.done .tdot{background:var(--kgreen) !important; border-color:var(--edge) !important}
+body.korean #stepsBox .tadd input{border:2px solid var(--line2); background:var(--kfield,#FFFDF8)}
+</style>
+
 
 
 
@@ -2721,6 +2793,20 @@ body.dark .plaunch{background:var(--card); color:var(--ink-dim); border-color:va
         <div class="tfoot">
           <button class="pbtn spotbtn" data-spot="done" title="Put the light on this box - the whole page behind it goes dark"><i class="pdot"></i>highlight</button>
           <button class="pbtn lowbtn" data-spotlow="done" title="Give way inside the light - this box turns grey and a little dimmer"><i class="pdot"></i>yield</button>
+        </div>
+        <div class="done-steps-sep" aria-hidden="true"></div>
+        <div class="done-steps" id="stepsBox">
+          <div class="th">
+            <b id="stepsTitle">Tasks step by step</b>
+            <span class="cnt" id="stepsCnt">0 / 0</span>
+          </div>
+          <div class="tlist" id="stepsList"></div>
+          <div class="tadd">
+            <input type="text" id="stepsInp" enterkeyhint="enter" autocomplete="off" placeholder="add the next step..." maxlength="300">
+            <button id="stepsAdd" title="Add this step">+</button>
+          </div>
+          <button class="swbtn hidden" id="stepsSw" aria-hidden="true" tabindex="-1">switch</button>
+          <button class="plmove hidden" id="stepsMove" aria-hidden="true" tabindex="-1">move</button>
         </div>
       </div>
       <div class="total parbox" id="parBox">
@@ -5464,7 +5550,7 @@ function freshState(){
     today:[],week:[],todayNext:[],weekNext:[],todayView:"now",weekView:"now",
     plLog:[],plDay:"",plWeek:"",spotSave:null,starts:{},launched:{},launchBox:true,
     saveName:"",saveDirName:"",ptask:{},stickBtn:null,stickBtnHidden:false,stickersHidden:false,bink:[],
-    pairs:[],pairsNext:[],parView:"now",parFace:"list",tasks:[],tasksNext:[],tasksView:"now",timeoff:[],timeoffNext:[],timeoffView:"now",instrOpen:false,korean:false,logo:"wok",
+    pairs:[],pairsNext:[],parView:"now",parFace:"list",tasks:[],tasksNext:[],tasksView:"now",timeoff:[],timeoffNext:[],timeoffView:"now",steps:[],stepsNext:[],stepsView:"now",instrOpen:false,korean:false,logo:"wok",
     theme:"light",pinkBar:false,pinkColor:"",heroZoom:1,heroFree:false,darkness:50,boldAll:false,inproc:{},ie:false,iedone:{},hideDone:{},hideAllT:{},flipped:{},back:{}};
 }
 var state=freshState();
@@ -8010,6 +8096,14 @@ var PLISTS={
          emptyN:"No breaks kept for later yet.",
          ph:"something for a break...", phN:"...a break for later",
          mvLab:"move into time off", word:"off"},
+  steps:{key:"steps", nkey:"stepsNext", vkey:"stepsView", box:"stepsBox", ttl:"stepsTitle",
+         sw:"stepsSw", mv:"stepsMove",
+         list:"stepsList", cnt:"stepsCnt", inp:"stepsInp", add:"stepsAdd", pre:"sp",
+         title:"Tasks step by step", titleN:"Tasks step by step",
+         empty:"Nothing here yet - add the next step you are planning.",
+         emptyN:"Nothing here yet - add the next step you are planning.",
+         ph:"add the next step...", phN:"add the next step...",
+         mvLab:"move into steps", word:"steps"},
   week: {key:"week",  nkey:"weekNext",  vkey:"weekView",  box:"weekBox",  ttl:"weekTitle",
          sw:"weekSw",  mv:"weekMove",
          list:"weekList",  cnt:"weekCnt",  inp:"weekInp",  add:"weekAdd",  pre:"wk",
@@ -8029,6 +8123,7 @@ function plOf(id){
   if(p==="wk") return PLISTS.week;
   if(p==="tk") return PLISTS.tasks;
   if(p==="to") return PLISTS.timeoff;
+  if(p==="sp") return PLISTS.steps;
   return PLISTS.today;
 }
 /* is this box turned over to the next day / the next week? */
@@ -8105,7 +8200,7 @@ function renderList(cfg){
     mv.textContent=cfg.mvLab+(a.length?(" ("+a.length+")"):"");
   }
 }
-function renderToday(){ renderList(PLISTS.today); renderList(PLISTS.tasks); renderList(PLISTS.timeoff); renderList(PLISTS.week); paintLogCount(); }
+function renderToday(){ renderList(PLISTS.today); renderList(PLISTS.tasks); renderList(PLISTS.timeoff); renderList(PLISTS.steps); renderList(PLISTS.week); paintLogCount(); }
 
 /* ================= PARALLELS =================
    Two things are usually on the go at once. This box holds them as one line:
@@ -8735,7 +8830,7 @@ function buildLog(){
         return '<div class="lgrow'+(e.k==="week"?" wk":"")+'">'+
           '<span class="tm">'+hhmm(d)+'</span>'+
           '<span class="tx">'+esc(e.t)+'</span>'+
-          '<span class="wh">'+(e.k==="week"?"week":"day")+(e.ahead?" ahead":"")+'</span></div>';
+          '<span class="wh">'+(e.k==="week"?"week":(e.k==="steps"?"step by step":"day"))+(e.ahead?" ahead":"")+'</span></div>';
       }).join("")+'</div>';
   }).join("");
 }
