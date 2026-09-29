@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-29T07:28:20.357Z",
+  "savedAt": "2026-09-29T07:28:39.993Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1013,10 +1013,10 @@
       "w": 304.4444580078125,
       "h": 245.55557250976562,
       "c": 0,
-      "t": "- send the article to MV\n- make a project for Omel.\n- copy all the materials there of my articles \n- read \n- leave for the premises",
+      "t": "",
       "ink": [],
       "fx": 0.7455,
-      "rh": "<span style=\"text-decoration-line: line-through;\">- send the article to MV</span><div>- make a project for Omel.</div><div>- copy all the materials there of my articles </div><div>- read </div><div>- leave for the premises</div>"
+      "rh": "<br>"
     }
   ],
   "slinks": [],
@@ -1530,8 +1530,8 @@
   "pairs": [
     {
       "id": "prmulaho5f1",
-      "a": "⚡ Method: complete : integrated Axyology",
-      "b": "⚡ Method : complete : plan the parts day by day so that make sure to be on time",
+      "a": "",
+      "b": "",
       "done": false,
       "ad": false,
       "bd": false,
@@ -3501,10 +3501,10 @@
             "w": 304.4444580078125,
             "h": 245.55557250976562,
             "c": 0,
-            "t": "- send the article to MV\n- make a project for Omel.\n- copy all the materials there of my articles \n- read \n- leave for the premises",
+            "t": "",
             "ink": [],
             "fx": 0.7455,
-            "rh": "<span style=\"text-decoration-line: line-through;\">- send the article to MV</span><div>- make a project for Omel.</div><div>- copy all the materials there of my articles </div><div>- read </div><div>- leave for the premises</div>"
+            "rh": "<br>"
           }
         ],
         "slinks": [],
@@ -4018,8 +4018,8 @@
         "pairs": [
           {
             "id": "prmulaho5f1",
-            "a": "⚡ Method: complete : integrated Axyology",
-            "b": "⚡ Method : complete : plan the parts day by day so that make sure to be on time",
+            "a": "",
+            "b": "",
             "done": false,
             "ad": false,
             "bd": false,
