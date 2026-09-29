@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-29T13:08:59.478Z",
+  "savedAt": "2026-09-29T13:09:23.216Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1530,12 +1530,21 @@
       "ad": false,
       "bd": false,
       "at": ""
+    },
+    {
+      "id": "prmump0mlf2",
+      "a": "read Axiology",
+      "b": "",
+      "done": false,
+      "ad": false,
+      "bd": false,
+      "at": ""
     }
   ],
   "pairsNext": [
     {
       "id": "prmumfaoip1",
-      "a": "read Axiology",
+      "a": "",
       "b": "schedule working on further steps",
       "done": false,
       "ad": false,
@@ -4033,12 +4042,21 @@
             "ad": false,
             "bd": false,
             "at": ""
+          },
+          {
+            "id": "prmump0mlf2",
+            "a": "read Axiology",
+            "b": "",
+            "done": false,
+            "ad": false,
+            "bd": false,
+            "at": ""
           }
         ],
         "pairsNext": [
           {
             "id": "prmumfaoip1",
-            "a": "read Axiology",
+            "a": "",
             "b": "schedule working on further steps",
             "done": false,
             "ad": false,
