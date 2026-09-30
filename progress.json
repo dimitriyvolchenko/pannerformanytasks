@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-09-29T18:43:39.535Z",
+  "savedAt": "2026-09-30T07:23:08.149Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1005,20 +1005,7 @@
   "vehicle": 11,
   "signing": null,
   "sigv": 7,
-  "stickers": [
-    {
-      "id": "s1790608955325_0",
-      "x": 1426,
-      "y": 376.9998321533203,
-      "w": 304.4444580078125,
-      "h": 245.55557250976562,
-      "c": 0,
-      "t": "",
-      "ink": [],
-      "fx": 0.7455,
-      "rh": "<br>"
-    }
-  ],
+  "stickers": [],
   "slinks": [],
   "prio": {
     "p1787668712681_2": true
@@ -1027,18 +1014,20 @@
   "rich": {},
   "signs": {
     "t": {
-      "t": "forensic",
+      "t": "overall",
       "c": "#D6D2C6",
-      "s": 64,
+      "s": 90,
       "auto": true,
-      "dim": 60
+      "dim": 60,
+      "hidden": false
     },
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 22,
+      "s": 83,
       "auto": true,
-      "dim": 100
+      "dim": 100,
+      "hidden": false
     },
     "r": {
       "t": "forensic",
@@ -1049,7 +1038,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": false,
+  "hideLnkAll": true,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1099,7 +1088,7 @@
     {
       "id": "tdmumd9vs71",
       "t": "☕ Complete : the first draft of the omel's article",
-      "done": true,
+      "done": false,
       "fs": 2,
       "b": true
     }
@@ -1456,30 +1445,9 @@
       "k": "today",
       "ahead": false,
       "at": "2026-09-28T06:28:36.917Z"
-    },
-    {
-      "id": "tdmumd9vs71",
-      "t": "☕ Complete : the first draft of the omel's article",
-      "k": "today",
-      "ahead": false,
-      "at": "2026-09-29T18:42:38.298Z"
-    },
-    {
-      "id": "tkmumffetm3",
-      "t": "☕ Complete : the first draft of the omel's article",
-      "k": "tasks",
-      "ahead": false,
-      "at": "2026-09-29T18:42:41.124Z"
-    },
-    {
-      "id": "tkmuebhze62",
-      "t": "Ediging : launch : v.editing today with em and by mslf.",
-      "k": "tasks",
-      "ahead": false,
-      "at": "2026-09-29T18:42:53.232Z"
     }
   ],
-  "plDay": "2026-09-29",
+  "plDay": "2026-09-30",
   "plWeek": "2026-09-28",
   "spotSave": {
     "spot": {
@@ -1547,11 +1515,11 @@
     }
   },
   "stickBtn": {
-    "x": -94,
-    "y": 529
+    "x": 2047,
+    "y": 948
   },
-  "stickBtnHidden": true,
-  "stickersHidden": true,
+  "stickBtnHidden": false,
+  "stickersHidden": false,
   "bink": [],
   "pairs": [
     {
@@ -1562,12 +1530,21 @@
       "ad": false,
       "bd": false,
       "at": ""
+    },
+    {
+      "id": "prmump0mlf2",
+      "a": "read Axiology",
+      "b": "",
+      "done": false,
+      "ad": false,
+      "bd": false,
+      "at": ""
     }
   ],
   "pairsNext": [
     {
       "id": "prmumfaoip1",
-      "a": "read Axiology",
+      "a": "reading the belarus article making notes",
       "b": "schedule working on further steps",
       "done": false,
       "ad": false,
@@ -1581,7 +1558,7 @@
     {
       "id": "tkmuebhze62",
       "t": "Ediging : launch : v.editing today with em and by mslf.",
-      "done": true,
+      "done": false,
       "fs": 0
     },
     {
@@ -1611,13 +1588,13 @@
     {
       "id": "tkmumffetm3",
       "t": "☕ Complete : the first draft of the omel's article",
-      "done": true,
+      "done": false,
       "b": true,
       "fs": 1
     },
     {
-      "id": "tkmun0yfp21",
-      "t": "Editing : schedulepreparationofvideosbygreengrass",
+      "id": "tkmump08fc4",
+      "t": "from the article of belarus take the articles of immoral behaviour and include it as a seprate devision of study 9make it both ways to guess what article and with key words what in this article of this code)",
       "done": false
     }
   ],
@@ -1638,18 +1615,15 @@
   ],
   "timeoffNext": [],
   "timeoffView": "now",
-  "steps": [],
-  "stepsNext": [],
-  "stepsView": "now",
   "instrOpen": false,
   "korean": false,
-  "logo": "wok",
+  "logo": "wok-speech",
   "theme": "light",
   "pinkBar": false,
   "pinkColor": "",
   "heroZoom": 1,
-  "heroFree": false,
-  "darkness": 50,
+  "heroFree": true,
+  "darkness": 45,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -3543,20 +3517,7 @@
         "vehicle": 11,
         "signing": null,
         "sigv": 7,
-        "stickers": [
-          {
-            "id": "s1790608955325_0",
-            "x": 1426,
-            "y": 376.9998321533203,
-            "w": 304.4444580078125,
-            "h": 245.55557250976562,
-            "c": 0,
-            "t": "",
-            "ink": [],
-            "fx": 0.7455,
-            "rh": "<br>"
-          }
-        ],
+        "stickers": [],
         "slinks": [],
         "prio": {
           "p1787668712681_2": true
@@ -3565,18 +3526,20 @@
         "rich": {},
         "signs": {
           "t": {
-            "t": "forensic",
+            "t": "overall",
             "c": "#D6D2C6",
-            "s": 64,
+            "s": 90,
             "auto": true,
-            "dim": 60
+            "dim": 60,
+            "hidden": false
           },
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 22,
+            "s": 83,
             "auto": true,
-            "dim": 100
+            "dim": 100,
+            "hidden": false
           },
           "r": {
             "t": "forensic",
@@ -3587,7 +3550,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": false,
+        "hideLnkAll": true,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -3637,7 +3600,7 @@
           {
             "id": "tdmumd9vs71",
             "t": "☕ Complete : the first draft of the omel's article",
-            "done": true,
+            "done": false,
             "fs": 2,
             "b": true
           }
@@ -3994,30 +3957,9 @@
             "k": "today",
             "ahead": false,
             "at": "2026-09-28T06:28:36.917Z"
-          },
-          {
-            "id": "tdmumd9vs71",
-            "t": "☕ Complete : the first draft of the omel's article",
-            "k": "today",
-            "ahead": false,
-            "at": "2026-09-29T18:42:38.298Z"
-          },
-          {
-            "id": "tkmumffetm3",
-            "t": "☕ Complete : the first draft of the omel's article",
-            "k": "tasks",
-            "ahead": false,
-            "at": "2026-09-29T18:42:41.124Z"
-          },
-          {
-            "id": "tkmuebhze62",
-            "t": "Ediging : launch : v.editing today with em and by mslf.",
-            "k": "tasks",
-            "ahead": false,
-            "at": "2026-09-29T18:42:53.232Z"
           }
         ],
-        "plDay": "2026-09-29",
+        "plDay": "2026-09-30",
         "plWeek": "2026-09-28",
         "spotSave": {
           "spot": {
@@ -4085,11 +4027,11 @@
           }
         },
         "stickBtn": {
-          "x": -94,
-          "y": 529
+          "x": 2047,
+          "y": 948
         },
-        "stickBtnHidden": true,
-        "stickersHidden": true,
+        "stickBtnHidden": false,
+        "stickersHidden": false,
         "bink": [],
         "pairs": [
           {
@@ -4100,12 +4042,21 @@
             "ad": false,
             "bd": false,
             "at": ""
+          },
+          {
+            "id": "prmump0mlf2",
+            "a": "read Axiology",
+            "b": "",
+            "done": false,
+            "ad": false,
+            "bd": false,
+            "at": ""
           }
         ],
         "pairsNext": [
           {
             "id": "prmumfaoip1",
-            "a": "read Axiology",
+            "a": "reading the belarus article making notes",
             "b": "schedule working on further steps",
             "done": false,
             "ad": false,
@@ -4119,7 +4070,7 @@
           {
             "id": "tkmuebhze62",
             "t": "Ediging : launch : v.editing today with em and by mslf.",
-            "done": true,
+            "done": false,
             "fs": 0
           },
           {
@@ -4149,13 +4100,13 @@
           {
             "id": "tkmumffetm3",
             "t": "☕ Complete : the first draft of the omel's article",
-            "done": true,
+            "done": false,
             "b": true,
             "fs": 1
           },
           {
-            "id": "tkmun0yfp21",
-            "t": "Editing : schedulepreparationofvideosbygreengrass",
+            "id": "tkmump08fc4",
+            "t": "from the article of belarus take the articles of immoral behaviour and include it as a seprate devision of study 9make it both ways to guess what article and with key words what in this article of this code)",
             "done": false
           }
         ],
@@ -4176,18 +4127,15 @@
         ],
         "timeoffNext": [],
         "timeoffView": "now",
-        "steps": [],
-        "stepsNext": [],
-        "stepsView": "now",
         "instrOpen": false,
         "korean": false,
-        "logo": "wok",
+        "logo": "wok-speech",
         "theme": "light",
         "pinkBar": false,
         "pinkColor": "",
         "heroZoom": 1,
-        "heroFree": false,
-        "darkness": 50,
+        "heroFree": true,
+        "darkness": 45,
         "boldAll": false,
         "inproc": {},
         "ie": true,
@@ -4309,6 +4257,6 @@
       }
     }
   },
-  "device": "iPhone",
+  "device": "Computer",
   "lead": "Computer"
 }
