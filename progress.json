@@ -1,12 +1,13 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-02T09:40:47.608Z",
+  "savedAt": "2026-10-02T09:42:21.556Z",
   "trash": [],
   "spot": {
     "par": true,
     "done": true,
     "launch": true,
+    "timeline": true,
     "ct09": true,
     "st:s1789126170577_0": true,
     "ct21": true,
@@ -18,8 +19,7 @@
     "today": true,
     "off": true,
     "ct11": true,
-    "st:s1790608955325_0": true,
-    "timeline": true
+    "st:s1790608955325_0": true
   },
   "spotLow": {
     "ct20": true,
@@ -1014,18 +1014,20 @@
   "rich": {},
   "signs": {
     "t": {
-      "t": "forensic",
+      "t": "overall",
       "c": "#D6D2C6",
-      "s": 64,
+      "s": 90,
       "auto": true,
-      "dim": 60
+      "dim": 60,
+      "hidden": false
     },
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 22,
+      "s": 83,
       "auto": true,
-      "dim": 100
+      "dim": 100,
+      "hidden": false
     },
     "r": {
       "t": "forensic",
@@ -1036,7 +1038,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": false,
+  "hideLnkAll": true,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1103,15 +1105,9 @@
       "done": false
     }
   ],
-  "todayNext": [
-    {
-      "id": "tdmuqrmnmx1",
-      "t": "⚡ Method: complete : integrated Axyology",
-      "done": false
-    }
-  ],
+  "todayNext": [],
   "weekNext": [],
-  "todayView": "next",
+  "todayView": "now",
   "weekView": "now",
   "plLog": [
     {
@@ -1519,8 +1515,8 @@
     }
   },
   "stickBtn": {
-    "x": 1560,
-    "y": 775
+    "x": 2047,
+    "y": 948
   },
   "stickBtnHidden": false,
   "stickersHidden": false,
@@ -1547,9 +1543,9 @@
   ],
   "pairsNext": [
     {
-      "id": "prmuqrljen1",
-      "a": "prepare didactics tasks for the next week",
-      "b": "preparing the scheme of the material for the article",
+      "id": "prmumfaoip1",
+      "a": "reading the belarus article making notes",
+      "b": "schedule working on further steps",
       "done": false,
       "ad": false,
       "bd": false,
@@ -1624,13 +1620,13 @@
   "stepsView": "now",
   "instrOpen": false,
   "korean": false,
-  "logo": "wok",
+  "logo": "wok-speech",
   "theme": "light",
   "pinkBar": false,
   "pinkColor": "",
   "heroZoom": 1,
   "heroFree": true,
-  "darkness": 50,
+  "darkness": 45,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -2526,6 +2522,7 @@
           "par": true,
           "done": true,
           "launch": true,
+          "timeline": true,
           "ct09": true,
           "st:s1789126170577_0": true,
           "ct21": true,
@@ -2537,8 +2534,7 @@
           "today": true,
           "off": true,
           "ct11": true,
-          "st:s1790608955325_0": true,
-          "timeline": true
+          "st:s1790608955325_0": true
         },
         "spotLow": {
           "ct20": true,
@@ -3533,18 +3529,20 @@
         "rich": {},
         "signs": {
           "t": {
-            "t": "forensic",
+            "t": "overall",
             "c": "#D6D2C6",
-            "s": 64,
+            "s": 90,
             "auto": true,
-            "dim": 60
+            "dim": 60,
+            "hidden": false
           },
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 22,
+            "s": 83,
             "auto": true,
-            "dim": 100
+            "dim": 100,
+            "hidden": false
           },
           "r": {
             "t": "forensic",
@@ -3555,7 +3553,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": false,
+        "hideLnkAll": true,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -3622,15 +3620,9 @@
             "done": false
           }
         ],
-        "todayNext": [
-          {
-            "id": "tdmuqrmnmx1",
-            "t": "⚡ Method: complete : integrated Axyology",
-            "done": false
-          }
-        ],
+        "todayNext": [],
         "weekNext": [],
-        "todayView": "next",
+        "todayView": "now",
         "weekView": "now",
         "plLog": [
           {
@@ -4038,8 +4030,8 @@
           }
         },
         "stickBtn": {
-          "x": 1560,
-          "y": 775
+          "x": 2047,
+          "y": 948
         },
         "stickBtnHidden": false,
         "stickersHidden": false,
@@ -4066,9 +4058,9 @@
         ],
         "pairsNext": [
           {
-            "id": "prmuqrljen1",
-            "a": "prepare didactics tasks for the next week",
-            "b": "preparing the scheme of the material for the article",
+            "id": "prmumfaoip1",
+            "a": "reading the belarus article making notes",
+            "b": "schedule working on further steps",
             "done": false,
             "ad": false,
             "bd": false,
@@ -4143,13 +4135,13 @@
         "stepsView": "now",
         "instrOpen": false,
         "korean": false,
-        "logo": "wok",
+        "logo": "wok-speech",
         "theme": "light",
         "pinkBar": false,
         "pinkColor": "",
         "heroZoom": 1,
         "heroFree": true,
-        "darkness": 50,
+        "darkness": 45,
         "boldAll": false,
         "inproc": {},
         "ie": true,
