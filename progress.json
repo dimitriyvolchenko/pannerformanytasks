@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-01T11:17:29.139Z",
+  "savedAt": "2026-10-02T07:27:21.557Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1447,7 +1447,7 @@
       "at": "2026-09-28T06:28:36.917Z"
     }
   ],
-  "plDay": "2026-10-01",
+  "plDay": "2026-10-02",
   "plWeek": "2026-09-28",
   "spotSave": {
     "spot": {
@@ -1615,6 +1615,9 @@
   ],
   "timeoffNext": [],
   "timeoffView": "now",
+  "steps": [],
+  "stepsNext": [],
+  "stepsView": "now",
   "instrOpen": false,
   "korean": false,
   "logo": "wok-speech",
@@ -3959,7 +3962,7 @@
             "at": "2026-09-28T06:28:36.917Z"
           }
         ],
-        "plDay": "2026-10-01",
+        "plDay": "2026-10-02",
         "plWeek": "2026-09-28",
         "spotSave": {
           "spot": {
@@ -4127,6 +4130,9 @@
         ],
         "timeoffNext": [],
         "timeoffView": "now",
+        "steps": [],
+        "stepsNext": [],
+        "stepsView": "now",
         "instrOpen": false,
         "korean": false,
         "logo": "wok-speech",
