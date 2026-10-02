@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-02T14:02:21.556Z",
+  "savedAt": "2026-10-02T15:10:51.385Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1014,20 +1014,18 @@
   "rich": {},
   "signs": {
     "t": {
-      "t": "overall",
+      "t": "forensic",
       "c": "#D6D2C6",
-      "s": 90,
+      "s": 64,
       "auto": true,
-      "dim": 60,
-      "hidden": false
+      "dim": 60
     },
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 83,
+      "s": 22,
       "auto": true,
-      "dim": 100,
-      "hidden": false
+      "dim": 100
     },
     "r": {
       "t": "forensic",
@@ -1038,7 +1036,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": true,
+  "hideLnkAll": false,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1049,16 +1047,9 @@
     {
       "id": "tdmuqs8hm411",
       "t": "☕ Total Priority : Complete : khaz.article",
-      "done": false,
+      "done": true,
       "fs": 3,
       "b": true
-    },
-    {
-      "id": "tdmuqt2n8215",
-      "t": "🔥 Method : complete : plan the parts day by day so that make sure to be on time",
-      "done": false,
-      "b": true,
-      "fs": 1
     }
   ],
   "week": [
@@ -1107,6 +1098,11 @@
     {
       "id": "tdmuqryhsa7",
       "t": "Method : launch and schedule partial checking of links for MRM",
+      "done": false
+    },
+    {
+      "id": "tdmur3o7jm1",
+      "t": "🔥 Method : complete : plan the parts day by day so that make sure to be on time",
       "done": false
     }
   ],
@@ -1477,6 +1473,13 @@
       "k": "tasks",
       "ahead": false,
       "at": "2026-10-02T09:44:33.165Z"
+    },
+    {
+      "id": "tdmuqs8hm411",
+      "t": "☕ Total Priority : Complete : khaz.article",
+      "k": "today",
+      "ahead": false,
+      "at": "2026-10-02T15:10:18.532Z"
     }
   ],
   "plDay": "2026-10-02",
@@ -1547,11 +1550,11 @@
     }
   },
   "stickBtn": {
-    "x": 2047,
-    "y": 948
+    "x": -94,
+    "y": 529
   },
-  "stickBtnHidden": false,
-  "stickersHidden": false,
+  "stickBtnHidden": true,
+  "stickersHidden": true,
   "bink": [],
   "pairs": [
     {
@@ -1632,13 +1635,13 @@
   "stepsView": "now",
   "instrOpen": false,
   "korean": false,
-  "logo": "wok-speech",
+  "logo": "wok",
   "theme": "light",
   "pinkBar": false,
   "pinkColor": "",
   "heroZoom": 1,
-  "heroFree": true,
-  "darkness": 45,
+  "heroFree": false,
+  "darkness": 50,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -3541,20 +3544,18 @@
         "rich": {},
         "signs": {
           "t": {
-            "t": "overall",
+            "t": "forensic",
             "c": "#D6D2C6",
-            "s": 90,
+            "s": 64,
             "auto": true,
-            "dim": 60,
-            "hidden": false
+            "dim": 60
           },
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 83,
+            "s": 22,
             "auto": true,
-            "dim": 100,
-            "hidden": false
+            "dim": 100
           },
           "r": {
             "t": "forensic",
@@ -3565,7 +3566,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": true,
+        "hideLnkAll": false,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -3576,16 +3577,9 @@
           {
             "id": "tdmuqs8hm411",
             "t": "☕ Total Priority : Complete : khaz.article",
-            "done": false,
+            "done": true,
             "fs": 3,
             "b": true
-          },
-          {
-            "id": "tdmuqt2n8215",
-            "t": "🔥 Method : complete : plan the parts day by day so that make sure to be on time",
-            "done": false,
-            "b": true,
-            "fs": 1
           }
         ],
         "week": [
@@ -3634,6 +3628,11 @@
           {
             "id": "tdmuqryhsa7",
             "t": "Method : launch and schedule partial checking of links for MRM",
+            "done": false
+          },
+          {
+            "id": "tdmur3o7jm1",
+            "t": "🔥 Method : complete : plan the parts day by day so that make sure to be on time",
             "done": false
           }
         ],
@@ -4004,6 +4003,13 @@
             "k": "tasks",
             "ahead": false,
             "at": "2026-10-02T09:44:33.165Z"
+          },
+          {
+            "id": "tdmuqs8hm411",
+            "t": "☕ Total Priority : Complete : khaz.article",
+            "k": "today",
+            "ahead": false,
+            "at": "2026-10-02T15:10:18.532Z"
           }
         ],
         "plDay": "2026-10-02",
@@ -4074,11 +4080,11 @@
           }
         },
         "stickBtn": {
-          "x": 2047,
-          "y": 948
+          "x": -94,
+          "y": 529
         },
-        "stickBtnHidden": false,
-        "stickersHidden": false,
+        "stickBtnHidden": true,
+        "stickersHidden": true,
         "bink": [],
         "pairs": [
           {
@@ -4159,13 +4165,13 @@
         "stepsView": "now",
         "instrOpen": false,
         "korean": false,
-        "logo": "wok-speech",
+        "logo": "wok",
         "theme": "light",
         "pinkBar": false,
         "pinkColor": "",
         "heroZoom": 1,
-        "heroFree": true,
-        "darkness": 45,
+        "heroFree": false,
+        "darkness": 50,
         "boldAll": false,
         "inproc": {},
         "ie": true,
@@ -4287,6 +4293,6 @@
       }
     }
   },
-  "device": "Computer",
+  "device": "iPhone",
   "lead": "Computer"
 }
