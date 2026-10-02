@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-02T11:32:38.590Z",
+  "savedAt": "2026-10-02T11:33:24.575Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1579,7 +1579,7 @@
       "a": "prepare didactics tasks for the next week",
       "b": "preparing the scheme of the material for the article",
       "done": false,
-      "ad": false,
+      "ad": true,
       "bd": false,
       "at": ""
     }
@@ -4106,7 +4106,7 @@
             "a": "prepare didactics tasks for the next week",
             "b": "preparing the scheme of the material for the article",
             "done": false,
-            "ad": false,
+            "ad": true,
             "bd": false,
             "at": ""
           }
