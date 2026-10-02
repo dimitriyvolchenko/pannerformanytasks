@@ -1,13 +1,12 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-02T09:42:21.556Z",
+  "savedAt": "2026-10-02T09:44:47.738Z",
   "trash": [],
   "spot": {
     "par": true,
     "done": true,
     "launch": true,
-    "timeline": true,
     "ct09": true,
     "st:s1789126170577_0": true,
     "ct21": true,
@@ -19,7 +18,8 @@
     "today": true,
     "off": true,
     "ct11": true,
-    "st:s1790608955325_0": true
+    "st:s1790608955325_0": true,
+    "timeline": true
   },
   "spotLow": {
     "ct20": true,
@@ -1014,20 +1014,18 @@
   "rich": {},
   "signs": {
     "t": {
-      "t": "overall",
+      "t": "forensic",
       "c": "#D6D2C6",
-      "s": 90,
+      "s": 64,
       "auto": true,
-      "dim": 60,
-      "hidden": false
+      "dim": 60
     },
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 83,
+      "s": 22,
       "auto": true,
-      "dim": 100,
-      "hidden": false
+      "dim": 100
     },
     "r": {
       "t": "forensic",
@@ -1038,7 +1036,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": true,
+  "hideLnkAll": false,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1047,48 +1045,9 @@
   "listView": false,
   "today": [
     {
-      "id": "tdmulaghl37",
-      "t": "⚡ Method: complete : integrated Axyology",
-      "done": false,
-      "fs": 1,
-      "b": true
-    },
-    {
-      "id": "tdmulags9s8",
-      "t": "⚡ Method : complete : plan the parts day by day so that make sure to be on time",
-      "done": false,
-      "fs": 1,
-      "b": true
-    },
-    {
-      "id": "tdmulah7pd9",
-      "t": "Method : launch and schedule partial checking of links for MRM",
-      "done": false
-    },
-    {
-      "id": "tdmulaheor10",
-      "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
-      "done": false
-    },
-    {
-      "id": "tdmulae1w52",
-      "t": "⚡ Review : animal cruelty",
-      "done": false
-    },
-    {
-      "id": "tdmulaedtb3",
-      "t": "⚡ Review : until the Table : the Objective system of the Traditional values",
-      "done": false
-    },
-    {
-      "id": "tdmulalz7d13",
-      "t": "Launch : disabled cruelty and elderly (see if it fits into one method)",
-      "done": false
-    },
-    {
       "id": "tdmumd9vs71",
       "t": "☕ Complete : the first draft of the omel's article",
-      "done": false,
+      "done": true,
       "fs": 2,
       "b": true
     }
@@ -1105,7 +1064,43 @@
       "done": false
     }
   ],
-  "todayNext": [],
+  "todayNext": [
+    {
+      "id": "tdmuqrmnmx1",
+      "t": "⚡ Method: complete : integrated Axyology",
+      "done": false
+    },
+    {
+      "id": "tdmuqrwrhn2",
+      "t": "⚡ Method : complete : plan the parts day by day so that make sure to be on time",
+      "done": false
+    },
+    {
+      "id": "tdmuqrx2pl3",
+      "t": "Launch : disabled cruelty and elderly (see if it fits into one method) using the materials which I already have",
+      "done": false
+    },
+    {
+      "id": "tdmuqrxq1g4",
+      "t": "⚡ Review : until the Table : the Objective system of the Traditional values",
+      "done": false
+    },
+    {
+      "id": "tdmuqrxyq45",
+      "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
+      "done": false
+    },
+    {
+      "id": "tdmuqry6b66",
+      "t": "⚡ Review : animal cruelty",
+      "done": false
+    },
+    {
+      "id": "tdmuqryhsa7",
+      "t": "Method : launch and schedule partial checking of links for MRM",
+      "done": false
+    }
+  ],
   "weekNext": [],
   "todayView": "now",
   "weekView": "now",
@@ -1445,6 +1440,34 @@
       "k": "today",
       "ahead": false,
       "at": "2026-09-28T06:28:36.917Z"
+    },
+    {
+      "id": "tdmumd9vs71",
+      "t": "☕ Complete : the first draft of the omel's article",
+      "k": "today",
+      "ahead": false,
+      "at": "2026-10-02T09:41:25.191Z"
+    },
+    {
+      "id": "tkmuebhze62",
+      "t": "Ediging : launch : v.editing today with em and by mslf.",
+      "k": "tasks",
+      "ahead": false,
+      "at": "2026-10-02T09:43:52.422Z"
+    },
+    {
+      "id": "tkmumffetm3",
+      "t": "☕ Complete : the first draft of the omel's article",
+      "k": "tasks",
+      "ahead": false,
+      "at": "2026-10-02T09:44:21.136Z"
+    },
+    {
+      "id": "tkmump08fc4",
+      "t": "from the article of belarus take the articles of immoral behaviour and include it as a seprate devision of study 9make it both ways to guess what article and with key words what in this article of this code)",
+      "k": "tasks",
+      "ahead": false,
+      "at": "2026-10-02T09:44:33.165Z"
     }
   ],
   "plDay": "2026-10-02",
@@ -1515,8 +1538,8 @@
     }
   },
   "stickBtn": {
-    "x": 2047,
-    "y": 948
+    "x": 1560,
+    "y": 775
   },
   "stickBtnHidden": false,
   "stickersHidden": false,
@@ -1543,9 +1566,9 @@
   ],
   "pairsNext": [
     {
-      "id": "prmumfaoip1",
-      "a": "reading the belarus article making notes",
-      "b": "schedule working on further steps",
+      "id": "prmuqrljen1",
+      "a": "prepare didactics tasks for the next week",
+      "b": "preparing the scheme of the material for the article",
       "done": false,
       "ad": false,
       "bd": false,
@@ -1558,50 +1581,43 @@
     {
       "id": "tkmuebhze62",
       "t": "Ediging : launch : v.editing today with em and by mslf.",
-      "done": false,
+      "done": true,
       "fs": 0
-    },
-    {
-      "id": "tkmul6w36p1",
-      "t": "Method: complete : integrated Axyology",
-      "done": false,
-      "fs": 1,
-      "b": true
-    },
-    {
-      "id": "tkmulaevpr4",
-      "t": "Method : launch and schedule partial checking of links for MRM",
-      "done": false
-    },
-    {
-      "id": "tkmulafcpx5",
-      "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
-      "done": false
     },
     {
       "id": "tkmulag94l6",
       "t": "Method : complete : plan the parts day by day so that make sure to be on time",
       "done": false,
       "fs": 1,
-      "b": true
+      "b": false
     },
     {
       "id": "tkmumffetm3",
       "t": "☕ Complete : the first draft of the omel's article",
-      "done": false,
+      "done": true,
       "b": true,
       "fs": 1
     },
     {
       "id": "tkmump08fc4",
       "t": "from the article of belarus take the articles of immoral behaviour and include it as a seprate devision of study 9make it both ways to guess what article and with key words what in this article of this code)",
-      "done": false
+      "done": true
     }
   ],
   "tasksNext": [
     {
-      "id": "tkmukyanbu1",
-      "t": "diagnostics for Wednesday 29.09.2026",
+      "id": "tkmuqrzrkz8",
+      "t": "Method: complete : integrated Axyology",
+      "done": false
+    },
+    {
+      "id": "tkmuqs08719",
+      "t": "Method : launch and schedule partial checking of links for MRM",
+      "done": false
+    },
+    {
+      "id": "tkmuqs0g5i10",
+      "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
       "done": false
     }
   ],
@@ -1620,13 +1636,13 @@
   "stepsView": "now",
   "instrOpen": false,
   "korean": false,
-  "logo": "wok-speech",
+  "logo": "wok",
   "theme": "light",
   "pinkBar": false,
   "pinkColor": "",
   "heroZoom": 1,
   "heroFree": true,
-  "darkness": 45,
+  "darkness": 50,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -2522,7 +2538,6 @@
           "par": true,
           "done": true,
           "launch": true,
-          "timeline": true,
           "ct09": true,
           "st:s1789126170577_0": true,
           "ct21": true,
@@ -2534,7 +2549,8 @@
           "today": true,
           "off": true,
           "ct11": true,
-          "st:s1790608955325_0": true
+          "st:s1790608955325_0": true,
+          "timeline": true
         },
         "spotLow": {
           "ct20": true,
@@ -3529,20 +3545,18 @@
         "rich": {},
         "signs": {
           "t": {
-            "t": "overall",
+            "t": "forensic",
             "c": "#D6D2C6",
-            "s": 90,
+            "s": 64,
             "auto": true,
-            "dim": 60,
-            "hidden": false
+            "dim": 60
           },
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 83,
+            "s": 22,
             "auto": true,
-            "dim": 100,
-            "hidden": false
+            "dim": 100
           },
           "r": {
             "t": "forensic",
@@ -3553,7 +3567,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": true,
+        "hideLnkAll": false,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -3562,48 +3576,9 @@
         "listView": false,
         "today": [
           {
-            "id": "tdmulaghl37",
-            "t": "⚡ Method: complete : integrated Axyology",
-            "done": false,
-            "fs": 1,
-            "b": true
-          },
-          {
-            "id": "tdmulags9s8",
-            "t": "⚡ Method : complete : plan the parts day by day so that make sure to be on time",
-            "done": false,
-            "fs": 1,
-            "b": true
-          },
-          {
-            "id": "tdmulah7pd9",
-            "t": "Method : launch and schedule partial checking of links for MRM",
-            "done": false
-          },
-          {
-            "id": "tdmulaheor10",
-            "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
-            "done": false
-          },
-          {
-            "id": "tdmulae1w52",
-            "t": "⚡ Review : animal cruelty",
-            "done": false
-          },
-          {
-            "id": "tdmulaedtb3",
-            "t": "⚡ Review : until the Table : the Objective system of the Traditional values",
-            "done": false
-          },
-          {
-            "id": "tdmulalz7d13",
-            "t": "Launch : disabled cruelty and elderly (see if it fits into one method)",
-            "done": false
-          },
-          {
             "id": "tdmumd9vs71",
             "t": "☕ Complete : the first draft of the omel's article",
-            "done": false,
+            "done": true,
             "fs": 2,
             "b": true
           }
@@ -3620,7 +3595,43 @@
             "done": false
           }
         ],
-        "todayNext": [],
+        "todayNext": [
+          {
+            "id": "tdmuqrmnmx1",
+            "t": "⚡ Method: complete : integrated Axyology",
+            "done": false
+          },
+          {
+            "id": "tdmuqrwrhn2",
+            "t": "⚡ Method : complete : plan the parts day by day so that make sure to be on time",
+            "done": false
+          },
+          {
+            "id": "tdmuqrx2pl3",
+            "t": "Launch : disabled cruelty and elderly (see if it fits into one method) using the materials which I already have",
+            "done": false
+          },
+          {
+            "id": "tdmuqrxq1g4",
+            "t": "⚡ Review : until the Table : the Objective system of the Traditional values",
+            "done": false
+          },
+          {
+            "id": "tdmuqrxyq45",
+            "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
+            "done": false
+          },
+          {
+            "id": "tdmuqry6b66",
+            "t": "⚡ Review : animal cruelty",
+            "done": false
+          },
+          {
+            "id": "tdmuqryhsa7",
+            "t": "Method : launch and schedule partial checking of links for MRM",
+            "done": false
+          }
+        ],
         "weekNext": [],
         "todayView": "now",
         "weekView": "now",
@@ -3960,6 +3971,34 @@
             "k": "today",
             "ahead": false,
             "at": "2026-09-28T06:28:36.917Z"
+          },
+          {
+            "id": "tdmumd9vs71",
+            "t": "☕ Complete : the first draft of the omel's article",
+            "k": "today",
+            "ahead": false,
+            "at": "2026-10-02T09:41:25.191Z"
+          },
+          {
+            "id": "tkmuebhze62",
+            "t": "Ediging : launch : v.editing today with em and by mslf.",
+            "k": "tasks",
+            "ahead": false,
+            "at": "2026-10-02T09:43:52.422Z"
+          },
+          {
+            "id": "tkmumffetm3",
+            "t": "☕ Complete : the first draft of the omel's article",
+            "k": "tasks",
+            "ahead": false,
+            "at": "2026-10-02T09:44:21.136Z"
+          },
+          {
+            "id": "tkmump08fc4",
+            "t": "from the article of belarus take the articles of immoral behaviour and include it as a seprate devision of study 9make it both ways to guess what article and with key words what in this article of this code)",
+            "k": "tasks",
+            "ahead": false,
+            "at": "2026-10-02T09:44:33.165Z"
           }
         ],
         "plDay": "2026-10-02",
@@ -4030,8 +4069,8 @@
           }
         },
         "stickBtn": {
-          "x": 2047,
-          "y": 948
+          "x": 1560,
+          "y": 775
         },
         "stickBtnHidden": false,
         "stickersHidden": false,
@@ -4058,9 +4097,9 @@
         ],
         "pairsNext": [
           {
-            "id": "prmumfaoip1",
-            "a": "reading the belarus article making notes",
-            "b": "schedule working on further steps",
+            "id": "prmuqrljen1",
+            "a": "prepare didactics tasks for the next week",
+            "b": "preparing the scheme of the material for the article",
             "done": false,
             "ad": false,
             "bd": false,
@@ -4073,50 +4112,43 @@
           {
             "id": "tkmuebhze62",
             "t": "Ediging : launch : v.editing today with em and by mslf.",
-            "done": false,
+            "done": true,
             "fs": 0
-          },
-          {
-            "id": "tkmul6w36p1",
-            "t": "Method: complete : integrated Axyology",
-            "done": false,
-            "fs": 1,
-            "b": true
-          },
-          {
-            "id": "tkmulaevpr4",
-            "t": "Method : launch and schedule partial checking of links for MRM",
-            "done": false
-          },
-          {
-            "id": "tkmulafcpx5",
-            "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
-            "done": false
           },
           {
             "id": "tkmulag94l6",
             "t": "Method : complete : plan the parts day by day so that make sure to be on time",
             "done": false,
             "fs": 1,
-            "b": true
+            "b": false
           },
           {
             "id": "tkmumffetm3",
             "t": "☕ Complete : the first draft of the omel's article",
-            "done": false,
+            "done": true,
             "b": true,
             "fs": 1
           },
           {
             "id": "tkmump08fc4",
             "t": "from the article of belarus take the articles of immoral behaviour and include it as a seprate devision of study 9make it both ways to guess what article and with key words what in this article of this code)",
-            "done": false
+            "done": true
           }
         ],
         "tasksNext": [
           {
-            "id": "tkmukyanbu1",
-            "t": "diagnostics for Wednesday 29.09.2026",
+            "id": "tkmuqrzrkz8",
+            "t": "Method: complete : integrated Axyology",
+            "done": false
+          },
+          {
+            "id": "tkmuqs08719",
+            "t": "Method : launch and schedule partial checking of links for MRM",
+            "done": false
+          },
+          {
+            "id": "tkmuqs0g5i10",
+            "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
             "done": false
           }
         ],
@@ -4135,13 +4167,13 @@
         "stepsView": "now",
         "instrOpen": false,
         "korean": false,
-        "logo": "wok-speech",
+        "logo": "wok",
         "theme": "light",
         "pinkBar": false,
         "pinkColor": "",
         "heroZoom": 1,
         "heroFree": true,
-        "darkness": 45,
+        "darkness": 50,
         "boldAll": false,
         "inproc": {},
         "ie": true,
