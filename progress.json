@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-02T09:44:47.738Z",
+  "savedAt": "2026-10-02T09:45:02.469Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1043,15 +1043,7 @@
   "tmoved": {},
   "styles": {},
   "listView": false,
-  "today": [
-    {
-      "id": "tdmumd9vs71",
-      "t": "☕ Complete : the first draft of the omel's article",
-      "done": true,
-      "fs": 2,
-      "b": true
-    }
-  ],
+  "today": [],
   "week": [
     {
       "id": "wkmt9sesvf1",
@@ -1579,29 +1571,11 @@
   "parFace": "list",
   "tasks": [
     {
-      "id": "tkmuebhze62",
-      "t": "Ediging : launch : v.editing today with em and by mslf.",
-      "done": true,
-      "fs": 0
-    },
-    {
       "id": "tkmulag94l6",
       "t": "Method : complete : plan the parts day by day so that make sure to be on time",
       "done": false,
       "fs": 1,
       "b": false
-    },
-    {
-      "id": "tkmumffetm3",
-      "t": "☕ Complete : the first draft of the omel's article",
-      "done": true,
-      "b": true,
-      "fs": 1
-    },
-    {
-      "id": "tkmump08fc4",
-      "t": "from the article of belarus take the articles of immoral behaviour and include it as a seprate devision of study 9make it both ways to guess what article and with key words what in this article of this code)",
-      "done": true
     }
   ],
   "tasksNext": [
@@ -1622,13 +1596,7 @@
     }
   ],
   "tasksView": "now",
-  "timeoff": [
-    {
-      "id": "tomumdcohk2",
-      "t": "in the notes",
-      "done": false
-    }
-  ],
+  "timeoff": [],
   "timeoffNext": [],
   "timeoffView": "now",
   "steps": [],
@@ -3574,15 +3542,7 @@
         "tmoved": {},
         "styles": {},
         "listView": false,
-        "today": [
-          {
-            "id": "tdmumd9vs71",
-            "t": "☕ Complete : the first draft of the omel's article",
-            "done": true,
-            "fs": 2,
-            "b": true
-          }
-        ],
+        "today": [],
         "week": [
           {
             "id": "wkmt9sesvf1",
@@ -4110,29 +4070,11 @@
         "parFace": "list",
         "tasks": [
           {
-            "id": "tkmuebhze62",
-            "t": "Ediging : launch : v.editing today with em and by mslf.",
-            "done": true,
-            "fs": 0
-          },
-          {
             "id": "tkmulag94l6",
             "t": "Method : complete : plan the parts day by day so that make sure to be on time",
             "done": false,
             "fs": 1,
             "b": false
-          },
-          {
-            "id": "tkmumffetm3",
-            "t": "☕ Complete : the first draft of the omel's article",
-            "done": true,
-            "b": true,
-            "fs": 1
-          },
-          {
-            "id": "tkmump08fc4",
-            "t": "from the article of belarus take the articles of immoral behaviour and include it as a seprate devision of study 9make it both ways to guess what article and with key words what in this article of this code)",
-            "done": true
           }
         ],
         "tasksNext": [
@@ -4153,13 +4095,7 @@
           }
         ],
         "tasksView": "now",
-        "timeoff": [
-          {
-            "id": "tomumdcohk2",
-            "t": "in the notes",
-            "done": false
-          }
-        ],
+        "timeoff": [],
         "timeoffNext": [],
         "timeoffView": "now",
         "steps": [],
