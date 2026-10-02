@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-02T15:10:51.385Z",
+  "savedAt": "2026-10-02T15:11:06.206Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1576,17 +1576,7 @@
       "at": ""
     }
   ],
-  "pairsNext": [
-    {
-      "id": "prmuqrljen1",
-      "a": "prepare didactics tasks for the next week",
-      "b": "preparing the scheme of the material for the article",
-      "done": false,
-      "ad": true,
-      "bd": false,
-      "at": ""
-    }
-  ],
+  "pairsNext": [],
   "parView": "next",
   "parFace": "list",
   "tasks": [],
@@ -4106,17 +4096,7 @@
             "at": ""
           }
         ],
-        "pairsNext": [
-          {
-            "id": "prmuqrljen1",
-            "a": "prepare didactics tasks for the next week",
-            "b": "preparing the scheme of the material for the article",
-            "done": false,
-            "ad": true,
-            "bd": false,
-            "at": ""
-          }
-        ],
+        "pairsNext": [],
         "parView": "next",
         "parFace": "list",
         "tasks": [],
