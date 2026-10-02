@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-02T10:07:21.555Z",
+  "savedAt": "2026-10-02T10:07:38.734Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1612,19 +1612,19 @@
   "steps": [
     {
       "id": "spmuqsdyv112",
-      "t": "🔥 edit : conclusion in kh.article",
+      "t": "☕ 🔥 edit : conclusion in kh.article",
       "done": false,
       "b": true
     },
     {
       "id": "spmuqsekqf13",
-      "t": "🔥 include : axiological analysis",
+      "t": "☕ 🔥 include : axiological analysis",
       "done": false,
       "b": true
     },
     {
       "id": "spmuqsfv1414",
-      "t": "🔥 make : paragraph on Constitutional decisions",
+      "t": "☕ 🔥 make : paragraph on Constitutional decisions",
       "done": false,
       "b": true
     }
@@ -4140,19 +4140,19 @@
         "steps": [
           {
             "id": "spmuqsdyv112",
-            "t": "🔥 edit : conclusion in kh.article",
+            "t": "☕ 🔥 edit : conclusion in kh.article",
             "done": false,
             "b": true
           },
           {
             "id": "spmuqsekqf13",
-            "t": "🔥 include : axiological analysis",
+            "t": "☕ 🔥 include : axiological analysis",
             "done": false,
             "b": true
           },
           {
             "id": "spmuqsfv1414",
-            "t": "🔥 make : paragraph on Constitutional decisions",
+            "t": "☕ 🔥 make : paragraph on Constitutional decisions",
             "done": false,
             "b": true
           }
