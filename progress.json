@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-02T10:13:23.355Z",
+  "savedAt": "2026-10-02T10:14:03.985Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1050,6 +1050,12 @@
       "done": false,
       "fs": 3,
       "b": true
+    },
+    {
+      "id": "tdmuqt2n8215",
+      "t": "🔥 Method : complete : plan the parts day by day so that make sure to be on time",
+      "done": false,
+      "b": true
     }
   ],
   "week": [
@@ -1577,15 +1583,7 @@
   ],
   "parView": "next",
   "parFace": "list",
-  "tasks": [
-    {
-      "id": "tkmulag94l6",
-      "t": "Method : complete : plan the parts day by day so that make sure to be on time",
-      "done": false,
-      "fs": 1,
-      "b": false
-    }
-  ],
+  "tasks": [],
   "tasksNext": [
     {
       "id": "tkmuqrzrkz8",
@@ -3576,6 +3574,12 @@
             "done": false,
             "fs": 3,
             "b": true
+          },
+          {
+            "id": "tdmuqt2n8215",
+            "t": "🔥 Method : complete : plan the parts day by day so that make sure to be on time",
+            "done": false,
+            "b": true
           }
         ],
         "week": [
@@ -4103,15 +4107,7 @@
         ],
         "parView": "next",
         "parFace": "list",
-        "tasks": [
-          {
-            "id": "tkmulag94l6",
-            "t": "Method : complete : plan the parts day by day so that make sure to be on time",
-            "done": false,
-            "fs": 1,
-            "b": false
-          }
-        ],
+        "tasks": [],
         "tasksNext": [
           {
             "id": "tkmuqrzrkz8",
