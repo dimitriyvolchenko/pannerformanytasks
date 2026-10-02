@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-02T10:02:21.556Z",
+  "savedAt": "2026-10-02T10:06:58.730Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1014,20 +1014,18 @@
   "rich": {},
   "signs": {
     "t": {
-      "t": "overall",
+      "t": "forensic",
       "c": "#D6D2C6",
-      "s": 90,
+      "s": 64,
       "auto": true,
-      "dim": 60,
-      "hidden": false
+      "dim": 60
     },
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 83,
+      "s": 22,
       "auto": true,
-      "dim": 100,
-      "hidden": false
+      "dim": 100
     },
     "r": {
       "t": "forensic",
@@ -1038,14 +1036,22 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": true,
+  "hideLnkAll": false,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
   "tmoved": {},
   "styles": {},
   "listView": false,
-  "today": [],
+  "today": [
+    {
+      "id": "tdmuqs8hm411",
+      "t": "🔥 Total Priority : Complete : khaz.article",
+      "done": false,
+      "fs": 2,
+      "b": true
+    }
+  ],
   "week": [
     {
       "id": "wkmt9sesvf1",
@@ -1532,8 +1538,8 @@
     }
   },
   "stickBtn": {
-    "x": 2047,
-    "y": 948
+    "x": 1560,
+    "y": 775
   },
   "stickBtnHidden": false,
   "stickersHidden": false,
@@ -1601,18 +1607,37 @@
   "timeoff": [],
   "timeoffNext": [],
   "timeoffView": "now",
-  "steps": [],
+  "steps": [
+    {
+      "id": "spmuqsdyv112",
+      "t": "🔥 edit : conclusion in kh.article",
+      "done": false,
+      "b": true
+    },
+    {
+      "id": "spmuqsekqf13",
+      "t": "🔥 include : axiological analysis",
+      "done": false,
+      "b": true
+    },
+    {
+      "id": "spmuqsfv1414",
+      "t": "🔥 make : paragraph on Constitutional decisions",
+      "done": false,
+      "b": true
+    }
+  ],
   "stepsNext": [],
   "stepsView": "now",
   "instrOpen": false,
   "korean": false,
-  "logo": "wok-speech",
+  "logo": "wok",
   "theme": "light",
   "pinkBar": false,
   "pinkColor": "",
   "heroZoom": 1,
   "heroFree": true,
-  "darkness": 45,
+  "darkness": 50,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -3515,20 +3540,18 @@
         "rich": {},
         "signs": {
           "t": {
-            "t": "overall",
+            "t": "forensic",
             "c": "#D6D2C6",
-            "s": 90,
+            "s": 64,
             "auto": true,
-            "dim": 60,
-            "hidden": false
+            "dim": 60
           },
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 83,
+            "s": 22,
             "auto": true,
-            "dim": 100,
-            "hidden": false
+            "dim": 100
           },
           "r": {
             "t": "forensic",
@@ -3539,14 +3562,22 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": true,
+        "hideLnkAll": false,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
         "tmoved": {},
         "styles": {},
         "listView": false,
-        "today": [],
+        "today": [
+          {
+            "id": "tdmuqs8hm411",
+            "t": "🔥 Total Priority : Complete : khaz.article",
+            "done": false,
+            "fs": 2,
+            "b": true
+          }
+        ],
         "week": [
           {
             "id": "wkmt9sesvf1",
@@ -4033,8 +4064,8 @@
           }
         },
         "stickBtn": {
-          "x": 2047,
-          "y": 948
+          "x": 1560,
+          "y": 775
         },
         "stickBtnHidden": false,
         "stickersHidden": false,
@@ -4102,18 +4133,37 @@
         "timeoff": [],
         "timeoffNext": [],
         "timeoffView": "now",
-        "steps": [],
+        "steps": [
+          {
+            "id": "spmuqsdyv112",
+            "t": "🔥 edit : conclusion in kh.article",
+            "done": false,
+            "b": true
+          },
+          {
+            "id": "spmuqsekqf13",
+            "t": "🔥 include : axiological analysis",
+            "done": false,
+            "b": true
+          },
+          {
+            "id": "spmuqsfv1414",
+            "t": "🔥 make : paragraph on Constitutional decisions",
+            "done": false,
+            "b": true
+          }
+        ],
         "stepsNext": [],
         "stepsView": "now",
         "instrOpen": false,
         "korean": false,
-        "logo": "wok-speech",
+        "logo": "wok",
         "theme": "light",
         "pinkBar": false,
         "pinkColor": "",
         "heroZoom": 1,
         "heroFree": true,
-        "darkness": 45,
+        "darkness": 50,
         "boldAll": false,
         "inproc": {},
         "ie": true,
