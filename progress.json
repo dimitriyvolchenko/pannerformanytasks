@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-05T13:14:03.838Z",
+  "savedAt": "2026-10-05T13:15:46.073Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1085,6 +1085,13 @@
       "id": "tdmuqryhsa7",
       "t": "Method : launch and schedule partial checking of links for MRM",
       "done": false
+    },
+    {
+      "id": "tdmuv9unkr7",
+      "t": "🔥 Complete : khaziev.article",
+      "done": true,
+      "fs": 3,
+      "b": true
     }
   ],
   "week": [
@@ -1516,6 +1523,20 @@
       "k": "tasks",
       "ahead": false,
       "at": "2026-10-05T13:04:59.599Z"
+    },
+    {
+      "id": "tdmuv9unkr7",
+      "t": "🔥 Complete : khaziev.article",
+      "k": "today",
+      "ahead": false,
+      "at": "2026-10-05T13:15:05.998Z"
+    },
+    {
+      "id": "tkmuv9voi88",
+      "t": "🔥 Complete : khaziev.article",
+      "k": "tasks",
+      "ahead": false,
+      "at": "2026-10-05T13:15:30.207Z"
     }
   ],
   "plDay": "2026-10-05",
@@ -1626,7 +1647,9 @@
     {
       "id": "tkmuv0z3av3",
       "t": "check the article of natalya",
-      "done": false
+      "done": false,
+      "fs": 2,
+      "b": true
     },
     {
       "id": "tkmuv0zm8x4",
@@ -1637,6 +1660,13 @@
       "id": "tkmuv10p0s5",
       "t": "launch all the interrupted tasks in note pad",
       "done": false
+    },
+    {
+      "id": "tkmuv9voi88",
+      "t": "🔥 Complete : khaziev.article",
+      "done": true,
+      "fs": 3,
+      "b": true
     }
   ],
   "tasksNext": [
@@ -3645,6 +3675,13 @@
             "id": "tdmuqryhsa7",
             "t": "Method : launch and schedule partial checking of links for MRM",
             "done": false
+          },
+          {
+            "id": "tdmuv9unkr7",
+            "t": "🔥 Complete : khaziev.article",
+            "done": true,
+            "fs": 3,
+            "b": true
           }
         ],
         "week": [
@@ -4076,6 +4113,20 @@
             "k": "tasks",
             "ahead": false,
             "at": "2026-10-05T13:04:59.599Z"
+          },
+          {
+            "id": "tdmuv9unkr7",
+            "t": "🔥 Complete : khaziev.article",
+            "k": "today",
+            "ahead": false,
+            "at": "2026-10-05T13:15:05.998Z"
+          },
+          {
+            "id": "tkmuv9voi88",
+            "t": "🔥 Complete : khaziev.article",
+            "k": "tasks",
+            "ahead": false,
+            "at": "2026-10-05T13:15:30.207Z"
           }
         ],
         "plDay": "2026-10-05",
@@ -4186,7 +4237,9 @@
           {
             "id": "tkmuv0z3av3",
             "t": "check the article of natalya",
-            "done": false
+            "done": false,
+            "fs": 2,
+            "b": true
           },
           {
             "id": "tkmuv0zm8x4",
@@ -4197,6 +4250,13 @@
             "id": "tkmuv10p0s5",
             "t": "launch all the interrupted tasks in note pad",
             "done": false
+          },
+          {
+            "id": "tkmuv9voi88",
+            "t": "🔥 Complete : khaziev.article",
+            "done": true,
+            "fs": 3,
+            "b": true
           }
         ],
         "tasksNext": [
