@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-05T14:26:33.354Z",
+  "savedAt": "2026-10-05T14:31:39.785Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1539,6 +1539,13 @@
       "k": "tasks",
       "ahead": false,
       "at": "2026-10-05T13:15:30.207Z"
+    },
+    {
+      "id": "tkmuv0z3av3",
+      "t": "check the article of natalya",
+      "k": "tasks",
+      "ahead": false,
+      "at": "2026-10-05T14:26:35.023Z"
     }
   ],
   "plDay": "2026-10-05",
@@ -1652,7 +1659,7 @@
     {
       "id": "tkmuv0z3av3",
       "t": "check the article of natalya",
-      "done": false,
+      "done": true,
       "fs": 2,
       "b": true
     },
@@ -4134,6 +4141,13 @@
             "k": "tasks",
             "ahead": false,
             "at": "2026-10-05T13:15:30.207Z"
+          },
+          {
+            "id": "tkmuv0z3av3",
+            "t": "check the article of natalya",
+            "k": "tasks",
+            "ahead": false,
+            "at": "2026-10-05T14:26:35.023Z"
           }
         ],
         "plDay": "2026-10-05",
@@ -4247,7 +4261,7 @@
           {
             "id": "tkmuv0z3av3",
             "t": "check the article of natalya",
-            "done": false,
+            "done": true,
             "fs": 2,
             "b": true
           },
