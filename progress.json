@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-05T15:57:01.046Z",
+  "savedAt": "2026-10-05T17:36:19.139Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1551,6 +1551,13 @@
       "k": "tasks",
       "ahead": false,
       "at": "2026-10-05T14:34:04.139Z"
+    },
+    {
+      "id": "tkmuv10p0s5",
+      "t": "launch all the interrupted tasks in note pad",
+      "k": "tasks",
+      "ahead": false,
+      "at": "2026-10-05T17:35:47.780Z"
     }
   ],
   "plDay": "2026-10-05",
@@ -1663,7 +1670,7 @@
     {
       "id": "tkmuv10p0s5",
       "t": "launch all the interrupted tasks in note pad",
-      "done": false
+      "done": true
     },
     {
       "id": "tkmuv9voi88",
@@ -1706,7 +1713,7 @@
       "done": false
     }
   ],
-  "tasksView": "next",
+  "tasksView": "now",
   "timeoff": [],
   "timeoffNext": [],
   "timeoffView": "now",
@@ -2529,20 +2536,18 @@
         "rich": {},
         "signs": {
           "t": {
-            "t": "overall",
+            "t": "forensic",
             "c": "#D6D2C6",
-            "s": 90,
+            "s": 64,
             "auto": true,
-            "dim": 60,
-            "hidden": false
+            "dim": 60
           },
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 83,
+            "s": 22,
             "auto": true,
-            "dim": 100,
-            "hidden": false
+            "dim": 100
           },
           "r": {
             "t": "forensic",
@@ -2553,9 +2558,9 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": true,
+        "hideLnkAll": false,
         "stickerClassic": false,
-        "stickerSkin": "ive",
+        "stickerSkin": "control",
         "torder": {},
         "tmoved": {},
         "styles": {},
@@ -2567,8 +2572,8 @@
         "todayView": "now",
         "weekView": "now",
         "plLog": [],
-        "plDay": "2026-09-28",
-        "plWeek": "2026-09-28",
+        "plDay": "2026-10-05",
+        "plWeek": "2026-10-05",
         "spotSave": null,
         "starts": {},
         "launched": {},
@@ -2576,12 +2581,9 @@
         "saveName": "",
         "saveDirName": "",
         "ptask": {},
-        "stickBtn": {
-          "x": 1986,
-          "y": 787
-        },
-        "stickBtnHidden": true,
-        "stickersHidden": true,
+        "stickBtn": null,
+        "stickBtnHidden": false,
+        "stickersHidden": false,
         "bink": [],
         "pairs": [],
         "pairsNext": [],
@@ -2593,15 +2595,18 @@
         "timeoff": [],
         "timeoffNext": [],
         "timeoffView": "now",
+        "steps": [],
+        "stepsNext": [],
+        "stepsView": "now",
         "instrOpen": false,
         "korean": false,
-        "logo": "wok-speech",
-        "theme": "light",
+        "logo": "wok",
+        "theme": "dark",
         "pinkBar": false,
         "pinkColor": "",
         "heroZoom": 1,
         "heroFree": true,
-        "darkness": 45,
+        "darkness": 50,
         "boldAll": false,
         "inproc": {},
         "ie": false,
@@ -4161,6 +4166,13 @@
             "k": "tasks",
             "ahead": false,
             "at": "2026-10-05T14:34:04.139Z"
+          },
+          {
+            "id": "tkmuv10p0s5",
+            "t": "launch all the interrupted tasks in note pad",
+            "k": "tasks",
+            "ahead": false,
+            "at": "2026-10-05T17:35:47.780Z"
           }
         ],
         "plDay": "2026-10-05",
@@ -4273,7 +4285,7 @@
           {
             "id": "tkmuv10p0s5",
             "t": "launch all the interrupted tasks in note pad",
-            "done": false
+            "done": true
           },
           {
             "id": "tkmuv9voi88",
@@ -4316,7 +4328,7 @@
             "done": false
           }
         ],
-        "tasksView": "next",
+        "tasksView": "now",
         "timeoff": [],
         "timeoffNext": [],
         "timeoffView": "now",
