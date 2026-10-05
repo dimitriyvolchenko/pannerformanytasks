@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-05T14:21:39.786Z",
+  "savedAt": "2026-10-05T14:26:33.354Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1641,7 +1641,7 @@
       "a": "check the article of natalya",
       "b": "make the project for the Chinese article translation",
       "done": false,
-      "ad": false,
+      "ad": true,
       "bd": false,
       "at": ""
     }
@@ -4236,7 +4236,7 @@
             "a": "check the article of natalya",
             "b": "make the project for the Chinese article translation",
             "done": false,
-            "ad": false,
+            "ad": true,
             "bd": false,
             "at": ""
           }
