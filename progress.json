@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-05T15:31:39.786Z",
+  "savedAt": "2026-10-05T15:57:01.046Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1014,20 +1014,18 @@
   "rich": {},
   "signs": {
     "t": {
-      "t": "overall",
+      "t": "forensic",
       "c": "#D6D2C6",
-      "s": 90,
+      "s": 64,
       "auto": true,
-      "dim": 60,
-      "hidden": false
+      "dim": 60
     },
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 83,
+      "s": 22,
       "auto": true,
-      "dim": 100,
-      "hidden": false
+      "dim": 100
     },
     "r": {
       "t": "forensic",
@@ -1038,7 +1036,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": true,
+  "hideLnkAll": false,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1622,10 +1620,7 @@
       "c_p1787668712681_2_1787730177904": true
     }
   },
-  "stickBtn": {
-    "x": 2047,
-    "y": 948
-  },
+  "stickBtn": null,
   "stickBtnHidden": false,
   "stickersHidden": false,
   "bink": [],
@@ -1649,17 +1644,7 @@
       "at": ""
     }
   ],
-  "pairsNext": [
-    {
-      "id": "prmuv9m5ht2",
-      "a": "check the article of natalya",
-      "b": "make the project for the Chinese article translation",
-      "done": false,
-      "ad": true,
-      "bd": false,
-      "at": ""
-    }
-  ],
+  "pairsNext": [],
   "parView": "next",
   "parFace": "list",
   "tasks": [
@@ -1691,21 +1676,37 @@
   "tasksNext": [
     {
       "id": "tkmuqrzrkz8",
-      "t": "Method: complete : integrated Axyology",
-      "done": false
+      "t": "🔥 Method: complete : integrated Axyology",
+      "done": false,
+      "fs": 2,
+      "b": true
     },
     {
       "id": "tkmuqs08719",
-      "t": "Method : launch and schedule partial checking of links for MRM",
-      "done": false
+      "t": "🔥 Method : launch and schedule partial checking of links for MRM",
+      "done": false,
+      "fs": 2,
+      "b": true
     },
     {
       "id": "tkmuqs0g5i10",
       "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
       "done": false
+    },
+    {
+      "id": "tkmuvczeer9",
+      "t": "🔥 Article AC : launch svetlana's correction of the article",
+      "done": false,
+      "fs": 1,
+      "b": true
+    },
+    {
+      "id": "tkmuvczqw310",
+      "t": "Article AC : launch overall reading",
+      "done": false
     }
   ],
-  "tasksView": "now",
+  "tasksView": "next",
   "timeoff": [],
   "timeoffNext": [],
   "timeoffView": "now",
@@ -1714,13 +1715,13 @@
   "stepsView": "now",
   "instrOpen": false,
   "korean": false,
-  "logo": "wok-speech",
-  "theme": "light",
+  "logo": "wok",
+  "theme": "dark",
   "pinkBar": false,
   "pinkColor": "",
   "heroZoom": 1,
   "heroFree": true,
-  "darkness": 45,
+  "darkness": 50,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -3623,20 +3624,18 @@
         "rich": {},
         "signs": {
           "t": {
-            "t": "overall",
+            "t": "forensic",
             "c": "#D6D2C6",
-            "s": 90,
+            "s": 64,
             "auto": true,
-            "dim": 60,
-            "hidden": false
+            "dim": 60
           },
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 83,
+            "s": 22,
             "auto": true,
-            "dim": 100,
-            "hidden": false
+            "dim": 100
           },
           "r": {
             "t": "forensic",
@@ -3647,7 +3646,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": true,
+        "hideLnkAll": false,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -4231,10 +4230,7 @@
             "c_p1787668712681_2_1787730177904": true
           }
         },
-        "stickBtn": {
-          "x": 2047,
-          "y": 948
-        },
+        "stickBtn": null,
         "stickBtnHidden": false,
         "stickersHidden": false,
         "bink": [],
@@ -4258,17 +4254,7 @@
             "at": ""
           }
         ],
-        "pairsNext": [
-          {
-            "id": "prmuv9m5ht2",
-            "a": "check the article of natalya",
-            "b": "make the project for the Chinese article translation",
-            "done": false,
-            "ad": true,
-            "bd": false,
-            "at": ""
-          }
-        ],
+        "pairsNext": [],
         "parView": "next",
         "parFace": "list",
         "tasks": [
@@ -4300,21 +4286,37 @@
         "tasksNext": [
           {
             "id": "tkmuqrzrkz8",
-            "t": "Method: complete : integrated Axyology",
-            "done": false
+            "t": "🔥 Method: complete : integrated Axyology",
+            "done": false,
+            "fs": 2,
+            "b": true
           },
           {
             "id": "tkmuqs08719",
-            "t": "Method : launch and schedule partial checking of links for MRM",
-            "done": false
+            "t": "🔥 Method : launch and schedule partial checking of links for MRM",
+            "done": false,
+            "fs": 2,
+            "b": true
           },
           {
             "id": "tkmuqs0g5i10",
             "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
             "done": false
+          },
+          {
+            "id": "tkmuvczeer9",
+            "t": "🔥 Article AC : launch svetlana's correction of the article",
+            "done": false,
+            "fs": 1,
+            "b": true
+          },
+          {
+            "id": "tkmuvczqw310",
+            "t": "Article AC : launch overall reading",
+            "done": false
           }
         ],
-        "tasksView": "now",
+        "tasksView": "next",
         "timeoff": [],
         "timeoffNext": [],
         "timeoffView": "now",
@@ -4323,13 +4325,13 @@
         "stepsView": "now",
         "instrOpen": false,
         "korean": false,
-        "logo": "wok-speech",
-        "theme": "light",
+        "logo": "wok",
+        "theme": "dark",
         "pinkBar": false,
         "pinkColor": "",
         "heroZoom": 1,
         "heroFree": true,
-        "darkness": 45,
+        "darkness": 50,
         "boldAll": false,
         "inproc": {},
         "ie": true,
