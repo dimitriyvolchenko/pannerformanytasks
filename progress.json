@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-02T15:11:06.206Z",
+  "savedAt": "2026-10-05T07:01:39.411Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1014,18 +1014,20 @@
   "rich": {},
   "signs": {
     "t": {
-      "t": "forensic",
+      "t": "overall",
       "c": "#D6D2C6",
-      "s": 64,
+      "s": 90,
       "auto": true,
-      "dim": 60
+      "dim": 60,
+      "hidden": false
     },
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 22,
+      "s": 83,
       "auto": true,
-      "dim": 100
+      "dim": 100,
+      "hidden": false
     },
     "r": {
       "t": "forensic",
@@ -1036,7 +1038,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": false,
+  "hideLnkAll": true,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1047,24 +1049,17 @@
     {
       "id": "tdmuqs8hm411",
       "t": "☕ Total Priority : Complete : khaz.article",
-      "done": true,
+      "done": false,
       "fs": 3,
       "b": true
-    }
-  ],
-  "week": [
-    {
-      "id": "wkmt9sesvf1",
-      "t": "Complete all the Material which was supposed to be copied",
-      "done": false
     },
     {
-      "id": "wkmts5q9bx1",
-      "t": "Complete MRM",
-      "done": false
-    }
-  ],
-  "todayNext": [
+      "id": "tdmuqt2n8215",
+      "t": "🔥 Method : complete : plan the parts day by day so that make sure to be on time",
+      "done": false,
+      "b": true,
+      "fs": 1
+    },
     {
       "id": "tdmuqrmnmx1",
       "t": "⚡ Method: complete : integrated Axyology",
@@ -1099,13 +1094,21 @@
       "id": "tdmuqryhsa7",
       "t": "Method : launch and schedule partial checking of links for MRM",
       "done": false
+    }
+  ],
+  "week": [
+    {
+      "id": "wkmt9sesvf1",
+      "t": "Complete all the Material which was supposed to be copied",
+      "done": false
     },
     {
-      "id": "tdmur3o7jm1",
-      "t": "🔥 Method : complete : plan the parts day by day so that make sure to be on time",
+      "id": "wkmts5q9bx1",
+      "t": "Complete MRM",
       "done": false
     }
   ],
+  "todayNext": [],
   "weekNext": [],
   "todayView": "now",
   "weekView": "now",
@@ -1473,17 +1476,10 @@
       "k": "tasks",
       "ahead": false,
       "at": "2026-10-02T09:44:33.165Z"
-    },
-    {
-      "id": "tdmuqs8hm411",
-      "t": "☕ Total Priority : Complete : khaz.article",
-      "k": "today",
-      "ahead": false,
-      "at": "2026-10-02T15:10:18.532Z"
     }
   ],
-  "plDay": "2026-10-02",
-  "plWeek": "2026-09-28",
+  "plDay": "2026-10-05",
+  "plWeek": "2026-10-05",
   "spotSave": {
     "spot": {
       "par": true,
@@ -1550,11 +1546,11 @@
     }
   },
   "stickBtn": {
-    "x": -94,
-    "y": 529
+    "x": 2047,
+    "y": 948
   },
-  "stickBtnHidden": true,
-  "stickersHidden": true,
+  "stickBtnHidden": false,
+  "stickersHidden": false,
   "bink": [],
   "pairs": [
     {
@@ -1576,7 +1572,17 @@
       "at": ""
     }
   ],
-  "pairsNext": [],
+  "pairsNext": [
+    {
+      "id": "prmuqrljen1",
+      "a": "prepare didactics tasks for the next week",
+      "b": "preparing the scheme of the material for the article",
+      "done": false,
+      "ad": true,
+      "bd": false,
+      "at": ""
+    }
+  ],
   "parView": "next",
   "parFace": "list",
   "tasks": [],
@@ -1625,13 +1631,13 @@
   "stepsView": "now",
   "instrOpen": false,
   "korean": false,
-  "logo": "wok",
+  "logo": "wok-speech",
   "theme": "light",
   "pinkBar": false,
   "pinkColor": "",
   "heroZoom": 1,
-  "heroFree": false,
-  "darkness": 50,
+  "heroFree": true,
+  "darkness": 45,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -3534,18 +3540,20 @@
         "rich": {},
         "signs": {
           "t": {
-            "t": "forensic",
+            "t": "overall",
             "c": "#D6D2C6",
-            "s": 64,
+            "s": 90,
             "auto": true,
-            "dim": 60
+            "dim": 60,
+            "hidden": false
           },
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 22,
+            "s": 83,
             "auto": true,
-            "dim": 100
+            "dim": 100,
+            "hidden": false
           },
           "r": {
             "t": "forensic",
@@ -3556,7 +3564,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": false,
+        "hideLnkAll": true,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -3567,24 +3575,17 @@
           {
             "id": "tdmuqs8hm411",
             "t": "☕ Total Priority : Complete : khaz.article",
-            "done": true,
+            "done": false,
             "fs": 3,
             "b": true
-          }
-        ],
-        "week": [
-          {
-            "id": "wkmt9sesvf1",
-            "t": "Complete all the Material which was supposed to be copied",
-            "done": false
           },
           {
-            "id": "wkmts5q9bx1",
-            "t": "Complete MRM",
-            "done": false
-          }
-        ],
-        "todayNext": [
+            "id": "tdmuqt2n8215",
+            "t": "🔥 Method : complete : plan the parts day by day so that make sure to be on time",
+            "done": false,
+            "b": true,
+            "fs": 1
+          },
           {
             "id": "tdmuqrmnmx1",
             "t": "⚡ Method: complete : integrated Axyology",
@@ -3619,13 +3620,21 @@
             "id": "tdmuqryhsa7",
             "t": "Method : launch and schedule partial checking of links for MRM",
             "done": false
+          }
+        ],
+        "week": [
+          {
+            "id": "wkmt9sesvf1",
+            "t": "Complete all the Material which was supposed to be copied",
+            "done": false
           },
           {
-            "id": "tdmur3o7jm1",
-            "t": "🔥 Method : complete : plan the parts day by day so that make sure to be on time",
+            "id": "wkmts5q9bx1",
+            "t": "Complete MRM",
             "done": false
           }
         ],
+        "todayNext": [],
         "weekNext": [],
         "todayView": "now",
         "weekView": "now",
@@ -3993,17 +4002,10 @@
             "k": "tasks",
             "ahead": false,
             "at": "2026-10-02T09:44:33.165Z"
-          },
-          {
-            "id": "tdmuqs8hm411",
-            "t": "☕ Total Priority : Complete : khaz.article",
-            "k": "today",
-            "ahead": false,
-            "at": "2026-10-02T15:10:18.532Z"
           }
         ],
-        "plDay": "2026-10-02",
-        "plWeek": "2026-09-28",
+        "plDay": "2026-10-05",
+        "plWeek": "2026-10-05",
         "spotSave": {
           "spot": {
             "par": true,
@@ -4070,11 +4072,11 @@
           }
         },
         "stickBtn": {
-          "x": -94,
-          "y": 529
+          "x": 2047,
+          "y": 948
         },
-        "stickBtnHidden": true,
-        "stickersHidden": true,
+        "stickBtnHidden": false,
+        "stickersHidden": false,
         "bink": [],
         "pairs": [
           {
@@ -4096,7 +4098,17 @@
             "at": ""
           }
         ],
-        "pairsNext": [],
+        "pairsNext": [
+          {
+            "id": "prmuqrljen1",
+            "a": "prepare didactics tasks for the next week",
+            "b": "preparing the scheme of the material for the article",
+            "done": false,
+            "ad": true,
+            "bd": false,
+            "at": ""
+          }
+        ],
         "parView": "next",
         "parFace": "list",
         "tasks": [],
@@ -4145,13 +4157,13 @@
         "stepsView": "now",
         "instrOpen": false,
         "korean": false,
-        "logo": "wok",
+        "logo": "wok-speech",
         "theme": "light",
         "pinkBar": false,
         "pinkColor": "",
         "heroZoom": 1,
-        "heroFree": false,
-        "darkness": 50,
+        "heroFree": true,
+        "darkness": 45,
         "boldAll": false,
         "inproc": {},
         "ie": true,
@@ -4273,6 +4285,6 @@
       }
     }
   },
-  "device": "iPhone",
+  "device": "Computer",
   "lead": "Computer"
 }
