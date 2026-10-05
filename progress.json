@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-05T08:31:39.785Z",
+  "savedAt": "2026-10-05T08:36:17.659Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1014,20 +1014,18 @@
   "rich": {},
   "signs": {
     "t": {
-      "t": "overall",
+      "t": "forensic",
       "c": "#D6D2C6",
-      "s": 90,
+      "s": 64,
       "auto": true,
-      "dim": 60,
-      "hidden": false
+      "dim": 60
     },
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 83,
+      "s": 22,
       "auto": true,
-      "dim": 100,
-      "hidden": false
+      "dim": 100
     },
     "r": {
       "t": "forensic",
@@ -1038,7 +1036,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": true,
+  "hideLnkAll": false,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1545,10 +1543,7 @@
       "c_p1787668712681_2_1787730177904": true
     }
   },
-  "stickBtn": {
-    "x": 2047,
-    "y": 948
-  },
+  "stickBtn": null,
   "stickBtnHidden": false,
   "stickersHidden": false,
   "bink": [],
@@ -1572,17 +1567,7 @@
       "at": ""
     }
   ],
-  "pairsNext": [
-    {
-      "id": "prmuqrljen1",
-      "a": "prepare didactics tasks for the next week",
-      "b": "preparing the scheme of the material for the article",
-      "done": false,
-      "ad": true,
-      "bd": false,
-      "at": ""
-    }
-  ],
+  "pairsNext": [],
   "parView": "next",
   "parFace": "list",
   "tasks": [],
@@ -1610,20 +1595,27 @@
   "steps": [
     {
       "id": "spmuqsdyv112",
-      "t": "☕  edit : conclusion in kh.article",
+      "t": "🟣 ☕  edit : conclusion in kh.article",
       "done": false,
       "b": true
     },
     {
       "id": "spmuqsekqf13",
-      "t": "☕  include : axiological analysis",
+      "t": "🔵 ☕  include : axiological analysis",
       "done": false,
       "b": true
     },
     {
       "id": "spmuqsfv1414",
-      "t": "☕ make : paragraph on Constitutional decisions",
+      "t": "🟢 ☕ make : paragraph on Constitutional decisions",
       "done": false,
+      "b": true
+    },
+    {
+      "id": "spmuuzp5uk1",
+      "t": "🔴 ☕  edit : make overall edit : in kh.article",
+      "done": false,
+      "fs": 3,
       "b": true
     }
   ],
@@ -1631,13 +1623,13 @@
   "stepsView": "now",
   "instrOpen": false,
   "korean": false,
-  "logo": "wok-speech",
+  "logo": "wok",
   "theme": "light",
   "pinkBar": false,
   "pinkColor": "",
   "heroZoom": 1,
   "heroFree": true,
-  "darkness": 45,
+  "darkness": 50,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -3540,20 +3532,18 @@
         "rich": {},
         "signs": {
           "t": {
-            "t": "overall",
+            "t": "forensic",
             "c": "#D6D2C6",
-            "s": 90,
+            "s": 64,
             "auto": true,
-            "dim": 60,
-            "hidden": false
+            "dim": 60
           },
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 83,
+            "s": 22,
             "auto": true,
-            "dim": 100,
-            "hidden": false
+            "dim": 100
           },
           "r": {
             "t": "forensic",
@@ -3564,7 +3554,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": true,
+        "hideLnkAll": false,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -4071,10 +4061,7 @@
             "c_p1787668712681_2_1787730177904": true
           }
         },
-        "stickBtn": {
-          "x": 2047,
-          "y": 948
-        },
+        "stickBtn": null,
         "stickBtnHidden": false,
         "stickersHidden": false,
         "bink": [],
@@ -4098,17 +4085,7 @@
             "at": ""
           }
         ],
-        "pairsNext": [
-          {
-            "id": "prmuqrljen1",
-            "a": "prepare didactics tasks for the next week",
-            "b": "preparing the scheme of the material for the article",
-            "done": false,
-            "ad": true,
-            "bd": false,
-            "at": ""
-          }
-        ],
+        "pairsNext": [],
         "parView": "next",
         "parFace": "list",
         "tasks": [],
@@ -4136,20 +4113,27 @@
         "steps": [
           {
             "id": "spmuqsdyv112",
-            "t": "☕  edit : conclusion in kh.article",
+            "t": "🟣 ☕  edit : conclusion in kh.article",
             "done": false,
             "b": true
           },
           {
             "id": "spmuqsekqf13",
-            "t": "☕  include : axiological analysis",
+            "t": "🔵 ☕  include : axiological analysis",
             "done": false,
             "b": true
           },
           {
             "id": "spmuqsfv1414",
-            "t": "☕ make : paragraph on Constitutional decisions",
+            "t": "🟢 ☕ make : paragraph on Constitutional decisions",
             "done": false,
+            "b": true
+          },
+          {
+            "id": "spmuuzp5uk1",
+            "t": "🔴 ☕  edit : make overall edit : in kh.article",
+            "done": false,
+            "fs": 3,
             "b": true
           }
         ],
@@ -4157,13 +4141,13 @@
         "stepsView": "now",
         "instrOpen": false,
         "korean": false,
-        "logo": "wok-speech",
+        "logo": "wok",
         "theme": "light",
         "pinkBar": false,
         "pinkColor": "",
         "heroZoom": 1,
         "heroFree": true,
-        "darkness": 45,
+        "darkness": 50,
         "boldAll": false,
         "inproc": {},
         "ie": true,
