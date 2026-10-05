@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-05T12:16:41.062Z",
+  "savedAt": "2026-10-05T12:17:38.654Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1014,20 +1014,18 @@
   "rich": {},
   "signs": {
     "t": {
-      "t": "overall",
+      "t": "forensic",
       "c": "#D6D2C6",
-      "s": 90,
+      "s": 64,
       "auto": true,
-      "dim": 60,
-      "hidden": false
+      "dim": 60
     },
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 83,
+      "s": 22,
       "auto": true,
-      "dim": 100,
-      "hidden": false
+      "dim": 100
     },
     "r": {
       "t": "forensic",
@@ -1038,7 +1036,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": true,
+  "hideLnkAll": false,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1049,7 +1047,7 @@
     {
       "id": "tdmuqs8hm411",
       "t": "☕ Total Priority : Complete : khaz.article",
-      "done": false,
+      "done": true,
       "fs": 3,
       "b": true
     },
@@ -1511,6 +1509,13 @@
       "k": "timeoff",
       "ahead": false,
       "at": "2026-10-05T12:16:28.681Z"
+    },
+    {
+      "id": "tdmuqs8hm411",
+      "t": "☕ Total Priority : Complete : khaz.article",
+      "k": "today",
+      "ahead": false,
+      "at": "2026-10-05T12:17:29.321Z"
     }
   ],
   "plDay": "2026-10-05",
@@ -1580,10 +1585,7 @@
       "c_p1787668712681_2_1787730177904": true
     }
   },
-  "stickBtn": {
-    "x": 2047,
-    "y": 948
-  },
+  "stickBtn": null,
   "stickBtnHidden": false,
   "stickersHidden": false,
   "bink": [],
@@ -1700,13 +1702,13 @@
   "stepsView": "now",
   "instrOpen": false,
   "korean": false,
-  "logo": "wok-speech",
-  "theme": "light",
+  "logo": "wok",
+  "theme": "dark",
   "pinkBar": false,
   "pinkColor": "",
   "heroZoom": 1,
   "heroFree": true,
-  "darkness": 45,
+  "darkness": 50,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -3609,20 +3611,18 @@
         "rich": {},
         "signs": {
           "t": {
-            "t": "overall",
+            "t": "forensic",
             "c": "#D6D2C6",
-            "s": 90,
+            "s": 64,
             "auto": true,
-            "dim": 60,
-            "hidden": false
+            "dim": 60
           },
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 83,
+            "s": 22,
             "auto": true,
-            "dim": 100,
-            "hidden": false
+            "dim": 100
           },
           "r": {
             "t": "forensic",
@@ -3633,7 +3633,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": true,
+        "hideLnkAll": false,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -3644,7 +3644,7 @@
           {
             "id": "tdmuqs8hm411",
             "t": "☕ Total Priority : Complete : khaz.article",
-            "done": false,
+            "done": true,
             "fs": 3,
             "b": true
           },
@@ -4106,6 +4106,13 @@
             "k": "timeoff",
             "ahead": false,
             "at": "2026-10-05T12:16:28.681Z"
+          },
+          {
+            "id": "tdmuqs8hm411",
+            "t": "☕ Total Priority : Complete : khaz.article",
+            "k": "today",
+            "ahead": false,
+            "at": "2026-10-05T12:17:29.321Z"
           }
         ],
         "plDay": "2026-10-05",
@@ -4175,10 +4182,7 @@
             "c_p1787668712681_2_1787730177904": true
           }
         },
-        "stickBtn": {
-          "x": 2047,
-          "y": 948
-        },
+        "stickBtn": null,
         "stickBtnHidden": false,
         "stickersHidden": false,
         "bink": [],
@@ -4295,13 +4299,13 @@
         "stepsView": "now",
         "instrOpen": false,
         "korean": false,
-        "logo": "wok-speech",
-        "theme": "light",
+        "logo": "wok",
+        "theme": "dark",
         "pinkBar": false,
         "pinkColor": "",
         "heroZoom": 1,
         "heroFree": true,
-        "darkness": 45,
+        "darkness": 50,
         "boldAll": false,
         "inproc": {},
         "ie": true,
