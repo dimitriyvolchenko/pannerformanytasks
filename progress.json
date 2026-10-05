@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-05T12:11:39.786Z",
+  "savedAt": "2026-10-05T12:16:32.756Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1476,6 +1476,41 @@
       "k": "tasks",
       "ahead": false,
       "at": "2026-10-02T09:44:33.165Z"
+    },
+    {
+      "id": "spmuqsdyv112",
+      "t": "🟣 ☕  edit : conclusion in kh.article",
+      "k": "steps",
+      "ahead": false,
+      "at": "2026-10-05T12:16:21.192Z"
+    },
+    {
+      "id": "spmuqsekqf13",
+      "t": "🔵 ☕  include : axiological analysis",
+      "k": "steps",
+      "ahead": false,
+      "at": "2026-10-05T12:16:22.191Z"
+    },
+    {
+      "id": "spmuqsfv1414",
+      "t": "🟢 ☕ make : paragraph on Constitutional decisions",
+      "k": "steps",
+      "ahead": false,
+      "at": "2026-10-05T12:16:22.987Z"
+    },
+    {
+      "id": "spmuuzp5uk1",
+      "t": "🔴 ☕  edit : make overall edit : in kh.article",
+      "k": "steps",
+      "ahead": false,
+      "at": "2026-10-05T12:16:24.637Z"
+    },
+    {
+      "id": "tomuv112e66",
+      "t": "rd.&spt.&listn.tea",
+      "k": "timeoff",
+      "ahead": false,
+      "at": "2026-10-05T12:16:28.681Z"
     }
   ],
   "plDay": "2026-10-05",
@@ -1577,10 +1612,10 @@
       "id": "prmuv0y5co1",
       "a": "🔴 ☕  edit : make overall edit : in kh.article",
       "b": "overall planning",
-      "done": false,
-      "ad": false,
-      "bd": false,
-      "at": ""
+      "done": true,
+      "ad": true,
+      "bd": true,
+      "at": "2026-10-05T12:16:27.099Z"
     }
   ],
   "parView": "next",
@@ -1629,7 +1664,7 @@
     {
       "id": "tomuv112e66",
       "t": "rd.&spt.&listn.tea",
-      "done": false
+      "done": true
     }
   ],
   "timeoffNext": [],
@@ -1638,25 +1673,25 @@
     {
       "id": "spmuqsdyv112",
       "t": "🟣 ☕  edit : conclusion in kh.article",
-      "done": false,
+      "done": true,
       "b": true
     },
     {
       "id": "spmuqsekqf13",
       "t": "🔵 ☕  include : axiological analysis",
-      "done": false,
+      "done": true,
       "b": true
     },
     {
       "id": "spmuqsfv1414",
       "t": "🟢 ☕ make : paragraph on Constitutional decisions",
-      "done": false,
+      "done": true,
       "b": true
     },
     {
       "id": "spmuuzp5uk1",
       "t": "🔴 ☕  edit : make overall edit : in kh.article",
-      "done": false,
+      "done": true,
       "fs": 3,
       "b": true
     }
@@ -4036,6 +4071,41 @@
             "k": "tasks",
             "ahead": false,
             "at": "2026-10-02T09:44:33.165Z"
+          },
+          {
+            "id": "spmuqsdyv112",
+            "t": "🟣 ☕  edit : conclusion in kh.article",
+            "k": "steps",
+            "ahead": false,
+            "at": "2026-10-05T12:16:21.192Z"
+          },
+          {
+            "id": "spmuqsekqf13",
+            "t": "🔵 ☕  include : axiological analysis",
+            "k": "steps",
+            "ahead": false,
+            "at": "2026-10-05T12:16:22.191Z"
+          },
+          {
+            "id": "spmuqsfv1414",
+            "t": "🟢 ☕ make : paragraph on Constitutional decisions",
+            "k": "steps",
+            "ahead": false,
+            "at": "2026-10-05T12:16:22.987Z"
+          },
+          {
+            "id": "spmuuzp5uk1",
+            "t": "🔴 ☕  edit : make overall edit : in kh.article",
+            "k": "steps",
+            "ahead": false,
+            "at": "2026-10-05T12:16:24.637Z"
+          },
+          {
+            "id": "tomuv112e66",
+            "t": "rd.&spt.&listn.tea",
+            "k": "timeoff",
+            "ahead": false,
+            "at": "2026-10-05T12:16:28.681Z"
           }
         ],
         "plDay": "2026-10-05",
@@ -4137,10 +4207,10 @@
             "id": "prmuv0y5co1",
             "a": "🔴 ☕  edit : make overall edit : in kh.article",
             "b": "overall planning",
-            "done": false,
-            "ad": false,
-            "bd": false,
-            "at": ""
+            "done": true,
+            "ad": true,
+            "bd": true,
+            "at": "2026-10-05T12:16:27.099Z"
           }
         ],
         "parView": "next",
@@ -4189,7 +4259,7 @@
           {
             "id": "tomuv112e66",
             "t": "rd.&spt.&listn.tea",
-            "done": false
+            "done": true
           }
         ],
         "timeoffNext": [],
@@ -4198,25 +4268,25 @@
           {
             "id": "spmuqsdyv112",
             "t": "🟣 ☕  edit : conclusion in kh.article",
-            "done": false,
+            "done": true,
             "b": true
           },
           {
             "id": "spmuqsekqf13",
             "t": "🔵 ☕  include : axiological analysis",
-            "done": false,
+            "done": true,
             "b": true
           },
           {
             "id": "spmuqsfv1414",
             "t": "🟢 ☕ make : paragraph on Constitutional decisions",
-            "done": false,
+            "done": true,
             "b": true
           },
           {
             "id": "spmuuzp5uk1",
             "t": "🔴 ☕  edit : make overall edit : in kh.article",
-            "done": false,
+            "done": true,
             "fs": 3,
             "b": true
           }
