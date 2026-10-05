@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-05T14:35:29.925Z",
+  "savedAt": "2026-10-05T14:35:59.123Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1014,20 +1014,18 @@
   "rich": {},
   "signs": {
     "t": {
-      "t": "overall",
+      "t": "forensic",
       "c": "#D6D2C6",
-      "s": 90,
+      "s": 64,
       "auto": true,
-      "dim": 60,
-      "hidden": false
+      "dim": 60
     },
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 83,
+      "s": 22,
       "auto": true,
-      "dim": 100,
-      "hidden": false
+      "dim": 100
     },
     "r": {
       "t": "forensic",
@@ -1038,7 +1036,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": true,
+  "hideLnkAll": false,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1622,10 +1620,7 @@
       "c_p1787668712681_2_1787730177904": true
     }
   },
-  "stickBtn": {
-    "x": 2047,
-    "y": 948
-  },
+  "stickBtn": null,
   "stickBtnHidden": false,
   "stickersHidden": false,
   "bink": [],
@@ -1714,13 +1709,13 @@
   "stepsView": "now",
   "instrOpen": false,
   "korean": false,
-  "logo": "wok-speech",
-  "theme": "light",
+  "logo": "wok",
+  "theme": "dark",
   "pinkBar": false,
   "pinkColor": "",
   "heroZoom": 1,
   "heroFree": true,
-  "darkness": 45,
+  "darkness": 50,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -3623,20 +3618,18 @@
         "rich": {},
         "signs": {
           "t": {
-            "t": "overall",
+            "t": "forensic",
             "c": "#D6D2C6",
-            "s": 90,
+            "s": 64,
             "auto": true,
-            "dim": 60,
-            "hidden": false
+            "dim": 60
           },
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 83,
+            "s": 22,
             "auto": true,
-            "dim": 100,
-            "hidden": false
+            "dim": 100
           },
           "r": {
             "t": "forensic",
@@ -3647,7 +3640,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": true,
+        "hideLnkAll": false,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -4231,10 +4224,7 @@
             "c_p1787668712681_2_1787730177904": true
           }
         },
-        "stickBtn": {
-          "x": 2047,
-          "y": 948
-        },
+        "stickBtn": null,
         "stickBtnHidden": false,
         "stickersHidden": false,
         "bink": [],
@@ -4323,13 +4313,13 @@
         "stepsView": "now",
         "instrOpen": false,
         "korean": false,
-        "logo": "wok-speech",
-        "theme": "light",
+        "logo": "wok",
+        "theme": "dark",
         "pinkBar": false,
         "pinkColor": "",
         "heroZoom": 1,
         "heroFree": true,
-        "darkness": 45,
+        "darkness": 50,
         "boldAll": false,
         "inproc": {},
         "ie": true,
