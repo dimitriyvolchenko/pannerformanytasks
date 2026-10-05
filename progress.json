@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-05T13:11:39.786Z",
+  "savedAt": "2026-10-05T13:13:39.927Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1014,20 +1014,18 @@
   "rich": {},
   "signs": {
     "t": {
-      "t": "overall",
+      "t": "forensic",
       "c": "#D6D2C6",
-      "s": 90,
+      "s": 64,
       "auto": true,
-      "dim": 60,
-      "hidden": false
+      "dim": 60
     },
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 83,
+      "s": 22,
       "auto": true,
-      "dim": 100,
-      "hidden": false
+      "dim": 100
     },
     "r": {
       "t": "forensic",
@@ -1038,7 +1036,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": true,
+  "hideLnkAll": false,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1046,13 +1044,6 @@
   "styles": {},
   "listView": false,
   "today": [
-    {
-      "id": "tdmuqs8hm411",
-      "t": "☕ Total Priority : Complete : khaz.article",
-      "done": true,
-      "fs": 3,
-      "b": true
-    },
     {
       "id": "tdmuqt2n8215",
       "t": "🔥 Method : complete : plan the parts day by day so that make sure to be on time",
@@ -1518,6 +1509,13 @@
       "k": "today",
       "ahead": false,
       "at": "2026-10-05T12:17:29.321Z"
+    },
+    {
+      "id": "tkmuv0ypdy2",
+      "t": "☕ Total Priority : Complete : khaz.article",
+      "k": "tasks",
+      "ahead": false,
+      "at": "2026-10-05T13:04:59.599Z"
     }
   ],
   "plDay": "2026-10-05",
@@ -1587,10 +1585,7 @@
       "c_p1787668712681_2_1787730177904": true
     }
   },
-  "stickBtn": {
-    "x": 2047,
-    "y": 948
-  },
+  "stickBtn": null,
   "stickBtnHidden": false,
   "stickersHidden": false,
   "bink": [],
@@ -1616,23 +1611,18 @@
   ],
   "pairsNext": [
     {
-      "id": "prmuv0y5co1",
-      "a": "🔴 ☕  edit : make overall edit : in kh.article",
-      "b": "overall planning",
-      "done": true,
-      "ad": true,
-      "bd": true,
-      "at": "2026-10-05T12:16:27.099Z"
+      "id": "prmuv9m5ht2",
+      "a": "check the article of natalya",
+      "b": "make the project for the Chinese article translation",
+      "done": false,
+      "ad": false,
+      "bd": false,
+      "at": ""
     }
   ],
   "parView": "next",
   "parFace": "list",
   "tasks": [
-    {
-      "id": "tkmuv0ypdy2",
-      "t": "☕ Total Priority : Complete : khaz.article",
-      "done": false
-    },
     {
       "id": "tkmuv0z3av3",
       "t": "check the article of natalya",
@@ -1667,53 +1657,21 @@
     }
   ],
   "tasksView": "now",
-  "timeoff": [
-    {
-      "id": "tomuv112e66",
-      "t": "rd.&spt.&listn.tea",
-      "done": true
-    }
-  ],
+  "timeoff": [],
   "timeoffNext": [],
   "timeoffView": "now",
-  "steps": [
-    {
-      "id": "spmuqsdyv112",
-      "t": "🟣 ☕  edit : conclusion in kh.article",
-      "done": true,
-      "b": true
-    },
-    {
-      "id": "spmuqsekqf13",
-      "t": "🔵 ☕  include : axiological analysis",
-      "done": true,
-      "b": true
-    },
-    {
-      "id": "spmuqsfv1414",
-      "t": "🟢 ☕ make : paragraph on Constitutional decisions",
-      "done": true,
-      "b": true
-    },
-    {
-      "id": "spmuuzp5uk1",
-      "t": "🔴 ☕  edit : make overall edit : in kh.article",
-      "done": true,
-      "fs": 3,
-      "b": true
-    }
-  ],
+  "steps": [],
   "stepsNext": [],
   "stepsView": "now",
   "instrOpen": false,
   "korean": false,
-  "logo": "wok-speech",
-  "theme": "light",
+  "logo": "wok",
+  "theme": "dark",
   "pinkBar": false,
   "pinkColor": "",
   "heroZoom": 1,
   "heroFree": true,
-  "darkness": 45,
+  "darkness": 50,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -3616,20 +3574,18 @@
         "rich": {},
         "signs": {
           "t": {
-            "t": "overall",
+            "t": "forensic",
             "c": "#D6D2C6",
-            "s": 90,
+            "s": 64,
             "auto": true,
-            "dim": 60,
-            "hidden": false
+            "dim": 60
           },
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 83,
+            "s": 22,
             "auto": true,
-            "dim": 100,
-            "hidden": false
+            "dim": 100
           },
           "r": {
             "t": "forensic",
@@ -3640,7 +3596,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": true,
+        "hideLnkAll": false,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -3648,13 +3604,6 @@
         "styles": {},
         "listView": false,
         "today": [
-          {
-            "id": "tdmuqs8hm411",
-            "t": "☕ Total Priority : Complete : khaz.article",
-            "done": true,
-            "fs": 3,
-            "b": true
-          },
           {
             "id": "tdmuqt2n8215",
             "t": "🔥 Method : complete : plan the parts day by day so that make sure to be on time",
@@ -4120,6 +4069,13 @@
             "k": "today",
             "ahead": false,
             "at": "2026-10-05T12:17:29.321Z"
+          },
+          {
+            "id": "tkmuv0ypdy2",
+            "t": "☕ Total Priority : Complete : khaz.article",
+            "k": "tasks",
+            "ahead": false,
+            "at": "2026-10-05T13:04:59.599Z"
           }
         ],
         "plDay": "2026-10-05",
@@ -4189,10 +4145,7 @@
             "c_p1787668712681_2_1787730177904": true
           }
         },
-        "stickBtn": {
-          "x": 2047,
-          "y": 948
-        },
+        "stickBtn": null,
         "stickBtnHidden": false,
         "stickersHidden": false,
         "bink": [],
@@ -4218,23 +4171,18 @@
         ],
         "pairsNext": [
           {
-            "id": "prmuv0y5co1",
-            "a": "🔴 ☕  edit : make overall edit : in kh.article",
-            "b": "overall planning",
-            "done": true,
-            "ad": true,
-            "bd": true,
-            "at": "2026-10-05T12:16:27.099Z"
+            "id": "prmuv9m5ht2",
+            "a": "check the article of natalya",
+            "b": "make the project for the Chinese article translation",
+            "done": false,
+            "ad": false,
+            "bd": false,
+            "at": ""
           }
         ],
         "parView": "next",
         "parFace": "list",
         "tasks": [
-          {
-            "id": "tkmuv0ypdy2",
-            "t": "☕ Total Priority : Complete : khaz.article",
-            "done": false
-          },
           {
             "id": "tkmuv0z3av3",
             "t": "check the article of natalya",
@@ -4269,53 +4217,21 @@
           }
         ],
         "tasksView": "now",
-        "timeoff": [
-          {
-            "id": "tomuv112e66",
-            "t": "rd.&spt.&listn.tea",
-            "done": true
-          }
-        ],
+        "timeoff": [],
         "timeoffNext": [],
         "timeoffView": "now",
-        "steps": [
-          {
-            "id": "spmuqsdyv112",
-            "t": "🟣 ☕  edit : conclusion in kh.article",
-            "done": true,
-            "b": true
-          },
-          {
-            "id": "spmuqsekqf13",
-            "t": "🔵 ☕  include : axiological analysis",
-            "done": true,
-            "b": true
-          },
-          {
-            "id": "spmuqsfv1414",
-            "t": "🟢 ☕ make : paragraph on Constitutional decisions",
-            "done": true,
-            "b": true
-          },
-          {
-            "id": "spmuuzp5uk1",
-            "t": "🔴 ☕  edit : make overall edit : in kh.article",
-            "done": true,
-            "fs": 3,
-            "b": true
-          }
-        ],
+        "steps": [],
         "stepsNext": [],
         "stepsView": "now",
         "instrOpen": false,
         "korean": false,
-        "logo": "wok-speech",
-        "theme": "light",
+        "logo": "wok",
+        "theme": "dark",
         "pinkBar": false,
         "pinkColor": "",
         "heroZoom": 1,
         "heroFree": true,
-        "darkness": 45,
+        "darkness": 50,
         "boldAll": false,
         "inproc": {},
         "ie": true,
