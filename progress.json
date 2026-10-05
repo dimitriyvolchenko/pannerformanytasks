@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-05T14:31:39.785Z",
+  "savedAt": "2026-10-05T14:34:07.425Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1546,6 +1546,13 @@
       "k": "tasks",
       "ahead": false,
       "at": "2026-10-05T14:26:35.023Z"
+    },
+    {
+      "id": "tkmuv0zm8x4",
+      "t": "start translating the article for the chinese journal adjusting ethical issues",
+      "k": "tasks",
+      "ahead": false,
+      "at": "2026-10-05T14:34:04.139Z"
     }
   ],
   "plDay": "2026-10-05",
@@ -1666,7 +1673,7 @@
     {
       "id": "tkmuv0zm8x4",
       "t": "start translating the article for the chinese journal adjusting ethical issues",
-      "done": false
+      "done": true
     },
     {
       "id": "tkmuv10p0s5",
@@ -4148,6 +4155,13 @@
             "k": "tasks",
             "ahead": false,
             "at": "2026-10-05T14:26:35.023Z"
+          },
+          {
+            "id": "tkmuv0zm8x4",
+            "t": "start translating the article for the chinese journal adjusting ethical issues",
+            "k": "tasks",
+            "ahead": false,
+            "at": "2026-10-05T14:34:04.139Z"
           }
         ],
         "plDay": "2026-10-05",
@@ -4268,7 +4282,7 @@
           {
             "id": "tkmuv0zm8x4",
             "t": "start translating the article for the chinese journal adjusting ethical issues",
-            "done": false
+            "done": true
           },
           {
             "id": "tkmuv10p0s5",
