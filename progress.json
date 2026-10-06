@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-06T05:54:20.406Z",
+  "savedAt": "2026-10-06T05:56:50.098Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1053,38 +1053,48 @@
     },
     {
       "id": "tdmuqrmnmx1",
-      "t": "⚡ Method: complete : integrated Axyology",
-      "done": false
+      "t": "🔥 Method: complete : integrated Axyology",
+      "done": false,
+      "fs": 3,
+      "b": true
     },
     {
       "id": "tdmuqrwrhn2",
-      "t": "⚡ Method : complete : plan the parts day by day so that make sure to be on time",
-      "done": false
-    },
-    {
-      "id": "tdmuqrx2pl3",
-      "t": "Launch : disabled cruelty and elderly (see if it fits into one method) using the materials which I already have",
-      "done": false
+      "t": "🔥 Method : complete : plan the parts day by day so that make sure to be on time",
+      "done": false,
+      "fs": 3,
+      "b": true
     },
     {
       "id": "tdmuqrxq1g4",
       "t": "⚡ Review : until the Table : the Objective system of the Traditional values",
-      "done": false
+      "done": false,
+      "b": true
     },
     {
       "id": "tdmuqrxyq45",
-      "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
-      "done": false
+      "t": "🔥 Method : launch : work out a rule : how to check and edit the links in MRG",
+      "done": false,
+      "fs": 3,
+      "b": true
     },
     {
       "id": "tdmuqry6b66",
       "t": "⚡ Review : animal cruelty",
-      "done": false
+      "done": false,
+      "b": true
     },
     {
       "id": "tdmuqryhsa7",
       "t": "Method : launch and schedule partial checking of links for MRM",
-      "done": false
+      "done": false,
+      "b": true
+    },
+    {
+      "id": "tdmuw9nb8j8",
+      "t": "Method : launch : cruelty towards disabled and elderly",
+      "done": false,
+      "b": true
     }
   ],
   "week": [
@@ -3695,38 +3705,48 @@
           },
           {
             "id": "tdmuqrmnmx1",
-            "t": "⚡ Method: complete : integrated Axyology",
-            "done": false
+            "t": "🔥 Method: complete : integrated Axyology",
+            "done": false,
+            "fs": 3,
+            "b": true
           },
           {
             "id": "tdmuqrwrhn2",
-            "t": "⚡ Method : complete : plan the parts day by day so that make sure to be on time",
-            "done": false
-          },
-          {
-            "id": "tdmuqrx2pl3",
-            "t": "Launch : disabled cruelty and elderly (see if it fits into one method) using the materials which I already have",
-            "done": false
+            "t": "🔥 Method : complete : plan the parts day by day so that make sure to be on time",
+            "done": false,
+            "fs": 3,
+            "b": true
           },
           {
             "id": "tdmuqrxq1g4",
             "t": "⚡ Review : until the Table : the Objective system of the Traditional values",
-            "done": false
+            "done": false,
+            "b": true
           },
           {
             "id": "tdmuqrxyq45",
-            "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
-            "done": false
+            "t": "🔥 Method : launch : work out a rule : how to check and edit the links in MRG",
+            "done": false,
+            "fs": 3,
+            "b": true
           },
           {
             "id": "tdmuqry6b66",
             "t": "⚡ Review : animal cruelty",
-            "done": false
+            "done": false,
+            "b": true
           },
           {
             "id": "tdmuqryhsa7",
             "t": "Method : launch and schedule partial checking of links for MRM",
-            "done": false
+            "done": false,
+            "b": true
+          },
+          {
+            "id": "tdmuw9nb8j8",
+            "t": "Method : launch : cruelty towards disabled and elderly",
+            "done": false,
+            "b": true
           }
         ],
         "week": [
