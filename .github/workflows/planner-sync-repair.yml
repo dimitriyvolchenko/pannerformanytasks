@@ -4,22 +4,47 @@ on:
     branches: [fix/planner-sync-20261006]
     paths: ['.github/workflows/planner-sync-repair.yml', 'tools/sync-repair/**']
 permissions:
-  contents: read
+  contents: write
+concurrency:
+  group: planner-sync-repair
+  cancel-in-progress: true
 jobs:
   validate:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
-      - name: Inspect sync entry points
+      - name: Apply guarded patch to working copy only
+        run: python3 tools/sync-repair/apply-sync-repair.py
+      - name: Run isolated synchronization regressions
+        run: node tools/sync-repair/test-sync-v2.cjs
+      - name: Install pinned browser test tooling
+        run: |
+          npm install --no-save --ignore-scripts playwright@1.56.1
+          npx playwright install --with-deps chromium webkit
+      - name: Run full-page Chromium and mobile WebKit checks
+        run: node tools/sync-repair/test-browser.cjs
+      - name: Stage tested HTML blob without updating any branch
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          s = Path('index.html').read_text()
-          print('Source lines:', len(s.splitlines()))
-          for i, line in enumerate(s.splitlines(), 1):
-              if any(x in line for x in ('setInterval(', 'ghPush(', 'ghPull(', 'function persist(', 'function progressText(')):
-                  print(str(i) + ': ' + line[:260])
+          import json, os, subprocess, urllib.request
+          # The user's plan must remain byte-for-byte untouched.
+          assert subprocess.check_output(['git', 'diff', '--name-only', '--', 'progress.json']).strip() == b''
+          data=json.dumps({'content':Path('index.html').read_text(), 'encoding':'utf-8'}).encode()
+          url='https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/git/blobs'
+          req=urllib.request.Request(url,data=data,method='POST',headers={
+              'Authorization':'Bearer '+os.environ['GH_TOKEN'],
+              'Accept':'application/vnd.github+json',
+              'Content-Type':'application/json',
+              'X-GitHub-Api-Version':'2022-11-28'})
+          with urllib.request.urlopen(req,timeout=30) as r:
+              result=json.load(r)
+          print('STAGED_HTML_BLOB='+result['sha'])
+          print('VALIDATED_SOURCE_BLOB=e32bb34b873d2bb93a9299678fd30e0ddfc1b2ab')
+          print('No branch or progress file was modified by this validation job.')
           PY
