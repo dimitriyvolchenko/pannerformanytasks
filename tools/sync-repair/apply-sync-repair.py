@@ -77,6 +77,13 @@ if(cloudSaveButton)cloudSaveButton.title="Save this device's changes to GitHub a
 once('          if(!canWrite){', '          if(canWrite===false){')
 once('          out+=syRepLine("ok","The key may write to it");',
      '          out+=syRepLine("ok","The repository is accessible. An actual save verifies this key has Contents: Read and write");')
+# Context menus are appended to <body>, while Mega Focus is z-index 200.
+# Keep every floating editor above that fullscreen layer.
+once('#plMenu{position:fixed; z-index:150;', '#plMenu{position:fixed; z-index:320;')
+once('#richMenu{position:fixed; z-index:140;', '#richMenu{position:fixed; z-index:320;')
+once('#ctxMenu{position:fixed; z-index:130;', '#ctxMenu{position:fixed; z-index:320;')
+once('#lineMenu{position:fixed; z-index:150;', '#lineMenu{position:fixed; z-index:320;')
+once('#pinkMenu{position:fixed; z-index:150;', '#pinkMenu{position:fixed; z-index:320;')
 assert s.count('id="stepsList"')==1
 assert s.count('function ghPush(')==1 and s.count('function ghPull(')==1
 assert s.count('<script')==raw.decode().count('<script')
