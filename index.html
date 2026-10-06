@@ -106,7 +106,7 @@
   #linkLayer .lk.sel .ln{stroke-dasharray:none; filter:drop-shadow(0 0 4px rgba(143,174,220,.9))}
   #linkLayer .lkcap{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; font-size:11px;
     font-weight:650; fill:#7C818C; paint-order:stroke; stroke:#F7F5F0; stroke-width:4px; stroke-linejoin:round}
-  #lineMenu{position:fixed; z-index:150; background:var(--card); border:1px solid var(--line); border-radius:14px;
+  #lineMenu{position:fixed; z-index:320; background:var(--card); border:1px solid var(--line); border-radius:14px;
     box-shadow:0 18px 44px rgba(58,63,74,.22); padding:11px; display:none; width:232px}
   #lineMenu.show{display:block}
   #lineMenu .rrow{display:flex; gap:6px; margin-bottom:8px; flex-wrap:wrap; align-items:center}
@@ -254,7 +254,7 @@
   .sticker .lnk{position:absolute; right:-8px; top:50%; margin-top:-7px; width:14px; height:14px; border-radius:50%;
     background:var(--card); border:2.5px solid rgba(75,68,38,.45); cursor:crosshair; opacity:0; transition:opacity .25s ease}
   .sticker:hover .lnk{opacity:1}
-  #ctxMenu{position:fixed; z-index:130; background:var(--card); border:1px solid var(--line); border-radius:14px;
+  #ctxMenu{position:fixed; z-index:320; background:var(--card); border:1px solid var(--line); border-radius:14px;
     box-shadow:0 18px 44px rgba(58,63,74,.22); padding:10px; display:none; min-width:170px}
   #ctxMenu.show{display:block}
   #ctxMenu .crow{display:flex; gap:7px; margin-bottom:9px}
@@ -550,7 +550,7 @@
     max-height:calc(100vh - var(--timeline-h) - 74px - var(--extgap,0px)) !important}
 
   /* right-click menu on a line of either priority list */
-  #plMenu{position:fixed; z-index:150; background:var(--card); border:1px solid var(--line); border-radius:14px;
+  #plMenu{position:fixed; z-index:320; background:var(--card); border:1px solid var(--line); border-radius:14px;
     box-shadow:0 18px 44px rgba(58,63,74,.22); padding:11px; display:none; width:252px}
   #plMenu.show{display:block}
   #plMenu .rlab{font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 5px}
@@ -1359,7 +1359,7 @@
   @media (max-width:900px){ #signTop{display:none !important} }
 
   /* ============ RICH TEXT MENU ============ */
-  #richMenu{position:fixed; z-index:140; background:var(--card); border:1px solid var(--line); border-radius:14px;
+  #richMenu{position:fixed; z-index:320; background:var(--card); border:1px solid var(--line); border-radius:14px;
     box-shadow:0 18px 44px rgba(58,63,74,.22); padding:11px; display:none; width:226px}
   #richMenu.show{display:block}
   #richMenu .rrow{display:flex; gap:6px; margin-bottom:8px; flex-wrap:wrap; align-items:center}
@@ -1859,7 +1859,7 @@
   body.dark .hsprev{background:var(--sunk)}
 
   /* the little palette behind the pink button, for matching the strip by eye */
-  #pinkMenu{position:fixed; z-index:150; background:var(--card); border:1px solid var(--line); border-radius:14px;
+  #pinkMenu{position:fixed; z-index:320; background:var(--card); border:1px solid var(--line); border-radius:14px;
     box-shadow:var(--sh-m,0 18px 44px rgba(58,63,74,.22)); padding:11px; display:none; width:206px; max-width:calc(100vw - 24px)}
   @media (max-width:820px){
     #pinkMenu{width:240px; padding:13px}
