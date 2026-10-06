@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-06T07:17:34.611Z",
+  "savedAt": "2026-10-06T07:18:52.165Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1743,6 +1743,11 @@
     {
       "id": "tomuwcj7xi2",
       "t": "sprts",
+      "done": false
+    },
+    {
+      "id": "tomuwckwcx3",
+      "t": "sprts2",
       "done": false
     }
   ],
@@ -4414,6 +4419,11 @@
           {
             "id": "tomuwcj7xi2",
             "t": "sprts",
+            "done": false
+          },
+          {
+            "id": "tomuwckwcx3",
+            "t": "sprts2",
             "done": false
           }
         ],
