@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-06T08:46:12.762Z",
+  "savedAt": "2026-10-06T08:47:10.589Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1630,9 +1630,12 @@
       "c_p1787668712681_2_1787730177904": true
     }
   },
-  "stickBtn": null,
+  "stickBtn": {
+    "x": -94,
+    "y": 529
+  },
   "stickBtnHidden": true,
-  "stickersHidden": false,
+  "stickersHidden": true,
   "bink": [],
   "pairs": [
     {
@@ -1657,10 +1660,10 @@
   "pairsNext": [
     {
       "id": "prmuw9jfib1",
-      "a": "arrange working environment",
+      "a": "updating the table of the article by Papina",
       "b": "launch: MRG reading",
       "done": false,
-      "ad": true,
+      "ad": false,
       "bd": false,
       "at": ""
     }
@@ -1770,12 +1773,12 @@
   "stepsView": "now",
   "instrOpen": false,
   "korean": false,
-  "logo": "wok-speech",
+  "logo": "wok",
   "theme": "dark",
   "pinkBar": false,
   "pinkColor": "",
-  "heroZoom": 0.5,
-  "heroFree": true,
+  "heroZoom": 1,
+  "heroFree": false,
   "darkness": 50,
   "boldAll": false,
   "inproc": {},
@@ -4293,9 +4296,12 @@
             "c_p1787668712681_2_1787730177904": true
           }
         },
-        "stickBtn": null,
+        "stickBtn": {
+          "x": -94,
+          "y": 529
+        },
         "stickBtnHidden": true,
-        "stickersHidden": false,
+        "stickersHidden": true,
         "bink": [],
         "pairs": [
           {
@@ -4320,10 +4326,10 @@
         "pairsNext": [
           {
             "id": "prmuw9jfib1",
-            "a": "arrange working environment",
+            "a": "updating the table of the article by Papina",
             "b": "launch: MRG reading",
             "done": false,
-            "ad": true,
+            "ad": false,
             "bd": false,
             "at": ""
           }
@@ -4433,12 +4439,12 @@
         "stepsView": "now",
         "instrOpen": false,
         "korean": false,
-        "logo": "wok-speech",
+        "logo": "wok",
         "theme": "dark",
         "pinkBar": false,
         "pinkColor": "",
-        "heroZoom": 0.5,
-        "heroFree": true,
+        "heroZoom": 1,
+        "heroFree": false,
         "darkness": 50,
         "boldAll": false,
         "inproc": {},
@@ -4561,6 +4567,6 @@
       }
     }
   },
-  "device": "iPad",
+  "device": "iPhone",
   "lead": "iPhone"
 }
