@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-06T06:32:01.319Z",
+  "savedAt": "2026-10-06T06:34:33.858Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1014,20 +1014,18 @@
   "rich": {},
   "signs": {
     "t": {
-      "t": "overall",
+      "t": "forensic",
       "c": "#D6D2C6",
-      "s": 90,
+      "s": 64,
       "auto": true,
-      "dim": 60,
-      "hidden": false
+      "dim": 60
     },
     "l": {
       "t": "forensic",
       "c": "#B4B8C0",
-      "s": 83,
+      "s": 22,
       "auto": true,
-      "dim": 100,
-      "hidden": false
+      "dim": 100
     },
     "r": {
       "t": "forensic",
@@ -1038,7 +1036,7 @@
     }
   },
   "hideLnk": {},
-  "hideLnkAll": true,
+  "hideLnkAll": false,
   "stickerClassic": false,
   "stickerSkin": "control",
   "torder": {},
@@ -1055,44 +1053,47 @@
     },
     {
       "id": "tdmuqrmnmx1",
-      "t": "⚡ Method: complete : integrated Axyology",
-      "done": false
+      "t": "🔥 Method: complete : integrated Axyology",
+      "done": false,
+      "fs": 3,
+      "b": true
     },
     {
       "id": "tdmuqrwrhn2",
-      "t": "⚡ Method : complete : plan the parts day by day so that make sure to be on time",
-      "done": false
-    },
-    {
-      "id": "tdmuqrx2pl3",
-      "t": "Launch : disabled cruelty and elderly (see if it fits into one method) using the materials which I already have",
-      "done": false
+      "t": "🔥 Method : complete : plan the parts day by day so that make sure to be on time",
+      "done": false,
+      "fs": 3,
+      "b": true
     },
     {
       "id": "tdmuqrxq1g4",
       "t": "⚡ Review : until the Table : the Objective system of the Traditional values",
-      "done": false
+      "done": false,
+      "b": true
     },
     {
       "id": "tdmuqrxyq45",
-      "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
-      "done": false
+      "t": "🔥 Method : launch : work out a rule : how to check and edit the links in MRG",
+      "done": false,
+      "fs": 3,
+      "b": true
     },
     {
       "id": "tdmuqry6b66",
       "t": "⚡ Review : animal cruelty",
-      "done": false
+      "done": false,
+      "b": true
     },
     {
       "id": "tdmuqryhsa7",
       "t": "Method : launch and schedule partial checking of links for MRM",
-      "done": false
+      "done": false,
+      "b": true
     },
     {
-      "id": "tdmuv9unkr7",
-      "t": "🔥 Complete : khaziev.article",
-      "done": true,
-      "fs": 3,
+      "id": "tdmuw9nb8j8",
+      "t": "Method : launch : cruelty towards disabled and elderly",
+      "done": false,
       "b": true
     }
   ],
@@ -1553,6 +1554,13 @@
       "k": "tasks",
       "ahead": false,
       "at": "2026-10-05T14:34:04.139Z"
+    },
+    {
+      "id": "tkmuv10p0s5",
+      "t": "launch all the interrupted tasks in note pad",
+      "k": "tasks",
+      "ahead": false,
+      "at": "2026-10-05T17:35:47.780Z"
     }
   ],
   "plDay": "2026-10-06",
@@ -1623,11 +1631,11 @@
     }
   },
   "stickBtn": {
-    "x": 2047,
-    "y": 948
+    "x": -94,
+    "y": 529
   },
-  "stickBtnHidden": false,
-  "stickersHidden": false,
+  "stickBtnHidden": true,
+  "stickersHidden": true,
   "bink": [],
   "pairs": [
     {
@@ -1651,11 +1659,11 @@
   ],
   "pairsNext": [
     {
-      "id": "prmuv9m5ht2",
-      "a": "check the article of natalya",
-      "b": "make the project for the Chinese article translation",
+      "id": "prmuw9jfib1",
+      "a": "arrange working environment",
+      "b": "launch: MRG reading",
       "done": false,
-      "ad": true,
+      "ad": false,
       "bd": false,
       "at": ""
     }
@@ -1664,63 +1672,107 @@
   "parFace": "list",
   "tasks": [
     {
-      "id": "tkmuv0z3av3",
-      "t": "check the article of natalya",
-      "done": true,
-      "fs": 2,
-      "b": true
-    },
-    {
-      "id": "tkmuv0zm8x4",
-      "t": "start translating the article for the chinese journal adjusting ethical issues",
-      "done": true
-    },
-    {
-      "id": "tkmuv10p0s5",
-      "t": "launch all the interrupted tasks in note pad",
-      "done": false
-    },
-    {
-      "id": "tkmuv9voi88",
-      "t": "🔥 Complete : khaziev.article",
-      "done": true,
+      "id": "tkmuw9enkd1",
+      "t": "☕ Complete : The Approach to handling Links and References",
+      "done": false,
       "fs": 3,
       "b": true
+    },
+    {
+      "id": "tkmuw9fsyp2",
+      "t": "☕ Complete : Scheduling preparing all the Parts for MR",
+      "done": false,
+      "fs": 3,
+      "b": true
+    },
+    {
+      "id": "tkmuw9ocfw9",
+      "t": "☕ Complete : the launch on time of MRG",
+      "done": false,
+      "b": true,
+      "fs": 3
     }
   ],
   "tasksNext": [
     {
       "id": "tkmuqrzrkz8",
-      "t": "Method: complete : integrated Axyology",
-      "done": false
+      "t": "🔥 Method: complete : integrated Axyology",
+      "done": false,
+      "fs": 2,
+      "b": true
     },
     {
       "id": "tkmuqs08719",
-      "t": "Method : launch and schedule partial checking of links for MRM",
-      "done": false
+      "t": "🔥 Method : launch and schedule partial checking of links for MRM",
+      "done": false,
+      "fs": 2,
+      "b": true
     },
     {
       "id": "tkmuqs0g5i10",
       "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
       "done": false
+    },
+    {
+      "id": "tkmuvczeer9",
+      "t": "🔥 Article AC : launch svetlana's correction of the article",
+      "done": false,
+      "fs": 1,
+      "b": true
+    },
+    {
+      "id": "tkmuvczqw310",
+      "t": "Article AC : launch overall reading",
+      "done": false
     }
   ],
   "tasksView": "now",
-  "timeoff": [],
+  "timeoff": [
+    {
+      "id": "tomuw9gn133",
+      "t": "r.pr.t.a.the.snts.&ta.&sprt.",
+      "done": false
+    }
+  ],
   "timeoffNext": [],
   "timeoffView": "now",
-  "steps": [],
+  "steps": [
+    {
+      "id": "spmuw9h6f14",
+      "t": "arrange working environment",
+      "done": false,
+      "b": true
+    },
+    {
+      "id": "spmuw9hylr5",
+      "t": "read through MRG (especially axiological analysis)",
+      "done": false,
+      "b": true
+    },
+    {
+      "id": "spmuw9ifyg6",
+      "t": "make an approach for links and references : write it",
+      "done": false,
+      "b": true
+    },
+    {
+      "id": "spmuw9iqeq7",
+      "t": "test this approach to the links and references",
+      "done": false,
+      "b": true
+    }
+  ],
   "stepsNext": [],
   "stepsView": "now",
   "instrOpen": false,
   "korean": false,
-  "logo": "wok-speech",
+  "logo": "wok",
   "theme": "light",
   "pinkBar": false,
   "pinkColor": "",
   "heroZoom": 1,
-  "heroFree": true,
-  "darkness": 45,
+  "heroFree": false,
+  "darkness": 50,
   "boldAll": false,
   "inproc": {},
   "ie": true,
@@ -2528,20 +2580,18 @@
         "rich": {},
         "signs": {
           "t": {
-            "t": "overall",
+            "t": "forensic",
             "c": "#D6D2C6",
-            "s": 90,
+            "s": 64,
             "auto": true,
-            "dim": 60,
-            "hidden": false
+            "dim": 60
           },
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 83,
+            "s": 22,
             "auto": true,
-            "dim": 100,
-            "hidden": false
+            "dim": 100
           },
           "r": {
             "t": "forensic",
@@ -2552,9 +2602,9 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": true,
+        "hideLnkAll": false,
         "stickerClassic": false,
-        "stickerSkin": "ive",
+        "stickerSkin": "control",
         "torder": {},
         "tmoved": {},
         "styles": {},
@@ -2566,8 +2616,8 @@
         "todayView": "now",
         "weekView": "now",
         "plLog": [],
-        "plDay": "2026-09-28",
-        "plWeek": "2026-09-28",
+        "plDay": "2026-10-05",
+        "plWeek": "2026-10-05",
         "spotSave": null,
         "starts": {},
         "launched": {},
@@ -2575,12 +2625,9 @@
         "saveName": "",
         "saveDirName": "",
         "ptask": {},
-        "stickBtn": {
-          "x": 1986,
-          "y": 787
-        },
-        "stickBtnHidden": true,
-        "stickersHidden": true,
+        "stickBtn": null,
+        "stickBtnHidden": false,
+        "stickersHidden": false,
         "bink": [],
         "pairs": [],
         "pairsNext": [],
@@ -2592,15 +2639,18 @@
         "timeoff": [],
         "timeoffNext": [],
         "timeoffView": "now",
+        "steps": [],
+        "stepsNext": [],
+        "stepsView": "now",
         "instrOpen": false,
         "korean": false,
-        "logo": "wok-speech",
-        "theme": "light",
+        "logo": "wok",
+        "theme": "dark",
         "pinkBar": false,
         "pinkColor": "",
         "heroZoom": 1,
         "heroFree": true,
-        "darkness": 45,
+        "darkness": 50,
         "boldAll": false,
         "inproc": {},
         "ie": false,
@@ -3623,20 +3673,18 @@
         "rich": {},
         "signs": {
           "t": {
-            "t": "overall",
+            "t": "forensic",
             "c": "#D6D2C6",
-            "s": 90,
+            "s": 64,
             "auto": true,
-            "dim": 60,
-            "hidden": false
+            "dim": 60
           },
           "l": {
             "t": "forensic",
             "c": "#B4B8C0",
-            "s": 83,
+            "s": 22,
             "auto": true,
-            "dim": 100,
-            "hidden": false
+            "dim": 100
           },
           "r": {
             "t": "forensic",
@@ -3647,7 +3695,7 @@
           }
         },
         "hideLnk": {},
-        "hideLnkAll": true,
+        "hideLnkAll": false,
         "stickerClassic": false,
         "stickerSkin": "control",
         "torder": {},
@@ -3664,44 +3712,47 @@
           },
           {
             "id": "tdmuqrmnmx1",
-            "t": "⚡ Method: complete : integrated Axyology",
-            "done": false
+            "t": "🔥 Method: complete : integrated Axyology",
+            "done": false,
+            "fs": 3,
+            "b": true
           },
           {
             "id": "tdmuqrwrhn2",
-            "t": "⚡ Method : complete : plan the parts day by day so that make sure to be on time",
-            "done": false
-          },
-          {
-            "id": "tdmuqrx2pl3",
-            "t": "Launch : disabled cruelty and elderly (see if it fits into one method) using the materials which I already have",
-            "done": false
+            "t": "🔥 Method : complete : plan the parts day by day so that make sure to be on time",
+            "done": false,
+            "fs": 3,
+            "b": true
           },
           {
             "id": "tdmuqrxq1g4",
             "t": "⚡ Review : until the Table : the Objective system of the Traditional values",
-            "done": false
+            "done": false,
+            "b": true
           },
           {
             "id": "tdmuqrxyq45",
-            "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
-            "done": false
+            "t": "🔥 Method : launch : work out a rule : how to check and edit the links in MRG",
+            "done": false,
+            "fs": 3,
+            "b": true
           },
           {
             "id": "tdmuqry6b66",
             "t": "⚡ Review : animal cruelty",
-            "done": false
+            "done": false,
+            "b": true
           },
           {
             "id": "tdmuqryhsa7",
             "t": "Method : launch and schedule partial checking of links for MRM",
-            "done": false
+            "done": false,
+            "b": true
           },
           {
-            "id": "tdmuv9unkr7",
-            "t": "🔥 Complete : khaziev.article",
-            "done": true,
-            "fs": 3,
+            "id": "tdmuw9nb8j8",
+            "t": "Method : launch : cruelty towards disabled and elderly",
+            "done": false,
             "b": true
           }
         ],
@@ -4162,6 +4213,13 @@
             "k": "tasks",
             "ahead": false,
             "at": "2026-10-05T14:34:04.139Z"
+          },
+          {
+            "id": "tkmuv10p0s5",
+            "t": "launch all the interrupted tasks in note pad",
+            "k": "tasks",
+            "ahead": false,
+            "at": "2026-10-05T17:35:47.780Z"
           }
         ],
         "plDay": "2026-10-06",
@@ -4232,11 +4290,11 @@
           }
         },
         "stickBtn": {
-          "x": 2047,
-          "y": 948
+          "x": -94,
+          "y": 529
         },
-        "stickBtnHidden": false,
-        "stickersHidden": false,
+        "stickBtnHidden": true,
+        "stickersHidden": true,
         "bink": [],
         "pairs": [
           {
@@ -4260,11 +4318,11 @@
         ],
         "pairsNext": [
           {
-            "id": "prmuv9m5ht2",
-            "a": "check the article of natalya",
-            "b": "make the project for the Chinese article translation",
+            "id": "prmuw9jfib1",
+            "a": "arrange working environment",
+            "b": "launch: MRG reading",
             "done": false,
-            "ad": true,
+            "ad": false,
             "bd": false,
             "at": ""
           }
@@ -4273,63 +4331,107 @@
         "parFace": "list",
         "tasks": [
           {
-            "id": "tkmuv0z3av3",
-            "t": "check the article of natalya",
-            "done": true,
-            "fs": 2,
-            "b": true
-          },
-          {
-            "id": "tkmuv0zm8x4",
-            "t": "start translating the article for the chinese journal adjusting ethical issues",
-            "done": true
-          },
-          {
-            "id": "tkmuv10p0s5",
-            "t": "launch all the interrupted tasks in note pad",
-            "done": false
-          },
-          {
-            "id": "tkmuv9voi88",
-            "t": "🔥 Complete : khaziev.article",
-            "done": true,
+            "id": "tkmuw9enkd1",
+            "t": "☕ Complete : The Approach to handling Links and References",
+            "done": false,
             "fs": 3,
             "b": true
+          },
+          {
+            "id": "tkmuw9fsyp2",
+            "t": "☕ Complete : Scheduling preparing all the Parts for MR",
+            "done": false,
+            "fs": 3,
+            "b": true
+          },
+          {
+            "id": "tkmuw9ocfw9",
+            "t": "☕ Complete : the launch on time of MRG",
+            "done": false,
+            "b": true,
+            "fs": 3
           }
         ],
         "tasksNext": [
           {
             "id": "tkmuqrzrkz8",
-            "t": "Method: complete : integrated Axyology",
-            "done": false
+            "t": "🔥 Method: complete : integrated Axyology",
+            "done": false,
+            "fs": 2,
+            "b": true
           },
           {
             "id": "tkmuqs08719",
-            "t": "Method : launch and schedule partial checking of links for MRM",
-            "done": false
+            "t": "🔥 Method : launch and schedule partial checking of links for MRM",
+            "done": false,
+            "fs": 2,
+            "b": true
           },
           {
             "id": "tkmuqs0g5i10",
             "t": "Method : launch : work out a rule : how to check and edit the links in MRG",
             "done": false
+          },
+          {
+            "id": "tkmuvczeer9",
+            "t": "🔥 Article AC : launch svetlana's correction of the article",
+            "done": false,
+            "fs": 1,
+            "b": true
+          },
+          {
+            "id": "tkmuvczqw310",
+            "t": "Article AC : launch overall reading",
+            "done": false
           }
         ],
         "tasksView": "now",
-        "timeoff": [],
+        "timeoff": [
+          {
+            "id": "tomuw9gn133",
+            "t": "r.pr.t.a.the.snts.&ta.&sprt.",
+            "done": false
+          }
+        ],
         "timeoffNext": [],
         "timeoffView": "now",
-        "steps": [],
+        "steps": [
+          {
+            "id": "spmuw9h6f14",
+            "t": "arrange working environment",
+            "done": false,
+            "b": true
+          },
+          {
+            "id": "spmuw9hylr5",
+            "t": "read through MRG (especially axiological analysis)",
+            "done": false,
+            "b": true
+          },
+          {
+            "id": "spmuw9ifyg6",
+            "t": "make an approach for links and references : write it",
+            "done": false,
+            "b": true
+          },
+          {
+            "id": "spmuw9iqeq7",
+            "t": "test this approach to the links and references",
+            "done": false,
+            "b": true
+          }
+        ],
         "stepsNext": [],
         "stepsView": "now",
         "instrOpen": false,
         "korean": false,
-        "logo": "wok-speech",
+        "logo": "wok",
         "theme": "light",
         "pinkBar": false,
         "pinkColor": "",
         "heroZoom": 1,
-        "heroFree": true,
-        "darkness": 45,
+        "heroFree": false,
+        "darkness": 50,
         "boldAll": false,
         "inproc": {},
         "ie": true,
@@ -4451,6 +4553,6 @@
       }
     }
   },
-  "device": "Computer",
+  "device": "iPhone",
   "lead": "iPhone"
 }
