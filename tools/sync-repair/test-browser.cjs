@@ -58,6 +58,17 @@ async function main(){
   await a.waitForFunction(()=>window.__syncTest.status().startsWith('Saved to GitHub'));
   assert(remote.spaces.states[remote.spaces.active].tasks.some(x=>x.t==='SYNC TEST desktop'));
   console.log('PASS Desktop Save button sends a task despite legacy iPhone leader');
+
+  const desktopLine=a.locator('#tasksList [data-tdtext]').filter({hasText:'SYNC TEST desktop'}).first();
+  await desktopLine.click({button:'right'});
+  assert(await a.locator('#plMenu').evaluate(el=>el.classList.contains('show')));
+  assert((await a.locator('#plMenu').innerText()).includes('Emoji'));
+  await a.locator('#plMenu [data-plb="b"]').click();
+  assert(await a.evaluate(()=>window.__syncTest.state().tasks.some(x=>x.t==='SYNC TEST desktop'&&x.b===true)));
+  await desktopLine.click({button:'right'});
+  await a.locator('#plMenu [data-ple="🔥"]').click();
+  assert(await a.evaluate(()=>window.__syncTest.state().tasks.some(x=>x.t==='🔥 SYNC TEST desktop'&&x.b===true)));
+  console.log('PASS Desktop right-click menu opens and applies bold plus emoji');
   assert(await b.evaluate(()=>window.__syncTest.pull(false)));
   assert(await b.evaluate(()=>window.__syncTest.state().tasks.some(x=>x.t==='SYNC TEST desktop')));
   console.log('PASS Desktop changes arrive in mobile WebKit');
