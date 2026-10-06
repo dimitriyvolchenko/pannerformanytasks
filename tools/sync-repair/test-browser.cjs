@@ -60,7 +60,18 @@ async function main(){
   console.log('PASS Desktop Save button sends a task despite legacy iPhone leader');
 
   const desktopLine=a.locator('#tasksList [data-tdtext]').filter({hasText:'SYNC TEST desktop'}).first();
+  const ctxProbeBefore=await a.evaluate(()=>{
+    const els=[...document.querySelectorAll('#tasksList [data-tdtext]')];
+    const el=els.find(x=>x.textContent.includes('SYNC TEST desktop'));
+    const id=el&&el.getAttribute('data-tdtext');
+    return {id:id, where:!!(id&&plWhere(id)), stateTasks:(state.tasks||[]).map(x=>({id:x.id,t:x.t})),
+            domTasks:els.map(x=>({id:x.getAttribute('data-tdtext'),t:x.textContent}))};
+  });
+  console.log('CTX_PROBE_BEFORE '+JSON.stringify(ctxProbeBefore));
   await desktopLine.click({button:'right'});
+  const ctxProbeAfter=await a.evaluate(()=>({show:document.getElementById('plMenu').classList.contains('show'),
+    html:document.getElementById('plMenu').innerHTML,plFor:window.plFor||null}));
+  console.log('CTX_PROBE_AFTER '+JSON.stringify(ctxProbeAfter));
   assert(await a.locator('#plMenu').evaluate(el=>el.classList.contains('show')));
   assert((await a.locator('#plMenu').innerText()).includes('Emoji'));
   await a.locator('#plMenu [data-plb="b"]').click();
