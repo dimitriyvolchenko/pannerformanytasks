@@ -1,7 +1,7 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-06T07:20:30.825Z",
+  "savedAt": "2026-10-06T08:46:12.762Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1630,12 +1630,9 @@
       "c_p1787668712681_2_1787730177904": true
     }
   },
-  "stickBtn": {
-    "x": -94,
-    "y": 529
-  },
+  "stickBtn": null,
   "stickBtnHidden": true,
-  "stickersHidden": true,
+  "stickersHidden": false,
   "bink": [],
   "pairs": [
     {
@@ -1663,7 +1660,7 @@
       "a": "arrange working environment",
       "b": "launch: MRG reading",
       "done": false,
-      "ad": false,
+      "ad": true,
       "bd": false,
       "at": ""
     }
@@ -1773,12 +1770,12 @@
   "stepsView": "now",
   "instrOpen": false,
   "korean": false,
-  "logo": "wok",
+  "logo": "wok-speech",
   "theme": "dark",
   "pinkBar": false,
   "pinkColor": "",
-  "heroZoom": 1,
-  "heroFree": false,
+  "heroZoom": 0.5,
+  "heroFree": true,
   "darkness": 50,
   "boldAll": false,
   "inproc": {},
@@ -4296,12 +4293,9 @@
             "c_p1787668712681_2_1787730177904": true
           }
         },
-        "stickBtn": {
-          "x": -94,
-          "y": 529
-        },
+        "stickBtn": null,
         "stickBtnHidden": true,
-        "stickersHidden": true,
+        "stickersHidden": false,
         "bink": [],
         "pairs": [
           {
@@ -4329,7 +4323,7 @@
             "a": "arrange working environment",
             "b": "launch: MRG reading",
             "done": false,
-            "ad": false,
+            "ad": true,
             "bd": false,
             "at": ""
           }
@@ -4439,12 +4433,12 @@
         "stepsView": "now",
         "instrOpen": false,
         "korean": false,
-        "logo": "wok",
+        "logo": "wok-speech",
         "theme": "dark",
         "pinkBar": false,
         "pinkColor": "",
-        "heroZoom": 1,
-        "heroFree": false,
+        "heroZoom": 0.5,
+        "heroFree": true,
         "darkness": 50,
         "boldAll": false,
         "inproc": {},
@@ -4567,6 +4561,6 @@
       }
     }
   },
-  "device": "iPhone",
+  "device": "iPad",
   "lead": "iPhone"
 }
