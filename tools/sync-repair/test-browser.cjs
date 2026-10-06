@@ -80,6 +80,22 @@ async function main(){
   await a.locator('#plMenu [data-ple="🔥"]').click();
   assert(await a.evaluate(()=>window.__syncTest.state().tasks.some(x=>x.t==='🔥 SYNC TEST desktop'&&x.b===true)));
   console.log('PASS Desktop right-click menu opens and applies bold plus emoji');
+  await a.keyboard.press('Escape');
+  await a.locator('#tasksBox [data-spot="tasks"]').click();
+  await a.locator('#btnMega').click({force:true});
+  await a.waitForFunction(()=>document.body.classList.contains('megaon'));
+  const megaLine=a.locator('#tasksList [data-tdtext]').filter({hasText:'SYNC TEST desktop'}).first();
+  await megaLine.click({button:'right'});
+  const megaMenu=await a.locator('#plMenu').evaluate(el=>{
+    const r=el.getBoundingClientRect(), top=document.elementFromPoint(r.left+16,r.top+16);
+    return {menuZ:+getComputedStyle(el).zIndex, megaZ:+getComputedStyle(document.getElementById('megaOv')).zIndex,
+            onTop:!!(top&&top.closest&&top.closest('#plMenu'))};
+  });
+  assert(megaMenu.menuZ>megaMenu.megaZ);
+  assert(megaMenu.onTop);
+  console.log('PASS Right-click menu stays above Mega Focus');
+  await a.locator('#megaOut').click({force:true});
+  await a.waitForFunction(()=>!document.body.classList.contains('megaon'));
   assert(await b.evaluate(()=>window.__syncTest.pull(false)));
   assert(await b.evaluate(()=>window.__syncTest.state().tasks.some(x=>x.t==='SYNC TEST desktop')));
   console.log('PASS Desktop changes arrive in mobile WebKit');
