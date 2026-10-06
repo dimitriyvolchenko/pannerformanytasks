@@ -1,0 +1,25 @@
+name: Validate planner sync repair
+on:
+  push:
+    branches: [fix/planner-sync-20261006]
+    paths: ['.github/workflows/planner-sync-repair.yml', 'tools/sync-repair/**']
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Inspect sync entry points
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          s = Path('index.html').read_text()
+          print('Source lines:', len(s.splitlines()))
+          for i, line in enumerate(s.splitlines(), 1):
+              if any(x in line for x in ('setInterval(', 'ghPush(', 'ghPull(', 'function persist(', 'function progressText(')):
+                  print(str(i) + ': ' + line[:260])
+          PY
