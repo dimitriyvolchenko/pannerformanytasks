@@ -1,10 +1,30 @@
 {
   "format": "mr_rocket_planner",
   "version": 12,
-  "savedAt": "2026-10-06T07:19:59.090Z",
+  "savedAt": "2026-10-06T07:20:30.825Z",
   "trash": [],
-  "spot": {},
-  "spotLow": {},
+  "spot": {
+    "par": true,
+    "done": true,
+    "launch": true,
+    "ct09": true,
+    "st:s1789126170577_0": true,
+    "ct21": true,
+    "week": true,
+    "tasks": true,
+    "pc_1790090308944_0": true,
+    "ct25": true,
+    "ct20": true,
+    "today": true,
+    "off": true,
+    "ct11": true,
+    "st:s1790608955325_0": true,
+    "timeline": true
+  },
+  "spotLow": {
+    "ct20": true,
+    "ct09": true
+  },
   "spans": {
     "ct08": {
       "from": "2026-09-02",
@@ -1719,16 +1739,6 @@
       "id": "tomuw9gn133",
       "t": "r.pr.t.a.the.snts.&ta.&sprt.",
       "done": false
-    },
-    {
-      "id": "tomuwcj7xi2",
-      "t": "sprts",
-      "done": false
-    },
-    {
-      "id": "tomuwckwcx3",
-      "t": "sprts2",
-      "done": false
     }
   ],
   "timeoffNext": [],
@@ -1764,7 +1774,7 @@
   "instrOpen": false,
   "korean": false,
   "logo": "wok",
-  "theme": "light",
+  "theme": "dark",
   "pinkBar": false,
   "pinkColor": "",
   "heroZoom": 1,
@@ -2659,8 +2669,28 @@
       },
       "cmr": {
         "trash": [],
-        "spot": {},
-        "spotLow": {},
+        "spot": {
+          "par": true,
+          "done": true,
+          "launch": true,
+          "ct09": true,
+          "st:s1789126170577_0": true,
+          "ct21": true,
+          "week": true,
+          "tasks": true,
+          "pc_1790090308944_0": true,
+          "ct25": true,
+          "ct20": true,
+          "today": true,
+          "off": true,
+          "ct11": true,
+          "st:s1790608955325_0": true,
+          "timeline": true
+        },
+        "spotLow": {
+          "ct20": true,
+          "ct09": true
+        },
         "spans": {
           "ct08": {
             "from": "2026-09-02",
@@ -4375,16 +4405,6 @@
             "id": "tomuw9gn133",
             "t": "r.pr.t.a.the.snts.&ta.&sprt.",
             "done": false
-          },
-          {
-            "id": "tomuwcj7xi2",
-            "t": "sprts",
-            "done": false
-          },
-          {
-            "id": "tomuwckwcx3",
-            "t": "sprts2",
-            "done": false
           }
         ],
         "timeoffNext": [],
@@ -4420,7 +4440,7 @@
         "instrOpen": false,
         "korean": false,
         "logo": "wok",
-        "theme": "light",
+        "theme": "dark",
         "pinkBar": false,
         "pinkColor": "",
         "heroZoom": 1,
