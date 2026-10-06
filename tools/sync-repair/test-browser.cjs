@@ -64,7 +64,7 @@ async function main(){
     const els=[...document.querySelectorAll('#tasksList [data-tdtext]')];
     const el=els.find(x=>x.textContent.includes('SYNC TEST desktop'));
     const id=el&&el.getAttribute('data-tdtext');
-    return {id:id, where:!!(id&&plWhere(id)), stateTasks:(state.tasks||[]).map(x=>({id:x.id,t:x.t})),
+    return {id:id, stateTasks:(window.__syncTest.state().tasks||[]).map(x=>({id:x.id,t:x.t})),
             domTasks:els.map(x=>({id:x.getAttribute('data-tdtext'),t:x.textContent}))};
   });
   console.log('CTX_PROBE_BEFORE '+JSON.stringify(ctxProbeBefore));
