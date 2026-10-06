@@ -73,7 +73,7 @@ async function main(){
     html:document.getElementById('plMenu').innerHTML,plFor:window.plFor||null}));
   console.log('CTX_PROBE_AFTER '+JSON.stringify(ctxProbeAfter));
   assert(await a.locator('#plMenu').evaluate(el=>el.classList.contains('show')));
-  assert((await a.locator('#plMenu').innerText()).includes('Emoji'));
+  assert((await a.locator('#plMenu').innerText()).toUpperCase().includes('EMOJI'));
   await a.locator('#plMenu [data-plb="b"]').click();
   assert(await a.evaluate(()=>window.__syncTest.state().tasks.some(x=>x.t==='SYNC TEST desktop'&&x.b===true)));
   await desktopLine.click({button:'right'});
