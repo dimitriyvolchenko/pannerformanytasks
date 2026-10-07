@@ -1,0 +1,42 @@
+name: Validate iPad Mega Focus Take repair
+on:
+  push:
+    branches: [fix/ipad-mega-take-20261007]
+    paths: ['.github/workflows/mega-take.yml', 'tools/mega-take/**']
+permissions:
+  contents: write
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Apply hash-verified UI-only patch
+        run: python3 tools/mega-take/apply.py
+      - name: Install pinned native browser tools
+        run: |
+          npm install --no-save --ignore-scripts playwright@1.56.1
+          npx playwright install --with-deps chromium webkit
+      - name: Existing sync regressions and iPad Take in both orientations
+        run: |
+          node tools/mega-take/extend.cjs
+          node tools/mega-take/test.cjs
+      - name: Stage tested application object without changing main or plans
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib, json, os, subprocess, urllib.request
+          assert subprocess.check_output(['git','diff','--name-only','--','progress.json']).strip()==b''
+          content=Path('fixed.html').read_bytes()
+          assert hashlib.sha256(content).hexdigest()=='dba5545aec6eb3a67c5fdc4335466bf632978fb8a210d43cca07c698f35fb1f5'
+          req=urllib.request.Request('https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/git/blobs',data=json.dumps({'content':content.decode(),'encoding':'utf-8'}).encode(),method='POST',headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','Content-Type':'application/json','X-GitHub-Api-Version':'2022-11-28'})
+          with urllib.request.urlopen(req,timeout=30) as response:
+              result=json.load(response)
+          assert result['sha']=='7615ce25e076f70c24e4edec2f245c7241de3e5f'
+          print('STAGED_HTML_BLOB='+result['sha'])
+          print('PASS Tested UI-only HTML staged; no branch or progress file changed')
+          PY
