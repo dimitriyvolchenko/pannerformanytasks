@@ -7,6 +7,13 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Mission">
 <title>MR Mission Planner</title>
+<style id="ipad-save-v3">
+body > .overlay{z-index:340}
+body > #toast{z-index:400}
+#megaBar > b{min-width:0;flex:1 1 auto}
+#megaSyncStatus{display:block;max-width:44vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px;font-weight:500;line-height:1.5;letter-spacing:0;text-transform:none;color:var(--ink-dim)}
+#megaSyncStatus[data-bad="true"]{color:var(--redp)}
+</style>
 </head>
 <body class="scattered">
 <style>
@@ -3010,7 +3017,7 @@ body.korean #stepsBox .tadd input{border:2px solid var(--line2); background:var(
   <div class="dkhint">Sets how deep the dark theme goes. The light theme is not touched.</div>
 </div>
 <div id="pinkMenu"><div class="rlab2">Strip colour</div><div class="pswatch" id="pinkSw"></div><button class="mrow" id="pinkPick">Pick the colour off the strip</button><button class="mrow" id="pinkAuto">Match the strip automatically</button><div class="phex"><input type="text" id="pinkHex" placeholder="#FF2D78" maxlength="7" spellcheck="false"><button id="pinkHexOk">set</button></div></div>
-<div id="megaOv"><div id="megaBar"><b>Mega focus</b><button id="megaOut">back to the page</button></div><div class="mgin" id="megaIn"><div class="mgtop" id="mgTop"><div class="mgtopl" id="mgTopL"></div><div class="mgtopm" id="mgTopM"></div><div class="mgtopr" id="mgTopR"></div></div><div class="mgcols" id="mgCols"><div class="mgl" id="mgL"></div><div class="mgr" id="mgR"></div><div class="mgt" id="mgT"></div></div><div class="mgprojs" id="mgProjs"></div><div class="mgrest" id="mgRest"></div></div></div>
+<div id="megaOv"><div id="megaBar"><b>Mega focus<span id="megaSyncStatus" role="status" aria-live="polite"></span></b><button id="megaOut">back to the page</button></div><div class="mgin" id="megaIn"><div class="mgtop" id="mgTop"><div class="mgtopl" id="mgTopL"></div><div class="mgtopm" id="mgTopM"></div><div class="mgtopr" id="mgTopR"></div></div><div class="mgcols" id="mgCols"><div class="mgl" id="mgL"></div><div class="mgr" id="mgR"></div><div class="mgt" id="mgT"></div></div><div class="mgprojs" id="mgProjs"></div><div class="mgrest" id="mgRest"></div></div></div>
 <div class="overlay" id="lnOverlay">
   <div class="modal narrow">
     <header><h2>Launched</h2><span class="spacer"></span><span class="signstate" id="lnHead"></span></header>
@@ -5548,7 +5555,7 @@ var BASE=[
 
 /* ================= STATE ================= */
 var KEY="mr_rocket_planner_v2";
-var PLANNER_BUILD="2026.10.07.2", ZOOMKEY=KEY+":device-zoom-v3", localZoom=1;
+var PLANNER_BUILD="2026.10.07.3", ZOOMKEY=KEY+":device-zoom-v3", localZoom=1;
 try{var zStored=+localStorage.getItem(ZOOMKEY);if(zStored>=0.75&&zStored<=1.6)localZoom=zStored;}catch(e){}
 function setLocalZoom(z){
   localZoom=Math.max(0.75,Math.min(1.6,+z||1));state.heroZoom=localZoom;
@@ -6393,69 +6400,76 @@ function applyTaskFocus(){
 /* ================= THE LIGHT =================
    One or more boxes stay lit while the rest of the page steps into the shade.
    A lit box can give way in turn - it goes grey and sits behind the others. */
+function spotView(){
+  return megaOn && megaView && megaView.space===spaces.active ? megaView :
+    {spot:state.spot||{},low:state.spotLow||{}};
+}
 function spotKeys(){
-  var out=[];
-  Object.keys(state.spot||{}).forEach(function(k){ if(state.spot[k]) out.push(k); });
-  return out;
+  var spot=spotView().spot;
+  return Object.keys(spot).filter(function(k){return !!spot[k];});
 }
 function applySpot(){
   state.spot=state.spot||{}; state.spotLow=state.spotLow||{};
+  var view=spotView(), spot=view.spot, low=view.low;
   var keys=spotKeys(), on=keys.length>0;
-  var hero=!!(state.spot.today || state.spot.week || state.spot.done || state.spot.launch ||
-             state.spot.par || state.spot.tasks || state.spot.off);
+  var hero=!!(spot.today || spot.week || spot.done || spot.launch ||
+             spot.par || spot.tasks || spot.off);
   document.body.classList.toggle("spotlight", on);
   document.body.classList.toggle("spothero", on && hero);
   document.querySelectorAll(".proj").forEach(function(el){
     var pid=el.dataset.proj;
-    el.classList.toggle("spot", !!state.spot[pid]);
-    el.classList.toggle("spotlow", !!(state.spot[pid] && state.spotLow[pid]));
+    el.classList.toggle("spot", !!spot[pid]);
+    el.classList.toggle("spotlow", !!(spot[pid] && low[pid]));
   });
   document.querySelectorAll(".sticker").forEach(function(el){
     var k="st:"+el.dataset.sid;
-    el.classList.toggle("spot", !!state.spot[k]);
-    el.classList.toggle("spotlow", !!(state.spot[k] && state.spotLow[k]));
+    el.classList.toggle("spot", !!spot[k]);
+    el.classList.toggle("spotlow", !!(spot[k] && low[k]));
   });
   [["today","todayBox"],["week","weekBox"],["done","totalBox"],["launch","launchBox"],["par","parBox"],["tasks","tasksBox"],["off","timeoffBox"]].forEach(function(pair){
     var el=document.getElementById(pair[1]);
     if(!el) return;
-    el.classList.toggle("spot", !!state.spot[pair[0]]);
-    el.classList.toggle("spotlow", !!(state.spot[pair[0]] && state.spotLow[pair[0]]));
+    el.classList.toggle("spot", !!spot[pair[0]]);
+    el.classList.toggle("spotlow", !!(spot[pair[0]] && low[pair[0]]));
   });
   var tl=document.querySelector(".timeline");
   if(tl){
-    tl.classList.toggle("spot", !!state.spot.timeline);
-    tl.classList.toggle("spotlow", !!(state.spot.timeline && state.spotLow.timeline));
+    tl.classList.toggle("spot", !!spot.timeline);
+    tl.classList.toggle("spotlow", !!(spot.timeline && low.timeline));
   }
   var th=document.getElementById("tlHi");
-  if(th) th.classList.toggle("on", !!state.spot.timeline);
+  if(th) th.classList.toggle("on", !!spot.timeline);
   document.querySelectorAll("[data-spot]").forEach(function(b){
-    b.classList.toggle("on", !!state.spot[b.getAttribute("data-spot")]);
+    b.classList.toggle("on", !!spot[b.getAttribute("data-spot")]);
   });
   try{ paintLamp(); }catch(e){}
   document.querySelectorAll("[data-spotlow]").forEach(function(b){
-    b.classList.toggle("on", !!state.spotLow[b.getAttribute("data-spotlow")]);
+    b.classList.toggle("on", !!low[b.getAttribute("data-spotlow")]);
   });
 }
 function toggleSpot(id){
   state.spot=state.spot||{}; state.spotLow=state.spotLow||{};
-  if(state.spot[id]){ delete state.spot[id]; delete state.spotLow[id]; }
-  else state.spot[id]=true;
+  var view=spotView(),on=!view.spot[id];
+  if(on){state.spot[id]=true;view.spot[id]=true;}
+  else{delete state.spot[id];delete state.spotLow[id];delete view.spot[id];delete view.low[id];}
   persist(); applySpot();
-  toast(state.spot[id]?"The light is on this box - press highlight again to put it out"
-                      :"The light is off this box");
+  toast(on?"The light is on this box - press highlight again to put it out":"The light is off this box");
 }
 function toggleSpotLow(id){
-  state.spotLow=state.spotLow||{};
-  if(!state.spot||!state.spot[id]){ toast("Put the light on first - then it can give way"); return; }
-  if(state.spotLow[id]) delete state.spotLow[id]; else state.spotLow[id]=true;
+  state.spot=state.spot||{};state.spotLow=state.spotLow||{};
+  var view=spotView();
+  if(!view.spot[id]){toast("Put the light on first - then it can give way");return;}
+  var on=!view.low[id];state.spot[id]=true;
+  if(on){state.spotLow[id]=true;view.low[id]=true;}
+  else{delete state.spotLow[id];delete view.low[id];}
   persist(); applySpot();
-  toast(state.spotLow[id]?"This box gives way inside the light - grey and a step behind"
-                         :"Back to the full light");
+  toast(on?"This box gives way inside the light - grey and a step behind":"Back to the full light");
 }
 function clearSpot(){
   if(!spotKeys().length) return;
   spotRemember();
   state.spot={}; state.spotLow={};
+  if(megaOn&&megaView&&megaView.space===spaces.active){megaView.spot={};megaView.low={};}
   persist(); applySpot();
   toast("The light is out");
 }
@@ -6465,8 +6479,8 @@ function clearSpot(){
 function spotRemember(){
   var k=spotKeys();
   if(!k.length) return;
-  state.spotSave={spot:JSON.parse(JSON.stringify(state.spot||{})),
-                  low:JSON.parse(JSON.stringify(state.spotLow||{}))};
+  var view=spotView();
+  state.spotSave={spot:ghCopy(view.spot),low:ghCopy(view.low)};
 }
 function paintLamp(){
   var b=document.getElementById("lampSw");
@@ -6487,6 +6501,7 @@ function lampToggle(){
   }
   state.spot=JSON.parse(JSON.stringify(sv.spot));
   state.spotLow=JSON.parse(JSON.stringify(sv.low||{}));
+  if(megaOn&&megaView&&megaView.space===spaces.active){megaView.spot=ghCopy(state.spot);megaView.low=ghCopy(state.spotLow);}
   persist(); applySpot(); paintLamp();
   toast("The light is back on "+keys.length+(keys.length===1?" box":" boxes"));
 }
@@ -8711,7 +8726,7 @@ Object.keys(PLISTS).forEach(function(k){
    direction and locking into place across the whole width. Nothing is copied: the
    real boxes are carried over and carried back, so every button on them still works
    and every tick still counts. */
-var megaOn=false, megaSaved=[], megaBusy=false, megaRebuilding=false;
+var megaOn=false, megaSaved=[], megaBusy=false, megaRebuilding=false, megaView=null;
 function withMegaHome(fn){
   var restore=!!megaOn&&!megaRebuilding, scroll=[];
   if(restore){
@@ -8831,7 +8846,7 @@ function reflowProjects(){
   });
 }
 function megaFold(cls){
-  var tlLit=!!(state.spot&&state.spot.timeline);
+  var tlLit=!!spotView().spot.timeline;
   var stkLit=!!document.querySelector(".sticker.spot");
   document.body.classList.toggle("mgtl", tlLit);
   document.body.classList.toggle("mgstk", stkLit);
@@ -8856,6 +8871,7 @@ function megaIn(){
     toast("The light is on something that cannot be taken over - light a stage or a box in Mission control");
     return;
   }
+  megaView={space:spaces.active,spot:ghCopy(state.spot||{}),low:ghCopy(state.spotLow||{})};
   megaBusy=true; megaOn=true;
   var ov=document.getElementById("megaOv");
   megaFold("mgfold");
@@ -8885,9 +8901,9 @@ function megaOff(){
       ov.classList.remove("up","gone");
       document.body.classList.remove("mgback","mgtl","mgstk");
       document.querySelectorAll("[style*='--fd']").forEach(function(e){ e.style.removeProperty("--fd"); });
+      megaOn=false;megaBusy=false;megaView=null;
       try{ applySpot(); renderToday(); renderPairs(); renderLaunch(); render(); }catch(e){}
       try{ fitHeroWide(); syncHeroHeight(); }catch(e){}
-      megaOn=false; megaBusy=false;
     }, 560);
   }, 380+megaSaved.length*70);
 }
@@ -11381,6 +11397,8 @@ function syState(msg, bad){
   if(el){ el.textContent=msg||""; el.style.color=bad?"var(--redp)":""; }
   var d=document.getElementById("syDot");
   if(d){ d.classList.toggle("on", !bad && ghReady()); d.classList.toggle("bad", !!bad); }
+  var megaStatus=document.getElementById("megaSyncStatus");
+  if(megaStatus){megaStatus.textContent=msg||"";megaStatus.title="Planner "+PLANNER_BUILD+" · "+(msg||"");megaStatus.dataset.bad=bad?"true":"false";}
   var health=document.getElementById("plannerHealth");
   if(health){health.textContent=msg||"";health.dataset.bad=bad?"true":"false";
     if(ghV2&&ghV2.legacyWriter)health.textContent+=" · Last save uses an older format ("+ghV2.legacyWriter+"). Reload all devices.";
@@ -11693,7 +11711,14 @@ function ghDoSync(kind,quiet,t){
           if(!result||!result.content||!result.content.sha)throw new Error("GitHub returned no confirmation; your unsent marker was kept");
           var ack={raw:payload,core:merged,sha:result.content.sha};
           try{ghAcknowledge(ack,t,local);}catch(e){
-            if(!e.syncDeferred)ghStoreBase(ack,t);c.dirty=true;ghSave();
+            if(e.syncDeferred){
+              ghV2.pendingAck={remote:ack,target:t,local:local};
+              ghV2.deferred=true;c.dirty=true;ghSave();
+              syState("Saved to GitHub; finish editing to display incoming changes.");
+              if(!quiet)toast("Saved to GitHub. Incoming changes will display after editing.");
+              return true;
+            }
+            ghStoreBase(ack,t);c.dirty=true;ghSave();
             if(e.syncConflict){ghShowConflict(ack,quiet);return false;}throw e;
           }
           syState(c.dirty?"Saved to GitHub; changes made during the save are still pending":"Saved to GitHub at "+hhmm()+" from "+(c.device||"this device"));
@@ -11708,6 +11733,21 @@ function ghDoSync(kind,quiet,t){
   }
   return attempt();
 }
+function ghFlushAck(){
+  var pending=ghV2.pendingAck;if(!pending)return true;
+  if(ghEditing())return false;
+  if(ghTargetId(ghTarget())!==ghTargetId(pending.target)){
+    syState("The previous repository accepted the save. Restore its Sync settings to finish applying incoming changes.",true);return false;
+  }
+  try{
+    ghAcknowledge(pending.remote,pending.target,pending.local);ghV2.pendingAck=null;
+    syState(ghConf().dirty?"Saved to GitHub; newer local edits are still waiting to send":"Saved to GitHub; incoming changes are now displayed");return true;
+  }catch(e){
+    if(e.syncConflict){ghV2.pendingAck=null;ghShowConflict(pending.remote,false);}
+    else if(!e.syncDeferred)syState("Saved to GitHub; display update pending: "+ghErr(e),true);
+    return false;
+  }
+}
 function ghEditing(){
   if(megaBusy)return true;
   if(document.querySelector("#plMenu.show,#richMenu.show,#ctxMenu.show,#lineMenu.show,#pinkMenu.show"))return true;
@@ -11719,10 +11759,26 @@ function ghEditing(){
 }
 function ghSchedule(){
   clearTimeout(ghTimer);
-  if(!ghV2||!ghV2.started||!ghReady()||!ghConf().auto||(!ghConf().dirty&&!ghV2.deferred)||ghV2.conflict||tabConflict)return;
-  ghTimer=setTimeout(function(){ghV2.deferred=false;if(ghEditing()){ghV2.deferred=true;ghSchedule();return;}ghCycle();},Math.max(4000,ghV2.blockedUntil-Date.now()));
+  if(!ghV2||!ghV2.started||!ghReady()||(!ghConf().auto&&!ghV2.pendingAck)||(!ghConf().dirty&&!ghV2.deferred&&!ghV2.pendingAck)||ghV2.conflict||tabConflict)return;
+  ghTimer=setTimeout(function(){ghV2.deferred=false;if(ghEditing()){ghV2.deferred=true;ghSchedule();return;}if(!ghFlushAck())return;if(ghConf().auto)ghCycle();},Math.max(4000,ghV2.blockedUntil-Date.now()));
+}
+function ghPrepareManual(){
+  document.querySelectorAll("#plMenu.show,#richMenu.show,#ctxMenu.show,#lineMenu.show,#pinkMenu.show").forEach(function(el){el.classList.remove("show");});
+  var el=document.activeElement;
+  if(el&&!el.closest("#syOverlay")&&(el.isContentEditable||
+    (el.matches("input,textarea")&&el.closest("[data-tdtext],[data-lb],[data-pt],.sticker,.backface"))))el.blur();
+  var selection=window.getSelection();if(selection&&!selection.isCollapsed)selection.removeAllRanges();
+  if(ghEditing()){
+    ghV2.manualWaiting=true;
+    syState(megaBusy?"Mega Focus is changing layout. Tap Save or Take again when it settles.":
+      "Finish the current entry with Enter before syncing. Your text is still here.");
+    return false;
+  }
+  ghV2.manualWaiting=false;return true;
 }
 function ghRun(kind,quiet){
+  if(!quiet&&!ghPrepareManual())return Promise.resolve(false);
+  if(ghV2.pendingAck&&!ghFlushAck())return Promise.resolve(false);
   if(ghV2.rateUntil>Date.now()){syState("GitHub rate limit: retry after "+hhmm(new Date(ghV2.rateUntil))+". Local changes are kept",true);return Promise.resolve(false); }
   tabRefresh();if(tabConflict){showTabConflict();if(!quiet)syAfterFail();return Promise.resolve(false);}
   if(!ghReady()){syState("Set up Sync on this device: repository and a key with Contents: Read and write",true);if(!quiet)syAfterFail();return Promise.resolve(false);}
@@ -11762,6 +11818,7 @@ function ghTouched(){
   ghSave();paintSyncDot();if(c.dirty)syState(c.auto?"Changes saved locally; waiting to sync":"Changes saved locally; press Save to GitHub (auto is off)");ghSchedule();
 }
 function ghCycle(){
+  if(ghV2.pendingAck&&!ghFlushAck())return;
   tabRefresh();if(!ghReady()||!ghConf().auto||document.hidden||ghEditing())return;
   if(ghConf().dirty)ghPush(true);else ghPull(true);
 }
@@ -12139,18 +12196,23 @@ function ghNotSetUp(){
   syPaint();
   document.getElementById("syOverlay").classList.add("show");
 }
-document.getElementById("btnGhSave").addEventListener("click", function(){
-  var el=this;
-  if(!ghReady()) return ghNotSetUp();
-  ghBtnBusy(el,true);
-  ghPush(false).then(function(ok){ ghBtnBusy(el,false); ghBtnMark(el,ok); });
-});
-document.getElementById("btnGhTake").addEventListener("click", function(){
-  var el=this;
-  if(!ghReady()) return ghNotSetUp();
-  ghBtnBusy(el,true);
-  ghPull(false).then(function(ok){ ghBtnBusy(el,false); ghBtnMark(el,ok); });
-});
+var ghManualFlight=null;
+function ghManualAction(kind,el){
+  if(ghManualFlight)return ghManualFlight;
+  if(!ghReady()){ghNotSetUp();return Promise.resolve(false);}
+  var buttons=["btnGhSave","btnGhTake"].map(function(id){return document.getElementById(id);});
+  var job=Promise.resolve().then(function(){return kind==="send"?ghPush(false):ghPull(false);})
+    .then(function(ok){if(!ghV2.manualWaiting)ghBtnMark(el,ok);return ok;})
+    .catch(function(e){syState("Not synced: "+ghErr(e),true);syAfterFail();ghBtnMark(el,false);return false;})
+    .finally(function(){buttons.forEach(function(b){ghBtnBusy(b,false);});if(ghManualFlight===job)ghManualFlight=null;});
+  ghManualFlight=job;
+  /* Start in the same interaction; disabling after preparation must not be the
+     only thing that blurs an iPad editor. */
+  buttons.forEach(function(b){ghBtnBusy(b,true);});
+  return job;
+}
+document.getElementById("btnGhSave").addEventListener("click",function(){ghManualAction("send",this);});
+document.getElementById("btnGhTake").addEventListener("click",function(){ghManualAction("take",this);});
 document.getElementById("btnImport").addEventListener("click", function(){ document.getElementById("fileImport").click(); });
 document.getElementById("fileImport").addEventListener("change", function(ev){
   var f=ev.target.files[0]; if(!f) return;
