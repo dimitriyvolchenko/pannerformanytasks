@@ -1650,10 +1650,10 @@
       "id": "prmuxtv0of1",
       "a": "read out : MRM_68",
       "b": "launch : the inventory processing (start gathering the information received)",
-      "done": false,
-      "ad": false,
-      "bd": false,
-      "at": ""
+      "done": true,
+      "ad": true,
+      "bd": true,
+      "at": "2026-10-07T15:26:14.500Z"
     }
   ],
   "parView": "next",
@@ -1729,6 +1729,11 @@
     {
       "id": "spmuwnem432",
       "t": "check the part by Farkhitdionva",
+      "done": false
+    },
+    {
+      "id": "sp6c737906-8f78-458a-89f0-dbe9db602d83",
+      "t": "dimitriyvolchenko/pannerformanytasks",
       "done": false
     }
   ],
@@ -1899,7 +1904,7 @@
   "version": 12,
   "syncVersion": 3,
   "appBuild": "2026.10.07.3",
-  "savedAt": "2026-10-07T15:25:15.182Z",
+  "savedAt": "2026-10-07T15:26:32.639Z",
   "spaces": {
     "active": "cmr",
     "list": [
@@ -4319,10 +4324,10 @@
             "id": "prmuxtv0of1",
             "a": "read out : MRM_68",
             "b": "launch : the inventory processing (start gathering the information received)",
-            "done": false,
-            "ad": false,
-            "bd": false,
-            "at": ""
+            "done": true,
+            "ad": true,
+            "bd": true,
+            "at": "2026-10-07T15:26:14.500Z"
           }
         ],
         "parView": "next",
@@ -4398,6 +4403,11 @@
           {
             "id": "spmuwnem432",
             "t": "check the part by Farkhitdionva",
+            "done": false
+          },
+          {
+            "id": "sp6c737906-8f78-458a-89f0-dbe9db602d83",
+            "t": "dimitriyvolchenko/pannerformanytasks",
             "done": false
           }
         ],
@@ -4617,6 +4627,6 @@
     "logo": "wok-speech",
     "instrOpen": false
   },
-  "device": "iPad",
+  "device": "Computer",
   "lead": ""
 }
