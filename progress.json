@@ -1,7 +1,4 @@
 {
-  "format": "mr_rocket_planner",
-  "version": 12,
-  "savedAt": "2026-10-06T16:06:03.740Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1004,7 +1001,6 @@
   ],
   "vehicle": 11,
   "signing": null,
-  "sigv": 7,
   "stickers": [],
   "slinks": [],
   "prio": {
@@ -1012,36 +1008,9 @@
   },
   "dimBy": "",
   "rich": {},
-  "signs": {
-    "t": {
-      "t": "forensic",
-      "c": "#D6D2C6",
-      "s": 64,
-      "auto": true,
-      "dim": 60
-    },
-    "l": {
-      "t": "forensic",
-      "c": "#B4B8C0",
-      "s": 22,
-      "auto": true,
-      "dim": 100
-    },
-    "r": {
-      "t": "forensic",
-      "c": "#A9ADB6",
-      "s": 12,
-      "auto": false,
-      "dim": 100
-    }
-  },
   "hideLnk": {},
-  "hideLnkAll": false,
-  "stickerClassic": false,
-  "stickerSkin": "control",
   "torder": {},
   "tmoved": {},
-  "styles": {},
   "listView": false,
   "today": [
     {
@@ -1087,7 +1056,7 @@
     {
       "id": "tdmuqryhsa7",
       "t": "Method : launch and schedule partial checking of links for MRM",
-      "done": false,
+      "done": true,
       "b": true
     },
     {
@@ -1561,9 +1530,65 @@
       "k": "tasks",
       "ahead": false,
       "at": "2026-10-05T17:35:47.780Z"
+    },
+    {
+      "id": "tkmuw9enkd1",
+      "t": "☕ Complete : The Approach to handling Links and References",
+      "k": "tasks",
+      "ahead": false,
+      "at": "2026-10-07T05:54:16.857Z"
+    },
+    {
+      "id": "tkmuw9ocfw9",
+      "t": "☕ Complete : the launch on time of MRG",
+      "k": "tasks",
+      "ahead": false,
+      "at": "2026-10-07T05:54:32.082Z"
+    },
+    {
+      "id": "tdmuqryhsa7",
+      "t": "Method : launch and schedule partial checking of links for MRM",
+      "k": "today",
+      "ahead": false,
+      "at": "2026-10-07T05:54:51.953Z"
+    },
+    {
+      "id": "tomuw9gn133",
+      "t": "r.pr.t.a.the.snts.&ta.&sprt.",
+      "k": "timeoff",
+      "ahead": false,
+      "at": "2026-10-07T05:54:57.898Z"
+    },
+    {
+      "id": "spmuw9h6f14",
+      "t": "arrange working environment",
+      "k": "steps",
+      "ahead": false,
+      "at": "2026-10-07T05:55:03.824Z"
+    },
+    {
+      "id": "spmuw9hylr5",
+      "t": "read through MRG (especially axiological analysis)",
+      "k": "steps",
+      "ahead": false,
+      "at": "2026-10-07T05:55:06.490Z"
+    },
+    {
+      "id": "spmuw9ifyg6",
+      "t": "make an approach for links and references : write it",
+      "k": "steps",
+      "ahead": false,
+      "at": "2026-10-07T05:55:08.337Z"
+    },
+    {
+      "id": "spmuw9iqeq7",
+      "t": "test this approach to the links and references",
+      "k": "steps",
+      "ahead": false,
+      "at": "2026-10-07T05:55:10.234Z"
     }
   ],
-  "plDay": "2026-10-06",
+  "plDay": "2026-10-07",
   "plWeek": "2026-10-05",
   "spotSave": {
     "spot": {
@@ -1617,9 +1642,6 @@
     "pc_1790090308944_0": "2026-09-23T07:18:36.430Z",
     "ct27": "2026-09-28T06:28:31.108Z"
   },
-  "launchBox": true,
-  "saveName": "",
-  "saveDirName": "",
   "ptask": {
     "cmr_s1": {
       "ct01": true
@@ -1630,9 +1652,6 @@
       "c_p1787668712681_2_1787730177904": true
     }
   },
-  "stickBtn": null,
-  "stickBtnHidden": true,
-  "stickersHidden": false,
   "bink": [],
   "pairs": [
     {
@@ -1671,7 +1690,7 @@
     {
       "id": "tkmuw9enkd1",
       "t": "☕ Complete : The Approach to handling Links and References",
-      "done": false,
+      "done": true,
       "fs": 3,
       "b": true
     },
@@ -1685,7 +1704,7 @@
     {
       "id": "tkmuw9ocfw9",
       "t": "☕ Complete : the launch on time of MRG",
-      "done": false,
+      "done": true,
       "b": true,
       "fs": 3
     },
@@ -1735,7 +1754,7 @@
     {
       "id": "tomuw9gn133",
       "t": "r.pr.t.a.the.snts.&ta.&sprt.",
-      "done": false
+      "done": true
     }
   ],
   "timeoffNext": [],
@@ -1744,40 +1763,30 @@
     {
       "id": "spmuw9h6f14",
       "t": "arrange working environment",
-      "done": false,
+      "done": true,
       "b": true
     },
     {
       "id": "spmuw9hylr5",
       "t": "read through MRG (especially axiological analysis)",
-      "done": false,
+      "done": true,
       "b": true
     },
     {
       "id": "spmuw9ifyg6",
       "t": "make an approach for links and references : write it",
-      "done": false,
+      "done": true,
       "b": true
     },
     {
       "id": "spmuw9iqeq7",
       "t": "test this approach to the links and references",
-      "done": false,
+      "done": true,
       "b": true
     }
   ],
   "stepsNext": [],
   "stepsView": "now",
-  "instrOpen": false,
-  "korean": false,
-  "logo": "wok-speech",
-  "theme": "dark",
-  "pinkBar": false,
-  "pinkColor": "",
-  "heroZoom": 0.5,
-  "heroFree": true,
-  "darkness": 50,
-  "boldAll": false,
   "inproc": {},
   "ie": true,
   "iedone": {
@@ -1895,6 +1904,57 @@
   "hideAllT": {},
   "flipped": {},
   "back": {},
+  "theme": "dark",
+  "boldAll": false,
+  "pinkBar": false,
+  "pinkColor": "",
+  "stickerSkin": "control",
+  "stickerClassic": false,
+  "stickBtn": {
+    "x": -94,
+    "y": 529
+  },
+  "stickBtnHidden": true,
+  "stickersHidden": true,
+  "hideLnkAll": false,
+  "styles": {},
+  "signs": {
+    "t": {
+      "t": "forensic",
+      "c": "#D6D2C6",
+      "s": 64,
+      "auto": true,
+      "dim": 60
+    },
+    "l": {
+      "t": "forensic",
+      "c": "#B4B8C0",
+      "s": 22,
+      "auto": true,
+      "dim": 100
+    },
+    "r": {
+      "t": "forensic",
+      "c": "#A9ADB6",
+      "s": 12,
+      "auto": false,
+      "dim": 100
+    }
+  },
+  "sigv": 7,
+  "saveDirName": "",
+  "saveName": "",
+  "heroZoom": 0.5,
+  "heroFree": false,
+  "launchBox": true,
+  "darkness": 50,
+  "korean": false,
+  "logo": "wok-speech",
+  "instrOpen": false,
+  "format": "mr_rocket_planner",
+  "version": 12,
+  "syncVersion": 2,
+  "savedAt": "2026-10-07T05:55:19.362Z",
   "spaces": {
     "active": "cmr",
     "list": [
@@ -2484,9 +2544,12 @@
         "pinkColor": "",
         "stickerSkin": "control",
         "stickerClassic": false,
-        "stickBtn": null,
-        "stickBtnHidden": false,
-        "stickersHidden": false,
+        "stickBtn": {
+          "x": -94,
+          "y": 529
+        },
+        "stickBtnHidden": true,
+        "stickersHidden": true,
         "hideLnkAll": false,
         "styles": {},
         "signs": {
@@ -2515,12 +2578,12 @@
         "sigv": 7,
         "saveDirName": "",
         "saveName": "",
-        "heroZoom": 1,
-        "heroFree": true,
+        "heroZoom": 0.5,
+        "heroFree": false,
         "launchBox": true,
         "darkness": 50,
         "korean": false,
-        "logo": "wok",
+        "logo": "wok-speech",
         "instrOpen": false
       },
       "w1790608053856": {
@@ -2623,9 +2686,12 @@
         "pinkColor": "",
         "stickerSkin": "control",
         "stickerClassic": false,
-        "stickBtn": null,
-        "stickBtnHidden": false,
-        "stickersHidden": false,
+        "stickBtn": {
+          "x": -94,
+          "y": 529
+        },
+        "stickBtnHidden": true,
+        "stickersHidden": true,
         "hideLnkAll": false,
         "styles": {},
         "signs": {
@@ -2654,12 +2720,12 @@
         "sigv": 7,
         "saveDirName": "",
         "saveName": "",
-        "heroZoom": 1,
-        "heroFree": true,
+        "heroZoom": 0.5,
+        "heroFree": false,
         "launchBox": true,
         "darkness": 50,
         "korean": false,
-        "logo": "wok",
+        "logo": "wok-speech",
         "instrOpen": false
       },
       "cmr": {
@@ -3665,7 +3731,6 @@
         ],
         "vehicle": 11,
         "signing": null,
-        "sigv": 7,
         "stickers": [],
         "slinks": [],
         "prio": {
@@ -3673,36 +3738,9 @@
         },
         "dimBy": "",
         "rich": {},
-        "signs": {
-          "t": {
-            "t": "forensic",
-            "c": "#D6D2C6",
-            "s": 64,
-            "auto": true,
-            "dim": 60
-          },
-          "l": {
-            "t": "forensic",
-            "c": "#B4B8C0",
-            "s": 22,
-            "auto": true,
-            "dim": 100
-          },
-          "r": {
-            "t": "forensic",
-            "c": "#A9ADB6",
-            "s": 12,
-            "auto": false,
-            "dim": 100
-          }
-        },
         "hideLnk": {},
-        "hideLnkAll": false,
-        "stickerClassic": false,
-        "stickerSkin": "control",
         "torder": {},
         "tmoved": {},
-        "styles": {},
         "listView": false,
         "today": [
           {
@@ -3748,7 +3786,7 @@
           {
             "id": "tdmuqryhsa7",
             "t": "Method : launch and schedule partial checking of links for MRM",
-            "done": false,
+            "done": true,
             "b": true
           },
           {
@@ -4222,9 +4260,65 @@
             "k": "tasks",
             "ahead": false,
             "at": "2026-10-05T17:35:47.780Z"
+          },
+          {
+            "id": "tkmuw9enkd1",
+            "t": "☕ Complete : The Approach to handling Links and References",
+            "k": "tasks",
+            "ahead": false,
+            "at": "2026-10-07T05:54:16.857Z"
+          },
+          {
+            "id": "tkmuw9ocfw9",
+            "t": "☕ Complete : the launch on time of MRG",
+            "k": "tasks",
+            "ahead": false,
+            "at": "2026-10-07T05:54:32.082Z"
+          },
+          {
+            "id": "tdmuqryhsa7",
+            "t": "Method : launch and schedule partial checking of links for MRM",
+            "k": "today",
+            "ahead": false,
+            "at": "2026-10-07T05:54:51.953Z"
+          },
+          {
+            "id": "tomuw9gn133",
+            "t": "r.pr.t.a.the.snts.&ta.&sprt.",
+            "k": "timeoff",
+            "ahead": false,
+            "at": "2026-10-07T05:54:57.898Z"
+          },
+          {
+            "id": "spmuw9h6f14",
+            "t": "arrange working environment",
+            "k": "steps",
+            "ahead": false,
+            "at": "2026-10-07T05:55:03.824Z"
+          },
+          {
+            "id": "spmuw9hylr5",
+            "t": "read through MRG (especially axiological analysis)",
+            "k": "steps",
+            "ahead": false,
+            "at": "2026-10-07T05:55:06.490Z"
+          },
+          {
+            "id": "spmuw9ifyg6",
+            "t": "make an approach for links and references : write it",
+            "k": "steps",
+            "ahead": false,
+            "at": "2026-10-07T05:55:08.337Z"
+          },
+          {
+            "id": "spmuw9iqeq7",
+            "t": "test this approach to the links and references",
+            "k": "steps",
+            "ahead": false,
+            "at": "2026-10-07T05:55:10.234Z"
           }
         ],
-        "plDay": "2026-10-06",
+        "plDay": "2026-10-07",
         "plWeek": "2026-10-05",
         "spotSave": {
           "spot": {
@@ -4278,9 +4372,6 @@
           "pc_1790090308944_0": "2026-09-23T07:18:36.430Z",
           "ct27": "2026-09-28T06:28:31.108Z"
         },
-        "launchBox": true,
-        "saveName": "",
-        "saveDirName": "",
         "ptask": {
           "cmr_s1": {
             "ct01": true
@@ -4291,9 +4382,6 @@
             "c_p1787668712681_2_1787730177904": true
           }
         },
-        "stickBtn": null,
-        "stickBtnHidden": true,
-        "stickersHidden": false,
         "bink": [],
         "pairs": [
           {
@@ -4332,7 +4420,7 @@
           {
             "id": "tkmuw9enkd1",
             "t": "☕ Complete : The Approach to handling Links and References",
-            "done": false,
+            "done": true,
             "fs": 3,
             "b": true
           },
@@ -4346,7 +4434,7 @@
           {
             "id": "tkmuw9ocfw9",
             "t": "☕ Complete : the launch on time of MRG",
-            "done": false,
+            "done": true,
             "b": true,
             "fs": 3
           },
@@ -4396,7 +4484,7 @@
           {
             "id": "tomuw9gn133",
             "t": "r.pr.t.a.the.snts.&ta.&sprt.",
-            "done": false
+            "done": true
           }
         ],
         "timeoffNext": [],
@@ -4405,40 +4493,30 @@
           {
             "id": "spmuw9h6f14",
             "t": "arrange working environment",
-            "done": false,
+            "done": true,
             "b": true
           },
           {
             "id": "spmuw9hylr5",
             "t": "read through MRG (especially axiological analysis)",
-            "done": false,
+            "done": true,
             "b": true
           },
           {
             "id": "spmuw9ifyg6",
             "t": "make an approach for links and references : write it",
-            "done": false,
+            "done": true,
             "b": true
           },
           {
             "id": "spmuw9iqeq7",
             "t": "test this approach to the links and references",
-            "done": false,
+            "done": true,
             "b": true
           }
         ],
         "stepsNext": [],
         "stepsView": "now",
-        "instrOpen": false,
-        "korean": false,
-        "logo": "wok-speech",
-        "theme": "dark",
-        "pinkBar": false,
-        "pinkColor": "",
-        "heroZoom": 0.5,
-        "heroFree": true,
-        "darkness": 50,
-        "boldAll": false,
         "inproc": {},
         "ie": true,
         "iedone": {
@@ -4555,10 +4633,108 @@
         "hideDone": {},
         "hideAllT": {},
         "flipped": {},
-        "back": {}
+        "back": {},
+        "theme": "dark",
+        "boldAll": false,
+        "pinkBar": false,
+        "pinkColor": "",
+        "stickerSkin": "control",
+        "stickerClassic": false,
+        "stickBtn": {
+          "x": -94,
+          "y": 529
+        },
+        "stickBtnHidden": true,
+        "stickersHidden": true,
+        "hideLnkAll": false,
+        "styles": {},
+        "signs": {
+          "t": {
+            "t": "forensic",
+            "c": "#D6D2C6",
+            "s": 64,
+            "auto": true,
+            "dim": 60
+          },
+          "l": {
+            "t": "forensic",
+            "c": "#B4B8C0",
+            "s": 22,
+            "auto": true,
+            "dim": 100
+          },
+          "r": {
+            "t": "forensic",
+            "c": "#A9ADB6",
+            "s": 12,
+            "auto": false,
+            "dim": 100
+          }
+        },
+        "sigv": 7,
+        "saveDirName": "",
+        "saveName": "",
+        "heroZoom": 0.5,
+        "heroFree": false,
+        "launchBox": true,
+        "darkness": 50,
+        "korean": false,
+        "logo": "wok-speech",
+        "instrOpen": false
       }
-    }
+    },
+    "seeded": {},
+    "trash": []
   },
-  "device": "iPad",
+  "prefs": {
+    "theme": "dark",
+    "boldAll": false,
+    "pinkBar": false,
+    "pinkColor": "",
+    "stickerSkin": "control",
+    "stickerClassic": false,
+    "stickBtn": {
+      "x": -94,
+      "y": 529
+    },
+    "stickBtnHidden": true,
+    "stickersHidden": true,
+    "hideLnkAll": false,
+    "styles": {},
+    "signs": {
+      "t": {
+        "t": "forensic",
+        "c": "#D6D2C6",
+        "s": 64,
+        "auto": true,
+        "dim": 60
+      },
+      "l": {
+        "t": "forensic",
+        "c": "#B4B8C0",
+        "s": 22,
+        "auto": true,
+        "dim": 100
+      },
+      "r": {
+        "t": "forensic",
+        "c": "#A9ADB6",
+        "s": 12,
+        "auto": false,
+        "dim": 100
+      }
+    },
+    "sigv": 7,
+    "saveDirName": "",
+    "saveName": "",
+    "heroZoom": 0.5,
+    "heroFree": false,
+    "launchBox": true,
+    "darkness": 50,
+    "korean": false,
+    "logo": "wok-speech",
+    "instrOpen": false
+  },
+  "device": "iPhone",
   "lead": ""
 }
