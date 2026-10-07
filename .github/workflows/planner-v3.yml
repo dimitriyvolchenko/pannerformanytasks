@@ -1,0 +1,63 @@
+name: Validate Planner v3
+on:
+  push:
+    branches: [fix/planner-v3-20261007]
+permissions:
+  contents: write
+concurrency:
+  group: planner-v3-20261007
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Apply hash-verified repair without touching the plan
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import gzip, json, hashlib
+          original=Path('index.html').read_bytes()
+          blob=hashlib.sha1(b'blob '+str(len(original)).encode()+b'\0'+original).hexdigest()
+          assert blob=='ccbc4c14583371dde3aa2c6e825c8de59db03264',blob
+          progress_hash=hashlib.sha256(Path('progress.json').read_bytes()).hexdigest()
+          raw=gzip.decompress(Path('tools/planner-v3/patches.json.gz').read_bytes())
+          assert hashlib.sha256(raw).hexdigest()=='5c8ccabbcb27c9493e114a56d34247a6c264a7bccdf32010f35447c297f13f8a'
+          s=original.decode('utf-8')
+          for op in json.loads(raw):
+              if op.get('type')=='projectEvents':
+                  s=s.replace('host.addEventListener(', 'projectEvent(').replace('function projectEvent(type,handler,options){projectEvent(type,handler,options);','function projectEvent(type,handler,options){host.addEventListener(type,handler,options);')
+              else:
+                  assert s.count(op['old'])==1,op['old'][:120]
+                  s=s.replace(op['old'],op['new'])
+          assert hashlib.sha256(s.encode()).hexdigest()=='5cec2a3497ac683175e1816f8dd0c8d115ea764180a9d9f27c9914803ab62477'
+          Path('fixed.html').write_text(s,encoding='utf-8',newline='')
+          assert hashlib.sha256(Path('progress.json').read_bytes()).hexdigest()==progress_hash
+          print('PASS Exact audited build reconstructed; progress.json unchanged')
+          PY
+      - name: Install pinned browser test tooling
+        run: |
+          npm install --no-save --ignore-scripts playwright@1.56.1
+          npx playwright install --with-deps chromium webkit
+      - name: Native Chromium, mobile WebKit and two-tab integration
+        run: node tools/planner-v3/native.cjs
+      - name: Stage validated HTML blob without updating any branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, os, subprocess, urllib.request, hashlib
+          assert subprocess.check_output(['git','diff','--name-only','--','progress.json']).strip()==b''
+          content=Path('fixed.html').read_bytes()
+          assert hashlib.sha256(content).hexdigest()=='5cec2a3497ac683175e1816f8dd0c8d115ea764180a9d9f27c9914803ab62477'
+          req=urllib.request.Request('https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/git/blobs',data=json.dumps({'content':content.decode(),'encoding':'utf-8'}).encode(),method='POST',headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','Content-Type':'application/json','X-GitHub-Api-Version':'2022-11-28'})
+          with urllib.request.urlopen(req,timeout=30) as r:
+              result=json.load(r)
+          assert result['sha']=='9956568ff3ee8e3823f303d125d767d2a85b7a19'
+          print('STAGED_HTML_BLOB='+result['sha'])
+          print('PASS Tested HTML staged; no branch or progress file modified')
+          PY
