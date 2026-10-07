@@ -1679,11 +1679,6 @@
       "done": false,
       "fs": 3,
       "b": true
-    },
-    {
-      "id": "tkmuwna27e1",
-      "t": "Complete the khaziev.article",
-      "done": true
     }
   ],
   "tasksNext": [
@@ -1902,8 +1897,8 @@
   "format": "mr_rocket_planner",
   "version": 12,
   "syncVersion": 3,
-  "appBuild": "2026.10.07.1",
-  "savedAt": "2026-10-07T08:10:27.810Z",
+  "appBuild": "2026.10.07.2",
+  "savedAt": "2026-10-07T11:08:39.130Z",
   "spaces": {
     "active": "cmr",
     "list": [
@@ -4352,11 +4347,6 @@
             "done": false,
             "fs": 3,
             "b": true
-          },
-          {
-            "id": "tkmuwna27e1",
-            "t": "Complete the khaziev.article",
-            "done": true
           }
         ],
         "tasksNext": [
@@ -4625,6 +4615,6 @@
     "logo": "wok-speech",
     "instrOpen": false
   },
-  "device": "Computer",
+  "device": "iPhone",
   "lead": ""
 }
