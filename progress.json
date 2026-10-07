@@ -1638,7 +1638,17 @@
       "at": ""
     }
   ],
-  "pairsNext": [],
+  "pairsNext": [
+    {
+      "id": "prmuxtv0of1",
+      "a": "read out : MRM_68",
+      "b": "launch : the inventory processing (start gathering the information received)",
+      "done": false,
+      "ad": false,
+      "bd": false,
+      "at": ""
+    }
+  ],
   "parView": "next",
   "parFace": "list",
   "tasks": [
@@ -1893,7 +1903,7 @@
   "version": 12,
   "syncVersion": 3,
   "appBuild": "2026.10.07.1",
-  "savedAt": "2026-10-07T08:08:54.638Z",
+  "savedAt": "2026-10-07T08:10:27.810Z",
   "spaces": {
     "active": "cmr",
     "list": [
@@ -4301,7 +4311,17 @@
             "at": ""
           }
         ],
-        "pairsNext": [],
+        "pairsNext": [
+          {
+            "id": "prmuxtv0of1",
+            "a": "read out : MRM_68",
+            "b": "launch : the inventory processing (start gathering the information received)",
+            "done": false,
+            "ad": false,
+            "bd": false,
+            "at": ""
+          }
+        ],
         "parView": "next",
         "parFace": "list",
         "tasks": [
