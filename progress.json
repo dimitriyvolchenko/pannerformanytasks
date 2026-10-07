@@ -1,7 +1,4 @@
 {
-  "format": "mr_rocket_planner",
-  "version": 12,
-  "savedAt": "2026-10-07T08:05:53.393Z",
   "trash": [],
   "spot": {
     "par": true,
@@ -1004,7 +1001,6 @@
   ],
   "vehicle": 11,
   "signing": null,
-  "sigv": 7,
   "stickers": [],
   "slinks": [],
   "prio": {
@@ -1012,36 +1008,9 @@
   },
   "dimBy": "",
   "rich": {},
-  "signs": {
-    "t": {
-      "t": "forensic",
-      "c": "#D6D2C6",
-      "s": 64,
-      "auto": true,
-      "dim": 60
-    },
-    "l": {
-      "t": "forensic",
-      "c": "#B4B8C0",
-      "s": 22,
-      "auto": true,
-      "dim": 100
-    },
-    "r": {
-      "t": "forensic",
-      "c": "#A9ADB6",
-      "s": 12,
-      "auto": false,
-      "dim": 100
-    }
-  },
   "hideLnk": {},
-  "hideLnkAll": false,
-  "stickerClassic": false,
-  "stickerSkin": "control",
   "torder": {},
   "tmoved": {},
-  "styles": {},
   "listView": false,
   "today": [
     {
@@ -1561,6 +1530,27 @@
       "k": "tasks",
       "ahead": false,
       "at": "2026-10-05T17:35:47.780Z"
+    },
+    {
+      "id": "spmuw9h6f14",
+      "t": "arrange working environment",
+      "k": "steps",
+      "ahead": false,
+      "at": "2026-10-06T12:17:53.260Z"
+    },
+    {
+      "id": "tkmuwna27e1",
+      "t": "Complete the khaziev.article",
+      "k": "tasks",
+      "ahead": false,
+      "at": "2026-10-06T12:18:26.296Z"
+    },
+    {
+      "id": "spmuw9hylr5",
+      "t": "read through MRG (especially axiological analysis)",
+      "k": "steps",
+      "ahead": false,
+      "at": "2026-10-06T12:19:36.656Z"
     }
   ],
   "plDay": "2026-10-07",
@@ -1617,9 +1607,6 @@
     "pc_1790090308944_0": "2026-09-23T07:18:36.430Z",
     "ct27": "2026-09-28T06:28:31.108Z"
   },
-  "launchBox": true,
-  "saveName": "",
-  "saveDirName": "",
   "ptask": {
     "cmr_s1": {
       "ct01": true
@@ -1630,9 +1617,6 @@
       "c_p1787668712681_2_1787730177904": true
     }
   },
-  "stickBtn": null,
-  "stickBtnHidden": true,
-  "stickersHidden": false,
   "bink": [],
   "pairs": [
     {
@@ -1654,17 +1638,7 @@
       "at": ""
     }
   ],
-  "pairsNext": [
-    {
-      "id": "prmuw9jfib1",
-      "a": "updating the table of the article by Papina",
-      "b": "launch: MRG reading",
-      "done": true,
-      "ad": true,
-      "bd": true,
-      "at": "2026-10-06T12:04:15.304Z"
-    }
-  ],
+  "pairsNext": [],
   "parView": "next",
   "parFace": "list",
   "tasks": [
@@ -1695,6 +1669,11 @@
       "done": false,
       "fs": 3,
       "b": true
+    },
+    {
+      "id": "tkmuwna27e1",
+      "t": "Complete the khaziev.article",
+      "done": true
     }
   ],
   "tasksNext": [
@@ -1742,42 +1721,13 @@
   "timeoffView": "now",
   "steps": [
     {
-      "id": "spmuw9h6f14",
-      "t": "arrange working environment",
-      "done": false,
-      "b": true
-    },
-    {
-      "id": "spmuw9hylr5",
-      "t": "read through MRG (especially axiological analysis)",
-      "done": false,
-      "b": true
-    },
-    {
-      "id": "spmuw9ifyg6",
-      "t": "make an approach for links and references : write it",
-      "done": false,
-      "b": true
-    },
-    {
-      "id": "spmuw9iqeq7",
-      "t": "test this approach to the links and references",
-      "done": false,
-      "b": true
+      "id": "spmuwnem432",
+      "t": "check the part by Farkhitdionva",
+      "done": false
     }
   ],
   "stepsNext": [],
   "stepsView": "now",
-  "instrOpen": false,
-  "korean": false,
-  "logo": "wok-speech",
-  "theme": "dark",
-  "pinkBar": false,
-  "pinkColor": "",
-  "heroZoom": 0.5,
-  "heroFree": true,
-  "darkness": 50,
-  "boldAll": false,
   "inproc": {},
   "ie": true,
   "iedone": {
@@ -1895,6 +1845,55 @@
   "hideAllT": {},
   "flipped": {},
   "back": {},
+  "theme": "dark",
+  "boldAll": false,
+  "pinkBar": false,
+  "pinkColor": "",
+  "stickerSkin": "control",
+  "stickerClassic": false,
+  "stickBtn": null,
+  "stickBtnHidden": true,
+  "stickersHidden": false,
+  "hideLnkAll": false,
+  "styles": {},
+  "signs": {
+    "t": {
+      "t": "forensic",
+      "c": "#D6D2C6",
+      "s": 64,
+      "auto": true,
+      "dim": 60
+    },
+    "l": {
+      "t": "forensic",
+      "c": "#B4B8C0",
+      "s": 22,
+      "auto": true,
+      "dim": 100
+    },
+    "r": {
+      "t": "forensic",
+      "c": "#A9ADB6",
+      "s": 12,
+      "auto": false,
+      "dim": 100
+    }
+  },
+  "sigv": 7,
+  "saveDirName": "",
+  "saveName": "",
+  "heroFree": true,
+  "launchBox": true,
+  "darkness": 50,
+  "korean": false,
+  "logo": "wok-speech",
+  "instrOpen": false,
+  "heroZoom": 1,
+  "format": "mr_rocket_planner",
+  "version": 12,
+  "syncVersion": 3,
+  "appBuild": "2026.10.07.1",
+  "savedAt": "2026-10-07T08:08:54.638Z",
   "spaces": {
     "active": "cmr",
     "list": [
@@ -2485,7 +2484,7 @@
         "stickerSkin": "control",
         "stickerClassic": false,
         "stickBtn": null,
-        "stickBtnHidden": false,
+        "stickBtnHidden": true,
         "stickersHidden": false,
         "hideLnkAll": false,
         "styles": {},
@@ -2515,13 +2514,13 @@
         "sigv": 7,
         "saveDirName": "",
         "saveName": "",
-        "heroZoom": 1,
         "heroFree": true,
         "launchBox": true,
         "darkness": 50,
         "korean": false,
-        "logo": "wok",
-        "instrOpen": false
+        "logo": "wok-speech",
+        "instrOpen": false,
+        "heroZoom": 1
       },
       "w1790608053856": {
         "trash": [],
@@ -2624,7 +2623,7 @@
         "stickerSkin": "control",
         "stickerClassic": false,
         "stickBtn": null,
-        "stickBtnHidden": false,
+        "stickBtnHidden": true,
         "stickersHidden": false,
         "hideLnkAll": false,
         "styles": {},
@@ -2654,13 +2653,13 @@
         "sigv": 7,
         "saveDirName": "",
         "saveName": "",
-        "heroZoom": 1,
         "heroFree": true,
         "launchBox": true,
         "darkness": 50,
         "korean": false,
-        "logo": "wok",
-        "instrOpen": false
+        "logo": "wok-speech",
+        "instrOpen": false,
+        "heroZoom": 1
       },
       "cmr": {
         "trash": [],
@@ -3665,7 +3664,6 @@
         ],
         "vehicle": 11,
         "signing": null,
-        "sigv": 7,
         "stickers": [],
         "slinks": [],
         "prio": {
@@ -3673,36 +3671,9 @@
         },
         "dimBy": "",
         "rich": {},
-        "signs": {
-          "t": {
-            "t": "forensic",
-            "c": "#D6D2C6",
-            "s": 64,
-            "auto": true,
-            "dim": 60
-          },
-          "l": {
-            "t": "forensic",
-            "c": "#B4B8C0",
-            "s": 22,
-            "auto": true,
-            "dim": 100
-          },
-          "r": {
-            "t": "forensic",
-            "c": "#A9ADB6",
-            "s": 12,
-            "auto": false,
-            "dim": 100
-          }
-        },
         "hideLnk": {},
-        "hideLnkAll": false,
-        "stickerClassic": false,
-        "stickerSkin": "control",
         "torder": {},
         "tmoved": {},
-        "styles": {},
         "listView": false,
         "today": [
           {
@@ -4222,6 +4193,27 @@
             "k": "tasks",
             "ahead": false,
             "at": "2026-10-05T17:35:47.780Z"
+          },
+          {
+            "id": "spmuw9h6f14",
+            "t": "arrange working environment",
+            "k": "steps",
+            "ahead": false,
+            "at": "2026-10-06T12:17:53.260Z"
+          },
+          {
+            "id": "tkmuwna27e1",
+            "t": "Complete the khaziev.article",
+            "k": "tasks",
+            "ahead": false,
+            "at": "2026-10-06T12:18:26.296Z"
+          },
+          {
+            "id": "spmuw9hylr5",
+            "t": "read through MRG (especially axiological analysis)",
+            "k": "steps",
+            "ahead": false,
+            "at": "2026-10-06T12:19:36.656Z"
           }
         ],
         "plDay": "2026-10-07",
@@ -4278,9 +4270,6 @@
           "pc_1790090308944_0": "2026-09-23T07:18:36.430Z",
           "ct27": "2026-09-28T06:28:31.108Z"
         },
-        "launchBox": true,
-        "saveName": "",
-        "saveDirName": "",
         "ptask": {
           "cmr_s1": {
             "ct01": true
@@ -4291,9 +4280,6 @@
             "c_p1787668712681_2_1787730177904": true
           }
         },
-        "stickBtn": null,
-        "stickBtnHidden": true,
-        "stickersHidden": false,
         "bink": [],
         "pairs": [
           {
@@ -4315,17 +4301,7 @@
             "at": ""
           }
         ],
-        "pairsNext": [
-          {
-            "id": "prmuw9jfib1",
-            "a": "updating the table of the article by Papina",
-            "b": "launch: MRG reading",
-            "done": true,
-            "ad": true,
-            "bd": true,
-            "at": "2026-10-06T12:04:15.304Z"
-          }
-        ],
+        "pairsNext": [],
         "parView": "next",
         "parFace": "list",
         "tasks": [
@@ -4356,6 +4332,11 @@
             "done": false,
             "fs": 3,
             "b": true
+          },
+          {
+            "id": "tkmuwna27e1",
+            "t": "Complete the khaziev.article",
+            "done": true
           }
         ],
         "tasksNext": [
@@ -4403,42 +4384,13 @@
         "timeoffView": "now",
         "steps": [
           {
-            "id": "spmuw9h6f14",
-            "t": "arrange working environment",
-            "done": false,
-            "b": true
-          },
-          {
-            "id": "spmuw9hylr5",
-            "t": "read through MRG (especially axiological analysis)",
-            "done": false,
-            "b": true
-          },
-          {
-            "id": "spmuw9ifyg6",
-            "t": "make an approach for links and references : write it",
-            "done": false,
-            "b": true
-          },
-          {
-            "id": "spmuw9iqeq7",
-            "t": "test this approach to the links and references",
-            "done": false,
-            "b": true
+            "id": "spmuwnem432",
+            "t": "check the part by Farkhitdionva",
+            "done": false
           }
         ],
         "stepsNext": [],
         "stepsView": "now",
-        "instrOpen": false,
-        "korean": false,
-        "logo": "wok-speech",
-        "theme": "dark",
-        "pinkBar": false,
-        "pinkColor": "",
-        "heroZoom": 0.5,
-        "heroFree": true,
-        "darkness": 50,
-        "boldAll": false,
         "inproc": {},
         "ie": true,
         "iedone": {
@@ -4555,10 +4507,104 @@
         "hideDone": {},
         "hideAllT": {},
         "flipped": {},
-        "back": {}
+        "back": {},
+        "theme": "dark",
+        "boldAll": false,
+        "pinkBar": false,
+        "pinkColor": "",
+        "stickerSkin": "control",
+        "stickerClassic": false,
+        "stickBtn": null,
+        "stickBtnHidden": true,
+        "stickersHidden": false,
+        "hideLnkAll": false,
+        "styles": {},
+        "signs": {
+          "t": {
+            "t": "forensic",
+            "c": "#D6D2C6",
+            "s": 64,
+            "auto": true,
+            "dim": 60
+          },
+          "l": {
+            "t": "forensic",
+            "c": "#B4B8C0",
+            "s": 22,
+            "auto": true,
+            "dim": 100
+          },
+          "r": {
+            "t": "forensic",
+            "c": "#A9ADB6",
+            "s": 12,
+            "auto": false,
+            "dim": 100
+          }
+        },
+        "sigv": 7,
+        "saveDirName": "",
+        "saveName": "",
+        "heroFree": true,
+        "launchBox": true,
+        "darkness": 50,
+        "korean": false,
+        "logo": "wok-speech",
+        "instrOpen": false,
+        "heroZoom": 1
       }
-    }
+    },
+    "seeded": {
+      "cmr": true,
+      "cmr2": true
+    },
+    "trash": []
   },
-  "device": "iPad",
+  "prefs": {
+    "theme": "dark",
+    "boldAll": false,
+    "pinkBar": false,
+    "pinkColor": "",
+    "stickerSkin": "control",
+    "stickerClassic": false,
+    "stickBtn": null,
+    "stickBtnHidden": true,
+    "stickersHidden": false,
+    "hideLnkAll": false,
+    "styles": {},
+    "signs": {
+      "t": {
+        "t": "forensic",
+        "c": "#D6D2C6",
+        "s": 64,
+        "auto": true,
+        "dim": 60
+      },
+      "l": {
+        "t": "forensic",
+        "c": "#B4B8C0",
+        "s": 22,
+        "auto": true,
+        "dim": 100
+      },
+      "r": {
+        "t": "forensic",
+        "c": "#A9ADB6",
+        "s": 12,
+        "auto": false,
+        "dim": 100
+      }
+    },
+    "sigv": 7,
+    "saveDirName": "",
+    "saveName": "",
+    "heroFree": true,
+    "launchBox": true,
+    "darkness": 50,
+    "korean": false,
+    "logo": "wok-speech",
+    "instrOpen": false
+  },
+  "device": "Computer",
   "lead": ""
 }
