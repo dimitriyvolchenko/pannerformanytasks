@@ -734,7 +734,7 @@
      The page takes itself apart - every piece folds away into the depth - and the
      boxes that were left in the light come back together on an empty screen, flying
      in one after another and locking into place, each across the whole width. */
-  #megaOv{position:fixed; inset:0; z-index:200; display:none; overflow:auto;
+  #megaOv{position:fixed; inset:0; z-index:200; display:none; overflow:auto; overflow-x:hidden;
     background:var(--bg); opacity:0; transition:opacity .42s ease;
     -webkit-overflow-scrolling:touch}
   #megaOv.up{display:block}
@@ -788,6 +788,11 @@
     to{opacity:0; transform:perspective(1600px) translate3d(var(--fx,-46vw), var(--fy,26vh), -560px)
        rotateY(var(--ry,26deg)) rotateZ(var(--rz,-9deg)) scale(.42)}
   }
+  /* A refresh is not a new entry: do not fly restored cards in again. */
+  #megaOv:not(.gone) .megaitem.mgsettled{animation:none; transform:none}
+  /* Keep the full document fold in 2D. Perspective rotation of a very tall
+     board can project it across the camera plane and expand an iPad's layout
+     viewport several times, even though the board itself is invisible. */
   /* the page folding away underneath */
   body.mgfold .wrap > *,
   body.mgfold .ruler,
@@ -801,7 +806,7 @@
   }
   @keyframes mgFold{
     from{opacity:1; transform:none; filter:blur(0)}
-    to{opacity:0; transform:perspective(1500px) rotateX(16deg) scale(.86) translateY(30px); filter:blur(7px)}
+    to{opacity:0; transform:translateY(20px) scale(.98); filter:blur(7px)}
   }
   body.mgback .wrap > *,
   body.mgback .ruler,
@@ -814,7 +819,7 @@
     transform-origin:50% 40%;
   }
   @keyframes mgUnfold{
-    from{opacity:0; transform:perspective(1500px) rotateX(16deg) scale(.86) translateY(30px); filter:blur(7px)}
+    from{opacity:0; transform:translateY(20px) scale(.98); filter:blur(7px)}
     to{opacity:1; transform:none; filter:blur(0)}
   }
   body.megaon{overflow:hidden}
@@ -5543,7 +5548,7 @@ var BASE=[
 
 /* ================= STATE ================= */
 var KEY="mr_rocket_planner_v2";
-var PLANNER_BUILD="2026.10.07.1", ZOOMKEY=KEY+":device-zoom-v3", localZoom=1;
+var PLANNER_BUILD="2026.10.07.2", ZOOMKEY=KEY+":device-zoom-v3", localZoom=1;
 try{var zStored=+localStorage.getItem(ZOOMKEY);if(zStored>=0.75&&zStored<=1.6)localZoom=zStored;}catch(e){}
 function setLocalZoom(z){
   localZoom=Math.max(0.75,Math.min(1.6,+z||1));state.heroZoom=localZoom;
@@ -8708,9 +8713,29 @@ Object.keys(PLISTS).forEach(function(k){
    and every tick still counts. */
 var megaOn=false, megaSaved=[], megaBusy=false, megaRebuilding=false;
 function withMegaHome(fn){
-  var restore=!!megaOn&&!megaRebuilding;
-  if(restore){megaRebuilding=true;mgKeysOut();megaRestore();}
-  try{return fn();}finally{if(restore){applySpot();megaStage();mgKeysIn();megaRebuilding=false;}}
+  var restore=!!megaOn&&!megaRebuilding, scroll=[];
+  if(restore){
+    var ov=document.getElementById("megaOv");
+    [ov].concat([].slice.call(ov.querySelectorAll("[id]"))).forEach(function(el){
+      if(el&&(el===ov||el.scrollTop||el.scrollLeft))scroll.push({id:el.id,top:el.scrollTop,left:el.scrollLeft});
+    });
+    megaRebuilding=true;
+    /* Save/Take belong to the persistent toolbar: moving a focused button back
+       into the hidden header makes Safari scroll and can break its hit target. */
+    megaRestore();
+  }
+  try{return fn();}finally{
+    if(restore){
+      try{
+        applySpot();megaStage(true);
+        scroll.forEach(function(pos){
+          var el=document.getElementById(pos.id);if(!el)return;
+          el.scrollTop=Math.max(0,Math.min(pos.top,el.scrollHeight-el.clientHeight));
+          el.scrollLeft=Math.max(0,Math.min(pos.left,el.scrollWidth-el.clientWidth));
+        });
+      }finally{megaRebuilding=false;}
+    }
+  }
 }
 function buildAll(){return withMegaHome(buildAllCore);}
 function refreshAll(){return withMegaHome(refreshAllCore);}
@@ -8735,7 +8760,7 @@ function megaPieces(){
 /* a tablet - an iPad upright or on its side - gets a layout of its own:
    Completed, Parallels and Time off in one row with Parallels in the middle,
    Priority for today and Tasks side by side under them */
-function megaTablet(){ var w=window.innerWidth||0; return w>760 && w<=1400; }
+function megaTablet(){ var w=document.documentElement.clientWidth||window.innerWidth||0; return w>760 && w<=1400; }
 function megaSeat(el){
   var tab=megaTablet();
   if(el.id==="totalBox")  return {host:"mgTopL",  fx:-40, fy:-30};
@@ -8748,7 +8773,7 @@ function megaSeat(el){
   if(el.classList.contains("today")) return {host:"mgRest", fx:40, fy:26};
   return {host:"mgRest", fx:0, fy:26};
 }
-function megaStage(){
+function megaStage(stable){
   var els=megaPieces();
   ["mgTopL","mgTopM","mgTopR","mgProjs","mgL","mgR","mgT","mgRest"].forEach(function(k){
     var h=document.getElementById(k); if(h) h.innerHTML="";
@@ -8767,6 +8792,7 @@ function megaStage(){
     el.style.setProperty("--rz", (seat.fx<0? -8 : (seat.fx>0? 8 : 0))+"deg");
     el.style.setProperty("--d", (90+i*110)+"ms");
     el.classList.add("megaitem");
+    el.classList.toggle("mgsettled", !!stable);
     host.appendChild(el);
   });
   return els.length;
@@ -8781,7 +8807,7 @@ function megaStage(){
 function megaRestore(){
   for(var i=megaSaved.length-1;i>=0;i--){
     var r=megaSaved[i];
-    r.el.classList.remove("megaitem");
+    r.el.classList.remove("megaitem","mgsettled");
     if(r.style) r.el.setAttribute("style", r.style); else r.el.removeAttribute("style");
     if(r.next && r.next.parentNode===r.parent) r.parent.insertBefore(r.el, r.next);
     else r.parent.appendChild(r.el);
