@@ -106,7 +106,7 @@
   #linkLayer .lk.sel .ln{stroke-dasharray:none; filter:drop-shadow(0 0 4px rgba(143,174,220,.9))}
   #linkLayer .lkcap{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; font-size:11px;
     font-weight:650; fill:#7C818C; paint-order:stroke; stroke:#F7F5F0; stroke-width:4px; stroke-linejoin:round}
-  #lineMenu{position:fixed; z-index:320; background:var(--card); border:1px solid var(--line); border-radius:14px;
+  #lineMenu{position:fixed; z-index:380; background:var(--card); border:1px solid var(--line); border-radius:14px;
     box-shadow:0 18px 44px rgba(58,63,74,.22); padding:11px; display:none; width:232px}
   #lineMenu.show{display:block}
   #lineMenu .rrow{display:flex; gap:6px; margin-bottom:8px; flex-wrap:wrap; align-items:center}
@@ -254,7 +254,7 @@
   .sticker .lnk{position:absolute; right:-8px; top:50%; margin-top:-7px; width:14px; height:14px; border-radius:50%;
     background:var(--card); border:2.5px solid rgba(75,68,38,.45); cursor:crosshair; opacity:0; transition:opacity .25s ease}
   .sticker:hover .lnk{opacity:1}
-  #ctxMenu{position:fixed; z-index:320; background:var(--card); border:1px solid var(--line); border-radius:14px;
+  #ctxMenu{position:fixed; z-index:380; background:var(--card); border:1px solid var(--line); border-radius:14px;
     box-shadow:0 18px 44px rgba(58,63,74,.22); padding:10px; display:none; min-width:170px}
   #ctxMenu.show{display:block}
   #ctxMenu .crow{display:flex; gap:7px; margin-bottom:9px}
@@ -550,7 +550,7 @@
     max-height:calc(100vh - var(--timeline-h) - 74px - var(--extgap,0px)) !important}
 
   /* right-click menu on a line of either priority list */
-  #plMenu{position:fixed; z-index:320; background:var(--card); border:1px solid var(--line); border-radius:14px;
+  #plMenu{position:fixed; z-index:380; background:var(--card); border:1px solid var(--line); border-radius:14px;
     box-shadow:0 18px 44px rgba(58,63,74,.22); padding:11px; display:none; width:252px}
   #plMenu.show{display:block}
   #plMenu .rlab{font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 5px}
@@ -1359,7 +1359,7 @@
   @media (max-width:900px){ #signTop{display:none !important} }
 
   /* ============ RICH TEXT MENU ============ */
-  #richMenu{position:fixed; z-index:320; background:var(--card); border:1px solid var(--line); border-radius:14px;
+  #richMenu{position:fixed; z-index:380; background:var(--card); border:1px solid var(--line); border-radius:14px;
     box-shadow:0 18px 44px rgba(58,63,74,.22); padding:11px; display:none; width:226px}
   #richMenu.show{display:block}
   #richMenu .rrow{display:flex; gap:6px; margin-bottom:8px; flex-wrap:wrap; align-items:center}
@@ -1859,7 +1859,7 @@
   body.dark .hsprev{background:var(--sunk)}
 
   /* the little palette behind the pink button, for matching the strip by eye */
-  #pinkMenu{position:fixed; z-index:320; background:var(--card); border:1px solid var(--line); border-radius:14px;
+  #pinkMenu{position:fixed; z-index:380; background:var(--card); border:1px solid var(--line); border-radius:14px;
     box-shadow:var(--sh-m,0 18px 44px rgba(58,63,74,.22)); padding:11px; display:none; width:206px; max-width:calc(100vw - 24px)}
   @media (max-width:820px){
     #pinkMenu{width:240px; padding:13px}
@@ -5543,6 +5543,51 @@ var BASE=[
 
 /* ================= STATE ================= */
 var KEY="mr_rocket_planner_v2";
+var PLANNER_BUILD="2026.10.07.1", ZOOMKEY=KEY+":device-zoom-v3", localZoom=1;
+try{var zStored=+localStorage.getItem(ZOOMKEY);if(zStored>=0.75&&zStored<=1.6)localZoom=zStored;}catch(e){}
+function setLocalZoom(z){
+  localZoom=Math.max(0.75,Math.min(1.6,+z||1));state.heroZoom=localZoom;
+  try{localStorage.setItem(ZOOMKEY,String(localZoom));}catch(e){}
+  applyHeroZoom();
+}
+var tabBases={}, pendingSpaces={}, tabConflict=null, storageFaults={}, tabRepaint=false;
+function storageNotice(key,bad){
+  if(bad)storageFaults[key]=true;else delete storageFaults[key];
+  var el=document.getElementById("plannerHealth");
+  if(el&&Object.keys(storageFaults).length){el.textContent="Browser storage is full or unavailable. Export a backup before closing this tab.";el.dataset.bad="true";}
+}
+function tabProjectMerge(base,local,remote){
+  base=ghCopy(base||{});remote=ghCopy(remote||{});local=ghCopy(local);
+  [base,remote].forEach(function(x){x.heroZoom=local.heroZoom;});
+  return ghMerge(base,local,remote,"local project");
+}
+function tabRefresh(){
+  if(!tabRepaint||tabConflict||ghEditing())return;
+  tabRepaint=false;
+  var disk=readSpace(spaces.active),base=tabBases[spaces.active];
+  if(disk&&base&&!ghEqual(base,disk)){
+    try{state=tabProjectMerge(base,state,disk);tabBases[spaces.active]=ghCopy(disk);}
+    catch(e){tabConflict={id:spaces.active,local:ghCopy(state),remote:disk,path:e.path};showTabConflict();return;}
+  }
+  refreshAll();
+}
+function showTabConflict(){
+  var el=document.getElementById("plannerHealth");
+  if(el){el.textContent="Two browser tabs changed the same part. Open Sync to review; neither version was discarded.";el.dataset.bad="true";}
+  if(!tabConflict||!document.getElementById("syReport"))return;
+  syReport('<div class="fix">Two tabs edited this project differently. Download a backup before choosing. A choice replaces this project only, not other projects.</div><button class="btn" id="tabBackup">Download both versions</button> <button class="btn" id="tabMine">Use this tab</button> <button class="btn" id="tabOther">Use other tab</button>',"");
+  document.getElementById("tabBackup").onclick=function(){downloadProgress(JSON.stringify(tabConflict,null,2),"planner-tab-recovery.json");};
+  function choose(other){
+    if(!confirm("Use the "+(other?"other":"current")+" tab's version of this project? A recovery copy of both versions will be kept first."))return;
+    try{localStorage.setItem(KEY+":tab-recovery-v3",JSON.stringify(tabConflict));}catch(e){storageNotice("tab-recovery",true);return;}
+    var latest=null;try{latest=JSON.parse(localStorage.getItem(spaceKey(tabConflict.id))||"null");}catch(e){}
+    if(latest&&!ghEqual(latest,tabConflict.remote)){tabConflict.remote=latest;showTabConflict();syState("The other tab changed again. Review the latest versions before choosing",true);return;}
+    var item=tabConflict;tabConflict=null;pendingSpaces[item.id]=false;
+    var chosen=ghCopy(other?item.remote:item.local);if(item.id===spaces.active)state=chosen;writeSpace(item.id,chosen,true);tabRepaint=false;
+    refreshAll();ghTouched();document.getElementById("syReport").classList.remove("on");syState("Tab conflict resolved; save to GitHub to synchronize");
+  }
+  document.getElementById("tabMine").onclick=function(){choose(false);};document.getElementById("tabOther").onclick=function(){choose(true);};
+}
 function freshState(){
   return { trash:[], spot:{}, spotLow:{}, spans:{}, prioLow:{}, doneAt:{},done:{},collapsed:{},custom:{},edits:{},lang:{},plang:{},subs:{},tremoved:{},pedits:{},premoved:{},pcustom:[],dues:{},finish:"",start:"",header:null,order:[],vehicle:0,signing:null,sigv:7,stickers:[],slinks:[],
     prio:{},dimBy:"",rich:{},signs:null,
@@ -5568,12 +5613,26 @@ var SKEY=KEY+":spaces";
 var memStates={};
 function spaceKey(id){ return id==="main" ? KEY : KEY+":"+id; }
 function readSpace(id){
-  if(!storageOk) return memStates[id]||null;
-  try{ var r=localStorage.getItem(spaceKey(id)); return r?JSON.parse(r):null; }catch(e){ return null; }
+  if(pendingSpaces[id]||!storageOk)return ghCopy(memStates[id]||null);
+  try{var raw=localStorage.getItem(spaceKey(id)),value=raw?JSON.parse(raw):null;
+    if(value)memStates[id]=ghCopy(value);if(id!==spaces.active)tabBases[id]=ghCopy(value||{});return value;
+  }catch(e){storageNotice(spaceKey(id),true);return ghCopy(memStates[id]||null);}
 }
-function writeSpace(id,obj){
-  if(!storageOk){ memStates[id]=obj; return; }
-  try{ localStorage.setItem(spaceKey(id), JSON.stringify(obj)); }catch(e){}
+function writeSpace(id,obj,replace){
+  var next=ghCopy(obj);
+  if(!replace&&storageOk&&tabBases[id]&&!(ghV2&&ghV2.applying)){
+    try{var raw=localStorage.getItem(spaceKey(id)),disk=raw?JSON.parse(raw):null;
+      if(disk&&!ghEqual(disk,tabBases[id]))next=tabProjectMerge(tabBases[id],next,disk);
+    }catch(e){
+      if(e.syncConflict){tabConflict={id:id,local:next,remote:disk,path:e.path};memStates[id]=next;pendingSpaces[id]=true;showTabConflict();return false;}
+      storageNotice(spaceKey(id),true);
+    }
+  }
+  if(id===spaces.active&&obj===state&&!ghEqual(state,next)){state=next;tabRepaint=true;setTimeout(tabRefresh,0);}
+  memStates[id]=ghCopy(next);
+  if(!storageOk){pendingSpaces[id]=true;storageNotice(spaceKey(id),true);return false;}
+  try{localStorage.setItem(spaceKey(id),JSON.stringify(next));tabBases[id]=ghCopy(next);pendingSpaces[id]=false;storageNotice(spaceKey(id),false);return true;}
+  catch(e){pendingSpaces[id]=true;storageNotice(spaceKey(id),true);return false;}
 }
 function dropSpace(id){
   if(!storageOk){ delete memStates[id]; return; }
@@ -5594,7 +5653,10 @@ try{
     }
   }
 }catch(e){}
-function persistSpaces(){ if(storageOk){ try{ localStorage.setItem(SKEY, JSON.stringify(spaces)); }catch(e){} } }
+function persistSpaces(){
+  if(storageOk){try{localStorage.setItem(SKEY,JSON.stringify(spaces));storageNotice(SKEY,false);}catch(e){storageNotice(SKEY,true);}}
+  else storageNotice(SKEY,true);
+}
 
 /* ================= SETTINGS BELONG TO THE WHOLE PLANNER =================
    Everything that is a setting - the theme, the weight of the type, the pink
@@ -5605,18 +5667,16 @@ function persistSpaces(){ if(storageOk){ try{ localStorage.setItem(SKEY, JSON.st
 var PKEY=KEY+":prefs";
 var PREF_KEYS=["theme","boldAll","pinkBar","pinkColor","stickerSkin","stickerClassic",
   "stickBtn","stickBtnHidden","stickersHidden","hideLnkAll","styles","signs","sigv",
-  "saveDirName","saveName","heroZoom","heroFree","launchBox","darkness","korean","logo",
+  "saveDirName","saveName","heroFree","launchBox","darkness","korean","logo",
   "instrOpen"];
 function readPrefs(){
-  if(!storageOk) return memPrefs;
-  try{ var r=localStorage.getItem(PKEY); return r?JSON.parse(r):null; }catch(e){ return null; }
+  if(!storageOk||storageFaults[PKEY])return memPrefs;
+  try{var r=localStorage.getItem(PKEY);return r?JSON.parse(r):memPrefs;}catch(e){return memPrefs;}
 }
 var memPrefs=null;
 function writePrefs(){
-  var o={};
-  PREF_KEYS.forEach(function(k){ if(state[k]!==undefined) o[k]=state[k]; });
-  memPrefs=o;
-  if(storageOk){ try{ localStorage.setItem(PKEY, JSON.stringify(o)); }catch(e){} }
+  var o={};PREF_KEYS.forEach(function(k){if(state[k]!==undefined)o[k]=state[k];});memPrefs=ghCopy(o);
+  if(storageOk){try{localStorage.setItem(PKEY,JSON.stringify(o));storageNotice(PKEY,false);}catch(e){storageNotice(PKEY,true);}}
 }
 /* pour the shared settings over whichever project has just been opened */
 function applyPrefs(){
@@ -5628,12 +5688,15 @@ function loadStateOf(id){
   state=freshState();
   var pp=readSpace(id);
   if(pp && typeof pp==="object"){ Object.keys(state).forEach(function(k){ if(pp[k]!==undefined) state[k]=pp[k]; }); }
-  applyPrefs();
+  applyPrefs();state.heroZoom=localZoom;tabBases[id]=ghCopy(pp||{});
 }
 loadStateOf(spaces.active);
 /* one-time migration: the watermark is switched off in this release */
 if(state.sigv!==7){ if(state.signing) state.signing.hidden=true; state.sigv=7; }
-function persist(){ writeSpace(spaces.active, state); writePrefs(); if(typeof ghTouched==="function") ghTouched(); }
+function persist(){
+  writeSpace(spaces.active,state);writePrefs();
+  if(typeof ghTouched==="function")ghTouched();
+}
 
 /* ================= HELPERS ================= */
 function pd(s){
@@ -5828,6 +5891,7 @@ function allCheckable(){
 
 /* ================= RENDER DOM ================= */
 var host=document.getElementById("projects");
+function projectEvent(type,handler,options){host.addEventListener(type,handler,options);var megaHost=document.getElementById("mgProjs");if(megaHost)megaHost.addEventListener(type,handler,options);}
 /* Projects that carry text from other books get two more circles in front of the
    ordinary one: i - the text has been copied in, e - it has been edited. */
 function ieOn(k,id){ return !!(state.iedone && state.iedone[k+":"+id]); }
@@ -5960,7 +6024,7 @@ function renderProject(p, idx){
     (procOn(p.id)?procBox(p.id):"");
   return el;
 }
-function buildAll(){
+function buildAllCore(){
   host.innerHTML="";
   var list=effProjects();
   if(!list.length){
@@ -6251,7 +6315,7 @@ function flipCard(pid){
   }, 230);
 }
 /* typing on the other side */
-host.addEventListener("focusout", function(ev){
+projectEvent("focusout", function(ev){
   var el=ev.target.closest && ev.target.closest("[data-bk]");
   if(!el) return;
   var id=el.getAttribute("data-bk");
@@ -6260,14 +6324,14 @@ host.addEventListener("focusout", function(ev){
   if(v) state.back[id]=v; else delete state.back[id];
   persist();
 });
-host.addEventListener("keydown", function(ev){
+projectEvent("keydown", function(ev){
   var el=ev.target.closest && ev.target.closest("[data-bk]");
   if(!el) return;
   if(ev.key==="Escape"){ el.blur(); }
   if(ev.key==="Enter" && !ev.shiftKey){ ev.preventDefault(); el.blur(); }
 });
 /* keep it even if the page is closed while the caret is still in the line */
-host.addEventListener("input", function(ev){
+projectEvent("input", function(ev){
   var el=ev.target.closest && ev.target.closest("[data-bk]");
   if(!el) return;
   var id=el.getAttribute("data-bk");
@@ -6745,7 +6809,7 @@ function deCollideRow(box){
 }
 
 /* ================= EVENTS ================= */
-host.addEventListener("change", function(ev){
+projectEvent("change", function(ev){
   var id=ev.target.getAttribute("data-cb");
   var pid=ev.target.getAttribute("data-pcb");
   if(id){
@@ -6765,7 +6829,7 @@ host.addEventListener("change", function(ev){
 });
 
 var delArm={};
-host.addEventListener("click", function(ev){
+projectEvent("click", function(ev){
   var b;
   if((b=ev.target.closest("[data-ptask]"))){
     var tid=b.getAttribute("data-ptask");
@@ -7011,7 +7075,7 @@ function startStageEdit(el){
   inp.addEventListener("blur", save);
   inp.addEventListener("click", function(e){ e.stopPropagation(); });
 }
-host.addEventListener("dblclick", function(ev){
+projectEvent("dblclick", function(ev){
   var c=ev.target.closest("[data-clock]");
   if(c){
     ev.preventDefault(); ev.stopPropagation();
@@ -7082,7 +7146,7 @@ function startEdit(b){
   });
   inp.addEventListener("blur", save);
 }
-host.addEventListener("keydown", function(ev){
+projectEvent("keydown", function(ev){
   var inp;
   if((inp=ev.target.closest("[data-addinp]"))){
     if(ev.key==="Enter") commitAdd(inp.getAttribute("data-addinp"));
@@ -7130,7 +7194,7 @@ function nextIn(list, id){
   var i=list.indexOf(id);
   return (i>=0 && i+1<list.length) ? list[i+1] : null;
 }
-host.addEventListener("dragstart", function(e){
+projectEvent("dragstart", function(e){
   var g=e.target.closest("[data-drag]");
   var num=e.target.closest(".proj-num");
   if(!g && !num) return;
@@ -7145,7 +7209,7 @@ host.addEventListener("dragstart", function(e){
     if(card) e.dataTransfer.setDragImage(card, 40, 18);
   }catch(err){}
 });
-host.addEventListener("dragover", function(e){
+projectEvent("dragover", function(e){
   if(!dragKind) return;
   e.preventDefault();
   try{ e.dataTransfer.dropEffect="move"; }catch(err){}
@@ -7166,7 +7230,7 @@ host.addEventListener("dragover", function(e){
   var box=e.target.closest(".tasks");
   if(box) box.classList.add("drop-into");
 });
-host.addEventListener("drop", function(e){
+projectEvent("drop", function(e){
   if(!dragKind) return;
   e.preventDefault();
   var kind=dragKind, id=dragId;
@@ -7216,7 +7280,7 @@ host.addEventListener("drop", function(e){
     }
   }
 });
-host.addEventListener("dragend", function(){
+projectEvent("dragend", function(){
   clearDropMarks(); clearDragging();
   dragKind=null; dragId=null;
 });
@@ -7799,7 +7863,7 @@ function openDuePop(anchor, currentVal, onSet){
     document.addEventListener("pointerdown",away,true);
   },0);
 }
-host.addEventListener("dblclick", function(ev){
+projectEvent("dblclick", function(ev){
   var d=ev.target.closest("[data-due]");
   if(!d) return;
   var pid=d.getAttribute("data-due");
@@ -8117,7 +8181,10 @@ var plSeq=0;
 function plArr(k){ if(!state[k]) state[k]=[]; return state[k]; }
 /* two lines added inside the same millisecond used to share an id, and then
    ticking one ticked both - the counter keeps every line separate */
-function plId(pre){ plSeq++; return pre+Date.now().toString(36)+plSeq; }
+function plId(pre){
+  plSeq++;var unique=typeof crypto!=="undefined"&&crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+"-"+Math.random().toString(36).slice(2)+"-"+plSeq;
+  return pre+unique;
+}
 function plOf(id){
   var p=String(id).slice(0,2);
   if(p==="wk") return PLISTS.week;
@@ -8467,12 +8534,12 @@ function weekKey(d){
   return dayKey(d);
 }
 function plRoll(){
-  var moved=0, dk=dayKey(), wk=weekKey();
+  var moved=0, dk=dayKey(), wk=weekKey(),changed=state.plDay!==dk||state.plWeek!==wk;
   if(!state.plDay){ state.plDay=dk; }
   else if(state.plDay!==dk){ state.plDay=dk; moved+=plMoveIn(PLISTS.today, true); }
   if(!state.plWeek){ state.plWeek=wk; }
   else if(state.plWeek!==wk){ state.plWeek=wk; moved+=plMoveIn(PLISTS.week, true); }
-  persist();
+  if(changed)persist();
   if(moved) toast(moved+" waiting "+(moved===1?"line has":"lines have")+" moved into the list that is running now");
   return moved;
 }
@@ -8639,7 +8706,14 @@ Object.keys(PLISTS).forEach(function(k){
    direction and locking into place across the whole width. Nothing is copied: the
    real boxes are carried over and carried back, so every button on them still works
    and every tick still counts. */
-var megaOn=false, megaSaved=[], megaBusy=false;
+var megaOn=false, megaSaved=[], megaBusy=false, megaRebuilding=false;
+function withMegaHome(fn){
+  var restore=!!megaOn&&!megaRebuilding;
+  if(restore){megaRebuilding=true;mgKeysOut();megaRestore();}
+  try{return fn();}finally{if(restore){applySpot();megaStage();mgKeysIn();megaRebuilding=false;}}
+}
+function buildAll(){return withMegaHome(buildAllCore);}
+function refreshAll(){return withMegaHome(refreshAllCore);}
 function megaPieces(){
   var out=[];
   /* the pair first, then the stages, then the boxes of Mission control - the order
@@ -8794,7 +8868,12 @@ function megaOff(){
 document.getElementById("btnMega").addEventListener("click", megaIn);
 document.getElementById("megaOut").addEventListener("click", megaOff);
 document.addEventListener("keydown", function(e){
-  if(e.key==="Escape" && megaOn){ e.stopPropagation(); megaOff(); }
+  if(e.key==="Escape" && megaOn){
+    var menu=document.querySelector("#plMenu.show,#richMenu.show,#ctxMenu.show,#lineMenu.show,#pinkMenu.show");
+    if(menu){menu.classList.remove("show");e.stopImmediatePropagation();return;}
+    if(e.target.closest&&e.target.closest('input,textarea,[contenteditable="true"]'))return;
+    e.stopPropagation();megaOff();
+  }
 }, true);
 
 /* ================= THE LOG =================
@@ -10478,15 +10557,11 @@ function applyHeroFree(){
   try{ syncHeroHeight(); }catch(e){}
 }
 function applyHeroZoom(){
-  var z=state.heroZoom||1;
-  document.documentElement.style.setProperty("--heroZoom", z);
-  /* the panel is drawn at its own scale, so the column width has to be read in that
-     scale too - otherwise a shrunken panel would still be cut into wide columns */
-  document.documentElement.style.setProperty("--hcol", Math.round(262*Math.max(z,0.55))+"px");
-  var v=document.getElementById("hzVal");
-  if(v) v.textContent=Math.round(z*100)+"%";
-  try{ fitHeroWide(); }catch(e){}
-  try{ syncHeroHeight(); }catch(e){}
+  var z=localZoom;state.heroZoom=z;
+  document.documentElement.style.setProperty("--heroZoom",z);
+  document.documentElement.style.setProperty("--hcol",Math.round(262*z)+"px");
+  var v=document.getElementById("hzVal");if(v){v.textContent=Math.round(z*100)+"%";v.title="Scale on this device only. Double-click to reset to 100%.";}
+  try{fitHeroWide();syncHeroHeight();}catch(e){}
 }
 document.getElementById("heroZoom").addEventListener("click", function(ev){
   var b=ev.target.closest("[data-hz]");
@@ -10495,8 +10570,7 @@ document.getElementById("heroZoom").addEventListener("click", function(ev){
   /* below 70 per cent the steps grow, so getting down to a small strip takes a few presses, not fifteen */
   var size=(cur<=0.7?0.1:0.05)*(+b.getAttribute("data-hz"));
   var z=Math.round((cur+size)*100)/100;
-  state.heroZoom=Math.max(0.2, Math.min(1.6, z));
-  persist(); applyHeroZoom();
+  setLocalZoom(z);
 });
 document.getElementById("btnUnfix").addEventListener("click", function(){
   state.heroFree=!state.heroFree;
@@ -10514,7 +10588,7 @@ document.getElementById("btnKorean").addEventListener("click", function(){
 });
 document.getElementById("heroZoom").addEventListener("dblclick", function(ev){
   ev.preventDefault();
-  state.heroZoom=1; persist(); applyHeroZoom();
+  setLocalZoom(1);
   toast("Panel back to its normal size");
 });
 function applyBold(){
@@ -10939,16 +11013,15 @@ function progressText(){
   Object.keys(state).forEach(function(k){ payload[k]=state[k]; });
   /* the active project stays at the top level, so older versions can still read
      this file; every project travels along under "spaces" */
-  writeSpace(spaces.active, state);
   var all={active:spaces.active, list:spaces.list.slice(), states:{}};
-  spaces.list.forEach(function(sp){ var st=readSpace(sp.id); if(st) all.states[sp.id]=st; });
+  spaces.list.forEach(function(sp){var st=sp.id===spaces.active?state:readSpace(sp.id);if(st)all.states[sp.id]=ghCopy(st);});
   all.seeded=spaces.seeded||{}; all.trash=spaces.trash||[];
   payload.prefs=readPrefs()||{};
   payload.spaces=all;
   return JSON.stringify(payload,null,2);
 }
 /* everything the page has to redo when the whole state is swapped underneath it */
-function refreshAll(){
+function refreshAllCore(){
   document.getElementById("hKicker").textContent=(state.header&&state.header.kicker)||DEFAULT_HEADER.kicker;
   document.getElementById("hTitle").textContent=(state.header&&state.header.title)||DEFAULT_HEADER.title;
   if(elOpt("hSub")) elOpt("hSub").textContent=(state.header&&state.header.sub)||"";
@@ -11282,6 +11355,11 @@ function syState(msg, bad){
   if(el){ el.textContent=msg||""; el.style.color=bad?"var(--redp)":""; }
   var d=document.getElementById("syDot");
   if(d){ d.classList.toggle("on", !bad && ghReady()); d.classList.toggle("bad", !!bad); }
+  var health=document.getElementById("plannerHealth");
+  if(health){health.textContent=msg||"";health.dataset.bad=bad?"true":"false";
+    if(ghV2&&ghV2.legacyWriter)health.textContent+=" · Last save uses an older format ("+ghV2.legacyWriter+"). Reload all devices.";
+    if(Object.keys(storageFaults).length){health.textContent="Browser storage is full or unavailable. Export a backup before closing this tab.";health.dataset.bad="true";}
+  }
 }
 /* Sync v2: all devices are peers. Compare with an acknowledged baseline;
    never silently replace another device's work with an older whole-plan copy. */
@@ -11355,6 +11433,7 @@ function ghMerge(base,local,remote,path){
 function ghCore(o){
   if(!o||o.format!=="mr_rocket_planner") throw new Error("That file is not a planner progress file");
   var sp=o.spaces, list, raw;
+  if(sp&&(!Array.isArray(sp.list)||!sp.list.length||!ghObject(sp.states)))throw new Error("Invalid project collection; nothing was replaced");
   if(sp && Array.isArray(sp.list) && sp.list.length && ghObject(sp.states)){
     list=ghCopy(sp.list); raw=sp.states;
   } else {
@@ -11369,9 +11448,21 @@ function ghCore(o){
     var keys=sp?Object.keys(raw[item.id]):Object.keys(st);
     keys.forEach(function(k){
       if(!ghSafeKey(k))throw new Error("Unsafe key in progress file");
-      if(raw[item.id][k]!==undefined)st[k]=ghCopy(raw[item.id][k]);
+      if(raw[item.id][k]!==undefined){
+        var v=raw[item.id][k];
+        if(Array.isArray(st[k])&&!Array.isArray(v))throw new Error("Invalid list in progress file: "+k);
+        if(ghObject(st[k])&&!ghObject(v))throw new Error("Invalid object in progress file: "+k);
+        st[k]=ghCopy(v);
+      }
     });
-    PREF_KEYS.forEach(function(k){delete st[k];});
+    ["today","todayNext","tasks","tasksNext","steps","stepsNext","timeoff","timeoffNext","week","weekNext","pairs","pairsNext","stickers","pcustom"].forEach(function(k){
+      var seen=new Set();(st[k]||[]).forEach(function(item){
+        if(!ghObject(item)||typeof item.id!=="string"||!item.id||seen.has(item.id))throw new Error("Invalid or duplicate record in "+k+"; nothing was replaced");
+        seen.add(item.id);
+        if(item.t!==undefined&&typeof item.t!=="string")throw new Error("Invalid task text in "+k);
+      });
+    });
+    PREF_KEYS.concat(["heroZoom"]).forEach(function(k){delete st[k];});
     states[item.id]=st;
   });
   PREF_KEYS.forEach(function(k){
@@ -11385,9 +11476,9 @@ function ghPayload(model){
   var active=spaces.active;
   if(!model.states[active]) active=model.list[0].id;
   var all={active:active,list:ghCopy(model.list),states:{},seeded:ghCopy(model.seeded),trash:ghCopy(model.trash)};
-  model.list.forEach(function(sp){all.states[sp.id]=Object.assign({},ghCopy(model.states[sp.id]),ghCopy(model.prefs));});
+  model.list.forEach(function(sp){all.states[sp.id]=Object.assign({},ghCopy(model.states[sp.id]),ghCopy(model.prefs),{heroZoom:1});});
   var out=Object.assign({},all.states[active]);
-  out.format="mr_rocket_planner";out.version=12;out.syncVersion=2;out.savedAt=new Date().toISOString();
+  out.format="mr_rocket_planner";out.version=12;out.syncVersion=3;out.appBuild=PLANNER_BUILD;out.savedAt=new Date().toISOString();
   out.spaces=all;out.prefs=ghCopy(model.prefs);out.device=ghConf().device||guessDevice();out.lead="";
   return out;
 }
@@ -11409,7 +11500,11 @@ function ghRequest(url,opts,t){
     .then(function(r){
       return r.text().then(function(text){
         var data=null;try{data=JSON.parse(text);}catch(e){}
-        if(!r.ok){var err=new Error(String(r.status));err.status=r.status;throw err;}
+        if(!r.ok){var err=new Error(String(r.status));err.status=r.status;
+          err.detail=data&&data.message||"";var wait=+r.headers.get("retry-after"),reset=+r.headers.get("x-ratelimit-reset");
+          err.rateLimited=r.status===429||r.headers.get("x-ratelimit-remaining")==="0"||/rate limit/i.test(err.detail);
+          if(err.rateLimited)err.retryAt=wait>0?Date.now()+wait*1000:(reset>0?reset*1000:Date.now()+60000);
+          throw err;}
         return data;
       });
     }).finally(function(){if(timer)clearTimeout(timer);});
@@ -11423,7 +11518,10 @@ function ghReadRemote(cur){
   if(!cur)return null;
   if(cur.encoding && cur.encoding!=="base64") throw new Error("The progress file is too large for this sync route; the local plan is safe");
   var raw=JSON.parse(b64dec(cur.content||""));
-  return {raw:raw,core:ghCore(raw),sha:cur.sha};
+  var core=ghCore(raw),base=ghV2.base&&ghV2.base.core;
+  if(raw.spaces&&base){["seeded","trash"].forEach(function(k){if(!Object.prototype.hasOwnProperty.call(raw.spaces,k))core[k]=ghCopy(base[k]);});}
+  ghV2.legacyWriter=raw.syncVersion<3||!raw.syncVersion?(raw.device||"another device"):"";
+  return {raw:raw,core:core,sha:cur.sha};
 }
 function ghStoreBase(remote,t){
   ghV2.base={target:ghTargetId(t),sha:remote.sha,stamp:remote.raw.savedAt||"",core:ghCopy(remote.core)};
@@ -11436,7 +11534,7 @@ function ghLoadBase(t){
   if(ghV2.target!==id){
     ghV2.target=id;ghV2.base=null;ghV2.conflict=null;
     try{var b=JSON.parse(localStorage.getItem(GHKEY+":baseline-v2")||"null");
-      if(b&&b.target===id&&b.core)ghV2.base=b;
+      if(b&&b.target===id&&b.core){delete b.core.prefs.heroZoom;Object.keys(b.core.states).forEach(function(k){delete b.core.states[k].heroZoom;});ghV2.base=b;}
     }catch(e){}
   }
   return ghV2.base;
@@ -11473,6 +11571,7 @@ function ghBackup(reason,remote){
 function ghInstall(model){
   var before=ghSnapshot();
   if(ghEqual(before,model))return true;
+  if(ghEditing()){var deferred=new Error("Finish editing to receive changes; local work is kept");deferred.syncDeferred=true;throw deferred;}
   if(!ghBackup("before-sync-apply",null))throw new Error("The browser cannot keep a recovery copy. Export your plan before loading another copy");
   var payload=ghPayload(model);
   ghV2.applying=true;
@@ -11491,14 +11590,15 @@ function ghDirty(){
 }
 function ghAcknowledge(remote,t,sentLocal){
   var latest=ghSnapshot(),next=ghMerge(sentLocal,latest,remote.core);
-  ghStoreBase(remote,t);ghInstall(next);ghDirty();
+  ghInstall(next);ghStoreBase(remote,t);ghDirty();
   ghV2.conflict=null;ghV2.blockedUntil=0;syRefresh();
 }
 function ghErr(e){
   if(e&&e.syncConflict)return e.message;
   var status=e&&e.status,m=e&&e.message||String(e);
   if(status===401||m.indexOf("401")===0)return "This device's GitHub key is invalid or expired. Update it in Sync; the local plan is safe";
-  if(status===403||m.indexOf("403")===0)return "GitHub refused this device's request (permissions or rate limit). Check its key: this repository, Contents: Read and write";
+  if(e&&e.rateLimited)return "GitHub rate limit: automatic retry after "+hhmm(new Date(e.retryAt))+". Local changes are kept";
+  if(status===403||m.indexOf("403")===0)return "This device's key cannot write here. Check repository access and Contents: Read and write";
   if(status===404||m.indexOf("404")===0)return "Repository, branch or access is unavailable. Check Sync settings on this device";
   if(status===409||status===422)return "The remote copy changed during saving. Your changes remain here; try Sync again";
   if(e&&e.name==="AbortError")return "GitHub did not answer in time. Changes remain in this browser and will retry when connected";
@@ -11536,6 +11636,7 @@ function ghDoSync(kind,quiet,t){
     return ghFetchRemote(t).then(function(file){
       var remote=ghReadRemote(file);
       return ghLegacyBase(remote,t).then(function(base){
+        if(quiet&&ghEditing()){ghV2.deferred=true;ghSchedule();return false;}
         if(ghTargetId(ghTarget())!==ghTargetId(t))throw new Error("Sync settings changed while the request was running; retry with the current settings");
         var local=ghSnapshot(),c=ghConf(),dirty=base?!ghEqual(local,base):!!c.dirty;
         var merged;
@@ -11551,10 +11652,10 @@ function ghDoSync(kind,quiet,t){
           } else if(!dirty){merged=remote.core;}
           else {merged=ghReconcile(local,remote.core,base);}
         }catch(e){if(e.syncConflict){ghShowConflict(remote,quiet);return false;}throw e;}
-        var mustWrite=kind==="send"||kind==="force-send";
+        var mustWrite=kind==="send"||kind==="force-send"||kind==="background-send";
         if(!mustWrite||remote&&ghEqual(merged,remote.core)){
           if(remote){
-            ghStoreBase(remote,t);ghInstall(merged);ghDirty();ghV2.conflict=null;
+            ghInstall(merged);ghStoreBase(remote,t);ghDirty();ghV2.conflict=null;
             syState(c.dirty?"New changes combined locally; not yet sent to GitHub":"Up to date - changes from all devices are available");
           }
           return true;
@@ -11566,7 +11667,7 @@ function ghDoSync(kind,quiet,t){
           if(!result||!result.content||!result.content.sha)throw new Error("GitHub returned no confirmation; your unsent marker was kept");
           var ack={raw:payload,core:merged,sha:result.content.sha};
           try{ghAcknowledge(ack,t,local);}catch(e){
-            ghStoreBase(ack,t);c.dirty=true;ghSave();
+            if(!e.syncDeferred)ghStoreBase(ack,t);c.dirty=true;ghSave();
             if(e.syncConflict){ghShowConflict(ack,quiet);return false;}throw e;
           }
           syState(c.dirty?"Saved to GitHub; changes made during the save are still pending":"Saved to GitHub at "+hhmm()+" from "+(c.device||"this device"));
@@ -11582,18 +11683,25 @@ function ghDoSync(kind,quiet,t){
   return attempt();
 }
 function ghEditing(){
+  if(megaBusy)return true;
+  if(document.querySelector("#plMenu.show,#richMenu.show,#ctxMenu.show,#lineMenu.show,#pinkMenu.show"))return true;
   var el=document.activeElement;
-  return !!(el&&el.matches&&el.matches('input,textarea,[contenteditable="true"]'));
+  if(!el||!el.matches||el.closest("#syOverlay"))return false;
+  if(el.isContentEditable)return true;
+  if(el.matches("input,textarea"))return String(el.value||"").trim().length>0;
+  var selection=window.getSelection();return !!(selection&&!selection.isCollapsed);
 }
 function ghSchedule(){
   clearTimeout(ghTimer);
-  if(!ghV2||!ghV2.started||!ghReady()||!ghConf().auto||!ghConf().dirty||ghV2.conflict)return;
-  ghTimer=setTimeout(function(){ghPush(true);},Math.max(4000,ghV2.blockedUntil-Date.now()));
+  if(!ghV2||!ghV2.started||!ghReady()||!ghConf().auto||(!ghConf().dirty&&!ghV2.deferred)||ghV2.conflict||tabConflict)return;
+  ghTimer=setTimeout(function(){ghV2.deferred=false;if(ghEditing()){ghV2.deferred=true;ghSchedule();return;}ghCycle();},Math.max(4000,ghV2.blockedUntil-Date.now()));
 }
 function ghRun(kind,quiet){
+  if(ghV2.rateUntil>Date.now()){syState("GitHub rate limit: retry after "+hhmm(new Date(ghV2.rateUntil))+". Local changes are kept",true);return Promise.resolve(false); }
+  tabRefresh();if(tabConflict){showTabConflict();if(!quiet)syAfterFail();return Promise.resolve(false);}
   if(!ghReady()){syState("Set up Sync on this device: repository and a key with Contents: Read and write",true);if(!quiet)syAfterFail();return Promise.resolve(false);}
   if(!ghV2.started)ghStart(false);
-  if(quiet&&(document.hidden||ghEditing()||ghV2.conflict||Date.now()<ghV2.blockedUntil))return Promise.resolve(false);
+  if(quiet&&((document.hidden&&kind!=="background-send")||ghEditing()||ghV2.conflict||Date.now()<ghV2.blockedUntil)){ghV2.deferred=true;ghSchedule();return Promise.resolve(false);}
   if(ghV2.flight){
     if(quiet)return Promise.resolve(false);
     return ghV2.flight.then(function(){return ghRun(kind,false);});
@@ -11602,7 +11710,8 @@ function ghRun(kind,quiet){
   if(!quiet)syState(kind.indexOf("take")>=0?"Checking the GitHub copy...":"Saving to GitHub...");
   var target=ghTarget();
   var job=ghDoSync(kind,quiet,target).catch(function(e){
-    ghV2.blockedUntil=Date.now()+30000;
+    if(e.syncDeferred){ghV2.deferred=true;syState(e.message);return false;}
+    ghV2.blockedUntil=Math.max(Date.now()+30000,e.retryAt||0);if(e.rateLimited)ghV2.rateUntil=e.retryAt;
     syState("Not synced: "+ghErr(e),true);
     if(!quiet){syAfterFail();toast("Not saved to GitHub - see Sync. Local changes are kept.");}
     return false;
@@ -11624,10 +11733,10 @@ function ghTouched(){
   ghV2.observed=now;
   var b=ghLoadBase(ghTarget()),c=ghConf();
   c.dirty=b?!ghEqual(now,b.core):true;
-  ghSave();paintSyncDot();ghSchedule();
+  ghSave();paintSyncDot();if(c.dirty)syState(c.auto?"Changes saved locally; waiting to sync":"Changes saved locally; press Save to GitHub (auto is off)");ghSchedule();
 }
 function ghCycle(){
-  if(!ghReady()||!ghConf().auto||document.hidden||ghEditing())return;
+  tabRefresh();if(!ghReady()||!ghConf().auto||document.hidden||ghEditing())return;
   if(ghConf().dirty)ghPush(true);else ghPull(true);
 }
 function ghStart(run){
@@ -11667,7 +11776,7 @@ function syPaint(){
   if(L){ L.hidden=true; L.style.display="none"; L.disabled=true; }
   var box=document.getElementById("syLeadBox");
   if(box){
-    box.innerHTML="<b>Sync v2: all devices are equal.</b> Save to GitHub works on every device. "+
+    box.innerHTML="<b>Sync v3 · "+PLANNER_BUILD+": all devices are equal.</b> Save to GitHub works on every device. "+
       "With auto on, changes are sent and checked on returning to the app. "+
       "Independent edits are combined; competing edits never overwrite silently.<br>"+
       '<button class="btn" id="syRecoveryV2">Recovery copies</button>';
@@ -11701,7 +11810,7 @@ function syRead(){
   ghSave();
 }
 document.getElementById("btnSync").addEventListener("click", function(){
-  syPaint();
+  syPaint();if(tabConflict)showTabConflict();
   document.getElementById("syOverlay").classList.add("show");
 });
 document.getElementById("syClose").addEventListener("click", function(){
@@ -11863,7 +11972,7 @@ document.getElementById("syCheck").addEventListener("click", ghCheck);
 setTimeout(function(){ ghStart(); }, 1200);
 window.addEventListener("focus", ghCycle);
 window.addEventListener("online", function(){ ghV2.blockedUntil=0; ghCycle(); });
-document.addEventListener("visibilitychange", function(){ if(!document.hidden)ghCycle(); });
+document.addEventListener("visibilitychange",function(){if(!document.hidden)ghCycle();else if(ghReady()&&ghConf().auto&&ghConf().dirty)ghRun("background-send",true);});
 document.addEventListener("focusout", function(){ if(ghV2.started)ghSchedule(); }, true);
 setInterval(ghCycle, 30000);
 /* Export and synchronization are different operations. */
@@ -11875,24 +11984,15 @@ if(cloudSaveButton)cloudSaveButton.title="Save this device's changes to GitHub a
 
 function loadProgressText(txt){
   try{
-    var o=JSON.parse(txt);
-    if(!o||typeof o!=="object") throw 0;
-    /* a file written by this version carries every project - restore them all */
-    if(o.spaces && o.spaces.list && o.spaces.list.length && o.spaces.states){
-      spaces.list=o.spaces.list.filter(function(x){ return x && x.id; });
-      spaces.active=o.spaces.active||spaces.list[0].id;
-      if(!spaces.list.filter(function(x){return x.id===spaces.active;}).length) spaces.active=spaces.list[0].id;
-      spaces.list.forEach(function(sp){ if(o.spaces.states[sp.id]) writeSpace(sp.id, o.spaces.states[sp.id]); });
-      persistSpaces();
-      loadStateOf(spaces.active);
-      paintTabs(); refreshAll();
-      return true;
-    }
-    Object.keys(freshState()).forEach(function(k){ if(o[k]!==undefined) state[k]=o[k]; });
-    persist();
-    paintTabs(); refreshAll();
-    return true;
-  }catch(e){ return false; }
+    var o=JSON.parse(txt),model=ghCore(o),active=o.spaces&&o.spaces.active||spaces.active;
+    if(!model.states[active])active=model.list[0].id;
+    if(!(ghV2&&ghV2.applying)&&!ghBackup("before-file-import",null))throw new Error("Export a backup first: browser storage is unavailable");
+    memPrefs=ghCopy(model.prefs);
+    try{localStorage.setItem(PKEY,JSON.stringify(memPrefs));storageNotice(PKEY,false);}catch(e){storageNotice(PKEY,true);}
+    spaces.list=ghCopy(model.list);spaces.active=active;spaces.seeded=ghCopy(model.seeded);spaces.trash=ghCopy(model.trash);
+    spaces.list.forEach(function(sp){writeSpace(sp.id,Object.assign({},model.states[sp.id],model.prefs,{heroZoom:localZoom}),true);});
+    persistSpaces();loadStateOf(active);paintTabs();refreshAll();return true;
+  }catch(e){syState("Import not applied: "+(e.message||"invalid planner file"),true);return false;}
 }
 /* share sheet - on iPhone this is the "Save to Files" route */
 function shareProgress(text,name){
@@ -12449,6 +12549,24 @@ function paintInstr(){
   });
   paintInstr();
 })();
+
+/* Planner v3: device-local scale, non-destructive snapshots and cross-tab notices. */
+(function(){
+  var box=document.createElement("div");box.id="plannerStatus";
+  box.innerHTML='<b>Planner '+PLANNER_BUILD+'</b> <span id="plannerHealth" role="status" aria-live="polite"></span> <button type="button" id="plannerZoomReset">100%</button>';
+  var h=document.getElementById("hero");if(h)h.appendChild(box);
+  document.getElementById("plannerZoomReset").onclick=function(){setLocalZoom(1);};
+  var style=document.createElement("style");style.textContent='#plannerStatus{display:flex;gap:9px;align-items:center;flex-wrap:wrap;font-size:11px;color:var(--ink-dim);line-height:1.4}#plannerStatus b{font-weight:650}#plannerHealth{flex:1;min-width:140px}#plannerHealth[data-bad="true"]{color:var(--redp)}#plannerZoomReset{font:inherit;border:1px solid var(--line2);color:var(--ink);background:var(--card);border-radius:7px;padding:3px 7px;cursor:pointer}.overlay{z-index:340}#toast{z-index:400}@media(min-width:1000px){#hero .hero-row .tlist{max-height:clamp(150px,28vh,300px);overflow:auto;scrollbar-width:thin}#hero #stepsBox .tlist{max-height:clamp(100px,16vh,190px)}#hero #parBox .parlist{max-height:180px;overflow:auto}}';
+  document.head.appendChild(style);
+  syState(ghReady()?(ghConf().auto?"Automatic sync enabled on this device":"Manual sync: press Save to GitHub") : "Sync is not configured on this device");
+  if(Object.keys(storageFaults).length)storageNotice(Object.keys(storageFaults)[0],true);
+})();
+window.addEventListener("storage",function(e){
+  if(e.key===spaceKey(spaces.active)){tabRepaint=true;setTimeout(tabRefresh,0);}
+  if(e.key===ZOOMKEY&&e.newValue){localZoom=Math.max(.75,Math.min(1.6,+e.newValue||1));applyHeroZoom();}
+});
+document.addEventListener("focusout",function(){setTimeout(tabRefresh,0);},true);
+window.addEventListener("focus",tabRefresh);
 
 })();
 </script>
