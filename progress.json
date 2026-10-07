@@ -1041,13 +1041,6 @@
       "b": true
     },
     {
-      "id": "tdmuqrxyq45",
-      "t": "🔥 Method : launch : work out a rule : how to check and edit the links in MRG",
-      "done": false,
-      "fs": 3,
-      "b": true
-    },
-    {
       "id": "tdmuqry6b66",
       "t": "⚡ Review : animal cruelty",
       "done": false,
@@ -1667,7 +1660,17 @@
       "at": ""
     }
   ],
-  "pairsNext": [],
+  "pairsNext": [
+    {
+      "id": "prmuxqhc1b1",
+      "a": "read out MRM",
+      "b": "launch: inventory (step by strp)",
+      "done": false,
+      "ad": false,
+      "bd": false,
+      "at": ""
+    }
+  ],
   "parView": "next",
   "parFace": "list",
   "tasks": [
@@ -1681,6 +1684,20 @@
     {
       "id": "tkmuwch69e1",
       "t": "🔥 Launch : gathering info on the Inventory",
+      "done": false,
+      "fs": 3,
+      "b": true
+    },
+    {
+      "id": "tkmuxqfupx1",
+      "t": "☕ Complete : MRM",
+      "done": false,
+      "b": true,
+      "fs": 3
+    },
+    {
+      "id": "tkmuxqgayw2",
+      "t": "☕ Complete : Axiological analysis",
       "done": false,
       "fs": 3,
       "b": true
@@ -1843,7 +1860,7 @@
   "hideAllT": {},
   "flipped": {},
   "back": {},
-  "theme": "dark",
+  "theme": "light",
   "boldAll": false,
   "pinkBar": false,
   "pinkColor": "",
@@ -1893,7 +1910,7 @@
   "format": "mr_rocket_planner",
   "version": 12,
   "syncVersion": 2,
-  "savedAt": "2026-10-07T05:57:28.420Z",
+  "savedAt": "2026-10-07T06:36:46.129Z",
   "spaces": {
     "active": "cmr",
     "list": [
@@ -2477,7 +2494,7 @@
         "hideAllT": {},
         "flipped": {},
         "back": {},
-        "theme": "dark",
+        "theme": "light",
         "boldAll": false,
         "pinkBar": false,
         "pinkColor": "",
@@ -2619,7 +2636,7 @@
         "hideAllT": {},
         "flipped": {},
         "back": {},
-        "theme": "dark",
+        "theme": "light",
         "boldAll": false,
         "pinkBar": false,
         "pinkColor": "",
@@ -3710,13 +3727,6 @@
             "b": true
           },
           {
-            "id": "tdmuqrxyq45",
-            "t": "🔥 Method : launch : work out a rule : how to check and edit the links in MRG",
-            "done": false,
-            "fs": 3,
-            "b": true
-          },
-          {
             "id": "tdmuqry6b66",
             "t": "⚡ Review : animal cruelty",
             "done": false,
@@ -4336,7 +4346,17 @@
             "at": ""
           }
         ],
-        "pairsNext": [],
+        "pairsNext": [
+          {
+            "id": "prmuxqhc1b1",
+            "a": "read out MRM",
+            "b": "launch: inventory (step by strp)",
+            "done": false,
+            "ad": false,
+            "bd": false,
+            "at": ""
+          }
+        ],
         "parView": "next",
         "parFace": "list",
         "tasks": [
@@ -4350,6 +4370,20 @@
           {
             "id": "tkmuwch69e1",
             "t": "🔥 Launch : gathering info on the Inventory",
+            "done": false,
+            "fs": 3,
+            "b": true
+          },
+          {
+            "id": "tkmuxqfupx1",
+            "t": "☕ Complete : MRM",
+            "done": false,
+            "b": true,
+            "fs": 3
+          },
+          {
+            "id": "tkmuxqgayw2",
+            "t": "☕ Complete : Axiological analysis",
             "done": false,
             "fs": 3,
             "b": true
@@ -4512,7 +4546,7 @@
         "hideAllT": {},
         "flipped": {},
         "back": {},
-        "theme": "dark",
+        "theme": "light",
         "boldAll": false,
         "pinkBar": false,
         "pinkColor": "",
@@ -4568,7 +4602,7 @@
     "trash": []
   },
   "prefs": {
-    "theme": "dark",
+    "theme": "light",
     "boldAll": false,
     "pinkBar": false,
     "pinkColor": "",
