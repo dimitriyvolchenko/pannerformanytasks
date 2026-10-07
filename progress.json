@@ -1054,12 +1054,6 @@
       "b": true
     },
     {
-      "id": "tdmuqryhsa7",
-      "t": "Method : launch and schedule partial checking of links for MRM",
-      "done": true,
-      "b": true
-    },
-    {
       "id": "tdmuw9nb8j8",
       "t": "Method : launch : cruelty towards disabled and elderly",
       "done": false,
@@ -1678,25 +1672,11 @@
   "parFace": "list",
   "tasks": [
     {
-      "id": "tkmuw9enkd1",
-      "t": "☕ Complete : The Approach to handling Links and References",
-      "done": true,
-      "fs": 3,
-      "b": true
-    },
-    {
       "id": "tkmuw9fsyp2",
       "t": "☕ Complete : Scheduling preparing all the Parts for MR",
       "done": false,
       "fs": 3,
       "b": true
-    },
-    {
-      "id": "tkmuw9ocfw9",
-      "t": "☕ Complete : the launch on time of MRG",
-      "done": true,
-      "b": true,
-      "fs": 3
     },
     {
       "id": "tkmuwch69e1",
@@ -1913,7 +1893,7 @@
   "format": "mr_rocket_planner",
   "version": 12,
   "syncVersion": 2,
-  "savedAt": "2026-10-07T05:57:14.070Z",
+  "savedAt": "2026-10-07T05:57:28.420Z",
   "spaces": {
     "active": "cmr",
     "list": [
@@ -3743,12 +3723,6 @@
             "b": true
           },
           {
-            "id": "tdmuqryhsa7",
-            "t": "Method : launch and schedule partial checking of links for MRM",
-            "done": true,
-            "b": true
-          },
-          {
             "id": "tdmuw9nb8j8",
             "t": "Method : launch : cruelty towards disabled and elderly",
             "done": false,
@@ -4367,25 +4341,11 @@
         "parFace": "list",
         "tasks": [
           {
-            "id": "tkmuw9enkd1",
-            "t": "☕ Complete : The Approach to handling Links and References",
-            "done": true,
-            "fs": 3,
-            "b": true
-          },
-          {
             "id": "tkmuw9fsyp2",
             "t": "☕ Complete : Scheduling preparing all the Parts for MR",
             "done": false,
             "fs": 3,
             "b": true
-          },
-          {
-            "id": "tkmuw9ocfw9",
-            "t": "☕ Complete : the launch on time of MRG",
-            "done": true,
-            "b": true,
-            "fs": 3
           },
           {
             "id": "tkmuwch69e1",
