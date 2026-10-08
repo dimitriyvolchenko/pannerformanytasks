@@ -1,0 +1,310 @@
+"""Browser regressions with in-memory localStorage and a simulated GitHub Contents API.
+No request reaches GitHub, no access key is required, and no user plan is loaded.
+Run: python test_repair.py (Python Playwright + a Chromium executable required).
+"""
+import asyncio,base64,json,copy,os,re
+from pathlib import Path
+from playwright.async_api import async_playwright
+R=Path(__file__).parent
+RELEASE=R.parent
+HOOK=r'''
+window.__pt={state:()=>state,spaces:()=>spaces,snapshot:ghSnapshot,payload:ghPayload,cycle:ghCycle,pull:ghPull,push:ghPush,
+tabReceive:function(st){localStorage.setItem(spaceKey(spaces.active),JSON.stringify(st));tabRepaint=true;tabRefresh();},refresh:refreshAll,megaIn:megaIn,megaOff:megaOff,editing:ghEditing,conf:ghConf,add:addTo,lists:PLISTS,
+logo:(art,size)=>drawBlueCheck(art,size).toDataURL('image/png'),
+badge:()=>typeof plannerBadgeCount==='function'?plannerBadgeCount():null,
+blank:function(){var s=freshState();BASE.forEach(b=>s.premoved[b.id]=true);s.pcustom=[{id:'ptest',en:'Test stage',due:'2026-12-31'}];
+s.custom={ptest:[{id:'ctest',en:'Existing stage task'}]};s.spot={done:true,par:true,off:true,today:true,tasks:true,launch:true,ptest:true};
+s.today=[{id:'tdtest1',t:'Priority one',done:false},{id:'tdtest2',t:'Completed priority',done:true},{id:'tdtest3',t:'Priority two',done:false}];
+s.tasks=[{id:'tktest1',t:'Task one',done:false},{id:'tktest2',t:'Task two',done:false},{id:'tktest3',t:'Completed task',done:true}];
+s.todayNext=[{id:'tdtomorrow',t:'Tomorrow only',done:false}];s.tasksNext=[{id:'tklater',t:'Later only',done:false}];
+s.steps=[];s.plDay=dayKey();s.plWeek=weekKey();s.logo='sweep-blue';s.badgeSources={today:true,tasks:false};
+return {format:'mr_rocket_planner',version:12,syncVersion:3,appBuild:PLANNER_BUILD,savedAt:'2026-10-08T10:00:00Z',spaces:{active:'main',list:[{id:'main',name:'Test plan'}],states:{main:s},seeded:{},trash:[]}};},
+setup:function(o,sha){ghMem={repo:'test/planner',path:'progress.json',branch:'main',token:'TEST_ONLY',auto:false,dirty:false,device:'simulated'};
+if(!loadProgressText(JSON.stringify(o)))throw new Error('Fixture load failed');
+ghV2.started=true;ghV2.target=ghTargetId(ghTarget());ghV2.base={target:ghV2.target,sha:sha||'s1',core:ghSnapshot()};
+ghV2.observed=ghSnapshot();ghV2.pendingAck=null;ghV2.conflict=null;ghV2.blockedUntil=0;ghConf().dirty=false;ghSave();return ghPayload(ghSnapshot());},
+auto:x=>{ghConf().auto=x;ghSave();},
+status:()=>({megaOn,megaBusy,flight:!!ghV2.flight,ack:!!ghV2.pendingAck,conflict:!!ghV2.conflict,dirty:ghConf().dirty,saved:megaSaved.length,message:document.getElementById('syState').textContent})
+};
+'''
+ENV=r'''()=>{
+ for(const name of ['localStorage','sessionStorage']){const data={};Object.defineProperty(window,name,{configurable:true,value:{getItem:k=>data[k]??null,setItem:(k,v)=>data[k]=String(v),removeItem:k=>delete data[k],clear:()=>{for(const k in data)delete data[k]},key:i=>Object.keys(data)[i]??null,get length(){return Object.keys(data).length}}});}
+ window.__badgeCalls=[];window.__permissionCalls=0;
+ Object.defineProperty(navigator,'setAppBadge',{configurable:true,value:async n=>{window.__badgeCalls.push(n);}});
+ Object.defineProperty(navigator,'clearAppBadge',{configurable:true,value:async()=>{window.__badgeCalls.push(0);}});
+ Object.defineProperty(window,'Notification',{configurable:true,value:{permission:'granted',requestPermission:async function(){window.__permissionCalls++;this.permission='granted';return 'granted';}}});
+ window.fetch=async(u,o={})=>{const r=await __mockRequest(String(u),o);return new Response(JSON.stringify(r.body),{status:r.status,headers:Object.assign({'Content-Type':'application/json'},r.headers||{})});};
+}'''
+class Backend:
+ def __init__(self):self.plan=None;self.sha=1;self.requests=[];self.reject=None;self.delay=0;self.started=None
+ async def request(self,url,options):
+  assert '/repos/test/planner/' in url, 'Unexpected API target: '+url
+  method=options.get('method','GET');self.requests.append(method)
+  if self.reject and self.reject[0]==method:
+   _,status=self.reject;self.reject=None;return {'status':status,'body':{'message':'Resource not accessible by personal access token'}}
+  if '/contents/progress.json' not in url:return {'status':404,'body':{}}
+  if method=='PUT':
+   data=json.loads(options['body'])
+   if self.started:self.started.set()
+   if self.delay:await asyncio.sleep(self.delay)
+   if data.get('sha')!=f's{self.sha}':return {'status':409,'body':{'message':'SHA mismatch'}}
+   self.plan=json.loads(base64.b64decode(data['content']));self.sha+=1
+   return {'status':200,'body':{'content':{'sha':f's{self.sha}'}}}
+  if self.plan is None:return {'status':404,'body':{'message':'Not found'}}
+  return {'status':200,'body':{'sha':f's{self.sha}','encoding':'base64','content':base64.b64encode(json.dumps(self.plan,ensure_ascii=False).encode()).decode()}}
+ def mutate(self,fn):fn(self.plan['spaces']['states'][self.plan['spaces']['active']]);self.sha+=1;self.plan['savedAt']=f'2026-10-08T11:{self.sha%60:02}:00Z'
+ @property
+ def state(self):return self.plan['spaces']['states'][self.plan['spaces']['active']]
+
+results=[]
+def passed(name):results.append(name);print('PASS',name,flush=True)
+async def settle(page):
+ await page.wait_for_function('!__pt.status().flight&&!__pt.status().megaBusy',timeout=12000)
+ await page.wait_for_timeout(50)
+async def main():
+ html=(RELEASE/'index.html').read_text().replace('\n})();\n</script>',HOOK+'\n})();\n</script>')
+ errors=[];backend=Backend()
+ async with async_playwright() as p:
+  browser=await p.chromium.launch(executable_path=os.environ.get('CHROMIUM','/usr/bin/chromium'),args=['--no-sandbox'])
+  async def device(w,h,mobile,label,plan=None):
+   c=await browser.new_context(viewport={'width':w,'height':h},is_mobile=mobile,has_touch=mobile,device_scale_factor=1)
+   await c.route('**/*',lambda r:r.abort()) # never reach the real network
+   page=await c.new_page();page.on('pageerror',lambda e:errors.append(label+': '+str(e)))
+   await page.expose_function('__mockRequest',backend.request)
+   await page.evaluate(ENV)
+   await page.set_content(html,wait_until='domcontentloaded');await page.wait_for_timeout(1000)
+   if plan is not False:
+    seed=plan or await page.evaluate('__pt.blank()')
+    out=await page.evaluate('([o,s])=>__pt.setup(o,s)',[seed,f's{backend.sha}'])
+    if backend.plan is None:backend.plan=out
+   return c,page
+  dc,d=await device(1600,1000,False,'desktop')
+  assert await d.evaluate('__pt.badge()')==2
+  passed('Badge default counts two unfinished current priorities, not done/tomorrow/later')
+  await d.locator('[data-planner-badge-source="tasks"]').click()
+  assert await d.evaluate('__pt.badge()')==4
+  await d.locator('[data-planner-badge-source="today"]').click()
+  assert await d.evaluate('__pt.badge()')==2
+  await d.locator('[data-planner-badge-source="tasks"]').click()
+  assert await d.evaluate('__pt.badge()')==0
+  await d.wait_for_timeout(60);assert (await d.evaluate('__badgeCalls'))[-1]==0
+  await d.locator('[data-planner-badge-source="today"]').click()
+  passed('All four badge combinations and clearing the OS badge at zero')
+  await d.locator('[data-tdchk="tdtest1"]').click()
+  assert await d.evaluate('__pt.badge()')==1
+  await d.locator('[data-tdchk="tdtest1"]').click()
+  passed('Completion/uncompletion updates badge count')
+  # Draft remains a draft while writing, and clicking elsewhere adds it exactly once.
+  await d.locator('#tasksInp').fill('Desktop task without Enter')
+  await d.wait_for_timeout(1200)
+  assert not any(x['t']=='Desktop task without Enter' for x in await d.evaluate('__pt.state().tasks'))
+  await d.locator('#hKicker').click()
+  assert sum(x['t']=='Desktop task without Enter' for x in await d.evaluate('__pt.state().tasks'))==1
+  assert await d.locator('#tasksInp').input_value()==''
+  passed('Desktop task is added on leaving the field; pauses do not split draft text')
+  await d.locator('#stepsInp').fill('Step saved directly')
+  assert await d.evaluate('__pt.push(false)')
+  assert any(x['t']=='Step saved directly' for x in backend.state['steps'])
+  passed('Direct Save commits new Steps without Enter or a preceding blur')
+  await d.locator('[data-tdtext="tktest1"]').dblclick()
+  await d.locator('[data-tdtext="tktest1"] input').fill('Edited existing task')
+  assert await d.evaluate('__pt.push(false)')
+  assert next(x for x in backend.state['tasks'] if x['id']=='tktest1')['t']=='Edited existing task'
+  passed('Direct Save commits an existing inline task editor')
+  await d.locator('[data-add="ptest"]').click()
+  await d.locator('[data-addinp="ptest"]').fill('New stage task without Enter')
+  assert await d.evaluate('__pt.push(false)')
+  assert any(x['en']=='New stage task without Enter' for x in backend.state['custom']['ptest'])
+  passed('Direct Save commits a new stage task')
+  # No accidental repository address is persisted as a step.
+  await d.locator('#stepsInp').fill('dimitriyvolchenko/pannerformanytasks, dimitriyvolchenko/pannerformanytasks')
+  await d.locator('#hKicker').click()
+  assert not any('dimitriyvolchenko/pannerformanytasks'==x['t'] for x in await d.evaluate('__pt.state().steps'))
+  assert await d.locator('#stepsInp').input_value()==''
+  passed('Repository-only autofill is not inserted into Steps')
+  await d.locator('#btnSync').click()
+  assert await d.locator('#syToken').get_attribute('form')=='plannerSyncCredentials'
+  assert await d.locator('#syRepo').get_attribute('form')=='plannerSyncCredentials'
+  await d.locator('#syClose').click()
+  passed('Credential inputs belong to a separate form, not task-entry fields')
+  cc,clean=await device(1200,900,False,'clean browser',False)
+  assert await clean.evaluate('__pt.conf().repo')=='dimitriyvolchenko/pannerformanytasks'
+  await clean.locator('#btnSync').click();assert await clean.locator('#syRepo').input_value()=='dimitriyvolchenko/pannerformanytasks'
+  assert await clean.locator('#syToken').input_value()==''
+  passed('Fresh Sync setup prefills the repository but never embeds an access token')
+  await cc.close()
+  # Remove only the misplaced standalone address, never ordinary task text.
+  sample=await d.evaluate('__pt.blank()')
+  sample['spaces']['states']['main']['steps']=[{'id':'spbad1','t':'dimitriyvolchenko/pannerformanytasks','done':False},{'id':'spbad2','t':'dimitriyvolchenko/pannerformanytasks, dimitriyvolchenko/pannerformanytasks','done':False},{'id':'spkeep','t':'Review dimitriyvolchenko/pannerformanytasks before deploying','done':False}]
+  ac,a=await device(1180,820,True,'cleanup',sample)
+  assert [x['id'] for x in await a.evaluate('__pt.state().steps')]==['spkeep']
+  saved=await a.evaluate('JSON.parse(localStorage.getItem("mr_rocket_planner_v2:misplaced-step-addresses"))')
+  assert len(saved[-1]['entries'])==2
+  passed('Existing misplaced addresses are removed narrowly, with a recoverable copy; real task text stays')
+  await a.evaluate("Notification.permission='default';window.__permissionCalls=0")
+  await a.locator('[data-planner-badge-source="today"]').click()
+  assert await a.evaluate('__permissionCalls')==0
+  await a.locator('[data-planner-badge-source="today"]').click()
+  assert await a.evaluate('__permissionCalls')==1
+  await a.evaluate("Notification.permission='denied'")
+  await a.locator('[data-planner-badge-source="tasks"]').click()
+  assert await a.evaluate('__permissionCalls')==1
+  await a.evaluate("Object.defineProperty(navigator,'setAppBadge',{value:undefined,configurable:true})")
+  await a.locator('[data-planner-badge-source="tasks"]').click()
+  passed('Badge permissions requested only on a user action; denied/unsupported APIs fail gracefully')
+  await a.locator('#tasksInp').fill('Saved draft on current list')
+  await a.locator('#tasksSw').click();await a.wait_for_timeout(950)
+  assert await a.locator('#tasksInp').input_value()==''
+  await a.locator('#tasksInp').fill('Separate later-list draft')
+  await a.locator('#tasksSw').click();await a.wait_for_timeout(950)
+  assert await a.locator('#tasksInp').input_value()=='Saved draft on current list'
+  assert not any(x['t']=='Saved draft on current list' for x in await a.evaluate('__pt.state().tasks'))
+  passed('Drafts stay separate between current/later lists instead of entering the wrong list')
+  await a.locator('#tasksInp').fill('Composing new task')
+  await a.locator('#tasksInp').dispatch_event('compositionstart')
+  assert not await a.evaluate('__pt.push(false)')
+  assert await a.locator('#tasksInp').input_value()=='Composing new task'
+  await a.locator('#tasksInp').dispatch_event('compositionend')
+  # Keep this isolated fixture out of the shared backend.
+  await ac.close()
+  passed('Save does not commit or discard a character that is still being composed')
+
+  # Save new toggle prefs before opening the receiving device.
+  await d.locator('[data-planner-badge-source="tasks"]').click();assert await d.evaluate('__pt.push(false)')
+  tc,t=await device(1180,820,True,'iPad landscape',copy.deepcopy(backend.plan))
+  assert await t.evaluate('__pt.badge()')==await d.evaluate('__pt.badge()')
+  passed('Badge sources and task counts transfer through the same sync payload')
+  await t.locator('#btnMega').click();await t.wait_for_timeout(2200)
+  assert await t.evaluate('__pt.status().megaOn')
+  await t.evaluate('''()=>{window.__cardRefs=[...document.querySelectorAll('#megaOv .megaitem')];window.__removedCards=0;window.__cardRefs.forEach(el=>new MutationObserver(rs=>{for(const r of rs)for(const n of r.removedNodes)if(__cardRefs.includes(n))__removedCards++;}).observe(el.parentNode,{childList:true}));}''')
+  await t.evaluate('__pt.auto(true)')
+  for i in range(6):
+   backend.mutate(lambda s,i=i:s['tasks'].append({'id':f'tkremote{i}','t':f'Automatic remote task {i}','done':False}))
+   await t.evaluate('window.dispatchEvent(new Event("focus"))');await settle(t)
+   assert await t.locator(f'[data-tdtext="tkremote{i}"]').count()==1
+   assert await t.evaluate('__pt.status().megaOn')
+   assert await t.evaluate('__cardRefs.every(el=>el.isConnected&&el.closest("#megaOv"))')
+  assert await t.evaluate('__removedCards')==0
+  assert await t.locator('#megaBar #btnGhSave').count()==1
+  passed('Six automatic remote updates keep every Mega card and Save toolbar attached (zero card detachments)')
+  backend.mutate(lambda s:s.update({'spot':{'tasks':True},'listView':True,'theme':'blue'}))
+  await t.evaluate('document.dispatchEvent(new Event("visibilitychange"))');await settle(t)
+  assert await t.evaluate('__cardRefs.every(el=>el.isConnected&&el.closest("#megaOv"))')
+  assert await t.evaluate('__removedCards')==0
+  passed('Remote highlights/list-view settings do not replace the current Mega Focus selection')
+  backend.mutate(lambda s:s['custom']['ptest'].append({'id':'remote-stage-entry','en':'Stage content updated remotely'}))
+  await t.evaluate('__pt.cycle()');await settle(t)
+  assert 'Stage content updated remotely' in await t.locator('[data-proj="ptest"]').inner_text()
+  assert await t.evaluate('__removedCards')==0
+  passed('Remote stage content updates inside its existing card, without reseating it')
+  # A real second page performs the phone save, rather than only mutating JSON.
+  phc,ph=await device(390,844,True,'phone sender',copy.deepcopy(backend.plan))
+  await ph.locator('#tasksInp').fill('Saved from the separate phone context')
+  assert await ph.evaluate('__pt.push(false)')
+  await t.evaluate('__pt.cycle()');await settle(t)
+  assert 'Saved from the separate phone context' in await t.locator('#tasksList').inner_text()
+  assert await t.evaluate('__removedCards')==0
+  await t.evaluate('__pt.auto(false)')
+  await t.locator('#stepsInp').fill('Reverse save from tablet')
+  assert await t.evaluate('__pt.push(false)')
+  assert await ph.evaluate('__pt.pull(false)')
+  assert 'Reverse save from tablet' in await ph.locator('#stepsList').inner_text()
+  await phc.close();await t.evaluate('__pt.auto(true)')
+  passed('Phone Save reaches an already-open tablet Mega Focus; tablet Save reaches the phone in reverse')
+
+  tabState=await t.evaluate('__pt.state()')
+  tabState['tasks'].append({'id':'tkfromothertab','t':'Received from another local tab','done':False})
+  await t.evaluate('(s)=>__pt.tabReceive(s)',tabState)
+  assert await t.locator('[data-td="tkfromothertab"]').count()==1
+  assert await t.evaluate('__removedCards')==0
+  assert await t.evaluate('__pt.push(false)')
+  passed('Local-tab reception uses the same stable Mega rendering path and marks unsent changes correctly')
+
+  # Add sufficient content to test visual scroll anchoring.
+  backend.mutate(lambda s:s['today'].extend([{'id':f'tdtall{i}','t':f'Priority number {i}','done':False} for i in range(20)]))
+  await t.evaluate('__pt.cycle()');await settle(t)
+  await t.locator('[data-td="tdtall7"]').scroll_into_view_if_needed()
+  await t.locator('[data-td="tdtall7"]').evaluate("(e)=>{document.getElementById('megaOv').scrollTop+=e.getBoundingClientRect().top-120;}")
+  y=await t.locator('[data-td="tdtall7"]').evaluate('(e)=>e.getBoundingClientRect().top')
+  backend.mutate(lambda s:s['today'].insert(0,{'id':'tdabove','t':'Inserted before the visible task','done':False}))
+  await t.evaluate('__pt.cycle()');await settle(t)
+  y2=await t.locator('[data-td="tdtall7"]').evaluate('(e)=>e.getBoundingClientRect().top')
+  assert abs(y-y2)<3,(y,y2)
+  passed('Scroll anchor stays in position when remote tasks are inserted above it')
+  # Editing is protected from passive updates. Save then releases the pending view.
+  await t.evaluate('__pt.auto(false)')
+  await t.locator('[data-tdtext="tktest1"]').dblclick()
+  await t.locator('[data-tdtext="tktest1"] input').fill('iPad edited without Enter')
+  assert await t.evaluate('__pt.push(false)')
+  assert next(x for x in backend.state['tasks'] if x['id']=='tktest1')['t']=='iPad edited without Enter'
+  assert await t.evaluate('__pt.status().megaOn')
+  assert await t.evaluate('__removedCards')==0
+  passed('iPad Mega Save commits an open editor without disturbing cards')
+  # Preserve an edit started during a delayed acknowledgement.
+  await t.locator('#tasksInp').fill('Task sent while another edit begins')
+  backend.delay=.6;backend.started=asyncio.Event()
+  flight=asyncio.create_task(t.evaluate('__pt.push(false)'));await backend.started.wait()
+  await t.locator('[data-tdtext="tktest1"]').dblclick()
+  await t.locator('[data-tdtext="tktest1"] input').fill('A later edit during save')
+  assert await flight;backend.delay=0;backend.started=None
+  assert await t.locator('[data-tdtext="tktest1"] input').input_value()=='A later edit during save'
+  assert await t.evaluate('__pt.push(false)')
+  assert next(x for x in backend.state['tasks'] if x['id']=='tktest1')['t']=='A later edit during save'
+  passed('Editing during a delayed Save acknowledgement remains intact and can be saved next')
+  backend.reject=('PUT',403)
+  await t.locator('#tasksInp').fill('Preserve on refused save')
+  assert not await t.evaluate('__pt.push(false)')
+  assert any(x['t']=='Preserve on refused save' for x in await t.evaluate('__pt.state().tasks'))
+  # error dialog is expected, close without altering test credentials
+  if await t.locator('#syOverlay.show').count():await t.locator('#syClose').click()
+  assert await t.evaluate('__pt.push(false)')
+  passed('Permission failure keeps the local task; explicit retry succeeds')
+  # Context formatting survives the in-place render.
+  await t.locator('[data-tdtext="tktest1"]').click(button='right')
+  await t.locator('#plMenu [data-plb="b"]').click()
+  assert await t.evaluate('__pt.state().tasks.find(x=>x.id==="tktest1").b')
+  await t.locator('#plMenu [data-ple="🔥"]').click()
+  assert (await t.evaluate('__pt.state().tasks.find(x=>x.id==="tktest1").t')).startswith('🔥')
+  await t.keyboard.press('Escape')
+  passed('Context-menu bold and emoji still work after repeated remote updates')
+  await t.evaluate('__pt.megaOff()');await t.wait_for_timeout(2200)
+  assert not await t.evaluate('__pt.status().megaOn')
+  assert await t.locator('#hero #todayBox').count()==1
+  await t.locator('#btnMega').click();await t.wait_for_timeout(1800)
+  assert await t.locator('#megaOv #tasksBox').count()==1
+  passed('Exit and re-entry restore correct card ownership after all sync updates')
+  await tc.close()
+  # Portrait independently starts with the original (non-local) remote view.
+  backend.mutate(lambda s:s.update({'spot':{'today':True,'tasks':True,'done':True,'par':True,'off':True,'ptest':True},'listView':False}))
+  pc,portrait=await device(820,1180,True,'iPad portrait',copy.deepcopy(backend.plan))
+  await portrait.locator('#btnMega').click();await portrait.wait_for_timeout(2000)
+  oldref=await portrait.locator('#todayBox').evaluate('(e)=>{window.__todayCard=e;return e.parentNode.id;}')
+  await portrait.evaluate('__pt.auto(true)')
+  backend.mutate(lambda s:s['tasks'].append({'id':'tkportrait','t':'Portrait background update','done':False}))
+  await portrait.evaluate('__pt.cycle()');await settle(portrait)
+  assert await portrait.evaluate('__todayCard===document.getElementById("todayBox")&&__todayCard.parentNode.id')==oldref
+  await portrait.screenshot(path=str(R/'ipad-portrait-verified.png'))
+  passed('Portrait tablet automatic reception retains the same card and parent')
+  await pc.close()
+  for w,h in [(320,640),(390,844),(430,932)]:
+   c,m=await device(w,h,True,f'phone{w}',copy.deepcopy(backend.plan))
+   scale=await m.evaluate('getComputedStyle(document.documentElement).getPropertyValue("--heroZoom")')
+   assert float(scale)==1
+   assert await m.locator('[data-planner-badge-source="tasks"]').count()==1
+   assert await m.locator('#tasksInp').evaluate('(e)=>parseFloat(getComputedStyle(e).fontSize)')>=16
+   await c.close()
+  passed('Phone 320/390/430px retains 100% scale, 16px fields and both badge switches')
+  # Actual raster assets are generated from the exact integrated drawing function.
+  for art in ['sweep','check']:
+   for size in [32,180,192,512]:
+    data=await d.evaluate('([a,s])=>__pt.logo(a,s)',[art,size])
+    out=RELEASE/f'assets/icons/planner-{art}-{size}.png';out.parent.mkdir(parents=True,exist_ok=True)
+    out.write_bytes(base64.b64decode(data.split(',')[1]))
+  passed('Eight icon PNGs are rendered from the same drawing used by the app selector')
+  await d.screenshot(path=str(R/'desktop-verified.png'))
+  assert not errors,errors
+  passed('No runtime JavaScript exceptions in the tested Chromium scenarios')
+  await browser.close()
+ (R/'test-results.json').write_text(json.dumps({'passed':len(results),'checks':results,'runtime_errors':errors,'environment':'Chromium; in-memory storage; simulated GitHub API; NOT physical iPad/Safari; NO live repository writes'},ensure_ascii=False,indent=2))
+ print('TOTAL',len(results),flush=True)
+if __name__=='__main__':asyncio.run(main())

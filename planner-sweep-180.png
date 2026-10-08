@@ -1,0 +1,59 @@
+# Протокол Planner 2026.10.08.2
+
+## Статус выпуска
+
+Код подготовлен в этой сессии; публикация в рабочую ветку не выполнялась. Последний проверенный рабочий HTML имеет blob 071c93671eabe207b9fa60d13962a176af145e5d. В пакете нет progress.json и пользовательских ключей. Тестовые фикстуры не содержат пользовательских задач.
+
+## Сравнение механизма Mega Focus
+
+При трёх автоматических обновлениях исходный код выполнил 19 отсоединений исходных карточек от контейнеров. В исправленном коде — 0. Считались события удаления исходных узлов из родителей, а не число сетевых запросов. Исходная карточка этапа после первой пересборки заменялась новым узлом, поэтому счётчик не равен числу карточек, умноженному на число обновлений.
+
+Это подтверждённое изменение жизненного цикла DOM. В Chromium полное внешнее «разъезжание», описанное пользователем на iPad, не воспроизвелось; поэтому результат не выдается за проверку физического Safari. Исправление устраняет саму пересборку, опасную для открытого фокусного представления, вместо очередной правки z-index или повторной анимации.
+
+## Пройденные группы (30)
+
+1. Badge default counts two unfinished current priorities, not done/tomorrow/later
+2. All four badge combinations and clearing the OS badge at zero
+3. Completion/uncompletion updates badge count
+4. Desktop task is added on leaving the field; pauses do not split draft text
+5. Direct Save commits new Steps without Enter or a preceding blur
+6. Direct Save commits an existing inline task editor
+7. Direct Save commits a new stage task
+8. Repository-only autofill is not inserted into Steps
+9. Credential inputs belong to a separate form, not task-entry fields
+10. Fresh Sync setup prefills the repository but never embeds an access token
+11. Existing misplaced addresses are removed narrowly, with a recoverable copy; real task text stays
+12. Badge permissions requested only on a user action; denied/unsupported APIs fail gracefully
+13. Drafts stay separate between current/later lists instead of entering the wrong list
+14. Save does not commit or discard a character that is still being composed
+15. Badge sources and task counts transfer through the same sync payload
+16. Six automatic remote updates keep every Mega card and Save toolbar attached (zero card detachments)
+17. Remote highlights/list-view settings do not replace the current Mega Focus selection
+18. Remote stage content updates inside its existing card, without reseating it
+19. Phone Save reaches an already-open tablet Mega Focus; tablet Save reaches the phone in reverse
+20. Local-tab reception uses the same stable Mega rendering path and marks unsent changes correctly
+21. Scroll anchor stays in position when remote tasks are inserted above it
+22. iPad Mega Save commits an open editor without disturbing cards
+23. Editing during a delayed Save acknowledgement remains intact and can be saved next
+24. Permission failure keeps the local task; explicit retry succeeds
+25. Context-menu bold and emoji still work after repeated remote updates
+26. Exit and re-entry restore correct card ownership after all sync updates
+27. Portrait tablet automatic reception retains the same card and parent
+28. Phone 320/390/430px retains 100% scale, 16px fields and both badge switches
+29. Eight icon PNGs are rendered from the same drawing used by the app selector
+30. No runtime JavaScript exceptions in the tested Chromium scenarios
+
+## Дополнительные проверки
+
+Все встроенные блоки JavaScript прошли node --check. В рабочем HTML отсутствуют тестовые hooks, TEST_ONLY и тестовый адрес test/planner. Иконки выведены функцией приложения, используемой самим меню выбора. Проверено, что в ZIP нет progress.json.
+
+## Границы испытаний
+
+Chromium исполнял реальный HTML и обработчики интерфейса. Хранилище было синхронной моделью localStorage; обмен с GitHub — моделируемым Contents API с проверкой SHA и ошибками. Проверка вызовов setAppBadge/clearAppBadge не подтверждает показ значка конкретной версией iOS. Перенос с телефона на планшет проверялся отдельными браузерными контекстами; испытание локальной вкладки использовало моделируемое событие/обновление её хранилища. Реальные браузерные профили пользователя, расширения, сетевые ключи и физические устройства не затрагивались.
+
+Для воспроизведения: установить Python Playwright, указать Chromium в переменной окружения CHROMIUM при необходимости и запустить verification/test_repair.py. В тестах заблокирована реальная сеть. Тест пишет отчёт рядом с собой и регенерирует иконки из функции приложения.
+
+## Контрольная сумма HTML
+
+SHA-256: b3666223407975aeb0ed8f9f89f8824591010bcb8c1f16378c622ca5b1220ce6
+Git blob: e103e066b1e8318c6c22e6eecba2cc88c5e0384d
