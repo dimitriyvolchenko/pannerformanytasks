@@ -1,0 +1,69 @@
+name: Validate mobile layout and blue check icons
+on:
+  push:
+    branches: [fix/mobile-scale-icons-20261008]
+permissions:
+  contents: write
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Reconstruct hash-verified candidate without modifying plans
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import base64, gzip, json, hashlib
+          encoded=''.join(Path(f'tools/mobile-icon/part{i}.txt').read_text() for i in range(4))
+          packed=base64.b64decode(encoded,validate=True)
+          assert hashlib.sha256(packed).hexdigest()=='6bc481223db40954307580a51da4a68aa610afee281e71b1ed580b85e6e7c9cd'
+          bundle=json.loads(gzip.decompress(packed))
+          source=Path('index.html').read_bytes()
+          blob=hashlib.sha1(b'blob '+str(len(source)).encode()+b'\0'+source).hexdigest()
+          assert blob==bundle['base_blob'],blob
+          plan_hash=hashlib.sha256(Path('progress.json').read_bytes()).hexdigest()
+          Path('baseline-progress.sha256').write_text(plan_hash)
+          lines=source.decode('utf-8').splitlines(True)
+          for start,stop,replacement in reversed(bundle['patches']):
+              lines[start:stop]=replacement
+          fixed=''.join(lines).encode('utf-8')
+          assert hashlib.sha256(fixed).hexdigest()==bundle['output_sha256']
+          assert hashlib.sha1(b'blob '+str(len(fixed)).encode()+b'\0'+fixed).hexdigest()==bundle['output_blob']
+          Path('fixed.html').write_bytes(fixed)
+          Path('native.cjs').write_text(bundle['native'],encoding='utf-8')
+          assert hashlib.sha256(Path('progress.json').read_bytes()).hexdigest()==plan_hash
+          print('PASS Candidate reconstructed exactly; live plan unchanged')
+          PY
+      - name: Install pinned native browser testing tools
+        run: |
+          npm install --no-save --ignore-scripts playwright@1.56.1
+          npx playwright install --with-deps chromium webkit
+      - name: Native phone tablet desktop synchronization and icon regressions
+        run: node native.cjs
+      - name: Stage tested files only without moving main or writing plans
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import base64,json,hashlib,os,urllib.request,subprocess
+          assert subprocess.check_output(['git','diff','--name-only','--','progress.json']).strip()==b''
+          assert hashlib.sha256(Path('progress.json').read_bytes()).hexdigest()==Path('baseline-progress.sha256').read_text()
+          assert hashlib.sha256(Path('fixed.html').read_bytes()).hexdigest()=='65ff200aa78d9ce829827ac5389c6c530acaeac201f9b6677021abc54fe70da7'
+          files=[('fixed.html','index.html')]+[(f'assets/icons/planner-{art}-{size}.png',f'assets/icons/planner-{art}-{size}.png') for art in ['sweep','check'] for size in [32,180,192]]
+          staged={}
+          for source,target in files:
+              data=Path(source).read_bytes()
+              expected=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+              req=urllib.request.Request('https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/git/blobs',data=json.dumps({'content':base64.b64encode(data).decode(),'encoding':'base64'}).encode(),method='POST',headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','Content-Type':'application/json','X-GitHub-Api-Version':'2022-11-28'})
+              with urllib.request.urlopen(req,timeout=30) as r:
+                  result=json.load(r)
+              assert result['sha']==expected
+              staged[target]=expected
+              print('STAGED '+target+'='+expected)
+          print('NATIVE_RESULTS '+Path('native-results.json').read_text())
+          print('PASS Objects staged only. No branch changed. progress.json untouched.')
+          PY
