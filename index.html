@@ -28,7 +28,7 @@ body > #toast{z-index:400}
 #btnLogo{position:relative}#plannerBadgeTotal:not(:empty){position:absolute;right:-5px;top:-7px;background:#ec3e50;color:#fff;border:2px solid var(--card);border-radius:20px;font:700 10px/17px system-ui;min-width:20px;padding:0 4px;pointer-events:none}
 #todayBox .th,#tasksBox .th{flex-wrap:wrap;gap:6px}#todayBox .th b:not(.badge-number),#tasksBox .th b:not(.badge-number){min-width:0}
 #megaOv .mgsettled{overflow-anchor:none}#megaOv{overflow-anchor:none}
-@media(min-width:1401px){#hero .badge-word{display:none}#hero .planner-badge-toggle{padding:4px 5px}#hero #todayBox .th,#hero #tasksBox .th{gap:4px}}
+@media(min-width:1401px){#hero .badge-word{display:inline}#hero .planner-badge-toggle{padding:4px 5px}#hero #todayBox .th,#hero #tasksBox .th{gap:4px}}
 @media(pointer:coarse){.planner-badge-toggle{min-height:34px;padding:6px 8px}}
 </style>
 
@@ -2787,6 +2787,94 @@ html.phone-ui{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100
 .phone-ui #icoOverlay .icorow{grid-template-columns:repeat(auto-fit,minmax(96px,1fr))}
 </style>
 
+<style id="planner-whole-copy-v4">
+/* Three deliberate themes. Gray is a medium slate surface, not near-black. */
+body.gray{
+ --bg:#646B75;--card:#858D97;--line:#9BA3AE;--line2:#ADB6C3;
+ --ink:#FCFDFF;--ink-dim:#EDF1F7;--ink-faint:#D7DEE8;
+ --blue:#ACCBFF;--blue2:#C4D9FF;--blue-soft:#6C7E98;--blue-ink:#F0F6FF;
+ --green:#C1EAD1;--green-soft:#697E74;--redp:#FFD0C8;--red-soft:#8B7678;
+ --peach:#FFE1B9;--peach-soft:#8B8172;--todaybg:#878479;--todayline:#B7B2A4;--todayhover:#929084;--todaydot:#D0CBBB;
+ --weekbg:#73847C;--weekline:#A2B8AA;--weekhover:#82958A;
+ --glass:#757E8A;--glass2:#707985;--glass3:#858E9A;--hover:#929CA9;--sunk:#717B88;
+ --track:#5C6674;--track2:#687280;--barline:#A2B6D0;--dotline:#C0CBD9;--ringline:#C2CCD9;
+ --bpink:#EEF3FC;--bpgrid:#D6E1F4;--bpgrid-o:.14;--bink:#F6FAFF;
+ --sh-s:0 12px 32px -18px #222B36;--sh-c:0 8px 24px -16px #222B36;--sh-m:0 18px 52px -20px #25303E;
+ color-scheme:dark;
+}
+body.gray #tasksBox{--tkbg:#738A7F;--tkline:#AEC5B8;--tkhover:#839B8F;--tkdot:#C3DDCC}
+body.gray #timeoffBox{--offbg:#918178;--offline:#BDADA2;--offhover:#9E8F86;--offdot:#E9CCBA}
+body.gray #parBox{background:#7B899E!important;border-color:#B5C8E4!important}
+body.gray #totalBox{background:linear-gradient(130deg,#7187A5,#7A8CA5)!important}
+body.gray .today .th b,body.gray #tasksBox .th b,body.gray #timeoffBox .th b{color:#FCFDFF!important}
+body.gray .btn,body.gray .pbtn,body.gray .swbtn,body.gray .mini-btn{background:var(--card);color:var(--ink);border-color:var(--line2)}
+body.gray input,body.gray textarea,body.gray select,body.gray .tadd input{background:#677585!important;color:#fff!important;border-color:#ADBBD0!important}
+body.gray input::placeholder,body.gray textarea::placeholder{color:#E1E8F2;opacity:1}
+body.gray .thsw{background:#707E90;border-color:#AEBACB}
+body.gray .thsw .knob{transform:translateX(15px);background:#CBD6E6}
+body.gray .overlay{background:rgba(34,43,57,.6)}
+body.gray .due,body.gray .ready-note{color:#fff!important}
+body.gray #toast{background:#F2F6FC;color:#29313B}
+#btnTheme{width:auto;min-width:104px;padding-right:8px}
+#btnTheme .theme-label{display:block;margin-left:59px;font:600 10px/1.2 system-ui;color:var(--ink)}
+/* The badge switch never gets its own dim veil. A yielded CARD can still be
+   deliberately dimmed by the user's separate Highlight/Yield control. */
+body .planner-badge-toggle,body .planner-badge-toggle:not(.on){
+ opacity:1!important;filter:none!important;background:var(--card)!important;color:var(--ink)!important;
+ border:1px solid var(--line2)!important;box-shadow:none!important;min-width:43px;justify-content:center;
+ font:600 11px/1.2 system-ui;min-height:29px;padding:4px 7px!important;
+}
+body .planner-badge-toggle.on{font-size:18px;border-color:var(--blue)!important;background:var(--blue-soft)!important}
+.planner-badge-toggle::before,.planner-badge-toggle::after{display:none!important}
+#stepsBox .tadd input,body.gray #stepsBox .tadd input,body.korean #stepsBox .tadd input{
+ background:#303B4A!important;color:#F4F7FC!important;-webkit-text-fill-color:#F4F7FC;
+ border:1.5px solid #6D819C!important;box-shadow:inset 0 1px 3px rgba(0,0,0,.15)!important;
+}
+#stepsBox .tadd input::placeholder{color:#CCD8E7!important;-webkit-text-fill-color:#CCD8E7;opacity:1}
+#stepsBox .tadd input:focus{background:#273443!important;border-color:#A8C7EE!important;box-shadow:0 0 0 3px rgba(123,164,216,.22)!important}
+#wholeSyncOverlay{z-index:450!important}
+#wholeSyncOverlay .modal{max-height:calc(100dvh - 28px);overflow:auto}
+#wholeSyncOverlay .body{line-height:1.55}
+#wholeSyncOverlay .whole-copy-card{padding:10px 13px;border:1px solid var(--line2);border-radius:11px;margin:10px 0;background:var(--sunk)}
+#wholeSyncOverlay .whole-copy-card p{margin:5px 0;overflow-wrap:anywhere}
+#wholeSyncOverlay .whole-actions{display:flex;flex-wrap:wrap;gap:8px}
+#wholeSyncOverlay .whole-actions button{white-space:normal;min-height:42px;flex:1 1 42%}
+#wholeChoiceStatus{color:var(--redp);font-weight:600}
+/* Mobile: useful lists first, global tools second, project stages last. */
+.phone-ui #hero{display:flex!important;flex-direction:column!important;position:relative!important;top:auto!important;gap:14px;min-width:0}
+.phone-ui #hero>.hero-row{order:-10;display:flex!important;flex-direction:column!important;gap:12px;min-width:0}
+.phone-ui #hero .prio-col,.phone-ui #hero .hero-right{display:contents!important}
+.phone-ui #hero>.toprow{order:10}
+.phone-ui #hero>.toolstrip{order:11}
+.phone-ui #hero>#plannerStatus{order:12}
+.phone-ui #hero #tasksBox{order:0!important}
+.phone-ui #hero #todayBox{order:1!important}
+.phone-ui #hero #timeoffBox{order:2!important}
+.phone-ui #hero #parBox{order:3!important}
+.phone-ui #hero #totalBox{order:4!important}
+.phone-ui #hero #launchBox{order:5!important}
+.phone-ui #hero #weekBox{order:6!important}
+.phone-ui #hero .today,.phone-ui #hero .total{width:100%!important;max-width:100%!important;min-width:0!important;flex:0 0 auto!important}
+.phone-ui .planner-badge-toggle{min-height:34px;min-width:45px}
+.phone-ui #megaOv .mgin{display:flex!important;flex-direction:column!important;padding-top:16px!important;gap:14px!important;min-width:0}
+.phone-ui #megaOv #mgTop,.phone-ui #megaOv #mgCols,.phone-ui #megaOv #mgTopL,.phone-ui #megaOv #mgTopM,.phone-ui #megaOv #mgTopR,
+.phone-ui #megaOv #mgL,.phone-ui #megaOv #mgR,.phone-ui #megaOv #mgT,.phone-ui #megaOv #mgRest,.phone-ui #megaOv #mgProjs{display:contents!important}
+.phone-ui #megaOv #tasksBox{order:0!important}
+.phone-ui #megaOv #todayBox{order:1!important}
+.phone-ui #megaOv #timeoffBox{order:2!important}
+.phone-ui #megaOv #parBox{order:3!important}
+.phone-ui #megaOv #totalBox{order:4!important}
+.phone-ui #megaOv #launchBox{order:5!important}
+.phone-ui #megaOv #weekBox{order:6!important}
+.phone-ui #megaOv #megaBar{order:20!important;position:static!important;width:auto!important;min-width:0;flex-wrap:wrap;border:1px solid var(--line2);border-radius:12px}
+.phone-ui #megaOv .proj{order:30!important;min-width:0;width:100%!important;max-width:100%!important}
+.phone-ui #megaOv .megaitem{flex:0 0 auto!important;transform:none!important;animation:none!important;opacity:1;max-width:100%;min-width:0}
+
+body.gray #launchBox{--lnbg:#7C879C;--lnline:#B7C5DC;--lnhover:#8796AD;--lndot:#CCDAEE}
+body.gray #launchBox .th b,body.gray #parBox .th b{color:#FCFDFF!important}
+body.gray .lnlist .empty{color:#EDF1F7!important}
+
+</style>
 <header class="top" id="hero">
     <i class="bpframe" aria-hidden="true"></i>
     <div class="toprow">
@@ -2943,7 +3031,7 @@ html.phone-ui{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100
 
   <footer class="note">
     <div class="footnote hidden" id="footNote">
-    <p><b>C_MR.</b> The second tab holds the contents of the Recommendations - one box per section, with the chapter it belongs to in its name and its own date up to 30 September. The steps inside each box are the tasks. Each line carries three circles instead of one - <b>i</b> when the text has been carried in from another book, <b>e</b> when it has been worked over, and the ordinary one for the final reading. Only the ordinary circle counts towards the blueprint; the tally of the other two sits under the counter in Mission control. Double-click the number of work days on any line to give that line its own deadline.<br><br><b>Projects.</b> The row of buttons at the top of Mission control holds your projects, and <b>+</b> starts another one. Every setting - the theme, the bold type, the size of this panel, the look of the notes, the captions, the colour of the strip, the folder Save writes into - belongs to the planner as a whole and applies to every project, the ones here now and the ones made later; only the plan itself lives inside its own project. A new project opens completely empty: press <b>+ add a stage</b> under the board, type its name, then add tasks inside it - or open <b>tree</b> and type the whole plan at once. Click a button to switch; each project keeps its own stages, notes, dates, drawing and look, and one press of Save writes them all into a single file. Two small arrows on the open project move it along the row, so the projects stand in the order you want them. A stage can change project too: the crossed-arrows button in the top right corner of a card opens the list of the other projects, and one press carries the whole stage over - its name, its date, its period, every task and subtask with their ticks, their own dates, the i and e marks and the translations on the back. On this board the stage disappears; in the other one it appears at the end. Double-click a project button to rename it (the title above the plan follows), and the small cross on the open one deletes it - press it twice, and the last remaining project is never deleted. Double-click any stage name on the board to rename it in place. The small arrows button in the top right corner of a card turns it over. The other side is the same card - the same number, the same heading, the same date and the same lines in the same order - and every line there can be typed over. Until you touch a line it simply repeats the front, so you translate straight on top of the words. What you write on the back stays on the back: the front is never changed, turning the card to and fro keeps both sides, and a line added on the front appears on the back as a copy of itself.<br><br><b>How it works.</b> Tick tasks to assemble the blueprint - it grows in whole stages, from the ground up, and every new line flies in and settles into place. Row buttons: S adds a subtask, G switches English/Russian, the pencil edits, the number shows the WORK days left for that task - Monday to Friday, weekends are not counted (click it for details), the cross deletes (press ? to confirm). Drag anything by its grip handle (the dotted column): whole stages, single tasks and subtasks - between stages too. Reorder stages with the small arrows next to the number, double-click the number and type the place it should take, or drag a card by its number - the numbering and the calendar on the left follow. At the bottom of every stage: <b>priority</b> lifts that card towards you, and <b>yield</b> in the right corner appears on a lifted card and gives way. The moment one stage gives way the two ranks pull apart: the stage that keeps full priority comes further forward - higher, larger, with a deeper shadow - while the ones that gave way step back, lie almost flat and lose their colour altogether - they turn grey, which on a bright screen is the difference the eye catches first. They stay marked, and colour returns under the pointer. The card in front also takes a little more room above and below itself, so its glow never lands on the card above it. Press yield off, or switch priority off, and everything returns to one level. <b>highlight</b> puts the light on that stage: the whole page behind it - the panel, the drawing, both calendars, the other stages - steps into the shade, and only the lit box stays in colour, lifted towards you. Press it on a second stage and the light holds them both. The priority list in Mission control, the launch pad and the counter box beside them carry the same button under them, so any of them can be lit beside a stage. <b>yield light</b> appears on a lit box and gives way inside the light: that box turns grey and a step dimmer than the other lit ones, while the page behind stays dark. Notes take the light too: right-click a sticker (hold it down on a phone) and the menu opens with <b>Highlight this note</b> at the top - the note then stands alone in the light with the page dark behind it, and the same menu offers <b>Yield light</b> and <b>Put the light out</b>. The floating chip that used to say the light was on is gone. In its place, beside the <b>Day</b> button, stands a proper switch: <b>LIGHT</b>. With the light on it reads LIGHT ON, its lamp slides across and turns amber, and one press puts the light out everywhere; press it again and the light comes back exactly on the boxes that had it, so it really is a switch and not a one-way door. Escape still puts the light out too. While the light is on, the panel steps into the shade behind a veil rather than fading away, so the row of tabs - the projects, Day and the switch itself - stays readable and reachable the whole time. The bottom bar takes the light as well: the small lamp on its top right corner lights it, and the whole band - the calendar, the dates, the weeks, the words and the forensic sign on it - stands in full colour while the rest of the page is dark. Press the lamp again to put it out. <b>dim</b> fades everything else out so it stays in focus, <b>hide done</b> folds away every finished line, <b>hide all</b> folds away the whole list and leaves one line saying how much is still to do, and <b>in process</b> parks the stage - the card fades a little and a note floats above it where you type what the stage is waiting for and press Enter. Click that note to reword it, press its cross when the stage moves again (the words are kept for next time). The <b>P</b> beside a task or subtask keeps it in focus while the rest of the stage fades - press it on as many lines as you need, they all stay lit. <b>Select any text on the page and right-click it</b> for Word-style formatting: bold, italic, underline, strikethrough, four sizes, text colour, highlight and alignment. Without a selection the ordinary browser menu appears. The counter box says how many working days are left and turns them into whole working weeks - Saturdays and Sundays are not counted, so fourteen days with four weekend days among them read as two working weeks. Both calendars are divided into weeks (W1, W2...). Double-click the "from" badge to move the start date and the "due" badge to move the finish - both timelines recalculate. Under the date on every stage sits <b>+ time period</b>: press it and name the first and the last day you actually sit with that stage. The badge then shows those two days and how many working days they hold, and it turns green while today falls inside them, so at a glance you see which stages are running right now. The deadline says when a stage must be finished; the period says when it is being worked on - they are separate, and either can be cleared without touching the other. Beside the deadline sits a third badge, <b>+ start</b>: press it and name the day this stage is meant to begin. The badge then carries that day and changes colour on its own - blue while the day is still ahead, amber on the day itself, pink once the day has gone by and nothing has been started, green once it has. <b>launch</b> in the row of buttons opens the launch board: everything that has been launched at the top, everything still waiting for its day underneath, across every project, each with its start date, its deadline and the day it was launched. <b>display</b> at the foot of that window puts the <b>launch pad</b> into Mission control, where it stands as the second box beside Priority for today - Priority for the week is gone, and the pad has taken its place. On the pad stands every stage that carries a start date - not only the ones whose day has come - each with a rocket in a coloured circle, leaning as a rocket in flight does. The ones that should have started already come first with a pink ring, then the ones starting today in amber, then the days still ahead, and the launched ones settle at the bottom. A long pad scrolls inside its own box instead of stretching the panel. Press the rocket and the stage is launched: the rocket loses its colour and goes grey, a small <b>launched</b> sign appears at the right of the row, and the badge on the card itself turns green. Press it again and the stage goes back on the pad. The small figure on the <b>launch</b> button counts what is still waiting, and the rockets in the launch board work there too, for every project at once. The round C button on the blueprint switches between nineteen drawings: five spacecraft, six of Leonardo da Vinci's machines, the Kremlin tower, the Tower of Pisa, a frog dissection plate, a giant bird, a giant duck, a classic iPod, an AK-pattern rifle on a museum stand and a training grenade. The blueprint is cut into 200 stages; adding or removing tasks and subtasks re-divides them automatically, and every counter - completed, stages built, both calendars - is recalculated at once. The Sticker button on the right adds yellow notes: type in them (double-click), draw on them with Apple Pencil on an iPad (right-click for colors, eraser and more), drag them anywhere, resize by the corner, and pull a line from the round handle to link two stickers. A note remembers its PLACE on the page rather than its pixel, so it holds the same spot on every screen: put it in the middle of the computer screen and it is in the middle of the iPad too, instead of arriving at the far right and having to be dragged back after every sync. Notes made on the earlier versions are simply kept inside the page, never past its right edge, and the round Sticker button is brought back onto the glass in the same way if it was left beyond the edge of a smaller screen. Progress is saved in this browser automatically; use Save/Load to move it elsewhere, <b>top sign</b>, <b>left sign</b> and <b>right sign</b> set the three captions (text, colour, size up to 200 px, automatic shrinking when the window narrows, and delete-them-all). <b>list</b> in the Mission control corner folds every stage into one compact list. The <b>&minus; 100% +</b> control beside the theme switch makes this whole panel smaller or bigger - from 20 to 160 per cent, in steps of five above 70 and of ten below it, so a couple of presses turn Mission control into a thin strip and leave the board the rest of the screen (double-click it to go back to normal). The four blocks of the panel - the title, Priority for today, the launch pad and the counter - are not tied to any screen size: they pack themselves into as many columns as the width allows, four on a wide screen, two or three on a tablet, one on a phone, and they re-pack as soon as the window changes or the panel is made smaller, so no empty space is left beside them. The title block on the left is now a narrow column and everything inside it stands one under another - the words MISSION CONTROL, then the theme switch with the darkness knob and B beside it, then the size control, then the name of the project, and under it the "from" and "due" badges. It keeps only the width those lines need, and the two boxes beside it take the room it gives back, so they are noticeably wider and hold long wording on one line. On a computer the panel also steps out of the reading column and runs the whole width of the screen: it starts just after the forensic sign and the calendar with its icons on the left, and reaches the right edge. Nothing narrows it any more. The width is worked out from one number, the width of the window, and from nothing else - not from the notes, not from the round Sticker button, not from the sign; and both edges are held so that they can only move outwards, never inwards. So the panel can never come out narrower than it was in the ordinary middle column, whatever lies on top of it. The notes and the Sticker button are drawn above the panel and simply cover it where they overlap: a note can be carried right across Mission control and the panel underneath keeps every word of its width. <b>unfix</b> in the row of buttons lets the panel off its pin: press it and Mission control stops holding the top of the window and scrolls away with the page, leaving the whole screen to the plan; the drawing then keeps the top of the window by itself. Press <b>fix</b> and it is pinned again. The choice holds for every project. The plan and the drawing below keep their comfortable width; it is Mission control alone that spreads, so on a large monitor the two boxes beside the title grow by half as much again. It never comes out narrower than before, and below 1000 pixels - a phone, a tablet held upright - nothing changes. Under the "due" badge stand <b>save</b> and <b>take</b>, side by side - the two halves of the sync, at hand without opening it. They are proper buttons: a comfortable size on a computer and half again as large on a phone, where the two of them take the full width of the panel and are made for a thumb. <b>save</b> sends this copy of the progress to GitHub, exactly as "Send this copy" does inside the sync window; <b>take</b> brings the newest copy back from there, exactly as "Take the copy from GitHub". The button turns green when it worked and pink when it did not, and the toast says what went wrong. If the repository, the file and the key have not been named yet, the first press simply opens the sync window. The progress file itself is still written by <b>Save progress to file</b> in the row below. <b>Things</b> next to "as text" hands the open project to the Things app - stages become headings, tasks become to-dos with their deadlines, subtasks become checklist lines - and takes a list back from it if you paste one in. The two lines at the bottom answer different questions and never mix them any more. The thin upper line is the calendar: it carries a hair for every day, a firmer line at every Monday, a soft band for every other week, the dates of the stages, the week numbers and today, and the words beside it count the weeks and the working days left. The thick bar under it is the work done - the star on it moves only when tasks are ticked, and the small caption on its right says how many of them are finished. The grey circle on the left calendar watches the clock in the same way as the upper line. <b>hide and seek</b> opens a tree of every part of the page - colour, size, position and hiding for each. <b>Priority for today</b> in Mission control keeps the handful of things that matter right now: every line stays in sight however many you add, the wording is shown in full, a double-click reopens it for changes, and every project keeps its own list. Beside it stands the <b>launch pad</b>, the second box of the panel and by far the wider of the two - the day list keeps about two fifths of the room and the pad takes the rest, since its lines are whole stage names. Right-click a line in the list - hold it down on an iPad - and a small menu gives it a look of its own: four sizes, bold, italic, underline and strike, seven colours, and a tray of thirty-two emoji, each one going to the front of the line. "Plain again" takes it all off. The look belongs to the line, so it travels with the project, goes to GitHub with everything else and comes back the same on the next device. The list also has a <b>switch</b> beside its name. Press it and the box really turns: the paper swings away edge-on, changes its face while nobody can read it, and swings back with a band of light running across it, the lines settling into place one after another. "Priority for today" becomes <b>Priority for tomorrow</b>, the paper takes a dashed edge so the two are never confused, and everything written there waits for its turn - the running list is not touched. Nothing around the box moves while it turns, and a browser asked to keep motion down simply changes the face without the turn. Press switch again to come back. On the turned-over side a button says <b>move to today</b> with the number of lines waiting: one press carries them all across, unticked and ready, and the box turns back by itself. It also happens on its own: when the date changes, tomorrow's lines become today's - at the opening of the page and, if the planner is left running, within a few minutes of midnight. Whatever was already in the running list stays where it is. <b>log</b> in the row of buttons keeps everything that has been ticked off in the list, day by day, newest first, with the minute it happened. Unticking a line takes its entry back out, so the log always says what is really done. <b>clear the finished lines</b> at the bottom of the log takes every ticked line out at once - they stay in the log - and <b>empty the log</b> forgets it all (press it twice). Each project keeps its own lists and its own log. The <b>Day</b> button at the far right of the project row opens the day page: everything ticked today, in every project, with the time it happened; four figures - closed today, the tally of this project, the working days left and how many lines a day the rest of the plan asks for; and under them a plain reading of whether it still fits the date. It compares the pace of the last week with the pace the date needs, says where the present pace lands and how many working days of slack or delay that means, names the stages that are past their dates and the ones due within a week, and tells you how much to add a day to catch up. The last seven days and the other projects are listed underneath, and <b>folder</b> next to Save pins a folder: from then on every press of Save drops a NEW progress file there with the time in its name, down to the second - so you can always go back to any moment (Chrome and Edge on a computer can hold a folder; Safari and Firefox cannot, and there every save goes to Downloads). <b>sync</b> beside it keeps the plan the same on every device through a repository of your own on GitHub: name the repository, the file and an access key once here and once on the phone, and the planner writes the progress there and reads the newer copy back when the page opens. Turn <b>auto</b> on and it does both by itself - a few seconds after every change, and once at every opening; leave it off and the two buttons do it by hand. Name each device in the <b>This device</b> field, and press <b>make this device the main one</b> on whichever you are working from: the main device sends by itself, the others only take, and their unsent changes show as a dot on the <b>sync</b> button until you press Send. Press the same button on another device and the lead moves there - the copy in GitHub carries the name of the device that wrote it and of the one that leads, so every device knows where the work is happening. The key is kept in that one browser, never inside a progress file and never in the repository, and <b>forget the key</b> clears it. If a device holds changes that were never sent, the planner says so instead of writing over them. On an iPad the Apple Pencil writes straight onto the page and onto the notes (a finger never draws - it scrolls); <b>pencil</b> below switches the pen between drawing and erasing, <b>clear pencil</b> wipes the page handwriting. The pale circles on the right of every stage, task and subtask are sticker anchors: pull a line onto one from a note and it turns into a real checkbox that counts towards everything - unlink it and it goes quiet again. Click or right-click a connector to change its shape, thickness, style, arrows, colour, add a label or delete it; <b>no dots</b> hides them in one stage, <b>sticker circles</b> everywhere. <b>note style</b> cycles three sticky-note designs - paper, minimal and classic. <b>hide sticker button</b> tucks the round Sticker button away and <b>hide stickers</b> makes every note and its lines invisible - nothing is deleted, press the same button again to bring them back. The little <b>switch</b> beside "Mission control" turns the dark theme on and off, and <b>B</b> next to it makes every word on the page bold: in the dark every panel, button and checkbox keeps its own outline and a pale halo instead of a shadow, so nothing dissolves into the background. The round knob right beside that switch sets how deep the dark goes: press it and a small slider appears - drag it left for a soft, smoky dark and right for an almost black one, "back to normal" returns to the middle setting. The light theme is never touched, and the level you choose holds for every project - and switching back out of the dark now really does take the whole page back, Mission control with it. <b>pink</b> below paints the timeline in exactly the colour of the strip the free hosting adds underneath it - the two become one band, and the scale, its marks and its dates turn white so they stand out on it. Right-click <b>pink</b> - or hold it down on a phone - if you want to set the shade yourself: pick it straight off the strip with the colour picker, choose one of the eight vivid pinks, or paste a colour code. If the hosting adds its own stripe along the bottom of the page (the free tiiny.host bar does), the timeline lifts itself above the stripe so nothing is covered. <b>trash</b> at the top of Mission control catches everything that is deleted, and the small figure on it says how much is waiting inside. A deleted line goes there with the stage it came from and with its own subtasks; a deleted stage goes there whole, with every task inside it; a deleted project goes there with all its stages, dates, notes and drawing. Press <b>trash</b> and the three of them stand in their own sections, newest first - one press of <b>restore</b> puts any of them back where it was, a line into its stage, a stage at the end of its board, a project into the row of tabs with everything it held. The last three deleted projects survive closing the page; lines and stages wait there for as long as the page is open. <b>empty the trash</b> clears it for good - press it twice. <b>mega focus</b> in the row of buttons empties the screen of everything except the light. Press it with one or more boxes lit and the page takes itself apart - every piece folds back into the depth and blurs away - while a band of light sweeps down the screen and the lit boxes fly in from their own corners, turning in the air and locking into place one after another, each across the whole width. They are the real boxes, carried over and not copied, so every button on them still works and every tick still counts. <b>back to the page</b> at the top, or Escape, sends them flying back and the page reassembles exactly as it was. Light nothing and mega focus says so instead of emptying the screen. And "clear the previous changes" wipes everything back to the original content (double confirmation plus a 4-digit code).</p>
+    <p><b>C_MR.</b> The second tab holds the contents of the Recommendations - one box per section, with the chapter it belongs to in its name and its own date up to 30 September. The steps inside each box are the tasks. Each line carries three circles instead of one - <b>i</b> when the text has been carried in from another book, <b>e</b> when it has been worked over, and the ordinary one for the final reading. Only the ordinary circle counts towards the blueprint; the tally of the other two sits under the counter in Mission control. Double-click the number of work days on any line to give that line its own deadline.<br><br><b>Projects.</b> The row of buttons at the top of Mission control holds your projects, and <b>+</b> starts another one. Every setting - the theme, the bold type, the size of this panel, the look of the notes, the captions, the colour of the strip, the folder Save writes into - belongs to the planner as a whole and applies to every project, the ones here now and the ones made later; only the plan itself lives inside its own project. A new project opens completely empty: press <b>+ add a stage</b> under the board, type its name, then add tasks inside it - or open <b>tree</b> and type the whole plan at once. Click a button to switch; each project keeps its own stages, notes, dates, drawing and look, and one press of Save writes them all into a single file. Two small arrows on the open project move it along the row, so the projects stand in the order you want them. A stage can change project too: the crossed-arrows button in the top right corner of a card opens the list of the other projects, and one press carries the whole stage over - its name, its date, its period, every task and subtask with their ticks, their own dates, the i and e marks and the translations on the back. On this board the stage disappears; in the other one it appears at the end. Double-click a project button to rename it (the title above the plan follows), and the small cross on the open one deletes it - press it twice, and the last remaining project is never deleted. Double-click any stage name on the board to rename it in place. The small arrows button in the top right corner of a card turns it over. The other side is the same card - the same number, the same heading, the same date and the same lines in the same order - and every line there can be typed over. Until you touch a line it simply repeats the front, so you translate straight on top of the words. What you write on the back stays on the back: the front is never changed, turning the card to and fro keeps both sides, and a line added on the front appears on the back as a copy of itself.<br><br><b>How it works.</b> Tick tasks to assemble the blueprint - it grows in whole stages, from the ground up, and every new line flies in and settles into place. Row buttons: S adds a subtask, G switches English/Russian, the pencil edits, the number shows the WORK days left for that task - Monday to Friday, weekends are not counted (click it for details), the cross deletes (press ? to confirm). Drag anything by its grip handle (the dotted column): whole stages, single tasks and subtasks - between stages too. Reorder stages with the small arrows next to the number, double-click the number and type the place it should take, or drag a card by its number - the numbering and the calendar on the left follow. At the bottom of every stage: <b>priority</b> lifts that card towards you, and <b>yield</b> in the right corner appears on a lifted card and gives way. The moment one stage gives way the two ranks pull apart: the stage that keeps full priority comes further forward - higher, larger, with a deeper shadow - while the ones that gave way step back, lie almost flat and lose their colour altogether - they turn grey, which on a bright screen is the difference the eye catches first. They stay marked, and colour returns under the pointer. The card in front also takes a little more room above and below itself, so its glow never lands on the card above it. Press yield off, or switch priority off, and everything returns to one level. <b>highlight</b> puts the light on that stage: the whole page behind it - the panel, the drawing, both calendars, the other stages - steps into the shade, and only the lit box stays in colour, lifted towards you. Press it on a second stage and the light holds them both. The priority list in Mission control, the launch pad and the counter box beside them carry the same button under them, so any of them can be lit beside a stage. <b>yield light</b> appears on a lit box and gives way inside the light: that box turns grey and a step dimmer than the other lit ones, while the page behind stays dark. Notes take the light too: right-click a sticker (hold it down on a phone) and the menu opens with <b>Highlight this note</b> at the top - the note then stands alone in the light with the page dark behind it, and the same menu offers <b>Yield light</b> and <b>Put the light out</b>. The floating chip that used to say the light was on is gone. In its place, beside the <b>Day</b> button, stands a proper switch: <b>LIGHT</b>. With the light on it reads LIGHT ON, its lamp slides across and turns amber, and one press puts the light out everywhere; press it again and the light comes back exactly on the boxes that had it, so it really is a switch and not a one-way door. Escape still puts the light out too. While the light is on, the panel steps into the shade behind a veil rather than fading away, so the row of tabs - the projects, Day and the switch itself - stays readable and reachable the whole time. The bottom bar takes the light as well: the small lamp on its top right corner lights it, and the whole band - the calendar, the dates, the weeks, the words and the forensic sign on it - stands in full colour while the rest of the page is dark. Press the lamp again to put it out. <b>dim</b> fades everything else out so it stays in focus, <b>hide done</b> folds away every finished line, <b>hide all</b> folds away the whole list and leaves one line saying how much is still to do, and <b>in process</b> parks the stage - the card fades a little and a note floats above it where you type what the stage is waiting for and press Enter. Click that note to reword it, press its cross when the stage moves again (the words are kept for next time). The <b>P</b> beside a task or subtask keeps it in focus while the rest of the stage fades - press it on as many lines as you need, they all stay lit. <b>Select any text on the page and right-click it</b> for Word-style formatting: bold, italic, underline, strikethrough, four sizes, text colour, highlight and alignment. Without a selection the ordinary browser menu appears. The counter box says how many working days are left and turns them into whole working weeks - Saturdays and Sundays are not counted, so fourteen days with four weekend days among them read as two working weeks. Both calendars are divided into weeks (W1, W2...). Double-click the "from" badge to move the start date and the "due" badge to move the finish - both timelines recalculate. Under the date on every stage sits <b>+ time period</b>: press it and name the first and the last day you actually sit with that stage. The badge then shows those two days and how many working days they hold, and it turns green while today falls inside them, so at a glance you see which stages are running right now. The deadline says when a stage must be finished; the period says when it is being worked on - they are separate, and either can be cleared without touching the other. Beside the deadline sits a third badge, <b>+ start</b>: press it and name the day this stage is meant to begin. The badge then carries that day and changes colour on its own - blue while the day is still ahead, amber on the day itself, pink once the day has gone by and nothing has been started, green once it has. <b>launch</b> in the row of buttons opens the launch board: everything that has been launched at the top, everything still waiting for its day underneath, across every project, each with its start date, its deadline and the day it was launched. <b>display</b> at the foot of that window puts the <b>launch pad</b> into Mission control, where it stands as the second box beside Priority for today - Priority for the week is gone, and the pad has taken its place. On the pad stands every stage that carries a start date - not only the ones whose day has come - each with a rocket in a coloured circle, leaning as a rocket in flight does. The ones that should have started already come first with a pink ring, then the ones starting today in amber, then the days still ahead, and the launched ones settle at the bottom. A long pad scrolls inside its own box instead of stretching the panel. Press the rocket and the stage is launched: the rocket loses its colour and goes grey, a small <b>launched</b> sign appears at the right of the row, and the badge on the card itself turns green. Press it again and the stage goes back on the pad. The small figure on the <b>launch</b> button counts what is still waiting, and the rockets in the launch board work there too, for every project at once. The round C button on the blueprint switches between nineteen drawings: five spacecraft, six of Leonardo da Vinci's machines, the Kremlin tower, the Tower of Pisa, a frog dissection plate, a giant bird, a giant duck, a classic iPod, an AK-pattern rifle on a museum stand and a training grenade. The blueprint is cut into 200 stages; adding or removing tasks and subtasks re-divides them automatically, and every counter - completed, stages built, both calendars - is recalculated at once. The Sticker button on the right adds yellow notes: type in them (double-click), draw on them with Apple Pencil on an iPad (right-click for colors, eraser and more), drag them anywhere, resize by the corner, and pull a line from the round handle to link two stickers. A note remembers its PLACE on the page rather than its pixel, so it holds the same spot on every screen: put it in the middle of the computer screen and it is in the middle of the iPad too, instead of arriving at the far right and having to be dragged back after every sync. Notes made on the earlier versions are simply kept inside the page, never past its right edge, and the round Sticker button is brought back onto the glass in the same way if it was left beyond the edge of a smaller screen. Progress is saved in this browser automatically; use Save/Load to move it elsewhere, <b>top sign</b>, <b>left sign</b> and <b>right sign</b> set the three captions (text, colour, size up to 200 px, automatic shrinking when the window narrows, and delete-them-all). <b>list</b> in the Mission control corner folds every stage into one compact list. The <b>&minus; 100% +</b> control beside the theme switch makes this whole panel smaller or bigger - from 20 to 160 per cent, in steps of five above 70 and of ten below it, so a couple of presses turn Mission control into a thin strip and leave the board the rest of the screen (double-click it to go back to normal). The four blocks of the panel - the title, Priority for today, the launch pad and the counter - are not tied to any screen size: they pack themselves into as many columns as the width allows, four on a wide screen, two or three on a tablet, one on a phone, and they re-pack as soon as the window changes or the panel is made smaller, so no empty space is left beside them. The title block on the left is now a narrow column and everything inside it stands one under another - the words MISSION CONTROL, then the theme switch with the darkness knob and B beside it, then the size control, then the name of the project, and under it the "from" and "due" badges. It keeps only the width those lines need, and the two boxes beside it take the room it gives back, so they are noticeably wider and hold long wording on one line. On a computer the panel also steps out of the reading column and runs the whole width of the screen: it starts just after the forensic sign and the calendar with its icons on the left, and reaches the right edge. Nothing narrows it any more. The width is worked out from one number, the width of the window, and from nothing else - not from the notes, not from the round Sticker button, not from the sign; and both edges are held so that they can only move outwards, never inwards. So the panel can never come out narrower than it was in the ordinary middle column, whatever lies on top of it. The notes and the Sticker button are drawn above the panel and simply cover it where they overlap: a note can be carried right across Mission control and the panel underneath keeps every word of its width. <b>unfix</b> in the row of buttons lets the panel off its pin: press it and Mission control stops holding the top of the window and scrolls away with the page, leaving the whole screen to the plan; the drawing then keeps the top of the window by itself. Press <b>fix</b> and it is pinned again. The choice holds for every project. The plan and the drawing below keep their comfortable width; it is Mission control alone that spreads, so on a large monitor the two boxes beside the title grow by half as much again. It never comes out narrower than before, and below 1000 pixels - a phone, a tablet held upright - nothing changes. Under the "due" badge stand <b>save</b> and <b>take</b>, side by side - the two halves of the sync, at hand without opening it. They are proper buttons: a comfortable size on a computer and half again as large on a phone, where the two of them take the full width of the panel and are made for a thumb. <b>save</b> sends this copy of the progress to GitHub, exactly as "Send this copy" does inside the sync window; <b>take</b> brings the newest copy back from there, exactly as "Take the copy from GitHub". The button turns green when it worked and pink when it did not, and the toast says what went wrong. If the repository, the file and the key have not been named yet, the first press simply opens the sync window. The progress file itself is still written by <b>Save progress to file</b> in the row below. <b>Things</b> next to "as text" hands the open project to the Things app - stages become headings, tasks become to-dos with their deadlines, subtasks become checklist lines - and takes a list back from it if you paste one in. The two lines at the bottom answer different questions and never mix them any more. The thin upper line is the calendar: it carries a hair for every day, a firmer line at every Monday, a soft band for every other week, the dates of the stages, the week numbers and today, and the words beside it count the weeks and the working days left. The thick bar under it is the work done - the star on it moves only when tasks are ticked, and the small caption on its right says how many of them are finished. The grey circle on the left calendar watches the clock in the same way as the upper line. <b>hide and seek</b> opens a tree of every part of the page - colour, size, position and hiding for each. <b>Priority for today</b> in Mission control keeps the handful of things that matter right now: every line stays in sight however many you add, the wording is shown in full, a double-click reopens it for changes, and every project keeps its own list. Beside it stands the <b>launch pad</b>, the second box of the panel and by far the wider of the two - the day list keeps about two fifths of the room and the pad takes the rest, since its lines are whole stage names. Right-click a line in the list - hold it down on an iPad - and a small menu gives it a look of its own: four sizes, bold, italic, underline and strike, seven colours, and a tray of thirty-two emoji, each one going to the front of the line. "Plain again" takes it all off. The look belongs to the line, so it travels with the project, goes to GitHub with everything else and comes back the same on the next device. The list also has a <b>switch</b> beside its name. Press it and the box really turns: the paper swings away edge-on, changes its face while nobody can read it, and swings back with a band of light running across it, the lines settling into place one after another. "Priority for today" becomes <b>Priority for tomorrow</b>, the paper takes a dashed edge so the two are never confused, and everything written there waits for its turn - the running list is not touched. Nothing around the box moves while it turns, and a browser asked to keep motion down simply changes the face without the turn. Press switch again to come back. On the turned-over side a button says <b>move to today</b> with the number of lines waiting: one press carries them all across, unticked and ready, and the box turns back by itself. It also happens on its own: when the date changes, tomorrow's lines become today's - at the opening of the page and, if the planner is left running, within a few minutes of midnight. Whatever was already in the running list stays where it is. <b>log</b> in the row of buttons keeps everything that has been ticked off in the list, day by day, newest first, with the minute it happened. Unticking a line takes its entry back out, so the log always says what is really done. <b>clear the finished lines</b> at the bottom of the log takes every ticked line out at once - they stay in the log - and <b>empty the log</b> forgets it all (press it twice). Each project keeps its own lists and its own log. The <b>Day</b> button at the far right of the project row opens the day page: everything ticked today, in every project, with the time it happened; four figures - closed today, the tally of this project, the working days left and how many lines a day the rest of the plan asks for; and under them a plain reading of whether it still fits the date. It compares the pace of the last week with the pace the date needs, says where the present pace lands and how many working days of slack or delay that means, names the stages that are past their dates and the ones due within a week, and tells you how much to add a day to catch up. The last seven days and the other projects are listed underneath, and <b>folder</b> next to Save pins a folder: from then on every press of Save drops a NEW progress file there with the time in its name, down to the second - so you can always go back to any moment (Chrome and Edge on a computer can hold a folder; Safari and Firefox cannot, and there every save goes to Downloads). <b>sync</b> keeps complete copies through your own GitHub. The repository is prefilled; enter a private key only on each device. No main device is needed. <b>Save</b> sends this complete plan; <b>Take</b> receives the complete GitHub plan. When copies differ, choose <b>С этого устройства</b> to replace GitHub or <b>С другого устройства</b> to receive its copy. No tasks or settings are merged between competing versions. Recovery copies are kept before replacement. With auto on, a clean device checks for remote changes while open and when returning to the app; a differing copy can require your choice. The key never enters a progress file. The theme control cycles <b>light → gray → dark</b>. The badge control reads <b>badge</b> when off and <b>🥷🏻</b> when on. On an iPad the Apple Pencil writes straight onto the page and onto the notes (a finger never draws - it scrolls); <b>pencil</b> below switches the pen between drawing and erasing, <b>clear pencil</b> wipes the page handwriting. The pale circles on the right of every stage, task and subtask are sticker anchors: pull a line onto one from a note and it turns into a real checkbox that counts towards everything - unlink it and it goes quiet again. Click or right-click a connector to change its shape, thickness, style, arrows, colour, add a label or delete it; <b>no dots</b> hides them in one stage, <b>sticker circles</b> everywhere. <b>note style</b> cycles three sticky-note designs - paper, minimal and classic. <b>hide sticker button</b> tucks the round Sticker button away and <b>hide stickers</b> makes every note and its lines invisible - nothing is deleted, press the same button again to bring them back. The little <b>switch</b> beside "Mission control" turns the dark theme on and off, and <b>B</b> next to it makes every word on the page bold: in the dark every panel, button and checkbox keeps its own outline and a pale halo instead of a shadow, so nothing dissolves into the background. The round knob right beside that switch sets how deep the dark goes: press it and a small slider appears - drag it left for a soft, smoky dark and right for an almost black one, "back to normal" returns to the middle setting. The light theme is never touched, and the level you choose holds for every project - and switching back out of the dark now really does take the whole page back, Mission control with it. <b>pink</b> below paints the timeline in exactly the colour of the strip the free hosting adds underneath it - the two become one band, and the scale, its marks and its dates turn white so they stand out on it. Right-click <b>pink</b> - or hold it down on a phone - if you want to set the shade yourself: pick it straight off the strip with the colour picker, choose one of the eight vivid pinks, or paste a colour code. If the hosting adds its own stripe along the bottom of the page (the free tiiny.host bar does), the timeline lifts itself above the stripe so nothing is covered. <b>trash</b> at the top of Mission control catches everything that is deleted, and the small figure on it says how much is waiting inside. A deleted line goes there with the stage it came from and with its own subtasks; a deleted stage goes there whole, with every task inside it; a deleted project goes there with all its stages, dates, notes and drawing. Press <b>trash</b> and the three of them stand in their own sections, newest first - one press of <b>restore</b> puts any of them back where it was, a line into its stage, a stage at the end of its board, a project into the row of tabs with everything it held. The last three deleted projects survive closing the page; lines and stages wait there for as long as the page is open. <b>empty the trash</b> clears it for good - press it twice. <b>mega focus</b> in the row of buttons empties the screen of everything except the light. Press it with one or more boxes lit and the page takes itself apart - every piece folds back into the depth and blurs away - while a band of light sweeps down the screen and the lit boxes fly in from their own corners, turning in the air and locking into place one after another, each across the whole width. They are the real boxes, carried over and not copied, so every button on them still works and every tick still counts. <b>back to the page</b> at the top, or Escape, sends them flying back and the page reassembles exactly as it was. Light nothing and mega focus says so instead of emptying the screen. And "clear the previous changes" wipes everything back to the original content (double confirmation plus a 4-digit code).</p>
     </div>
     <div class="footrow">
       <button class="btn" id="btnInstr" title="Show what every button on this page does">instructions</button>
@@ -5631,7 +5719,7 @@ var BASE=[
 /* ================= STATE ================= */
 var KEY="mr_rocket_planner_v2";
 var DEFAULT_SYNC_REPO="dimitriyvolchenko/pannerformanytasks";
-var PLANNER_BUILD="2026.10.08.2", ZOOMKEY="", localZoom=1;
+var PLANNER_BUILD="2026.10.08.3-r1", ZOOMKEY="", localZoom=1;
 /* Compact phones start at a readable 100%. Their scale is independent of the
    old device-wide value and of tablet/desktop layouts. Pinch zoom stays enabled. */
 function zoomProfile(){
@@ -5665,7 +5753,9 @@ function storageNotice(key,bad){
 function tabProjectMerge(base,local,remote){
   base=ghCopy(base||{});remote=ghCopy(remote||{});local=ghCopy(local);
   [base,remote].forEach(function(x){x.heroZoom=local.heroZoom;});
-  return ghMerge(base,local,remote,"local project");
+  if(ghEqual(local,remote)||ghEqual(remote,base))return local;
+  if(ghEqual(local,base))return remote;
+  throw ghConflictError("different complete project copies in browser tabs");
 }
 function tabRefresh(){
   if(!tabRepaint||tabConflict||ghEditing())return;
@@ -5673,7 +5763,7 @@ function tabRefresh(){
   tabRepaint=false;
   var disk=readSpace(spaces.active),base=tabBases[spaces.active];
   if(disk&&base&&!ghEqual(base,disk)){
-    try{state=tabProjectMerge(base,state,disk);tabBases[spaces.active]=ghCopy(disk);}
+    try{state=ghConf().dirty?tabProjectMerge(base,state,disk):Object.assign(freshState(),ghCopy(disk),{heroZoom:localZoom});tabBases[spaces.active]=ghCopy(disk);}
     catch(e){tabConflict={id:spaces.active,local:ghCopy(state),remote:disk,path:e.path};showTabConflict();return;}
   }
   if(megaOn&&!megaBusy&&megaView&&megaView.space===spaces.active)refreshMegaData(previous);else refreshAll();
@@ -5681,7 +5771,7 @@ function tabRefresh(){
 }
 function showTabConflict(){
   var el=document.getElementById("plannerHealth");
-  if(el){el.textContent="Two browser tabs changed the same part. Open Sync to review; neither version was discarded.";el.dataset.bad="true";}
+  if(el){el.textContent="Две вкладки содержат разные версии. Откройте Sync и выберите одну; данные не смешивались.";el.dataset.bad="true";}
   if(!tabConflict||!document.getElementById("syReport"))return;
   syReport('<div class="fix">Two tabs edited this project differently. Download a backup before choosing. A choice replaces this project only, not other projects.</div><button class="btn" id="tabBackup">Download both versions</button> <button class="btn" id="tabMine">Use this tab</button> <button class="btn" id="tabOther">Use other tab</button>',"");
   document.getElementById("tabBackup").onclick=function(){downloadProgress(JSON.stringify(tabConflict,null,2),"planner-tab-recovery.json");};
@@ -8320,7 +8410,7 @@ function plOf(id){
   return PLISTS.today;
 }
 /* is this box turned over to the next day / the next week? */
-function plAhead(cfg){ return state[cfg.vkey]==="next"; }
+function plAhead(cfg){ return plannerView(cfg.vkey)==="next"; }
 function plKey(cfg){ return plAhead(cfg) ? cfg.nkey : cfg.key; }
 /* a line can be in any of the four lists - find the one it really sits in */
 function plWhere(id){
@@ -8400,7 +8490,7 @@ function renderToday(){ renderList(PLISTS.today); renderList(PLISTS.tasks); rend
    Two things are usually on the go at once. This box holds them as one line:
    on the left the one being worked on, on the right the one it runs with, so
    both stay in front of the eye instead of one of them slipping out of mind. */
-function parAhead(){ return state.parView==="next"; }
+function parAhead(){ return plannerView("parView")==="next"; }
 function parKey(){ return parAhead() ? "pairsNext" : "pairs"; }
 function parArr(k){ var key=k||parKey(); if(!state[key]) state[key]=[]; return state[key]; }
 /* a pair may sit in either of the two lists - find the one it is really in */
@@ -8418,7 +8508,7 @@ function renderPairs(){
   var box=document.getElementById("parList");
   if(!box) return;
   var pb=document.getElementById("parBox");
-  var face=state.parFace==="stack" ? "stack" : "list";
+  var face=plannerView("parFace")==="stack" ? "stack" : "list";
   var ahead=parAhead();
   if(pb) pb.classList.toggle("future", ahead && face==="list");
   var ttl=document.getElementById("parTitle");
@@ -8493,7 +8583,7 @@ function parStackHtml(){
 function parFormOpen(on){
   var row=document.getElementById("parAddRow"), b=document.getElementById("parNew");
   if(!row) return;
-  if(on && state.parFace==="stack"){ state.parFace="list"; persist(); renderPairs(); row=document.getElementById("parAddRow"); }
+  if(on && plannerView("parFace")==="stack"){ setPlannerView("parFace","list"); persist(); renderPairs(); row=document.getElementById("parAddRow"); }
   row.classList.toggle("hidden", !on);
   if(b) b.classList.toggle("on", !!on);
   if(on){ var ia=document.getElementById("parA"); if(ia) ia.focus(); }
@@ -8543,14 +8633,14 @@ function parEdit(id, side){
   if(nb) nb.addEventListener("click", function(ev){
     ev.stopPropagation();
     var row=document.getElementById("parAddRow");
-    parFormOpen(state.parFace==="stack" || (row && row.classList.contains("hidden")));
+    parFormOpen(plannerView("parFace")==="stack" || (row && row.classList.contains("hidden")));
   });
   /* the box turns over to the pairs meant for later */
   var sw=document.getElementById("parSw");
   if(sw) sw.addEventListener("click", function(ev){
     ev.stopPropagation();
-    state.parFace="list";
-    state.parView=parAhead()?"now":"next";
+    setPlannerView("parFace","list");
+    setPlannerView("parView",parAhead()?"now":"next");
     persist(); renderPairs(); parFormOpen(false);
     toast(parAhead()?"The pairs meant for later":"The pairs running now");
   });
@@ -8558,7 +8648,7 @@ function parEdit(id, side){
   var stk=document.getElementById("parStack");
   if(stk) stk.addEventListener("click", function(ev){
     ev.stopPropagation();
-    state.parFace=(state.parFace==="stack")?"list":"stack";
+    setPlannerView("parFace",plannerView("parFace")==="stack"?"list":"stack");
     persist(); renderPairs();
   });
   ["parA","parB"].forEach(function(k){
@@ -8607,9 +8697,9 @@ function parEdit(id, side){
 function plTurn(cfg, to){
   var box=document.getElementById(cfg.box);
   var want=(to===undefined) ? (plAhead(cfg)?"now":"next") : to;
-  if(!box){ state[cfg.vkey]=want; persist(); renderList(cfg); return; }
+  if(!box){ setPlannerView(cfg.vkey,want); persist(); renderList(cfg); return; }
   if(box._turning) return;
-  state[cfg.vkey]=want; persist();
+  setPlannerView(cfg.vkey,want); persist();
   var slow=false;
   try{ slow=window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; }catch(e){}
   if(slow){ renderList(cfg); return; }
@@ -8645,7 +8735,7 @@ function plMoveIn(cfg, quiet){
   state[cfg.nkey]=[];
   persist();
   /* the box turns back to the running list, carrying the lines with it */
-  if(quiet){ state[cfg.vkey]="now"; persist(); renderList(cfg); }
+  if(quiet){ setPlannerView(cfg.vkey,"now"); persist(); renderList(cfg); }
   else plTurn(cfg, "now");
   if(!quiet) toast(n+" carried into "+(cfg.word==="day"?"today":"this week"));
   return n;
@@ -8834,7 +8924,7 @@ Object.keys(PLISTS).forEach(function(k){
    direction and locking into place across the whole width. Nothing is copied: the
    real boxes are carried over and carried back, so every button on them still works
    and every tick still counts. */
-var megaOn=false, megaSaved=[], megaBusy=false, megaRebuilding=false, megaView=null;
+var megaOn=false, megaSaved=[], megaBusy=false, megaRebuilding=false, megaView=null, megaMarkupCache={};
 function withMegaHome(fn){
   var restore=!!megaOn&&!megaRebuilding, scroll=[];
   if(restore){
@@ -8860,8 +8950,14 @@ function withMegaHome(fn){
     }
   }
 }
-function buildAll(){return withMegaHome(buildAllCore);}
-function refreshAll(){return withMegaHome(refreshAllCore);}
+function buildAll(){
+  if(megaOn&&!megaRebuilding){if(megaBusy){megaDataRefreshed=true;return;}return refreshMegaData(null);}
+  return withMegaHome(buildAllCore);
+}
+function refreshAll(){
+  if(megaOn&&!megaRebuilding){if(megaBusy){megaDataRefreshed=true;return;}return refreshMegaData(null);}
+  return withMegaHome(refreshAllCore);
+}
 function megaPieces(){
   var out=[];
   /* the pair first, then the stages, then the boxes of Mission control - the order
@@ -8898,6 +8994,7 @@ function megaSeat(el){
 }
 function megaStage(stable){
   var els=megaPieces();
+  megaMarkupCache=stageMarkupFor(state);
   ["mgTopL","mgTopM","mgTopR","mgProjs","mgL","mgR","mgT","mgRest"].forEach(function(k){
     var h=document.getElementById(k); if(h) h.innerHTML="";
   });
@@ -8979,7 +9076,8 @@ function megaIn(){
     toast("The light is on something that cannot be taken over - light a stage or a box in Mission control");
     return;
   }
-  megaView={space:spaces.active,spot:ghCopy(state.spot||{}),low:ghCopy(state.spotLow||{})};
+  megaView={space:spaces.active,spot:ghCopy(state.spot||{}),low:ghCopy(state.spotLow||{}),views:{}};
+  ["todayView","tasksView","timeoffView","stepsView","weekView","parView","parFace"].forEach(function(k){megaView.views[k]=state[k];});
   megaBusy=true; megaOn=true;
   var ov=document.getElementById("megaOv");
   megaFold("mgfold");
@@ -8991,6 +9089,8 @@ function megaIn(){
     mgKeysIn();
     document.body.classList.add("megaon");
     megaBusy=false;
+    if(megaDataRefreshed){refreshMegaData(null);}
+    ghSchedule();
   }, 380);
 }
 function megaOff(){
@@ -10197,12 +10297,18 @@ document.getElementById("btnStBtnHide").addEventListener("click", function(){
 /* ---- theme switch (top of Mission control) and the pink timeline ---- */
 function applyTheme(){
   document.body.classList.toggle("dark", state.theme==="dark");
+  document.body.classList.toggle("gray",state.theme==="gray");
   var b=document.getElementById("btnTheme");
-  if(b) b.setAttribute("aria-pressed", state.theme==="dark" ? "true" : "false");
+  if(b){
+    var label=state.theme==="gray"?"Серая":(state.theme==="dark"?"Тёмная":"Светлая");
+    b.setAttribute("aria-label","Тема: "+label+". Переключить: светлая → серая → тёмная");
+    b.setAttribute("title",b.getAttribute("aria-label"));b.setAttribute("aria-pressed",state.theme!=="light"?"true":"false");
+    var lab=b.querySelector('.theme-label');if(lab)lab.textContent=label;
+  }
   try{ var m=document.querySelector('meta[name="theme-color"]');
     if(!m){ m=document.createElement("meta"); m.name="theme-color"; document.head.appendChild(m); }
     m.content=state.korean ? ((state.theme==="dark")?"#1B1412":"#D9342B")
-                           : ((state.theme==="dark")?"#0F131A":"#F7F5F0");
+                           : (state.theme==="gray"?"#646B75":((state.theme==="dark")?"#0F131A":"#F7F5F0"));
   }catch(e){}
   try{ drawLinks(); }catch(e2){}
 }
@@ -10757,10 +10863,10 @@ document.getElementById("btnBold").addEventListener("click", function(){
   toast(state.boldAll?"Every word on the page is bold now":"Back to the ordinary weights");
 });
 document.getElementById("btnTheme").addEventListener("click", function(){
-  state.theme=(state.theme==="dark")?"light":"dark";
+  state.theme=state.theme==="light"?"gray":(state.theme==="gray"?"dark":"light");
   persist(); applyTheme(); applyDarkness();
   if(state.theme!=="dark") closeDarkPop();
-  toast(state.theme==="dark"?"Dark theme on":"Light theme on");
+  toast(state.theme==="gray"?"Серая тема":(state.theme==="dark"?"Тёмная тема":"Светлая тема"));
 });
 document.getElementById("btnPink").addEventListener("click", function(){
   state.pinkBar=!state.pinkBar;
@@ -11455,6 +11561,11 @@ function ghConf(){
   }catch(e){}
   if(!o.repo||!String(o.repo).trim())o.repo=DEFAULT_SYNC_REPO;
   if(!o.device) o.device=guessDevice();
+  if(!o.deviceId){
+    try{o.deviceId=localStorage.getItem(GHKEY+":device-id-v4")||"";}catch(e){}
+    if(!o.deviceId)o.deviceId=(typeof crypto!=="undefined"&&crypto.randomUUID)?crypto.randomUUID():"device-"+Date.now().toString(36)+Math.random().toString(36).slice(2);
+    try{localStorage.setItem(GHKEY+":device-id-v4",o.deviceId);}catch(e){}
+  }
   ghMem=o; return o;
 }
 /* who is meant to send: the device marked as the main one. If no device claims it,
@@ -11625,7 +11736,7 @@ function ghCore(o){
   });
   PREF_KEYS.forEach(function(k){
     var v=o.prefs && o.prefs[k]!==undefined?o.prefs[k]:o[k];
-    if(v!==undefined)prefs[k]=ghCopy(v);
+    prefs[k]=ghCopy(v!==undefined?v:freshState()[k]);
   });
   return {list:list,states:states,prefs:prefs,seeded:ghCopy(sp&&sp.seeded||{}),trash:ghCopy(sp&&sp.trash||[])};
 }
@@ -11636,8 +11747,8 @@ function ghPayload(model){
   var all={active:active,list:ghCopy(model.list),states:{},seeded:ghCopy(model.seeded),trash:ghCopy(model.trash)};
   model.list.forEach(function(sp){all.states[sp.id]=Object.assign({},ghCopy(model.states[sp.id]),ghCopy(model.prefs),{heroZoom:1});});
   var out=Object.assign({},all.states[active]);
-  out.format="mr_rocket_planner";out.version=12;out.syncVersion=3;out.appBuild=PLANNER_BUILD;out.savedAt=new Date().toISOString();
-  out.spaces=all;out.prefs=ghCopy(model.prefs);out.device=ghConf().device||guessDevice();out.lead="";
+  out.format="mr_rocket_planner";out.version=12;out.syncVersion=4;out.syncPolicy="whole-copy";out.appBuild=PLANNER_BUILD;out.savedAt=new Date().toISOString();
+  out.spaces=all;out.prefs=ghCopy(model.prefs);out.device=ghConf().device||guessDevice();out.deviceId=ghConf().deviceId||"";out.lead="";
   return out;
 }
 function ghTarget(){
@@ -11677,8 +11788,7 @@ function ghReadRemote(cur){
   if(cur.encoding && cur.encoding!=="base64") throw new Error("The progress file is too large for this sync route; the local plan is safe");
   var raw=JSON.parse(b64dec(cur.content||""));
   var core=ghCore(raw),base=ghV2.base&&ghV2.base.core;
-  if(raw.spaces&&base){["seeded","trash"].forEach(function(k){if(!Object.prototype.hasOwnProperty.call(raw.spaces,k))core[k]=ghCopy(base[k]);});}
-  ghV2.legacyWriter=raw.syncVersion<3||!raw.syncVersion?(raw.device||"another device"):"";
+  ghV2.legacyWriter=raw.syncVersion<4||!raw.syncVersion?(raw.device||"another device"):"";
   return {raw:raw,core:core,sha:cur.sha};
 }
 function ghStoreBase(remote,t){
@@ -11722,24 +11832,48 @@ function ghBackup(reason,remote){
   try{
     var entry={savedAt:new Date().toISOString(),reason:reason,local:JSON.parse(progressText()),remote:remote?remote.raw:null};
     localStorage.setItem(GHKEY+":recovery-v2",JSON.stringify(entry));
-    if(remote)localStorage.setItem(GHKEY+":conflict-backup-v2",JSON.stringify(entry));
+    if(remote){
+      localStorage.setItem(GHKEY+":conflict-backup-v2",JSON.stringify(entry));
+      var key=GHKEY+":choices-v4",old=JSON.parse(localStorage.getItem(key)||"[]");
+      old.push(entry);localStorage.setItem(key,JSON.stringify(old.slice(-3)));
+    }
     return true;
   }catch(e){return false;}
 }
-function ghInstall(model){
-  var before=ghSnapshot();
-  if(ghEqual(before,model))return true;
-  if(ghEditing()){var deferred=new Error("Finish editing to receive changes; local work is kept");deferred.syncDeferred=true;throw deferred;}
-  if(!ghBackup("before-sync-apply",null))throw new Error("The browser cannot keep a recovery copy. Export your plan before loading another copy");
-  var payload=ghPayload(model);
-  ghV2.applying=true;
+function ghInstall(model,requestedActive){
+  var before=ghSnapshot(),active=requestedActive||spaces.active;
+  if(!model.states[active])active=model.list[0].id;
+  if(ghEqual(before,model)&&active===spaces.active)return true;
+  if(ghEditing()){var e=new Error("Получение отложено до завершения ввода. Правки сохранены здесь.");e.syncDeferred=true;throw e;}
+  if(!storageOk)throw new Error("Хранилище браузера недоступно. Сначала выгрузите резервный JSON.");
+  if(!ghBackup("before-whole-copy-apply",null))throw new Error("Не удалось сохранить резервную копию. Выгрузите JSON перед заменой.");
+  var nextSpaces={active:active,list:ghCopy(model.list),seeded:ghCopy(model.seeded),trash:ghCopy(model.trash)};
+  var updates={},old={},written=[],prepared={};
+  updates[PKEY]=JSON.stringify(model.prefs);updates[SKEY]=JSON.stringify(nextSpaces);
+  model.list.forEach(function(sp){
+    prepared[sp.id]=Object.assign({},ghCopy(model.states[sp.id]),ghCopy(model.prefs),{heroZoom:localZoom});
+    updates[spaceKey(sp.id)]=JSON.stringify(prepared[sp.id]);
+  });
+  // Prepare everything before changing RAM. Roll back multi-key writes on quota failure.
   try{
-    memPrefs=ghCopy(model.prefs);
-    if(storageOk)localStorage.setItem(PKEY,JSON.stringify(memPrefs));
-    spaces.seeded=ghCopy(model.seeded);spaces.trash=ghCopy(model.trash);
-    if(!loadProgressText(JSON.stringify(payload),true))throw new Error("Could not apply the synced plan; a recovery copy is kept in this browser");
+    Object.keys(updates).forEach(function(k){old[k]=localStorage.getItem(k);});
+    Object.keys(updates).forEach(function(k){localStorage.setItem(k,updates[k]);written.push(k);});
+  }catch(err){
+    written.reverse().forEach(function(k){try{if(old[k]===null)localStorage.removeItem(k);else localStorage.setItem(k,old[k]);}catch(e){}});
+    storageNotice("whole-copy",true);throw new Error("Не удалось записать полный план в браузер. Текущая версия и резервная копия сохранены; загрузка не подтверждена.");
+  }
+  ghV2.applying=true;
+  var previous=state;
+  try{
+    if(megaOn&&megaView&&megaView.space!==active)megaExitForRemovedSpace();
+    spaces=nextSpaces;memPrefs=ghCopy(model.prefs);
+    model.list.forEach(function(sp){memStates[sp.id]=ghCopy(prepared[sp.id]);tabBases[sp.id]=ghCopy(prepared[sp.id]);pendingSpaces[sp.id]=false;});
+    state=Object.assign(freshState(),ghCopy(prepared[active]));tabConflict=null;tabRepaint=false;
+    storageNotice("whole-copy",false);
+    if(megaOn&&!megaBusy&&megaView&&megaView.space===active)refreshMegaData(previous);else refreshAll();
+    setupPlannerTaskInputs();paintPlannerBadge();
     return true;
-  } finally {ghV2.applying=false;ghV2.observed=ghSnapshot();}
+  }finally{ghV2.applying=false;ghV2.observed=ghSnapshot();}
 }
 function ghDirty(){
   var now=ghSnapshot(),b=ghLoadBase(ghTarget()),c=ghConf();
@@ -11747,9 +11881,11 @@ function ghDirty(){
   ghV2.observed=now;ghSave();paintSyncDot();return !!c.dirty;
 }
 function ghAcknowledge(remote,t,sentLocal){
-  var latest=ghSnapshot(),next=ghMerge(sentLocal,latest,remote.core);
-  ghInstall(next);ghStoreBase(remote,t);ghDirty();
-  ghV2.conflict=null;ghV2.blockedUntil=0;syRefresh();
+  // This device uploaded this exact snapshot. An acknowledgement never reloads
+  // the UI, never merges it, and never discards edits made during the PUT.
+  ghStoreBase(remote,t);ghDirty();
+  if(ghEditing()||ghComposing){ghConf().dirty=true;ghSave();}
+  ghClearChoice();ghV2.blockedUntil=0;syRefresh();
 }
 function ghErr(e){
   if(e&&e.syncConflict)return e.message;
@@ -11766,110 +11902,134 @@ function ghErr(e){
 function syAfterFail(){
   syPaint();var el=document.getElementById("syOverlay");if(el)el.classList.add("show");
 }
+function ghClearChoice(){
+  ghV2.conflict=null;
+  var el=document.getElementById('wholeSyncOverlay');if(el)el.classList.remove('show');
+}
+function ghWriterIsThis(remote){
+  if(!remote)return true;
+  return remote.raw.deviceId?remote.raw.deviceId===ghConf().deviceId:remote.raw.device===ghConf().device;
+}
+function ghChoiceSummary(core){
+  var tasks=0,steps=0;core.list.forEach(function(sp){var st=core.states[sp.id];tasks+=(st.today||[]).length+(st.tasks||[]).length;steps+=(st.steps||[]).length;});
+  return core.list.length+' проектов · '+tasks+' записей Today / Tasks · '+steps+' шагов';
+}
 function ghShowConflict(remote,quiet){
-  ghV2.conflict=remote;ghConf().dirty=true;ghSave();ghBackup("sync-conflict",remote);
-  var msg="Two different copies need a choice. Your local changes have NOT been discarded.";
-  syState(msg,true);
-  syReport('<div class="fix">'+msg+' Save a backup before replacing either copy.</div>'+ 
-    '<div class="sybuttons"><button class="btn" id="syBackupV2">Download this device backup</button>'+ 
-    '<button class="btn" id="syKeepV2">Use this device copy</button>'+ 
-    '<button class="btn" id="syRemoteV2">Use GitHub copy</button></div>',"");
-  document.getElementById("syBackupV2").onclick=function(){downloadProgress(progressText(),defaultSaveName());};
-  document.getElementById("syKeepV2").onclick=function(){
-    if(confirm("Replace the GitHub plan with this device's entire copy? Changes present only in GitHub will be replaced. Both copies will first be kept in this browser's recovery backup."))ghRun("force-send",false);
-  };
-  document.getElementById("syRemoteV2").onclick=function(){
-    if(confirm("Replace this device's plan with the GitHub copy? This device's unsent changes will first be kept in a recovery backup."))ghRun("force-take",false);
-  };
-  if(!quiet)syAfterFail();paintSyncDot();
+  ghV2.conflict={sha:remote?remote.sha:null,remote:remote,target:ghTargetId(ghTarget())};
+  ghConf().dirty=true;ghSave();ghBackup('different-whole-copies',remote);
+  syState('Нужен выбор полной версии. Откройте Sync: с этого устройства или с другого. Ничего не смешивалось.',true);
+  var ov=document.getElementById('wholeSyncOverlay');
+  if(!ov){
+    ov=document.createElement('div');ov.id='wholeSyncOverlay';ov.className='overlay';
+    ov.innerHTML='<div class="modal narrow" role="dialog" aria-modal="true" aria-labelledby="wholeSyncTitle">'+
+      '<header><h2 id="wholeSyncTitle">Какую версию плана оставить?</h2></header><div class="body">'+
+      '<p>Выбирается <b>весь план целиком, со всеми проектами</b>. Две версии не объединяются.</p>'+
+      '<div class="whole-copy-card"><b>На этом устройстве</b><p id="wholeLocalInfo"></p></div>'+
+      '<div class="whole-copy-card"><b>На GitHub — последняя сохранённая копия</b><p id="wholeRemoteInfo"></p></div>'+
+      '<p>«С этого устройства» заменит файл GitHub. «С другого устройства» заменит локальный план копией GitHub. Перед заменой сохраняется резервная копия.</p>'+
+      '<p id="wholeChoiceStatus" role="status"></p></div><footer class="whole-actions">'+
+      '<button type="button" class="btn" id="wholeBackup">Скачать обе копии</button>'+
+      '<button type="button" class="btn" id="wholeCancel">Пока не менять</button>'+
+      '<button type="button" class="btn" id="syRemoteV2">С другого устройства</button>'+
+      '<button type="button" class="btn primary" id="syKeepV2">С этого устройства</button></footer></div>';
+    document.body.appendChild(ov);
+    ov.querySelector('#wholeCancel').onclick=function(){ov.classList.remove('show');syState('Синхронизация ждёт выбора. Нажмите Save, Take или Sync — данные не заменены.',true);};
+    ov.querySelector('#wholeBackup').onclick=function(){
+      var c=ghV2.conflict;downloadProgress(JSON.stringify({format:'planner-recovery-pair',at:new Date().toISOString(),local:JSON.parse(progressText()),remote:c&&c.remote?c.remote.raw:null},null,2),'planner-two-copies-backup.json');
+    };
+    function choose(kind){
+      if(ghV2.choiceBusy)return;
+      ghV2.choiceBusy=true;ov.querySelector('#wholeChoiceStatus').textContent='Проверяем актуальную версию GitHub…';
+      ghRun(kind,false).then(function(ok){
+        if(ok){ov.classList.remove('show');var sy=document.getElementById('syOverlay');if(sy)sy.classList.remove('show');}
+        else if(ov.classList.contains('show'))ov.querySelector('#wholeChoiceStatus').textContent=document.getElementById('syState').textContent;
+      }).finally(function(){ghV2.choiceBusy=false;});
+    }
+    ov.querySelector('#syKeepV2').onclick=function(){choose('force-send');};
+    ov.querySelector('#syRemoteV2').onclick=function(){choose('force-take');};
+  }
+  document.getElementById('wholeLocalInfo').textContent=(ghConf().device||guessDevice())+' · '+ghChoiceSummary(ghSnapshot());
+  document.getElementById('wholeRemoteInfo').textContent=remote?
+    (remote.raw.device||'Другое устройство')+' · '+(remote.raw.savedAt?new Date(remote.raw.savedAt).toLocaleString():'дата неизвестна')+' · '+ghChoiceSummary(remote.core):
+    'Файл отсутствует. Можно создать его из этой копии, но получить отсутствующий файл нельзя.';
+  document.getElementById('syRemoteV2').disabled=!remote;
+  document.getElementById('wholeChoiceStatus').textContent='';
+  if(!document.hidden)ov.classList.add('show');
+  paintSyncDot();
 }
 function ghReconcile(local,remote,base){
   if(ghEqual(local,remote))return ghCopy(local);
-  if(!base)throw ghConflictError("unknown legacy baseline");
-  return ghMerge(base,local,remote);
+  if(base&&ghEqual(local,base))return ghCopy(remote);
+  if(base&&ghEqual(remote,base))return ghCopy(local);
+  throw ghConflictError('whole-copy choice required');
 }
 function ghDoSync(kind,quiet,t){
-  var retries=0,force=kind==="force-send"||kind==="force-take";
-  function attempt(){
-    return ghFetchRemote(t).then(function(file){
-      var remote=ghReadRemote(file);
-      return ghLegacyBase(remote,t).then(function(base){
-        if(quiet&&ghEditing()){ghV2.deferred=true;ghSchedule();return false;}
-        if(ghTargetId(ghTarget())!==ghTargetId(t))throw new Error("Sync settings changed while the request was running; retry with the current settings");
-        var local=ghSnapshot(),c=ghConf(),dirty=base?!ghEqual(local,base):!!c.dirty;
-        var merged;
-        try{
-          if(force){
-            if(!ghV2.conflict||!remote||remote.sha!==ghV2.conflict.sha)throw ghConflictError("remote changed again");
-            if(!ghBackup("explicit-conflict-resolution",remote))throw new Error("Cannot keep a recovery backup; export the plan before replacing a copy");
-            merged=kind==="force-take"?remote.core:local;
-          } else if(!remote){
-            if(base)throw ghConflictError("remote file removed");
-            if(kind==="take"){syState("No progress file exists yet. Use Save to GitHub to create it.",true);return false;}
-            merged=local;
-          } else if(!dirty){merged=remote.core;}
-          else {merged=ghReconcile(local,remote.core,base);}
-        }catch(e){if(e.syncConflict){ghShowConflict(remote,quiet);return false;}throw e;}
-        var mustWrite=kind==="send"||kind==="force-send"||kind==="background-send";
-        if(!mustWrite||remote&&ghEqual(merged,remote.core)){
-          if(remote){
-            ghInstall(merged);ghStoreBase(remote,t);ghDirty();ghV2.conflict=null;
-            syState(c.dirty?"New changes combined locally; not yet sent to GitHub":"Up to date - changes from all devices are available");
-          }
-          return true;
-        }
-        var payload=ghPayload(merged),body={message:"planner progress "+payload.savedAt.slice(0,16).replace("T"," "),
-          content:b64enc(JSON.stringify(payload,null,2)),branch:t.branch};
-        if(remote)body.sha=remote.sha;
-        return ghRequest(ghEndpoint(t),{method:"PUT",body:JSON.stringify(body)},t).then(function(result){
-          if(!result||!result.content||!result.content.sha)throw new Error("GitHub returned no confirmation; your unsent marker was kept");
-          var ack={raw:payload,core:merged,sha:result.content.sha};
-          try{ghAcknowledge(ack,t,local);}catch(e){
-            if(e.syncDeferred){
-              ghV2.pendingAck={remote:ack,target:t,local:local};
-              ghV2.deferred=true;c.dirty=true;ghSave();
-              syState("Saved to GitHub; finish editing to display incoming changes.");
-              if(!quiet)toast("Saved to GitHub. Incoming changes will display after editing.");
-              return true;
-            }
-            ghStoreBase(ack,t);c.dirty=true;ghSave();
-            if(e.syncConflict){ghShowConflict(ack,quiet);return false;}throw e;
-          }
-          syState(c.dirty?"Saved to GitHub; changes made during the save are still pending":"Saved to GitHub at "+hhmm()+" from "+(c.device||"this device"));
-          if(!quiet)toast(c.dirty?"Saved; newer edits remain to send":"Progress saved to GitHub");
-          return true;
-        }).catch(function(e){
-          if((e.status===409||e.status===422)&&!force&&retries++<2)return attempt();
-          throw e;
-        });
+  var force=kind==='force-send'||kind==='force-take',send=kind==='send'||kind==='force-send'||kind==='background-send';
+  return ghFetchRemote(t).then(function(file){
+    var remote=ghReadRemote(file),base=ghLoadBase(t),local=ghSnapshot(),c=ghConf(),choice=ghV2.conflict;
+    if(ghTargetId(ghTarget())!==ghTargetId(t))throw new Error('Настройки Sync изменены во время запроса. Повторите сохранение.');
+    if(quiet&&ghEditing()){ghV2.deferred=true;ghSchedule();return false;}
+    if(force&&(!choice||choice.target!==ghTargetId(t)||choice.sha!==(remote?remote.sha:null))){
+      ghShowConflict(remote,quiet);document.getElementById('wholeChoiceStatus').textContent='На GitHub уже появилась новая версия. Выберите ещё раз для этой актуальной копии.';return false;
+    }
+    // Validation above always precedes any destructive replacement.
+    if(remote&&ghEqual(local,remote.core)){
+      ghStoreBase(remote,t);ghDirty();ghClearChoice();ghV2.blockedUntil=0;
+      syState('Синхронизировано: полные копии совпадают. Последняя запись: '+(remote.raw.device||'устройство')+'.');return true;
+    }
+    var dirty=base?!ghEqual(local,base.core):!!c.dirty;
+    var changed=base&&remote?remote.sha!==base.sha&&!ghEqual(remote.core,base.core):true;
+    if(!force){
+      if(!remote){
+        if(base){ghShowConflict(null,quiet);return false;}
+        if(!send){syState('Файл progress.json ещё не создан. Нажмите Save, чтобы отправить этот план.',true);return false;}
+      }else if(send){
+        // Save means YOUR copy. Do not silently turn a Save into a partial merge
+        // or a download. A different writer / unknown baseline requires consent.
+        if(!base||changed||!ghWriterIsThis(remote)){ghShowConflict(remote,quiet);return false;}
+      }else if(dirty||!base){ghShowConflict(remote,quiet);return false;}
+    }
+    if(!send){
+      if(!remote){syState('На GitHub нет файла для загрузки.',true);return false;}
+      if(force&&!ghBackup('choose-other-device',remote))throw new Error('Не удалось сохранить резервные копии. Скачайте обе копии перед заменой.');
+      ghInstall(remote.core);ghStoreBase(remote,t);ghDirty();ghClearChoice();ghV2.blockedUntil=0;
+      syState('Получен полный план: '+(remote.raw.device||'другое устройство')+' · '+(remote.raw.savedAt?new Date(remote.raw.savedAt).toLocaleString():'без даты')+'.');
+      return true;
+    }
+    if(remote&&!ghBackup('before-whole-copy-upload',remote))throw new Error('Не удалось сохранить резервную копию перед перезаписью GitHub. Скачайте обе копии.');
+    var payload=ghPayload(local),body={message:'planner progress '+payload.savedAt.slice(0,16).replace('T',' '),content:b64enc(JSON.stringify(payload,null,2)),branch:t.branch};
+    if(remote)body.sha=remote.sha;
+    return ghRequest(ghEndpoint(t),{method:'PUT',body:JSON.stringify(body)},t).then(function(result){
+      if(!result||!result.content||!result.content.sha)throw new Error('GitHub не подтвердил запись. Локальные изменения сохранены.');
+      var ack={raw:payload,core:ghCopy(local),sha:result.content.sha};
+      ghAcknowledge(ack,t,local);
+      syState(c.dirty?'Полная копия отправлена; более новые правки на этом устройстве ещё ожидают сохранения.':
+        'Полный план сохранён на GitHub в '+hhmm()+' · '+(c.device||'это устройство')+'.');
+      if(!quiet)toast(c.dirty?'Сохранено. Более новые правки ещё не отправлены.':'Полный план сохранён на GitHub');
+      return true;
+    }).catch(function(e){
+      // Never upgrade a stale choice to a newer SHA automatically.
+      if(e.status===409||e.status===422)return ghFetchRemote(t).then(function(latest){
+        ghShowConflict(ghReadRemote(latest),quiet);
+        document.getElementById('wholeChoiceStatus').textContent='Во время сохранения другое устройство обновило GitHub. Выберите актуальную полную версию ещё раз.';return false;
       });
+      throw e;
     });
-  }
-  return attempt();
+  });
 }
 function ghFlushAck(){
-  var pending=ghV2.pendingAck;if(!pending)return true;
-  if(ghEditing())return false;
-  if(ghTargetId(ghTarget())!==ghTargetId(pending.target)){
-    syState("The previous repository accepted the save. Restore its Sync settings to finish applying incoming changes.",true);return false;
-  }
-  try{
-    ghAcknowledge(pending.remote,pending.target,pending.local);ghV2.pendingAck=null;
-    syState(ghConf().dirty?"Saved to GitHub; newer local edits are still waiting to send":"Saved to GitHub; incoming changes are now displayed");return true;
-  }catch(e){
-    if(e.syncConflict){ghV2.pendingAck=null;ghShowConflict(pending.remote,false);}
-    else if(!e.syncDeferred)syState("Saved to GitHub; display update pending: "+ghErr(e),true);
-    return false;
-  }
+  var p=ghV2.pendingAck;if(!p)return true;
+  if(ghTargetId(ghTarget())!==ghTargetId(p.target))return false;
+  ghAcknowledge(p.remote,p.target,p.local);ghV2.pendingAck=null;return true;
 }
 function ghEditing(){
-  if(megaBusy)return true;
-  if(document.querySelector("#plMenu.show,#richMenu.show,#ctxMenu.show,#lineMenu.show,#pinkMenu.show"))return true;
+  if(megaBusy||ghComposing)return true;
+  if(document.querySelector('#plMenu.show,#richMenu.show,#ctxMenu.show,#lineMenu.show,#pinkMenu.show'))return true;
   var el=document.activeElement;
-  if(!el||!el.matches||el.closest("#syOverlay"))return false;
+  if(!el||!el.matches||el.closest('#syOverlay,#wholeSyncOverlay'))return false;
   if(el.isContentEditable)return true;
-  if(el.matches("input,textarea"))return String(el.value||"").trim().length>0;
-  var selection=window.getSelection();return !!(selection&&!selection.isCollapsed);
+  if(el.matches('input,textarea'))return String(el.value||'').trim().length>0;
+  return false;
 }
 function ghSchedule(){
   clearTimeout(ghTimer);
@@ -11899,13 +12059,13 @@ function ghRun(kind,quiet){
   tabRefresh();if(tabConflict){showTabConflict();if(!quiet)syAfterFail();return Promise.resolve(false);}
   if(!ghReady()){syState("Set up Sync on this device: repository and a key with Contents: Read and write",true);if(!quiet)syAfterFail();return Promise.resolve(false);}
   if(!ghV2.started)ghStart(false);
-  if(quiet&&((document.hidden&&kind!=="background-send")||ghEditing()||ghV2.conflict||Date.now()<ghV2.blockedUntil)){ghV2.deferred=true;ghSchedule();return Promise.resolve(false);}
+  if(quiet&&(document.hidden||ghEditing()||ghV2.conflict||Date.now()<ghV2.blockedUntil)){ghV2.deferred=true;ghSchedule();return Promise.resolve(false);}
   if(ghV2.flight){
-    if(quiet)return Promise.resolve(false);
-    return ghV2.flight.then(function(){return ghRun(kind,false);});
+    // A second tap joins this request instead of scheduling an unintended overwrite.
+    return quiet?Promise.resolve(false):ghV2.flight;
   }
   clearTimeout(ghTimer);ghLoadBase(ghTarget());
-  if(!quiet)syState(kind.indexOf("take")>=0?"Checking the GitHub copy...":"Saving to GitHub...");
+  if(!quiet)syState(kind.indexOf("take")>=0?"Проверяем полную копию GitHub…":"Сохраняем полный план…");
   var target=ghTarget();
   var job=ghDoSync(kind,quiet,target).catch(function(e){
     if(e.syncDeferred){ghV2.deferred=true;syState(e.message);return false;}
@@ -11976,9 +12136,9 @@ function syPaint(){
   if(L){ L.hidden=true; L.style.display="none"; L.disabled=true; }
   var box=document.getElementById("syLeadBox");
   if(box){
-    box.innerHTML="<b>Sync v3 · "+PLANNER_BUILD+": all devices are equal.</b> Save to GitHub works on every device. "+
-      "With auto on, changes are sent and checked on returning to the app. "+
-      "Independent edits are combined; competing edits never overwrite silently.<br>"+
+    box.innerHTML="<b>Sync v4 · "+PLANNER_BUILD+" — полные версии, без смешивания.</b> "+
+      "Save отправляет этот план целиком. Take получает последнюю полную копию GitHub. "+
+      "Если есть разные версии, выберите: с этого устройства или с другого. Никакого главного устройства.<br>"+
       '<button class="btn" id="syRecoveryV2">Recovery copies</button>';
     document.getElementById("syRecoveryV2").onclick=ghRecovery;
   }
@@ -12011,6 +12171,7 @@ function syRead(){
 }
 document.getElementById("btnSync").addEventListener("click", function(){
   syPaint();if(tabConflict)showTabConflict();
+  if(ghV2.conflict)ghShowConflict(ghV2.conflict.remote,false);
   document.getElementById("syOverlay").classList.add("show");
 });
 document.getElementById("syClose").addEventListener("click", function(){
@@ -12172,30 +12333,23 @@ document.getElementById("syCheck").addEventListener("click", ghCheck);
 setTimeout(function(){ ghStart(); }, 1200);
 window.addEventListener("focus", ghCycle);
 window.addEventListener("online", function(){ ghV2.blockedUntil=0; ghCycle(); });
-document.addEventListener("visibilitychange",function(){if(!document.hidden)ghCycle();else if(ghReady()&&ghConf().auto&&ghConf().dirty)ghRun("background-send",true);});
+document.addEventListener("visibilitychange",function(){if(!document.hidden)ghCycle();});
+window.addEventListener("pageshow",function(){ghV2.blockedUntil=0;ghCycle();});
 document.addEventListener("focusout", function(){ if(ghV2.started)ghSchedule(); }, true);
 setInterval(ghCycle, 30000);
 /* Export and synchronization are different operations. */
 var exportButton=document.getElementById("btnExport");
 if(exportButton){ exportButton.textContent="backup file"; exportButton.title="Export a local JSON backup. To sync devices, use Save to GitHub."; }
 var cloudSaveButton=document.getElementById("btnGhSave");
-if(cloudSaveButton)cloudSaveButton.title="Save this device's changes to GitHub and combine independent edits from other devices";
+if(cloudSaveButton)cloudSaveButton.title="Сохранить полный план этого устройства. Разные версии требуют выбора; данные не смешиваются.";
 
 
 function loadProgressText(txt, stableSync){
-  var previous=state;
   try{
-    var o=JSON.parse(txt),model=ghCore(o),active=o.spaces&&o.spaces.active||spaces.active;
-    if(!model.states[active])active=model.list[0].id;
-    if(!(ghV2&&ghV2.applying)&&!ghBackup("before-file-import",null))throw new Error("Export a backup first: browser storage is unavailable");
-    memPrefs=ghCopy(model.prefs);
-    try{localStorage.setItem(PKEY,JSON.stringify(memPrefs));storageNotice(PKEY,false);}catch(e){storageNotice(PKEY,true);}
-    spaces.list=ghCopy(model.list);spaces.active=active;spaces.seeded=ghCopy(model.seeded);spaces.trash=ghCopy(model.trash);
-    spaces.list.forEach(function(sp){writeSpace(sp.id,Object.assign({},model.states[sp.id],model.prefs,{heroZoom:localZoom}),true);});
-    persistSpaces();loadStateOf(active);paintTabs();
-    if(stableSync&&megaOn&&!megaBusy&&megaView&&megaView.space===active)refreshMegaData(previous);else refreshAll();
-    setupPlannerTaskInputs();paintPlannerBadge();return true;
-  }catch(e){syState("Import not applied: "+(e.message||"invalid planner file"),true);return false;}
+    var o=JSON.parse(txt),model=ghCore(o);
+    var active=stableSync?spaces.active:(o.spaces&&o.spaces.active||spaces.active);
+    ghInstall(model,active);if(!(ghV2&&ghV2.applying))ghTouched();return true;
+  }catch(e){syState('План не заменён: '+(e.message||'неверный файл'),true);return false;}
 }
 /* share sheet - on iPhone this is the "Save to Files" route */
 function shareProgress(text,name){
@@ -12829,15 +12983,20 @@ function stageMarkupFor(st){
   return out;
 }
 function refreshMegaData(previous){
-  // Not a close/reopen operation: card nodes, toolbar and their parents stay put.
-  var scroll=megaScrollState(), old=stageMarkupFor(previous), wanted={}, list=effProjects();
+  if(!megaOn||megaBusy){megaDataRefreshed=true;return;}
+  var scroll=megaScrollState(),wanted={},list=effProjects();
   list.forEach(function(p,i){
     wanted[p.id]=true;
     var card=[].slice.call(document.querySelectorAll('.proj')).filter(function(el){return el.dataset.proj===p.id;})[0];
-    var fresh=renderProject(p,i);
+    var fresh=renderProject(p,i),markup=fresh.innerHTML;
     if(!card){card=fresh;document.getElementById('projects').appendChild(card);}
-    else if(old[p.id]!==fresh.innerHTML)card.innerHTML=fresh.innerHTML;
-    card.classList.toggle('collapsed',!!state.collapsed[p.id]);
+    else if(megaMarkupCache[p.id]!==markup){
+      var collapsed=card.classList.contains('collapsed');card.innerHTML=markup;
+      // An incoming collapse preference is not allowed to fold the user's open card.
+      if(!card.closest('#megaOv'))card.classList.toggle('collapsed',!!state.collapsed[p.id]);
+      else card.classList.toggle('collapsed',collapsed);
+    }
+    megaMarkupCache[p.id]=markup;
     card.classList.toggle('inproc',procOn(p.id));
     if(card.closest('#megaOv'))card.classList.add('inview','mgsettled');
   });
@@ -12846,10 +13005,10 @@ function refreshMegaData(previous){
   reflowProjects();
   Object.keys(PLISTS).forEach(function(k){
     var cfg=PLISTS[k];
-    if(!ghEqual(previous[cfg.key],state[cfg.key])||!ghEqual(previous[cfg.nkey],state[cfg.nkey])||previous[cfg.vkey]!==state[cfg.vkey])renderList(cfg);
+    if(!previous||!ghEqual(previous[cfg.key],state[cfg.key])||!ghEqual(previous[cfg.nkey],state[cfg.nkey])||previous[cfg.vkey]!==state[cfg.vkey])renderList(cfg);
   });
-  if(!ghEqual(previous.pairs,state.pairs)||!ghEqual(previous.pairsNext,state.pairsNext)||previous.parView!==state.parView||previous.parFace!==state.parFace)renderPairs();
-  if(!ghEqual(previous.stickers,state.stickers)||!ghEqual(previous.slinks,state.slinks)){
+  if(!previous||!ghEqual(previous.pairs,state.pairs)||!ghEqual(previous.pairsNext,state.pairsNext)||previous.parView!==state.parView||previous.parFace!==state.parFace)renderPairs();
+  if(!previous||!ghEqual(previous.stickers,state.stickers)||!ghEqual(previous.slinks,state.slinks)){
     var notes={};(state.stickers||[]).forEach(function(st){notes[st.id]=true;var el=stkEl(st.id);
       if(!el){stickerEl(st);return;}
       applyBox(st,el);el.querySelector('.stname').textContent=stkName(st);
@@ -12859,10 +13018,12 @@ function refreshMegaData(previous){
     board.querySelectorAll('.sticker').forEach(function(el){if(!notes[el.dataset.sid])el.remove();});drawLinks();
   }
   renderLaunch();paintLogCount();paintTabs();render();applySpot();
-  // Layout/skin choices received from another screen are applied on exit, not
-  // halfway through the user's open focus session. The synced data is not altered.
-  if(previous.logo!==state.logo)applyLogo();
+  if(!previous||previous.logo!==state.logo)applyLogo();
   paintPlannerBadge();megaScrollRestore(scroll);megaDataRefreshed=true;
+  // Font loading and the tablet visual viewport can settle on the next frame.
+  // Do not undo a user's scroll that happened after this synchronous restoration.
+  var ov=document.getElementById('megaOv'),top=ov.scrollTop,left=ov.scrollLeft;
+  requestAnimationFrame(function(){if(megaOn&&!megaBusy&&Math.abs(ov.scrollTop-top)<1&&Math.abs(ov.scrollLeft-left)<1)megaScrollRestore(scroll);});
 }
 var megaDataRefreshed=false;
 
@@ -12966,7 +13127,8 @@ function paintPlannerBadge(){
     b.classList.toggle('on',on);b.setAttribute('aria-pressed',String(on));
     var n=(state[k]||[]).filter(function(t){return !t.done&&String(t.t||'').trim();}).length;
     b.title=(on?'Exclude ':'Include ')+(k==='today'?'Priority for today':'Tasks')+' in the icon badge: '+n+' unfinished';
-    b.querySelector('.badge-number').textContent=on?String(n):'off';
+    b.textContent=on?'🥷🏻':'badge';
+    b.setAttribute('aria-label',(on?'Выключить':'Включить')+' бейдж '+(k==='today'?'Priority for today':'Tasks')+' — '+n+' незавершённых');
   });
   var value=document.getElementById('plannerBadgeTotal');if(value)value.textContent=count?String(count):'';
   var status=document.getElementById('plannerBadgeStatus');if(status)status.textContent=plannerBadgeStatus();
@@ -12992,7 +13154,7 @@ function setupPlannerBadges(){
     var title=document.getElementById(k==='today'?'todayTitle':'tasksTitle');if(!title||document.querySelector('[data-planner-badge-source="'+k+'"]'))return;
     var b=document.createElement('button');b.type='button';b.className='planner-badge-toggle';b.dataset.plannerBadgeSource=k;
     b.setAttribute('aria-label','Toggle icon badge for '+(k==='today'?'Priority for today':'Tasks'));
-    b.innerHTML='<span class="badge-light" aria-hidden="true"></span><span class="badge-word">badge</span><b class="badge-number"></b>';
+    b.textContent='badge';
     title.insertAdjacentElement('afterend',b);
   });
   var h=document.getElementById('btnLogo');if(h&&!document.getElementById('plannerBadgeTotal')){var badge=document.createElement('b');badge.id='plannerBadgeTotal';badge.setAttribute('aria-label','Unfinished tasks included in icon badge');h.appendChild(badge);}
@@ -13013,6 +13175,38 @@ setupPlannerTaskInputs();setupPlannerBadges();
 if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol)){
   navigator.serviceWorker.register('./sw.js',{scope:'./',updateViaCache:'none'}).catch(function(){/* Foreground badge works without a worker; no cache is installed. */});
 }
+
+function plannerView(key){
+  return megaOn&&megaView&&megaView.space===spaces.active&&megaView.views&&Object.prototype.hasOwnProperty.call(megaView.views,key)?megaView.views[key]:state[key];
+}
+function setPlannerView(key,value){
+  state[key]=value;if(megaOn&&megaView&&megaView.space===spaces.active&&megaView.views)megaView.views[key]=value;
+}
+/* 2026.10.08.3-r1: mobile controls are real nodes, never duplicate event targets. */
+function mobilePlannerOrder(){
+  var bar=document.getElementById('megaBar'),inside=document.getElementById('megaIn'),ov=document.getElementById('megaOv');
+  if(!bar||!inside||!ov)return;
+  var phone=document.documentElement.classList.contains('phone-ui');
+  if(phone&&bar.parentNode!==inside)inside.appendChild(bar);
+  if(!phone&&bar.parentNode!==ov)ov.insertBefore(bar,inside);
+}
+function megaExitForRemovedSpace(){
+  // The remote file can genuinely delete the currently open project. End that
+  // obsolete session cleanly, rather than attaching its cards to a new project.
+  mgKeysOut();megaRestore();megaOn=false;megaBusy=false;megaView=null;megaDataRefreshed=false;
+  document.body.classList.remove('megaon','mgfold','mgback','mgtl','mgstk');
+  document.getElementById('megaOv').classList.remove('up','lit','gone');
+  toast('Открытый проект отсутствует в выбранной копии. Показан доступный проект.');
+}
+(function(){
+  var b=document.getElementById('btnTheme');
+  if(b&&!b.querySelector('.theme-label')){var label=document.createElement('span');label.className='theme-label';b.appendChild(label);}
+  applyTheme();mobilePlannerOrder();
+  window.addEventListener('resize',function(){mobilePlannerOrder();});
+  window.addEventListener('pageshow',mobilePlannerOrder);
+  var status=document.getElementById('plannerStatus');
+  if(status){var link=document.createElement('a');link.href='refresh.html';link.textContent='обновить приложение';link.style.color='inherit';status.appendChild(link);}
+})();
 
 })();
 </script>
