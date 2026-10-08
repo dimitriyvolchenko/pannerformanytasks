@@ -1560,7 +1560,7 @@
       "at": "2026-10-07T15:25:11.461Z"
     }
   ],
-  "plDay": "2026-10-07",
+  "plDay": "2026-10-08",
   "plWeek": "2026-10-05",
   "spotSave": {
     "spot": {
@@ -1889,7 +1889,7 @@
   "version": 12,
   "syncVersion": 3,
   "appBuild": "2026.10.07.3",
-  "savedAt": "2026-10-07T18:48:50.106Z",
+  "savedAt": "2026-10-08T06:51:26.053Z",
   "spaces": {
     "active": "cmr",
     "list": [
@@ -4219,7 +4219,7 @@
             "at": "2026-10-07T15:25:11.461Z"
           }
         ],
-        "plDay": "2026-10-07",
+        "plDay": "2026-10-08",
         "plWeek": "2026-10-05",
         "spotSave": {
           "spot": {
@@ -4597,6 +4597,6 @@
     "logo": "wok-speech",
     "instrOpen": false
   },
-  "device": "iPhone",
+  "device": "iPad",
   "lead": ""
 }
