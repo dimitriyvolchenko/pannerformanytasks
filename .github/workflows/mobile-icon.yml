@@ -37,6 +37,7 @@ jobs:
           assert hashlib.sha256(Path('progress.json').read_bytes()).hexdigest()==plan_hash
           print('PASS Candidate reconstructed exactly; live plan unchanged')
           PY
+          python3 tools/mobile-icon/finalize.py
       - name: Install pinned native browser testing tools
         run: |
           npm install --no-save --ignore-scripts playwright@1.56.1
@@ -52,7 +53,7 @@ jobs:
           import base64,json,hashlib,os,urllib.request,subprocess
           assert subprocess.check_output(['git','diff','--name-only','--','progress.json']).strip()==b''
           assert hashlib.sha256(Path('progress.json').read_bytes()).hexdigest()==Path('baseline-progress.sha256').read_text()
-          assert hashlib.sha256(Path('fixed.html').read_bytes()).hexdigest()=='65ff200aa78d9ce829827ac5389c6c530acaeac201f9b6677021abc54fe70da7'
+          assert hashlib.sha256(Path('fixed.html').read_bytes()).hexdigest()=='c8b1896b19d5f683ffe2adad8191d62f8ef981361df6b5137906899ae15e01a2'
           files=[('fixed.html','index.html')]+[(f'assets/icons/planner-{art}-{size}.png',f'assets/icons/planner-{art}-{size}.png') for art in ['sweep','check'] for size in [32,180,192]]
           staged={}
           for source,target in files:
