@@ -1558,6 +1558,13 @@
       "k": "timeoff",
       "ahead": false,
       "at": "2026-10-07T15:25:11.461Z"
+    },
+    {
+      "id": "tkmuwch69e1",
+      "t": "🔥 Launch : gathering info on the Inventory",
+      "k": "tasks",
+      "ahead": false,
+      "at": "2026-10-08T10:49:26.371Z"
     }
   ],
   "plDay": "2026-10-08",
@@ -1673,7 +1680,7 @@
     {
       "id": "tkmuwch69e1",
       "t": "🔥 Launch : gathering info on the Inventory",
-      "done": false,
+      "done": true,
       "fs": 3,
       "b": true
     }
@@ -1888,8 +1895,8 @@
   "format": "mr_rocket_planner",
   "version": 12,
   "syncVersion": 3,
-  "appBuild": "2026.10.07.3",
-  "savedAt": "2026-10-08T08:37:29.149Z",
+  "appBuild": "2026.10.08.1",
+  "savedAt": "2026-10-08T10:49:31.633Z",
   "spaces": {
     "active": "cmr",
     "list": [
@@ -4217,6 +4224,13 @@
             "k": "timeoff",
             "ahead": false,
             "at": "2026-10-07T15:25:11.461Z"
+          },
+          {
+            "id": "tkmuwch69e1",
+            "t": "🔥 Launch : gathering info on the Inventory",
+            "k": "tasks",
+            "ahead": false,
+            "at": "2026-10-08T10:49:26.371Z"
           }
         ],
         "plDay": "2026-10-08",
@@ -4332,7 +4346,7 @@
           {
             "id": "tkmuwch69e1",
             "t": "🔥 Launch : gathering info on the Inventory",
-            "done": false,
+            "done": true,
             "fs": 3,
             "b": true
           }
@@ -4597,6 +4611,6 @@
     "logo": "wok-speech",
     "instrOpen": false
   },
-  "device": "iPad",
+  "device": "iPhone",
   "lead": ""
 }
