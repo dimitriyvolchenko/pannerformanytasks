@@ -2,11 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, shrink-to-fit=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Mission">
 <title>MR Mission Planner</title>
+<link rel="apple-touch-icon" sizes="180x180" type="image/png" href="assets/icons/planner-sweep-180.png">
+<link rel="icon" sizes="192x192" type="image/png" href="assets/icons/planner-sweep-192.png">
+<link rel="icon" sizes="32x32" type="image/png" href="assets/icons/planner-sweep-32.png">
+<style id="ipad-save-v3">
+body > .overlay{z-index:340}
+body > #toast{z-index:400}
+#megaBar > b{min-width:0;flex:1 1 auto}
+#megaSyncStatus{display:block;max-width:44vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px;font-weight:500;line-height:1.5;letter-spacing:0;text-transform:none;color:var(--ink-dim)}
+#megaSyncStatus[data-bad="true"]{color:var(--redp)}
+</style>
 </head>
 <body class="scattered">
 <style>
@@ -2706,14 +2716,70 @@ body.korean #stepsBox .tadd input{border:2px solid var(--line2); background:var(
 
 
 <div class="wrap">
-  <header class="top" id="hero">
+  
+<style id="mobile-readable-20261008">
+/* Do not squeeze a wide panel into a phone viewport. Reflow its contents.
+   A phone in landscape uses the same compact layout as in portrait. */
+html.phone-ui{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.phone-ui body{min-width:0;max-width:100%;overflow-x:clip}
+.phone-ui .wrap{max-width:100%;padding:12px 12px 20px}
+.phone-ui header.top{position:relative;top:auto;min-width:0;border-radius:18px;padding:14px 14px 20px}
+.phone-ui .bpframe,.phone-ui .ruler,.phone-ui .bg-layer,.phone-ui #signTop{display:none!important}
+.phone-ui .hero-row{display:flex;flex-wrap:wrap;gap:12px;min-width:0}
+.phone-ui .hero-right{display:contents}
+.phone-ui .hero-row > .today,.phone-ui .hero-row > .total,.phone-ui .hero-row #tasksBox,
+.phone-ui .hero-row #todayBox,.phone-ui .hero-row #launchBox,.phone-ui .hero-row #totalBox,
+.phone-ui .hero-row #parBox,.phone-ui .hero-row #timeoffBox{flex:1 1 100%;width:100%;min-width:0;max-width:100%;margin:0}
+.phone-ui .toprow,.phone-ui .topmeta{min-width:0;max-width:100%;flex-wrap:wrap}
+.phone-ui .toprow .tabs{flex:1 1 100%;min-width:0}
+.phone-ui .topmeta{margin-left:0;width:100%;gap:8px}
+.phone-ui .topmeta h1{font-size:20px;max-width:100%;flex:1 1 100%}
+.phone-ui .topmeta .ctrlrow,.phone-ui .topmeta .dates2{min-width:0;max-width:100%;flex-wrap:wrap}
+.phone-ui .topmeta .savecol{margin-left:auto;max-width:100%;flex-wrap:wrap}
+.phone-ui .topmeta .sendbtn{min-height:44px;padding:10px 14px;font-size:15px}
+.phone-ui .main{flex-direction:column;align-items:stretch;gap:14px}
+.phone-ui .projects,.phone-ui .stagelist,.phone-ui .bp-side{width:100%;min-width:0;max-width:100%}
+.phone-ui .bp-side{position:relative;top:auto!important;height:auto;max-height:none}
+.phone-ui .titem > [data-tdtext],.phone-ui #stepsBox .titem > [data-tdtext]{font-size:16px;line-height:1.4;overflow-wrap:anywhere}
+.phone-ui .titem{padding-top:6px;padding-bottom:6px}
+.phone-ui .tlabel{font-size:16px;line-height:1.4;overflow-wrap:anywhere}
+.phone-ui .prow .pcell{font-size:16px;overflow-wrap:anywhere}
+.phone-ui .tadd input,.phone-ui #stepsBox .tadd input,.phone-ui .paradd input,
+.phone-ui .titem input,.phone-ui .tlabel input,.phone-ui .pcell input,
+.phone-ui [data-addinp],.phone-ui [data-subinp]{font-size:16px;min-width:0;max-width:100%}
+.phone-ui .th{min-width:0;flex-wrap:wrap}
+.phone-ui .total .row1{flex-wrap:wrap}
+.phone-ui .bigbar{max-width:100%;flex:1 1 80px}
+.phone-ui .toolstrip{flex-wrap:wrap;gap:7px}
+.phone-ui .toolstrip .btn{font-size:14px;min-height:40px;padding:8px 11px}
+.phone-ui .zoomer{height:34px;gap:4px}
+.phone-ui .zoomer button{width:28px;height:30px;font-size:16px}
+.phone-ui .zoomer b{font-size:12px;cursor:pointer;padding:4px}
+.zoomer button:disabled{opacity:.35;cursor:default}
+.phone-ui #megaOv .mgin{width:100%;max-width:100%;min-width:0}
+.phone-ui #megaOv .mgtop,.phone-ui #megaOv .mgcols{display:flex;flex-direction:column;min-width:0}
+.phone-ui #megaOv .megaitem{min-width:0;max-width:100%}
+.phone-ui #megaBar{gap:7px;padding:9px 10px;flex-wrap:wrap}
+.phone-ui #megaBar > b{flex:1 1 100%}
+.phone-ui #megaBar #saveCol{flex:1 1 auto;max-width:100%;margin:0}
+.phone-ui #megaOut{font-size:12px;padding:8px}
+.phone-ui #megaSyncStatus{max-width:100%}
+.phone-ui #icoOverlay{padding:14px}
+.phone-ui #icoOverlay .modal{width:100%;max-width:100%}
+.phone-ui #icoOverlay .modal header{flex-wrap:wrap;gap:6px;padding:14px}
+.phone-ui #icoOverlay h2{font-size:17px}
+.phone-ui #icoState{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+.phone-ui #icoOverlay .icorow{grid-template-columns:repeat(auto-fit,minmax(96px,1fr))}
+</style>
+
+<header class="top" id="hero">
     <i class="bpframe" aria-hidden="true"></i>
     <div class="toprow">
     <div class="tabs" id="tabs"></div>
     <div class="topmeta" id="topMeta">
       <span class="kicker" id="hKicker">Mission control</span>
       <span class="ctrlrow"><button class="thsw" id="btnTheme" title="Switch between the light and the dark theme" aria-label="Switch theme"><span class="knob"><svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.6"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></svg><svg class="moon" viewBox="0 0 24 24"><path d="M20 14.4A8.4 8.4 0 0 1 9.6 4a8.4 8.4 0 1 0 10.4 10.4z"/></svg></span></button><button class="dknob" id="btnDark" title="How dark the dark theme is - press and drag the slider"><i></i></button><button class="bsw" id="btnBold" title="Make every word on the page bold">B</button></span>
-      <span class="zoomer" id="heroZoom" title="Make this panel smaller or bigger - double-click to reset"><button data-hz="-1" title="Smaller">&#8722;</button><b id="hzVal">100%</b><button data-hz="1" title="Bigger">+</button></span>
+      <span class="zoomer" id="heroZoom" title="Panel scale on this screen - tap the percentage to reset"><button data-hz="-1" title="Smaller">&#8722;</button><b id="hzVal" role="button" tabindex="0" aria-label="Reset panel scale to 100 percent">100%</b><button data-hz="1" title="Bigger">+</button></span>
       <h1 id="hTitle">MR Mission Planner</h1>
       <span class="dates2"><span class="due big" id="globalStart" title="Double-click to change the start date">from Aug 19</span><span class="due big" id="globalDue" title="Double-click to change the final due date">due Sep 30</span></span>
       <span class="savecol" id="saveCol"><button class="sendbtn" id="btnGhSave" title="Send this copy of the progress to GitHub - the same as Send this copy inside sync"><svg viewBox="0 0 24 24"><path d="M12 16.5V4.5"/><path d="M8 8.5l4-4 4 4"/><path d="M4.5 14v4.5A1.5 1.5 0 0 0 6 20h12a1.5 1.5 0 0 0 1.5-1.5V14"/></svg><b id="ghSaveLab">save</b></button><button class="sendbtn" id="btnGhTake" title="Take the newest copy of the progress from GitHub - the same as Take the copy inside sync"><svg viewBox="0 0 24 24"><path d="M12 4.5v12"/><path d="M8 12.5l4 4 4-4"/><path d="M4.5 14v4.5A1.5 1.5 0 0 0 6 20h12a1.5 1.5 0 0 0 1.5-1.5V14"/></svg><b id="ghTakeLab">take</b></button></span>
@@ -3010,7 +3076,7 @@ body.korean #stepsBox .tadd input{border:2px solid var(--line2); background:var(
   <div class="dkhint">Sets how deep the dark theme goes. The light theme is not touched.</div>
 </div>
 <div id="pinkMenu"><div class="rlab2">Strip colour</div><div class="pswatch" id="pinkSw"></div><button class="mrow" id="pinkPick">Pick the colour off the strip</button><button class="mrow" id="pinkAuto">Match the strip automatically</button><div class="phex"><input type="text" id="pinkHex" placeholder="#FF2D78" maxlength="7" spellcheck="false"><button id="pinkHexOk">set</button></div></div>
-<div id="megaOv"><div id="megaBar"><b>Mega focus</b><button id="megaOut">back to the page</button></div><div class="mgin" id="megaIn"><div class="mgtop" id="mgTop"><div class="mgtopl" id="mgTopL"></div><div class="mgtopm" id="mgTopM"></div><div class="mgtopr" id="mgTopR"></div></div><div class="mgcols" id="mgCols"><div class="mgl" id="mgL"></div><div class="mgr" id="mgR"></div><div class="mgt" id="mgT"></div></div><div class="mgprojs" id="mgProjs"></div><div class="mgrest" id="mgRest"></div></div></div>
+<div id="megaOv"><div id="megaBar"><b>Mega focus<span id="megaSyncStatus" role="status" aria-live="polite"></span></b><button id="megaOut">back to the page</button></div><div class="mgin" id="megaIn"><div class="mgtop" id="mgTop"><div class="mgtopl" id="mgTopL"></div><div class="mgtopm" id="mgTopM"></div><div class="mgtopr" id="mgTopR"></div></div><div class="mgcols" id="mgCols"><div class="mgl" id="mgL"></div><div class="mgr" id="mgR"></div><div class="mgt" id="mgT"></div></div><div class="mgprojs" id="mgProjs"></div><div class="mgrest" id="mgRest"></div></div></div>
 <div class="overlay" id="lnOverlay">
   <div class="modal narrow">
     <header><h2>Launched</h2><span class="spacer"></span><span class="signstate" id="lnHead"></span></header>
@@ -3029,7 +3095,7 @@ body.korean #stepsBox .tadd input{border:2px solid var(--line2); background:var(
   <div class="modal narrow">
     <header><h2>The picture on the home screen</h2><span class="spacer"></span><span class="signstate" id="icoState"></span></header>
     <div class="body">
-      <p class="lnfoot" style="border:none;padding:0;margin:0 0 12px">Pick the one this plan should wear. A phone keeps the picture it copied when the plan was first put on the home screen, so after a change take the old square off and add the page again - then the new one comes with it.</p>
+      <p class="lnfoot" style="border:none;padding:0;margin:0 0 12px">Choose an icon below. To use it on iPhone or iPad, open this page in Safari and choose Share → Add to Home Screen. An existing shortcut may keep its previous icon. Keep it until the new shortcut opens correctly and your plans are available.</p>
       <div class="icogrid" id="icoGrid"></div>
     </div>
     <footer><span class="spacer"></span><button class="btn" id="icoClose">Close</button></footer>
@@ -5548,10 +5614,28 @@ var BASE=[
 
 /* ================= STATE ================= */
 var KEY="mr_rocket_planner_v2";
-var PLANNER_BUILD="2026.10.07.3", ZOOMKEY=KEY+":device-zoom-v3", localZoom=1;
-try{var zStored=+localStorage.getItem(ZOOMKEY);if(zStored>=0.75&&zStored<=1.6)localZoom=zStored;}catch(e){}
+var PLANNER_BUILD="2026.10.08.1", ZOOMKEY="", localZoom=1;
+/* Compact phones start at a readable 100%. Their scale is independent of the
+   old device-wide value and of tablet/desktop layouts. Pinch zoom stays enabled. */
+function zoomProfile(){
+  var w=document.documentElement.clientWidth||window.innerWidth||390;
+  var touchPhone=window.matchMedia("(pointer:coarse)").matches && Math.min(screen.width,screen.height)<=600;
+  return w<=700||touchPhone?"phone":(w<=1400?"tablet":"desktop");
+}
+function zoomClamp(z){return Math.max(zoomProfile()==="phone"?1:0.75,Math.min(1.6,+z||1));}
+function readLocalZoom(){
+  var profile=zoomProfile();ZOOMKEY=KEY+":device-zoom-v4:"+profile;
+  localZoom=1;
+  try{
+    var raw=localStorage.getItem(ZOOMKEY);
+    if(raw===null && profile!=="phone")raw=localStorage.getItem(KEY+":device-zoom-v3");
+    if(raw!==null)localZoom=zoomClamp(raw);
+  }catch(e){}
+  document.documentElement.classList.toggle("phone-ui",profile==="phone");
+}
+readLocalZoom();
 function setLocalZoom(z){
-  localZoom=Math.max(0.75,Math.min(1.6,+z||1));state.heroZoom=localZoom;
+  localZoom=zoomClamp(z);state.heroZoom=localZoom;
   try{localStorage.setItem(ZOOMKEY,String(localZoom));}catch(e){}
   applyHeroZoom();
 }
@@ -6393,69 +6477,76 @@ function applyTaskFocus(){
 /* ================= THE LIGHT =================
    One or more boxes stay lit while the rest of the page steps into the shade.
    A lit box can give way in turn - it goes grey and sits behind the others. */
+function spotView(){
+  return megaOn && megaView && megaView.space===spaces.active ? megaView :
+    {spot:state.spot||{},low:state.spotLow||{}};
+}
 function spotKeys(){
-  var out=[];
-  Object.keys(state.spot||{}).forEach(function(k){ if(state.spot[k]) out.push(k); });
-  return out;
+  var spot=spotView().spot;
+  return Object.keys(spot).filter(function(k){return !!spot[k];});
 }
 function applySpot(){
   state.spot=state.spot||{}; state.spotLow=state.spotLow||{};
+  var view=spotView(), spot=view.spot, low=view.low;
   var keys=spotKeys(), on=keys.length>0;
-  var hero=!!(state.spot.today || state.spot.week || state.spot.done || state.spot.launch ||
-             state.spot.par || state.spot.tasks || state.spot.off);
+  var hero=!!(spot.today || spot.week || spot.done || spot.launch ||
+             spot.par || spot.tasks || spot.off);
   document.body.classList.toggle("spotlight", on);
   document.body.classList.toggle("spothero", on && hero);
   document.querySelectorAll(".proj").forEach(function(el){
     var pid=el.dataset.proj;
-    el.classList.toggle("spot", !!state.spot[pid]);
-    el.classList.toggle("spotlow", !!(state.spot[pid] && state.spotLow[pid]));
+    el.classList.toggle("spot", !!spot[pid]);
+    el.classList.toggle("spotlow", !!(spot[pid] && low[pid]));
   });
   document.querySelectorAll(".sticker").forEach(function(el){
     var k="st:"+el.dataset.sid;
-    el.classList.toggle("spot", !!state.spot[k]);
-    el.classList.toggle("spotlow", !!(state.spot[k] && state.spotLow[k]));
+    el.classList.toggle("spot", !!spot[k]);
+    el.classList.toggle("spotlow", !!(spot[k] && low[k]));
   });
   [["today","todayBox"],["week","weekBox"],["done","totalBox"],["launch","launchBox"],["par","parBox"],["tasks","tasksBox"],["off","timeoffBox"]].forEach(function(pair){
     var el=document.getElementById(pair[1]);
     if(!el) return;
-    el.classList.toggle("spot", !!state.spot[pair[0]]);
-    el.classList.toggle("spotlow", !!(state.spot[pair[0]] && state.spotLow[pair[0]]));
+    el.classList.toggle("spot", !!spot[pair[0]]);
+    el.classList.toggle("spotlow", !!(spot[pair[0]] && low[pair[0]]));
   });
   var tl=document.querySelector(".timeline");
   if(tl){
-    tl.classList.toggle("spot", !!state.spot.timeline);
-    tl.classList.toggle("spotlow", !!(state.spot.timeline && state.spotLow.timeline));
+    tl.classList.toggle("spot", !!spot.timeline);
+    tl.classList.toggle("spotlow", !!(spot.timeline && low.timeline));
   }
   var th=document.getElementById("tlHi");
-  if(th) th.classList.toggle("on", !!state.spot.timeline);
+  if(th) th.classList.toggle("on", !!spot.timeline);
   document.querySelectorAll("[data-spot]").forEach(function(b){
-    b.classList.toggle("on", !!state.spot[b.getAttribute("data-spot")]);
+    b.classList.toggle("on", !!spot[b.getAttribute("data-spot")]);
   });
   try{ paintLamp(); }catch(e){}
   document.querySelectorAll("[data-spotlow]").forEach(function(b){
-    b.classList.toggle("on", !!state.spotLow[b.getAttribute("data-spotlow")]);
+    b.classList.toggle("on", !!low[b.getAttribute("data-spotlow")]);
   });
 }
 function toggleSpot(id){
   state.spot=state.spot||{}; state.spotLow=state.spotLow||{};
-  if(state.spot[id]){ delete state.spot[id]; delete state.spotLow[id]; }
-  else state.spot[id]=true;
+  var view=spotView(),on=!view.spot[id];
+  if(on){state.spot[id]=true;view.spot[id]=true;}
+  else{delete state.spot[id];delete state.spotLow[id];delete view.spot[id];delete view.low[id];}
   persist(); applySpot();
-  toast(state.spot[id]?"The light is on this box - press highlight again to put it out"
-                      :"The light is off this box");
+  toast(on?"The light is on this box - press highlight again to put it out":"The light is off this box");
 }
 function toggleSpotLow(id){
-  state.spotLow=state.spotLow||{};
-  if(!state.spot||!state.spot[id]){ toast("Put the light on first - then it can give way"); return; }
-  if(state.spotLow[id]) delete state.spotLow[id]; else state.spotLow[id]=true;
+  state.spot=state.spot||{};state.spotLow=state.spotLow||{};
+  var view=spotView();
+  if(!view.spot[id]){toast("Put the light on first - then it can give way");return;}
+  var on=!view.low[id];state.spot[id]=true;
+  if(on){state.spotLow[id]=true;view.low[id]=true;}
+  else{delete state.spotLow[id];delete view.low[id];}
   persist(); applySpot();
-  toast(state.spotLow[id]?"This box gives way inside the light - grey and a step behind"
-                         :"Back to the full light");
+  toast(on?"This box gives way inside the light - grey and a step behind":"Back to the full light");
 }
 function clearSpot(){
   if(!spotKeys().length) return;
   spotRemember();
   state.spot={}; state.spotLow={};
+  if(megaOn&&megaView&&megaView.space===spaces.active){megaView.spot={};megaView.low={};}
   persist(); applySpot();
   toast("The light is out");
 }
@@ -6465,8 +6556,8 @@ function clearSpot(){
 function spotRemember(){
   var k=spotKeys();
   if(!k.length) return;
-  state.spotSave={spot:JSON.parse(JSON.stringify(state.spot||{})),
-                  low:JSON.parse(JSON.stringify(state.spotLow||{}))};
+  var view=spotView();
+  state.spotSave={spot:ghCopy(view.spot),low:ghCopy(view.low)};
 }
 function paintLamp(){
   var b=document.getElementById("lampSw");
@@ -6487,6 +6578,7 @@ function lampToggle(){
   }
   state.spot=JSON.parse(JSON.stringify(sv.spot));
   state.spotLow=JSON.parse(JSON.stringify(sv.low||{}));
+  if(megaOn&&megaView&&megaView.space===spaces.active){megaView.spot=ghCopy(state.spot);megaView.low=ghCopy(state.spotLow);}
   persist(); applySpot(); paintLamp();
   toast("The light is back on "+keys.length+(keys.length===1?" box":" boxes"));
 }
@@ -8081,7 +8173,9 @@ document.getElementById("signsSave").addEventListener("click", function(){
 function syncHeroHeight(){
   var h=document.getElementById("hero");
   if(!h) return;
-  document.documentElement.style.setProperty("--heroH", Math.round(h.getBoundingClientRect().height)+"px");
+  var value=Math.round(h.getBoundingClientRect().height)+"px";
+  if(document.documentElement.style.getPropertyValue("--heroH")!==value)
+    document.documentElement.style.setProperty("--heroH",value);
 }
 /* ---- Mission control takes the whole width of a computer screen ----
    The page itself stays a comfortable reading column, but the panel steps out of it
@@ -8133,8 +8227,15 @@ function fitHeroWide(){
 }
 var heroWideTm=null;
 function fitHeroWideSoon(ms){ clearTimeout(heroWideTm); heroWideTm=setTimeout(function(){ fitHeroWide(); syncHeroHeight(); }, ms||60); }
-window.addEventListener("resize", function(){ applySigns(); fitHeroWide(); syncHeroHeight(); });
-if(window.ResizeObserver){ try{ new ResizeObserver(syncHeroHeight).observe(document.getElementById("hero")); }catch(e){} }
+window.addEventListener("resize", function(){ applyHeroZoom(); applySigns(); fitHeroWide(); syncHeroHeight(); });
+/* ResizeObserver is a measurement phase. Defer layout-dependent writes to the
+   next frame, and avoid writing an unchanged height, to prevent a WebKit loop. */
+var heroMeasureFrame=0;
+function queueHeroHeight(){
+  if(heroMeasureFrame)return;
+  heroMeasureFrame=requestAnimationFrame(function(){heroMeasureFrame=0;syncHeroHeight();});
+}
+if(window.ResizeObserver){try{new ResizeObserver(queueHeroHeight).observe(document.getElementById("hero"));}catch(e){}}
 
 /* ================= PRIORITY FOR TODAY ================= */
 /* ================= PRIORITY LISTS: today and the week =================
@@ -8711,7 +8812,7 @@ Object.keys(PLISTS).forEach(function(k){
    direction and locking into place across the whole width. Nothing is copied: the
    real boxes are carried over and carried back, so every button on them still works
    and every tick still counts. */
-var megaOn=false, megaSaved=[], megaBusy=false, megaRebuilding=false;
+var megaOn=false, megaSaved=[], megaBusy=false, megaRebuilding=false, megaView=null;
 function withMegaHome(fn){
   var restore=!!megaOn&&!megaRebuilding, scroll=[];
   if(restore){
@@ -8831,7 +8932,7 @@ function reflowProjects(){
   });
 }
 function megaFold(cls){
-  var tlLit=!!(state.spot&&state.spot.timeline);
+  var tlLit=!!spotView().spot.timeline;
   var stkLit=!!document.querySelector(".sticker.spot");
   document.body.classList.toggle("mgtl", tlLit);
   document.body.classList.toggle("mgstk", stkLit);
@@ -8856,6 +8957,7 @@ function megaIn(){
     toast("The light is on something that cannot be taken over - light a stage or a box in Mission control");
     return;
   }
+  megaView={space:spaces.active,spot:ghCopy(state.spot||{}),low:ghCopy(state.spotLow||{})};
   megaBusy=true; megaOn=true;
   var ov=document.getElementById("megaOv");
   megaFold("mgfold");
@@ -8885,9 +8987,9 @@ function megaOff(){
       ov.classList.remove("up","gone");
       document.body.classList.remove("mgback","mgtl","mgstk");
       document.querySelectorAll("[style*='--fd']").forEach(function(e){ e.style.removeProperty("--fd"); });
+      megaOn=false;megaBusy=false;megaView=null;
       try{ applySpot(); renderToday(); renderPairs(); renderLaunch(); render(); }catch(e){}
       try{ fitHeroWide(); syncHeroHeight(); }catch(e){}
-      megaOn=false; megaBusy=false;
     }, 560);
   }, 380+megaSaved.length*70);
 }
@@ -10583,13 +10685,16 @@ function applyHeroFree(){
   try{ syncHeroHeight(); }catch(e){}
 }
 function applyHeroZoom(){
+  var key=KEY+":device-zoom-v4:"+zoomProfile();if(key!==ZOOMKEY)readLocalZoom();
   var z=localZoom;state.heroZoom=z;
   document.documentElement.style.setProperty("--heroZoom",z);
   document.documentElement.style.setProperty("--hcol",Math.round(262*z)+"px");
-  var v=document.getElementById("hzVal");if(v){v.textContent=Math.round(z*100)+"%";v.title="Scale on this device only. Double-click to reset to 100%.";}
+  var v=document.getElementById("hzVal");if(v){v.textContent=Math.round(z*100)+"%";v.title="Scale for this screen only. Tap the percentage to reset to 100%.";}
+  var down=document.querySelector('[data-hz="-1"]');if(down){down.disabled=z<=(zoomProfile()==="phone"?1:0.75);down.title=down.disabled?"Minimum readable scale on this screen":"Smaller";}
   try{fitHeroWide();syncHeroHeight();}catch(e){}
 }
 document.getElementById("heroZoom").addEventListener("click", function(ev){
+  if(ev.target.closest("#hzVal")){setLocalZoom(1);return;}
   var b=ev.target.closest("[data-hz]");
   if(!b) return;
   var cur=state.heroZoom||1;
@@ -10612,6 +10717,7 @@ document.getElementById("btnKorean").addEventListener("click", function(){
     ? "The noodle-house look is on - every button still does exactly what it did"
     : "Back to the ordinary look");
 });
+document.getElementById("hzVal").addEventListener("keydown",function(ev){if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();setLocalZoom(1);}});
 document.getElementById("heroZoom").addEventListener("dblclick", function(ev){
   ev.preventDefault();
   setLocalZoom(1);
@@ -11055,7 +11161,7 @@ function refreshAllCore(){
   mountBlueprint(); buildStickers(); emitStyles(); applySigns(); applyListView();
   try{ plRoll(); }catch(e){}
   try{ renderLaunch(); }catch(e){}
-  renderToday(); renderPairs(); paintFolderBtn(); applySkin(); applyStickerVis(); applyTheme(); applyKorean(); applyDarkness(); applyBold(); applyHeroZoom(); applyHeroFree(); applyPink(); binkRedraw();
+  renderToday(); renderPairs(); paintFolderBtn(); applySkin(); applyStickerVis(); applyTheme(); applyKorean(); applyDarkness(); applyBold(); applyHeroZoom(); applyHeroFree(); applyPink();if(LOGOS)applyLogo(); binkRedraw();
   try{ placeStickBtn(); }catch(e){}
   try{ applySigns(); fitHeroWide(); syncHeroHeight(); }catch(e){}
   _othFresh=false;
@@ -11381,6 +11487,8 @@ function syState(msg, bad){
   if(el){ el.textContent=msg||""; el.style.color=bad?"var(--redp)":""; }
   var d=document.getElementById("syDot");
   if(d){ d.classList.toggle("on", !bad && ghReady()); d.classList.toggle("bad", !!bad); }
+  var megaStatus=document.getElementById("megaSyncStatus");
+  if(megaStatus){megaStatus.textContent=msg||"";megaStatus.title="Planner "+PLANNER_BUILD+" · "+(msg||"");megaStatus.dataset.bad=bad?"true":"false";}
   var health=document.getElementById("plannerHealth");
   if(health){health.textContent=msg||"";health.dataset.bad=bad?"true":"false";
     if(ghV2&&ghV2.legacyWriter)health.textContent+=" · Last save uses an older format ("+ghV2.legacyWriter+"). Reload all devices.";
@@ -11693,7 +11801,14 @@ function ghDoSync(kind,quiet,t){
           if(!result||!result.content||!result.content.sha)throw new Error("GitHub returned no confirmation; your unsent marker was kept");
           var ack={raw:payload,core:merged,sha:result.content.sha};
           try{ghAcknowledge(ack,t,local);}catch(e){
-            if(!e.syncDeferred)ghStoreBase(ack,t);c.dirty=true;ghSave();
+            if(e.syncDeferred){
+              ghV2.pendingAck={remote:ack,target:t,local:local};
+              ghV2.deferred=true;c.dirty=true;ghSave();
+              syState("Saved to GitHub; finish editing to display incoming changes.");
+              if(!quiet)toast("Saved to GitHub. Incoming changes will display after editing.");
+              return true;
+            }
+            ghStoreBase(ack,t);c.dirty=true;ghSave();
             if(e.syncConflict){ghShowConflict(ack,quiet);return false;}throw e;
           }
           syState(c.dirty?"Saved to GitHub; changes made during the save are still pending":"Saved to GitHub at "+hhmm()+" from "+(c.device||"this device"));
@@ -11708,6 +11823,21 @@ function ghDoSync(kind,quiet,t){
   }
   return attempt();
 }
+function ghFlushAck(){
+  var pending=ghV2.pendingAck;if(!pending)return true;
+  if(ghEditing())return false;
+  if(ghTargetId(ghTarget())!==ghTargetId(pending.target)){
+    syState("The previous repository accepted the save. Restore its Sync settings to finish applying incoming changes.",true);return false;
+  }
+  try{
+    ghAcknowledge(pending.remote,pending.target,pending.local);ghV2.pendingAck=null;
+    syState(ghConf().dirty?"Saved to GitHub; newer local edits are still waiting to send":"Saved to GitHub; incoming changes are now displayed");return true;
+  }catch(e){
+    if(e.syncConflict){ghV2.pendingAck=null;ghShowConflict(pending.remote,false);}
+    else if(!e.syncDeferred)syState("Saved to GitHub; display update pending: "+ghErr(e),true);
+    return false;
+  }
+}
 function ghEditing(){
   if(megaBusy)return true;
   if(document.querySelector("#plMenu.show,#richMenu.show,#ctxMenu.show,#lineMenu.show,#pinkMenu.show"))return true;
@@ -11719,10 +11849,32 @@ function ghEditing(){
 }
 function ghSchedule(){
   clearTimeout(ghTimer);
-  if(!ghV2||!ghV2.started||!ghReady()||!ghConf().auto||(!ghConf().dirty&&!ghV2.deferred)||ghV2.conflict||tabConflict)return;
-  ghTimer=setTimeout(function(){ghV2.deferred=false;if(ghEditing()){ghV2.deferred=true;ghSchedule();return;}ghCycle();},Math.max(4000,ghV2.blockedUntil-Date.now()));
+  if(!ghV2||!ghV2.started||!ghReady()||(!ghConf().auto&&!ghV2.pendingAck)||(!ghConf().dirty&&!ghV2.deferred&&!ghV2.pendingAck)||ghV2.conflict||tabConflict)return;
+  ghTimer=setTimeout(function(){ghV2.deferred=false;if(ghEditing()){ghV2.deferred=true;ghSchedule();return;}if(!ghFlushAck())return;if(ghConf().auto)ghCycle();},Math.max(4000,ghV2.blockedUntil-Date.now()));
+}
+var ghComposing=false;
+document.addEventListener("compositionstart",function(){ghComposing=true;},true);
+document.addEventListener("compositionend",function(){ghComposing=false;},true);
+function ghPrepareManual(){
+  if(ghComposing){syState("Finish the current character before syncing. Your text is kept.",true);return false;}
+  var draft=[].slice.call(document.querySelectorAll('.tadd input,#parA,#parB,[data-addinp],[data-subinp]')).filter(function(el){return el.getClientRects().length&&String(el.value||"").trim();})[0];
+  if(draft){syState("A new task is still in its field. Press Enter to add it before syncing. Your draft is kept.",true);return false;}
+  document.querySelectorAll("#plMenu.show,#richMenu.show,#ctxMenu.show,#lineMenu.show,#pinkMenu.show").forEach(function(el){el.classList.remove("show");});
+  var el=document.activeElement;
+  if(el&&!el.closest("#syOverlay")&&(el.isContentEditable||
+    (el.matches("input,textarea")&&el.closest("[data-tdtext],[data-lb],[data-pt],.sticker,.backface"))))el.blur();
+  var selection=window.getSelection();if(selection&&!selection.isCollapsed)selection.removeAllRanges();
+  if(ghEditing()){
+    ghV2.manualWaiting=true;
+    syState(megaBusy?"Mega Focus is changing layout. Tap Save or Take again when it settles.":
+      "Finish the current entry with Enter before syncing. Your text is still here.");
+    return false;
+  }
+  ghV2.manualWaiting=false;return true;
 }
 function ghRun(kind,quiet){
+  if(!quiet&&!ghPrepareManual())return Promise.resolve(false);
+  if(ghV2.pendingAck&&!ghFlushAck())return Promise.resolve(false);
   if(ghV2.rateUntil>Date.now()){syState("GitHub rate limit: retry after "+hhmm(new Date(ghV2.rateUntil))+". Local changes are kept",true);return Promise.resolve(false); }
   tabRefresh();if(tabConflict){showTabConflict();if(!quiet)syAfterFail();return Promise.resolve(false);}
   if(!ghReady()){syState("Set up Sync on this device: repository and a key with Contents: Read and write",true);if(!quiet)syAfterFail();return Promise.resolve(false);}
@@ -11747,50 +11899,6 @@ function ghRun(kind,quiet){
   });
   ghV2.flight=job;return job;
 }
-/* A Save/Take activation is not guaranteed to blur a text editor. Commit the
-   current editor before reading a snapshot; never report an unsent draft as saved.
-   This applies to explicit actions only: automatic sync must not interrupt typing. */
-var ghComposing=false;
-document.addEventListener("compositionstart",function(){ghComposing=true;},true);
-document.addEventListener("compositionend",function(){ghComposing=false;},true);
-function ghPrepareManual(){
-  if(ghComposing){
-    syState("Finish entering this character, then press Save or Take. Your text is kept.",true);
-    toast("Finish entering the current character before syncing");return false;
-  }
-  /* An add-task field is not an existing editor: blur does not add its contents.
-     Do not discard it in a remote redraw or silently save the previous plan. */
-  var inputs=[].slice.call(document.querySelectorAll(
-    '.tadd input,#parA,#parB,[data-addinp],[data-subinp]'));
-  var draft=inputs.filter(function(el){return el.getClientRects().length&&String(el.value||"").trim();})[0];
-  if(draft){
-    syState("A new task is still in its input field. Press Enter to add it, then Save or Take. Nothing was removed.",true);
-    toast("Press Enter to add the pending task before syncing");return false;
-  }
-  var el=document.activeElement;
-  if(el&&el.matches&&!el.closest("#syOverlay")&&
-     (el.matches('input,textarea')||el.isContentEditable))el.blur();
-  /* Formatting has already been committed by its menu; closing it and releasing
-     its selection permits a subsequent merge to repaint safely. */
-  document.querySelectorAll("#plMenu.show,#richMenu.show,#ctxMenu.show,#lineMenu.show,#pinkMenu.show")
-    .forEach(function(menu){menu.classList.remove("show");});
-  var sel=window.getSelection();if(sel&&!sel.isCollapsed)sel.removeAllRanges();
-  return true;
-}
-function ghManual(kind){
-  function failed(e){
-    syState("Not synced: "+ghErr(e),true);syAfterFail();
-    toast("Not saved to GitHub - see Sync. Local changes are kept.");return false;
-  }
-  try{
-    if(!ghPrepareManual())return Promise.resolve(false);
-    /* Let blur handlers and pending cross-tab repaint finish before the snapshot.
-       Any later typing still gets the normal in-flight edit protection. */
-    return new Promise(function(resolve){setTimeout(resolve,0);})
-      .then(function(){return ghRun(kind,false);}).catch(failed);
-  }catch(e){return Promise.resolve(failed(e));}
-}
-
 function ghPush(quiet){return ghRun("send",!!quiet);}
 function ghPull(quiet){return ghRun("take",!!quiet);}
 function ghApply(text){
@@ -11806,6 +11914,7 @@ function ghTouched(){
   ghSave();paintSyncDot();if(c.dirty)syState(c.auto?"Changes saved locally; waiting to sync":"Changes saved locally; press Save to GitHub (auto is off)");ghSchedule();
 }
 function ghCycle(){
+  if(ghV2.pendingAck&&!ghFlushAck())return;
   tabRefresh();if(!ghReady()||!ghConf().auto||document.hidden||ghEditing())return;
   if(ghConf().dirty)ghPush(true);else ghPull(true);
 }
@@ -11894,8 +12003,8 @@ document.getElementById("syLead").addEventListener("click", function(){
   var c=ghConf(); c.lead=false; c.remoteLead=""; ghSave(); syPaint();
   syState("All devices can save; choosing a main device is no longer needed");
 });
-document.getElementById("syPush").addEventListener("click", function(){ syRead(); ghManual("send"); });
-document.getElementById("syPull").addEventListener("click", function(){ syRead(); ghManual("take"); });
+document.getElementById("syPush").addEventListener("click", function(){ syRead(); ghPush(false); });
+document.getElementById("syPull").addEventListener("click", function(){ syRead(); ghPull(false); });
 document.getElementById("syAuto").addEventListener("click", function(){
   syRead();
   var c=ghConf(); c.auto=!c.auto; ghSave(); syPaint();
@@ -12183,18 +12292,23 @@ function ghNotSetUp(){
   syPaint();
   document.getElementById("syOverlay").classList.add("show");
 }
-document.getElementById("btnGhSave").addEventListener("click", function(){
-  var el=this;
-  if(!ghReady()) return ghNotSetUp();
-  ghBtnBusy(el,true);
-  ghManual("send").then(function(ok){ ghBtnBusy(el,false); ghBtnMark(el,ok); });
-});
-document.getElementById("btnGhTake").addEventListener("click", function(){
-  var el=this;
-  if(!ghReady()) return ghNotSetUp();
-  ghBtnBusy(el,true);
-  ghManual("take").then(function(ok){ ghBtnBusy(el,false); ghBtnMark(el,ok); });
-});
+var ghManualFlight=null;
+function ghManualAction(kind,el){
+  if(ghManualFlight)return ghManualFlight;
+  if(!ghReady()){ghNotSetUp();return Promise.resolve(false);}
+  var buttons=["btnGhSave","btnGhTake"].map(function(id){return document.getElementById(id);});
+  var job=Promise.resolve().then(function(){return kind==="send"?ghPush(false):ghPull(false);})
+    .then(function(ok){if(!ghV2.manualWaiting)ghBtnMark(el,ok);return ok;})
+    .catch(function(e){syState("Not synced: "+ghErr(e),true);syAfterFail();ghBtnMark(el,false);return false;})
+    .finally(function(){buttons.forEach(function(b){ghBtnBusy(b,false);});if(ghManualFlight===job)ghManualFlight=null;});
+  ghManualFlight=job;
+  /* Start in the same interaction; disabling after preparation must not be the
+     only thing that blurs an iPad editor. */
+  buttons.forEach(function(b){ghBtnBusy(b,true);});
+  return job;
+}
+document.getElementById("btnGhSave").addEventListener("click",function(){ghManualAction("send",this);});
+document.getElementById("btnGhTake").addEventListener("click",function(){ghManualAction("take",this);});
 document.getElementById("btnImport").addEventListener("click", function(){ document.getElementById("fileImport").click(); });
 document.getElementById("fileImport").addEventListener("change", function(ev){
   var f=ev.target.files[0]; if(!f) return;
@@ -12393,9 +12507,9 @@ var LG_GROUND={
 };
 var LG_PLAIN_BG={ wok:"#F5C5AF", flat:"#FFFFFF", cup:"#FFFFFF", sign:"#FFFFFF", kanji:"#FFFFFF" };
 var LG_FILL={ wok:.80, flat:.80, cup:.80, sign:.74 };
-var LG_NAME={ wok:"Коробка вок", flat:"Лапша и палочки", cup:"Стакан лапши", sign:"Вывеска", kanji:"Иероглиф 案",
+var LG_NAME={ sweep:"Sweep check", check:"Classic check", wok:"Коробка вок", flat:"Лапша и палочки", cup:"Стакан лапши", sign:"Вывеска", kanji:"Иероглиф 案",
   ph1:"Вдвоём", ph2:"В раковине", ph3:"Большие глаза", ph4:"Под ёлкой" };
-var LG_GNAME={ plain:"свой фон", music:"красный", speech:"синий", photo:"фотографии" };
+var LG_GNAME={ checks:"Blue checkmarks", plain:"свой фон", music:"красный", speech:"синий", photo:"фотографии" };
 var LG_ARTS=["wok","flat","cup","sign","kanji"];
 var LG_PH_ARTS=["ph1","ph2","ph3","ph4"];
 
@@ -12419,7 +12533,25 @@ var LG_IMG={}, LG_READY=false, LG_WAIT=[];
 })();
 function lgReady(fn){ if(LG_READY) fn(); else LG_WAIT.push(fn); }
 
+
+/* Two original, resolution-independent blue checkmarks. The PNG is full-bleed;
+   iOS supplies its own rounded icon mask. */
+function drawBlueCheck(art,S){
+  var c=document.createElement("canvas");c.width=c.height=S;var x=c.getContext("2d");
+  x.scale(S/512,S/512);
+  var g=x.createLinearGradient(70,0,430,512);g.addColorStop(0,"#4956FF");g.addColorStop(.45,"#3342F5");g.addColorStop(1,"#2928DD");
+  x.fillStyle=g;x.fillRect(0,0,512,512);
+  var glow=x.createRadialGradient(190,-80,0,190,-80,600);glow.addColorStop(0,"rgba(160,182,255,.25)");glow.addColorStop(1,"rgba(100,130,255,0)");x.fillStyle=glow;x.fillRect(0,0,512,512);
+  x.shadowColor="rgba(14,21,112,.23)";x.shadowBlur=8;x.shadowOffsetY=4;
+  var white=x.createLinearGradient(0,160,0,365);white.addColorStop(0,"#FFFFFF");white.addColorStop(1,"#EDF3FF");
+  x.fillStyle=white;x.strokeStyle=white;
+  if(art==="sweep"){x.fill(new Path2D("M 111 256 C 98 242 109 223 125 231 L 208 288 C 213 292 218 292 224 288 L 402 158 C 411 152 419 160 412 169 L 247 349 C 231 367 212 367 196 350 Z"));}
+  else{x.lineWidth=43;x.lineCap="round";x.lineJoin="round";x.stroke(new Path2D("M 123 264 L 218 351 L 391 159"));}
+  return c;
+}
+
 function logoDraw(art, ground, S){
+  if(art==="sweep"||art==="check")return drawBlueCheck(art,S);
   var c=document.createElement("canvas");
   c.width=c.height=S;
   var x=c.getContext("2d"), g=LG_GROUND[ground], mono=!!g;
@@ -12476,7 +12608,7 @@ function logoPngOf(art, ground, S){
 }
 /* every drawing on every ground, in the order they are shown */
 var LOGOS=(function(){
-  var out=[];
+  var out=[{id:"sweep-blue",art:"sweep",bg:"checks"},{id:"check-blue",art:"check",bg:"checks"}];
   ["plain","music","speech"].forEach(function(g){
     LG_ARTS.forEach(function(a){ out.push({id:a+"-"+g, art:a, bg:g}); });
   });
@@ -12499,24 +12631,28 @@ function logoLabel(id){ var o=logoOf(id); return LG_NAME[o.art]+" · "+LG_GNAME[
 function applyLogo(){
   var id=logoId(), o=logoOf(id);
   lgReady(function(){
-    var png=logoPngOf(o.art, o.bg, 192);
-    if(png){
-      ['link[rel="apple-touch-icon"]','link[rel="icon"][sizes="192x192"]','link[rel="icon"][sizes="32x32"]']
-        .forEach(function(sel){ var l=document.querySelector(sel); if(l) l.href=png; });
+    if(id!==logoId())return;
+    var png=logoPngOf(o.art,o.bg,192);
+    function iconLink(rel,size){
+      var selector='link[rel="'+rel+'"][sizes="'+size+'x'+size+'"]';
+      var link=document.querySelector(selector);
+      if(!link){link=document.createElement("link");link.rel=rel;link.sizes=size+"x"+size;document.head.appendChild(link);}
+      link.type="image/png";
+      var asset=(o.art==="sweep"||o.art==="check")&&/^https?:$/.test(location.protocol);
+      link.href=asset?"assets/icons/planner-"+o.art+"-"+size+".png":logoPngOf(o.art,o.bg,size);
     }
-    var b=document.getElementById("btnLogo");
-    if(b){ var im=b.querySelector("img"); if(im && png) im.src=png; }
+    iconLink("apple-touch-icon",180);iconLink("icon",192);iconLink("icon",32);
+    var b=document.getElementById("btnLogo");if(b){var im=b.querySelector("img");if(im&&png)im.src=png;}
   });
-  var b2=document.getElementById("btnLogo");
-  if(b2) b2.title="The picture this plan wears on a home screen - now: "+logoLabel(id);
+  var b=document.getElementById("btnLogo");if(b)b.title="Home-screen icon: "+logoLabel(id);
 }
 function drawLogoGrid(){
   var g=document.getElementById("icoGrid");
   if(!g) return;
   var cur=logoId();
-  g.innerHTML=["plain","music","speech","photo"].map(function(gg){
+  g.innerHTML=["checks","plain","music","speech","photo"].map(function(gg){
     var row=LOGOS.filter(function(x){ return x.bg===gg; }).map(function(o){
-      return '<button class="icoopt'+(o.id===cur?" on":"")+'" data-logo="'+o.id+'" title="'+esc(logoLabel(o.id))+'">'+
+      return '<button class="icoopt'+(o.id===cur?" on":"")+'" data-logo="'+o.id+'" aria-pressed="'+(o.id===cur?"true":"false")+'" title="'+esc(logoLabel(o.id))+'">'+
         '<img alt="" data-lgart="'+o.art+'" data-lgbg="'+o.bg+'"><b>'+esc(LG_NAME[o.art])+'</b></button>';
     }).join("");
     return '<div class="icoband"><span>'+esc(LG_GNAME[gg])+'</span></div><div class="icorow">'+row+'</div>';
@@ -12542,7 +12678,7 @@ function drawLogoGrid(){
     var b=e.target.closest("[data-logo]"); if(!b) return;
     state.logo=b.getAttribute("data-logo");
     persist(); applyLogo(); drawLogoGrid();
-    toast("The picture is changed. A square already on a home screen keeps the old one - take it off and add the page again");
+    toast("Icon selected. Add the page from Safari to use it on the Home Screen. Keep your current shortcut until the new one is verified.");
   });
   applyLogo();
 })();
@@ -12633,7 +12769,7 @@ function paintInstr(){
 })();
 window.addEventListener("storage",function(e){
   if(e.key===spaceKey(spaces.active)){tabRepaint=true;setTimeout(tabRefresh,0);}
-  if(e.key===ZOOMKEY&&e.newValue){localZoom=Math.max(.75,Math.min(1.6,+e.newValue||1));applyHeroZoom();}
+  if(e.key===ZOOMKEY){readLocalZoom();applyHeroZoom();}
 });
 document.addEventListener("focusout",function(){setTimeout(tabRefresh,0);},true);
 window.addEventListener("focus",tabRefresh);
