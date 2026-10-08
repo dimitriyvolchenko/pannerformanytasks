@@ -42,7 +42,7 @@ jobs:
           npm install --no-save --ignore-scripts playwright@1.56.1
           npx playwright install --with-deps chromium webkit
       - name: Native phone tablet desktop synchronization and icon regressions
-        run: node native.cjs
+        run: node tools/mobile-icon/run.cjs
       - name: Stage tested files only without moving main or writing plans
         env:
           GH_TOKEN: ${{ github.token }}
