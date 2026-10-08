@@ -1736,10 +1736,6 @@
   ],
   "stepsNext": [],
   "stepsView": "now",
-  "badgeSources": {
-    "today": true,
-    "tasks": false
-  },
   "inproc": {},
   "ie": true,
   "iedone": {
@@ -1904,8 +1900,8 @@
   "format": "mr_rocket_planner",
   "version": 12,
   "syncVersion": 3,
-  "appBuild": "2026.10.08.2",
-  "savedAt": "2026-10-08T13:10:41.725Z",
+  "appBuild": "2026.10.07.3",
+  "savedAt": "2026-10-08T13:10:55.074Z",
   "spaces": {
     "active": "cmr",
     "list": [
@@ -2482,10 +2478,6 @@
         "steps": [],
         "stepsNext": [],
         "stepsView": "now",
-        "badgeSources": {
-          "today": true,
-          "tasks": false
-        },
         "inproc": {},
         "ie": false,
         "iedone": {},
@@ -2493,6 +2485,10 @@
         "hideAllT": {},
         "flipped": {},
         "back": {},
+        "badgeSources": {
+          "today": true,
+          "tasks": false
+        },
         "theme": "dark",
         "boldAll": false,
         "pinkBar": false,
@@ -2625,10 +2621,6 @@
         "steps": [],
         "stepsNext": [],
         "stepsView": "now",
-        "badgeSources": {
-          "today": true,
-          "tasks": false
-        },
         "inproc": {},
         "ie": false,
         "iedone": {},
@@ -2636,6 +2628,10 @@
         "hideAllT": {},
         "flipped": {},
         "back": {},
+        "badgeSources": {
+          "today": true,
+          "tasks": false
+        },
         "theme": "dark",
         "boldAll": false,
         "pinkBar": false,
@@ -4419,10 +4415,6 @@
         ],
         "stepsNext": [],
         "stepsView": "now",
-        "badgeSources": {
-          "today": true,
-          "tasks": false
-        },
         "inproc": {},
         "ie": true,
         "iedone": {
@@ -4637,6 +4629,6 @@
     "logo": "sweep-blue",
     "instrOpen": false
   },
-  "device": "iPhone",
+  "device": "iPad",
   "lead": ""
 }
