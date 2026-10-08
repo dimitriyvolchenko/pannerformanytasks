@@ -1683,6 +1683,11 @@
       "done": true,
       "fs": 3,
       "b": true
+    },
+    {
+      "id": "tk3554cdc6-9a57-4297-bee2-4530872058f1",
+      "t": "hi",
+      "done": false
     }
   ],
   "tasksNext": [
@@ -1731,6 +1736,10 @@
   ],
   "stepsNext": [],
   "stepsView": "now",
+  "badgeSources": {
+    "today": true,
+    "tasks": false
+  },
   "inproc": {},
   "ie": true,
   "iedone": {
@@ -1889,14 +1898,14 @@
   "launchBox": true,
   "darkness": 50,
   "korean": false,
-  "logo": "wok-speech",
+  "logo": "sweep-blue",
   "instrOpen": false,
   "heroZoom": 1,
   "format": "mr_rocket_planner",
   "version": 12,
   "syncVersion": 3,
-  "appBuild": "2026.10.08.1",
-  "savedAt": "2026-10-08T10:49:31.633Z",
+  "appBuild": "2026.10.08.2",
+  "savedAt": "2026-10-08T13:10:41.725Z",
   "spaces": {
     "active": "cmr",
     "list": [
@@ -2473,6 +2482,10 @@
         "steps": [],
         "stepsNext": [],
         "stepsView": "now",
+        "badgeSources": {
+          "today": true,
+          "tasks": false
+        },
         "inproc": {},
         "ie": false,
         "iedone": {},
@@ -2521,7 +2534,7 @@
         "launchBox": true,
         "darkness": 50,
         "korean": false,
-        "logo": "wok-speech",
+        "logo": "sweep-blue",
         "instrOpen": false,
         "heroZoom": 1
       },
@@ -2612,6 +2625,10 @@
         "steps": [],
         "stepsNext": [],
         "stepsView": "now",
+        "badgeSources": {
+          "today": true,
+          "tasks": false
+        },
         "inproc": {},
         "ie": false,
         "iedone": {},
@@ -2660,7 +2677,7 @@
         "launchBox": true,
         "darkness": 50,
         "korean": false,
-        "logo": "wok-speech",
+        "logo": "sweep-blue",
         "instrOpen": false,
         "heroZoom": 1
       },
@@ -4349,6 +4366,11 @@
             "done": true,
             "fs": 3,
             "b": true
+          },
+          {
+            "id": "tk3554cdc6-9a57-4297-bee2-4530872058f1",
+            "t": "hi",
+            "done": false
           }
         ],
         "tasksNext": [
@@ -4397,6 +4419,10 @@
         ],
         "stepsNext": [],
         "stepsView": "now",
+        "badgeSources": {
+          "today": true,
+          "tasks": false
+        },
         "inproc": {},
         "ie": true,
         "iedone": {
@@ -4555,7 +4581,7 @@
         "launchBox": true,
         "darkness": 50,
         "korean": false,
-        "logo": "wok-speech",
+        "logo": "sweep-blue",
         "instrOpen": false,
         "heroZoom": 1
       }
@@ -4608,7 +4634,7 @@
     "launchBox": true,
     "darkness": 50,
     "korean": false,
-    "logo": "wok-speech",
+    "logo": "sweep-blue",
     "instrOpen": false
   },
   "device": "iPhone",
