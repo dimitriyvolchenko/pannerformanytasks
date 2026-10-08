@@ -1688,6 +1688,11 @@
       "id": "tk3554cdc6-9a57-4297-bee2-4530872058f1",
       "t": "hi",
       "done": false
+    },
+    {
+      "id": "tkb95ba9a5-ab9c-431a-aa8c-c985fcf6f4a1",
+      "t": "hi again",
+      "done": false
     }
   ],
   "tasksNext": [
@@ -1736,6 +1741,10 @@
   ],
   "stepsNext": [],
   "stepsView": "now",
+  "badgeSources": {
+    "today": true,
+    "tasks": false
+  },
   "inproc": {},
   "ie": true,
   "iedone": {
@@ -1900,8 +1909,8 @@
   "format": "mr_rocket_planner",
   "version": 12,
   "syncVersion": 3,
-  "appBuild": "2026.10.07.3",
-  "savedAt": "2026-10-08T13:10:55.074Z",
+  "appBuild": "2026.10.08.2",
+  "savedAt": "2026-10-08T13:12:41.819Z",
   "spaces": {
     "active": "cmr",
     "list": [
@@ -2478,6 +2487,10 @@
         "steps": [],
         "stepsNext": [],
         "stepsView": "now",
+        "badgeSources": {
+          "today": true,
+          "tasks": false
+        },
         "inproc": {},
         "ie": false,
         "iedone": {},
@@ -2485,10 +2498,6 @@
         "hideAllT": {},
         "flipped": {},
         "back": {},
-        "badgeSources": {
-          "today": true,
-          "tasks": false
-        },
         "theme": "dark",
         "boldAll": false,
         "pinkBar": false,
@@ -2621,6 +2630,10 @@
         "steps": [],
         "stepsNext": [],
         "stepsView": "now",
+        "badgeSources": {
+          "today": true,
+          "tasks": false
+        },
         "inproc": {},
         "ie": false,
         "iedone": {},
@@ -2628,10 +2641,6 @@
         "hideAllT": {},
         "flipped": {},
         "back": {},
-        "badgeSources": {
-          "today": true,
-          "tasks": false
-        },
         "theme": "dark",
         "boldAll": false,
         "pinkBar": false,
@@ -4367,6 +4376,11 @@
             "id": "tk3554cdc6-9a57-4297-bee2-4530872058f1",
             "t": "hi",
             "done": false
+          },
+          {
+            "id": "tkb95ba9a5-ab9c-431a-aa8c-c985fcf6f4a1",
+            "t": "hi again",
+            "done": false
           }
         ],
         "tasksNext": [
@@ -4415,6 +4429,10 @@
         ],
         "stepsNext": [],
         "stepsView": "now",
+        "badgeSources": {
+          "today": true,
+          "tasks": false
+        },
         "inproc": {},
         "ie": true,
         "iedone": {
@@ -4629,6 +4647,6 @@
     "logo": "sweep-blue",
     "instrOpen": false
   },
-  "device": "iPad",
+  "device": "iPhone",
   "lead": ""
 }
