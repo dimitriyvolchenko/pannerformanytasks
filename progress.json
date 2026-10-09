@@ -1041,13 +1041,6 @@
       "b": true
     },
     {
-      "id": "tdmuqrxyq45",
-      "t": "🔥 Method : launch : work out a rule : how to check and edit the links in MRG",
-      "done": false,
-      "fs": 3,
-      "b": true
-    },
-    {
       "id": "tdmuqry6b66",
       "t": "⚡ Review : animal cruelty",
       "done": false,
@@ -1690,6 +1683,13 @@
       "done": false,
       "fs": 3,
       "b": true
+    },
+    {
+      "id": "tkf190100b-25ce-467d-b338-b9974c8ab3f6",
+      "t": "🥷🏻 Launch : trying to combine Farkhitdinova’s work and Labour Ethics together",
+      "done": false,
+      "fs": 3,
+      "b": true
     }
   ],
   "tasksNext": [
@@ -1908,7 +1908,7 @@
   "syncVersion": 4,
   "syncPolicy": "whole-copy",
   "appBuild": "2026.10.08.3-r1",
-  "savedAt": "2026-10-09T06:05:50.763Z",
+  "savedAt": "2026-10-09T06:08:00.746Z",
   "spaces": {
     "active": "cmr",
     "list": [
@@ -3727,13 +3727,6 @@
             "b": true
           },
           {
-            "id": "tdmuqrxyq45",
-            "t": "🔥 Method : launch : work out a rule : how to check and edit the links in MRG",
-            "done": false,
-            "fs": 3,
-            "b": true
-          },
-          {
             "id": "tdmuqry6b66",
             "t": "⚡ Review : animal cruelty",
             "done": false,
@@ -4373,6 +4366,13 @@
           {
             "id": "tk5ed47810-48df-435c-9394-13e37bfdcb9c",
             "t": "🥷🏻 Launch : Axiological analysis",
+            "done": false,
+            "fs": 3,
+            "b": true
+          },
+          {
+            "id": "tkf190100b-25ce-467d-b338-b9974c8ab3f6",
+            "t": "🥷🏻 Launch : trying to combine Farkhitdinova’s work and Labour Ethics together",
             "done": false,
             "fs": 3,
             "b": true
