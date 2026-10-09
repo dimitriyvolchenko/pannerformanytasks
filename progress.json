@@ -1567,7 +1567,7 @@
       "at": "2026-10-08T10:49:26.371Z"
     }
   ],
-  "plDay": "2026-10-08",
+  "plDay": "2026-10-09",
   "plWeek": "2026-10-05",
   "spotSave": {
     "spot": {
@@ -1683,21 +1683,6 @@
       "done": true,
       "fs": 3,
       "b": true
-    },
-    {
-      "id": "tk3554cdc6-9a57-4297-bee2-4530872058f1",
-      "t": "hi",
-      "done": false
-    },
-    {
-      "id": "tkb95ba9a5-ab9c-431a-aa8c-c985fcf6f4a1",
-      "t": "hi again",
-      "done": false
-    },
-    {
-      "id": "tkd55e438c-7ab1-481d-8408-27c5a85a75d9",
-      "t": "hi again and again",
-      "done": false
     }
   ],
   "tasksNext": [
@@ -1748,7 +1733,7 @@
   "stepsView": "now",
   "badgeSources": {
     "today": true,
-    "tasks": false
+    "tasks": true
   },
   "inproc": {},
   "ie": true,
@@ -1867,7 +1852,7 @@
   "hideAllT": {},
   "flipped": {},
   "back": {},
-  "theme": "dark",
+  "theme": "light",
   "boldAll": false,
   "pinkBar": false,
   "pinkColor": "",
@@ -1913,9 +1898,10 @@
   "heroZoom": 1,
   "format": "mr_rocket_planner",
   "version": 12,
-  "syncVersion": 3,
-  "appBuild": "2026.10.08.2",
-  "savedAt": "2026-10-08T13:13:10.057Z",
+  "syncVersion": 4,
+  "syncPolicy": "whole-copy",
+  "appBuild": "2026.10.08.3-r1",
+  "savedAt": "2026-10-09T06:03:56.861Z",
   "spaces": {
     "active": "cmr",
     "list": [
@@ -2503,7 +2489,7 @@
         "hideAllT": {},
         "flipped": {},
         "back": {},
-        "theme": "dark",
+        "theme": "light",
         "boldAll": false,
         "pinkBar": false,
         "pinkColor": "",
@@ -2646,7 +2632,7 @@
         "hideAllT": {},
         "flipped": {},
         "back": {},
-        "theme": "dark",
+        "theme": "light",
         "boldAll": false,
         "pinkBar": false,
         "pinkColor": "",
@@ -4260,7 +4246,7 @@
             "at": "2026-10-08T10:49:26.371Z"
           }
         ],
-        "plDay": "2026-10-08",
+        "plDay": "2026-10-09",
         "plWeek": "2026-10-05",
         "spotSave": {
           "spot": {
@@ -4376,21 +4362,6 @@
             "done": true,
             "fs": 3,
             "b": true
-          },
-          {
-            "id": "tk3554cdc6-9a57-4297-bee2-4530872058f1",
-            "t": "hi",
-            "done": false
-          },
-          {
-            "id": "tkb95ba9a5-ab9c-431a-aa8c-c985fcf6f4a1",
-            "t": "hi again",
-            "done": false
-          },
-          {
-            "id": "tkd55e438c-7ab1-481d-8408-27c5a85a75d9",
-            "t": "hi again and again",
-            "done": false
           }
         ],
         "tasksNext": [
@@ -4441,7 +4412,7 @@
         "stepsView": "now",
         "badgeSources": {
           "today": true,
-          "tasks": false
+          "tasks": true
         },
         "inproc": {},
         "ie": true,
@@ -4560,7 +4531,7 @@
         "hideAllT": {},
         "flipped": {},
         "back": {},
-        "theme": "dark",
+        "theme": "light",
         "boldAll": false,
         "pinkBar": false,
         "pinkColor": "",
@@ -4613,7 +4584,7 @@
     "trash": []
   },
   "prefs": {
-    "theme": "dark",
+    "theme": "light",
     "boldAll": false,
     "pinkBar": false,
     "pinkColor": "",
@@ -4658,5 +4629,6 @@
     "instrOpen": false
   },
   "device": "iPhone",
+  "deviceId": "b0f209b5-1acd-4b09-b381-19b002700185",
   "lead": ""
 }
