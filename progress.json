@@ -1859,7 +1859,7 @@
   "hideAllT": {},
   "flipped": {},
   "back": {},
-  "theme": "light",
+  "theme": "dark",
   "boldAll": false,
   "pinkBar": false,
   "pinkColor": "",
@@ -1905,10 +1905,9 @@
   "heroZoom": 1,
   "format": "mr_rocket_planner",
   "version": 12,
-  "syncVersion": 4,
-  "syncPolicy": "whole-copy",
-  "appBuild": "2026.10.08.3-r1",
-  "savedAt": "2026-10-09T06:08:00.746Z",
+  "syncVersion": 3,
+  "appBuild": "2026.10.08.2",
+  "savedAt": "2026-10-09T06:53:23.926Z",
   "spaces": {
     "active": "cmr",
     "list": [
@@ -2496,7 +2495,7 @@
         "hideAllT": {},
         "flipped": {},
         "back": {},
-        "theme": "light",
+        "theme": "dark",
         "boldAll": false,
         "pinkBar": false,
         "pinkColor": "",
@@ -2639,7 +2638,7 @@
         "hideAllT": {},
         "flipped": {},
         "back": {},
-        "theme": "light",
+        "theme": "dark",
         "boldAll": false,
         "pinkBar": false,
         "pinkColor": "",
@@ -4545,7 +4544,7 @@
         "hideAllT": {},
         "flipped": {},
         "back": {},
-        "theme": "light",
+        "theme": "dark",
         "boldAll": false,
         "pinkBar": false,
         "pinkColor": "",
@@ -4598,7 +4597,7 @@
     "trash": []
   },
   "prefs": {
-    "theme": "light",
+    "theme": "dark",
     "boldAll": false,
     "pinkBar": false,
     "pinkColor": "",
@@ -4642,7 +4641,6 @@
     "logo": "sweep-blue",
     "instrOpen": false
   },
-  "device": "iPhone",
-  "deviceId": "b0f209b5-1acd-4b09-b381-19b002700185",
+  "device": "iPad",
   "lead": ""
 }
