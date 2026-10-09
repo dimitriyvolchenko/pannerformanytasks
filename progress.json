@@ -1565,6 +1565,20 @@
       "k": "tasks",
       "ahead": false,
       "at": "2026-10-08T10:49:26.371Z"
+    },
+    {
+      "id": "tkmuw9ocfw9",
+      "t": "☕ Complete : the launch on time of MRG",
+      "k": "tasks",
+      "ahead": false,
+      "at": "2026-10-09T06:04:20.437Z"
+    },
+    {
+      "id": "tkmuw9enkd1",
+      "t": "☕ Complete : The Approach to handling Links and References",
+      "k": "tasks",
+      "ahead": false,
+      "at": "2026-10-09T06:04:49.728Z"
     }
   ],
   "plDay": "2026-10-09",
@@ -1657,13 +1671,6 @@
   "parFace": "list",
   "tasks": [
     {
-      "id": "tkmuw9enkd1",
-      "t": "☕ Complete : The Approach to handling Links and References",
-      "done": false,
-      "fs": 3,
-      "b": true
-    },
-    {
       "id": "tkmuw9fsyp2",
       "t": "☕ Complete : Scheduling preparing all the Parts for MR",
       "done": false,
@@ -1671,16 +1678,16 @@
       "b": true
     },
     {
-      "id": "tkmuw9ocfw9",
-      "t": "☕ Complete : the launch on time of MRG",
+      "id": "tk85b16a8d-0e59-4ede-8ad2-693d01e91586",
+      "t": "☕️ Complete : MR_71",
       "done": false,
-      "b": true,
-      "fs": 3
+      "fs": 3,
+      "b": true
     },
     {
-      "id": "tkmuwch69e1",
-      "t": "🔥 Launch : gathering info on the Inventory",
-      "done": true,
+      "id": "tk5ed47810-48df-435c-9394-13e37bfdcb9c",
+      "t": "🥷🏻 Launch : Axiological analysis",
+      "done": false,
       "fs": 3,
       "b": true
     }
@@ -1901,7 +1908,7 @@
   "syncVersion": 4,
   "syncPolicy": "whole-copy",
   "appBuild": "2026.10.08.3-r1",
-  "savedAt": "2026-10-09T06:03:56.861Z",
+  "savedAt": "2026-10-09T06:05:50.763Z",
   "spaces": {
     "active": "cmr",
     "list": [
@@ -4244,6 +4251,20 @@
             "k": "tasks",
             "ahead": false,
             "at": "2026-10-08T10:49:26.371Z"
+          },
+          {
+            "id": "tkmuw9ocfw9",
+            "t": "☕ Complete : the launch on time of MRG",
+            "k": "tasks",
+            "ahead": false,
+            "at": "2026-10-09T06:04:20.437Z"
+          },
+          {
+            "id": "tkmuw9enkd1",
+            "t": "☕ Complete : The Approach to handling Links and References",
+            "k": "tasks",
+            "ahead": false,
+            "at": "2026-10-09T06:04:49.728Z"
           }
         ],
         "plDay": "2026-10-09",
@@ -4336,13 +4357,6 @@
         "parFace": "list",
         "tasks": [
           {
-            "id": "tkmuw9enkd1",
-            "t": "☕ Complete : The Approach to handling Links and References",
-            "done": false,
-            "fs": 3,
-            "b": true
-          },
-          {
             "id": "tkmuw9fsyp2",
             "t": "☕ Complete : Scheduling preparing all the Parts for MR",
             "done": false,
@@ -4350,16 +4364,16 @@
             "b": true
           },
           {
-            "id": "tkmuw9ocfw9",
-            "t": "☕ Complete : the launch on time of MRG",
+            "id": "tk85b16a8d-0e59-4ede-8ad2-693d01e91586",
+            "t": "☕️ Complete : MR_71",
             "done": false,
-            "b": true,
-            "fs": 3
+            "fs": 3,
+            "b": true
           },
           {
-            "id": "tkmuwch69e1",
-            "t": "🔥 Launch : gathering info on the Inventory",
-            "done": true,
+            "id": "tk5ed47810-48df-435c-9394-13e37bfdcb9c",
+            "t": "🥷🏻 Launch : Axiological analysis",
+            "done": false,
             "fs": 3,
             "b": true
           }
