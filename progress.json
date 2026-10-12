@@ -1574,8 +1574,8 @@
       "at": "2026-10-09T06:04:49.728Z"
     }
   ],
-  "plDay": "2026-10-09",
-  "plWeek": "2026-10-05",
+  "plDay": "2026-10-12",
+  "plWeek": "2026-10-12",
   "spotSave": {
     "spot": {
       "par": true,
@@ -1905,9 +1905,10 @@
   "heroZoom": 1,
   "format": "mr_rocket_planner",
   "version": 12,
-  "syncVersion": 3,
-  "appBuild": "2026.10.08.2",
-  "savedAt": "2026-10-09T06:53:23.926Z",
+  "syncVersion": 4,
+  "syncPolicy": "whole-copy",
+  "appBuild": "2026.10.08.3-r1",
+  "savedAt": "2026-10-12T07:01:26.119Z",
   "spaces": {
     "active": "cmr",
     "list": [
@@ -4259,8 +4260,8 @@
             "at": "2026-10-09T06:04:49.728Z"
           }
         ],
-        "plDay": "2026-10-09",
-        "plWeek": "2026-10-05",
+        "plDay": "2026-10-12",
+        "plWeek": "2026-10-12",
         "spotSave": {
           "spot": {
             "par": true,
@@ -4642,5 +4643,6 @@
     "instrOpen": false
   },
   "device": "iPad",
+  "deviceId": "1b34ea8b-57a2-41fb-ad2d-45f3bf709fa3",
   "lead": ""
 }
